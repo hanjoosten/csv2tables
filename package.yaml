@@ -21,6 +21,9 @@ description:         Please see the README on Github at <https://github.com/hanj
 
 dependencies:
 - base >= 4.11 && < 10
+- Cabal >= 3.0.1
+- csv >= 0.1.2
+- hspec
 - rio >= 0.1.12.0
 
 ghc-options:
@@ -36,7 +39,7 @@ library:
   source-dirs: src
 
 executables:
-  csv2tables-exe:
+  csv2tables:
     main:                Main.hs
     source-dirs:         app
     dependencies:

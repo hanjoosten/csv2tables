@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b5093604bb202455bc25908dc62648b04920575d6ed787d9d41d6f769bd6d6f0
+-- hash: cb2140bd7b1cb1368fb14b662d6b92eb704e5d71523005d360115ffadd34982c
 
 name:           csv2tables
 version:        0.1.0.0
@@ -37,11 +37,14 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.11 && <10
+      Cabal >=3.0.1
+    , base >=4.11 && <10
+    , csv >=0.1.2
+    , hspec
     , rio >=0.1.12.0
   default-language: Haskell2010
 
-executable csv2tables-exe
+executable csv2tables
   main-is: Main.hs
   other-modules:
       Paths_csv2tables
@@ -49,8 +52,11 @@ executable csv2tables-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.11 && <10
+      Cabal >=3.0.1
+    , base >=4.11 && <10
+    , csv >=0.1.2
     , csv2tables
+    , hspec
     , optparse-simple
     , rio >=0.1.12.0
   default-language: Haskell2010
@@ -65,7 +71,9 @@ test-suite csv2tables-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.11 && <10
+      Cabal >=3.0.1
+    , base >=4.11 && <10
+    , csv >=0.1.2
     , csv2tables
     , hspec
     , rio >=0.1.12.0
