@@ -37,6 +37,8 @@ data Attrib = Attrib
     , sasLable :: !String
     , sasFormat :: !String
     } deriving Show
+instance Ord Attrib where
+  compare a b = compare (attTable a, sasVarNum a) (attTable b, sasVarNum b)
 
 instance Eq Attrib where
   a == b = attTable a == attTable b 

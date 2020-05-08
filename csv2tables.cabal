@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 19e747bc8532faccde54472f200d80017792ff466f2524b4a6d3fd0e93cbfc31
+-- hash: dc2d0c9613cdd9454e1a29545f6cd7715c9acc00492d5c088dfcb1f458860894
 
 name:           csv2tables
 version:        0.1.0.0
@@ -33,6 +33,7 @@ library
       CSV
       Import
       Run
+      SQL
       Types
       Util
       XLSX

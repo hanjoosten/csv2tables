@@ -5,12 +5,16 @@ module Run (run) where
 import Import
 import CSV
 import qualified RIO.Text as T
+import SQL
+
 run :: RIO App ()
 run = do
-  logInfo "We're inside the application!"
+  app <- ask
   tables <- parseCsv
   logInfo $ "Number of tables: "<>displayShow (length tables)
-  mapM (\t -> logDebug $ display $ showTab t) . take 30 $ tables
+  _ <- mapM (\t -> logDebug $ display $ showTab t) . take 30 $ tables
+  let sqlStatements = T.unlines $ makeCreateStatements tables
+  writeFileUtf8 (outputFile . appOptions $ app) sqlStatements
   return ()
 
 showTab :: Table -> Text
