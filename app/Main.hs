@@ -6,19 +6,30 @@ import Import
 import Run
 import RIO.Process
 import Options.Applicative.Simple
-import qualified Paths_csv2tables
+-- import qualified Paths_csv2tables
 
 main :: IO ()
 main = do
   (options, ()) <- simpleOptions
-    $(simpleVersion Paths_csv2tables.version)
-    "Header for command line arguments"
-    "Program description, also for command line arguments"
+    "0.1.0.0" -- $(simpleVersion Paths_csv2tables.version)
+    "This is a custom utility to create sql create table statements from a specific .csv file."
+    "Bla bla"
     (Options
        <$> switch ( long "verbose"
                  <> short 'v'
                  <> help "Verbose output?"
                   )
+       <*> strOption ( long "input"
+                 <> short 'i'
+                 <> help "Path to the input .csv file"
+                 <> value  "BasDataSets.csv"
+                  )
+       <*> strOption ( long "output"
+                 <> short 'o'
+                 <> help "Path to the output .sql file"
+                 <> value  "makeBASTables.sql"
+                  )
+           
     )
     empty
   lo <- logOptionsHandle stderr (optionsVerbose options)
@@ -30,3 +41,4 @@ main = do
           , appOptions = options
           }
      in runRIO app run
+

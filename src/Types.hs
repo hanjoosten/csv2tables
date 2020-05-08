@@ -7,6 +7,8 @@ import RIO.Process
 -- | Command line arguments
 data Options = Options
   { optionsVerbose :: !Bool
+  , inputFile :: !FilePath
+  , outputFile :: !FilePath
   }
 
 data App = App
