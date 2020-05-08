@@ -12,7 +12,7 @@ main :: IO ()
 main = do
   (options, ()) <- simpleOptions
     "0.1.0.0" -- $(simpleVersion Paths_csv2tables.version)
-    "This is a custom utility to create sql create table statements from a specific .csv file."
+    "This is a custom utility to create sql create table statements from a specific .xlsx file."
     "Bla bla"
     (Options
        <$> switch ( long "verbose"
@@ -22,7 +22,7 @@ main = do
        <*> strOption ( long "input"
                  <> short 'i'
                  <> help "Path to the input .csv file"
-                 <> value  "BasDataSets.csv"
+                 <> value  "Basinfo.csv"
                   )
        <*> strOption ( long "output"
                  <> short 'o'

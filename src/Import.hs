@@ -1,8 +1,10 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 module Import
-  ( module RIO
+  ( module Basics.Fatal
+  , module RIO
   , module Types
   ) where
 
+import Basics.Fatal
 import RIO
 import Types

@@ -23,8 +23,10 @@ dependencies:
 - base >= 4.11 && < 10
 - Cabal >= 3.0.1
 - hspec
-- rio >= 0.1.12.0
-- xlsx 
+- lens >= 4.18
+- rio >= 0.1.15.0
+- xlsx >= 0.8
+- csv >= 0.1
 
 ghc-options:
 - -Wall
