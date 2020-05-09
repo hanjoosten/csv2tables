@@ -21,7 +21,7 @@ createStatement t =
      cols = "    "<> (T.intercalate ",\n    " . map mkCol . L.sort . attribs) t
      mkCol :: Attrib -> Text
      mkCol att = 
-          T.pack (attName att)<> " "<>dataType att
+          T.pack (attNameNew att)<> " "<>dataType att
 
 dataType :: Attrib -> Text
 dataType att =

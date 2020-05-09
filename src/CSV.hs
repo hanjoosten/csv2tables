@@ -55,17 +55,32 @@ mkAttrib :: KeyValues -> Attrib
 mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
    Attrib
     { attTable = lkpStr "MEMNAME"
-    , attName  = lkpStr "NAME" -- :: !String
+    , attNameOrg  = rawAttName -- :: !String
+    , attNameNew  = makeSafe rawAttName
     , sasType = lkpInt "TYPE" -- :: !Int
     , sasLength = lkpInt "LENGTH" -- :: !Int
     , sasVarNum = lkpInt "VARNUM" -- :: !Int
     , sasLable = lkpStr "LABEL" -- :: !String
     , sasFormat = lkpStr "FORMAT" -- :: !String
     } 
-   where lkpStr :: String -> String
+   where rawAttName = lkpStr "NAME"
+         makeSafe :: String -> String
+         makeSafe = substitute "," ""
+                  . substitute "." ""
+                  . substitute "VVG." "VVG_"
+         lkpStr :: String -> String
          lkpStr key = fromMaybe err $ Map.lookup key kvs
             where err =fatal $ "String is missing. (key = "<>T.pack key<>")." 
          lkpInt :: String -> Integer
          lkpInt key = fromMaybe err $ readMaybe $ lkpStr key
             where err =fatal $ "Value is not an integer."
+
+-- | Replace each occurrence of one sublist in a list with another.
+substitute :: (Eq a) => [a] -> [a] -> [a] -> [a]
+substitute _ _ [] = []
+substitute [] _ xs = xs
+substitute target replacement lst@(x:xs) =
+    case L.stripPrefix target lst of
+      Just lst' -> replacement ++ substitute target replacement lst'
+      Nothing   -> x : substitute target replacement xs
 

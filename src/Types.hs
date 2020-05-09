@@ -30,7 +30,8 @@ data Table = Table
 
 data Attrib = Attrib
     { attTable :: !String
-    , attName  :: !String
+    , attNameOrg  :: !String
+    , attNameNew  :: !String
     , sasType :: !Integer
     , sasLength :: !Integer
     , sasVarNum :: !Integer
@@ -42,4 +43,4 @@ instance Ord Attrib where
 
 instance Eq Attrib where
   a == b = attTable a == attTable b 
-        && attName a  == attName b
+        && attNameOrg a  == attNameOrg b
