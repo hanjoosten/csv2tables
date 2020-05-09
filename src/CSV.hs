@@ -67,6 +67,7 @@ mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
          makeSafe :: String -> String
          makeSafe = substitute "," ""
                   . substitute "." ""
+                  . substitute "-" "_"
                   . substitute "VVG." "VVG_"
          lkpStr :: String -> String
          lkpStr key = fromMaybe err $ Map.lookup key kvs

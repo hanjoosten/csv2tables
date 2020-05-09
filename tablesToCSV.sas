@@ -1,5 +1,5 @@
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_AOM_ACTIE_TCMG AS
    SELECT t1.Actie_cd,
           t1.Actie_oms,
           t1.Creatie_user,
@@ -11,15 +11,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_AOM_ACTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\AOM_ACTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_AOM_ACTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_AOM_ACTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_AOM_ACTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_AOM_TRA_ACTIE_TCMG AS
    SELECT t1.Actie_cd,
           t1.Bgt_cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -31,15 +45,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_AOM_TRA_ACTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\AOM_TRA_ACTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_AOM_TRA_ACTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_AOM_TRA_ACTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_AOM_TRA_ACTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_AOM_TRANSACTIETYPE_TCMG AS
    SELECT t1.Beleidsadministratie_jn,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -54,15 +82,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_AOM_TRANSACTIETYPE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\AOM_TRANSACTIETYPE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_AOM_TRANSACTIETYPE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_AOM_TRANSACTIETYPE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_AOM_TRANSACTIETYPE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_BTM_BETALING_TCMG AS
    SELECT t1.Rel_id,
           t1.Tra_id,
           t1.Reg_cd,
@@ -98,15 +140,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_BTM_BETALING_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BTM_BETALING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_BTM_BETALING_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BTM_BETALING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_BTM_BETALING_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_BTM_HIST_BETALING_TCMG AS
    SELECT t1.Rel_id,
           t1.Tra_id,
           t1.Reg_cd,
@@ -140,15 +196,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_BTM_HIST_BETALING_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BTM_HIST_BETALING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_BTM_HIST_BETALING_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BTM_HIST_BETALING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_BTM_HIST_BETALING_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_BERICHT_TCMG AS
    SELECT t1.Cor_id,
           t1.Ed_bericht_id,
           t1.Afzender_id,
@@ -171,15 +241,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_BERICHT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_BERICHT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_BERICHT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_BERICHT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_BERICHT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_COR_PARAAF_TCMG AS
    SELECT t1.Acc_id,
           t1.Acc_rol_cd,
           t1.Acc_vaste_paraaf_jn,
@@ -211,15 +295,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_COR_PARAAF_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_COR_PARAAF_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_COR_PARAAF_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_COR_PARAAF_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_COR_PARAAF_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_COR_SRT_TCMG AS
    SELECT t1.Cst_cd,
           t1.Cst_oms,
           t1.Cst_template,
@@ -246,15 +344,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_COR_SRT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_COR_SRT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_COR_SRT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_COR_SRT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_COR_SRT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_CORRESPONDENTIE_HIST_TCM AS
    SELECT t1.Cor_id,
           t1.Volg_nr,
           t1.Correctie_code,
@@ -267,15 +379,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_CORRESPONDENTIE_HIST_TCM
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_CORRESPONDENTIE_HIST_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_CORRESPONDENTIE_HIST_TCM()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_CORRESPONDENTIE_HIST_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_CORRESPONDENTIE_HIST_TCM;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_CORRESPONDENTIE_TCMG AS
    SELECT t1.Actie_datum FORMAT=B8601DT19. AS Actie_datum,
           t1.Afgedrukt_JN,
           t1.Afgehandeld,
@@ -316,7 +442,7 @@ PROC SQL;
           t1.Mdw_id_contpers_intern,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
           t1.Mutatie_user,
-          t1.n,aam_organisatie,
+          t1.'n,aam_organisatie'n AS naam_organisatie,
           t1.Ok_JN,
           t1.Omschrijving,
           t1.Open_brief,
@@ -343,15 +469,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_CORRESPONDENTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_CORRESPONDENTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_CORRESPONDENTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_CORRESPONDENTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_CORRESPONDENTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_CST_SET_CST_TCMG AS
    SELECT t1.Reg_id,
           t1.Cst_cd,
           t1.Cst_cd_2,
@@ -366,15 +506,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_CST_SET_CST_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_CST_SET_CST_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_CST_SET_CST_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_CST_SET_CST_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_CST_SET_CST_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_PARAAF_TCMG AS
    SELECT t1.Reg_id,
           t1.Cst_cd,
           t1.Type_paraaf,
@@ -387,15 +541,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_PARAAF_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_PARAAF_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_PARAAF_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_PARAAF_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_PARAAF_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_REACTIE_BIJ_COR_SRT_TCMG AS
    SELECT t1.Cluster_nr,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -416,15 +584,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_REACTIE_BIJ_COR_SRT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_REACTIE_BIJ_COR_SRT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_REACTIE_BIJ_COR_SRT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_REACTIE_BIJ_COR_SRT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_REACTIE_BIJ_COR_SRT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_REGLSPEC_COR_TCMG AS
    SELECT t1.Bos_bezorging,
           t1.Crea_back,
           t1.Create_merge_jn,
@@ -449,15 +631,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_REGLSPEC_COR_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_REGLSPEC_COR_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_REGLSPEC_COR_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_REGLSPEC_COR_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_REGLSPEC_COR_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_COR_TRANSACTIEGROEP_BIJ_BRF_ AS
    SELECT t1.Cor_id,
           t1.Tra_id,
           t1.Dos_id,
@@ -469,15 +665,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_COR_TRANSACTIEGROEP_BIJ_BRF_
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\COR_TRANSACTIEGROEP_BIJ_BRF_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_COR_TRANSACTIEGROEP_BIJ_BRF_()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_COR_TRANSACTIEGROEP_BIJ_BRF_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_COR_TRANSACTIEGROEP_BIJ_BRF_;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_CONT_BIJ_DLN_COM_ADR_TCM AS
    SELECT t1.creatie_dat FORMAT=B8601DT19. AS creatie_dat,
           t1.Creatie_user,
           t1.Dcs_id,
@@ -495,15 +705,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_CONT_BIJ_DLN_COM_ADR_TCM
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_CONT_BIJ_DLN_COM_ADR_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_CONT_BIJ_DLN_COM_ADR_TCM()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_CONT_BIJ_DLN_COM_ADR_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_CONT_BIJ_DLN_COM_ADR_TCM;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_CONTACT_BIJ_DEELNAME_TCM AS
    SELECT t1.Certhoud_id,
           t1.Correspondent,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -521,15 +745,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_CONTACT_BIJ_DEELNAME_TCM
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_CONTACT_BIJ_DEELNAME_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_CONTACT_BIJ_DEELNAME_TCM()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_CONTACT_BIJ_DEELNAME_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_CONTACT_BIJ_DEELNAME_TCM;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DECLARATIE_TCMG AS
    SELECT t1.Adviesaangevraagd,
           t1.Adviesaantaluren,
           t1.Advieshandtoegekend,
@@ -621,15 +859,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DECLARATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DECLARATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DECLARATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DECLARATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DECLARATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DEELNAME_ADRES_TCMG AS
    SELECT t1.Adressoort,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -647,15 +899,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DEELNAME_ADRES_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DEELNAME_ADRES_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DEELNAME_ADRES_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DEELNAME_ADRES_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DEELNAME_ADRES_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DEELNAME_COM_ADRES_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dda_id,
@@ -671,15 +937,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DEELNAME_COM_ADRES_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DEELNAME_COM_ADRES_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DEELNAME_COM_ADRES_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DEELNAME_COM_ADRES_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DEELNAME_COM_ADRES_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DEELNAME_TCMG AS
    SELECT t1.Afwijking_cd,
           t1.Bic,
           t1.Bic_cd,
@@ -724,15 +1004,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DEELNAME_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DEELNAME_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DEELNAME_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DEELNAME_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DEELNAME_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DOS_BUDGETREGEL_TCMG AS
    SELECT t1.Dos_id,
           t1.Tra_id,
           t1.Volgnummer,
@@ -769,15 +1063,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DOS_BUDGETREGEL_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DOS_BUDGETREGEL_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DOS_BUDGETREGEL_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DOS_BUDGETREGEL_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DOS_BUDGETREGEL_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DOSSIER_IN_GROEP_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Ddg_id,
@@ -789,15 +1097,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DOSSIER_IN_GROEP_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DOSSIER_IN_GROEP_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DOSSIER_IN_GROEP_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DOSSIER_IN_GROEP_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DOSSIER_IN_GROEP_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DOSSIER_NOTITIE_TCMG AS
    SELECT t1.Afgehandeld,
           t1.Bezoeknr,
           t1.Cor_id_no,
@@ -813,15 +1135,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DOSSIER_NOTITIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DOSSIER_NOTITIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DOSSIER_NOTITIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DOSSIER_NOTITIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DOSSIER_NOTITIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DOSSIER_TCMG AS
    SELECT t1.Aangevraagd_bedrag,
           t1.Aantal_dagenopschorting,
           t1.Aantal_ICT_projecten,
@@ -899,7 +1235,7 @@ PROC SQL;
           t1.Laatste_jr_aflossing,
           t1.Laatste_pcs_id,
           t1.Landnaam,
-          t1.LB-nummer_komt_overeen,
+          t1.'LB-nummer_komt_overeen'n AS LB_nummer_komt_overeen,
           t1.Machtiging_JN,
           t1.Mdw_cd,
           t1.Mentorterugkoppeling,
@@ -943,13 +1279,13 @@ PROC SQL;
           t1.Status_TT,
           t1.Statusgroep,
           t1.Statustermijn FORMAT=B8601DT19. AS Statustermijn,
-          t1.Status_E-Diensten,
-          t1.Status_E-Loket,
+          t1.'Status_E-Diensten'n AS Status_E_Diensten,
+          t1.'Status_E-Loket'n AS Status_E_Loket,
           t1.Technisch_succes,
           t1.Technisch_Cor_id,
           t1.Titel,
-          t1.Afgelost_op_onvoorw._hoofdsom,
-          t1.Afgelost_op_onvoorw._rente,
+          t1.'Afgelost_op_onvoorw._hoofdsom'n AS Afgelost_op_onvoorw_hoofdsom,
+          t1.'Afgelost_op_onvoorw._rente'n AS Afgelost_op_onvoorw_rente,
           t1.Totaal_afgelost_op_hoofdsom,
           t1.Totaal_ontvangen_rente,
           t1.Totaal_bijgeschreven_rente,
@@ -962,17 +1298,17 @@ PROC SQL;
           t1.Totaal_geschoonde_kosten,
           t1.Totale_hoofdsom,
           t1.Totaal_ingetrokken_bedrag,
-          t1.Kwijtsch._onvoorw._hoofdsom,
-          t1.Kwijtsch._onvoorw._rente,
-          t1.Kwijtsch._direct_opeisbaar,
-          t1.Kwijtsch._voorw._hoofdsom,
-          t1.Kwijtsch.-voorw._rente,
+          t1.'Kwijtsch._onvoorw._hoofdsom'n AS Kwijtsch_onvoorw_hoofdsom,
+          t1.'Kwijtsch._onvoorw._rente'n AS Kwijtsch_onvoorw_rente,
+          t1.'Kwijtsch._direct_opeisbaar'n AS Kwijtsch_direct_opeisbaar,
+          t1.'Kwijtsch._voorw._hoofdsom'n AS Kwijtsch_voorw_hoofdsom,
+          t1.'Kwijtsch.-voorw._rente'n AS Kwijtsch_voorw_rente,
           t1.Totaal_kwijtgescholden_bedrag,
           t1.Totaal_openstaand_bedrag,
           t1.Direct_opeisbaar_gesteld,
           t1.Totaal_uitbetaald,
           t1.Totaal_verleend_bedrag,
-          t1.Uitlening_binnen_Fisc._eenheid,
+          t1.'Uitlening_binnen_Fisc._eenheid'n AS Uitlening_binnen_Fisc_eenheid,
           t1.Uurloon_jaar,
           t1.Vaststellen_batch,
           t1.Vergoedingsperc,
@@ -992,15 +1328,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DOSSIER_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DOSSIER_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DOSSIER_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DOSSIER_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DOSSIER_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_DOSSIERGROEP_TCMG AS
    SELECT t1.Ddg_id,
           t1.Age_id,
           t1.Naam,
@@ -1014,15 +1364,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_DOSSIERGROEP_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_DOSSIERGROEP_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_DOSSIERGROEP_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_DOSSIERGROEP_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_DOSSIERGROEP_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_LOKATIEADRES_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.DLS_id,
@@ -1035,15 +1399,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_LOKATIEADRES_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_LOKATIEADRES_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_LOKATIEADRES_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_LOKATIEADRES_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_LOKATIEADRES_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_MDW_INTERN_HIST_TCMG AS
    SELECT t1.Dos_id,
           t1.Prg_id,
           t1.Mdw_id,
@@ -1061,15 +1439,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_MDW_INTERN_HIST_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_MDW_INTERN_HIST_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_MDW_INTERN_HIST_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_MDW_INTERN_HIST_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_MDW_INTERN_HIST_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_MDW_INTERN_TCMG AS
    SELECT t1.Behandelend,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -1085,15 +1477,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_MDW_INTERN_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_MDW_INTERN_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_MDW_INTERN_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_MDW_INTERN_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_MDW_INTERN_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_STATUSHISTORIE_TCMG AS
    SELECT t1.Commentaar,
           t1.Cor_id_tot,
           t1.Cor_id_van,
@@ -1111,15 +1517,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_STATUSHISTORIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_STATUSHISTORIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_STATUSHISTORIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_STATUSHISTORIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_STATUSHISTORIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_TERMIJN_PARAAF_NOTITIE_T AS
    SELECT t1.Cor_id,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -1132,15 +1552,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_TERMIJN_PARAAF_NOTITIE_T
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_TERMIJN_PARAAF_NOTITIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_TERMIJN_PARAAF_NOTITIE_T()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_TERMIJN_PARAAF_NOTITIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_TERMIJN_PARAAF_NOTITIE_T;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_DAM_TERMIJN_TCMG AS
    SELECT t1.Aanvullende_voorwaarden,
           t1.Actie,
           t1.Actie_dat FORMAT=B8601DT19. AS Actie_dat,
@@ -1167,15 +1601,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_DAM_TERMIJN_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\DAM_TERMIJN_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_DAM_TERMIJN_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_DAM_TERMIJN_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_DAM_TERMIJN_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_FAM_STATUSHISTORIE_TCMG AS
    SELECT t1.Commentaar,
           t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
           t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
@@ -1192,15 +1640,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_FAM_STATUSHISTORIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\FAM_STATUSHISTORIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_FAM_STATUSHISTORIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_FAM_STATUSHISTORIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_FAM_STATUSHISTORIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_FAM_TRANSACTIE_REGEL_TCMG AS
    SELECT t1.Tra_id,
           t1.Rpt_nr,
           t1.Ovk_nr,
@@ -1234,15 +1696,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_FAM_TRANSACTIE_REGEL_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\FAM_TRANSACTIE_REGEL_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_FAM_TRANSACTIE_REGEL_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_FAM_TRANSACTIE_REGEL_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_FAM_TRANSACTIE_REGEL_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_FAM_TRANSACTIE_TCMG AS
    SELECT t1.Volgnummer,
           t1.Tra_id,
           t1.Prg_id,
@@ -1306,15 +1782,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_FAM_TRANSACTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\FAM_TRANSACTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_FAM_TRANSACTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_FAM_TRANSACTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_FAM_TRANSACTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_FAM_VERPLICHTING_TCMG AS
    SELECT t1.Tra_id,
           t1.Reg_id,
           t1.Reg_nr,
@@ -1337,15 +1827,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_FAM_VERPLICHTING_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\FAM_VERPLICHTING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_FAM_VERPLICHTING_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_FAM_VERPLICHTING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_FAM_VERPLICHTING_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_IOM_FUNCTIE_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Fun_cd,
@@ -1356,15 +1860,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_IOM_FUNCTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\IOM_FUNCTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_IOM_FUNCTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_IOM_FUNCTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_IOM_FUNCTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_IOM_LOCATIE_TCMG AS
    SELECT t1.Loc_cd,
           t1.Omschrijving,
           t1.Actief,
@@ -1376,15 +1894,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_IOM_LOCATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\IOM_LOCATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_IOM_LOCATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_IOM_LOCATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_IOM_LOCATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_IOM_MEDEWERKER_TCMG AS
    SELECT t1.Aanspreeknaam,
           t1.Achternaam,
           t1.Actief,
@@ -1429,15 +1961,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_IOM_MEDEWERKER_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\IOM_MEDEWERKER_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_IOM_MEDEWERKER_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_IOM_MEDEWERKER_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_IOM_MEDEWERKER_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_IOM_MEDEWERKERROL_TCMG AS
    SELECT t1.Mdw_id,
           t1.Rol_cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -1450,15 +1996,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_IOM_MEDEWERKERROL_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\IOM_MEDEWERKERROL_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_IOM_MEDEWERKERROL_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_IOM_MEDEWERKERROL_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_IOM_MEDEWERKERROL_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_BEHANDELAAR_TCMG AS
    SELECT t1.Mdw_id,
           t1.Jz_id,
           t1.Rol_cd,
@@ -1471,15 +2031,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_BEHANDELAAR_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_BEHANDELAAR_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_BEHANDELAAR_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_BEHANDELAAR_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_BEHANDELAAR_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_BEROEP_TCMG AS
    SELECT t1.Jz_id,
           t1.Bzr_id,
           t1.Zaaknummer,
@@ -1493,15 +2067,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_BEROEP_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_BEROEP_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_BEROEP_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_BEROEP_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_BEROEP_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_BEZWAAR_TCMG AS
    SELECT t1.Jz_id,
           t1.Belasting_cd,
           t1.Datum_compleet FORMAT=B8601DT19. AS Datum_compleet,
@@ -1534,15 +2122,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_BEZWAAR_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_BEZWAAR_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_BEZWAAR_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_BEZWAAR_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_BEZWAAR_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_BEZWAAR_TERMIJN_HIST_TCM AS
    SELECT t1.Jz_id,
           t1.Vanaf_datum FORMAT=B8601DT19. AS Vanaf_datum,
           t1.Volg_nr,
@@ -1563,15 +2165,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_BEZWAAR_TERMIJN_HIST_TCM
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_BEZWAAR_TERMIJN_HIST_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_BEZWAAR_TERMIJN_HIST_TCM()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_BEZWAAR_TERMIJN_HIST_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_BEZWAAR_TERMIJN_HIST_TCM;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_BOB_WIZARD_TCMG AS
    SELECT t1.Jz_id,
           t1.Verleen_bedrag,
           t1.Betaal_bedrag,
@@ -1621,15 +2237,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_BOB_WIZARD_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_BOB_WIZARD_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_BOB_WIZARD_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_BOB_WIZARD_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_BOB_WIZARD_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_BRIEF_FUNCTIE_TCMG AS
    SELECT t1.Fnc_cd,
           t1.Oms,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -1640,15 +2270,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_BRIEF_FUNCTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_BRIEF_FUNCTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_BRIEF_FUNCTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_BRIEF_FUNCTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_BRIEF_FUNCTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_FUNCTIE_VAN_BRIEF_TCMG AS
    SELECT t1.Fnc_cd,
           t1.Cst_cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -1659,15 +2303,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_FUNCTIE_VAN_BRIEF_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_FUNCTIE_VAN_BRIEF_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_FUNCTIE_VAN_BRIEF_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_FUNCTIE_VAN_BRIEF_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_FUNCTIE_VAN_BRIEF_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_PROCEDURE_TCMG AS
    SELECT t1.Jaar,
           t1.Volgnr,
           t1.Jz_nr,
@@ -1703,15 +2361,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_PROCEDURE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_PROCEDURE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_PROCEDURE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_PROCEDURE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_PROCEDURE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_REACTIE_TERMIJN_TCMG AS
    SELECT t1.Rol_cd,
           t1.Cst_cd,
           t1.Reactie_cd,
@@ -1724,15 +2396,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_REACTIE_TERMIJN_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_REACTIE_TERMIJN_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_REACTIE_TERMIJN_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_REACTIE_TERMIJN_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_REACTIE_TERMIJN_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_STATUSREGEL_TCMG AS
    SELECT t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
           t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
           t1.Jz_id,
@@ -1750,15 +2436,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_STATUSREGEL_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_STATUSREGEL_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_STATUSREGEL_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_STATUSREGEL_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_STATUSREGEL_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_JZM_UITSPRAAK_TCMG AS
    SELECT t1.Uitspraak,
           t1.Creatie_user,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -1768,15 +2468,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_JZM_UITSPRAAK_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\JZM_UITSPRAAK_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_JZM_UITSPRAAK_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_JZM_UITSPRAAK_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_JZM_UITSPRAAK_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_OBJ_LOKATIE_TCMG AS
    SELECT t1.Bik_cd,
           t1.Bik_oms,
           t1.Bouwtype,
@@ -1800,15 +2514,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_OBJ_LOKATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\OBJ_LOKATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_OBJ_LOKATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_OBJ_LOKATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_OBJ_LOKATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_PCT_MUT_TCMG AS
    SELECT t1.Mutatie_srt,
           t1.Mutatie_ind,
           t1.Old_cijfer,
@@ -1847,15 +2575,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_PCT_MUT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\PCT_MUT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_PCT_MUT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_PCT_MUT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_PCT_MUT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_PCT_TCMG AS
    SELECT t1.Cijfer,
           t1.Letter,
           t1.Reeksindicatie,
@@ -1876,15 +2618,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_PCT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\PCT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_PCT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_PCT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_PCT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ADRES_RELATIE_TCMG AS
    SELECT t1.Adressoort,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -1899,15 +2655,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ADRES_RELATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ADRES_RELATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ADRES_RELATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ADRES_RELATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ADRES_RELATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ADRES_TCMG AS
    SELECT t1.Barcode,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.creatie_user,
@@ -1928,15 +2698,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ADRES_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ADRES_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ADRES_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ADRES_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ADRES_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_COM_ADRES_CP_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
@@ -1949,15 +2733,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_COM_ADRES_CP_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_COM_ADRES_CP_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_COM_ADRES_CP_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_COM_ADRES_CP_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_COM_ADRES_CP_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_COM_ADRES_RELATIE_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
@@ -1970,15 +2768,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_COM_ADRES_RELATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_COM_ADRES_RELATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_COM_ADRES_RELATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_COM_ADRES_RELATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_COM_ADRES_RELATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_COM_ADRES_TCMG AS
    SELECT t1.Com_Cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -1991,15 +2803,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_COM_ADRES_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_COM_ADRES_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_COM_ADRES_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_COM_ADRES_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_COM_ADRES_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_CONTACTPERSOON_TCMG AS
    SELECT t1.Afdeling,
           t1.Certhoud_id,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -2018,15 +2844,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_CONTACTPERSOON_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_CONTACTPERSOON_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_CONTACTPERSOON_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_CONTACTPERSOON_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_CONTACTPERSOON_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_CP_VESTIGING_TCMG AS
    SELECT t1.Org_id,
           t1.Per_id,
           t1.Vst_volgnr
@@ -2034,15 +2874,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_CP_VESTIGING_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_CP_VESTIGING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_CP_VESTIGING_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_CP_VESTIGING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_CP_VESTIGING_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ORG_BSI_TCMG AS
    SELECT t1.Rel_id,
           t1.Bsi_cd,
           t1.Volg_nr,
@@ -2056,15 +2910,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ORG_BSI_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ORG_BSI_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ORG_BSI_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ORG_BSI_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ORG_BSI_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ORG_FAILLIET_TCMG AS
    SELECT t1.Kvk_nr,
           t1.Graydon_bedrijfsnr,
           t1.Kvk_dossiernr,
@@ -2085,15 +2953,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ORG_FAILLIET_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ORG_FAILLIET_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ORG_FAILLIET_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ORG_FAILLIET_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ORG_FAILLIET_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ORG_JAAR_TCMG AS
    SELECT t1.Rel_id,
           t1.Jaar,
           t1.Aantal_werknemers,
@@ -2117,15 +2999,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ORG_JAAR_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ORG_JAAR_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ORG_JAAR_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ORG_JAAR_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ORG_JAAR_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ORG_NAAM_TCMG AS
    SELECT t1.Org_id,
           t1.Org_naam,
           t1.Org_naam_type,
@@ -2133,21 +3029,35 @@ PROC SQL;
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Mutatie_user,,
+          t1.'Mutatie_user,'n AS Mutatie_user,
           t1.Kkr_gevalideerd
      FROM DATAQASG.RBM_ORG_NAAM_TCMG t1;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ORG_NAAM_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ORG_NAAM_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ORG_NAAM_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ORG_NAAM_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ORG_NAAM_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_ORG_TCMG AS
    SELECT t1.Bik_Cd,
           t1.Bron_jr,
           t1.BTW_nummer,
@@ -2169,15 +3079,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_ORG_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_ORG_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_ORG_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_ORG_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_ORG_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_PERSOON_TCMG AS
    SELECT t1.Aanhef,
           t1.Aanlevernaam,
           t1.Aanspreeknaam,
@@ -2204,15 +3128,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_PERSOON_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_PERSOON_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_PERSOON_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_PERSOON_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_PERSOON_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_REKENINGNRS_TCMG AS
    SELECT t1.Banknaam,
           t1.Bic,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -2228,15 +3166,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_REKENINGNRS_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_REKENINGNRS_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_REKENINGNRS_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_REKENINGNRS_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_REKENINGNRS_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_REKNR_MUT_TCMG AS
    SELECT t1.Rel_id,
           t1.Volgnummer,
           t1.Org_banknaam,
@@ -2258,15 +3210,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_REKNR_MUT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_REKNR_MUT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_REKNR_MUT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_REKNR_MUT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_REKNR_MUT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_RELATIE_TCMG AS
    SELECT t1.Actief,
           t1.Auth_id,
           t1.Belastingeenheid,
@@ -2288,15 +3254,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_RELATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_RELATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_RELATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_RELATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_RELATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_SBI_ORG_TCMG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Hoofdactiviteit,
@@ -2308,15 +3288,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_SBI_ORG_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_SBI_ORG_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_SBI_ORG_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_SBI_ORG_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_SBI_ORG_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RBM_VESTIGING_TCMG AS
    SELECT t1.Actief,
           t1.Auth_id,
           t1.Bik_cd,
@@ -2340,15 +3334,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RBM_VESTIGING_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RBM_VESTIGING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RBM_VESTIGING_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RBM_VESTIGING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RBM_VESTIGING_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_BUDGETONDERVERDELING_TCM AS
    SELECT t1.Bgt_cd,
           t1.Budget,
           t1.Budget_uitputting,
@@ -2369,15 +3377,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_BUDGETONDERVERDELING_TCM
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_BUDGETONDERVERDELING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_BUDGETONDERVERDELING_TCM()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_BUDGETONDERVERDELING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_BUDGETONDERVERDELING_TCM;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_CLASSIFICATIE_TCMG AS
    SELECT t1.Prg_id,
           t1.Class_cd,
           t1.Class_oms,
@@ -2389,15 +3411,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_CLASSIFICATIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_CLASSIFICATIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_CLASSIFICATIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_CLASSIFICATIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_CLASSIFICATIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_JAARBUDGET_TCMG AS
    SELECT t1.Afgesloten,
           t1.Bgt_cd,
           t1.Budget_uitputting,
@@ -2418,15 +3454,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_JAARBUDGET_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_JAARBUDGET_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_JAARBUDGET_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_JAARBUDGET_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_JAARBUDGET_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_MANDAAT_TCMG AS
    SELECT t1.Mdt_id,
           t1.Middelen_type,
           t1.Mandaat_srt,
@@ -2444,15 +3494,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_MANDAAT_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_MANDAAT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_MANDAAT_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_MANDAAT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_MANDAAT_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_OVEREENKOMST_DOCUMENT_TC AS
    SELECT t1.Ovk_nr,
           t1.Doc_naam,
           t1.Creatie_user,
@@ -2466,15 +3530,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_OVEREENKOMST_DOCUMENT_TC
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_OVEREENKOMST_DOCUMENT_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_OVEREENKOMST_DOCUMENT_TC()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_OVEREENKOMST_DOCUMENT_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_OVEREENKOMST_DOCUMENT_TC;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_PERIODE_TCMG AS
    SELECT t1.Ovk_nr,
           t1.Rpt_nr,
           t1.Bgt_cd,
@@ -2508,15 +3586,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_PERIODE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_PERIODE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_PERIODE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_PERIODE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_PERIODE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_PRG_OVEREENKOMST_TCMG AS
    SELECT t1.Prg_id,
           t1.Ovk_nr,
           t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
@@ -2537,15 +3629,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_PRG_OVEREENKOMST_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_PRG_OVEREENKOMST_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_PRG_OVEREENKOMST_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_PRG_OVEREENKOMST_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_PRG_OVEREENKOMST_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_PROGRAMMAMEDEWERKERROL_T AS
    SELECT t1.Prg_id,
           t1.Mdw_id,
           t1.Auth_mdw_cd,
@@ -2568,15 +3674,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_PROGRAMMAMEDEWERKERROL_T
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_PROGRAMMAMEDEWERKERROL_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_PROGRAMMAMEDEWERKERROL_T()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_PROGRAMMAMEDEWERKERROL_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_PROGRAMMAMEDEWERKERROL_T;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_REGELING_TCMG AS
    SELECT t1.Reg_id,
           t1.Reg_cd,
           t1.Reg_oms,
@@ -2617,15 +3737,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_REGELING_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_REGELING_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_REGELING_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_REGELING_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_REGELING_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_REGPAR_BUDGONDVERD_TCMG AS
    SELECT t1.Ovk_nr,
           t1.Rpt_nr,
           t1.Bgt_cd,
@@ -2647,15 +3781,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_REGPAR_BUDGONDVERD_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_REGPAR_BUDGONDVERD_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_REGPAR_BUDGONDVERD_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_REGPAR_BUDGONDVERD_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_REGPAR_BUDGONDVERD_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_STATUSOVERG_BIJ_BRIEF_TC AS
    SELECT t1.Reg_id,
           t1.Status_van,
           t1.Statusgroep,
@@ -2670,15 +3818,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_STATUSOVERG_BIJ_BRIEF_TC
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_STATUSOVERG_BIJ_BRIEF_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_STATUSOVERG_BIJ_BRIEF_TC()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_STATUSOVERG_BIJ_BRIEF_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_STATUSOVERG_BIJ_BRIEF_TC;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_RDM_VARIABELE_TCMG AS
    SELECT t1.Reg_id,
           t1.Code,
           t1.Begindatum FORMAT=B8601DT19. AS Begindatum,
@@ -2693,15 +3855,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_RDM_VARIABELE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\RDM_VARIABELE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_RDM_VARIABELE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_RDM_VARIABELE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_RDM_VARIABELE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_STM_BSI_TCMG AS
    SELECT t1.Startdatum FORMAT=B8601DT19. AS Startdatum,
           t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
           t1.Bsi_cd,
@@ -2714,15 +3890,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_STM_BSI_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\STM_BSI_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_STM_BSI_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_STM_BSI_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_STM_BSI_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_STM_REACTIE_TCMG AS
    SELECT t1.Reactie_cd,
           t1.Reactie_oms,
           t1.Creatie_user,
@@ -2733,15 +3923,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_STM_REACTIE_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\STM_REACTIE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_STM_REACTIE_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_STM_REACTIE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_STM_REACTIE_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_STM_ROL_TCMG AS
    SELECT t1.Rol_cd,
           t1.Rol_oms,
           t1.Interne_rol,
@@ -2759,15 +3963,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_STM_ROL_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\STM_ROL_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_STM_ROL_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_STM_ROL_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_STM_ROL_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_STM_SBI_TCMG AS
    SELECT t1.Sbi_cd,
           t1.Sbi_oms,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -2778,15 +3996,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_STM_SBI_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\STM_SBI_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_STM_SBI_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_STM_SBI_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_STM_SBI_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_STM_STATUS_TCMG AS
    SELECT t1.Sts_cd,
           t1.Sts_oms,
           t1.Ssg_cd,
@@ -2801,15 +4033,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_STM_STATUS_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\STM_STATUS_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_STM_STATUS_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_STM_STATUS_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_STM_STATUS_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_STM_STATUSOVERG_BIJ_BRIEF_TC AS
    SELECT t1.Van_status,
           t1.Naar_status,
           t1.Ssg_cd,
@@ -2822,15 +4068,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_STM_STATUSOVERG_BIJ_BRIEF_TC
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\STM_STATUSOVERG_BIJ_BRIEF_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_STM_STATUSOVERG_BIJ_BRIEF_TC()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_STM_STATUSOVERG_BIJ_BRIEF_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_STM_STATUSOVERG_BIJ_BRIEF_TC;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_VKM_TOEGEV_VAR_VELD_WAARDE_T AS
    SELECT t1.Vkt_id,
           t1.Fysieke_naam,
           t1.Waarde,
@@ -2839,15 +4099,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_VKM_TOEGEV_VAR_VELD_WAARDE_T
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\VKM_TOEGEV_VAR_VELD_WAARDE_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_VKM_TOEGEV_VAR_VELD_WAARDE_T()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_VKM_TOEGEV_VAR_VELD_WAARDE_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_VKM_TOEGEV_VAR_VELD_WAARDE_T;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_VKM_TOEGEVOEGD_VAR_VELD_TCMG AS
    SELECT t1.Vkt_id,
           t1.Fysieke_naam,
           t1.Datum_start FORMAT=B8601DT19. AS Datum_start,
@@ -2863,15 +4137,29 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_VKM_TOEGEVOEGD_VAR_VELD_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\VKM_TOEGEVOEGD_VAR_VELD_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_VKM_TOEGEVOEGD_VAR_VELD_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_VKM_TOEGEVOEGD_VAR_VELD_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_VKM_TOEGEVOEGD_VAR_VELD_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_VKM_VAR_GEGEVENS_TCMG AS
    SELECT t1.BEDRAG_01,
           t1.BEDRAG_02,
           t1.BEDRAG_03,
@@ -3198,23 +4486,37 @@ PROC SQL;
           t1.VARCHAR_60_39,
           t1.VARCHAR_60_40,
           t1.VGS_ID,
-          t1.VVG.VKM_VAR_GEGEVENS_DOS,
-          t1.VVG.VKM_VAR_GEGEVENS_PRG,
-          t1.VVG.VKT_ID,
-          t1.VVG.DOS_ID
+          t1.'VVG.VKM_VAR_GEGEVENS_DOS'n AS VVG_VKM_VAR_GEGEVENS_DOS,
+          t1.'VVG.VKM_VAR_GEGEVENS_PRG'n AS VVG_VKM_VAR_GEGEVENS_PRG,
+          t1.'VVG.VKT_ID'n AS VVG_VKT_ID,
+          t1.'VVG.DOS_ID'n AS VVG_DOS_ID
      FROM DATAQASG.VKM_VAR_GEGEVENS_TCMG t1;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_VKM_VAR_GEGEVENS_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\VKM_VAR_GEGEVENS_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_VKM_VAR_GEGEVENS_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_VKM_VAR_GEGEVENS_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_VKM_VAR_GEGEVENS_TCMG;
 
 PROC SQL;
-   CREATE TABLE WORK.Hopseflops AS
+   CREATE TABLE WORK.TMP_VKM_VAR_KAART_TCMG AS
    SELECT t1.Vkt_id,
           t1.Kaart_naam,
           t1.Datum_start FORMAT=B8601DT19. AS Datum_start,
@@ -3235,10 +4537,24 @@ PROC SQL;
 QUIT;
 
 proc export
-   data=WORK.Hopseflops
+   data=WORK.TMP_VKM_VAR_KAART_TCMG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\VKM_VAR_KAART_TCMG.csv"
    dbms=csv;
 run;
 
-proc delete DATA=WORK.Hopseflops;
+PROC SURVEYSELECT DATA=WORK.TMP_VKM_VAR_KAART_TCMG()
+   OUT=WORK.RANDRandomSample
+   METHOD=SRS
+   N=25;
+RUN;
+
+proc export
+   data=WORK.RANDRandomSample
+   outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_VKM_VAR_KAART_TCMG.csv"
+   dbms=csv;
+run;
+
+proc delete DATA=WORK.RANDRandomSample;
+
+proc delete DATA=WORK.TMP_VKM_VAR_KAART_TCMG;
 

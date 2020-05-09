@@ -20,18 +20,25 @@ createStatement t =
       , ""
       , "proc export"
       , "   data=WORK."<>tempTableName
-      , "   outfile=\""<>outfile<>"\""
+      , "   outfile=\""<>outfilefull<>"\""
       , "   dbms=csv;"
       , "run;"
       , ""
+      ]
+    <> addSmallSample
+    <>[ ""  
       , "proc delete DATA=WORK."<>tempTableName<>";"
       , ""
       ]
    where
-     tempTableName = "Hopseflops"
-     outfile = "\\\\LNV.INTERN\\GRP\\TCMG\\002 Onderdelen\\34-kluismap MIRA Migratie bestanden"
-               <> "\\SAS\\Output\\PRD\\RuweData\\"
+     tempTableName = T.take 32 $ "TMP_"<>T.pack (tableName t)
+     outDirPRD = "\\\\LNV.INTERN\\GRP\\TCMG\\002 Onderdelen\\34-kluismap MIRA Migratie bestanden\\SAS\\Output\\PRD\\"
+     outfilefull = outDirPRD
+               <> "RuweData\\"
                <> T.pack (tableName t)<>".csv"
+     outfileSample = outDirPRD
+               <> "Samples\\"
+               <> "rnd_"<>T.pack (tableName t)<>".csv"
      cols = "   SELECT "<> (T.intercalate ",\n          " . map mkCol . L.sort . attribs) t
      mkCol :: Attrib -> Text
      mkCol att = 
@@ -39,7 +46,22 @@ createStatement t =
                   then T.pack (attNameNew att)<>dataType att
                   else "'"<>T.pack (attNameOrg att)<>"'n AS "<>T.pack (attNameNew att)
                  ) 
-
+     addSmallSample :: [Text]
+     addSmallSample =
+        [ "PROC SURVEYSELECT DATA=WORK."<>tempTableName<>"()"
+        , "   OUT=WORK.RANDRandomSample"
+        , "   METHOD=SRS"
+        , "   N=25;"
+        , "RUN;"
+        , ""
+        , "proc export"
+        , "   data=WORK.RANDRandomSample"
+        , "   outfile=\""<>outfileSample<>"\""
+        , "   dbms=csv;"
+        , "run;"
+        , ""
+        , "proc delete DATA=WORK.RANDRandomSample;"
+        ]
 dataType :: Attrib -> Text
 dataType att =
     case sasType att of
@@ -53,3 +75,5 @@ dataType att =
              x  ->  "TODO: sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
       2 -> ""
       x -> "TODO. sasType == "<>tshow x
+
+
