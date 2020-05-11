@@ -1,12 +1,26 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-module SQL (makeCreateStatements
+module SQL ( makeCreateStatements
+           , makeLoadScript
            ) where
 
 import Import
 import RIO.Char
 import qualified RIO.List as L
 import qualified RIO.Text as T
+
+makeLoadScript :: [Table] -> [Text]
+makeLoadScript = concatMap loadStatement
+
+loadStatement :: Table -> [Text]
+loadStatement t = 
+-- COPY persons(first_name,last_name,dob,email) 
+-- FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
+      [ "TRUNCATE TABLE "<>T.pack (tableName t)<>";" 
+      , "\\COPY "<>T.pack (tableName t)
+                 <>"("<>T.intercalate ", "(map (T.pack . attNameNew) . L.sort $ attribs t)
+                 <>") FROM 'PAD-NAAR_CSVs"<>T.pack (tableName t)<>".csv' DELIMITER ',' CSV HEADER;"
+      , ""]
 
 makeCreateStatements :: [Table] -> [Text]
 makeCreateStatements = concatMap createStatement
