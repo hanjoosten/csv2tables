@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS AOM_ACTIE_TCMG ;
 CREATE TABLE AOM_ACTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Actie_cd varchar (3),
     Actie_oms varchar (60),
     Creatie_user varchar (30),
@@ -19,6 +20,7 @@ CREATE TABLE AOM_ACTIE_TCMG (
 
 DROP TABLE IF EXISTS AOM_TRA_ACTIE_TCMG ;
 CREATE TABLE AOM_TRA_ACTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Actie_cd varchar (3),
     Bgt_cd varchar (1),
     Creatie_dat timestamp,
@@ -38,6 +40,7 @@ CREATE TABLE AOM_TRA_ACTIE_TCMG (
 
 DROP TABLE IF EXISTS AOM_TRANSACTIETYPE_TCMG ;
 CREATE TABLE AOM_TRANSACTIETYPE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Beleidsadministratie_jn varchar (1),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -63,6 +66,7 @@ CREATE TABLE AOM_TRANSACTIETYPE_TCMG (
 
 DROP TABLE IF EXISTS BTM_BETALING_TCMG ;
 CREATE TABLE BTM_BETALING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rel_id integer,
     Tra_id integer,
     Reg_cd varchar (20),
@@ -130,6 +134,7 @@ CREATE TABLE BTM_BETALING_TCMG (
 
 DROP TABLE IF EXISTS BTM_HIST_BETALING_TCMG ;
 CREATE TABLE BTM_HIST_BETALING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rel_id integer,
     Tra_id integer,
     Reg_cd varchar (20),
@@ -193,6 +198,7 @@ CREATE TABLE BTM_HIST_BETALING_TCMG (
 
 DROP TABLE IF EXISTS COR_BERICHT_TCMG ;
 CREATE TABLE COR_BERICHT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cor_id integer,
     Ed_bericht_id integer,
     Afzender_id integer,
@@ -234,6 +240,7 @@ CREATE TABLE COR_BERICHT_TCMG (
 
 DROP TABLE IF EXISTS COR_COR_PARAAF_TCMG ;
 CREATE TABLE COR_COR_PARAAF_TCMG (
+    techId SERIAL PRIMARY KEY,
     Acc_id integer,
     Acc_rol_cd varchar (3),
     Acc_vaste_paraaf_jn varchar (1),
@@ -293,6 +300,7 @@ CREATE TABLE COR_COR_PARAAF_TCMG (
 
 DROP TABLE IF EXISTS COR_COR_SRT_TCMG ;
 CREATE TABLE COR_COR_SRT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cst_cd varchar (8),
     Cst_oms varchar (60),
     Cst_template varchar (100),
@@ -342,6 +350,7 @@ CREATE TABLE COR_COR_SRT_TCMG (
 
 DROP TABLE IF EXISTS COR_CORRESPONDENTIE_HIST_TCMG ;
 CREATE TABLE COR_CORRESPONDENTIE_HIST_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cor_id integer,
     Volg_nr integer,
     Correctie_code varchar (5),
@@ -363,6 +372,7 @@ CREATE TABLE COR_CORRESPONDENTIE_HIST_TCMG (
 
 DROP TABLE IF EXISTS COR_CORRESPONDENTIE_TCMG ;
 CREATE TABLE COR_CORRESPONDENTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Actie_datum timestamp,
     Afgedrukt_JN varchar (1),
     Afgehandeld varchar (1),
@@ -494,6 +504,7 @@ CREATE TABLE COR_CORRESPONDENTIE_TCMG (
 
 DROP TABLE IF EXISTS COR_CST_SET_CST_TCMG ;
 CREATE TABLE COR_CST_SET_CST_TCMG (
+    techId SERIAL PRIMARY KEY,
     Reg_id integer,
     Cst_cd varchar (8),
     Cst_cd_2 varchar (8),
@@ -519,6 +530,7 @@ CREATE TABLE COR_CST_SET_CST_TCMG (
 
 DROP TABLE IF EXISTS COR_PARAAF_TCMG ;
 CREATE TABLE COR_PARAAF_TCMG (
+    techId SERIAL PRIMARY KEY,
     Reg_id integer,
     Cst_cd varchar (8),
     Type_paraaf varchar (1),
@@ -540,6 +552,7 @@ CREATE TABLE COR_PARAAF_TCMG (
 
 DROP TABLE IF EXISTS COR_REACTIE_BIJ_COR_SRT_TCMG ;
 CREATE TABLE COR_REACTIE_BIJ_COR_SRT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cluster_nr integer,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -577,6 +590,7 @@ CREATE TABLE COR_REACTIE_BIJ_COR_SRT_TCMG (
 
 DROP TABLE IF EXISTS COR_REGLSPEC_COR_TCMG ;
 CREATE TABLE COR_REGLSPEC_COR_TCMG (
+    techId SERIAL PRIMARY KEY,
     Bos_bezorging varchar (1),
     Crea_back varchar (1),
     Create_merge_jn varchar (1),
@@ -622,6 +636,7 @@ CREATE TABLE COR_REGLSPEC_COR_TCMG (
 
 DROP TABLE IF EXISTS COR_TRANSACTIEGROEP_BIJ_BRF_TCMG ;
 CREATE TABLE COR_TRANSACTIEGROEP_BIJ_BRF_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cor_id integer,
     Tra_id integer,
     Dos_id integer,
@@ -641,6 +656,7 @@ CREATE TABLE COR_TRANSACTIEGROEP_BIJ_BRF_TCMG (
 
 DROP TABLE IF EXISTS DAM_CONT_BIJ_DLN_COM_ADR_TCMG ;
 CREATE TABLE DAM_CONT_BIJ_DLN_COM_ADR_TCMG (
+    techId SERIAL PRIMARY KEY,
     creatie_dat timestamp,
     Creatie_user varchar (30),
     Dcs_id integer,
@@ -672,6 +688,7 @@ CREATE TABLE DAM_CONT_BIJ_DLN_COM_ADR_TCMG (
 
 DROP TABLE IF EXISTS DAM_CONTACT_BIJ_DEELNAME_TCMG ;
 CREATE TABLE DAM_CONTACT_BIJ_DEELNAME_TCMG (
+    techId SERIAL PRIMARY KEY,
     Certhoud_id integer,
     Correspondent varchar (1),
     Creatie_dat timestamp,
@@ -703,6 +720,7 @@ CREATE TABLE DAM_CONTACT_BIJ_DEELNAME_TCMG (
 
 DROP TABLE IF EXISTS DAM_DECLARATIE_TCMG ;
 CREATE TABLE DAM_DECLARATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Adviesaangevraagd integer,
     Adviesaantaluren integer,
     Advieshandtoegekend integer,
@@ -882,6 +900,7 @@ CREATE TABLE DAM_DECLARATIE_TCMG (
 
 DROP TABLE IF EXISTS DAM_DEELNAME_ADRES_TCMG ;
 CREATE TABLE DAM_DEELNAME_ADRES_TCMG (
+    techId SERIAL PRIMARY KEY,
     Adressoort varchar (3),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -913,6 +932,7 @@ CREATE TABLE DAM_DEELNAME_ADRES_TCMG (
 
 DROP TABLE IF EXISTS DAM_DEELNAME_COM_ADRES_TCMG ;
 CREATE TABLE DAM_DEELNAME_COM_ADRES_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Dda_id integer,
@@ -940,6 +960,7 @@ CREATE TABLE DAM_DEELNAME_COM_ADRES_TCMG (
 
 DROP TABLE IF EXISTS DAM_DEELNAME_TCMG ;
 CREATE TABLE DAM_DEELNAME_TCMG (
+    techId SERIAL PRIMARY KEY,
     Afwijking_cd varchar (6),
     Bic varchar (11),
     Bic_cd varchar (8),
@@ -1025,6 +1046,7 @@ CREATE TABLE DAM_DEELNAME_TCMG (
 
 DROP TABLE IF EXISTS DAM_DOS_BUDGETREGEL_TCMG ;
 CREATE TABLE DAM_DOS_BUDGETREGEL_TCMG (
+    techId SERIAL PRIMARY KEY,
     Dos_id integer,
     Tra_id integer,
     Volgnummer integer,
@@ -1094,6 +1116,7 @@ CREATE TABLE DAM_DOS_BUDGETREGEL_TCMG (
 
 DROP TABLE IF EXISTS DAM_DOSSIER_IN_GROEP_TCMG ;
 CREATE TABLE DAM_DOSSIER_IN_GROEP_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Ddg_id integer,
@@ -1113,6 +1136,7 @@ CREATE TABLE DAM_DOSSIER_IN_GROEP_TCMG (
 
 DROP TABLE IF EXISTS DAM_DOSSIER_NOTITIE_TCMG ;
 CREATE TABLE DAM_DOSSIER_NOTITIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Afgehandeld varchar (1),
     Bezoeknr integer,
     Cor_id_no integer,
@@ -1140,6 +1164,7 @@ CREATE TABLE DAM_DOSSIER_NOTITIE_TCMG (
 
 DROP TABLE IF EXISTS DAM_DOSSIER_TCMG ;
 CREATE TABLE DAM_DOSSIER_TCMG (
+    techId SERIAL PRIMARY KEY,
     Aangevraagd_bedrag integer,
     Aantal_dagenopschorting integer,
     Aantal_ICT_projecten integer,
@@ -1477,6 +1502,7 @@ CREATE TABLE DAM_DOSSIER_TCMG (
 
 DROP TABLE IF EXISTS DAM_DOSSIERGROEP_TCMG ;
 CREATE TABLE DAM_DOSSIERGROEP_TCMG (
+    techId SERIAL PRIMARY KEY,
     Ddg_id integer,
     Age_id integer,
     Naam varchar (30),
@@ -1500,6 +1526,7 @@ CREATE TABLE DAM_DOSSIERGROEP_TCMG (
 
 DROP TABLE IF EXISTS DAM_LOKATIEADRES_TCMG ;
 CREATE TABLE DAM_LOKATIEADRES_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     DLS_id integer,
@@ -1521,6 +1548,7 @@ CREATE TABLE DAM_LOKATIEADRES_TCMG (
 
 DROP TABLE IF EXISTS DAM_MDW_INTERN_HIST_TCMG ;
 CREATE TABLE DAM_MDW_INTERN_HIST_TCMG (
+    techId SERIAL PRIMARY KEY,
     Dos_id integer,
     Prg_id integer,
     Mdw_id integer,
@@ -1552,6 +1580,7 @@ CREATE TABLE DAM_MDW_INTERN_HIST_TCMG (
 
 DROP TABLE IF EXISTS DAM_MDW_INTERN_TCMG ;
 CREATE TABLE DAM_MDW_INTERN_TCMG (
+    techId SERIAL PRIMARY KEY,
     Behandelend varchar (1),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -1579,6 +1608,7 @@ CREATE TABLE DAM_MDW_INTERN_TCMG (
 
 DROP TABLE IF EXISTS DAM_STATUSHISTORIE_TCMG ;
 CREATE TABLE DAM_STATUSHISTORIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Commentaar varchar (2048),
     Cor_id_tot integer,
     Cor_id_van integer,
@@ -1610,6 +1640,7 @@ CREATE TABLE DAM_STATUSHISTORIE_TCMG (
 
 DROP TABLE IF EXISTS DAM_TERMIJN_PARAAF_NOTITIE_TCMG ;
 CREATE TABLE DAM_TERMIJN_PARAAF_NOTITIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cor_id integer,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -1631,6 +1662,7 @@ CREATE TABLE DAM_TERMIJN_PARAAF_NOTITIE_TCMG (
 
 DROP TABLE IF EXISTS DAM_TERMIJN_TCMG ;
 CREATE TABLE DAM_TERMIJN_TCMG (
+    techId SERIAL PRIMARY KEY,
     Aanvullende_voorwaarden varchar (1),
     Actie varchar (2048),
     Actie_dat timestamp,
@@ -1680,6 +1712,7 @@ CREATE TABLE DAM_TERMIJN_TCMG (
 
 DROP TABLE IF EXISTS FAM_STATUSHISTORIE_TCMG ;
 CREATE TABLE FAM_STATUSHISTORIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Commentaar varchar (2048),
     Datum_van timestamp,
     Datum_tot timestamp,
@@ -1709,6 +1742,7 @@ CREATE TABLE FAM_STATUSHISTORIE_TCMG (
 
 DROP TABLE IF EXISTS FAM_TRANSACTIE_REGEL_TCMG ;
 CREATE TABLE FAM_TRANSACTIE_REGEL_TCMG (
+    techId SERIAL PRIMARY KEY,
     Tra_id integer,
     Rpt_nr integer,
     Ovk_nr varchar (20),
@@ -1772,6 +1806,7 @@ CREATE TABLE FAM_TRANSACTIE_REGEL_TCMG (
 
 DROP TABLE IF EXISTS FAM_TRANSACTIE_TCMG ;
 CREATE TABLE FAM_TRANSACTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Volgnummer integer,
     Tra_id integer,
     Prg_id integer,
@@ -1895,6 +1930,7 @@ CREATE TABLE FAM_TRANSACTIE_TCMG (
 
 DROP TABLE IF EXISTS FAM_VERPLICHTING_TCMG ;
 CREATE TABLE FAM_VERPLICHTING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Tra_id integer,
     Reg_id integer,
     Reg_nr integer,
@@ -1936,6 +1972,7 @@ CREATE TABLE FAM_VERPLICHTING_TCMG (
 
 DROP TABLE IF EXISTS IOM_FUNCTIE_TCMG ;
 CREATE TABLE IOM_FUNCTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Fun_cd varchar (7),
@@ -1953,6 +1990,7 @@ CREATE TABLE IOM_FUNCTIE_TCMG (
 
 DROP TABLE IF EXISTS IOM_LOCATIE_TCMG ;
 CREATE TABLE IOM_LOCATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Loc_cd varchar (2),
     Omschrijving varchar (34),
     Actief varchar (1),
@@ -1972,6 +2010,7 @@ CREATE TABLE IOM_LOCATIE_TCMG (
 
 DROP TABLE IF EXISTS IOM_MEDEWERKER_TCMG ;
 CREATE TABLE IOM_MEDEWERKER_TCMG (
+    techId SERIAL PRIMARY KEY,
     Aanspreeknaam varchar (50),
     Achternaam varchar (25),
     Actief varchar (1),
@@ -2057,6 +2096,7 @@ CREATE TABLE IOM_MEDEWERKER_TCMG (
 
 DROP TABLE IF EXISTS IOM_MEDEWERKERROL_TCMG ;
 CREATE TABLE IOM_MEDEWERKERROL_TCMG (
+    techId SERIAL PRIMARY KEY,
     Mdw_id integer,
     Rol_cd varchar (3),
     Creatie_dat timestamp,
@@ -2078,6 +2118,7 @@ CREATE TABLE IOM_MEDEWERKERROL_TCMG (
 
 DROP TABLE IF EXISTS JZM_BEHANDELAAR_TCMG ;
 CREATE TABLE JZM_BEHANDELAAR_TCMG (
+    techId SERIAL PRIMARY KEY,
     Mdw_id integer,
     Jz_id integer,
     Rol_cd varchar (3),
@@ -2099,6 +2140,7 @@ CREATE TABLE JZM_BEHANDELAAR_TCMG (
 
 DROP TABLE IF EXISTS JZM_BEROEP_TCMG ;
 CREATE TABLE JZM_BEROEP_TCMG (
+    techId SERIAL PRIMARY KEY,
     Jz_id integer,
     Bzr_id integer,
     Zaaknummer varchar (30),
@@ -2122,6 +2164,7 @@ CREATE TABLE JZM_BEROEP_TCMG (
 
 DROP TABLE IF EXISTS JZM_BEZWAAR_TCMG ;
 CREATE TABLE JZM_BEZWAAR_TCMG (
+    techId SERIAL PRIMARY KEY,
     Jz_id integer,
     Belasting_cd varchar (35),
     Datum_compleet timestamp,
@@ -2183,6 +2226,7 @@ CREATE TABLE JZM_BEZWAAR_TCMG (
 
 DROP TABLE IF EXISTS JZM_BEZWAAR_TERMIJN_HIST_TCMG ;
 CREATE TABLE JZM_BEZWAAR_TERMIJN_HIST_TCMG (
+    techId SERIAL PRIMARY KEY,
     Jz_id integer,
     Vanaf_datum timestamp,
     Volg_nr integer,
@@ -2220,6 +2264,7 @@ CREATE TABLE JZM_BEZWAAR_TERMIJN_HIST_TCMG (
 
 DROP TABLE IF EXISTS JZM_BOB_WIZARD_TCMG ;
 CREATE TABLE JZM_BOB_WIZARD_TCMG (
+    techId SERIAL PRIMARY KEY,
     Jz_id integer,
     Verleen_bedrag integer,
     Betaal_bedrag integer,
@@ -2315,6 +2360,7 @@ CREATE TABLE JZM_BOB_WIZARD_TCMG (
 
 DROP TABLE IF EXISTS JZM_BRIEF_FUNCTIE_TCMG ;
 CREATE TABLE JZM_BRIEF_FUNCTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Fnc_cd varchar (3),
     Oms varchar (64),
     Creatie_dat timestamp,
@@ -2332,6 +2378,7 @@ CREATE TABLE JZM_BRIEF_FUNCTIE_TCMG (
 
 DROP TABLE IF EXISTS JZM_FUNCTIE_VAN_BRIEF_TCMG ;
 CREATE TABLE JZM_FUNCTIE_VAN_BRIEF_TCMG (
+    techId SERIAL PRIMARY KEY,
     Fnc_cd varchar (3),
     Cst_cd varchar (8),
     Creatie_dat timestamp,
@@ -2349,6 +2396,7 @@ CREATE TABLE JZM_FUNCTIE_VAN_BRIEF_TCMG (
 
 DROP TABLE IF EXISTS JZM_PROCEDURE_TCMG ;
 CREATE TABLE JZM_PROCEDURE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Jaar integer,
     Volgnr integer,
     Jz_nr varchar (6),
@@ -2416,6 +2464,7 @@ CREATE TABLE JZM_PROCEDURE_TCMG (
 
 DROP TABLE IF EXISTS JZM_REACTIE_TERMIJN_TCMG ;
 CREATE TABLE JZM_REACTIE_TERMIJN_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rol_cd varchar (3),
     Cst_cd varchar (8),
     Reactie_cd varchar (3),
@@ -2437,6 +2486,7 @@ CREATE TABLE JZM_REACTIE_TERMIJN_TCMG (
 
 DROP TABLE IF EXISTS JZM_STATUSREGEL_TCMG ;
 CREATE TABLE JZM_STATUSREGEL_TCMG (
+    techId SERIAL PRIMARY KEY,
     Datum_van timestamp,
     Datum_tot timestamp,
     Jz_id integer,
@@ -2468,6 +2518,7 @@ CREATE TABLE JZM_STATUSREGEL_TCMG (
 
 DROP TABLE IF EXISTS JZM_UITSPRAAK_TCMG ;
 CREATE TABLE JZM_UITSPRAAK_TCMG (
+    techId SERIAL PRIMARY KEY,
     Uitspraak varchar (25),
     Creatie_user varchar (30),
     Creatie_dat timestamp,
@@ -2483,6 +2534,7 @@ CREATE TABLE JZM_UITSPRAAK_TCMG (
 
 DROP TABLE IF EXISTS OBJ_LOKATIE_TCMG ;
 CREATE TABLE OBJ_LOKATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Bik_cd varchar (9),
     Bik_oms varchar (200),
     Bouwtype varchar (1),
@@ -2526,6 +2578,7 @@ CREATE TABLE OBJ_LOKATIE_TCMG (
 
 DROP TABLE IF EXISTS PCT_MUT_TCMG ;
 CREATE TABLE PCT_MUT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Mutatie_srt varchar (1),
     Mutatie_ind varchar (16),
     Old_cijfer varchar (4),
@@ -2599,6 +2652,7 @@ CREATE TABLE PCT_MUT_TCMG (
 
 DROP TABLE IF EXISTS PCT_TCMG ;
 CREATE TABLE PCT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Cijfer varchar (4),
     Letter varchar (2),
     Reeksindicatie varchar (1),
@@ -2636,6 +2690,7 @@ CREATE TABLE PCT_TCMG (
 
 DROP TABLE IF EXISTS RBM_ADRES_RELATIE_TCMG ;
 CREATE TABLE RBM_ADRES_RELATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Adressoort varchar (3),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -2661,6 +2716,7 @@ CREATE TABLE RBM_ADRES_RELATIE_TCMG (
 
 DROP TABLE IF EXISTS RBM_ADRES_TCMG ;
 CREATE TABLE RBM_ADRES_TCMG (
+    techId SERIAL PRIMARY KEY,
     Barcode varchar (25),
     Creatie_dat timestamp,
     creatie_user varchar (30),
@@ -2698,6 +2754,7 @@ CREATE TABLE RBM_ADRES_TCMG (
 
 DROP TABLE IF EXISTS RBM_COM_ADRES_CP_TCMG ;
 CREATE TABLE RBM_COM_ADRES_CP_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     creatie_user varchar (30),
     Mutatie_dat timestamp,
@@ -2719,6 +2776,7 @@ CREATE TABLE RBM_COM_ADRES_CP_TCMG (
 
 DROP TABLE IF EXISTS RBM_COM_ADRES_RELATIE_TCMG ;
 CREATE TABLE RBM_COM_ADRES_RELATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Mutatie_dat timestamp,
@@ -2740,6 +2798,7 @@ CREATE TABLE RBM_COM_ADRES_RELATIE_TCMG (
 
 DROP TABLE IF EXISTS RBM_COM_ADRES_TCMG ;
 CREATE TABLE RBM_COM_ADRES_TCMG (
+    techId SERIAL PRIMARY KEY,
     Com_Cd varchar (6),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -2761,6 +2820,7 @@ CREATE TABLE RBM_COM_ADRES_TCMG (
 
 DROP TABLE IF EXISTS RBM_CONTACTPERSOON_TCMG ;
 CREATE TABLE RBM_CONTACTPERSOON_TCMG (
+    techId SERIAL PRIMARY KEY,
     Afdeling varchar (60),
     Certhoud_id integer,
     Creatie_dat timestamp,
@@ -2794,6 +2854,7 @@ CREATE TABLE RBM_CONTACTPERSOON_TCMG (
 
 DROP TABLE IF EXISTS RBM_CP_VESTIGING_TCMG ;
 CREATE TABLE RBM_CP_VESTIGING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Org_id integer,
     Per_id integer,
     Vst_volgnr integer
@@ -2805,6 +2866,7 @@ CREATE TABLE RBM_CP_VESTIGING_TCMG (
 
 DROP TABLE IF EXISTS RBM_ORG_BSI_TCMG ;
 CREATE TABLE RBM_ORG_BSI_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rel_id integer,
     Bsi_cd varchar (7),
     Volg_nr integer,
@@ -2828,6 +2890,7 @@ CREATE TABLE RBM_ORG_BSI_TCMG (
 
 DROP TABLE IF EXISTS RBM_ORG_FAILLIET_TCMG ;
 CREATE TABLE RBM_ORG_FAILLIET_TCMG (
+    techId SERIAL PRIMARY KEY,
     Kvk_nr varchar (12),
     Graydon_bedrijfsnr integer,
     Kvk_dossiernr integer,
@@ -2865,6 +2928,7 @@ CREATE TABLE RBM_ORG_FAILLIET_TCMG (
 
 DROP TABLE IF EXISTS RBM_ORG_JAAR_TCMG ;
 CREATE TABLE RBM_ORG_JAAR_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rel_id integer,
     Jaar integer,
     Aantal_werknemers integer,
@@ -2908,6 +2972,7 @@ CREATE TABLE RBM_ORG_JAAR_TCMG (
 
 DROP TABLE IF EXISTS RBM_ORG_NAAM_TCMG ;
 CREATE TABLE RBM_ORG_NAAM_TCMG (
+    techId SERIAL PRIMARY KEY,
     Org_id integer,
     Org_naam varchar (625),
     Org_naam_type varchar (1),
@@ -2931,6 +2996,7 @@ CREATE TABLE RBM_ORG_NAAM_TCMG (
 
 DROP TABLE IF EXISTS RBM_ORG_TCMG ;
 CREATE TABLE RBM_ORG_TCMG (
+    techId SERIAL PRIMARY KEY,
     Bik_Cd varchar (9),
     Bron_jr varchar (1),
     BTW_nummer varchar (30),
@@ -2970,6 +3036,7 @@ CREATE TABLE RBM_ORG_TCMG (
 
 DROP TABLE IF EXISTS RBM_PERSOON_TCMG ;
 CREATE TABLE RBM_PERSOON_TCMG (
+    techId SERIAL PRIMARY KEY,
     Aanhef varchar (10),
     Aanlevernaam varchar (625),
     Aanspreeknaam varchar (625),
@@ -3019,6 +3086,7 @@ CREATE TABLE RBM_PERSOON_TCMG (
 
 DROP TABLE IF EXISTS RBM_REKENINGNRS_TCMG ;
 CREATE TABLE RBM_REKENINGNRS_TCMG (
+    techId SERIAL PRIMARY KEY,
     Banknaam varchar (50),
     Bic varchar (11),
     Creatie_dat timestamp,
@@ -3046,6 +3114,7 @@ CREATE TABLE RBM_REKENINGNRS_TCMG (
 
 DROP TABLE IF EXISTS RBM_REKNR_MUT_TCMG ;
 CREATE TABLE RBM_REKNR_MUT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rel_id integer,
     Volgnummer integer,
     Org_banknaam varchar (30),
@@ -3085,6 +3154,7 @@ CREATE TABLE RBM_REKNR_MUT_TCMG (
 
 DROP TABLE IF EXISTS RBM_RELATIE_TCMG ;
 CREATE TABLE RBM_RELATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Actief varchar (1),
     Auth_id integer,
     Belastingeenheid integer,
@@ -3124,6 +3194,7 @@ CREATE TABLE RBM_RELATIE_TCMG (
 
 DROP TABLE IF EXISTS RBM_SBI_ORG_TCMG ;
 CREATE TABLE RBM_SBI_ORG_TCMG (
+    techId SERIAL PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Hoofdactiviteit varchar (1),
@@ -3143,6 +3214,7 @@ CREATE TABLE RBM_SBI_ORG_TCMG (
 
 DROP TABLE IF EXISTS RBM_VESTIGING_TCMG ;
 CREATE TABLE RBM_VESTIGING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Actief varchar (1),
     Auth_id integer,
     Bik_cd varchar (9),
@@ -3186,6 +3258,7 @@ CREATE TABLE RBM_VESTIGING_TCMG (
 
 DROP TABLE IF EXISTS RDM_BUDGETONDERVERDELING_TCMG ;
 CREATE TABLE RDM_BUDGETONDERVERDELING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Bgt_cd varchar (1),
     Budget integer,
     Budget_uitputting integer,
@@ -3223,6 +3296,7 @@ CREATE TABLE RDM_BUDGETONDERVERDELING_TCMG (
 
 DROP TABLE IF EXISTS RDM_CLASSIFICATIE_TCMG ;
 CREATE TABLE RDM_CLASSIFICATIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Prg_id integer,
     Class_cd varchar (10),
     Class_oms varchar (100),
@@ -3242,6 +3316,7 @@ CREATE TABLE RDM_CLASSIFICATIE_TCMG (
 
 DROP TABLE IF EXISTS RDM_JAARBUDGET_TCMG ;
 CREATE TABLE RDM_JAARBUDGET_TCMG (
+    techId SERIAL PRIMARY KEY,
     Afgesloten varchar (1),
     Bgt_cd varchar (1),
     Budget_uitputting integer,
@@ -3279,6 +3354,7 @@ CREATE TABLE RDM_JAARBUDGET_TCMG (
 
 DROP TABLE IF EXISTS RDM_MANDAAT_TCMG ;
 CREATE TABLE RDM_MANDAAT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Mdt_id integer,
     Middelen_type varchar (2),
     Mandaat_srt varchar (2),
@@ -3310,6 +3386,7 @@ CREATE TABLE RDM_MANDAAT_TCMG (
 
 DROP TABLE IF EXISTS RDM_OVEREENKOMST_DOCUMENT_TCMG ;
 CREATE TABLE RDM_OVEREENKOMST_DOCUMENT_TCMG (
+    techId SERIAL PRIMARY KEY,
     Ovk_nr varchar (20),
     Doc_naam varchar (255),
     Creatie_user varchar (30),
@@ -3333,6 +3410,7 @@ CREATE TABLE RDM_OVEREENKOMST_DOCUMENT_TCMG (
 
 DROP TABLE IF EXISTS RDM_PERIODE_TCMG ;
 CREATE TABLE RDM_PERIODE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Ovk_nr varchar (20),
     Rpt_nr integer,
     Bgt_cd varchar (1),
@@ -3396,6 +3474,7 @@ CREATE TABLE RDM_PERIODE_TCMG (
 
 DROP TABLE IF EXISTS RDM_PRG_OVEREENKOMST_TCMG ;
 CREATE TABLE RDM_PRG_OVEREENKOMST_TCMG (
+    techId SERIAL PRIMARY KEY,
     Prg_id integer,
     Ovk_nr varchar (20),
     Datum_van timestamp,
@@ -3433,6 +3512,7 @@ CREATE TABLE RDM_PRG_OVEREENKOMST_TCMG (
 
 DROP TABLE IF EXISTS RDM_PROGRAMMAMEDEWERKERROL_TCMG ;
 CREATE TABLE RDM_PROGRAMMAMEDEWERKERROL_TCMG (
+    techId SERIAL PRIMARY KEY,
     Prg_id integer,
     Mdw_id integer,
     Auth_mdw_cd varchar (30),
@@ -3474,6 +3554,7 @@ CREATE TABLE RDM_PROGRAMMAMEDEWERKERROL_TCMG (
 
 DROP TABLE IF EXISTS RDM_REGELING_TCMG ;
 CREATE TABLE RDM_REGELING_TCMG (
+    techId SERIAL PRIMARY KEY,
     Reg_id integer,
     Reg_cd varchar (20),
     Reg_oms varchar (120),
@@ -3551,6 +3632,7 @@ CREATE TABLE RDM_REGELING_TCMG (
 
 DROP TABLE IF EXISTS RDM_REGPAR_BUDGONDVERD_TCMG ;
 CREATE TABLE RDM_REGPAR_BUDGONDVERD_TCMG (
+    techId SERIAL PRIMARY KEY,
     Ovk_nr varchar (20),
     Rpt_nr integer,
     Bgt_cd varchar (1),
@@ -3590,6 +3672,7 @@ CREATE TABLE RDM_REGPAR_BUDGONDVERD_TCMG (
 
 DROP TABLE IF EXISTS RDM_STATUSOVERG_BIJ_BRIEF_TCMG ;
 CREATE TABLE RDM_STATUSOVERG_BIJ_BRIEF_TCMG (
+    techId SERIAL PRIMARY KEY,
     Reg_id integer,
     Status_van varchar (3),
     Statusgroep varchar (1),
@@ -3615,6 +3698,7 @@ CREATE TABLE RDM_STATUSOVERG_BIJ_BRIEF_TCMG (
 
 DROP TABLE IF EXISTS RDM_VARIABELE_TCMG ;
 CREATE TABLE RDM_VARIABELE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Reg_id integer,
     Code varchar (50),
     Begindatum timestamp,
@@ -3640,6 +3724,7 @@ CREATE TABLE RDM_VARIABELE_TCMG (
 
 DROP TABLE IF EXISTS STM_BSI_TCMG ;
 CREATE TABLE STM_BSI_TCMG (
+    techId SERIAL PRIMARY KEY,
     Startdatum timestamp,
     Einddatum timestamp,
     Bsi_cd varchar (7),
@@ -3661,6 +3746,7 @@ CREATE TABLE STM_BSI_TCMG (
 
 DROP TABLE IF EXISTS STM_REACTIE_TCMG ;
 CREATE TABLE STM_REACTIE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Reactie_cd varchar (3),
     Reactie_oms varchar (60),
     Creatie_user varchar (30),
@@ -3678,6 +3764,7 @@ CREATE TABLE STM_REACTIE_TCMG (
 
 DROP TABLE IF EXISTS STM_ROL_TCMG ;
 CREATE TABLE STM_ROL_TCMG (
+    techId SERIAL PRIMARY KEY,
     Rol_cd varchar (3),
     Rol_oms varchar (50),
     Interne_rol varchar (1),
@@ -3709,6 +3796,7 @@ CREATE TABLE STM_ROL_TCMG (
 
 DROP TABLE IF EXISTS STM_SBI_TCMG ;
 CREATE TABLE STM_SBI_TCMG (
+    techId SERIAL PRIMARY KEY,
     Sbi_cd integer,
     Sbi_oms varchar (500),
     Creatie_dat timestamp,
@@ -3726,6 +3814,7 @@ CREATE TABLE STM_SBI_TCMG (
 
 DROP TABLE IF EXISTS STM_STATUS_TCMG ;
 CREATE TABLE STM_STATUS_TCMG (
+    techId SERIAL PRIMARY KEY,
     Sts_cd varchar (3),
     Sts_oms varchar (50),
     Ssg_cd varchar (1),
@@ -3751,6 +3840,7 @@ CREATE TABLE STM_STATUS_TCMG (
 
 DROP TABLE IF EXISTS STM_STATUSOVERG_BIJ_BRIEF_TCMG ;
 CREATE TABLE STM_STATUSOVERG_BIJ_BRIEF_TCMG (
+    techId SERIAL PRIMARY KEY,
     Van_status varchar (3),
     Naar_status varchar (3),
     Ssg_cd varchar (1),
@@ -3772,6 +3862,7 @@ CREATE TABLE STM_STATUSOVERG_BIJ_BRIEF_TCMG (
 
 DROP TABLE IF EXISTS VKM_TOEGEV_VAR_VELD_WAARDE_TCMG ;
 CREATE TABLE VKM_TOEGEV_VAR_VELD_WAARDE_TCMG (
+    techId SERIAL PRIMARY KEY,
     Vkt_id integer,
     Fysieke_naam varchar (30),
     Waarde varchar (60),
@@ -3785,6 +3876,7 @@ CREATE TABLE VKM_TOEGEV_VAR_VELD_WAARDE_TCMG (
 
 DROP TABLE IF EXISTS VKM_TOEGEVOEGD_VAR_VELD_TCMG ;
 CREATE TABLE VKM_TOEGEVOEGD_VAR_VELD_TCMG (
+    techId SERIAL PRIMARY KEY,
     Vkt_id integer,
     Fysieke_naam varchar (30),
     Datum_start timestamp,
@@ -3812,6 +3904,7 @@ CREATE TABLE VKM_TOEGEVOEGD_VAR_VELD_TCMG (
 
 DROP TABLE IF EXISTS VKM_VAR_GEGEVENS_TCMG ;
 CREATE TABLE VKM_VAR_GEGEVENS_TCMG (
+    techId SERIAL PRIMARY KEY,
     BEDRAG_01 integer,
     BEDRAG_02 integer,
     BEDRAG_03 integer,
@@ -4477,6 +4570,7 @@ CREATE TABLE VKM_VAR_GEGEVENS_TCMG (
 
 DROP TABLE IF EXISTS VKM_VAR_KAART_TCMG ;
 CREATE TABLE VKM_VAR_KAART_TCMG (
+    techId SERIAL PRIMARY KEY,
     Vkt_id integer,
     Kaart_naam varchar (30),
     Datum_start timestamp,

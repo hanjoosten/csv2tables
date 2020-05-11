@@ -1,6 +1,7 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-module SQL (makeCreateStatements) where
+module SQL (makeCreateStatements
+           ) where
 
 import Import
 import RIO.Char
@@ -13,7 +14,8 @@ makeCreateStatements = concatMap createStatement
 createStatement :: Table -> [Text]
 createStatement t = 
       [ "DROP TABLE IF EXISTS "<> T.pack (tableName t)<>" ;"
-      , "CREATE TABLE "<>T.pack (tableName t)<>" (" ]
+      , "CREATE TABLE "<>T.pack (tableName t)<>" (" 
+      , "    techId SERIAL PRIMARY KEY,"]
    <> T.lines cols
    <> [ ");"
       , ""
