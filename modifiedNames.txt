@@ -1,0 +1,17 @@
+COR_CORRESPONDENTIE_TCMG.n,aam_organisatie  -->  COR_CORRESPONDENTIE_TCMG.naam_organisatie
+DAM_DOSSIER_TCMG.Afgelost_op_onvoorw._hoofdsom  -->  DAM_DOSSIER_TCMG.Afgelost_op_onvoorw_hoofdsom
+DAM_DOSSIER_TCMG.Afgelost_op_onvoorw._rente  -->  DAM_DOSSIER_TCMG.Afgelost_op_onvoorw_rente
+DAM_DOSSIER_TCMG.Kwijtsch.-voorw._rente  -->  DAM_DOSSIER_TCMG.Kwijtsch_voorw_rente
+DAM_DOSSIER_TCMG.Kwijtsch._direct_opeisbaar  -->  DAM_DOSSIER_TCMG.Kwijtsch_direct_opeisbaar
+DAM_DOSSIER_TCMG.Kwijtsch._onvoorw._hoofdsom  -->  DAM_DOSSIER_TCMG.Kwijtsch_onvoorw_hoofdsom
+DAM_DOSSIER_TCMG.Kwijtsch._onvoorw._rente  -->  DAM_DOSSIER_TCMG.Kwijtsch_onvoorw_rente
+DAM_DOSSIER_TCMG.Kwijtsch._voorw._hoofdsom  -->  DAM_DOSSIER_TCMG.Kwijtsch_voorw_hoofdsom
+DAM_DOSSIER_TCMG.LB-nummer_komt_overeen  -->  DAM_DOSSIER_TCMG.LB_nummer_komt_overeen
+DAM_DOSSIER_TCMG.Status_E-Diensten  -->  DAM_DOSSIER_TCMG.Status_E_Diensten
+DAM_DOSSIER_TCMG.Status_E-Loket  -->  DAM_DOSSIER_TCMG.Status_E_Loket
+DAM_DOSSIER_TCMG.Uitlening_binnen_Fisc._eenheid  -->  DAM_DOSSIER_TCMG.Uitlening_binnen_Fisc_eenheid
+RBM_ORG_NAAM_TCMG.Mutatie_user,  -->  RBM_ORG_NAAM_TCMG.Mutatie_user
+VKM_VAR_GEGEVENS_TCMG.VVG.DOS_ID  -->  VKM_VAR_GEGEVENS_TCMG.VVG_DOS_ID
+VKM_VAR_GEGEVENS_TCMG.VVG.VKM_VAR_GEGEVENS_DOS  -->  VKM_VAR_GEGEVENS_TCMG.VVG_VKM_VAR_GEGEVENS_DOS
+VKM_VAR_GEGEVENS_TCMG.VVG.VKM_VAR_GEGEVENS_PRG  -->  VKM_VAR_GEGEVENS_TCMG.VVG_VKM_VAR_GEGEVENS_PRG
+VKM_VAR_GEGEVENS_TCMG.VVG.VKT_ID  -->  VKM_VAR_GEGEVENS_TCMG.VVG_VKT_ID

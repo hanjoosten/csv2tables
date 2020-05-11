@@ -1,6 +1,9 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-module SASCode (tablesToCsv) where
+module SASCode 
+    ( tablesToCsv
+    , modifiedNames
+    ) where
 
 import Import
 import qualified RIO.Text as T
@@ -9,6 +12,18 @@ import qualified RIO.List as L
 tablesToCsv :: [Table] -> [Text]
 tablesToCsv = concatMap createStatement
 
+modifiedNames :: [Table] -> [Text]
+modifiedNames = concatMap modNames
+  where 
+    modNames :: Table -> [Text]
+    modNames = map attShow . filter isModified . attribs
+    isModified :: Attrib -> Bool
+    isModified att = attNameOrg att /= attNameNew att
+    attShow :: Attrib ->  Text
+    attShow att = T.pack $ 
+       attTable att <> "." <> attNameOrg att <> "  -->  " <>
+       attTable att <> "." <> attNameNew att
+       
 createStatement :: Table -> [Text]
 createStatement t = 
       [ "PROC SQL;"

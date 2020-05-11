@@ -16,9 +16,9 @@ run = do
   _ <- mapM (\t -> logDebug $ display $ showTab t) . take 30 $ tables
   let sqlStatements = T.unlines $ makeCreateStatements tables
   writeFileUtf8 (outputFile . appOptions $ app) sqlStatements
-  let sasCodeTablesToCSV = T.unlines $ tablesToCsv tables
-  writeFileUtf8 "tablesToCSV.sas" sasCodeTablesToCSV
-
+  writeFileUtf8 "tablesToCSV.sas"   $ T.unlines $ tablesToCsv tables
+  writeFileUtf8 "modifiedNames.txt" $ T.unlines $ modifiedNames tables
+  
 showTab :: Table -> Text
 showTab t = T.pack (tableName t) <>" has "<>(tshow . length . attribs) t<>" attributes."
 
