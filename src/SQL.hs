@@ -3,8 +3,9 @@
 module SQL (makeCreateStatements) where
 
 import Import
-import qualified RIO.Text as T
+import RIO.Char
 import qualified RIO.List as L
+import qualified RIO.Text as T
 
 makeCreateStatements :: [Table] -> [Text]
 makeCreateStatements = concatMap createStatement
@@ -13,16 +14,21 @@ createStatement :: Table -> [Text]
 createStatement t = 
       [ "DROP TABLE IF EXISTS "<> T.pack (tableName t)<>" ;"
       , "CREATE TABLE "<>T.pack (tableName t)<>" (" ]
-   <> T.lines cols 
+   <> T.lines cols
    <> [ ");"
       , ""
+      ]
+   <> comments
+   <> [ ""
       ]
    where
      cols = "    "<> (T.intercalate ",\n    " . map mkCol . L.sort . attribs) t
      mkCol :: Attrib -> Text
      mkCol att = 
           T.pack (attNameNew att)<> " "<>dataType att
-
+     comments = map ("    "<>) . map comment . L.sort . attribs $ t
+     comment :: Attrib -> Text
+     comment att = T.pack $ "comment on column "<>tableName t<>"."<>attNameNew att <> " is '"<>(map toUpper $ sasLable att)<>"';"
 dataType :: Attrib -> Text
 dataType att =
     case sasType att of
