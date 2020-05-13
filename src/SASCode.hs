@@ -41,12 +41,12 @@ createStatement t =
       , ""
       ]
     <> addSmallSample
-    <>[ ""  
-      , "proc delete DATA=WORK."<>tempTableName<>";"
-      , ""
-      ]
+--    <>[ ""  
+--      , "proc delete DATA=WORK."<>tempTableName<>";"
+--      , ""
+--      ]
    where
-     tempTableName = T.take 32 $ "TMP_"<>T.pack (tableNameOrg t)
+     tempTableName = T.take 32 $ T.pack (tableNameNew t)
      outDirPRD = "\\\\LNV.INTERN\\GRP\\TCMG\\002 Onderdelen\\34-kluismap MIRA Migratie bestanden\\SAS\\Output\\PRD\\"
      outfilefull = outDirPRD
                <> "RuweData\\"
