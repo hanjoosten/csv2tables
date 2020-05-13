@@ -66,6 +66,7 @@ createStatement t =
         [ "PROC SURVEYSELECT DATA=WORK."<>tempTableName<>"()"
         , "   OUT=WORK.RANDRandomSample"
         , "   METHOD=SRS"
+        , "   SELECTALL"
         , "   N=25;"
         , "RUN;"
         , ""
