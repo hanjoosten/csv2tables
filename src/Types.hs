@@ -8,7 +8,7 @@ import RIO.Process
 data Options = Options
   { optionsVerbose :: !Bool
   , inputFile :: !FilePath
-  , outputFile :: !FilePath
+  , outputDir :: !FilePath
   }
 
 data App = App

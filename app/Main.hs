@@ -24,10 +24,10 @@ main = do
                  <> help "Path to the input .csv file"
                  <> value  "Basinfo.csv"
                   )
-       <*> strOption ( long "output"
+       <*> strOption ( long "outputDir"
                  <> short 'o'
-                 <> help "Path to the output .sql file"
-                 <> value  "makeBASTables.sql"
+                 <> help "Path to write output files"
+                 <> value  "migratieScripts"
                   )
            
     )

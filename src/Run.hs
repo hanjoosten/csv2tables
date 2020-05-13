@@ -7,6 +7,8 @@ import CSV
 import qualified RIO.Text as T
 import SQL
 import SASCode
+import RIO.FilePath
+import RIO.Directory
 
 run :: RIO App ()
 run = do
@@ -14,11 +16,14 @@ run = do
   tables <- parseCsv
   logInfo $ "Number of tables: "<>displayShow (length tables)
   _ <- mapM (\t -> logDebug $ display $ showTab t) . take 30 $ tables
-  let sqlStatements = T.unlines $ makeCreateStatements tables
-  writeFileUtf8 (outputFile . appOptions $ app) sqlStatements
-  writeFileUtf8 "tablesToCSV.sas"   $ T.unlines $ tablesToCsv tables
-  writeFileUtf8 "modifiedNames.txt" $ T.unlines $ modifiedNames tables
-  writeFileUtf8 "loadScript.postgress" $ T.unlines $ makeLoadScript tables
+  let dir = outputDir . appOptions $ app
+      write :: FilePath -> ([Table] -> [Text]) -> RIO env ()
+      write fileName fun = writeFileUtf8 (dir </> fileName) (T.unlines (fun tables)) 
+  createDirectoryIfMissing True dir
+  write "makeBASTables.sql"     makeCreateStatements
+  write "tablesToCSV.sas"       tablesToCsv
+  write "modifiedNames.txt"     modifiedNames
+  write "loadScript.postgress"  makeLoadScript
 showTab :: Table -> Text
 showTab t = T.pack (tableName t) <>" has "<>(tshow . length . attribs) t<>" attributes."
 
