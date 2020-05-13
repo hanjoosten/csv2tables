@@ -1,282 +1,282 @@
-TRUNCATE TABLE AOM_ACTIE_TCMG;
-\COPY AOM_ACTIE_TCMG(Actie_cd, Actie_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, timestamp) FROM 'PAD-NAAR_CSVsAOM_ACTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_AOM_ACTIE;
+\COPY BAS_AOM_ACTIE(Actie_cd, Actie_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, timestamp) FROM 'PAD-NAAR_CSVsBAS_AOM_ACTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE AOM_TRA_ACTIE_TCMG;
-\COPY AOM_TRA_ACTIE_TCMG(Actie_cd, Bgt_cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Tra_cd) FROM 'PAD-NAAR_CSVsAOM_TRA_ACTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_AOM_TRA_ACTIE;
+\COPY BAS_AOM_TRA_ACTIE(Actie_cd, Bgt_cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Tra_cd) FROM 'PAD-NAAR_CSVsBAS_AOM_TRA_ACTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE AOM_TRANSACTIETYPE_TCMG;
-\COPY AOM_TRANSACTIETYPE_TCMG(Beleidsadministratie_jn, Creatie_dat, Creatie_user, Geldstroom_jn, Mdw_mandaat_jn, Mutatie_dat, Mutatie_user, Tra_cd, Tra_oms, Tra_stop) FROM 'PAD-NAAR_CSVsAOM_TRANSACTIETYPE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_AOM_TRANSACTIETYPE;
+\COPY BAS_AOM_TRANSACTIETYPE(Beleidsadministratie_jn, Creatie_dat, Creatie_user, Geldstroom_jn, Mdw_mandaat_jn, Mutatie_dat, Mutatie_user, Tra_cd, Tra_oms, Tra_stop) FROM 'PAD-NAAR_CSVsBAS_AOM_TRANSACTIETYPE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE BTM_BETALING_TCMG;
-\COPY BTM_BETALING_TCMG(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, Naam_begunstigde, Betalingskenmerk, Plaats, Aanleverdatum, Status, Betaalrun_id, Bron, Invoerdatum, Mdw_id, Betaling_id, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer, Betaal_datum, On_hold_jn, Sepa_xsd_bevinding) FROM 'PAD-NAAR_CSVsBTM_BETALING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_BTM_BETALING;
+\COPY BAS_BTM_BETALING(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, Naam_begunstigde, Betalingskenmerk, Plaats, Aanleverdatum, Status, Betaalrun_id, Bron, Invoerdatum, Mdw_id, Betaling_id, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer, Betaal_datum, On_hold_jn, Sepa_xsd_bevinding) FROM 'PAD-NAAR_CSVsBAS_BTM_BETALING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE BTM_HIST_BETALING_TCMG;
-\COPY BTM_HIST_BETALING_TCMG(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, Naam_begunstigde, Plaats, Rekeningnummer, Senterrekening, Aanleverdatum, Betaalrun_id, Bron, Valutadatum, Invoerdatum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mdw_id, Betalingskenmerk, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer) FROM 'PAD-NAAR_CSVsBTM_HIST_BETALING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_BTM_HIST_BETALING;
+\COPY BAS_BTM_HIST_BETALING(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, Naam_begunstigde, Plaats, Rekeningnummer, Senterrekening, Aanleverdatum, Betaalrun_id, Bron, Valutadatum, Invoerdatum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mdw_id, Betalingskenmerk, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer) FROM 'PAD-NAAR_CSVsBAS_BTM_HIST_BETALING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_BERICHT_TCMG;
-\COPY COR_BERICHT_TCMG(Cor_id, Ed_bericht_id, Afzender_id, Ontvanger_id, Inkomend, Handtekening_ok, Ondertekenaar_id, Onderwerp, Inhoud, Certserienummer, Batch_status, Status_overzetten_bericht, Ingezien, Plattetekst, Status_verzending, Archief_cor_id, Bron, Org_cor_id) FROM 'PAD-NAAR_CSVsCOR_BERICHT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_BERICHT;
+\COPY BAS_COR_BERICHT(Cor_id, Ed_bericht_id, Afzender_id, Ontvanger_id, Inkomend, Handtekening_ok, Ondertekenaar_id, Onderwerp, Inhoud, Certserienummer, Batch_status, Status_overzetten_bericht, Ingezien, Plattetekst, Status_verzending, Archief_cor_id, Bron, Org_cor_id) FROM 'PAD-NAAR_CSVsBAS_COR_BERICHT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_COR_PARAAF_TCMG;
-\COPY COR_COR_PARAAF_TCMG(Acc_id, Acc_rol_cd, Acc_vaste_paraaf_jn, Afgehandeld_JN, Akkoord, Cor_bedrag, Cor_id, Creatie_dat, Creatie_ok_JN, Creatie_user, Datum_Akkoord, Email_JN, Mandaat_ok_JN, Max_bedrag, Mdw_id, Mdw_id_doorvoerder, Mdw_id_oorspronkelijk, Mdw_mandaat_JN, Mutatie_dat, Mutatie_user, Rol_cd, Rol_ok_JN, Rol_volg_cd, Toelichting, Type_paraaf, Vaste_paraaf, Volgorde) FROM 'PAD-NAAR_CSVsCOR_COR_PARAAF_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_COR_PARAAF;
+\COPY BAS_COR_COR_PARAAF(Acc_id, Acc_rol_cd, Acc_vaste_paraaf_jn, Afgehandeld_JN, Akkoord, Cor_bedrag, Cor_id, Creatie_dat, Creatie_ok_JN, Creatie_user, Datum_Akkoord, Email_JN, Mandaat_ok_JN, Max_bedrag, Mdw_id, Mdw_id_doorvoerder, Mdw_id_oorspronkelijk, Mdw_mandaat_JN, Mutatie_dat, Mutatie_user, Rol_cd, Rol_ok_JN, Rol_volg_cd, Toelichting, Type_paraaf, Vaste_paraaf, Volgorde) FROM 'PAD-NAAR_CSVsBAS_COR_COR_PARAAF.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_COR_SRT_TCMG;
-\COPY COR_COR_SRT_TCMG(Cst_cd, Cst_oms, Cst_template, Regeling, Thema, Dossier, Project, Organisatie, Bezoek, Transactie, Uitgaand_inkomend, Juridisch, Stempel_sj, Bob_brief, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Vorderingbeheer, Externe_naam, Correctie_jn, Intern_jn) FROM 'PAD-NAAR_CSVsCOR_COR_SRT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_COR_SRT;
+\COPY BAS_COR_COR_SRT(Cst_cd, Cst_oms, Cst_template, Regeling, Thema, Dossier, Project, Organisatie, Bezoek, Transactie, Uitgaand_inkomend, Juridisch, Stempel_sj, Bob_brief, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Vorderingbeheer, Externe_naam, Correctie_jn, Intern_jn) FROM 'PAD-NAAR_CSVsBAS_COR_COR_SRT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_CORRESPONDENTIE_HIST_TCMG;
-\COPY COR_CORRESPONDENTIE_HIST_TCMG(Cor_id, Volg_nr, Correctie_code, Oude_verzenddatum, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsCOR_CORRESPONDENTIE_HIST_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_CORRESPONDENTIE_HIST;
+\COPY BAS_COR_CORRESPONDENTIE_HIST(Cor_id, Volg_nr, Correctie_code, Oude_verzenddatum, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_COR_CORRESPONDENTIE_HIST.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_CORRESPONDENTIE_TCMG;
-\COPY COR_CORRESPONDENTIE_TCMG(Actie_datum, Afgedrukt_JN, Afgehandeld, Archiveren, Bas_da_melding, Behandelingsronde, Bezoeknr, Bos_status, Cbi_id, Certhoud_contpers_intern, Cor_bericht, Cor_id, Cor_id_van, Cor_volgnr_ids, Crd_id, Creatie_dat, Creatie_user, Cst_cd, Datum, Datum_ok, Datum_stempel_sj, Digitaal_archiveren, Doc_directory, Doc_naam, Dos_id, Dossiergroep_cor_id, Email_JN, Genereer_JN, Html, Ids_id, Indieningsdatum, Ingetrokken, Jz_id, Kenmerk, Lijst_cd, Mandaat_rol_cd, Mdw_cd_email, Mdw_id_contpers_intern, Mutatie_dat, Mutatie_user, naam_organisatie, Ok_JN, Omschrijving, Open_brief, Org_id, Pcs_id, Plandatum, Prioriteit, Reg_id, Rel_id, Rol_cd, Run_id, Select_export, Senterkenmerk, Text_inhoud, Vernieuw_paraaf, Verzenddatum, Verzonden_elektronisch_JN, Verzonden_per_post_JN, Vst_volgnr, Wordbrief_akkoord, Xml_inhoud, Xsl) FROM 'PAD-NAAR_CSVsCOR_CORRESPONDENTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_CORRESPONDENTIE;
+\COPY BAS_COR_CORRESPONDENTIE(Actie_datum, Afgedrukt_JN, Afgehandeld, Archiveren, Bas_da_melding, Behandelingsronde, Bezoeknr, Bos_status, Cbi_id, Certhoud_contpers_intern, Cor_bericht, Cor_id, Cor_id_van, Cor_volgnr_ids, Crd_id, Creatie_dat, Creatie_user, Cst_cd, Datum, Datum_ok, Datum_stempel_sj, Digitaal_archiveren, Doc_directory, Doc_naam, Dos_id, Dossiergroep_cor_id, Email_JN, Genereer_JN, Html, Ids_id, Indieningsdatum, Ingetrokken, Jz_id, Kenmerk, Lijst_cd, Mandaat_rol_cd, Mdw_cd_email, Mdw_id_contpers_intern, Mutatie_dat, Mutatie_user, naam_organisatie, Ok_JN, Omschrijving, Open_brief, Org_id, Pcs_id, Plandatum, Prioriteit, Reg_id, Rel_id, Rol_cd, Run_id, Select_export, Senterkenmerk, Text_inhoud, Vernieuw_paraaf, Verzenddatum, Verzonden_elektronisch_JN, Verzonden_per_post_JN, Vst_volgnr, Wordbrief_akkoord, Xml_inhoud, Xsl) FROM 'PAD-NAAR_CSVsBAS_COR_CORRESPONDENTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_CST_SET_CST_TCMG;
-\COPY COR_CST_SET_CST_TCMG(Reg_id, Cst_cd, Cst_cd_2, Verzenddatum_jn, Afgehandeld_jn, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Genereer_jn) FROM 'PAD-NAAR_CSVsCOR_CST_SET_CST_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_CST_SET_CST;
+\COPY BAS_COR_CST_SET_CST(Reg_id, Cst_cd, Cst_cd_2, Verzenddatum_jn, Afgehandeld_jn, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Genereer_jn) FROM 'PAD-NAAR_CSVsBAS_COR_CST_SET_CST.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_PARAAF_TCMG;
-\COPY COR_PARAAF_TCMG(Reg_id, Cst_cd, Type_paraaf, Rol_cd, Mdw_rol_niveau, Volgorde, Vaste_paraaf_jn, Rol_volg_cd) FROM 'PAD-NAAR_CSVsCOR_PARAAF_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_PARAAF;
+\COPY BAS_COR_PARAAF(Reg_id, Cst_cd, Type_paraaf, Rol_cd, Mdw_rol_niveau, Volgorde, Vaste_paraaf_jn, Rol_volg_cd) FROM 'PAD-NAAR_CSVsBAS_COR_PARAAF.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_REACTIE_BIJ_COR_SRT_TCMG;
-\COPY COR_REACTIE_BIJ_COR_SRT_TCMG(Cluster_nr, Creatie_dat, Creatie_user, Cst_cd, Mdw_id, Mutatie_dat, Mutatie_user, Per_cluster, Prg_id, Prioriteit, Reactie_cd, Reg_id, Rol_cd, Sts_cd, Termijn, Termijn_weken) FROM 'PAD-NAAR_CSVsCOR_REACTIE_BIJ_COR_SRT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_REACTIE_BIJ_COR_SRT;
+\COPY BAS_COR_REACTIE_BIJ_COR_SRT(Cluster_nr, Creatie_dat, Creatie_user, Cst_cd, Mdw_id, Mutatie_dat, Mutatie_user, Per_cluster, Prg_id, Prioriteit, Reactie_cd, Reg_id, Rol_cd, Sts_cd, Termijn, Termijn_weken) FROM 'PAD-NAAR_CSVsBAS_COR_REACTIE_BIJ_COR_SRT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_REGLSPEC_COR_TCMG;
-\COPY COR_REGLSPEC_COR_TCMG(Bos_bezorging, Crea_back, Create_merge_jn, Create_merge_single, Creatie_dat, Creatie_user, Cst_cd, Doc_template, Externe_naam, Geblokkeerd_jn, Ic_controle, Job, Lijst_cd, Mutatie_dat, Mutatie_user, Prf_cd, Print_jn, Prioriteit, Reg_id, Verzenddatum_vullen) FROM 'PAD-NAAR_CSVsCOR_REGLSPEC_COR_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_REGLSPEC_COR;
+\COPY BAS_COR_REGLSPEC_COR(Bos_bezorging, Crea_back, Create_merge_jn, Create_merge_single, Creatie_dat, Creatie_user, Cst_cd, Doc_template, Externe_naam, Geblokkeerd_jn, Ic_controle, Job, Lijst_cd, Mutatie_dat, Mutatie_user, Prf_cd, Print_jn, Prioriteit, Reg_id, Verzenddatum_vullen) FROM 'PAD-NAAR_CSVsBAS_COR_REGLSPEC_COR.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE COR_TRANSACTIEGROEP_BIJ_BRF_TCMG;
-\COPY COR_TRANSACTIEGROEP_BIJ_BRF_TCMG(Cor_id, Tra_id, Dos_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsCOR_TRANSACTIEGROEP_BIJ_BRF_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
+\COPY BAS_COR_TRANSACTIEGROEP_BIJ_BRF(Cor_id, Tra_id, Dos_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_COR_TRANSACTIEGROEP_BIJ_BRF.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_CONT_BIJ_DLN_COM_ADR_TCMG;
-\COPY DAM_CONT_BIJ_DLN_COM_ADR_TCMG(creatie_dat, Creatie_user, Dcs_id, Dos_id, Mutatie_dat, Mutatie_user, Per_id, Rav_id, Rca_id, Rel_id, Rol_cd, Rol_cd_van, Vst_volgnr) FROM 'PAD-NAAR_CSVsDAM_CONT_BIJ_DLN_COM_ADR_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_CONT_BIJ_DLN_COM_ADR;
+\COPY BAS_DAM_CONT_BIJ_DLN_COM_ADR(creatie_dat, Creatie_user, Dcs_id, Dos_id, Mutatie_dat, Mutatie_user, Per_id, Rav_id, Rca_id, Rel_id, Rol_cd, Rol_cd_van, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_DAM_CONT_BIJ_DLN_COM_ADR.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_CONTACT_BIJ_DEELNAME_TCMG;
-\COPY DAM_CONTACT_BIJ_DEELNAME_TCMG(Certhoud_id, Correspondent, Creatie_dat, Creatie_user, Dos_id, Mutatie_dat, Mutatie_user, Per_id, Rechten_id, Rel_id, Rol_cd, Rol_cd_van, Vst_volgnr) FROM 'PAD-NAAR_CSVsDAM_CONTACT_BIJ_DEELNAME_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_CONTACT_BIJ_DEELNAME;
+\COPY BAS_DAM_CONTACT_BIJ_DEELNAME(Certhoud_id, Correspondent, Creatie_dat, Creatie_user, Dos_id, Mutatie_dat, Mutatie_user, Per_id, Rechten_id, Rel_id, Rol_cd, Rol_cd_van, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_DAM_CONTACT_BIJ_DEELNAME.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DECLARATIE_TCMG;
-\COPY DAM_DECLARATIE_TCMG(Adviesaangevraagd, Adviesaantaluren, Advieshandtoegekend, Adviesrente, Adviesrentedatum, Adviestoegekend, Besluit_cor_id, Cor_id, Creatie_dat, Creatie_user, Datumberekening, Dos_id, Herstel, Inboedeltuinaangevraagd, Inboedeltuinhandtoegekend, Inboedeltuinrente, inboedeltuinrentedatum, Inboedeltuintoegekend, Inkomstendervingaangevraagd, Inkomstendervinghandtoegekend, Inkomstendervingrente, Inkomstendervingrentedatum, Inkomstendervingtoegekend, Juridischaangevraagd, Juridischaantaluren, Juridischhandtoegekend, Juridischrente, Juridischrentedatum, Juridischtarief, Juridischtoegekend, Mutatie_dat, Mutatie_user, Notitie, Oorzaak, Opslagaangevraagd, Opslagaantalweken, Opslaghandtoegekend, opslagrente, Opslagrentedatum, Opslagtoegekend, Overlastaangevraagd, Overlasthandtoegekend, Overlastrente, Overlasttoegekend, Overlastvergoeding, Overnachtenaangevraagd, Overnachtenaantalnachten, Overnachtenaantalpersonen, Overnachtenhandtoegekend, Overnachtenrente, Overnachtenrentedatum, Overnachtentoegekend, Reisaangevraagd, Reisaantalkm, Reishandtoegekend, Reisov, Reisrente, Reisrentedatum, Reistoegekend, Schoonmaakaangevraagd, Schoonmaakhandtoegekend, Schoonmaakrente, Schoonmaaktoegekend, Schoonmaakvergoeding, Thuisblijfherstelaangevraagd, Thuisblijfherstelaantaldagdeel, Thuisblijfherstelhandtoegekend, Thuisblijfherstelrente, Thuisblijfhersteltoegekend, Thuisblijfherstelvergoeding, Thuisblijfopnameaangevraagd, Thuisblijfopnamehandtoegekend, Thuisblijfopnamerente, Thuisblijfopnametoegekend, Thuisblijfopnamevergoeding, Totaalrente, Totaaltoegekend, Verhuisaangevraagd, Verhuishandtoegekend, Verhuisrente, Verhuisrentedatum, Verhuistoegekend, Zorgaangevraagd, Zorghandtoegekend, Zorgrente, Zorgrentedatum, Zorgtoegekend) FROM 'PAD-NAAR_CSVsDAM_DECLARATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DECLARATIE;
+\COPY BAS_DAM_DECLARATIE(Adviesaangevraagd, Adviesaantaluren, Advieshandtoegekend, Adviesrente, Adviesrentedatum, Adviestoegekend, Besluit_cor_id, Cor_id, Creatie_dat, Creatie_user, Datumberekening, Dos_id, Herstel, Inboedeltuinaangevraagd, Inboedeltuinhandtoegekend, Inboedeltuinrente, inboedeltuinrentedatum, Inboedeltuintoegekend, Inkomstendervingaangevraagd, Inkomstendervinghandtoegekend, Inkomstendervingrente, Inkomstendervingrentedatum, Inkomstendervingtoegekend, Juridischaangevraagd, Juridischaantaluren, Juridischhandtoegekend, Juridischrente, Juridischrentedatum, Juridischtarief, Juridischtoegekend, Mutatie_dat, Mutatie_user, Notitie, Oorzaak, Opslagaangevraagd, Opslagaantalweken, Opslaghandtoegekend, opslagrente, Opslagrentedatum, Opslagtoegekend, Overlastaangevraagd, Overlasthandtoegekend, Overlastrente, Overlasttoegekend, Overlastvergoeding, Overnachtenaangevraagd, Overnachtenaantalnachten, Overnachtenaantalpersonen, Overnachtenhandtoegekend, Overnachtenrente, Overnachtenrentedatum, Overnachtentoegekend, Reisaangevraagd, Reisaantalkm, Reishandtoegekend, Reisov, Reisrente, Reisrentedatum, Reistoegekend, Schoonmaakaangevraagd, Schoonmaakhandtoegekend, Schoonmaakrente, Schoonmaaktoegekend, Schoonmaakvergoeding, Thuisblijfherstelaangevraagd, Thuisblijfherstelaantaldagdeel, Thuisblijfherstelhandtoegekend, Thuisblijfherstelrente, Thuisblijfhersteltoegekend, Thuisblijfherstelvergoeding, Thuisblijfopnameaangevraagd, Thuisblijfopnamehandtoegekend, Thuisblijfopnamerente, Thuisblijfopnametoegekend, Thuisblijfopnamevergoeding, Totaalrente, Totaaltoegekend, Verhuisaangevraagd, Verhuishandtoegekend, Verhuisrente, Verhuisrentedatum, Verhuistoegekend, Zorgaangevraagd, Zorghandtoegekend, Zorgrente, Zorgrentedatum, Zorgtoegekend) FROM 'PAD-NAAR_CSVsBAS_DAM_DECLARATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DEELNAME_ADRES_TCMG;
-\COPY DAM_DEELNAME_ADRES_TCMG(Adressoort, Creatie_dat, Creatie_user, Dda_id, Dos_id, Kkr_afwijkend, Mutatie_dat, Mutatie_user, Rae_id, Ras_id, Rel_id, Rol_cd, Vst_volgnr) FROM 'PAD-NAAR_CSVsDAM_DEELNAME_ADRES_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DEELNAME_ADRES;
+\COPY BAS_DAM_DEELNAME_ADRES(Adressoort, Creatie_dat, Creatie_user, Dda_id, Dos_id, Kkr_afwijkend, Mutatie_dat, Mutatie_user, Rae_id, Ras_id, Rel_id, Rol_cd, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_DAM_DEELNAME_ADRES.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DEELNAME_COM_ADRES_TCMG;
-\COPY DAM_DEELNAME_COM_ADRES_TCMG(Creatie_dat, Creatie_user, Dda_id, Dos_id, Mutatie_dat, Mutatie_user, Rae_id, Rca_id, Rel_id, Rol_cd, Vst_volgnr) FROM 'PAD-NAAR_CSVsDAM_DEELNAME_COM_ADRES_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DEELNAME_COM_ADRES;
+\COPY BAS_DAM_DEELNAME_COM_ADRES(Creatie_dat, Creatie_user, Dda_id, Dos_id, Mutatie_dat, Mutatie_user, Rae_id, Rca_id, Rel_id, Rol_cd, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_DAM_DEELNAME_COM_ADRES.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DEELNAME_TCMG;
-\COPY DAM_DEELNAME_TCMG(Afwijking_cd, Bic, Bic_cd, Contract_cd, Creatie_dat, Creatie_user, Dam_project_deelname, Deelnamenaam, Dos_id, Ed_deelnemer_id, Edeelnemer_id, Einddatum, Elektronisch_corresponderen_JN, Fisc_eenheid, Geclaimd, Geclaimd_NLG, Gedeclareerd, Gedeclareerd_NLG, Gerealiseerd, Gerealiseerd_NLG, Geschoond, Geschoond_NLG, IBAN, Ingediend, Ingediend_NLG, Kkr_statutair, Mutatie_dat, Mutatie_user, Niet_sepa_betalen, Org_id, Org_naam, Pom_ranking, Rel_id, Rel_id_rekening, Rol_cd, Startdatum, Totaal_decl_deelname, Totaal_uitb_deelname, Verklaring_gewenst_JN, Vst_volgnr) FROM 'PAD-NAAR_CSVsDAM_DEELNAME_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DEELNAME;
+\COPY BAS_DAM_DEELNAME(Afwijking_cd, Bic, Bic_cd, Contract_cd, Creatie_dat, Creatie_user, Dam_project_deelname, Deelnamenaam, Dos_id, Ed_deelnemer_id, Edeelnemer_id, Einddatum, Elektronisch_corresponderen_JN, Fisc_eenheid, Geclaimd, Geclaimd_NLG, Gedeclareerd, Gedeclareerd_NLG, Gerealiseerd, Gerealiseerd_NLG, Geschoond, Geschoond_NLG, IBAN, Ingediend, Ingediend_NLG, Kkr_statutair, Mutatie_dat, Mutatie_user, Niet_sepa_betalen, Org_id, Org_naam, Pom_ranking, Rel_id, Rel_id_rekening, Rol_cd, Startdatum, Totaal_decl_deelname, Totaal_uitb_deelname, Verklaring_gewenst_JN, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_DAM_DEELNAME.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DOS_BUDGETREGEL_TCMG;
-\COPY DAM_DOS_BUDGETREGEL_TCMG(Dos_id, Tra_id, Volgnummer, Ovk_nr, Rpt_nr, Bgt_cd, Verleend, Ingetrokken, Gedeclareerd, Betaald, Vastgesteld, Openstaand, Opeisbaar, Def_verleend, Def_ingetrokken, Def_gedeclareerd, Def_openstaand, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Rpe_datum_van, Neg_einddeclaratie, Prg_id, Reg_id, Reg_nr, Afl_neg_einddeclaratie, Def_neg_einddeclaratie, Cvk_id, Vpl_volgnummer, Rpt_nr_oud, Per_Deelnemer) FROM 'PAD-NAAR_CSVsDAM_DOS_BUDGETREGEL_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DOS_BUDGETREGEL;
+\COPY BAS_DAM_DOS_BUDGETREGEL(Dos_id, Tra_id, Volgnummer, Ovk_nr, Rpt_nr, Bgt_cd, Verleend, Ingetrokken, Gedeclareerd, Betaald, Vastgesteld, Openstaand, Opeisbaar, Def_verleend, Def_ingetrokken, Def_gedeclareerd, Def_openstaand, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Rpe_datum_van, Neg_einddeclaratie, Prg_id, Reg_id, Reg_nr, Afl_neg_einddeclaratie, Def_neg_einddeclaratie, Cvk_id, Vpl_volgnummer, Rpt_nr_oud, Per_Deelnemer) FROM 'PAD-NAAR_CSVsBAS_DAM_DOS_BUDGETREGEL.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DOSSIER_IN_GROEP_TCMG;
-\COPY DAM_DOSSIER_IN_GROEP_TCMG(Creatie_dat, Creatie_user, Ddg_id, Dds_id, Dos_id, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsDAM_DOSSIER_IN_GROEP_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DOSSIER_IN_GROEP;
+\COPY BAS_DAM_DOSSIER_IN_GROEP(Creatie_dat, Creatie_user, Ddg_id, Dds_id, Dos_id, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_DAM_DOSSIER_IN_GROEP.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DOSSIER_NOTITIE_TCMG;
-\COPY DAM_DOSSIER_NOTITIE_TCMG(Afgehandeld, Bezoeknr, Cor_id_no, Creatie_dat, Creatie_user, Dos_id, Mutatie_dat, Mutatie_user, Notitie, Notitietype_naam, Rel_id) FROM 'PAD-NAAR_CSVsDAM_DOSSIER_NOTITIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DOSSIER_NOTITIE;
+\COPY BAS_DAM_DOSSIER_NOTITIE(Afgehandeld, Bezoeknr, Cor_id_no, Creatie_dat, Creatie_user, Dos_id, Mutatie_dat, Mutatie_user, Notitie, Notitietype_naam, Rel_id) FROM 'PAD-NAAR_CSVsBAS_DAM_DOSSIER_NOTITIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DOSSIER_TCMG;
-\COPY DAM_DOSSIER_TCMG(Aangevraagd_bedrag, Aantal_dagenopschorting, Aantal_ICT_projecten, Aantal_SO_projecten, Aantal_SO_werknemers, Aantal_SO_zlf, Aanvang_dat, Aanvraag_volgnr, Aanvraagsoort, Acceptatie_sts, Afdrachtsvermindering, Afhandeldatum, Afhandelwijze, Afl_neg_einddeclaratie, Akkoord_verlenen, aut_verwerkt_imp, Auth_id_indiener, Auth_id_ondertekenaar, Auth_prg_id, BAS_advies, Batchstatuscert, Batchstatusref, Batchstatusstat, Behandelingsronde, Beoordelingswijze, Berekende_rente, Beslissing_cd, Checksum, Classificatie, Cluster_nr, Controle_activiteit, Commercieel_perspectief, Contractjaar, Conversiedossier, Correspondentie_via_email, Creatie_dat, Creatie_user, Jaardossier_WBSO, Datum_in, Datum_renteberekening, Datum_status, Volgnr_diskette, Volgnr_diskette_na_import, Dos_cd, Dos_id, Dos_id_aanvulling, Dosprio, ED_Aanvraag_id, Eerste_jr_aflossing, Eind_dat, Eindmaand, Extern_aanvraag_id, Extern_dossier_id, Extrene_bron_cd, Gecommitteerd_zegge, Gem_uurloon, Hand_bewerkt_imp, Handtekening_ok, Hoofd_dos_id, Id_van_de_doos, Id_van_de_doos_na_de_import, Importlijst, Indienings_dat, Indienings_tijd, Indienkanaal, Ingezien, Inkoopcat_cd, Inleen_binnen_Fiscale_eenheid, Meldingnummer_IRWA, Jaar, Jaardossier_bron_dos_id, Jaardossier_dos_id, Korte_titel, Krat_nr, Laatste_jr_aflossing, Laatste_pcs_id, Landnaam, LB_nummer_komt_overeen, Machtiging_JN, Mdw_cd, Mentorterugkoppeling, Mutatie_dat, Mutatie_dat_vst, Mutatie_user, Mutatie_user_vst, Naar_batchrun, Neg_einddeclaratie, Notities, Octrooien, Offertebedrag, Cerhoud_id_Ondertekenaar, Ontvangstdatum, Oorspr_einddatum, Overige_subsidie, Opdrachtvorm_cd, Perc_verrekenen, Periode_nr, Prioriteit, Prioriteitsdatum, Projectomschrijving, Ranking, RDA_Afhandeling_forfaitair, RDA_aangevraagd, Referentie, Reg_id, Reg_nr, Rel_id_Aanvrager, Rente_perc, Samenwerkingsverband1, Samenwerkingsverband2, SO_loon, Begrote_SO_loonsom, SO_uren, Startmaand, Statuscode, Status_cert, Status_oud, status_SO_uurloon, Status_TT, Statusgroep, Statustermijn, Status_E_Diensten, Status_E_Loket, Technisch_succes, Technisch_Cor_id, Titel, Afgelost_op_onvoorw_hoofdsom, Afgelost_op_onvoorw_rente, Totaal_afgelost_op_hoofdsom, Totaal_ontvangen_rente, Totaal_bijgeschreven_rente, Direct_opeisbare_vordering, Direct_opeisbare_hoofdsom, Direct_opeisbare_rente, Totaal_gecommitteerd_bedrag, Zegge_Totaal_gecommitteerd, Totaal_gedeclareerd_bedrag, Totaal_geschoonde_kosten, Totale_hoofdsom, Totaal_ingetrokken_bedrag, Kwijtsch_onvoorw_hoofdsom, Kwijtsch_onvoorw_rente, Kwijtsch_direct_opeisbaar, Kwijtsch_voorw_hoofdsom, Kwijtsch_voorw_rente, Totaal_kwijtgescholden_bedrag, Totaal_openstaand_bedrag, Direct_opeisbaar_gesteld, Totaal_uitbetaald, Totaal_verleend_bedrag, Uitlening_binnen_Fisc_eenheid, Uurloon_jaar, Vaststellen_batch, Vergoedingsperc, Volgnr_LB, Voorlopig_gecommitteerd, Voorlopig_gedeclareerd, Vorig_aanvraag_bedrijf_nr, Vorig_aanvraagjaar, Vorig_aanvraagnummer, Vorie_aanvraagperiode, Vorig_aanvraag_volgnr, Vaststelling_conform_aanvraag, VV_Aanvraagnummer, Wel_akkoord_niet_verlenen, Aangeboden_aan_ZER) FROM 'PAD-NAAR_CSVsDAM_DOSSIER_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DOSSIER;
+\COPY BAS_DAM_DOSSIER(Aangevraagd_bedrag, Aantal_dagenopschorting, Aantal_ICT_projecten, Aantal_SO_projecten, Aantal_SO_werknemers, Aantal_SO_zlf, Aanvang_dat, Aanvraag_volgnr, Aanvraagsoort, Acceptatie_sts, Afdrachtsvermindering, Afhandeldatum, Afhandelwijze, Afl_neg_einddeclaratie, Akkoord_verlenen, aut_verwerkt_imp, Auth_id_indiener, Auth_id_ondertekenaar, Auth_prg_id, BAS_advies, Batchstatuscert, Batchstatusref, Batchstatusstat, Behandelingsronde, Beoordelingswijze, Berekende_rente, Beslissing_cd, Checksum, Classificatie, Cluster_nr, Controle_activiteit, Commercieel_perspectief, Contractjaar, Conversiedossier, Correspondentie_via_email, Creatie_dat, Creatie_user, Jaardossier_WBSO, Datum_in, Datum_renteberekening, Datum_status, Volgnr_diskette, Volgnr_diskette_na_import, Dos_cd, Dos_id, Dos_id_aanvulling, Dosprio, ED_Aanvraag_id, Eerste_jr_aflossing, Eind_dat, Eindmaand, Extern_aanvraag_id, Extern_dossier_id, Extrene_bron_cd, Gecommitteerd_zegge, Gem_uurloon, Hand_bewerkt_imp, Handtekening_ok, Hoofd_dos_id, Id_van_de_doos, Id_van_de_doos_na_de_import, Importlijst, Indienings_dat, Indienings_tijd, Indienkanaal, Ingezien, Inkoopcat_cd, Inleen_binnen_Fiscale_eenheid, Meldingnummer_IRWA, Jaar, Jaardossier_bron_dos_id, Jaardossier_dos_id, Korte_titel, Krat_nr, Laatste_jr_aflossing, Laatste_pcs_id, Landnaam, LB_nummer_komt_overeen, Machtiging_JN, Mdw_cd, Mentorterugkoppeling, Mutatie_dat, Mutatie_dat_vst, Mutatie_user, Mutatie_user_vst, Naar_batchrun, Neg_einddeclaratie, Notities, Octrooien, Offertebedrag, Cerhoud_id_Ondertekenaar, Ontvangstdatum, Oorspr_einddatum, Overige_subsidie, Opdrachtvorm_cd, Perc_verrekenen, Periode_nr, Prioriteit, Prioriteitsdatum, Projectomschrijving, Ranking, RDA_Afhandeling_forfaitair, RDA_aangevraagd, Referentie, Reg_id, Reg_nr, Rel_id_Aanvrager, Rente_perc, Samenwerkingsverband1, Samenwerkingsverband2, SO_loon, Begrote_SO_loonsom, SO_uren, Startmaand, Statuscode, Status_cert, Status_oud, status_SO_uurloon, Status_TT, Statusgroep, Statustermijn, Status_E_Diensten, Status_E_Loket, Technisch_succes, Technisch_Cor_id, Titel, Afgelost_op_onvoorw_hoofdsom, Afgelost_op_onvoorw_rente, Totaal_afgelost_op_hoofdsom, Totaal_ontvangen_rente, Totaal_bijgeschreven_rente, Direct_opeisbare_vordering, Direct_opeisbare_hoofdsom, Direct_opeisbare_rente, Totaal_gecommitteerd_bedrag, Zegge_Totaal_gecommitteerd, Totaal_gedeclareerd_bedrag, Totaal_geschoonde_kosten, Totale_hoofdsom, Totaal_ingetrokken_bedrag, Kwijtsch_onvoorw_hoofdsom, Kwijtsch_onvoorw_rente, Kwijtsch_direct_opeisbaar, Kwijtsch_voorw_hoofdsom, Kwijtsch_voorw_rente, Totaal_kwijtgescholden_bedrag, Totaal_openstaand_bedrag, Direct_opeisbaar_gesteld, Totaal_uitbetaald, Totaal_verleend_bedrag, Uitlening_binnen_Fisc_eenheid, Uurloon_jaar, Vaststellen_batch, Vergoedingsperc, Volgnr_LB, Voorlopig_gecommitteerd, Voorlopig_gedeclareerd, Vorig_aanvraag_bedrijf_nr, Vorig_aanvraagjaar, Vorig_aanvraagnummer, Vorie_aanvraagperiode, Vorig_aanvraag_volgnr, Vaststelling_conform_aanvraag, VV_Aanvraagnummer, Wel_akkoord_niet_verlenen, Aangeboden_aan_ZER) FROM 'PAD-NAAR_CSVsBAS_DAM_DOSSIER.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_DOSSIERGROEP_TCMG;
-\COPY DAM_DOSSIERGROEP_TCMG(Ddg_id, Age_id, Naam, Toelichting, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp) FROM 'PAD-NAAR_CSVsDAM_DOSSIERGROEP_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_DOSSIERGROEP;
+\COPY BAS_DAM_DOSSIERGROEP(Ddg_id, Age_id, Naam, Toelichting, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp) FROM 'PAD-NAAR_CSVsBAS_DAM_DOSSIERGROEP.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_LOKATIEADRES_TCMG;
-\COPY DAM_LOKATIEADRES_TCMG(Creatie_dat, Creatie_user, DLS_id, Lok_id, Mutatie_dat, Mutatie_user, RAE_id, RAS_id) FROM 'PAD-NAAR_CSVsDAM_LOKATIEADRES_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_LOKATIEADRES;
+\COPY BAS_DAM_LOKATIEADRES(Creatie_dat, Creatie_user, DLS_id, Lok_id, Mutatie_dat, Mutatie_user, RAE_id, RAS_id) FROM 'PAD-NAAR_CSVsBAS_DAM_LOKATIEADRES.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_MDW_INTERN_HIST_TCMG;
-\COPY DAM_MDW_INTERN_HIST_TCMG(Dos_id, Prg_id, Mdw_id, Rol_cd, Datum_van, Datum_tot, Behandelend, Notitie, Mdw_id_voorheen, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsDAM_MDW_INTERN_HIST_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_MDW_INTERN_HIST;
+\COPY BAS_DAM_MDW_INTERN_HIST(Dos_id, Prg_id, Mdw_id, Rol_cd, Datum_van, Datum_tot, Behandelend, Notitie, Mdw_id_voorheen, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_DAM_MDW_INTERN_HIST.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_MDW_INTERN_TCMG;
-\COPY DAM_MDW_INTERN_TCMG(Behandelend, Creatie_dat, Creatie_user, Dos_id, Mdw_id, Mdw_id_voorheen, Mutatie_dat, Mutatie_user, Notitie, Prg_id, Rol_cd) FROM 'PAD-NAAR_CSVsDAM_MDW_INTERN_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_MDW_INTERN;
+\COPY BAS_DAM_MDW_INTERN(Behandelend, Creatie_dat, Creatie_user, Dos_id, Mdw_id, Mdw_id_voorheen, Mutatie_dat, Mutatie_user, Notitie, Prg_id, Rol_cd) FROM 'PAD-NAAR_CSVsBAS_DAM_MDW_INTERN.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_STATUSHISTORIE_TCMG;
-\COPY DAM_STATUSHISTORIE_TCMG(Commentaar, Cor_id_tot, Cor_id_van, Creatie_dat, Creatie_user, Datum_tot, Datum_van, Dos_id, Mutatie_dat, Mutatie_user, Ssg_cd, Sts_cd, Volg_nr) FROM 'PAD-NAAR_CSVsDAM_STATUSHISTORIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_STATUSHISTORIE;
+\COPY BAS_DAM_STATUSHISTORIE(Commentaar, Cor_id_tot, Cor_id_van, Creatie_dat, Creatie_user, Datum_tot, Datum_van, Dos_id, Mutatie_dat, Mutatie_user, Ssg_cd, Sts_cd, Volg_nr) FROM 'PAD-NAAR_CSVsBAS_DAM_STATUSHISTORIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_TERMIJN_PARAAF_NOTITIE_TCMG;
-\COPY DAM_TERMIJN_PARAAF_NOTITIE_TCMG(Cor_id, Creatie_dat, Creatie_user, Dos_id, Mutatie_dat, Mutatie_user, Ter_id, Toelichting) FROM 'PAD-NAAR_CSVsDAM_TERMIJN_PARAAF_NOTITIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_TERMIJN_PARAAF_NOTITIE;
+\COPY BAS_DAM_TERMIJN_PARAAF_NOTITIE(Cor_id, Creatie_dat, Creatie_user, Dos_id, Mutatie_dat, Mutatie_user, Ter_id, Toelichting) FROM 'PAD-NAAR_CSVsBAS_DAM_TERMIJN_PARAAF_NOTITIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE DAM_TERMIJN_TCMG;
-\COPY DAM_TERMIJN_TCMG(Aanvullende_voorwaarden, Actie, Actie_dat, Con_id, Cor_id, Creatie_dat, Creatie_user, Dos_id, Dossiergroep_ter_id, Mdw_id, Mdw_id_afgemeld, Mutatie_dat, Mutatie_user, Notitie, Opgevoerd_dat, Opschortend_jn, Prg_id, Reactie_cd, Rol_cd, Ter_id, Voldaan_dat, Volgorde_paraaf) FROM 'PAD-NAAR_CSVsDAM_TERMIJN_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_DAM_TERMIJN;
+\COPY BAS_DAM_TERMIJN(Aanvullende_voorwaarden, Actie, Actie_dat, Con_id, Cor_id, Creatie_dat, Creatie_user, Dos_id, Dossiergroep_ter_id, Mdw_id, Mdw_id_afgemeld, Mutatie_dat, Mutatie_user, Notitie, Opgevoerd_dat, Opschortend_jn, Prg_id, Reactie_cd, Rol_cd, Ter_id, Voldaan_dat, Volgorde_paraaf) FROM 'PAD-NAAR_CSVsBAS_DAM_TERMIJN.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE FAM_STATUSHISTORIE_TCMG;
-\COPY FAM_STATUSHISTORIE_TCMG(Commentaar, Datum_van, Datum_tot, Dos_id, Ssg_cd, Sts_cd, Tra_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp) FROM 'PAD-NAAR_CSVsFAM_STATUSHISTORIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_FAM_STATUSHISTORIE;
+\COPY BAS_FAM_STATUSHISTORIE(Commentaar, Datum_van, Datum_tot, Dos_id, Ssg_cd, Sts_cd, Tra_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp) FROM 'PAD-NAAR_CSVsBAS_FAM_STATUSHISTORIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE FAM_TRANSACTIE_REGEL_TCMG;
-\COPY FAM_TRANSACTIE_REGEL_TCMG(Tra_id, Rpt_nr, Ovk_nr, Bgt_cd, Rpe_datum_van, Vpl_tra_id, Prg_id, Vpl_volgnummer, Jaar, Reg_id, Reg_nr, Bedrag, Valutadatum, Iban, Bic, Omhang_jaar, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Timestamp, Cvk_id_geselecteerd, Cvk_id_verwerkt, Volgnummer, Gecorrigeerd_jn, Rpt_nr_oud, Naar_oracle, Boeking, Imvb) FROM 'PAD-NAAR_CSVsFAM_TRANSACTIE_REGEL_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_FAM_TRANSACTIE_REGEL;
+\COPY BAS_FAM_TRANSACTIE_REGEL(Tra_id, Rpt_nr, Ovk_nr, Bgt_cd, Rpe_datum_van, Vpl_tra_id, Prg_id, Vpl_volgnummer, Jaar, Reg_id, Reg_nr, Bedrag, Valutadatum, Iban, Bic, Omhang_jaar, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Timestamp, Cvk_id_geselecteerd, Cvk_id_verwerkt, Volgnummer, Gecorrigeerd_jn, Rpt_nr_oud, Naar_oracle, Boeking, Imvb) FROM 'PAD-NAAR_CSVsBAS_FAM_TRANSACTIE_REGEL.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE FAM_TRANSACTIE_TCMG;
-\COPY FAM_TRANSACTIE_TCMG(Volgnummer, Tra_id, Prg_id, Jaar, Dos_id, Tra_cd, Reden, bedrag, Bedrag_nlg, Datum, Valutadatum, Fam_verplichting, Fam_declaratie, Fam_bij_rente, Fam_kwijtschelding, Fam_rest_voorschot, Fam_overboeking, Fam_aflossing, Fam_budgetmutatie, Fam_rest_aflossing, Fam_betaalritme, Sts_cd, Ssg_cd, Correctie, Correctie_volgnr, Tra_id_van, Vst_id, Rel_id, Rol_cd, Datum_acc_afd, Referentie, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Timestamp, Bedrag_ex_btw, Vst_volgnr, Duurzaam_jn, Run_id, Fam_vordering, Fam_vordering_afhandeling, Vordering_tra_id, Storneren, Vordering_bedrag, Afgelost, Kwijtgescholden, Tmp_vordering_id, Omhang_jaar, Omhang_jn, Tra_id_rv, Tra_id_dcv, Jz_id, Afreken_tra_id, Correctie_bedrag_bob, Vordering_status, On_hold, Termijn_uitstel, Tra_id_ean_eap) FROM 'PAD-NAAR_CSVsFAM_TRANSACTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_FAM_TRANSACTIE;
+\COPY BAS_FAM_TRANSACTIE(Volgnummer, Tra_id, Prg_id, Jaar, Dos_id, Tra_cd, Reden, bedrag, Bedrag_nlg, Datum, Valutadatum, Fam_verplichting, Fam_declaratie, Fam_bij_rente, Fam_kwijtschelding, Fam_rest_voorschot, Fam_overboeking, Fam_aflossing, Fam_budgetmutatie, Fam_rest_aflossing, Fam_betaalritme, Sts_cd, Ssg_cd, Correctie, Correctie_volgnr, Tra_id_van, Vst_id, Rel_id, Rol_cd, Datum_acc_afd, Referentie, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Timestamp, Bedrag_ex_btw, Vst_volgnr, Duurzaam_jn, Run_id, Fam_vordering, Fam_vordering_afhandeling, Vordering_tra_id, Storneren, Vordering_bedrag, Afgelost, Kwijtgescholden, Tmp_vordering_id, Omhang_jaar, Omhang_jn, Tra_id_rv, Tra_id_dcv, Jz_id, Afreken_tra_id, Correctie_bedrag_bob, Vordering_status, On_hold, Termijn_uitstel, Tra_id_ean_eap) FROM 'PAD-NAAR_CSVsBAS_FAM_TRANSACTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE FAM_VERPLICHTING_TCMG;
-\COPY FAM_VERPLICHTING_TCMG(Tra_id, Reg_id, Reg_nr, Verplichtingssoort, Omschrijving, Totaal_ingediend, Gevraagd, Totaal_geschoond, Vergoedings_pct, Intake_datum, Nota_datum, Panel_datum, Overige_subsidie, Timestamp, Ikb_naam, Inkoopbevinding, Inkoopbevinding_user, Betalingsverzoeknummer) FROM 'PAD-NAAR_CSVsFAM_VERPLICHTING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_FAM_VERPLICHTING;
+\COPY BAS_FAM_VERPLICHTING(Tra_id, Reg_id, Reg_nr, Verplichtingssoort, Omschrijving, Totaal_ingediend, Gevraagd, Totaal_geschoond, Vergoedings_pct, Intake_datum, Nota_datum, Panel_datum, Overige_subsidie, Timestamp, Ikb_naam, Inkoopbevinding, Inkoopbevinding_user, Betalingsverzoeknummer) FROM 'PAD-NAAR_CSVsBAS_FAM_VERPLICHTING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE IOM_FUNCTIE_TCMG;
-\COPY IOM_FUNCTIE_TCMG(Creatie_dat, Creatie_user, Fun_cd, Fun_oms, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsIOM_FUNCTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_IOM_FUNCTIE;
+\COPY BAS_IOM_FUNCTIE(Creatie_dat, Creatie_user, Fun_cd, Fun_oms, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_IOM_FUNCTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE IOM_LOCATIE_TCMG;
-\COPY IOM_LOCATIE_TCMG(Loc_cd, Omschrijving, Actief, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsIOM_LOCATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_IOM_LOCATIE;
+\COPY BAS_IOM_LOCATIE(Loc_cd, Omschrijving, Actief, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_IOM_LOCATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE IOM_MEDEWERKER_TCMG;
-\COPY IOM_MEDEWERKER_TCMG(Aanspreeknaam, Achternaam, Actief, Banknaam, Beveiligingspas, Beveiligingspasnr, Bic, Certhoud_id, Certserienummer, Creatie_dat, Creatie_user, Datum_inlog, Datum_uit_dienst, Dienstverband, Eigen_vervoer_jn, Fun_cd, Geslacht, Iban, Inleen_jn, Loc_cd, Mdw_cd, Mdw_emailadres, Mdw_handtekening, Mdw_handtekening_image, Mdw_id, Mobiel, Mutatie_dat, Mutatie_user, Parkeerkaart, Plaatsnaam, Standplaats, Telefoon, Titel_na_cd, Titel_voor_cd, Toestel_dh, Toestel_zw, Tvs_cd_oud, Voorletters, Voornaam, Voorvoegsel) FROM 'PAD-NAAR_CSVsIOM_MEDEWERKER_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_IOM_MEDEWERKER;
+\COPY BAS_IOM_MEDEWERKER(Aanspreeknaam, Achternaam, Actief, Banknaam, Beveiligingspas, Beveiligingspasnr, Bic, Certhoud_id, Certserienummer, Creatie_dat, Creatie_user, Datum_inlog, Datum_uit_dienst, Dienstverband, Eigen_vervoer_jn, Fun_cd, Geslacht, Iban, Inleen_jn, Loc_cd, Mdw_cd, Mdw_emailadres, Mdw_handtekening, Mdw_handtekening_image, Mdw_id, Mobiel, Mutatie_dat, Mutatie_user, Parkeerkaart, Plaatsnaam, Standplaats, Telefoon, Titel_na_cd, Titel_voor_cd, Toestel_dh, Toestel_zw, Tvs_cd_oud, Voorletters, Voornaam, Voorvoegsel) FROM 'PAD-NAAR_CSVsBAS_IOM_MEDEWERKER.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE IOM_MEDEWERKERROL_TCMG;
-\COPY IOM_MEDEWERKERROL_TCMG(Mdw_id, Rol_cd, Creatie_dat, Creatie_user, Mutatie_user, Mutatie_dat, Timestamp, Actief) FROM 'PAD-NAAR_CSVsIOM_MEDEWERKERROL_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_IOM_MEDEWERKERROL;
+\COPY BAS_IOM_MEDEWERKERROL(Mdw_id, Rol_cd, Creatie_dat, Creatie_user, Mutatie_user, Mutatie_dat, Timestamp, Actief) FROM 'PAD-NAAR_CSVsBAS_IOM_MEDEWERKERROL.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_BEHANDELAAR_TCMG;
-\COPY JZM_BEHANDELAAR_TCMG(Mdw_id, Jz_id, Rol_cd, Eigenaar, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsJZM_BEHANDELAAR_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_BEHANDELAAR;
+\COPY BAS_JZM_BEHANDELAAR(Mdw_id, Jz_id, Rol_cd, Eigenaar, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_JZM_BEHANDELAAR.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_BEROEP_TCMG;
-\COPY JZM_BEROEP_TCMG(Jz_id, Bzr_id, Zaaknummer, Datum_zitting, Uitspraak, Datum_uitspr, Bedrag_schade, Bedrag_schade_nlg, Datum_schade) FROM 'PAD-NAAR_CSVsJZM_BEROEP_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_BEROEP;
+\COPY BAS_JZM_BEROEP(Jz_id, Bzr_id, Zaaknummer, Datum_zitting, Uitspraak, Datum_uitspr, Bedrag_schade, Bedrag_schade_nlg, Datum_schade) FROM 'PAD-NAAR_CSVsBAS_JZM_BEROEP.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_BEZWAAR_TCMG;
-\COPY JZM_BEZWAAR_TCMG(Jz_id, Belasting_cd, Datum_compleet, Wachttijd, Datum_hoorzitting_org, Tijd_hoorzitting_org, Datum_hoorzitting, Tijd_hoorzitting, App_verschenen, Datum_ontvangst, Datum_vragenbrief, Wett_termijn_7_1, Wett_termijn_7_3, Wett_termijn_datum, Uitstel_datum, Overschrijding_datum, Primair_lid_3, Reken_cor_id, Reken_wett_termijn_7_1, Adviescommissie, Datum_1e_heropname_schade, Tijd_1e_heropname_schade, Datum_2e_heropname_schade, Tijd_2e_heropname_schade, Datum_orig_schouw, Tijd_orig_schouw, Datum_def_schouw, Tijd_def_schouw) FROM 'PAD-NAAR_CSVsJZM_BEZWAAR_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_BEZWAAR;
+\COPY BAS_JZM_BEZWAAR(Jz_id, Belasting_cd, Datum_compleet, Wachttijd, Datum_hoorzitting_org, Tijd_hoorzitting_org, Datum_hoorzitting, Tijd_hoorzitting, App_verschenen, Datum_ontvangst, Datum_vragenbrief, Wett_termijn_7_1, Wett_termijn_7_3, Wett_termijn_datum, Uitstel_datum, Overschrijding_datum, Primair_lid_3, Reken_cor_id, Reken_wett_termijn_7_1, Adviescommissie, Datum_1e_heropname_schade, Tijd_1e_heropname_schade, Datum_2e_heropname_schade, Tijd_2e_heropname_schade, Datum_orig_schouw, Tijd_orig_schouw, Datum_def_schouw, Tijd_def_schouw) FROM 'PAD-NAAR_CSVsBAS_JZM_BEZWAAR.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_BEZWAAR_TERMIJN_HIST_TCMG;
-\COPY JZM_BEZWAAR_TERMIJN_HIST_TCMG(Jz_id, Vanaf_datum, Volg_nr, Jz_nr, Cor_id, Wijziging_in, Sts_cd, Wett_termijn_7_1, Wett_termijn_7_3, Uitstel_datum, Overschrijding_datum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Adviescommissie) FROM 'PAD-NAAR_CSVsJZM_BEZWAAR_TERMIJN_HIST_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_BEZWAAR_TERMIJN_HIST;
+\COPY BAS_JZM_BEZWAAR_TERMIJN_HIST(Jz_id, Vanaf_datum, Volg_nr, Jz_nr, Cor_id, Wijziging_in, Sts_cd, Wett_termijn_7_1, Wett_termijn_7_3, Uitstel_datum, Overschrijding_datum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Adviescommissie) FROM 'PAD-NAAR_CSVsBAS_JZM_BEZWAAR_TERMIJN_HIST.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_BOB_WIZARD_TCMG;
-\COPY JZM_BOB_WIZARD_TCMG(Jz_id, Verleen_bedrag, Betaal_bedrag, Vaststelling_bedrag, Tra_cd_1, Bedrag_tra_cd_1, Tra_cd_2, Bedrag_tra_cd_2, Tra_cd_3, Bedrag_tra_cd_3, Sts_cd_voor, Sts_cd_na, Verleend_voor, Gedeclareerd_voor, Betaald_voor, Ingetrokken_voor, Open_vordering_voor, Open_verlening_voor, Verleen_na, Gedeclareerd_na, Betaald_na, Ingetrokken_na, Open_vordering_na, Open_verlening_na, Aanmaken_bob, Verwijder_trans, Cst_cd, Cst_cd_beschikking, Cor_id_beschikking, Tra_id_beschikking_1, Tra_cd_beschikking_1, Tra_bedrag_beschikking_1, Tra_id_beschikking_2, Tra_cd_beschikking_2, Tra_bedrag_beschikking_2, Tra_id_afd, Bedrag_afspraak_afd, Datum_afspraak_afd, Datum_afd, Tra_cd_afd, Vordering_tra_id_afd, Mutatie_dat, Mutatie_user, Creatie_dat, Creatie_user) FROM 'PAD-NAAR_CSVsJZM_BOB_WIZARD_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_BOB_WIZARD;
+\COPY BAS_JZM_BOB_WIZARD(Jz_id, Verleen_bedrag, Betaal_bedrag, Vaststelling_bedrag, Tra_cd_1, Bedrag_tra_cd_1, Tra_cd_2, Bedrag_tra_cd_2, Tra_cd_3, Bedrag_tra_cd_3, Sts_cd_voor, Sts_cd_na, Verleend_voor, Gedeclareerd_voor, Betaald_voor, Ingetrokken_voor, Open_vordering_voor, Open_verlening_voor, Verleen_na, Gedeclareerd_na, Betaald_na, Ingetrokken_na, Open_vordering_na, Open_verlening_na, Aanmaken_bob, Verwijder_trans, Cst_cd, Cst_cd_beschikking, Cor_id_beschikking, Tra_id_beschikking_1, Tra_cd_beschikking_1, Tra_bedrag_beschikking_1, Tra_id_beschikking_2, Tra_cd_beschikking_2, Tra_bedrag_beschikking_2, Tra_id_afd, Bedrag_afspraak_afd, Datum_afspraak_afd, Datum_afd, Tra_cd_afd, Vordering_tra_id_afd, Mutatie_dat, Mutatie_user, Creatie_dat, Creatie_user) FROM 'PAD-NAAR_CSVsBAS_JZM_BOB_WIZARD.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_BRIEF_FUNCTIE_TCMG;
-\COPY JZM_BRIEF_FUNCTIE_TCMG(Fnc_cd, Oms, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsJZM_BRIEF_FUNCTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_BRIEF_FUNCTIE;
+\COPY BAS_JZM_BRIEF_FUNCTIE(Fnc_cd, Oms, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_JZM_BRIEF_FUNCTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_FUNCTIE_VAN_BRIEF_TCMG;
-\COPY JZM_FUNCTIE_VAN_BRIEF_TCMG(Fnc_cd, Cst_cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsJZM_FUNCTIE_VAN_BRIEF_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_FUNCTIE_VAN_BRIEF;
+\COPY BAS_JZM_FUNCTIE_VAN_BRIEF(Fnc_cd, Cst_cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_JZM_FUNCTIE_VAN_BRIEF.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_PROCEDURE_TCMG;
-\COPY JZM_PROCEDURE_TCMG(Jaar, Volgnr, Jz_nr, Jz_id, Sts_cd, Ssg_cd, Dos_id, Cor_id, Dos_sts_cd, Dos_ssg_cd, Indieningsdatum, Datum_dos_jz, Actiedatum, Afhandeldatum, Notities, Proc_type, Jzm_bezwaar, Jzm_beroep, Jzm_hoger_beroep, Jzm_verz_schadeverg, Actuele_beh_mdw_id, Actuele_beh_rol_cd, Problematiekcode, Bedrag_bob, Aard_bob, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Technisch_cor_id, Hoofdproces) FROM 'PAD-NAAR_CSVsJZM_PROCEDURE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_PROCEDURE;
+\COPY BAS_JZM_PROCEDURE(Jaar, Volgnr, Jz_nr, Jz_id, Sts_cd, Ssg_cd, Dos_id, Cor_id, Dos_sts_cd, Dos_ssg_cd, Indieningsdatum, Datum_dos_jz, Actiedatum, Afhandeldatum, Notities, Proc_type, Jzm_bezwaar, Jzm_beroep, Jzm_hoger_beroep, Jzm_verz_schadeverg, Actuele_beh_mdw_id, Actuele_beh_rol_cd, Problematiekcode, Bedrag_bob, Aard_bob, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Technisch_cor_id, Hoofdproces) FROM 'PAD-NAAR_CSVsBAS_JZM_PROCEDURE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_REACTIE_TERMIJN_TCMG;
-\COPY JZM_REACTIE_TERMIJN_TCMG(Rol_cd, Cst_cd, Reactie_cd, Termijn, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsJZM_REACTIE_TERMIJN_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_REACTIE_TERMIJN;
+\COPY BAS_JZM_REACTIE_TERMIJN(Rol_cd, Cst_cd, Reactie_cd, Termijn, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_JZM_REACTIE_TERMIJN.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_STATUSREGEL_TCMG;
-\COPY JZM_STATUSREGEL_TCMG(Datum_van, Datum_tot, Jz_id, Sts_cd, Ssg_cd, Commentaar, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Cor_id_van, Cor_id_tot, Volg_nr) FROM 'PAD-NAAR_CSVsJZM_STATUSREGEL_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_STATUSREGEL;
+\COPY BAS_JZM_STATUSREGEL(Datum_van, Datum_tot, Jz_id, Sts_cd, Ssg_cd, Commentaar, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Cor_id_van, Cor_id_tot, Volg_nr) FROM 'PAD-NAAR_CSVsBAS_JZM_STATUSREGEL.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE JZM_UITSPRAAK_TCMG;
-\COPY JZM_UITSPRAAK_TCMG(Uitspraak, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsJZM_UITSPRAAK_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_JZM_UITSPRAAK;
+\COPY BAS_JZM_UITSPRAAK(Uitspraak, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_JZM_UITSPRAAK.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE OBJ_LOKATIE_TCMG;
-\COPY OBJ_LOKATIE_TCMG(Bik_cd, Bik_oms, Bouwtype, Creatie_dat, Creatie_user, Dos_id, EobjectLocatie_id, Extra_gegevens, Huisnr, Huisnr_toevoeging, Lok_id, Mutatie_dat, Mutatie_user, Naam, Plaats, Postcode, Prg_id, Provincie, Straat) FROM 'PAD-NAAR_CSVsOBJ_LOKATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_OBJ_LOKATIE;
+\COPY BAS_OBJ_LOKATIE(Bik_cd, Bik_oms, Bouwtype, Creatie_dat, Creatie_user, Dos_id, EobjectLocatie_id, Extra_gegevens, Huisnr, Huisnr_toevoeging, Lok_id, Mutatie_dat, Mutatie_user, Naam, Plaats, Postcode, Prg_id, Provincie, Straat) FROM 'PAD-NAAR_CSVsBAS_OBJ_LOKATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE PCT_MUT_TCMG;
-\COPY PCT_MUT_TCMG(Mutatie_srt, Mutatie_ind, Old_cijfer, Old_letter, Old_reeksindicatie, Old_codebreekpunt_van, Old_codebreekpunt_tm, Old_woonplaatsnaam_ptt, Old_woonplaatsnaam_nen, Old_straatnaam_ptt, Old_straatnaam_nen, Old_straatnaam_off, Old_extract_woonplaats, Old_extract_straatnaam, Old_gemeentecode, Old_gemeentenaam, Old_provinciecode, Old_cebuco_code, New_cijfer, New_letter, New_reeksindicatie, New_codebreekpunt_van, New_codebreekpunt_tm, New_woonplaatsnaam_ptt, New_woonplaatsnaam_nen, New_straatnaam_ptt, New_straatnaam_nen, New_straatnaam_off, New_extract_woonplaats, New_extract_straatnaam, New_gemeentecode, New_gemeentenaam, New_provinciecode, New_cebuco_code) FROM 'PAD-NAAR_CSVsPCT_MUT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_PCT_MUT;
+\COPY BAS_PCT_MUT(Mutatie_srt, Mutatie_ind, Old_cijfer, Old_letter, Old_reeksindicatie, Old_codebreekpunt_van, Old_codebreekpunt_tm, Old_woonplaatsnaam_ptt, Old_woonplaatsnaam_nen, Old_straatnaam_ptt, Old_straatnaam_nen, Old_straatnaam_off, Old_extract_woonplaats, Old_extract_straatnaam, Old_gemeentecode, Old_gemeentenaam, Old_provinciecode, Old_cebuco_code, New_cijfer, New_letter, New_reeksindicatie, New_codebreekpunt_van, New_codebreekpunt_tm, New_woonplaatsnaam_ptt, New_woonplaatsnaam_nen, New_straatnaam_ptt, New_straatnaam_nen, New_straatnaam_off, New_extract_woonplaats, New_extract_straatnaam, New_gemeentecode, New_gemeentenaam, New_provinciecode, New_cebuco_code) FROM 'PAD-NAAR_CSVsBAS_PCT_MUT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE PCT_TCMG;
-\COPY PCT_TCMG(Cijfer, Letter, Reeksindicatie, Codebreekpunt_van, Codebreekpunt_tm, Woonplaatsnaam_ptt, Woonplaatsnaam_nen, Straatnaam_ptt, Straatnaam_nen, Straatnaam_off, Extract_woonplaats, Extract_straatnaam, Gemeentecode, Gemeentenaam, Provinciecode, Cebuco_code) FROM 'PAD-NAAR_CSVsPCT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_PCT;
+\COPY BAS_PCT(Cijfer, Letter, Reeksindicatie, Codebreekpunt_van, Codebreekpunt_tm, Woonplaatsnaam_ptt, Woonplaatsnaam_nen, Straatnaam_ptt, Straatnaam_nen, Straatnaam_off, Extract_woonplaats, Extract_straatnaam, Gemeentecode, Gemeentenaam, Provinciecode, Cebuco_code) FROM 'PAD-NAAR_CSVsBAS_PCT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ADRES_RELATIE_TCMG;
-\COPY RBM_ADRES_RELATIE_TCMG(Adressoort, Creatie_dat, Creatie_user, Kkr_gevalideerd, Mutatie_dat, Mutatie_user, Rae_id, Ras_id, Rel_id, Vst_volgnr) FROM 'PAD-NAAR_CSVsRBM_ADRES_RELATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ADRES_RELATIE;
+\COPY BAS_RBM_ADRES_RELATIE(Adressoort, Creatie_dat, Creatie_user, Kkr_gevalideerd, Mutatie_dat, Mutatie_user, Rae_id, Ras_id, Rel_id, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_RBM_ADRES_RELATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ADRES_TCMG;
-\COPY RBM_ADRES_TCMG(Barcode, Creatie_dat, creatie_user, Huisnr, Huisnr_toe, Ias_id, Landnaam, Locatie_oms, Mutatie_dat, mutatie_user, Plaatsnaam, Postcd, Prov_cd, Ras_id, Straat, Validatie) FROM 'PAD-NAAR_CSVsRBM_ADRES_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ADRES;
+\COPY BAS_RBM_ADRES(Barcode, Creatie_dat, creatie_user, Huisnr, Huisnr_toe, Ias_id, Landnaam, Locatie_oms, Mutatie_dat, mutatie_user, Plaatsnaam, Postcd, Prov_cd, Ras_id, Straat, Validatie) FROM 'PAD-NAAR_CSVsBAS_RBM_ADRES.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_COM_ADRES_CP_TCMG;
-\COPY RBM_COM_ADRES_CP_TCMG(Creatie_dat, creatie_user, Mutatie_dat, Mutatie_user, Org_id, Per_id, Rav_id, Rca_id) FROM 'PAD-NAAR_CSVsRBM_COM_ADRES_CP_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_COM_ADRES_CP;
+\COPY BAS_RBM_COM_ADRES_CP(Creatie_dat, creatie_user, Mutatie_dat, Mutatie_user, Org_id, Per_id, Rav_id, Rca_id) FROM 'PAD-NAAR_CSVsBAS_RBM_COM_ADRES_CP.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_COM_ADRES_RELATIE_TCMG;
-\COPY RBM_COM_ADRES_RELATIE_TCMG(Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Rae_id, Rca_id, Rel_id, Vst_volgnr) FROM 'PAD-NAAR_CSVsRBM_COM_ADRES_RELATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_COM_ADRES_RELATIE;
+\COPY BAS_RBM_COM_ADRES_RELATIE(Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Rae_id, Rca_id, Rel_id, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_RBM_COM_ADRES_RELATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_COM_ADRES_TCMG;
-\COPY RBM_COM_ADRES_TCMG(Com_Cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Rca_id, Telnr_email, Referentie) FROM 'PAD-NAAR_CSVsRBM_COM_ADRES_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_COM_ADRES;
+\COPY BAS_RBM_COM_ADRES(Com_Cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Rca_id, Telnr_email, Referentie) FROM 'PAD-NAAR_CSVsBAS_RBM_COM_ADRES.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_CONTACTPERSOON_TCMG;
-\COPY RBM_CONTACTPERSOON_TCMG(Afdeling, Certhoud_id, Creatie_dat, Creatie_user, Functie, Kkr_relatie_id, Mutatie_dat, Mutatie_user, Notitie, Org_id, Per_id, Ref_kkr_relatie_id, Status_contactpersoon, Validatie) FROM 'PAD-NAAR_CSVsRBM_CONTACTPERSOON_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_CONTACTPERSOON;
+\COPY BAS_RBM_CONTACTPERSOON(Afdeling, Certhoud_id, Creatie_dat, Creatie_user, Functie, Kkr_relatie_id, Mutatie_dat, Mutatie_user, Notitie, Org_id, Per_id, Ref_kkr_relatie_id, Status_contactpersoon, Validatie) FROM 'PAD-NAAR_CSVsBAS_RBM_CONTACTPERSOON.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_CP_VESTIGING_TCMG;
-\COPY RBM_CP_VESTIGING_TCMG(Org_id, Per_id, Vst_volgnr) FROM 'PAD-NAAR_CSVsRBM_CP_VESTIGING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_CP_VESTIGING;
+\COPY BAS_RBM_CP_VESTIGING(Org_id, Per_id, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_RBM_CP_VESTIGING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ORG_BSI_TCMG;
-\COPY RBM_ORG_BSI_TCMG(Rel_id, Bsi_cd, Volg_nr, Begindatum, Einddatum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsRBM_ORG_BSI_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ORG_BSI;
+\COPY BAS_RBM_ORG_BSI(Rel_id, Bsi_cd, Volg_nr, Begindatum, Einddatum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_RBM_ORG_BSI.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ORG_FAILLIET_TCMG;
-\COPY RBM_ORG_FAILLIET_TCMG(Kvk_nr, Graydon_bedrijfsnr, Kvk_dossiernr, Kvk_kamernr, Kvk_subdossiernr, Naam, Handelsnaam, Straatnaam_postbus, Huisnr_postbusnr, Huisnr_toevoeging, Postcode, Woonplaats, Land, Actuele_faillisement_cd, Actuele_status, Actuele_opheffings_cd) FROM 'PAD-NAAR_CSVsRBM_ORG_FAILLIET_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ORG_FAILLIET;
+\COPY BAS_RBM_ORG_FAILLIET(Kvk_nr, Graydon_bedrijfsnr, Kvk_dossiernr, Kvk_kamernr, Kvk_subdossiernr, Naam, Handelsnaam, Straatnaam_postbus, Huisnr_postbusnr, Huisnr_toevoeging, Postcode, Woonplaats, Land, Actuele_faillisement_cd, Actuele_status, Actuele_opheffings_cd) FROM 'PAD-NAAR_CSVsBAS_RBM_ORG_FAILLIET.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ORG_JAAR_TCMG;
-\COPY RBM_ORG_JAAR_TCMG(Rel_id, Jaar, Aantal_werknemers, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp, Omzet, Loonsom, So_loonsom, Max_so_vermindering, Peildatum, Aantal_so_werknemers, Bron, Senterniveau_jn, Lb_verm_voorlopig, Lb_vermindering_eindafrekening, Balanstotaal) FROM 'PAD-NAAR_CSVsRBM_ORG_JAAR_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ORG_JAAR;
+\COPY BAS_RBM_ORG_JAAR(Rel_id, Jaar, Aantal_werknemers, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp, Omzet, Loonsom, So_loonsom, Max_so_vermindering, Peildatum, Aantal_so_werknemers, Bron, Senterniveau_jn, Lb_verm_voorlopig, Lb_vermindering_eindafrekening, Balanstotaal) FROM 'PAD-NAAR_CSVsBAS_RBM_ORG_JAAR.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ORG_NAAM_TCMG;
-\COPY RBM_ORG_NAAM_TCMG(Org_id, Org_naam, Org_naam_type, Sushi_foutmelding, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Kkr_gevalideerd) FROM 'PAD-NAAR_CSVsRBM_ORG_NAAM_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ORG_NAAM;
+\COPY BAS_RBM_ORG_NAAM(Org_id, Org_naam, Org_naam_type, Sushi_foutmelding, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Kkr_gevalideerd) FROM 'PAD-NAAR_CSVsBAS_RBM_ORG_NAAM.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_ORG_TCMG;
-\COPY RBM_ORG_TCMG(Bik_Cd, Bron_jr, BTW_nummer, BTW_plichtig, IB_plichtig_sinds, Jaar_oprichting, Kkr_RSIN_afwijkend, KVK_nr, Naam, Notitie, Rel_id, Rvm_cd, Status_org, Volg_nr_LB, Voortzetting_van_rel_id, VPB_IB_nummer, IB_VPB_Plichtig) FROM 'PAD-NAAR_CSVsRBM_ORG_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_ORG;
+\COPY BAS_RBM_ORG(Bik_Cd, Bron_jr, BTW_nummer, BTW_plichtig, IB_plichtig_sinds, Jaar_oprichting, Kkr_RSIN_afwijkend, KVK_nr, Naam, Notitie, Rel_id, Rvm_cd, Status_org, Volg_nr_LB, Voortzetting_van_rel_id, VPB_IB_nummer, IB_VPB_Plichtig) FROM 'PAD-NAAR_CSVsBAS_RBM_ORG.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_PERSOON_TCMG;
-\COPY RBM_PERSOON_TCMG(Aanhef, Aanlevernaam, Aanspreeknaam, Achternaam, Foutmelding, Geboortedatum, Geslacht, Import_contactpersonen_id, Notitie, Rbm_persoon_contact, Rbm_persoon_particulier, Rel_id, Status_persoon, Sushi_foutmelding, Taal, Titels_na, Titels_voor, Tussenvoegsels, Validatie, Voorletters, Voornaam, XML_String) FROM 'PAD-NAAR_CSVsRBM_PERSOON_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_PERSOON;
+\COPY BAS_RBM_PERSOON(Aanhef, Aanlevernaam, Aanspreeknaam, Achternaam, Foutmelding, Geboortedatum, Geslacht, Import_contactpersonen_id, Notitie, Rbm_persoon_contact, Rbm_persoon_particulier, Rel_id, Status_persoon, Sushi_foutmelding, Taal, Titels_na, Titels_voor, Tussenvoegsels, Validatie, Voorletters, Voornaam, XML_String) FROM 'PAD-NAAR_CSVsBAS_RBM_PERSOON.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_REKENINGNRS_TCMG;
-\COPY RBM_REKENINGNRS_TCMG(Banknaam, Bic, Creatie_dat, Creatie_user, Externe_bron_cd, Goedkeuring_sts, Iban, Mutatie_dat, Mutatie_user, Rel_id, User_akkoord) FROM 'PAD-NAAR_CSVsRBM_REKENINGNRS_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_REKENINGNRS;
+\COPY BAS_RBM_REKENINGNRS(Banknaam, Bic, Creatie_dat, Creatie_user, Externe_bron_cd, Goedkeuring_sts, Iban, Mutatie_dat, Mutatie_user, Rel_id, User_akkoord) FROM 'PAD-NAAR_CSVsBAS_RBM_REKENINGNRS.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_REKNR_MUT_TCMG;
-\COPY RBM_REKNR_MUT_TCMG(Rel_id, Volgnummer, Org_banknaam, Org_bankgironr, New_banknaam, New_bankgironr, Gebruiker, Datum_mutatie, Iban, New_iban, Bic, New_bic, Org_user_akkoord, New_user_akkoord, Org_goedkeuring_sts, New_goedkeuring_sts, Externe_bron_cd) FROM 'PAD-NAAR_CSVsRBM_REKNR_MUT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_REKNR_MUT;
+\COPY BAS_RBM_REKNR_MUT(Rel_id, Volgnummer, Org_banknaam, Org_bankgironr, New_banknaam, New_bankgironr, Gebruiker, Datum_mutatie, Iban, New_iban, Bic, New_bic, Org_user_akkoord, New_user_akkoord, Org_goedkeuring_sts, New_goedkeuring_sts, Externe_bron_cd) FROM 'PAD-NAAR_CSVsBAS_RBM_REKNR_MUT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_RELATIE_TCMG;
-\COPY RBM_RELATIE_TCMG(Actief, Auth_id, Belastingeenheid, Creatie_dat, creatie_user, Fiscaalnr, IdE_id, Invoer_id, KR_Gevalideerd, Kkr_Relatie_id, Mutatie_dat, mutatie_user, Rbm_org, Rbm_persoon, Ref_kkr_relatie_id, Rel_id, Relatietype) FROM 'PAD-NAAR_CSVsRBM_RELATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_RELATIE;
+\COPY BAS_RBM_RELATIE(Actief, Auth_id, Belastingeenheid, Creatie_dat, creatie_user, Fiscaalnr, IdE_id, Invoer_id, KR_Gevalideerd, Kkr_Relatie_id, Mutatie_dat, mutatie_user, Rbm_org, Rbm_persoon, Ref_kkr_relatie_id, Rel_id, Relatietype) FROM 'PAD-NAAR_CSVsBAS_RBM_RELATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_SBI_ORG_TCMG;
-\COPY RBM_SBI_ORG_TCMG(Creatie_dat, Creatie_user, Hoofdactiviteit, Mutatie_dat, Mutatie_user, Rel_id, Sbi_cd) FROM 'PAD-NAAR_CSVsRBM_SBI_ORG_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_SBI_ORG;
+\COPY BAS_RBM_SBI_ORG(Creatie_dat, Creatie_user, Hoofdactiviteit, Mutatie_dat, Mutatie_user, Rel_id, Sbi_cd) FROM 'PAD-NAAR_CSVsBAS_RBM_SBI_ORG.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RBM_VESTIGING_TCMG;
-\COPY RBM_VESTIGING_TCMG(Actief, Auth_id, Bik_cd, Creatie_dat, Creatie_user, Hoofd_neven, Kkr_conversie, Kkr_gevalideerd, Kkr_gevonden, Kkr_relatie_id, Kkr_verversingsdatum, KvK_volgnr, Mutatie_dat, Mutatie_user, Ref_Kkr_relatie_id, Rel_id, Vest_naam, Vestigings_nummer, Vst_volgnr) FROM 'PAD-NAAR_CSVsRBM_VESTIGING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RBM_VESTIGING;
+\COPY BAS_RBM_VESTIGING(Actief, Auth_id, Bik_cd, Creatie_dat, Creatie_user, Hoofd_neven, Kkr_conversie, Kkr_gevalideerd, Kkr_gevonden, Kkr_relatie_id, Kkr_verversingsdatum, KvK_volgnr, Mutatie_dat, Mutatie_user, Ref_Kkr_relatie_id, Rel_id, Vest_naam, Vestigings_nummer, Vst_volgnr) FROM 'PAD-NAAR_CSVsBAS_RBM_VESTIGING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_BUDGETONDERVERDELING_TCMG;
-\COPY RDM_BUDGETONDERVERDELING_TCMG(Bgt_cd, Budget, Budget_uitputting, Correctie_budget, Creatie_dat, Creatie_user, Jaar, Koppelen_jn, Mutatie_dat, Mutatie_user, Ovk_nr, Reg_id, Rpe_datum_van, Rpt_nr, Verdeeld_budget, Vrij_budget) FROM 'PAD-NAAR_CSVsRDM_BUDGETONDERVERDELING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_BUDGETONDERVERDELING;
+\COPY BAS_RDM_BUDGETONDERVERDELING(Bgt_cd, Budget, Budget_uitputting, Correctie_budget, Creatie_dat, Creatie_user, Jaar, Koppelen_jn, Mutatie_dat, Mutatie_user, Ovk_nr, Reg_id, Rpe_datum_van, Rpt_nr, Verdeeld_budget, Vrij_budget) FROM 'PAD-NAAR_CSVsBAS_RDM_BUDGETONDERVERDELING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_CLASSIFICATIE_TCMG;
-\COPY RDM_CLASSIFICATIE_TCMG(Prg_id, Class_cd, Class_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsRDM_CLASSIFICATIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_CLASSIFICATIE;
+\COPY BAS_RDM_CLASSIFICATIE(Prg_id, Class_cd, Class_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_RDM_CLASSIFICATIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_JAARBUDGET_TCMG;
-\COPY RDM_JAARBUDGET_TCMG(Afgesloten, Bgt_cd, Budget_uitputting, Correctie_budget, Creatie_dat, Creatie_user, Datum_van, Jaar, Mutatie_dat, Mutatie_user, Ovk_nr, Rpt_nr, Tot_budget, Verdeeld_budget, Verdeeld_jn, Vrij_budget) FROM 'PAD-NAAR_CSVsRDM_JAARBUDGET_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_JAARBUDGET;
+\COPY BAS_RDM_JAARBUDGET(Afgesloten, Bgt_cd, Budget_uitputting, Correctie_budget, Creatie_dat, Creatie_user, Datum_van, Jaar, Mutatie_dat, Mutatie_user, Ovk_nr, Rpt_nr, Tot_budget, Verdeeld_budget, Verdeeld_jn, Vrij_budget) FROM 'PAD-NAAR_CSVsBAS_RDM_JAARBUDGET.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_MANDAAT_TCMG;
-\COPY RDM_MANDAAT_TCMG(Mdt_id, Middelen_type, Mandaat_srt, Max_bedrag, Rdm_mandaat_rol, Rdm_mandaat_mdw, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mdw_id, Reg_id, Rol_cd) FROM 'PAD-NAAR_CSVsRDM_MANDAAT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_MANDAAT;
+\COPY BAS_RDM_MANDAAT(Mdt_id, Middelen_type, Mandaat_srt, Max_bedrag, Rdm_mandaat_rol, Rdm_mandaat_mdw, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mdw_id, Reg_id, Rol_cd) FROM 'PAD-NAAR_CSVsBAS_RDM_MANDAAT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_OVEREENKOMST_DOCUMENT_TCMG;
-\COPY RDM_OVEREENKOMST_DOCUMENT_TCMG(Ovk_nr, Doc_naam, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Bgt_cd, Rpt_nr, Datum_van) FROM 'PAD-NAAR_CSVsRDM_OVEREENKOMST_DOCUMENT_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_OVEREENKOMST_DOCUMENT;
+\COPY BAS_RDM_OVEREENKOMST_DOCUMENT(Ovk_nr, Doc_naam, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Bgt_cd, Rpt_nr, Datum_van) FROM 'PAD-NAAR_CSVsBAS_RDM_OVEREENKOMST_DOCUMENT.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_PERIODE_TCMG;
-\COPY RDM_PERIODE_TCMG(Ovk_nr, Rpt_nr, Bgt_cd, Datum_van, Datum_tot, Kopieer_periode, Auto_sap_jn, Comm_rente_pct, Beschik_datum, Tot_budget, Verdeeld_budget, Omschrijving, Prg_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp, Bdg_verdelen_100_pct_dp, Bdg_verdelen_100_pct_th, Iban, Bic, Imvb, Correctie_code, Auto_oracle, Boeking, Fin_soort, Kenmerk_lijn, Aflossing) FROM 'PAD-NAAR_CSVsRDM_PERIODE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_PERIODE;
+\COPY BAS_RDM_PERIODE(Ovk_nr, Rpt_nr, Bgt_cd, Datum_van, Datum_tot, Kopieer_periode, Auto_sap_jn, Comm_rente_pct, Beschik_datum, Tot_budget, Verdeeld_budget, Omschrijving, Prg_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp, Bdg_verdelen_100_pct_dp, Bdg_verdelen_100_pct_th, Iban, Bic, Imvb, Correctie_code, Auto_oracle, Boeking, Fin_soort, Kenmerk_lijn, Aflossing) FROM 'PAD-NAAR_CSVsBAS_RDM_PERIODE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_PRG_OVEREENKOMST_TCMG;
-\COPY RDM_PRG_OVEREENKOMST_TCMG(Prg_id, Ovk_nr, Datum_van, Datum_tot, Inhoud, Status, Contractdatum, Totaal_budget, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mjp_jn, Ovk_budget_controle, Vrij_budget, Budget_uitputting) FROM 'PAD-NAAR_CSVsRDM_PRG_OVEREENKOMST_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_PRG_OVEREENKOMST;
+\COPY BAS_RDM_PRG_OVEREENKOMST(Prg_id, Ovk_nr, Datum_van, Datum_tot, Inhoud, Status, Contractdatum, Totaal_budget, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mjp_jn, Ovk_budget_controle, Vrij_budget, Budget_uitputting) FROM 'PAD-NAAR_CSVsBAS_RDM_PRG_OVEREENKOMST.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_PROGRAMMAMEDEWERKERROL_TCMG;
-\COPY RDM_PROGRAMMAMEDEWERKERROL_TCMG(Prg_id, Mdw_id, Auth_mdw_cd, Rol_cd, Actief, Opmerking, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp, Senioriteit, Mentor_id, Vervang_id, Vervang_rol, Acc_id, Mdw_id_parf_naar, Mentor_rol_cd) FROM 'PAD-NAAR_CSVsRDM_PROGRAMMAMEDEWERKERROL_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_PROGRAMMAMEDEWERKERROL;
+\COPY BAS_RDM_PROGRAMMAMEDEWERKERROL(Prg_id, Mdw_id, Auth_mdw_cd, Rol_cd, Actief, Opmerking, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Timestamp, Senioriteit, Mentor_id, Vervang_id, Vervang_rol, Acc_id, Mdw_id_parf_naar, Mentor_rol_cd) FROM 'PAD-NAAR_CSVsBAS_RDM_PROGRAMMAMEDEWERKERROL.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_REGELING_TCMG;
-\COPY RDM_REGELING_TCMG(Reg_id, Reg_cd, Reg_oms, Prg_id, Thema, Rap_freq, Ingangs_datum, Pub_datum, Eind_datum, Reg_document, Betaalmodule, Regelingscontrole, Ic_helptekst, Geblokkeerd_jn, Min_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Reg_prefix, Volg_nr, Mail_bericht_parafering, Reg_mail_adres, Reg_geen_dig_parafering, Fin_schermen, Budgetbewaking_pct, Budgetbewaking_hard, Dig_parf_mand, Cst_set_cd, Auto_samenvoeg_jn, Fpc_status, Dcp_automatisch_jn, Paraf_mandat_pr_rol_jn, Dos_referentie_jaar, Auto_insert_sde_jn, Ingangsdatum_zer) FROM 'PAD-NAAR_CSVsRDM_REGELING_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_REGELING;
+\COPY BAS_RDM_REGELING(Reg_id, Reg_cd, Reg_oms, Prg_id, Thema, Rap_freq, Ingangs_datum, Pub_datum, Eind_datum, Reg_document, Betaalmodule, Regelingscontrole, Ic_helptekst, Geblokkeerd_jn, Min_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Reg_prefix, Volg_nr, Mail_bericht_parafering, Reg_mail_adres, Reg_geen_dig_parafering, Fin_schermen, Budgetbewaking_pct, Budgetbewaking_hard, Dig_parf_mand, Cst_set_cd, Auto_samenvoeg_jn, Fpc_status, Dcp_automatisch_jn, Paraf_mandat_pr_rol_jn, Dos_referentie_jaar, Auto_insert_sde_jn, Ingangsdatum_zer) FROM 'PAD-NAAR_CSVsBAS_RDM_REGELING.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_REGPAR_BUDGONDVERD_TCMG;
-\COPY RDM_REGPAR_BUDGONDVERD_TCMG(Ovk_nr, Rpt_nr, Bgt_cd, Rpe_datum_van, Jaar, Reg_id, Reg_nr, Budget, Budget_uitputting, Koppelen_jn, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Correctie_budget, Vrij_budget, Rpt_nr_oud) FROM 'PAD-NAAR_CSVsRDM_REGPAR_BUDGONDVERD_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_REGPAR_BUDGONDVERD;
+\COPY BAS_RDM_REGPAR_BUDGONDVERD(Ovk_nr, Rpt_nr, Bgt_cd, Rpe_datum_van, Jaar, Reg_id, Reg_nr, Budget, Budget_uitputting, Koppelen_jn, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Correctie_budget, Vrij_budget, Rpt_nr_oud) FROM 'PAD-NAAR_CSVsBAS_RDM_REGPAR_BUDGONDVERD.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_STATUSOVERG_BIJ_BRIEF_TCMG;
-\COPY RDM_STATUSOVERG_BIJ_BRIEF_TCMG(Reg_id, Status_van, Statusgroep, Status_naar, Cst_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Xps_cd) FROM 'PAD-NAAR_CSVsRDM_STATUSOVERG_BIJ_BRIEF_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_STATUSOVERG_BIJ_BRIEF;
+\COPY BAS_RDM_STATUSOVERG_BIJ_BRIEF(Reg_id, Status_van, Statusgroep, Status_naar, Cst_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Xps_cd) FROM 'PAD-NAAR_CSVsBAS_RDM_STATUSOVERG_BIJ_BRIEF.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE RDM_VARIABELE_TCMG;
-\COPY RDM_VARIABELE_TCMG(Reg_id, Code, Begindatum, Inhoud, Toelichting, Einddatum, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsRDM_VARIABELE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_RDM_VARIABELE;
+\COPY BAS_RDM_VARIABELE(Reg_id, Code, Begindatum, Inhoud, Toelichting, Einddatum, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_RDM_VARIABELE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE STM_BSI_TCMG;
-\COPY STM_BSI_TCMG(Startdatum, Einddatum, Bsi_cd, Bsi_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsSTM_BSI_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_STM_BSI;
+\COPY BAS_STM_BSI(Startdatum, Einddatum, Bsi_cd, Bsi_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_STM_BSI.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE STM_REACTIE_TCMG;
-\COPY STM_REACTIE_TCMG(Reactie_cd, Reactie_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsSTM_REACTIE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_STM_REACTIE;
+\COPY BAS_STM_REACTIE(Reactie_cd, Reactie_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_STM_REACTIE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE STM_ROL_TCMG;
-\COPY STM_ROL_TCMG(Rol_cd, Rol_oms, Interne_rol, Externe_rol, Organisatie_rol, Controller, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Type_rol, Ed_rol_cd, Ed_rol_oms) FROM 'PAD-NAAR_CSVsSTM_ROL_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_STM_ROL;
+\COPY BAS_STM_ROL(Rol_cd, Rol_oms, Interne_rol, Externe_rol, Organisatie_rol, Controller, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Type_rol, Ed_rol_cd, Ed_rol_oms) FROM 'PAD-NAAR_CSVsBAS_STM_ROL.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE STM_SBI_TCMG;
-\COPY STM_SBI_TCMG(Sbi_cd, Sbi_oms, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsSTM_SBI_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_STM_SBI;
+\COPY BAS_STM_SBI(Sbi_cd, Sbi_oms, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user) FROM 'PAD-NAAR_CSVsBAS_STM_SBI.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE STM_STATUS_TCMG;
-\COPY STM_STATUS_TCMG(Sts_cd, Sts_oms, Ssg_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Sts_e_indienen, Eindstatus, Sts_e_loket) FROM 'PAD-NAAR_CSVsSTM_STATUS_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_STM_STATUS;
+\COPY BAS_STM_STATUS(Sts_cd, Sts_oms, Ssg_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Sts_e_indienen, Eindstatus, Sts_e_loket) FROM 'PAD-NAAR_CSVsBAS_STM_STATUS.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE STM_STATUSOVERG_BIJ_BRIEF_TCMG;
-\COPY STM_STATUSOVERG_BIJ_BRIEF_TCMG(Van_status, Naar_status, Ssg_cd, Cst_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsSTM_STATUSOVERG_BIJ_BRIEF_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF;
+\COPY BAS_STM_STATUSOVERG_BIJ_BRIEF(Van_status, Naar_status, Ssg_cd, Cst_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat) FROM 'PAD-NAAR_CSVsBAS_STM_STATUSOVERG_BIJ_BRIEF.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE VKM_TOEGEV_VAR_VELD_WAARDE_TCMG;
-\COPY VKM_TOEGEV_VAR_VELD_WAARDE_TCMG(Vkt_id, Fysieke_naam, Waarde, Volgorde) FROM 'PAD-NAAR_CSVsVKM_TOEGEV_VAR_VELD_WAARDE_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
+\COPY BAS_VKM_TOEGEV_VAR_VELD_WAARDE(Vkt_id, Fysieke_naam, Waarde, Volgorde) FROM 'PAD-NAAR_CSVsBAS_VKM_TOEGEV_VAR_VELD_WAARDE.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE VKM_TOEGEVOEGD_VAR_VELD_TCMG;
-\COPY VKM_TOEGEVOEGD_VAR_VELD_TCMG(Vkt_id, Fysieke_naam, Datum_start, Datum_einde, Volgorde, Verplicht_jn, Prompt, Min_waarde, Max_waarde, Default_waarde, Helptekst) FROM 'PAD-NAAR_CSVsVKM_TOEGEVOEGD_VAR_VELD_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_VKM_TOEGEVOEGD_VAR_VELD;
+\COPY BAS_VKM_TOEGEVOEGD_VAR_VELD(Vkt_id, Fysieke_naam, Datum_start, Datum_einde, Volgorde, Verplicht_jn, Prompt, Min_waarde, Max_waarde, Default_waarde, Helptekst) FROM 'PAD-NAAR_CSVsBAS_VKM_TOEGEVOEGD_VAR_VELD.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE VKM_VAR_GEGEVENS_TCMG;
-\COPY VKM_VAR_GEGEVENS_TCMG(BEDRAG_01, BEDRAG_02, BEDRAG_03, BEDRAG_04, BEDRAG_05, BEDRAG_06, BEDRAG_07, BEDRAG_08, BEDRAG_09, BEDRAG_10, BEDRAG_11, BEDRAG_12, BEDRAG_13, BEDRAG_14, BEDRAG_15, BEDRAG_16, BEDRAG_17, BEDRAG_18, BEDRAG_19, BEDRAG_20, BEDRAG_21, BEDRAG_22, BEDRAG_23, BEDRAG_24, BEDRAG_25, BEDRAG_26, BEDRAG_27, BEDRAG_28, BEDRAG_29, BEDRAG_30, BEDRAG_31, BEDRAG_32, BEDRAG_33, BEDRAG_34, BEDRAG_35, BEDRAG_36, BEDRAG_37, BEDRAG_38, BEDRAG_39, BEDRAG_40, Creatie_dat, Creatie_user, DATUM_01, DATUM_02, DATUM_03, DATUM_04, DATUM_05, DATUM_06, DATUM_07, DATUM_08, DATUM_09, DATUM_10, DATUM_11, DATUM_12, DATUM_13, DATUM_14, DATUM_15, DATUM_16, DATUM_17, DATUM_18, DATUM_19, DATUM_20, DATUM_AANMAAK, DROPDOWNLIST_01, DROPDOWNLIST_02, DROPDOWNLIST_03, DROPDOWNLIST_04, DROPDOWNLIST_05, DROPDOWNLIST_06, DROPDOWNLIST_07, DROPDOWNLIST_08, DROPDOWNLIST_09, DROPDOWNLIST_10, DROPDOWNLIST_11, DROPDOWNLIST_12, DROPDOWNLIST_13, DROPDOWNLIST_14, DROPDOWNLIST_15, DROPDOWNLIST_16, DROPDOWNLIST_17, DROPDOWNLIST_18, DROPDOWNLIST_19, DROPDOWNLIST_20, DROPDOWNLIST_21, DROPDOWNLIST_22, DROPDOWNLIST_23, DROPDOWNLIST_24, DROPDOWNLIST_25, DROPDOWNLIST_26, DROPDOWNLIST_27, DROPDOWNLIST_28, DROPDOWNLIST_29, DROPDOWNLIST_30, DROPDOWNLIST_31, DROPDOWNLIST_32, DROPDOWNLIST_33, DROPDOWNLIST_34, DROPDOWNLIST_35, DROPDOWNLIST_36, DROPDOWNLIST_37, DROPDOWNLIST_38, DROPDOWNLIST_39, DROPDOWNLIST_40, INT_01, INT_02, INT_03, INT_04, INT_05, INT_06, INT_07, INT_08, INT_09, INT_10, INT_11, INT_12, INT_13, INT_14, INT_15, INT_16, INT_17, INT_18, INT_19, INT_20, INT_21, INT_22, INT_23, INT_24, INT_25, INT_26, INT_27, INT_28, INT_29, INT_30, INT_31, INT_32, INT_33, INT_34, INT_35, INT_36, INT_37, INT_38, INT_39, INT_40, JA_NEE_01, JA_NEE_02, JA_NEE_03, JA_NEE_04, JA_NEE_05, JA_NEE_06, JA_NEE_07, JA_NEE_08, JA_NEE_09, JA_NEE_10, JA_NEE_11, JA_NEE_12, JA_NEE_13, JA_NEE_14, JA_NEE_15, JA_NEE_16, JA_NEE_17, JA_NEE_18, JA_NEE_19, JA_NEE_20, JA_NEE_21, JA_NEE_22, JA_NEE_23, JA_NEE_24, JA_NEE_25, JA_NEE_26, JA_NEE_27, JA_NEE_28, JA_NEE_29, JA_NEE_30, JA_NEE_NVT_01, JA_NEE_NVT_02, JA_NEE_NVT_03, JA_NEE_NVT_04, JA_NEE_NVT_05, JA_NEE_NVT_06, JA_NEE_NVT_07, JA_NEE_NVT_08, JA_NEE_NVT_09, JA_NEE_NVT_10, JA_NEE_NVT_11, JA_NEE_NVT_12, JA_NEE_NVT_13, JA_NEE_NVT_14, JA_NEE_NVT_15, JA_NEE_NVT_16, JA_NEE_NVT_17, JA_NEE_NVT_18, JA_NEE_NVT_19, JA_NEE_NVT_20, JA_NEE_ONB_01, JA_NEE_ONB_02, JA_NEE_ONB_03, JA_NEE_ONB_04, JA_NEE_ONB_05, JA_NEE_ONB_06, JA_NEE_ONB_07, JA_NEE_ONB_08, JA_NEE_ONB_09, JA_NEE_ONB_10, JA_NEE_ONB_11, JA_NEE_ONB_12, JA_NEE_ONB_13, JA_NEE_ONB_14, JA_NEE_ONB_15, JA_NEE_ONB_16, JA_NEE_ONB_17, JA_NEE_ONB_18, JA_NEE_ONB_19, JA_NEE_ONB_20, Mutatie_dat, Mutatie_user, NUMERIEK_01, NUMERIEK_02, NUMERIEK_03, NUMERIEK_04, NUMERIEK_05, NUMERIEK_06, NUMERIEK_07, NUMERIEK_08, NUMERIEK_09, NUMERIEK_10, NUMERIEK_11, NUMERIEK_12, NUMERIEK_13, NUMERIEK_14, NUMERIEK_15, NUMERIEK_16, NUMERIEK_17, NUMERIEK_18, NUMERIEK_19, NUMERIEK_20, NUMERIEK_21, NUMERIEK_22, NUMERIEK_23, NUMERIEK_24, NUMERIEK_25, NUMERIEK_26, NUMERIEK_27, NUMERIEK_28, NUMERIEK_29, NUMERIEK_30, NUMERIEK_31, NUMERIEK_32, NUMERIEK_33, NUMERIEK_34, NUMERIEK_35, NUMERIEK_36, NUMERIEK_37, NUMERIEK_38, NUMERIEK_39, NUMERIEK_40, OPTIONBUTTON_01, OPTIONBUTTON_02, OPTIONBUTTON_03, OPTIONBUTTON_04, OPTIONBUTTON_05, OPTIONBUTTON_06, OPTIONBUTTON_07, OPTIONBUTTON_08, OPTIONBUTTON_09, OPTIONBUTTON_10, OPTIONBUTTON_11, OPTIONBUTTON_12, OPTIONBUTTON_13, OPTIONBUTTON_14, OPTIONBUTTON_15, OPTIONBUTTON_16, OPTIONBUTTON_17, OPTIONBUTTON_18, OPTIONBUTTON_19, OPTIONBUTTON_20, TEKSTBLOK_01, TEKSTBLOK_02, TEKSTBLOK_03, TEKSTBLOK_04, TEKSTBLOK_05, TEKSTBLOK_06, TEKSTBLOK_07, TEKSTBLOK_08, TEKSTBLOK_09, TEKSTBLOK_10, VARCHAR_60_01, VARCHAR_60_02, VARCHAR_60_03, VARCHAR_60_04, VARCHAR_60_05, VARCHAR_60_06, VARCHAR_60_07, VARCHAR_60_08, VARCHAR_60_09, VARCHAR_60_10, VARCHAR_60_11, VARCHAR_60_12, VARCHAR_60_13, VARCHAR_60_14, VARCHAR_60_15, VARCHAR_60_16, VARCHAR_60_17, VARCHAR_60_18, VARCHAR_60_19, VARCHAR_60_20, VARCHAR_60_21, VARCHAR_60_22, VARCHAR_60_23, VARCHAR_60_24, VARCHAR_60_25, VARCHAR_60_26, VARCHAR_60_27, VARCHAR_60_28, VARCHAR_60_29, VARCHAR_60_30, VARCHAR_60_31, VARCHAR_60_32, VARCHAR_60_33, VARCHAR_60_34, VARCHAR_60_35, VARCHAR_60_36, VARCHAR_60_37, VARCHAR_60_38, VARCHAR_60_39, VARCHAR_60_40, VGS_ID, VVG_VKM_VAR_GEGEVENS_DOS, VVG_VKM_VAR_GEGEVENS_PRG, VVG_VKT_ID, VVG_DOS_ID) FROM 'PAD-NAAR_CSVsVKM_VAR_GEGEVENS_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_VKM_VAR_GEGEVENS;
+\COPY BAS_VKM_VAR_GEGEVENS(BEDRAG_01, BEDRAG_02, BEDRAG_03, BEDRAG_04, BEDRAG_05, BEDRAG_06, BEDRAG_07, BEDRAG_08, BEDRAG_09, BEDRAG_10, BEDRAG_11, BEDRAG_12, BEDRAG_13, BEDRAG_14, BEDRAG_15, BEDRAG_16, BEDRAG_17, BEDRAG_18, BEDRAG_19, BEDRAG_20, BEDRAG_21, BEDRAG_22, BEDRAG_23, BEDRAG_24, BEDRAG_25, BEDRAG_26, BEDRAG_27, BEDRAG_28, BEDRAG_29, BEDRAG_30, BEDRAG_31, BEDRAG_32, BEDRAG_33, BEDRAG_34, BEDRAG_35, BEDRAG_36, BEDRAG_37, BEDRAG_38, BEDRAG_39, BEDRAG_40, Creatie_dat, Creatie_user, DATUM_01, DATUM_02, DATUM_03, DATUM_04, DATUM_05, DATUM_06, DATUM_07, DATUM_08, DATUM_09, DATUM_10, DATUM_11, DATUM_12, DATUM_13, DATUM_14, DATUM_15, DATUM_16, DATUM_17, DATUM_18, DATUM_19, DATUM_20, DATUM_AANMAAK, DROPDOWNLIST_01, DROPDOWNLIST_02, DROPDOWNLIST_03, DROPDOWNLIST_04, DROPDOWNLIST_05, DROPDOWNLIST_06, DROPDOWNLIST_07, DROPDOWNLIST_08, DROPDOWNLIST_09, DROPDOWNLIST_10, DROPDOWNLIST_11, DROPDOWNLIST_12, DROPDOWNLIST_13, DROPDOWNLIST_14, DROPDOWNLIST_15, DROPDOWNLIST_16, DROPDOWNLIST_17, DROPDOWNLIST_18, DROPDOWNLIST_19, DROPDOWNLIST_20, DROPDOWNLIST_21, DROPDOWNLIST_22, DROPDOWNLIST_23, DROPDOWNLIST_24, DROPDOWNLIST_25, DROPDOWNLIST_26, DROPDOWNLIST_27, DROPDOWNLIST_28, DROPDOWNLIST_29, DROPDOWNLIST_30, DROPDOWNLIST_31, DROPDOWNLIST_32, DROPDOWNLIST_33, DROPDOWNLIST_34, DROPDOWNLIST_35, DROPDOWNLIST_36, DROPDOWNLIST_37, DROPDOWNLIST_38, DROPDOWNLIST_39, DROPDOWNLIST_40, INT_01, INT_02, INT_03, INT_04, INT_05, INT_06, INT_07, INT_08, INT_09, INT_10, INT_11, INT_12, INT_13, INT_14, INT_15, INT_16, INT_17, INT_18, INT_19, INT_20, INT_21, INT_22, INT_23, INT_24, INT_25, INT_26, INT_27, INT_28, INT_29, INT_30, INT_31, INT_32, INT_33, INT_34, INT_35, INT_36, INT_37, INT_38, INT_39, INT_40, JA_NEE_01, JA_NEE_02, JA_NEE_03, JA_NEE_04, JA_NEE_05, JA_NEE_06, JA_NEE_07, JA_NEE_08, JA_NEE_09, JA_NEE_10, JA_NEE_11, JA_NEE_12, JA_NEE_13, JA_NEE_14, JA_NEE_15, JA_NEE_16, JA_NEE_17, JA_NEE_18, JA_NEE_19, JA_NEE_20, JA_NEE_21, JA_NEE_22, JA_NEE_23, JA_NEE_24, JA_NEE_25, JA_NEE_26, JA_NEE_27, JA_NEE_28, JA_NEE_29, JA_NEE_30, JA_NEE_NVT_01, JA_NEE_NVT_02, JA_NEE_NVT_03, JA_NEE_NVT_04, JA_NEE_NVT_05, JA_NEE_NVT_06, JA_NEE_NVT_07, JA_NEE_NVT_08, JA_NEE_NVT_09, JA_NEE_NVT_10, JA_NEE_NVT_11, JA_NEE_NVT_12, JA_NEE_NVT_13, JA_NEE_NVT_14, JA_NEE_NVT_15, JA_NEE_NVT_16, JA_NEE_NVT_17, JA_NEE_NVT_18, JA_NEE_NVT_19, JA_NEE_NVT_20, JA_NEE_ONB_01, JA_NEE_ONB_02, JA_NEE_ONB_03, JA_NEE_ONB_04, JA_NEE_ONB_05, JA_NEE_ONB_06, JA_NEE_ONB_07, JA_NEE_ONB_08, JA_NEE_ONB_09, JA_NEE_ONB_10, JA_NEE_ONB_11, JA_NEE_ONB_12, JA_NEE_ONB_13, JA_NEE_ONB_14, JA_NEE_ONB_15, JA_NEE_ONB_16, JA_NEE_ONB_17, JA_NEE_ONB_18, JA_NEE_ONB_19, JA_NEE_ONB_20, Mutatie_dat, Mutatie_user, NUMERIEK_01, NUMERIEK_02, NUMERIEK_03, NUMERIEK_04, NUMERIEK_05, NUMERIEK_06, NUMERIEK_07, NUMERIEK_08, NUMERIEK_09, NUMERIEK_10, NUMERIEK_11, NUMERIEK_12, NUMERIEK_13, NUMERIEK_14, NUMERIEK_15, NUMERIEK_16, NUMERIEK_17, NUMERIEK_18, NUMERIEK_19, NUMERIEK_20, NUMERIEK_21, NUMERIEK_22, NUMERIEK_23, NUMERIEK_24, NUMERIEK_25, NUMERIEK_26, NUMERIEK_27, NUMERIEK_28, NUMERIEK_29, NUMERIEK_30, NUMERIEK_31, NUMERIEK_32, NUMERIEK_33, NUMERIEK_34, NUMERIEK_35, NUMERIEK_36, NUMERIEK_37, NUMERIEK_38, NUMERIEK_39, NUMERIEK_40, OPTIONBUTTON_01, OPTIONBUTTON_02, OPTIONBUTTON_03, OPTIONBUTTON_04, OPTIONBUTTON_05, OPTIONBUTTON_06, OPTIONBUTTON_07, OPTIONBUTTON_08, OPTIONBUTTON_09, OPTIONBUTTON_10, OPTIONBUTTON_11, OPTIONBUTTON_12, OPTIONBUTTON_13, OPTIONBUTTON_14, OPTIONBUTTON_15, OPTIONBUTTON_16, OPTIONBUTTON_17, OPTIONBUTTON_18, OPTIONBUTTON_19, OPTIONBUTTON_20, TEKSTBLOK_01, TEKSTBLOK_02, TEKSTBLOK_03, TEKSTBLOK_04, TEKSTBLOK_05, TEKSTBLOK_06, TEKSTBLOK_07, TEKSTBLOK_08, TEKSTBLOK_09, TEKSTBLOK_10, VARCHAR_60_01, VARCHAR_60_02, VARCHAR_60_03, VARCHAR_60_04, VARCHAR_60_05, VARCHAR_60_06, VARCHAR_60_07, VARCHAR_60_08, VARCHAR_60_09, VARCHAR_60_10, VARCHAR_60_11, VARCHAR_60_12, VARCHAR_60_13, VARCHAR_60_14, VARCHAR_60_15, VARCHAR_60_16, VARCHAR_60_17, VARCHAR_60_18, VARCHAR_60_19, VARCHAR_60_20, VARCHAR_60_21, VARCHAR_60_22, VARCHAR_60_23, VARCHAR_60_24, VARCHAR_60_25, VARCHAR_60_26, VARCHAR_60_27, VARCHAR_60_28, VARCHAR_60_29, VARCHAR_60_30, VARCHAR_60_31, VARCHAR_60_32, VARCHAR_60_33, VARCHAR_60_34, VARCHAR_60_35, VARCHAR_60_36, VARCHAR_60_37, VARCHAR_60_38, VARCHAR_60_39, VARCHAR_60_40, VGS_ID, VVG_VKM_VAR_GEGEVENS_DOS, VVG_VKM_VAR_GEGEVENS_PRG, VVG_VKT_ID, VVG_DOS_ID) FROM 'PAD-NAAR_CSVsBAS_VKM_VAR_GEGEVENS.csv' DELIMITER ',' CSV HEADER;
 
-TRUNCATE TABLE VKM_VAR_KAART_TCMG;
-\COPY VKM_VAR_KAART_TCMG(Vkt_id, Kaart_naam, Datum_start, Datum_einde, Omschrijving, Vkm_var_kaart_dos, Vkm_var_kaart_prg, Prg_id, Reg_id, Reg_id_regpar, Reg_Nr, Vkm_var_kaart_dos_prg, Vkm_var_kaart_dos_reg, Vkm_var_kaart_dos_regpar, Geblokkeerd, Copy_jn) FROM 'PAD-NAAR_CSVsVKM_VAR_KAART_TCMG.csv' DELIMITER ',' CSV HEADER;
+TRUNCATE TABLE BAS_VKM_VAR_KAART;
+\COPY BAS_VKM_VAR_KAART(Vkt_id, Kaart_naam, Datum_start, Datum_einde, Omschrijving, Vkm_var_kaart_dos, Vkm_var_kaart_prg, Prg_id, Reg_id, Reg_id_regpar, Reg_Nr, Vkm_var_kaart_dos_prg, Vkm_var_kaart_dos_reg, Vkm_var_kaart_dos_regpar, Geblokkeerd, Copy_jn) FROM 'PAD-NAAR_CSVsBAS_VKM_VAR_KAART.csv' DELIMITER ',' CSV HEADER;
 

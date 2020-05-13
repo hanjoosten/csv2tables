@@ -16,10 +16,10 @@ loadStatement :: Table -> [Text]
 loadStatement t = 
 -- COPY persons(first_name,last_name,dob,email) 
 -- FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
-      [ "TRUNCATE TABLE "<>T.pack (tableName t)<>";" 
-      , "\\COPY "<>T.pack (tableName t)
+      [ "TRUNCATE TABLE "<>T.pack (tableNameNew t)<>";" 
+      , "\\COPY "<>T.pack (tableNameNew t)
                  <>"("<>T.intercalate ", "(map (T.pack . attNameNew) . L.sort $ attribs t)
-                 <>") FROM 'PAD-NAAR_CSVs"<>T.pack (tableName t)<>".csv' DELIMITER ',' CSV HEADER;"
+                 <>") FROM 'PAD-NAAR_CSVs"<>T.pack (tableNameNew t)<>".csv' DELIMITER ',' CSV HEADER;"
       , ""]
 
 makeCreateStatements :: [Table] -> [Text]
@@ -27,8 +27,8 @@ makeCreateStatements = concatMap createStatement
 
 createStatement :: Table -> [Text]
 createStatement t = 
-      [ "DROP TABLE IF EXISTS "<> T.pack (tableName t)<>" ;"
-      , "CREATE TABLE "<>T.pack (tableName t)<>" (" 
+      [ "DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>" ;"
+      , "CREATE TABLE "<>T.pack (tableNameNew t)<>" (" 
       , "    techId SERIAL PRIMARY KEY,"]
    <> T.lines cols
    <> [ ");"
@@ -44,7 +44,7 @@ createStatement t =
           T.pack (attNameNew att)<> " "<>dataType att
      comments = map ("    "<>) . map comment . L.sort . attribs $ t
      comment :: Attrib -> Text
-     comment att = T.pack $ "comment on column "<>tableName t<>"."<>attNameNew att <> " is '"<>(map toUpper $ sasLable att)<>"';"
+     comment att = T.pack $ "comment on column "<>tableNameNew t<>"."<>attNameNew att <> " is '"<>(map toUpper $ sasLable att)<>"';"
 dataType :: Attrib -> Text
 dataType att =
     case sasType att of

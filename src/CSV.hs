@@ -36,14 +36,15 @@ toTables x = case x of
          groups [] = []
          groups (y:ys) = (y:same) : groups others 
            where (same,others) = L.partition (eql y) ys
-                 eql a b = attTable a == attTable b
+                 eql a b = attTableNew a == attTableNew b
 type KeyValues = Map String String
 
 mkTable :: [Attrib] -> Table
-mkTable atts = case NE.groupWith attTable atts of
+mkTable atts = case NE.groupWith attTableNew atts of
    [] -> fatal $ "No attributes"
    [x] ->  Table
-      {tableName = attTable (NE.head x)
+      {tableNameOrg = attTableOrg (NE.head x)
+      ,tableNameNew = attTableNew (NE.head x)
       ,attribs   = atts
       }
    _ -> fatal $ "Multiple tables. Only attributes of a single table expected"
@@ -54,7 +55,8 @@ isEmptie = isJust . Map.lookup "MEMNAME"
 mkAttrib :: KeyValues -> Attrib
 mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
    Attrib
-    { attTable = lkpStr "MEMNAME"
+    { attTableOrg = rawTableName
+    , attTableNew = alterTableName rawTableName
     , attNameOrg  = rawAttName -- :: !String
     , attNameNew  = makeSafe rawAttName
     , sasType = lkpInt "TYPE" -- :: !Int
@@ -63,7 +65,20 @@ mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
     , sasLable = lkpStr "LABEL" -- :: !String
     , sasFormat = lkpStr "FORMAT" -- :: !String
     } 
-   where rawAttName = lkpStr "NAME"
+   where rawTableName = lkpStr "MEMNAME"
+         alterTableName str = 
+            -- In rijkszaak gaan we de tabellen voorzien van een prefix. 
+            -- om te voorkomen dat de tabelnaam te lang wordt, slopen we de
+            -- suffix er van af. Die is namelijk in alle gevallen "_TCMG"
+            case L.stripSuffix "_TCMG" str of
+                Nothing -> if length (pFix <> str) <= 32
+                           then pFix <> str
+                           else fatal $ "Deze tabelnaam kan niet worden "
+                                      <>"voorzien van een prefix, omdat het "
+                                      <>"anders te lange wordt: "<>T.pack str 
+                Just x  -> pFix <> x
+              where pFix = "BAS_"
+         rawAttName = lkpStr "NAME"
          makeSafe :: String -> String
          makeSafe = substitute "," ""
                   . substitute "." ""

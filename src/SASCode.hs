@@ -21,8 +21,8 @@ modifiedNames = concatMap modNames
     isModified att = attNameOrg att /= attNameNew att
     attShow :: Attrib ->  Text
     attShow att = T.pack $ 
-       attTable att <> "." <> attNameOrg att <> "  -->  " <>
-       attTable att <> "." <> attNameNew att
+       attTableOrg att <> "." <> attNameOrg att <> "  -->  " <>
+       attTableNew att <> "." <> attNameNew att
        
 createStatement :: Table -> [Text]
 createStatement t = 
@@ -30,7 +30,7 @@ createStatement t =
       , "   CREATE TABLE WORK."<>tempTableName<>" AS"
       ]
    <> T.lines cols 
-   <> [ "     FROM DATAQASG."<> T.pack (tableName t)<>" t1;"
+   <> [ "     FROM DATAQASG."<> T.pack (tableNameOrg t)<>" t1;"
       , "QUIT;"
       , ""
       , "proc export"
@@ -46,14 +46,14 @@ createStatement t =
       , ""
       ]
    where
-     tempTableName = T.take 32 $ "TMP_"<>T.pack (tableName t)
+     tempTableName = T.take 32 $ "TMP_"<>T.pack (tableNameOrg t)
      outDirPRD = "\\\\LNV.INTERN\\GRP\\TCMG\\002 Onderdelen\\34-kluismap MIRA Migratie bestanden\\SAS\\Output\\PRD\\"
      outfilefull = outDirPRD
                <> "RuweData\\"
-               <> T.pack (tableName t)<>".csv"
+               <> T.pack (tableNameNew t)<>".csv"
      outfileSample = outDirPRD
                <> "Samples\\"
-               <> "rnd_"<>T.pack (tableName t)<>".csv"
+               <> "rnd_"<>T.pack (tableNameNew t)<>".csv"
      cols = "   SELECT "<> (T.intercalate ",\n          " . map mkCol . L.sort . attribs) t
      mkCol :: Attrib -> Text
      mkCol att = 

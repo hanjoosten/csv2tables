@@ -25,5 +25,5 @@ run = do
   write "modifiedNames.txt"     modifiedNames
   write "loadScript.postgress"  makeLoadScript
 showTab :: Table -> Text
-showTab t = T.pack (tableName t) <>" has "<>(tshow . length . attribs) t<>" attributes."
+showTab t = T.pack (tableNameNew t) <>" has "<>(tshow . length . attribs) t<>" attributes."
 

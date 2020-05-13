@@ -24,12 +24,14 @@ instance HasProcessContext App where
   processContextL = lens appProcessContext (\x y -> x { appProcessContext = y })
 
 data Table = Table
-  {tableName :: !String
+  {tableNameOrg :: !String
+  ,tableNameNew :: !String
   ,attribs   :: [Attrib]
   } deriving Show
 
 data Attrib = Attrib
-    { attTable :: !String
+    { attTableOrg :: !String
+    , attTableNew :: !String
     , attNameOrg  :: !String
     , attNameNew  :: !String
     , sasType :: !Integer
@@ -39,8 +41,7 @@ data Attrib = Attrib
     , sasFormat :: !String
     } deriving Show
 instance Ord Attrib where
-  compare a b = compare (attTable a, sasVarNum a) (attTable b, sasVarNum b)
+  compare a b = compare (attTableNew a, sasVarNum a) (attTableNew b, sasVarNum b)
 
 instance Eq Attrib where
-  a == b = attTable a == attTable b 
-        && attNameOrg a  == attNameOrg b
+  a == b = compare a b == EQ
