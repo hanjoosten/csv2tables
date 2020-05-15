@@ -27,11 +27,16 @@ makeCreateStatements = concatMap createStatement
 
 createStatement :: Table -> [Text]
 createStatement t = 
-      [ "DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>" ;"
+      [ "DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>";"
+      , ""
+      , "CREATE SEQUENCE "<> T.pack (tableNameNew t) <>"_id_seq;"
+      , ""
       , "CREATE TABLE "<>T.pack (tableNameNew t)<>" (" 
-      , "    techId SERIAL PRIMARY KEY,"]
+      , "    techId INTEGER NOT NULL DEFAULT nextval('"<> T.pack (tableNameNew t) <>"_id_seq') PRIMARY KEY,"]
    <> T.lines cols
    <> [ ");"
+      , ""
+      , "ALTER SEQUENCE "<> T.pack (tableNameNew t) <>"_id_seq OWNED BY "<> T.pack (tableNameNew t) <>".techId;"
       , ""
       ]
    <> comments

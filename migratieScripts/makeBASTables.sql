@@ -1,6 +1,9 @@
-DROP TABLE IF EXISTS BAS_AOM_ACTIE ;
+DROP TABLE IF EXISTS BAS_AOM_ACTIE;
+
+CREATE SEQUENCE BAS_AOM_ACTIE_id_seq;
+
 CREATE TABLE BAS_AOM_ACTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_AOM_ACTIE_id_seq') PRIMARY KEY,
     Actie_cd varchar (3),
     Actie_oms varchar (60),
     Creatie_user varchar (30),
@@ -9,6 +12,8 @@ CREATE TABLE BAS_AOM_ACTIE (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_AOM_ACTIE_id_seq OWNED BY BAS_AOM_ACTIE.techId;
+
     comment on column BAS_AOM_ACTIE.Actie_cd is 'ACTIE_CD';
     comment on column BAS_AOM_ACTIE.Actie_oms is 'ACTIE_OMS';
     comment on column BAS_AOM_ACTIE.Creatie_user is 'CREATIE_USER';
@@ -16,9 +21,12 @@ CREATE TABLE BAS_AOM_ACTIE (
     comment on column BAS_AOM_ACTIE.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_AOM_ACTIE.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_AOM_TRA_ACTIE ;
+DROP TABLE IF EXISTS BAS_AOM_TRA_ACTIE;
+
+CREATE SEQUENCE BAS_AOM_TRA_ACTIE_id_seq;
+
 CREATE TABLE BAS_AOM_TRA_ACTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_AOM_TRA_ACTIE_id_seq') PRIMARY KEY,
     Actie_cd varchar (3),
     Bgt_cd varchar (1),
     Creatie_dat timestamp,
@@ -28,6 +36,8 @@ CREATE TABLE BAS_AOM_TRA_ACTIE (
     Tra_cd varchar (3)
 );
 
+ALTER SEQUENCE BAS_AOM_TRA_ACTIE_id_seq OWNED BY BAS_AOM_TRA_ACTIE.techId;
+
     comment on column BAS_AOM_TRA_ACTIE.Actie_cd is 'ACTIE_CD';
     comment on column BAS_AOM_TRA_ACTIE.Bgt_cd is 'BGT_CD';
     comment on column BAS_AOM_TRA_ACTIE.Creatie_dat is 'CREATIE_DAT';
@@ -36,9 +46,12 @@ CREATE TABLE BAS_AOM_TRA_ACTIE (
     comment on column BAS_AOM_TRA_ACTIE.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_AOM_TRA_ACTIE.Tra_cd is 'TRA_CD';
 
-DROP TABLE IF EXISTS BAS_AOM_TRANSACTIETYPE ;
+DROP TABLE IF EXISTS BAS_AOM_TRANSACTIETYPE;
+
+CREATE SEQUENCE BAS_AOM_TRANSACTIETYPE_id_seq;
+
 CREATE TABLE BAS_AOM_TRANSACTIETYPE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_AOM_TRANSACTIETYPE_id_seq') PRIMARY KEY,
     Beleidsadministratie_jn varchar (1),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -51,6 +64,8 @@ CREATE TABLE BAS_AOM_TRANSACTIETYPE (
     Tra_stop varchar (1)
 );
 
+ALTER SEQUENCE BAS_AOM_TRANSACTIETYPE_id_seq OWNED BY BAS_AOM_TRANSACTIETYPE.techId;
+
     comment on column BAS_AOM_TRANSACTIETYPE.Beleidsadministratie_jn is 'BELEIDSADMINISTRATIE_JN';
     comment on column BAS_AOM_TRANSACTIETYPE.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_AOM_TRANSACTIETYPE.Creatie_user is 'CREATIE_USER';
@@ -62,9 +77,12 @@ CREATE TABLE BAS_AOM_TRANSACTIETYPE (
     comment on column BAS_AOM_TRANSACTIETYPE.Tra_oms is 'TRA_OMS';
     comment on column BAS_AOM_TRANSACTIETYPE.Tra_stop is 'TRA_STOP';
 
-DROP TABLE IF EXISTS BAS_BTM_BETALING ;
+DROP TABLE IF EXISTS BAS_BTM_BETALING;
+
+CREATE SEQUENCE BAS_BTM_BETALING_id_seq;
+
 CREATE TABLE BAS_BTM_BETALING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_BTM_BETALING_id_seq') PRIMARY KEY,
     Rel_id bigint,
     Tra_id bigint,
     Reg_cd varchar (20),
@@ -98,6 +116,8 @@ CREATE TABLE BAS_BTM_BETALING (
     Sepa_xsd_bevinding varchar (2048)
 );
 
+ALTER SEQUENCE BAS_BTM_BETALING_id_seq OWNED BY BAS_BTM_BETALING.techId;
+
     comment on column BAS_BTM_BETALING.Rel_id is 'REL_ID';
     comment on column BAS_BTM_BETALING.Tra_id is 'TRA_ID';
     comment on column BAS_BTM_BETALING.Reg_cd is 'REG_CD';
@@ -130,9 +150,12 @@ CREATE TABLE BAS_BTM_BETALING (
     comment on column BAS_BTM_BETALING.On_hold_jn is 'ON_HOLD_JN';
     comment on column BAS_BTM_BETALING.Sepa_xsd_bevinding is 'SEPA_XSD_BEVINDING';
 
-DROP TABLE IF EXISTS BAS_BTM_HIST_BETALING ;
+DROP TABLE IF EXISTS BAS_BTM_HIST_BETALING;
+
+CREATE SEQUENCE BAS_BTM_HIST_BETALING_id_seq;
+
 CREATE TABLE BAS_BTM_HIST_BETALING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_BTM_HIST_BETALING_id_seq') PRIMARY KEY,
     Rel_id bigint,
     Tra_id bigint,
     Reg_cd varchar (20),
@@ -164,6 +187,8 @@ CREATE TABLE BAS_BTM_HIST_BETALING (
     Betalingsverzoeknummer varchar (40)
 );
 
+ALTER SEQUENCE BAS_BTM_HIST_BETALING_id_seq OWNED BY BAS_BTM_HIST_BETALING.techId;
+
     comment on column BAS_BTM_HIST_BETALING.Rel_id is 'REL_ID';
     comment on column BAS_BTM_HIST_BETALING.Tra_id is 'TRA_ID';
     comment on column BAS_BTM_HIST_BETALING.Reg_cd is 'REG_CD';
@@ -194,9 +219,12 @@ CREATE TABLE BAS_BTM_HIST_BETALING (
     comment on column BAS_BTM_HIST_BETALING.Parkeer_valutadatum is 'PARKEER_VALUTADATUM';
     comment on column BAS_BTM_HIST_BETALING.Betalingsverzoeknummer is 'BETALINGSVERZOEKNUMMER';
 
-DROP TABLE IF EXISTS BAS_COR_BERICHT ;
+DROP TABLE IF EXISTS BAS_COR_BERICHT;
+
+CREATE SEQUENCE BAS_COR_BERICHT_id_seq;
+
 CREATE TABLE BAS_COR_BERICHT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_BERICHT_id_seq') PRIMARY KEY,
     Cor_id bigint,
     Ed_bericht_id bigint,
     Afzender_id bigint,
@@ -217,6 +245,8 @@ CREATE TABLE BAS_COR_BERICHT (
     Org_cor_id bigint
 );
 
+ALTER SEQUENCE BAS_COR_BERICHT_id_seq OWNED BY BAS_COR_BERICHT.techId;
+
     comment on column BAS_COR_BERICHT.Cor_id is 'COR_ID';
     comment on column BAS_COR_BERICHT.Ed_bericht_id is 'ED_BERICHT_ID';
     comment on column BAS_COR_BERICHT.Afzender_id is 'AFZENDER_ID';
@@ -236,9 +266,12 @@ CREATE TABLE BAS_COR_BERICHT (
     comment on column BAS_COR_BERICHT.Bron is 'BRON';
     comment on column BAS_COR_BERICHT.Org_cor_id is 'ORG_COR_ID';
 
-DROP TABLE IF EXISTS BAS_COR_COR_PARAAF ;
+DROP TABLE IF EXISTS BAS_COR_COR_PARAAF;
+
+CREATE SEQUENCE BAS_COR_COR_PARAAF_id_seq;
+
 CREATE TABLE BAS_COR_COR_PARAAF (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_COR_PARAAF_id_seq') PRIMARY KEY,
     Acc_id bigint,
     Acc_rol_cd varchar (3),
     Acc_vaste_paraaf_jn varchar (1),
@@ -268,6 +301,8 @@ CREATE TABLE BAS_COR_COR_PARAAF (
     Volgorde smallint
 );
 
+ALTER SEQUENCE BAS_COR_COR_PARAAF_id_seq OWNED BY BAS_COR_COR_PARAAF.techId;
+
     comment on column BAS_COR_COR_PARAAF.Acc_id is 'ACC_ID';
     comment on column BAS_COR_COR_PARAAF.Acc_rol_cd is 'ACC_ROL_CD';
     comment on column BAS_COR_COR_PARAAF.Acc_vaste_paraaf_jn is 'ACC_VASTE_PARAAF_JN';
@@ -296,9 +331,12 @@ CREATE TABLE BAS_COR_COR_PARAAF (
     comment on column BAS_COR_COR_PARAAF.Vaste_paraaf is 'VASTE_PARAAF_JN';
     comment on column BAS_COR_COR_PARAAF.Volgorde is 'VOLGORDE';
 
-DROP TABLE IF EXISTS BAS_COR_COR_SRT ;
+DROP TABLE IF EXISTS BAS_COR_COR_SRT;
+
+CREATE SEQUENCE BAS_COR_COR_SRT_id_seq;
+
 CREATE TABLE BAS_COR_COR_SRT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_COR_SRT_id_seq') PRIMARY KEY,
     Cst_cd varchar (8),
     Cst_oms varchar (60),
     Cst_template varchar (100),
@@ -323,6 +361,8 @@ CREATE TABLE BAS_COR_COR_SRT (
     Intern_jn varchar (1)
 );
 
+ALTER SEQUENCE BAS_COR_COR_SRT_id_seq OWNED BY BAS_COR_COR_SRT.techId;
+
     comment on column BAS_COR_COR_SRT.Cst_cd is 'CST_CD';
     comment on column BAS_COR_COR_SRT.Cst_oms is 'CST_OMS';
     comment on column BAS_COR_COR_SRT.Cst_template is 'CST_TEMPLATE';
@@ -346,9 +386,12 @@ CREATE TABLE BAS_COR_COR_SRT (
     comment on column BAS_COR_COR_SRT.Correctie_jn is 'CORRECTIE_JN';
     comment on column BAS_COR_COR_SRT.Intern_jn is 'INTERN_JN';
 
-DROP TABLE IF EXISTS BAS_COR_CORRESPONDENTIE_HIST ;
+DROP TABLE IF EXISTS BAS_COR_CORRESPONDENTIE_HIST;
+
+CREATE SEQUENCE BAS_COR_CORRESPONDENTIE_HIST_id_seq;
+
 CREATE TABLE BAS_COR_CORRESPONDENTIE_HIST (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_CORRESPONDENTIE_HIST_id_seq') PRIMARY KEY,
     Cor_id bigint,
     Volg_nr bigint,
     Correctie_code varchar (5),
@@ -359,6 +402,8 @@ CREATE TABLE BAS_COR_CORRESPONDENTIE_HIST (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_COR_CORRESPONDENTIE_HIST_id_seq OWNED BY BAS_COR_CORRESPONDENTIE_HIST.techId;
+
     comment on column BAS_COR_CORRESPONDENTIE_HIST.Cor_id is 'COR_ID';
     comment on column BAS_COR_CORRESPONDENTIE_HIST.Volg_nr is 'VOLG_NR';
     comment on column BAS_COR_CORRESPONDENTIE_HIST.Correctie_code is 'CORRECTIE_CODE';
@@ -368,9 +413,12 @@ CREATE TABLE BAS_COR_CORRESPONDENTIE_HIST (
     comment on column BAS_COR_CORRESPONDENTIE_HIST.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_COR_CORRESPONDENTIE_HIST.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_COR_CORRESPONDENTIE ;
+DROP TABLE IF EXISTS BAS_COR_CORRESPONDENTIE;
+
+CREATE SEQUENCE BAS_COR_CORRESPONDENTIE_id_seq;
+
 CREATE TABLE BAS_COR_CORRESPONDENTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_CORRESPONDENTIE_id_seq') PRIMARY KEY,
     Actie_datum timestamp,
     Afgedrukt_JN varchar (1),
     Afgehandeld varchar (1),
@@ -436,6 +484,8 @@ CREATE TABLE BAS_COR_CORRESPONDENTIE (
     Xsl varchar (2048)
 );
 
+ALTER SEQUENCE BAS_COR_CORRESPONDENTIE_id_seq OWNED BY BAS_COR_CORRESPONDENTIE.techId;
+
     comment on column BAS_COR_CORRESPONDENTIE.Actie_datum is 'ACTIE_DATUM';
     comment on column BAS_COR_CORRESPONDENTIE.Afgedrukt_JN is 'AFGEDRUKT_JN';
     comment on column BAS_COR_CORRESPONDENTIE.Afgehandeld is 'AFGEHANDELD';
@@ -500,9 +550,12 @@ CREATE TABLE BAS_COR_CORRESPONDENTIE (
     comment on column BAS_COR_CORRESPONDENTIE.Xml_inhoud is 'XML_INHOUD';
     comment on column BAS_COR_CORRESPONDENTIE.Xsl is 'XSL_FO';
 
-DROP TABLE IF EXISTS BAS_COR_CST_SET_CST ;
+DROP TABLE IF EXISTS BAS_COR_CST_SET_CST;
+
+CREATE SEQUENCE BAS_COR_CST_SET_CST_id_seq;
+
 CREATE TABLE BAS_COR_CST_SET_CST (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_CST_SET_CST_id_seq') PRIMARY KEY,
     Reg_id bigint,
     Cst_cd varchar (8),
     Cst_cd_2 varchar (8),
@@ -515,6 +568,8 @@ CREATE TABLE BAS_COR_CST_SET_CST (
     Genereer_jn varchar (1)
 );
 
+ALTER SEQUENCE BAS_COR_CST_SET_CST_id_seq OWNED BY BAS_COR_CST_SET_CST.techId;
+
     comment on column BAS_COR_CST_SET_CST.Reg_id is 'REG_ID';
     comment on column BAS_COR_CST_SET_CST.Cst_cd is 'CST_CD';
     comment on column BAS_COR_CST_SET_CST.Cst_cd_2 is 'CST_CD_2';
@@ -526,9 +581,12 @@ CREATE TABLE BAS_COR_CST_SET_CST (
     comment on column BAS_COR_CST_SET_CST.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_COR_CST_SET_CST.Genereer_jn is 'GENEREER_JN';
 
-DROP TABLE IF EXISTS BAS_COR_PARAAF ;
+DROP TABLE IF EXISTS BAS_COR_PARAAF;
+
+CREATE SEQUENCE BAS_COR_PARAAF_id_seq;
+
 CREATE TABLE BAS_COR_PARAAF (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_PARAAF_id_seq') PRIMARY KEY,
     Reg_id bigint,
     Cst_cd varchar (8),
     Type_paraaf varchar (1),
@@ -539,6 +597,8 @@ CREATE TABLE BAS_COR_PARAAF (
     Rol_volg_cd varchar (1)
 );
 
+ALTER SEQUENCE BAS_COR_PARAAF_id_seq OWNED BY BAS_COR_PARAAF.techId;
+
     comment on column BAS_COR_PARAAF.Reg_id is 'REG_ID';
     comment on column BAS_COR_PARAAF.Cst_cd is 'CST_CD';
     comment on column BAS_COR_PARAAF.Type_paraaf is 'TYPE_PARAAF';
@@ -548,9 +608,12 @@ CREATE TABLE BAS_COR_PARAAF (
     comment on column BAS_COR_PARAAF.Vaste_paraaf_jn is 'VASTE_PARAAF_JN';
     comment on column BAS_COR_PARAAF.Rol_volg_cd is 'ROL_VOLG_CD';
 
-DROP TABLE IF EXISTS BAS_COR_REACTIE_BIJ_COR_SRT ;
+DROP TABLE IF EXISTS BAS_COR_REACTIE_BIJ_COR_SRT;
+
+CREATE SEQUENCE BAS_COR_REACTIE_BIJ_COR_SRT_id_seq;
+
 CREATE TABLE BAS_COR_REACTIE_BIJ_COR_SRT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_REACTIE_BIJ_COR_SRT_id_seq') PRIMARY KEY,
     Cluster_nr smallint,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -569,6 +632,8 @@ CREATE TABLE BAS_COR_REACTIE_BIJ_COR_SRT (
     Termijn_weken smallint
 );
 
+ALTER SEQUENCE BAS_COR_REACTIE_BIJ_COR_SRT_id_seq OWNED BY BAS_COR_REACTIE_BIJ_COR_SRT.techId;
+
     comment on column BAS_COR_REACTIE_BIJ_COR_SRT.Cluster_nr is 'CLUSTER_NR';
     comment on column BAS_COR_REACTIE_BIJ_COR_SRT.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_COR_REACTIE_BIJ_COR_SRT.Creatie_user is 'CREATIE_USER';
@@ -586,9 +651,12 @@ CREATE TABLE BAS_COR_REACTIE_BIJ_COR_SRT (
     comment on column BAS_COR_REACTIE_BIJ_COR_SRT.Termijn is 'TERMIJN';
     comment on column BAS_COR_REACTIE_BIJ_COR_SRT.Termijn_weken is 'TERMIJN_WEKEN';
 
-DROP TABLE IF EXISTS BAS_COR_REGLSPEC_COR ;
+DROP TABLE IF EXISTS BAS_COR_REGLSPEC_COR;
+
+CREATE SEQUENCE BAS_COR_REGLSPEC_COR_id_seq;
+
 CREATE TABLE BAS_COR_REGLSPEC_COR (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_REGLSPEC_COR_id_seq') PRIMARY KEY,
     Bos_bezorging varchar (1),
     Crea_back varchar (1),
     Create_merge_jn varchar (1),
@@ -611,6 +679,8 @@ CREATE TABLE BAS_COR_REGLSPEC_COR (
     Verzenddatum_vullen varchar (1)
 );
 
+ALTER SEQUENCE BAS_COR_REGLSPEC_COR_id_seq OWNED BY BAS_COR_REGLSPEC_COR.techId;
+
     comment on column BAS_COR_REGLSPEC_COR.Bos_bezorging is 'BOS_BEZORGING';
     comment on column BAS_COR_REGLSPEC_COR.Crea_back is 'CREA_BACK';
     comment on column BAS_COR_REGLSPEC_COR.Create_merge_jn is 'CREATE_MERGE_JN';
@@ -632,9 +702,12 @@ CREATE TABLE BAS_COR_REGLSPEC_COR (
     comment on column BAS_COR_REGLSPEC_COR.Reg_id is 'REG_ID';
     comment on column BAS_COR_REGLSPEC_COR.Verzenddatum_vullen is 'VERZENDDATUM_VULLEN';
 
-DROP TABLE IF EXISTS BAS_COR_TRANSACTIEGROEP_BIJ_BRF ;
+DROP TABLE IF EXISTS BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
+
+CREATE SEQUENCE BAS_COR_TRANSACTIEGROEP_BIJ_BRF_id_seq;
+
 CREATE TABLE BAS_COR_TRANSACTIEGROEP_BIJ_BRF (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_COR_TRANSACTIEGROEP_BIJ_BRF_id_seq') PRIMARY KEY,
     Cor_id bigint,
     Tra_id bigint,
     Dos_id bigint,
@@ -644,6 +717,8 @@ CREATE TABLE BAS_COR_TRANSACTIEGROEP_BIJ_BRF (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_COR_TRANSACTIEGROEP_BIJ_BRF_id_seq OWNED BY BAS_COR_TRANSACTIEGROEP_BIJ_BRF.techId;
+
     comment on column BAS_COR_TRANSACTIEGROEP_BIJ_BRF.Cor_id is 'COR_ID';
     comment on column BAS_COR_TRANSACTIEGROEP_BIJ_BRF.Tra_id is 'TRA_ID';
     comment on column BAS_COR_TRANSACTIEGROEP_BIJ_BRF.Dos_id is 'DOS_ID';
@@ -652,9 +727,12 @@ CREATE TABLE BAS_COR_TRANSACTIEGROEP_BIJ_BRF (
     comment on column BAS_COR_TRANSACTIEGROEP_BIJ_BRF.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_COR_TRANSACTIEGROEP_BIJ_BRF.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_DAM_CONT_BIJ_DLN_COM_ADR ;
+DROP TABLE IF EXISTS BAS_DAM_CONT_BIJ_DLN_COM_ADR;
+
+CREATE SEQUENCE BAS_DAM_CONT_BIJ_DLN_COM_ADR_id_seq;
+
 CREATE TABLE BAS_DAM_CONT_BIJ_DLN_COM_ADR (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_CONT_BIJ_DLN_COM_ADR_id_seq') PRIMARY KEY,
     creatie_dat timestamp,
     Creatie_user varchar (30),
     Dcs_id bigint,
@@ -670,6 +748,8 @@ CREATE TABLE BAS_DAM_CONT_BIJ_DLN_COM_ADR (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_DAM_CONT_BIJ_DLN_COM_ADR_id_seq OWNED BY BAS_DAM_CONT_BIJ_DLN_COM_ADR.techId;
+
     comment on column BAS_DAM_CONT_BIJ_DLN_COM_ADR.creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_CONT_BIJ_DLN_COM_ADR.Creatie_user is 'CREATIE_USER';
     comment on column BAS_DAM_CONT_BIJ_DLN_COM_ADR.Dcs_id is 'DCS_ID';
@@ -684,9 +764,12 @@ CREATE TABLE BAS_DAM_CONT_BIJ_DLN_COM_ADR (
     comment on column BAS_DAM_CONT_BIJ_DLN_COM_ADR.Rol_cd_van is 'ROL_CD_VAN';
     comment on column BAS_DAM_CONT_BIJ_DLN_COM_ADR.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_DAM_CONTACT_BIJ_DEELNAME ;
+DROP TABLE IF EXISTS BAS_DAM_CONTACT_BIJ_DEELNAME;
+
+CREATE SEQUENCE BAS_DAM_CONTACT_BIJ_DEELNAME_id_seq;
+
 CREATE TABLE BAS_DAM_CONTACT_BIJ_DEELNAME (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_CONTACT_BIJ_DEELNAME_id_seq') PRIMARY KEY,
     Certhoud_id bigint,
     Correspondent varchar (1),
     Creatie_dat timestamp,
@@ -702,6 +785,8 @@ CREATE TABLE BAS_DAM_CONTACT_BIJ_DEELNAME (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_DAM_CONTACT_BIJ_DEELNAME_id_seq OWNED BY BAS_DAM_CONTACT_BIJ_DEELNAME.techId;
+
     comment on column BAS_DAM_CONTACT_BIJ_DEELNAME.Certhoud_id is 'CERTHOUD_ID';
     comment on column BAS_DAM_CONTACT_BIJ_DEELNAME.Correspondent is 'CORRESPONDENT';
     comment on column BAS_DAM_CONTACT_BIJ_DEELNAME.Creatie_dat is 'CREATIE_DAT';
@@ -716,9 +801,12 @@ CREATE TABLE BAS_DAM_CONTACT_BIJ_DEELNAME (
     comment on column BAS_DAM_CONTACT_BIJ_DEELNAME.Rol_cd_van is 'ROL_CD_VAN';
     comment on column BAS_DAM_CONTACT_BIJ_DEELNAME.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_DAM_DECLARATIE ;
+DROP TABLE IF EXISTS BAS_DAM_DECLARATIE;
+
+CREATE SEQUENCE BAS_DAM_DECLARATIE_id_seq;
+
 CREATE TABLE BAS_DAM_DECLARATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DECLARATIE_id_seq') PRIMARY KEY,
     Adviesaangevraagd numeric(24,6),
     Adviesaantaluren bigint,
     Advieshandtoegekend numeric(24,6),
@@ -808,6 +896,8 @@ CREATE TABLE BAS_DAM_DECLARATIE (
     Zorgtoegekend numeric(24,6)
 );
 
+ALTER SEQUENCE BAS_DAM_DECLARATIE_id_seq OWNED BY BAS_DAM_DECLARATIE.techId;
+
     comment on column BAS_DAM_DECLARATIE.Adviesaangevraagd is 'ADVIESAANGEVRAAGD';
     comment on column BAS_DAM_DECLARATIE.Adviesaantaluren is 'ADVIESAANTALUREN';
     comment on column BAS_DAM_DECLARATIE.Advieshandtoegekend is 'ADVIESHANDTOEGEKEND';
@@ -896,9 +986,12 @@ CREATE TABLE BAS_DAM_DECLARATIE (
     comment on column BAS_DAM_DECLARATIE.Zorgrentedatum is 'ZORGRENTEDATUM';
     comment on column BAS_DAM_DECLARATIE.Zorgtoegekend is 'ZORGTOEGEKEND';
 
-DROP TABLE IF EXISTS BAS_DAM_DEELNAME_ADRES ;
+DROP TABLE IF EXISTS BAS_DAM_DEELNAME_ADRES;
+
+CREATE SEQUENCE BAS_DAM_DEELNAME_ADRES_id_seq;
+
 CREATE TABLE BAS_DAM_DEELNAME_ADRES (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DEELNAME_ADRES_id_seq') PRIMARY KEY,
     Adressoort varchar (3),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -914,6 +1007,8 @@ CREATE TABLE BAS_DAM_DEELNAME_ADRES (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_DAM_DEELNAME_ADRES_id_seq OWNED BY BAS_DAM_DEELNAME_ADRES.techId;
+
     comment on column BAS_DAM_DEELNAME_ADRES.Adressoort is 'ADRESSOORT';
     comment on column BAS_DAM_DEELNAME_ADRES.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_DEELNAME_ADRES.Creatie_user is 'CREATIE_USER';
@@ -928,9 +1023,12 @@ CREATE TABLE BAS_DAM_DEELNAME_ADRES (
     comment on column BAS_DAM_DEELNAME_ADRES.Rol_cd is 'ROL_CD';
     comment on column BAS_DAM_DEELNAME_ADRES.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_DAM_DEELNAME_COM_ADRES ;
+DROP TABLE IF EXISTS BAS_DAM_DEELNAME_COM_ADRES;
+
+CREATE SEQUENCE BAS_DAM_DEELNAME_COM_ADRES_id_seq;
+
 CREATE TABLE BAS_DAM_DEELNAME_COM_ADRES (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DEELNAME_COM_ADRES_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Dda_id bigint,
@@ -944,6 +1042,8 @@ CREATE TABLE BAS_DAM_DEELNAME_COM_ADRES (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_DAM_DEELNAME_COM_ADRES_id_seq OWNED BY BAS_DAM_DEELNAME_COM_ADRES.techId;
+
     comment on column BAS_DAM_DEELNAME_COM_ADRES.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_DEELNAME_COM_ADRES.Creatie_user is 'CREATIE_USER';
     comment on column BAS_DAM_DEELNAME_COM_ADRES.Dda_id is 'DDA_ID';
@@ -956,9 +1056,12 @@ CREATE TABLE BAS_DAM_DEELNAME_COM_ADRES (
     comment on column BAS_DAM_DEELNAME_COM_ADRES.Rol_cd is 'ROL_CD';
     comment on column BAS_DAM_DEELNAME_COM_ADRES.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_DAM_DEELNAME ;
+DROP TABLE IF EXISTS BAS_DAM_DEELNAME;
+
+CREATE SEQUENCE BAS_DAM_DEELNAME_id_seq;
+
 CREATE TABLE BAS_DAM_DEELNAME (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DEELNAME_id_seq') PRIMARY KEY,
     Afwijking_cd varchar (6),
     Bic varchar (11),
     Bic_cd varchar (8),
@@ -1001,6 +1104,8 @@ CREATE TABLE BAS_DAM_DEELNAME (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_DAM_DEELNAME_id_seq OWNED BY BAS_DAM_DEELNAME.techId;
+
     comment on column BAS_DAM_DEELNAME.Afwijking_cd is 'AFWIJKING_CD';
     comment on column BAS_DAM_DEELNAME.Bic is 'BIC';
     comment on column BAS_DAM_DEELNAME.Bic_cd is 'BICCODE';
@@ -1042,9 +1147,12 @@ CREATE TABLE BAS_DAM_DEELNAME (
     comment on column BAS_DAM_DEELNAME.Verklaring_gewenst_JN is 'VERKLARING_GEWENST_JN';
     comment on column BAS_DAM_DEELNAME.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_DAM_DOS_BUDGETREGEL ;
+DROP TABLE IF EXISTS BAS_DAM_DOS_BUDGETREGEL;
+
+CREATE SEQUENCE BAS_DAM_DOS_BUDGETREGEL_id_seq;
+
 CREATE TABLE BAS_DAM_DOS_BUDGETREGEL (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DOS_BUDGETREGEL_id_seq') PRIMARY KEY,
     Dos_id bigint,
     Tra_id bigint,
     Volgnummer bigint,
@@ -1079,6 +1187,8 @@ CREATE TABLE BAS_DAM_DOS_BUDGETREGEL (
     Per_Deelnemer varchar (1)
 );
 
+ALTER SEQUENCE BAS_DAM_DOS_BUDGETREGEL_id_seq OWNED BY BAS_DAM_DOS_BUDGETREGEL.techId;
+
     comment on column BAS_DAM_DOS_BUDGETREGEL.Dos_id is 'DOS_ID';
     comment on column BAS_DAM_DOS_BUDGETREGEL.Tra_id is 'TRA_ID';
     comment on column BAS_DAM_DOS_BUDGETREGEL.Volgnummer is 'VOLGNUMMER';
@@ -1112,9 +1222,12 @@ CREATE TABLE BAS_DAM_DOS_BUDGETREGEL (
     comment on column BAS_DAM_DOS_BUDGETREGEL.Rpt_nr_oud is 'RPT_NR_OUD';
     comment on column BAS_DAM_DOS_BUDGETREGEL.Per_Deelnemer is 'PER_DEELNEMER';
 
-DROP TABLE IF EXISTS BAS_DAM_DOSSIER_IN_GROEP ;
+DROP TABLE IF EXISTS BAS_DAM_DOSSIER_IN_GROEP;
+
+CREATE SEQUENCE BAS_DAM_DOSSIER_IN_GROEP_id_seq;
+
 CREATE TABLE BAS_DAM_DOSSIER_IN_GROEP (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DOSSIER_IN_GROEP_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Ddg_id bigint,
@@ -1124,6 +1237,8 @@ CREATE TABLE BAS_DAM_DOSSIER_IN_GROEP (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_DAM_DOSSIER_IN_GROEP_id_seq OWNED BY BAS_DAM_DOSSIER_IN_GROEP.techId;
+
     comment on column BAS_DAM_DOSSIER_IN_GROEP.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_DOSSIER_IN_GROEP.Creatie_user is 'CREATIE_USER';
     comment on column BAS_DAM_DOSSIER_IN_GROEP.Ddg_id is 'DDG_ID';
@@ -1132,9 +1247,12 @@ CREATE TABLE BAS_DAM_DOSSIER_IN_GROEP (
     comment on column BAS_DAM_DOSSIER_IN_GROEP.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_DAM_DOSSIER_IN_GROEP.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_DAM_DOSSIER_NOTITIE ;
+DROP TABLE IF EXISTS BAS_DAM_DOSSIER_NOTITIE;
+
+CREATE SEQUENCE BAS_DAM_DOSSIER_NOTITIE_id_seq;
+
 CREATE TABLE BAS_DAM_DOSSIER_NOTITIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DOSSIER_NOTITIE_id_seq') PRIMARY KEY,
     Afgehandeld varchar (1),
     Bezoeknr smallint,
     Cor_id_no bigint,
@@ -1148,6 +1266,8 @@ CREATE TABLE BAS_DAM_DOSSIER_NOTITIE (
     Rel_id bigint
 );
 
+ALTER SEQUENCE BAS_DAM_DOSSIER_NOTITIE_id_seq OWNED BY BAS_DAM_DOSSIER_NOTITIE.techId;
+
     comment on column BAS_DAM_DOSSIER_NOTITIE.Afgehandeld is 'AFGEHANDELD';
     comment on column BAS_DAM_DOSSIER_NOTITIE.Bezoeknr is 'BEZOEKNR';
     comment on column BAS_DAM_DOSSIER_NOTITIE.Cor_id_no is 'COR_ID_NO';
@@ -1160,9 +1280,12 @@ CREATE TABLE BAS_DAM_DOSSIER_NOTITIE (
     comment on column BAS_DAM_DOSSIER_NOTITIE.Notitietype_naam is 'NOTITIETYPE_NAAM';
     comment on column BAS_DAM_DOSSIER_NOTITIE.Rel_id is 'REL_ID';
 
-DROP TABLE IF EXISTS BAS_DAM_DOSSIER ;
+DROP TABLE IF EXISTS BAS_DAM_DOSSIER;
+
+CREATE SEQUENCE BAS_DAM_DOSSIER_id_seq;
+
 CREATE TABLE BAS_DAM_DOSSIER (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DOSSIER_id_seq') PRIMARY KEY,
     Aangevraagd_bedrag numeric(26,6),
     Aantal_dagenopschorting bigint,
     Aantal_ICT_projecten smallint,
@@ -1331,6 +1454,8 @@ CREATE TABLE BAS_DAM_DOSSIER (
     Aangeboden_aan_ZER varchar (1)
 );
 
+ALTER SEQUENCE BAS_DAM_DOSSIER_id_seq OWNED BY BAS_DAM_DOSSIER.techId;
+
     comment on column BAS_DAM_DOSSIER.Aangevraagd_bedrag is 'AANGEVRAAGD_BEDRAG';
     comment on column BAS_DAM_DOSSIER.Aantal_dagenopschorting is 'AANTAL_DAGENOPSCHORTING';
     comment on column BAS_DAM_DOSSIER.Aantal_ICT_projecten is 'AANTAL_ICT_PROJECTEN';
@@ -1498,9 +1623,12 @@ CREATE TABLE BAS_DAM_DOSSIER (
     comment on column BAS_DAM_DOSSIER.Wel_akkoord_niet_verlenen is 'WEL_AKK_NIET_VERL';
     comment on column BAS_DAM_DOSSIER.Aangeboden_aan_ZER is 'ZER_AANGEBODEN';
 
-DROP TABLE IF EXISTS BAS_DAM_DOSSIERGROEP ;
+DROP TABLE IF EXISTS BAS_DAM_DOSSIERGROEP;
+
+CREATE SEQUENCE BAS_DAM_DOSSIERGROEP_id_seq;
+
 CREATE TABLE BAS_DAM_DOSSIERGROEP (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_DOSSIERGROEP_id_seq') PRIMARY KEY,
     Ddg_id bigint,
     Age_id bigint,
     Naam varchar (30),
@@ -1511,6 +1639,8 @@ CREATE TABLE BAS_DAM_DOSSIERGROEP (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_DAM_DOSSIERGROEP_id_seq OWNED BY BAS_DAM_DOSSIERGROEP.techId;
+
     comment on column BAS_DAM_DOSSIERGROEP.Ddg_id is 'DDG_ID';
     comment on column BAS_DAM_DOSSIERGROEP.Age_id is 'AGE_ID';
     comment on column BAS_DAM_DOSSIERGROEP.Naam is 'NAAM';
@@ -1520,9 +1650,12 @@ CREATE TABLE BAS_DAM_DOSSIERGROEP (
     comment on column BAS_DAM_DOSSIERGROEP.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_DAM_DOSSIERGROEP.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_DAM_LOKATIEADRES ;
+DROP TABLE IF EXISTS BAS_DAM_LOKATIEADRES;
+
+CREATE SEQUENCE BAS_DAM_LOKATIEADRES_id_seq;
+
 CREATE TABLE BAS_DAM_LOKATIEADRES (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_LOKATIEADRES_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     DLS_id bigint,
@@ -1533,6 +1666,8 @@ CREATE TABLE BAS_DAM_LOKATIEADRES (
     RAS_id bigint
 );
 
+ALTER SEQUENCE BAS_DAM_LOKATIEADRES_id_seq OWNED BY BAS_DAM_LOKATIEADRES.techId;
+
     comment on column BAS_DAM_LOKATIEADRES.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_LOKATIEADRES.Creatie_user is 'CREATIE_USER';
     comment on column BAS_DAM_LOKATIEADRES.DLS_id is 'DLS_ID';
@@ -1542,9 +1677,12 @@ CREATE TABLE BAS_DAM_LOKATIEADRES (
     comment on column BAS_DAM_LOKATIEADRES.RAE_id is 'RAE_ID';
     comment on column BAS_DAM_LOKATIEADRES.RAS_id is 'RAS_ID';
 
-DROP TABLE IF EXISTS BAS_DAM_MDW_INTERN_HIST ;
+DROP TABLE IF EXISTS BAS_DAM_MDW_INTERN_HIST;
+
+CREATE SEQUENCE BAS_DAM_MDW_INTERN_HIST_id_seq;
+
 CREATE TABLE BAS_DAM_MDW_INTERN_HIST (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_MDW_INTERN_HIST_id_seq') PRIMARY KEY,
     Dos_id bigint,
     Prg_id bigint,
     Mdw_id bigint,
@@ -1560,6 +1698,8 @@ CREATE TABLE BAS_DAM_MDW_INTERN_HIST (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_DAM_MDW_INTERN_HIST_id_seq OWNED BY BAS_DAM_MDW_INTERN_HIST.techId;
+
     comment on column BAS_DAM_MDW_INTERN_HIST.Dos_id is 'DOS_ID';
     comment on column BAS_DAM_MDW_INTERN_HIST.Prg_id is 'PRG_ID';
     comment on column BAS_DAM_MDW_INTERN_HIST.Mdw_id is 'MDW_ID';
@@ -1574,9 +1714,12 @@ CREATE TABLE BAS_DAM_MDW_INTERN_HIST (
     comment on column BAS_DAM_MDW_INTERN_HIST.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_DAM_MDW_INTERN_HIST.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_DAM_MDW_INTERN ;
+DROP TABLE IF EXISTS BAS_DAM_MDW_INTERN;
+
+CREATE SEQUENCE BAS_DAM_MDW_INTERN_id_seq;
+
 CREATE TABLE BAS_DAM_MDW_INTERN (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_MDW_INTERN_id_seq') PRIMARY KEY,
     Behandelend varchar (1),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -1590,6 +1733,8 @@ CREATE TABLE BAS_DAM_MDW_INTERN (
     Rol_cd varchar (3)
 );
 
+ALTER SEQUENCE BAS_DAM_MDW_INTERN_id_seq OWNED BY BAS_DAM_MDW_INTERN.techId;
+
     comment on column BAS_DAM_MDW_INTERN.Behandelend is 'BEHANDELEND';
     comment on column BAS_DAM_MDW_INTERN.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_MDW_INTERN.Creatie_user is 'CREATIE_USER';
@@ -1602,9 +1747,12 @@ CREATE TABLE BAS_DAM_MDW_INTERN (
     comment on column BAS_DAM_MDW_INTERN.Prg_id is 'PRG_ID';
     comment on column BAS_DAM_MDW_INTERN.Rol_cd is 'ROL_CD';
 
-DROP TABLE IF EXISTS BAS_DAM_STATUSHISTORIE ;
+DROP TABLE IF EXISTS BAS_DAM_STATUSHISTORIE;
+
+CREATE SEQUENCE BAS_DAM_STATUSHISTORIE_id_seq;
+
 CREATE TABLE BAS_DAM_STATUSHISTORIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_STATUSHISTORIE_id_seq') PRIMARY KEY,
     Commentaar varchar (2048),
     Cor_id_tot bigint,
     Cor_id_van bigint,
@@ -1620,6 +1768,8 @@ CREATE TABLE BAS_DAM_STATUSHISTORIE (
     Volg_nr bigint
 );
 
+ALTER SEQUENCE BAS_DAM_STATUSHISTORIE_id_seq OWNED BY BAS_DAM_STATUSHISTORIE.techId;
+
     comment on column BAS_DAM_STATUSHISTORIE.Commentaar is 'COMMENTAAR';
     comment on column BAS_DAM_STATUSHISTORIE.Cor_id_tot is 'COR_ID_TOT';
     comment on column BAS_DAM_STATUSHISTORIE.Cor_id_van is 'COR_ID_VAN';
@@ -1634,9 +1784,12 @@ CREATE TABLE BAS_DAM_STATUSHISTORIE (
     comment on column BAS_DAM_STATUSHISTORIE.Sts_cd is 'STS_CD';
     comment on column BAS_DAM_STATUSHISTORIE.Volg_nr is 'VOLG_NR';
 
-DROP TABLE IF EXISTS BAS_DAM_TERMIJN_PARAAF_NOTITIE ;
+DROP TABLE IF EXISTS BAS_DAM_TERMIJN_PARAAF_NOTITIE;
+
+CREATE SEQUENCE BAS_DAM_TERMIJN_PARAAF_NOTITIE_id_seq;
+
 CREATE TABLE BAS_DAM_TERMIJN_PARAAF_NOTITIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_TERMIJN_PARAAF_NOTITIE_id_seq') PRIMARY KEY,
     Cor_id bigint,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -1647,6 +1800,8 @@ CREATE TABLE BAS_DAM_TERMIJN_PARAAF_NOTITIE (
     Toelichting varchar (2048)
 );
 
+ALTER SEQUENCE BAS_DAM_TERMIJN_PARAAF_NOTITIE_id_seq OWNED BY BAS_DAM_TERMIJN_PARAAF_NOTITIE.techId;
+
     comment on column BAS_DAM_TERMIJN_PARAAF_NOTITIE.Cor_id is 'COR_ID';
     comment on column BAS_DAM_TERMIJN_PARAAF_NOTITIE.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_DAM_TERMIJN_PARAAF_NOTITIE.Creatie_user is 'CREATIE_USER';
@@ -1656,9 +1811,12 @@ CREATE TABLE BAS_DAM_TERMIJN_PARAAF_NOTITIE (
     comment on column BAS_DAM_TERMIJN_PARAAF_NOTITIE.Ter_id is 'TER_ID';
     comment on column BAS_DAM_TERMIJN_PARAAF_NOTITIE.Toelichting is 'TOELICHTING';
 
-DROP TABLE IF EXISTS BAS_DAM_TERMIJN ;
+DROP TABLE IF EXISTS BAS_DAM_TERMIJN;
+
+CREATE SEQUENCE BAS_DAM_TERMIJN_id_seq;
+
 CREATE TABLE BAS_DAM_TERMIJN (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_DAM_TERMIJN_id_seq') PRIMARY KEY,
     Aanvullende_voorwaarden varchar (1),
     Actie varchar (2048),
     Actie_dat timestamp,
@@ -1683,6 +1841,8 @@ CREATE TABLE BAS_DAM_TERMIJN (
     Volgorde_paraaf smallint
 );
 
+ALTER SEQUENCE BAS_DAM_TERMIJN_id_seq OWNED BY BAS_DAM_TERMIJN.techId;
+
     comment on column BAS_DAM_TERMIJN.Aanvullende_voorwaarden is 'AANVULLENDE_VOORWAARDEN';
     comment on column BAS_DAM_TERMIJN.Actie is 'ACTIE';
     comment on column BAS_DAM_TERMIJN.Actie_dat is 'ACTIE_DAT';
@@ -1706,9 +1866,12 @@ CREATE TABLE BAS_DAM_TERMIJN (
     comment on column BAS_DAM_TERMIJN.Voldaan_dat is 'VOLDAAN_DAT';
     comment on column BAS_DAM_TERMIJN.Volgorde_paraaf is 'VOLGORDE_PARAAF';
 
-DROP TABLE IF EXISTS BAS_FAM_STATUSHISTORIE ;
+DROP TABLE IF EXISTS BAS_FAM_STATUSHISTORIE;
+
+CREATE SEQUENCE BAS_FAM_STATUSHISTORIE_id_seq;
+
 CREATE TABLE BAS_FAM_STATUSHISTORIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_FAM_STATUSHISTORIE_id_seq') PRIMARY KEY,
     Commentaar varchar (2048),
     Datum_van timestamp,
     Datum_tot timestamp,
@@ -1722,6 +1885,8 @@ CREATE TABLE BAS_FAM_STATUSHISTORIE (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_FAM_STATUSHISTORIE_id_seq OWNED BY BAS_FAM_STATUSHISTORIE.techId;
+
     comment on column BAS_FAM_STATUSHISTORIE.Commentaar is 'COMMENTAAR';
     comment on column BAS_FAM_STATUSHISTORIE.Datum_van is 'DATUM_VAN';
     comment on column BAS_FAM_STATUSHISTORIE.Datum_tot is 'DATUM_TOT';
@@ -1734,9 +1899,12 @@ CREATE TABLE BAS_FAM_STATUSHISTORIE (
     comment on column BAS_FAM_STATUSHISTORIE.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_FAM_STATUSHISTORIE.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_FAM_TRANSACTIE_REGEL ;
+DROP TABLE IF EXISTS BAS_FAM_TRANSACTIE_REGEL;
+
+CREATE SEQUENCE BAS_FAM_TRANSACTIE_REGEL_id_seq;
+
 CREATE TABLE BAS_FAM_TRANSACTIE_REGEL (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_FAM_TRANSACTIE_REGEL_id_seq') PRIMARY KEY,
     Tra_id bigint,
     Rpt_nr bigint,
     Ovk_nr varchar (20),
@@ -1767,6 +1935,8 @@ CREATE TABLE BAS_FAM_TRANSACTIE_REGEL (
     Imvb varchar (1)
 );
 
+ALTER SEQUENCE BAS_FAM_TRANSACTIE_REGEL_id_seq OWNED BY BAS_FAM_TRANSACTIE_REGEL.techId;
+
     comment on column BAS_FAM_TRANSACTIE_REGEL.Tra_id is 'TRA_ID';
     comment on column BAS_FAM_TRANSACTIE_REGEL.Rpt_nr is 'RPT_NR';
     comment on column BAS_FAM_TRANSACTIE_REGEL.Ovk_nr is 'OVK_NR';
@@ -1796,9 +1966,12 @@ CREATE TABLE BAS_FAM_TRANSACTIE_REGEL (
     comment on column BAS_FAM_TRANSACTIE_REGEL.Boeking is 'BOEKING';
     comment on column BAS_FAM_TRANSACTIE_REGEL.Imvb is 'IMVB';
 
-DROP TABLE IF EXISTS BAS_FAM_TRANSACTIE ;
+DROP TABLE IF EXISTS BAS_FAM_TRANSACTIE;
+
+CREATE SEQUENCE BAS_FAM_TRANSACTIE_id_seq;
+
 CREATE TABLE BAS_FAM_TRANSACTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_FAM_TRANSACTIE_id_seq') PRIMARY KEY,
     Volgnummer smallint,
     Tra_id bigint,
     Prg_id bigint,
@@ -1859,6 +2032,8 @@ CREATE TABLE BAS_FAM_TRANSACTIE (
     Tra_id_ean_eap bigint
 );
 
+ALTER SEQUENCE BAS_FAM_TRANSACTIE_id_seq OWNED BY BAS_FAM_TRANSACTIE.techId;
+
     comment on column BAS_FAM_TRANSACTIE.Volgnummer is 'VOLGNUMMER';
     comment on column BAS_FAM_TRANSACTIE.Tra_id is 'TRA_ID';
     comment on column BAS_FAM_TRANSACTIE.Prg_id is 'PRG_ID';
@@ -1918,9 +2093,12 @@ CREATE TABLE BAS_FAM_TRANSACTIE (
     comment on column BAS_FAM_TRANSACTIE.Termijn_uitstel is 'TERMIJN_UITSTEL';
     comment on column BAS_FAM_TRANSACTIE.Tra_id_ean_eap is 'TRA_ID_EAN_EAP';
 
-DROP TABLE IF EXISTS BAS_FAM_VERPLICHTING ;
+DROP TABLE IF EXISTS BAS_FAM_VERPLICHTING;
+
+CREATE SEQUENCE BAS_FAM_VERPLICHTING_id_seq;
+
 CREATE TABLE BAS_FAM_VERPLICHTING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_FAM_VERPLICHTING_id_seq') PRIMARY KEY,
     Tra_id bigint,
     Reg_id bigint,
     Reg_nr smallint,
@@ -1940,6 +2118,8 @@ CREATE TABLE BAS_FAM_VERPLICHTING (
     Betalingsverzoeknummer varchar (40)
 );
 
+ALTER SEQUENCE BAS_FAM_VERPLICHTING_id_seq OWNED BY BAS_FAM_VERPLICHTING.techId;
+
     comment on column BAS_FAM_VERPLICHTING.Tra_id is 'TRA_ID';
     comment on column BAS_FAM_VERPLICHTING.Reg_id is 'REG_ID';
     comment on column BAS_FAM_VERPLICHTING.Reg_nr is 'REG_NR';
@@ -1958,9 +2138,12 @@ CREATE TABLE BAS_FAM_VERPLICHTING (
     comment on column BAS_FAM_VERPLICHTING.Inkoopbevinding_user is 'INKOOPBEVINDING_USER';
     comment on column BAS_FAM_VERPLICHTING.Betalingsverzoeknummer is 'BETALINGSVERZOEKNUMMER';
 
-DROP TABLE IF EXISTS BAS_IOM_FUNCTIE ;
+DROP TABLE IF EXISTS BAS_IOM_FUNCTIE;
+
+CREATE SEQUENCE BAS_IOM_FUNCTIE_id_seq;
+
 CREATE TABLE BAS_IOM_FUNCTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_IOM_FUNCTIE_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Fun_cd varchar (7),
@@ -1969,6 +2152,8 @@ CREATE TABLE BAS_IOM_FUNCTIE (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_IOM_FUNCTIE_id_seq OWNED BY BAS_IOM_FUNCTIE.techId;
+
     comment on column BAS_IOM_FUNCTIE.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_IOM_FUNCTIE.Creatie_user is 'CREATIE_USER';
     comment on column BAS_IOM_FUNCTIE.Fun_cd is 'FUN_CD';
@@ -1976,9 +2161,12 @@ CREATE TABLE BAS_IOM_FUNCTIE (
     comment on column BAS_IOM_FUNCTIE.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_IOM_FUNCTIE.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_IOM_LOCATIE ;
+DROP TABLE IF EXISTS BAS_IOM_LOCATIE;
+
+CREATE SEQUENCE BAS_IOM_LOCATIE_id_seq;
+
 CREATE TABLE BAS_IOM_LOCATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_IOM_LOCATIE_id_seq') PRIMARY KEY,
     Loc_cd varchar (2),
     Omschrijving varchar (34),
     Actief varchar (1),
@@ -1988,6 +2176,8 @@ CREATE TABLE BAS_IOM_LOCATIE (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_IOM_LOCATIE_id_seq OWNED BY BAS_IOM_LOCATIE.techId;
+
     comment on column BAS_IOM_LOCATIE.Loc_cd is 'LOC_CD';
     comment on column BAS_IOM_LOCATIE.Omschrijving is 'OMSCHRIJVING';
     comment on column BAS_IOM_LOCATIE.Actief is 'ACTIEF';
@@ -1996,9 +2186,12 @@ CREATE TABLE BAS_IOM_LOCATIE (
     comment on column BAS_IOM_LOCATIE.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_IOM_LOCATIE.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_IOM_MEDEWERKER ;
+DROP TABLE IF EXISTS BAS_IOM_MEDEWERKER;
+
+CREATE SEQUENCE BAS_IOM_MEDEWERKER_id_seq;
+
 CREATE TABLE BAS_IOM_MEDEWERKER (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_IOM_MEDEWERKER_id_seq') PRIMARY KEY,
     Aanspreeknaam varchar (50),
     Achternaam varchar (25),
     Actief varchar (1),
@@ -2041,6 +2234,8 @@ CREATE TABLE BAS_IOM_MEDEWERKER (
     Voorvoegsel varchar (10)
 );
 
+ALTER SEQUENCE BAS_IOM_MEDEWERKER_id_seq OWNED BY BAS_IOM_MEDEWERKER.techId;
+
     comment on column BAS_IOM_MEDEWERKER.Aanspreeknaam is 'AANSPREEKNAAM';
     comment on column BAS_IOM_MEDEWERKER.Achternaam is 'ACHTERNAAM';
     comment on column BAS_IOM_MEDEWERKER.Actief is 'ACTIEF';
@@ -2082,9 +2277,12 @@ CREATE TABLE BAS_IOM_MEDEWERKER (
     comment on column BAS_IOM_MEDEWERKER.Voornaam is 'VOORNAAM';
     comment on column BAS_IOM_MEDEWERKER.Voorvoegsel is 'VOORVOEGSEL';
 
-DROP TABLE IF EXISTS BAS_IOM_MEDEWERKERROL ;
+DROP TABLE IF EXISTS BAS_IOM_MEDEWERKERROL;
+
+CREATE SEQUENCE BAS_IOM_MEDEWERKERROL_id_seq;
+
 CREATE TABLE BAS_IOM_MEDEWERKERROL (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_IOM_MEDEWERKERROL_id_seq') PRIMARY KEY,
     Mdw_id bigint,
     Rol_cd varchar (3),
     Creatie_dat timestamp,
@@ -2094,6 +2292,8 @@ CREATE TABLE BAS_IOM_MEDEWERKERROL (
     Actief varchar (1)
 );
 
+ALTER SEQUENCE BAS_IOM_MEDEWERKERROL_id_seq OWNED BY BAS_IOM_MEDEWERKERROL.techId;
+
     comment on column BAS_IOM_MEDEWERKERROL.Mdw_id is 'MDW_ID';
     comment on column BAS_IOM_MEDEWERKERROL.Rol_cd is 'ROL_CD';
     comment on column BAS_IOM_MEDEWERKERROL.Creatie_dat is 'CREATIE_DAT';
@@ -2102,9 +2302,12 @@ CREATE TABLE BAS_IOM_MEDEWERKERROL (
     comment on column BAS_IOM_MEDEWERKERROL.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_IOM_MEDEWERKERROL.Actief is 'ACTIEF';
 
-DROP TABLE IF EXISTS BAS_JZM_BEHANDELAAR ;
+DROP TABLE IF EXISTS BAS_JZM_BEHANDELAAR;
+
+CREATE SEQUENCE BAS_JZM_BEHANDELAAR_id_seq;
+
 CREATE TABLE BAS_JZM_BEHANDELAAR (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_BEHANDELAAR_id_seq') PRIMARY KEY,
     Mdw_id bigint,
     Jz_id bigint,
     Rol_cd varchar (3),
@@ -2115,6 +2318,8 @@ CREATE TABLE BAS_JZM_BEHANDELAAR (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_JZM_BEHANDELAAR_id_seq OWNED BY BAS_JZM_BEHANDELAAR.techId;
+
     comment on column BAS_JZM_BEHANDELAAR.Mdw_id is 'MDW_ID';
     comment on column BAS_JZM_BEHANDELAAR.Jz_id is 'JZ_ID';
     comment on column BAS_JZM_BEHANDELAAR.Rol_cd is 'ROL_CD';
@@ -2124,9 +2329,12 @@ CREATE TABLE BAS_JZM_BEHANDELAAR (
     comment on column BAS_JZM_BEHANDELAAR.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_JZM_BEHANDELAAR.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_JZM_BEROEP ;
+DROP TABLE IF EXISTS BAS_JZM_BEROEP;
+
+CREATE SEQUENCE BAS_JZM_BEROEP_id_seq;
+
 CREATE TABLE BAS_JZM_BEROEP (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_BEROEP_id_seq') PRIMARY KEY,
     Jz_id bigint,
     Bzr_id bigint,
     Zaaknummer varchar (30),
@@ -2138,6 +2346,8 @@ CREATE TABLE BAS_JZM_BEROEP (
     Datum_schade timestamp
 );
 
+ALTER SEQUENCE BAS_JZM_BEROEP_id_seq OWNED BY BAS_JZM_BEROEP.techId;
+
     comment on column BAS_JZM_BEROEP.Jz_id is 'JZ_ID';
     comment on column BAS_JZM_BEROEP.Bzr_id is 'BZR_ID';
     comment on column BAS_JZM_BEROEP.Zaaknummer is 'ZAAKNUMMER';
@@ -2148,9 +2358,12 @@ CREATE TABLE BAS_JZM_BEROEP (
     comment on column BAS_JZM_BEROEP.Bedrag_schade_nlg is 'BEDRAG_SCHADE_NLG';
     comment on column BAS_JZM_BEROEP.Datum_schade is 'DATUM_SCHADE';
 
-DROP TABLE IF EXISTS BAS_JZM_BEZWAAR ;
+DROP TABLE IF EXISTS BAS_JZM_BEZWAAR;
+
+CREATE SEQUENCE BAS_JZM_BEZWAAR_id_seq;
+
 CREATE TABLE BAS_JZM_BEZWAAR (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_BEZWAAR_id_seq') PRIMARY KEY,
     Jz_id bigint,
     Belasting_cd varchar (35),
     Datum_compleet timestamp,
@@ -2181,6 +2394,8 @@ CREATE TABLE BAS_JZM_BEZWAAR (
     Tijd_def_schouw timestamp
 );
 
+ALTER SEQUENCE BAS_JZM_BEZWAAR_id_seq OWNED BY BAS_JZM_BEZWAAR.techId;
+
     comment on column BAS_JZM_BEZWAAR.Jz_id is 'JZ_ID';
     comment on column BAS_JZM_BEZWAAR.Belasting_cd is 'BELASTING_CD';
     comment on column BAS_JZM_BEZWAAR.Datum_compleet is 'DATUM_COMPLEET';
@@ -2210,9 +2425,12 @@ CREATE TABLE BAS_JZM_BEZWAAR (
     comment on column BAS_JZM_BEZWAAR.Datum_def_schouw is 'DATUM_DEF_SCHOUW';
     comment on column BAS_JZM_BEZWAAR.Tijd_def_schouw is 'TIJD_DEF_SCHOUW';
 
-DROP TABLE IF EXISTS BAS_JZM_BEZWAAR_TERMIJN_HIST ;
+DROP TABLE IF EXISTS BAS_JZM_BEZWAAR_TERMIJN_HIST;
+
+CREATE SEQUENCE BAS_JZM_BEZWAAR_TERMIJN_HIST_id_seq;
+
 CREATE TABLE BAS_JZM_BEZWAAR_TERMIJN_HIST (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_BEZWAAR_TERMIJN_HIST_id_seq') PRIMARY KEY,
     Jz_id bigint,
     Vanaf_datum timestamp,
     Volg_nr bigint,
@@ -2231,6 +2449,8 @@ CREATE TABLE BAS_JZM_BEZWAAR_TERMIJN_HIST (
     Adviescommissie varchar (1)
 );
 
+ALTER SEQUENCE BAS_JZM_BEZWAAR_TERMIJN_HIST_id_seq OWNED BY BAS_JZM_BEZWAAR_TERMIJN_HIST.techId;
+
     comment on column BAS_JZM_BEZWAAR_TERMIJN_HIST.Jz_id is 'JZ_ID';
     comment on column BAS_JZM_BEZWAAR_TERMIJN_HIST.Vanaf_datum is 'VANAF_DATUM';
     comment on column BAS_JZM_BEZWAAR_TERMIJN_HIST.Volg_nr is 'VOLG_NR';
@@ -2248,9 +2468,12 @@ CREATE TABLE BAS_JZM_BEZWAAR_TERMIJN_HIST (
     comment on column BAS_JZM_BEZWAAR_TERMIJN_HIST.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_JZM_BEZWAAR_TERMIJN_HIST.Adviescommissie is 'ADVIESCOMMISSIE';
 
-DROP TABLE IF EXISTS BAS_JZM_BOB_WIZARD ;
+DROP TABLE IF EXISTS BAS_JZM_BOB_WIZARD;
+
+CREATE SEQUENCE BAS_JZM_BOB_WIZARD_id_seq;
+
 CREATE TABLE BAS_JZM_BOB_WIZARD (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_BOB_WIZARD_id_seq') PRIMARY KEY,
     Jz_id bigint,
     Verleen_bedrag numeric(26,6),
     Betaal_bedrag numeric(26,6),
@@ -2298,6 +2521,8 @@ CREATE TABLE BAS_JZM_BOB_WIZARD (
     Creatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_JZM_BOB_WIZARD_id_seq OWNED BY BAS_JZM_BOB_WIZARD.techId;
+
     comment on column BAS_JZM_BOB_WIZARD.Jz_id is 'JZ_ID';
     comment on column BAS_JZM_BOB_WIZARD.Verleen_bedrag is 'VERLEEN_BEDRAG';
     comment on column BAS_JZM_BOB_WIZARD.Betaal_bedrag is 'BETAAL_BEDRAG';
@@ -2344,9 +2569,12 @@ CREATE TABLE BAS_JZM_BOB_WIZARD (
     comment on column BAS_JZM_BOB_WIZARD.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_JZM_BOB_WIZARD.Creatie_user is 'CREATIE_USER';
 
-DROP TABLE IF EXISTS BAS_JZM_BRIEF_FUNCTIE ;
+DROP TABLE IF EXISTS BAS_JZM_BRIEF_FUNCTIE;
+
+CREATE SEQUENCE BAS_JZM_BRIEF_FUNCTIE_id_seq;
+
 CREATE TABLE BAS_JZM_BRIEF_FUNCTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_BRIEF_FUNCTIE_id_seq') PRIMARY KEY,
     Fnc_cd varchar (3),
     Oms varchar (64),
     Creatie_dat timestamp,
@@ -2355,6 +2583,8 @@ CREATE TABLE BAS_JZM_BRIEF_FUNCTIE (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_JZM_BRIEF_FUNCTIE_id_seq OWNED BY BAS_JZM_BRIEF_FUNCTIE.techId;
+
     comment on column BAS_JZM_BRIEF_FUNCTIE.Fnc_cd is 'FNC_CD';
     comment on column BAS_JZM_BRIEF_FUNCTIE.Oms is 'OMS';
     comment on column BAS_JZM_BRIEF_FUNCTIE.Creatie_dat is 'CREATIE_DAT';
@@ -2362,9 +2592,12 @@ CREATE TABLE BAS_JZM_BRIEF_FUNCTIE (
     comment on column BAS_JZM_BRIEF_FUNCTIE.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_JZM_BRIEF_FUNCTIE.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_JZM_FUNCTIE_VAN_BRIEF ;
+DROP TABLE IF EXISTS BAS_JZM_FUNCTIE_VAN_BRIEF;
+
+CREATE SEQUENCE BAS_JZM_FUNCTIE_VAN_BRIEF_id_seq;
+
 CREATE TABLE BAS_JZM_FUNCTIE_VAN_BRIEF (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_FUNCTIE_VAN_BRIEF_id_seq') PRIMARY KEY,
     Fnc_cd varchar (3),
     Cst_cd varchar (8),
     Creatie_dat timestamp,
@@ -2373,6 +2606,8 @@ CREATE TABLE BAS_JZM_FUNCTIE_VAN_BRIEF (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_JZM_FUNCTIE_VAN_BRIEF_id_seq OWNED BY BAS_JZM_FUNCTIE_VAN_BRIEF.techId;
+
     comment on column BAS_JZM_FUNCTIE_VAN_BRIEF.Fnc_cd is 'FNC_CD';
     comment on column BAS_JZM_FUNCTIE_VAN_BRIEF.Cst_cd is 'CST_CD';
     comment on column BAS_JZM_FUNCTIE_VAN_BRIEF.Creatie_dat is 'CREATIE_DAT';
@@ -2380,9 +2615,12 @@ CREATE TABLE BAS_JZM_FUNCTIE_VAN_BRIEF (
     comment on column BAS_JZM_FUNCTIE_VAN_BRIEF.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_JZM_FUNCTIE_VAN_BRIEF.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_JZM_PROCEDURE ;
+DROP TABLE IF EXISTS BAS_JZM_PROCEDURE;
+
+CREATE SEQUENCE BAS_JZM_PROCEDURE_id_seq;
+
 CREATE TABLE BAS_JZM_PROCEDURE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_PROCEDURE_id_seq') PRIMARY KEY,
     Jaar integer,
     Volgnr integer,
     Jz_nr varchar (6),
@@ -2416,6 +2654,8 @@ CREATE TABLE BAS_JZM_PROCEDURE (
     Hoofdproces varchar (10)
 );
 
+ALTER SEQUENCE BAS_JZM_PROCEDURE_id_seq OWNED BY BAS_JZM_PROCEDURE.techId;
+
     comment on column BAS_JZM_PROCEDURE.Jaar is 'JAAR';
     comment on column BAS_JZM_PROCEDURE.Volgnr is 'VOLGNR';
     comment on column BAS_JZM_PROCEDURE.Jz_nr is 'JZ_NR';
@@ -2448,9 +2688,12 @@ CREATE TABLE BAS_JZM_PROCEDURE (
     comment on column BAS_JZM_PROCEDURE.Technisch_cor_id is 'TECHNISCH_COR_ID';
     comment on column BAS_JZM_PROCEDURE.Hoofdproces is 'HOOFDPROCES';
 
-DROP TABLE IF EXISTS BAS_JZM_REACTIE_TERMIJN ;
+DROP TABLE IF EXISTS BAS_JZM_REACTIE_TERMIJN;
+
+CREATE SEQUENCE BAS_JZM_REACTIE_TERMIJN_id_seq;
+
 CREATE TABLE BAS_JZM_REACTIE_TERMIJN (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_REACTIE_TERMIJN_id_seq') PRIMARY KEY,
     Rol_cd varchar (3),
     Cst_cd varchar (8),
     Reactie_cd varchar (3),
@@ -2461,6 +2704,8 @@ CREATE TABLE BAS_JZM_REACTIE_TERMIJN (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_JZM_REACTIE_TERMIJN_id_seq OWNED BY BAS_JZM_REACTIE_TERMIJN.techId;
+
     comment on column BAS_JZM_REACTIE_TERMIJN.Rol_cd is 'ROL_CD';
     comment on column BAS_JZM_REACTIE_TERMIJN.Cst_cd is 'CST_CD';
     comment on column BAS_JZM_REACTIE_TERMIJN.Reactie_cd is 'REACTIE_CD';
@@ -2470,9 +2715,12 @@ CREATE TABLE BAS_JZM_REACTIE_TERMIJN (
     comment on column BAS_JZM_REACTIE_TERMIJN.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_JZM_REACTIE_TERMIJN.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_JZM_STATUSREGEL ;
+DROP TABLE IF EXISTS BAS_JZM_STATUSREGEL;
+
+CREATE SEQUENCE BAS_JZM_STATUSREGEL_id_seq;
+
 CREATE TABLE BAS_JZM_STATUSREGEL (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_STATUSREGEL_id_seq') PRIMARY KEY,
     Datum_van timestamp,
     Datum_tot timestamp,
     Jz_id bigint,
@@ -2488,6 +2736,8 @@ CREATE TABLE BAS_JZM_STATUSREGEL (
     Volg_nr bigint
 );
 
+ALTER SEQUENCE BAS_JZM_STATUSREGEL_id_seq OWNED BY BAS_JZM_STATUSREGEL.techId;
+
     comment on column BAS_JZM_STATUSREGEL.Datum_van is 'DATUM_VAN';
     comment on column BAS_JZM_STATUSREGEL.Datum_tot is 'DATUM_TOT';
     comment on column BAS_JZM_STATUSREGEL.Jz_id is 'JZ_ID';
@@ -2502,9 +2752,12 @@ CREATE TABLE BAS_JZM_STATUSREGEL (
     comment on column BAS_JZM_STATUSREGEL.Cor_id_tot is 'COR_ID_TOT';
     comment on column BAS_JZM_STATUSREGEL.Volg_nr is 'VOLG_NR';
 
-DROP TABLE IF EXISTS BAS_JZM_UITSPRAAK ;
+DROP TABLE IF EXISTS BAS_JZM_UITSPRAAK;
+
+CREATE SEQUENCE BAS_JZM_UITSPRAAK_id_seq;
+
 CREATE TABLE BAS_JZM_UITSPRAAK (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_JZM_UITSPRAAK_id_seq') PRIMARY KEY,
     Uitspraak varchar (25),
     Creatie_user varchar (30),
     Creatie_dat timestamp,
@@ -2512,15 +2765,20 @@ CREATE TABLE BAS_JZM_UITSPRAAK (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_JZM_UITSPRAAK_id_seq OWNED BY BAS_JZM_UITSPRAAK.techId;
+
     comment on column BAS_JZM_UITSPRAAK.Uitspraak is 'UITSPRAAK';
     comment on column BAS_JZM_UITSPRAAK.Creatie_user is 'CREATIE_USER';
     comment on column BAS_JZM_UITSPRAAK.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_JZM_UITSPRAAK.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_JZM_UITSPRAAK.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_OBJ_LOKATIE ;
+DROP TABLE IF EXISTS BAS_OBJ_LOKATIE;
+
+CREATE SEQUENCE BAS_OBJ_LOKATIE_id_seq;
+
 CREATE TABLE BAS_OBJ_LOKATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_OBJ_LOKATIE_id_seq') PRIMARY KEY,
     Bik_cd varchar (9),
     Bik_oms varchar (200),
     Bouwtype varchar (1),
@@ -2542,6 +2800,8 @@ CREATE TABLE BAS_OBJ_LOKATIE (
     Straat varchar (60)
 );
 
+ALTER SEQUENCE BAS_OBJ_LOKATIE_id_seq OWNED BY BAS_OBJ_LOKATIE.techId;
+
     comment on column BAS_OBJ_LOKATIE.Bik_cd is 'BIK_CD';
     comment on column BAS_OBJ_LOKATIE.Bik_oms is 'BIK_OMS';
     comment on column BAS_OBJ_LOKATIE.Bouwtype is 'BOUWTYPE';
@@ -2562,9 +2822,12 @@ CREATE TABLE BAS_OBJ_LOKATIE (
     comment on column BAS_OBJ_LOKATIE.Provincie is 'PROVINCIE';
     comment on column BAS_OBJ_LOKATIE.Straat is 'STRAAT';
 
-DROP TABLE IF EXISTS BAS_PCT_MUT ;
+DROP TABLE IF EXISTS BAS_PCT_MUT;
+
+CREATE SEQUENCE BAS_PCT_MUT_id_seq;
+
 CREATE TABLE BAS_PCT_MUT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_PCT_MUT_id_seq') PRIMARY KEY,
     Mutatie_srt varchar (1),
     Mutatie_ind varchar (16),
     Old_cijfer varchar (4),
@@ -2601,6 +2864,8 @@ CREATE TABLE BAS_PCT_MUT (
     New_cebuco_code varchar (3)
 );
 
+ALTER SEQUENCE BAS_PCT_MUT_id_seq OWNED BY BAS_PCT_MUT.techId;
+
     comment on column BAS_PCT_MUT.Mutatie_srt is 'MUTATIE_SRT';
     comment on column BAS_PCT_MUT.Mutatie_ind is 'MUTATIE_IND';
     comment on column BAS_PCT_MUT.Old_cijfer is 'OLD_CIJFER';
@@ -2636,9 +2901,12 @@ CREATE TABLE BAS_PCT_MUT (
     comment on column BAS_PCT_MUT.New_provinciecode is 'NEW_PROVINCIECODE';
     comment on column BAS_PCT_MUT.New_cebuco_code is 'NEW_CEBUCO_CODE';
 
-DROP TABLE IF EXISTS BAS_PCT ;
+DROP TABLE IF EXISTS BAS_PCT;
+
+CREATE SEQUENCE BAS_PCT_id_seq;
+
 CREATE TABLE BAS_PCT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_PCT_id_seq') PRIMARY KEY,
     Cijfer varchar (4),
     Letter varchar (2),
     Reeksindicatie varchar (1),
@@ -2657,6 +2925,8 @@ CREATE TABLE BAS_PCT (
     Cebuco_code varchar (3)
 );
 
+ALTER SEQUENCE BAS_PCT_id_seq OWNED BY BAS_PCT.techId;
+
     comment on column BAS_PCT.Cijfer is 'CIJFER';
     comment on column BAS_PCT.Letter is 'LETTER';
     comment on column BAS_PCT.Reeksindicatie is 'REEKSINDICATIE';
@@ -2674,9 +2944,12 @@ CREATE TABLE BAS_PCT (
     comment on column BAS_PCT.Provinciecode is 'PROVINCIECODE';
     comment on column BAS_PCT.Cebuco_code is 'CEBUCO_CODE';
 
-DROP TABLE IF EXISTS BAS_RBM_ADRES_RELATIE ;
+DROP TABLE IF EXISTS BAS_RBM_ADRES_RELATIE;
+
+CREATE SEQUENCE BAS_RBM_ADRES_RELATIE_id_seq;
+
 CREATE TABLE BAS_RBM_ADRES_RELATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ADRES_RELATIE_id_seq') PRIMARY KEY,
     Adressoort varchar (3),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -2689,6 +2962,8 @@ CREATE TABLE BAS_RBM_ADRES_RELATIE (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_RBM_ADRES_RELATIE_id_seq OWNED BY BAS_RBM_ADRES_RELATIE.techId;
+
     comment on column BAS_RBM_ADRES_RELATIE.Adressoort is 'ADRESSOORT';
     comment on column BAS_RBM_ADRES_RELATIE.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_RBM_ADRES_RELATIE.Creatie_user is 'CREATIE_USER';
@@ -2700,9 +2975,12 @@ CREATE TABLE BAS_RBM_ADRES_RELATIE (
     comment on column BAS_RBM_ADRES_RELATIE.Rel_id is 'REL_ID';
     comment on column BAS_RBM_ADRES_RELATIE.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_RBM_ADRES ;
+DROP TABLE IF EXISTS BAS_RBM_ADRES;
+
+CREATE SEQUENCE BAS_RBM_ADRES_id_seq;
+
 CREATE TABLE BAS_RBM_ADRES (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ADRES_id_seq') PRIMARY KEY,
     Barcode varchar (25),
     Creatie_dat timestamp,
     creatie_user varchar (30),
@@ -2721,6 +2999,8 @@ CREATE TABLE BAS_RBM_ADRES (
     Validatie varchar (1)
 );
 
+ALTER SEQUENCE BAS_RBM_ADRES_id_seq OWNED BY BAS_RBM_ADRES.techId;
+
     comment on column BAS_RBM_ADRES.Barcode is 'BARCODE';
     comment on column BAS_RBM_ADRES.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_RBM_ADRES.creatie_user is 'CREATIE_USER';
@@ -2738,9 +3018,12 @@ CREATE TABLE BAS_RBM_ADRES (
     comment on column BAS_RBM_ADRES.Straat is 'STRAAT';
     comment on column BAS_RBM_ADRES.Validatie is 'VALIDATIE';
 
-DROP TABLE IF EXISTS BAS_RBM_COM_ADRES_CP ;
+DROP TABLE IF EXISTS BAS_RBM_COM_ADRES_CP;
+
+CREATE SEQUENCE BAS_RBM_COM_ADRES_CP_id_seq;
+
 CREATE TABLE BAS_RBM_COM_ADRES_CP (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_COM_ADRES_CP_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     creatie_user varchar (30),
     Mutatie_dat timestamp,
@@ -2751,6 +3034,8 @@ CREATE TABLE BAS_RBM_COM_ADRES_CP (
     Rca_id bigint
 );
 
+ALTER SEQUENCE BAS_RBM_COM_ADRES_CP_id_seq OWNED BY BAS_RBM_COM_ADRES_CP.techId;
+
     comment on column BAS_RBM_COM_ADRES_CP.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_RBM_COM_ADRES_CP.creatie_user is 'CREATIE_USER';
     comment on column BAS_RBM_COM_ADRES_CP.Mutatie_dat is 'MUTATIE_DAT';
@@ -2760,9 +3045,12 @@ CREATE TABLE BAS_RBM_COM_ADRES_CP (
     comment on column BAS_RBM_COM_ADRES_CP.Rav_id is 'RAV_ID';
     comment on column BAS_RBM_COM_ADRES_CP.Rca_id is 'RCA_ID';
 
-DROP TABLE IF EXISTS BAS_RBM_COM_ADRES_RELATIE ;
+DROP TABLE IF EXISTS BAS_RBM_COM_ADRES_RELATIE;
+
+CREATE SEQUENCE BAS_RBM_COM_ADRES_RELATIE_id_seq;
+
 CREATE TABLE BAS_RBM_COM_ADRES_RELATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_COM_ADRES_RELATIE_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Mutatie_dat timestamp,
@@ -2773,6 +3061,8 @@ CREATE TABLE BAS_RBM_COM_ADRES_RELATIE (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_RBM_COM_ADRES_RELATIE_id_seq OWNED BY BAS_RBM_COM_ADRES_RELATIE.techId;
+
     comment on column BAS_RBM_COM_ADRES_RELATIE.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_RBM_COM_ADRES_RELATIE.Creatie_user is 'CREATIE_USER';
     comment on column BAS_RBM_COM_ADRES_RELATIE.Mutatie_dat is 'MUTATIE_DAT';
@@ -2782,9 +3072,12 @@ CREATE TABLE BAS_RBM_COM_ADRES_RELATIE (
     comment on column BAS_RBM_COM_ADRES_RELATIE.Rel_id is 'REL_ID';
     comment on column BAS_RBM_COM_ADRES_RELATIE.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_RBM_COM_ADRES ;
+DROP TABLE IF EXISTS BAS_RBM_COM_ADRES;
+
+CREATE SEQUENCE BAS_RBM_COM_ADRES_id_seq;
+
 CREATE TABLE BAS_RBM_COM_ADRES (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_COM_ADRES_id_seq') PRIMARY KEY,
     Com_Cd varchar (6),
     Creatie_dat timestamp,
     Creatie_user varchar (30),
@@ -2795,6 +3088,8 @@ CREATE TABLE BAS_RBM_COM_ADRES (
     Referentie varchar (10)
 );
 
+ALTER SEQUENCE BAS_RBM_COM_ADRES_id_seq OWNED BY BAS_RBM_COM_ADRES.techId;
+
     comment on column BAS_RBM_COM_ADRES.Com_Cd is 'COM_CD';
     comment on column BAS_RBM_COM_ADRES.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_RBM_COM_ADRES.Creatie_user is 'CREATIE_USER';
@@ -2804,9 +3099,12 @@ CREATE TABLE BAS_RBM_COM_ADRES (
     comment on column BAS_RBM_COM_ADRES.Telnr_email is 'TELNR_EMAIL';
     comment on column BAS_RBM_COM_ADRES.Referentie is 'REFERENTIE';
 
-DROP TABLE IF EXISTS BAS_RBM_CONTACTPERSOON ;
+DROP TABLE IF EXISTS BAS_RBM_CONTACTPERSOON;
+
+CREATE SEQUENCE BAS_RBM_CONTACTPERSOON_id_seq;
+
 CREATE TABLE BAS_RBM_CONTACTPERSOON (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_CONTACTPERSOON_id_seq') PRIMARY KEY,
     Afdeling varchar (60),
     Certhoud_id bigint,
     Creatie_dat timestamp,
@@ -2823,6 +3121,8 @@ CREATE TABLE BAS_RBM_CONTACTPERSOON (
     Validatie varchar (1)
 );
 
+ALTER SEQUENCE BAS_RBM_CONTACTPERSOON_id_seq OWNED BY BAS_RBM_CONTACTPERSOON.techId;
+
     comment on column BAS_RBM_CONTACTPERSOON.Afdeling is 'AFDELING';
     comment on column BAS_RBM_CONTACTPERSOON.Certhoud_id is 'CERTHOUD_ID';
     comment on column BAS_RBM_CONTACTPERSOON.Creatie_dat is 'CREATIE_DAT';
@@ -2838,21 +3138,29 @@ CREATE TABLE BAS_RBM_CONTACTPERSOON (
     comment on column BAS_RBM_CONTACTPERSOON.Status_contactpersoon is 'STATUS_CONTACTPERSOON';
     comment on column BAS_RBM_CONTACTPERSOON.Validatie is 'VALIDATIE';
 
-DROP TABLE IF EXISTS BAS_RBM_CP_VESTIGING ;
+DROP TABLE IF EXISTS BAS_RBM_CP_VESTIGING;
+
+CREATE SEQUENCE BAS_RBM_CP_VESTIGING_id_seq;
+
 CREATE TABLE BAS_RBM_CP_VESTIGING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_CP_VESTIGING_id_seq') PRIMARY KEY,
     Org_id bigint,
     Per_id bigint,
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_RBM_CP_VESTIGING_id_seq OWNED BY BAS_RBM_CP_VESTIGING.techId;
+
     comment on column BAS_RBM_CP_VESTIGING.Org_id is 'ORG_ID';
     comment on column BAS_RBM_CP_VESTIGING.Per_id is 'PER_ID';
     comment on column BAS_RBM_CP_VESTIGING.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_RBM_ORG_BSI ;
+DROP TABLE IF EXISTS BAS_RBM_ORG_BSI;
+
+CREATE SEQUENCE BAS_RBM_ORG_BSI_id_seq;
+
 CREATE TABLE BAS_RBM_ORG_BSI (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ORG_BSI_id_seq') PRIMARY KEY,
     Rel_id bigint,
     Bsi_cd varchar (7),
     Volg_nr smallint,
@@ -2864,6 +3172,8 @@ CREATE TABLE BAS_RBM_ORG_BSI (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_RBM_ORG_BSI_id_seq OWNED BY BAS_RBM_ORG_BSI.techId;
+
     comment on column BAS_RBM_ORG_BSI.Rel_id is 'REL_ID';
     comment on column BAS_RBM_ORG_BSI.Bsi_cd is 'BSI_CD';
     comment on column BAS_RBM_ORG_BSI.Volg_nr is 'VOLG_NR';
@@ -2874,9 +3184,12 @@ CREATE TABLE BAS_RBM_ORG_BSI (
     comment on column BAS_RBM_ORG_BSI.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_RBM_ORG_BSI.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_RBM_ORG_FAILLIET ;
+DROP TABLE IF EXISTS BAS_RBM_ORG_FAILLIET;
+
+CREATE SEQUENCE BAS_RBM_ORG_FAILLIET_id_seq;
+
 CREATE TABLE BAS_RBM_ORG_FAILLIET (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ORG_FAILLIET_id_seq') PRIMARY KEY,
     Kvk_nr varchar (12),
     Graydon_bedrijfsnr bigint,
     Kvk_dossiernr integer,
@@ -2895,6 +3208,8 @@ CREATE TABLE BAS_RBM_ORG_FAILLIET (
     Actuele_opheffings_cd varchar (2)
 );
 
+ALTER SEQUENCE BAS_RBM_ORG_FAILLIET_id_seq OWNED BY BAS_RBM_ORG_FAILLIET.techId;
+
     comment on column BAS_RBM_ORG_FAILLIET.Kvk_nr is 'KVK_NR';
     comment on column BAS_RBM_ORG_FAILLIET.Graydon_bedrijfsnr is 'GRAYDON_BEDRIJFSNR';
     comment on column BAS_RBM_ORG_FAILLIET.Kvk_dossiernr is 'KVK_DOSSIERNR';
@@ -2912,9 +3227,12 @@ CREATE TABLE BAS_RBM_ORG_FAILLIET (
     comment on column BAS_RBM_ORG_FAILLIET.Actuele_status is 'ACTUELE_STATUS';
     comment on column BAS_RBM_ORG_FAILLIET.Actuele_opheffings_cd is 'ACTUELE_OPHEFFINGS_CD';
 
-DROP TABLE IF EXISTS BAS_RBM_ORG_JAAR ;
+DROP TABLE IF EXISTS BAS_RBM_ORG_JAAR;
+
+CREATE SEQUENCE BAS_RBM_ORG_JAAR_id_seq;
+
 CREATE TABLE BAS_RBM_ORG_JAAR (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ORG_JAAR_id_seq') PRIMARY KEY,
     Rel_id bigint,
     Jaar integer,
     Aantal_werknemers integer,
@@ -2935,6 +3253,8 @@ CREATE TABLE BAS_RBM_ORG_JAAR (
     Balanstotaal numeric(26,6)
 );
 
+ALTER SEQUENCE BAS_RBM_ORG_JAAR_id_seq OWNED BY BAS_RBM_ORG_JAAR.techId;
+
     comment on column BAS_RBM_ORG_JAAR.Rel_id is 'REL_ID';
     comment on column BAS_RBM_ORG_JAAR.Jaar is 'JAAR';
     comment on column BAS_RBM_ORG_JAAR.Aantal_werknemers is 'AANTAL_WERKNEMERS';
@@ -2954,9 +3274,12 @@ CREATE TABLE BAS_RBM_ORG_JAAR (
     comment on column BAS_RBM_ORG_JAAR.Lb_vermindering_eindafrekening is 'LB_VERMINDERING_EINDAFREKENING';
     comment on column BAS_RBM_ORG_JAAR.Balanstotaal is 'BALANSTOTAAL';
 
-DROP TABLE IF EXISTS BAS_RBM_ORG_NAAM ;
+DROP TABLE IF EXISTS BAS_RBM_ORG_NAAM;
+
+CREATE SEQUENCE BAS_RBM_ORG_NAAM_id_seq;
+
 CREATE TABLE BAS_RBM_ORG_NAAM (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ORG_NAAM_id_seq') PRIMARY KEY,
     Org_id bigint,
     Org_naam varchar (625),
     Org_naam_type varchar (1),
@@ -2968,6 +3291,8 @@ CREATE TABLE BAS_RBM_ORG_NAAM (
     Kkr_gevalideerd varchar (1)
 );
 
+ALTER SEQUENCE BAS_RBM_ORG_NAAM_id_seq OWNED BY BAS_RBM_ORG_NAAM.techId;
+
     comment on column BAS_RBM_ORG_NAAM.Org_id is 'ORG_ID';
     comment on column BAS_RBM_ORG_NAAM.Org_naam is 'ORG_NAAM';
     comment on column BAS_RBM_ORG_NAAM.Org_naam_type is 'ORG_NAAM_TYPE';
@@ -2978,9 +3303,12 @@ CREATE TABLE BAS_RBM_ORG_NAAM (
     comment on column BAS_RBM_ORG_NAAM.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_RBM_ORG_NAAM.Kkr_gevalideerd is 'KKR_GEVALIDEERD';
 
-DROP TABLE IF EXISTS BAS_RBM_ORG ;
+DROP TABLE IF EXISTS BAS_RBM_ORG;
+
+CREATE SEQUENCE BAS_RBM_ORG_id_seq;
+
 CREATE TABLE BAS_RBM_ORG (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_ORG_id_seq') PRIMARY KEY,
     Bik_Cd varchar (9),
     Bron_jr varchar (1),
     BTW_nummer varchar (30),
@@ -3000,6 +3328,8 @@ CREATE TABLE BAS_RBM_ORG (
     IB_VPB_Plichtig varchar (1)
 );
 
+ALTER SEQUENCE BAS_RBM_ORG_id_seq OWNED BY BAS_RBM_ORG.techId;
+
     comment on column BAS_RBM_ORG.Bik_Cd is 'BIK_CD';
     comment on column BAS_RBM_ORG.Bron_jr is 'BRON_JR';
     comment on column BAS_RBM_ORG.BTW_nummer is 'BTW_NUMMER';
@@ -3018,9 +3348,12 @@ CREATE TABLE BAS_RBM_ORG (
     comment on column BAS_RBM_ORG.VPB_IB_nummer is 'VPB_IB_NUMMER';
     comment on column BAS_RBM_ORG.IB_VPB_Plichtig is 'VPB_PLICHTIG_JN';
 
-DROP TABLE IF EXISTS BAS_RBM_PERSOON ;
+DROP TABLE IF EXISTS BAS_RBM_PERSOON;
+
+CREATE SEQUENCE BAS_RBM_PERSOON_id_seq;
+
 CREATE TABLE BAS_RBM_PERSOON (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_PERSOON_id_seq') PRIMARY KEY,
     Aanhef varchar (10),
     Aanlevernaam varchar (625),
     Aanspreeknaam varchar (625),
@@ -3045,6 +3378,8 @@ CREATE TABLE BAS_RBM_PERSOON (
     XML_String varchar (2048)
 );
 
+ALTER SEQUENCE BAS_RBM_PERSOON_id_seq OWNED BY BAS_RBM_PERSOON.techId;
+
     comment on column BAS_RBM_PERSOON.Aanhef is 'AANHEF';
     comment on column BAS_RBM_PERSOON.Aanlevernaam is 'AANLEVERNAAM';
     comment on column BAS_RBM_PERSOON.Aanspreeknaam is 'AANSPREEKNAAM';
@@ -3068,9 +3403,12 @@ CREATE TABLE BAS_RBM_PERSOON (
     comment on column BAS_RBM_PERSOON.Voornaam is 'VOORNAAM';
     comment on column BAS_RBM_PERSOON.XML_String is 'XML_STRING';
 
-DROP TABLE IF EXISTS BAS_RBM_REKENINGNRS ;
+DROP TABLE IF EXISTS BAS_RBM_REKENINGNRS;
+
+CREATE SEQUENCE BAS_RBM_REKENINGNRS_id_seq;
+
 CREATE TABLE BAS_RBM_REKENINGNRS (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_REKENINGNRS_id_seq') PRIMARY KEY,
     Banknaam varchar (50),
     Bic varchar (11),
     Creatie_dat timestamp,
@@ -3084,6 +3422,8 @@ CREATE TABLE BAS_RBM_REKENINGNRS (
     User_akkoord varchar (30)
 );
 
+ALTER SEQUENCE BAS_RBM_REKENINGNRS_id_seq OWNED BY BAS_RBM_REKENINGNRS.techId;
+
     comment on column BAS_RBM_REKENINGNRS.Banknaam is 'BANKNAAM';
     comment on column BAS_RBM_REKENINGNRS.Bic is 'BIC';
     comment on column BAS_RBM_REKENINGNRS.Creatie_dat is 'CREATIE_DAT';
@@ -3096,9 +3436,12 @@ CREATE TABLE BAS_RBM_REKENINGNRS (
     comment on column BAS_RBM_REKENINGNRS.Rel_id is 'REL_ID';
     comment on column BAS_RBM_REKENINGNRS.User_akkoord is 'USER_AKKOORD';
 
-DROP TABLE IF EXISTS BAS_RBM_REKNR_MUT ;
+DROP TABLE IF EXISTS BAS_RBM_REKNR_MUT;
+
+CREATE SEQUENCE BAS_RBM_REKNR_MUT_id_seq;
+
 CREATE TABLE BAS_RBM_REKNR_MUT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_REKNR_MUT_id_seq') PRIMARY KEY,
     Rel_id bigint,
     Volgnummer bigint,
     Org_banknaam varchar (30),
@@ -3118,6 +3461,8 @@ CREATE TABLE BAS_RBM_REKNR_MUT (
     Externe_bron_cd varchar (10)
 );
 
+ALTER SEQUENCE BAS_RBM_REKNR_MUT_id_seq OWNED BY BAS_RBM_REKNR_MUT.techId;
+
     comment on column BAS_RBM_REKNR_MUT.Rel_id is 'REL_ID';
     comment on column BAS_RBM_REKNR_MUT.Volgnummer is 'VOLGNUMMER';
     comment on column BAS_RBM_REKNR_MUT.Org_banknaam is 'ORG_BANKNAAM';
@@ -3136,9 +3481,12 @@ CREATE TABLE BAS_RBM_REKNR_MUT (
     comment on column BAS_RBM_REKNR_MUT.New_goedkeuring_sts is 'NEW_GOEDKEURING_STS';
     comment on column BAS_RBM_REKNR_MUT.Externe_bron_cd is 'EXTERNE_BRON_CD';
 
-DROP TABLE IF EXISTS BAS_RBM_RELATIE ;
+DROP TABLE IF EXISTS BAS_RBM_RELATIE;
+
+CREATE SEQUENCE BAS_RBM_RELATIE_id_seq;
+
 CREATE TABLE BAS_RBM_RELATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_RELATIE_id_seq') PRIMARY KEY,
     Actief varchar (1),
     Auth_id bigint,
     Belastingeenheid smallint,
@@ -3158,6 +3506,8 @@ CREATE TABLE BAS_RBM_RELATIE (
     Relatietype varchar (1)
 );
 
+ALTER SEQUENCE BAS_RBM_RELATIE_id_seq OWNED BY BAS_RBM_RELATIE.techId;
+
     comment on column BAS_RBM_RELATIE.Actief is 'ACTIEF';
     comment on column BAS_RBM_RELATIE.Auth_id is 'AUTH_ID';
     comment on column BAS_RBM_RELATIE.Belastingeenheid is 'BELASTINGEENHEID_CD';
@@ -3176,9 +3526,12 @@ CREATE TABLE BAS_RBM_RELATIE (
     comment on column BAS_RBM_RELATIE.Rel_id is 'REL_ID';
     comment on column BAS_RBM_RELATIE.Relatietype is 'RELATIETYPE';
 
-DROP TABLE IF EXISTS BAS_RBM_SBI_ORG ;
+DROP TABLE IF EXISTS BAS_RBM_SBI_ORG;
+
+CREATE SEQUENCE BAS_RBM_SBI_ORG_id_seq;
+
 CREATE TABLE BAS_RBM_SBI_ORG (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_SBI_ORG_id_seq') PRIMARY KEY,
     Creatie_dat timestamp,
     Creatie_user varchar (30),
     Hoofdactiviteit varchar (1),
@@ -3188,6 +3541,8 @@ CREATE TABLE BAS_RBM_SBI_ORG (
     Sbi_cd bigint
 );
 
+ALTER SEQUENCE BAS_RBM_SBI_ORG_id_seq OWNED BY BAS_RBM_SBI_ORG.techId;
+
     comment on column BAS_RBM_SBI_ORG.Creatie_dat is 'CREATIE_DAT';
     comment on column BAS_RBM_SBI_ORG.Creatie_user is 'CREATIE_USER';
     comment on column BAS_RBM_SBI_ORG.Hoofdactiviteit is 'HOOFDACTIVITEIT';
@@ -3196,9 +3551,12 @@ CREATE TABLE BAS_RBM_SBI_ORG (
     comment on column BAS_RBM_SBI_ORG.Rel_id is 'REL_ID';
     comment on column BAS_RBM_SBI_ORG.Sbi_cd is 'SBI_CD';
 
-DROP TABLE IF EXISTS BAS_RBM_VESTIGING ;
+DROP TABLE IF EXISTS BAS_RBM_VESTIGING;
+
+CREATE SEQUENCE BAS_RBM_VESTIGING_id_seq;
+
 CREATE TABLE BAS_RBM_VESTIGING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RBM_VESTIGING_id_seq') PRIMARY KEY,
     Actief varchar (1),
     Auth_id bigint,
     Bik_cd varchar (9),
@@ -3220,6 +3578,8 @@ CREATE TABLE BAS_RBM_VESTIGING (
     Vst_volgnr bigint
 );
 
+ALTER SEQUENCE BAS_RBM_VESTIGING_id_seq OWNED BY BAS_RBM_VESTIGING.techId;
+
     comment on column BAS_RBM_VESTIGING.Actief is 'ACTIEF';
     comment on column BAS_RBM_VESTIGING.Auth_id is 'AUTH_ID';
     comment on column BAS_RBM_VESTIGING.Bik_cd is 'BIK_CD';
@@ -3240,9 +3600,12 @@ CREATE TABLE BAS_RBM_VESTIGING (
     comment on column BAS_RBM_VESTIGING.Vestigings_nummer is 'VESTIGING_NUMMER';
     comment on column BAS_RBM_VESTIGING.Vst_volgnr is 'VST_VOLGNR';
 
-DROP TABLE IF EXISTS BAS_RDM_BUDGETONDERVERDELING ;
+DROP TABLE IF EXISTS BAS_RDM_BUDGETONDERVERDELING;
+
+CREATE SEQUENCE BAS_RDM_BUDGETONDERVERDELING_id_seq;
+
 CREATE TABLE BAS_RDM_BUDGETONDERVERDELING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_BUDGETONDERVERDELING_id_seq') PRIMARY KEY,
     Bgt_cd varchar (1),
     Budget numeric(26,6),
     Budget_uitputting numeric(24,6),
@@ -3261,6 +3624,8 @@ CREATE TABLE BAS_RDM_BUDGETONDERVERDELING (
     Vrij_budget numeric(24,6)
 );
 
+ALTER SEQUENCE BAS_RDM_BUDGETONDERVERDELING_id_seq OWNED BY BAS_RDM_BUDGETONDERVERDELING.techId;
+
     comment on column BAS_RDM_BUDGETONDERVERDELING.Bgt_cd is 'BGT_CD';
     comment on column BAS_RDM_BUDGETONDERVERDELING.Budget is 'BUDGET';
     comment on column BAS_RDM_BUDGETONDERVERDELING.Budget_uitputting is 'BUDGET_UITPUTTING';
@@ -3278,9 +3643,12 @@ CREATE TABLE BAS_RDM_BUDGETONDERVERDELING (
     comment on column BAS_RDM_BUDGETONDERVERDELING.Verdeeld_budget is 'VERDEELD_BUDGET';
     comment on column BAS_RDM_BUDGETONDERVERDELING.Vrij_budget is 'VRIJ_BUDGET';
 
-DROP TABLE IF EXISTS BAS_RDM_CLASSIFICATIE ;
+DROP TABLE IF EXISTS BAS_RDM_CLASSIFICATIE;
+
+CREATE SEQUENCE BAS_RDM_CLASSIFICATIE_id_seq;
+
 CREATE TABLE BAS_RDM_CLASSIFICATIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_CLASSIFICATIE_id_seq') PRIMARY KEY,
     Prg_id bigint,
     Class_cd varchar (10),
     Class_oms varchar (100),
@@ -3290,6 +3658,8 @@ CREATE TABLE BAS_RDM_CLASSIFICATIE (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_RDM_CLASSIFICATIE_id_seq OWNED BY BAS_RDM_CLASSIFICATIE.techId;
+
     comment on column BAS_RDM_CLASSIFICATIE.Prg_id is 'PRG_ID';
     comment on column BAS_RDM_CLASSIFICATIE.Class_cd is 'CLASS_CD';
     comment on column BAS_RDM_CLASSIFICATIE.Class_oms is 'CLASS_OMS';
@@ -3298,9 +3668,12 @@ CREATE TABLE BAS_RDM_CLASSIFICATIE (
     comment on column BAS_RDM_CLASSIFICATIE.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_RDM_CLASSIFICATIE.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_RDM_JAARBUDGET ;
+DROP TABLE IF EXISTS BAS_RDM_JAARBUDGET;
+
+CREATE SEQUENCE BAS_RDM_JAARBUDGET_id_seq;
+
 CREATE TABLE BAS_RDM_JAARBUDGET (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_JAARBUDGET_id_seq') PRIMARY KEY,
     Afgesloten varchar (1),
     Bgt_cd varchar (1),
     Budget_uitputting numeric(24,6),
@@ -3319,6 +3692,8 @@ CREATE TABLE BAS_RDM_JAARBUDGET (
     Vrij_budget numeric(24,6)
 );
 
+ALTER SEQUENCE BAS_RDM_JAARBUDGET_id_seq OWNED BY BAS_RDM_JAARBUDGET.techId;
+
     comment on column BAS_RDM_JAARBUDGET.Afgesloten is 'AFGESLOTEN';
     comment on column BAS_RDM_JAARBUDGET.Bgt_cd is 'BGT_CD';
     comment on column BAS_RDM_JAARBUDGET.Budget_uitputting is 'BUDGET_UITPUTTING';
@@ -3336,9 +3711,12 @@ CREATE TABLE BAS_RDM_JAARBUDGET (
     comment on column BAS_RDM_JAARBUDGET.Verdeeld_jn is 'VERDEELD_JN';
     comment on column BAS_RDM_JAARBUDGET.Vrij_budget is 'VRIJ_BUDGET';
 
-DROP TABLE IF EXISTS BAS_RDM_MANDAAT ;
+DROP TABLE IF EXISTS BAS_RDM_MANDAAT;
+
+CREATE SEQUENCE BAS_RDM_MANDAAT_id_seq;
+
 CREATE TABLE BAS_RDM_MANDAAT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_MANDAAT_id_seq') PRIMARY KEY,
     Mdt_id bigint,
     Middelen_type varchar (2),
     Mandaat_srt varchar (2),
@@ -3354,6 +3732,8 @@ CREATE TABLE BAS_RDM_MANDAAT (
     Rol_cd varchar (3)
 );
 
+ALTER SEQUENCE BAS_RDM_MANDAAT_id_seq OWNED BY BAS_RDM_MANDAAT.techId;
+
     comment on column BAS_RDM_MANDAAT.Mdt_id is 'MDT_ID';
     comment on column BAS_RDM_MANDAAT.Middelen_type is 'MIDDELEN_TYPE';
     comment on column BAS_RDM_MANDAAT.Mandaat_srt is 'MANDAAT_SRT';
@@ -3368,9 +3748,12 @@ CREATE TABLE BAS_RDM_MANDAAT (
     comment on column BAS_RDM_MANDAAT.Reg_id is 'REG_ID';
     comment on column BAS_RDM_MANDAAT.Rol_cd is 'ROL_CD';
 
-DROP TABLE IF EXISTS BAS_RDM_OVEREENKOMST_DOCUMENT ;
+DROP TABLE IF EXISTS BAS_RDM_OVEREENKOMST_DOCUMENT;
+
+CREATE SEQUENCE BAS_RDM_OVEREENKOMST_DOCUMENT_id_seq;
+
 CREATE TABLE BAS_RDM_OVEREENKOMST_DOCUMENT (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_OVEREENKOMST_DOCUMENT_id_seq') PRIMARY KEY,
     Ovk_nr varchar (20),
     Doc_naam varchar (255),
     Creatie_user varchar (30),
@@ -3382,6 +3765,8 @@ CREATE TABLE BAS_RDM_OVEREENKOMST_DOCUMENT (
     Datum_van timestamp
 );
 
+ALTER SEQUENCE BAS_RDM_OVEREENKOMST_DOCUMENT_id_seq OWNED BY BAS_RDM_OVEREENKOMST_DOCUMENT.techId;
+
     comment on column BAS_RDM_OVEREENKOMST_DOCUMENT.Ovk_nr is 'OVK_NR';
     comment on column BAS_RDM_OVEREENKOMST_DOCUMENT.Doc_naam is 'DOC_NAAM';
     comment on column BAS_RDM_OVEREENKOMST_DOCUMENT.Creatie_user is 'CREATIE_USER';
@@ -3392,9 +3777,12 @@ CREATE TABLE BAS_RDM_OVEREENKOMST_DOCUMENT (
     comment on column BAS_RDM_OVEREENKOMST_DOCUMENT.Rpt_nr is 'RPT_NR';
     comment on column BAS_RDM_OVEREENKOMST_DOCUMENT.Datum_van is 'DATUM_VAN';
 
-DROP TABLE IF EXISTS BAS_RDM_PERIODE ;
+DROP TABLE IF EXISTS BAS_RDM_PERIODE;
+
+CREATE SEQUENCE BAS_RDM_PERIODE_id_seq;
+
 CREATE TABLE BAS_RDM_PERIODE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_PERIODE_id_seq') PRIMARY KEY,
     Ovk_nr varchar (20),
     Rpt_nr bigint,
     Bgt_cd varchar (1),
@@ -3425,6 +3813,8 @@ CREATE TABLE BAS_RDM_PERIODE (
     Aflossing numeric(26,6)
 );
 
+ALTER SEQUENCE BAS_RDM_PERIODE_id_seq OWNED BY BAS_RDM_PERIODE.techId;
+
     comment on column BAS_RDM_PERIODE.Ovk_nr is 'OVK_NR';
     comment on column BAS_RDM_PERIODE.Rpt_nr is 'RPT_NR';
     comment on column BAS_RDM_PERIODE.Bgt_cd is 'BGT_CD';
@@ -3454,9 +3844,12 @@ CREATE TABLE BAS_RDM_PERIODE (
     comment on column BAS_RDM_PERIODE.Kenmerk_lijn is 'KENMERK_LIJN';
     comment on column BAS_RDM_PERIODE.Aflossing is 'AFLOSSING';
 
-DROP TABLE IF EXISTS BAS_RDM_PRG_OVEREENKOMST ;
+DROP TABLE IF EXISTS BAS_RDM_PRG_OVEREENKOMST;
+
+CREATE SEQUENCE BAS_RDM_PRG_OVEREENKOMST_id_seq;
+
 CREATE TABLE BAS_RDM_PRG_OVEREENKOMST (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_PRG_OVEREENKOMST_id_seq') PRIMARY KEY,
     Prg_id bigint,
     Ovk_nr varchar (20),
     Datum_van timestamp,
@@ -3475,6 +3868,8 @@ CREATE TABLE BAS_RDM_PRG_OVEREENKOMST (
     Budget_uitputting numeric(26,6)
 );
 
+ALTER SEQUENCE BAS_RDM_PRG_OVEREENKOMST_id_seq OWNED BY BAS_RDM_PRG_OVEREENKOMST.techId;
+
     comment on column BAS_RDM_PRG_OVEREENKOMST.Prg_id is 'PRG_ID';
     comment on column BAS_RDM_PRG_OVEREENKOMST.Ovk_nr is 'OVK_NR';
     comment on column BAS_RDM_PRG_OVEREENKOMST.Datum_van is 'DATUM_VAN';
@@ -3492,9 +3887,12 @@ CREATE TABLE BAS_RDM_PRG_OVEREENKOMST (
     comment on column BAS_RDM_PRG_OVEREENKOMST.Vrij_budget is 'VRIJ_BUDGET';
     comment on column BAS_RDM_PRG_OVEREENKOMST.Budget_uitputting is 'BUDGET_UITPUTTING';
 
-DROP TABLE IF EXISTS BAS_RDM_PROGRAMMAMEDEWERKERROL ;
+DROP TABLE IF EXISTS BAS_RDM_PROGRAMMAMEDEWERKERROL;
+
+CREATE SEQUENCE BAS_RDM_PROGRAMMAMEDEWERKERROL_id_seq;
+
 CREATE TABLE BAS_RDM_PROGRAMMAMEDEWERKERROL (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_PROGRAMMAMEDEWERKERROL_id_seq') PRIMARY KEY,
     Prg_id bigint,
     Mdw_id bigint,
     Auth_mdw_cd varchar (30),
@@ -3514,6 +3912,8 @@ CREATE TABLE BAS_RDM_PROGRAMMAMEDEWERKERROL (
     Mentor_rol_cd varchar (3)
 );
 
+ALTER SEQUENCE BAS_RDM_PROGRAMMAMEDEWERKERROL_id_seq OWNED BY BAS_RDM_PROGRAMMAMEDEWERKERROL.techId;
+
     comment on column BAS_RDM_PROGRAMMAMEDEWERKERROL.Prg_id is 'PRG_ID';
     comment on column BAS_RDM_PROGRAMMAMEDEWERKERROL.Mdw_id is 'MDW_ID';
     comment on column BAS_RDM_PROGRAMMAMEDEWERKERROL.Auth_mdw_cd is 'AUTH_MDW_CD';
@@ -3532,9 +3932,12 @@ CREATE TABLE BAS_RDM_PROGRAMMAMEDEWERKERROL (
     comment on column BAS_RDM_PROGRAMMAMEDEWERKERROL.Mdw_id_parf_naar is 'MDW_ID_PARF_NAAR';
     comment on column BAS_RDM_PROGRAMMAMEDEWERKERROL.Mentor_rol_cd is 'MENTOR_ROL_CD';
 
-DROP TABLE IF EXISTS BAS_RDM_REGELING ;
+DROP TABLE IF EXISTS BAS_RDM_REGELING;
+
+CREATE SEQUENCE BAS_RDM_REGELING_id_seq;
+
 CREATE TABLE BAS_RDM_REGELING (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_REGELING_id_seq') PRIMARY KEY,
     Reg_id bigint,
     Reg_cd varchar (20),
     Reg_oms varchar (120),
@@ -3573,6 +3976,8 @@ CREATE TABLE BAS_RDM_REGELING (
     Ingangsdatum_zer timestamp
 );
 
+ALTER SEQUENCE BAS_RDM_REGELING_id_seq OWNED BY BAS_RDM_REGELING.techId;
+
     comment on column BAS_RDM_REGELING.Reg_id is 'REG_ID';
     comment on column BAS_RDM_REGELING.Reg_cd is 'REG_CD';
     comment on column BAS_RDM_REGELING.Reg_oms is 'REG_OMS';
@@ -3610,9 +4015,12 @@ CREATE TABLE BAS_RDM_REGELING (
     comment on column BAS_RDM_REGELING.Auto_insert_sde_jn is 'AUTO_INSERT_SDE_JN';
     comment on column BAS_RDM_REGELING.Ingangsdatum_zer is 'INGANGSDATUM_ZER';
 
-DROP TABLE IF EXISTS BAS_RDM_REGPAR_BUDGONDVERD ;
+DROP TABLE IF EXISTS BAS_RDM_REGPAR_BUDGONDVERD;
+
+CREATE SEQUENCE BAS_RDM_REGPAR_BUDGONDVERD_id_seq;
+
 CREATE TABLE BAS_RDM_REGPAR_BUDGONDVERD (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_REGPAR_BUDGONDVERD_id_seq') PRIMARY KEY,
     Ovk_nr varchar (20),
     Rpt_nr bigint,
     Bgt_cd varchar (1),
@@ -3632,6 +4040,8 @@ CREATE TABLE BAS_RDM_REGPAR_BUDGONDVERD (
     Rpt_nr_oud varchar (20)
 );
 
+ALTER SEQUENCE BAS_RDM_REGPAR_BUDGONDVERD_id_seq OWNED BY BAS_RDM_REGPAR_BUDGONDVERD.techId;
+
     comment on column BAS_RDM_REGPAR_BUDGONDVERD.Ovk_nr is 'OVK_NR';
     comment on column BAS_RDM_REGPAR_BUDGONDVERD.Rpt_nr is 'RPT_NR';
     comment on column BAS_RDM_REGPAR_BUDGONDVERD.Bgt_cd is 'BGT_CD';
@@ -3650,9 +4060,12 @@ CREATE TABLE BAS_RDM_REGPAR_BUDGONDVERD (
     comment on column BAS_RDM_REGPAR_BUDGONDVERD.Vrij_budget is 'VRIJ_BUDGET';
     comment on column BAS_RDM_REGPAR_BUDGONDVERD.Rpt_nr_oud is 'RPT_NR_OUD';
 
-DROP TABLE IF EXISTS BAS_RDM_STATUSOVERG_BIJ_BRIEF ;
+DROP TABLE IF EXISTS BAS_RDM_STATUSOVERG_BIJ_BRIEF;
+
+CREATE SEQUENCE BAS_RDM_STATUSOVERG_BIJ_BRIEF_id_seq;
+
 CREATE TABLE BAS_RDM_STATUSOVERG_BIJ_BRIEF (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_STATUSOVERG_BIJ_BRIEF_id_seq') PRIMARY KEY,
     Reg_id bigint,
     Status_van varchar (3),
     Statusgroep varchar (1),
@@ -3665,6 +4078,8 @@ CREATE TABLE BAS_RDM_STATUSOVERG_BIJ_BRIEF (
     Xps_cd varchar (10)
 );
 
+ALTER SEQUENCE BAS_RDM_STATUSOVERG_BIJ_BRIEF_id_seq OWNED BY BAS_RDM_STATUSOVERG_BIJ_BRIEF.techId;
+
     comment on column BAS_RDM_STATUSOVERG_BIJ_BRIEF.Reg_id is 'REG_ID';
     comment on column BAS_RDM_STATUSOVERG_BIJ_BRIEF.Status_van is 'STATUS_VAN';
     comment on column BAS_RDM_STATUSOVERG_BIJ_BRIEF.Statusgroep is 'STATUSGROEP';
@@ -3676,9 +4091,12 @@ CREATE TABLE BAS_RDM_STATUSOVERG_BIJ_BRIEF (
     comment on column BAS_RDM_STATUSOVERG_BIJ_BRIEF.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_RDM_STATUSOVERG_BIJ_BRIEF.Xps_cd is 'XPS_CD';
 
-DROP TABLE IF EXISTS BAS_RDM_VARIABELE ;
+DROP TABLE IF EXISTS BAS_RDM_VARIABELE;
+
+CREATE SEQUENCE BAS_RDM_VARIABELE_id_seq;
+
 CREATE TABLE BAS_RDM_VARIABELE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_RDM_VARIABELE_id_seq') PRIMARY KEY,
     Reg_id bigint,
     Code varchar (50),
     Begindatum timestamp,
@@ -3691,6 +4109,8 @@ CREATE TABLE BAS_RDM_VARIABELE (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_RDM_VARIABELE_id_seq OWNED BY BAS_RDM_VARIABELE.techId;
+
     comment on column BAS_RDM_VARIABELE.Reg_id is 'REG_ID';
     comment on column BAS_RDM_VARIABELE.Code is 'CODE';
     comment on column BAS_RDM_VARIABELE.Begindatum is 'BEGINDATUM';
@@ -3702,9 +4122,12 @@ CREATE TABLE BAS_RDM_VARIABELE (
     comment on column BAS_RDM_VARIABELE.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_RDM_VARIABELE.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_STM_BSI ;
+DROP TABLE IF EXISTS BAS_STM_BSI;
+
+CREATE SEQUENCE BAS_STM_BSI_id_seq;
+
 CREATE TABLE BAS_STM_BSI (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_STM_BSI_id_seq') PRIMARY KEY,
     Startdatum timestamp,
     Einddatum timestamp,
     Bsi_cd varchar (7),
@@ -3715,6 +4138,8 @@ CREATE TABLE BAS_STM_BSI (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_STM_BSI_id_seq OWNED BY BAS_STM_BSI.techId;
+
     comment on column BAS_STM_BSI.Startdatum is 'STARTDATUM';
     comment on column BAS_STM_BSI.Einddatum is 'EINDDATUM';
     comment on column BAS_STM_BSI.Bsi_cd is 'BSI_CD';
@@ -3724,9 +4149,12 @@ CREATE TABLE BAS_STM_BSI (
     comment on column BAS_STM_BSI.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_STM_BSI.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_STM_REACTIE ;
+DROP TABLE IF EXISTS BAS_STM_REACTIE;
+
+CREATE SEQUENCE BAS_STM_REACTIE_id_seq;
+
 CREATE TABLE BAS_STM_REACTIE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_STM_REACTIE_id_seq') PRIMARY KEY,
     Reactie_cd varchar (3),
     Reactie_oms varchar (60),
     Creatie_user varchar (30),
@@ -3735,6 +4163,8 @@ CREATE TABLE BAS_STM_REACTIE (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_STM_REACTIE_id_seq OWNED BY BAS_STM_REACTIE.techId;
+
     comment on column BAS_STM_REACTIE.Reactie_cd is 'REACTIE_CD';
     comment on column BAS_STM_REACTIE.Reactie_oms is 'REACTIE_OMS';
     comment on column BAS_STM_REACTIE.Creatie_user is 'CREATIE_USER';
@@ -3742,9 +4172,12 @@ CREATE TABLE BAS_STM_REACTIE (
     comment on column BAS_STM_REACTIE.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_STM_REACTIE.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_STM_ROL ;
+DROP TABLE IF EXISTS BAS_STM_ROL;
+
+CREATE SEQUENCE BAS_STM_ROL_id_seq;
+
 CREATE TABLE BAS_STM_ROL (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_STM_ROL_id_seq') PRIMARY KEY,
     Rol_cd varchar (3),
     Rol_oms varchar (50),
     Interne_rol varchar (1),
@@ -3760,6 +4193,8 @@ CREATE TABLE BAS_STM_ROL (
     Ed_rol_oms varchar (50)
 );
 
+ALTER SEQUENCE BAS_STM_ROL_id_seq OWNED BY BAS_STM_ROL.techId;
+
     comment on column BAS_STM_ROL.Rol_cd is 'ROL_CD';
     comment on column BAS_STM_ROL.Rol_oms is 'ROL_OMS';
     comment on column BAS_STM_ROL.Interne_rol is 'INTERNE_ROL';
@@ -3774,9 +4209,12 @@ CREATE TABLE BAS_STM_ROL (
     comment on column BAS_STM_ROL.Ed_rol_cd is 'ED_ROL_CD';
     comment on column BAS_STM_ROL.Ed_rol_oms is 'ED_ROL_OMS';
 
-DROP TABLE IF EXISTS BAS_STM_SBI ;
+DROP TABLE IF EXISTS BAS_STM_SBI;
+
+CREATE SEQUENCE BAS_STM_SBI_id_seq;
+
 CREATE TABLE BAS_STM_SBI (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_STM_SBI_id_seq') PRIMARY KEY,
     Sbi_cd bigint,
     Sbi_oms varchar (500),
     Creatie_dat timestamp,
@@ -3785,6 +4223,8 @@ CREATE TABLE BAS_STM_SBI (
     Mutatie_user varchar (30)
 );
 
+ALTER SEQUENCE BAS_STM_SBI_id_seq OWNED BY BAS_STM_SBI.techId;
+
     comment on column BAS_STM_SBI.Sbi_cd is 'SBI_CD';
     comment on column BAS_STM_SBI.Sbi_oms is 'SBI_OMS';
     comment on column BAS_STM_SBI.Creatie_dat is 'CREATIE_DAT';
@@ -3792,9 +4232,12 @@ CREATE TABLE BAS_STM_SBI (
     comment on column BAS_STM_SBI.Mutatie_dat is 'MUTATIE_DAT';
     comment on column BAS_STM_SBI.Mutatie_user is 'MUTATIE_USER';
 
-DROP TABLE IF EXISTS BAS_STM_STATUS ;
+DROP TABLE IF EXISTS BAS_STM_STATUS;
+
+CREATE SEQUENCE BAS_STM_STATUS_id_seq;
+
 CREATE TABLE BAS_STM_STATUS (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_STM_STATUS_id_seq') PRIMARY KEY,
     Sts_cd varchar (3),
     Sts_oms varchar (50),
     Ssg_cd varchar (1),
@@ -3807,6 +4250,8 @@ CREATE TABLE BAS_STM_STATUS (
     Sts_e_loket varchar (50)
 );
 
+ALTER SEQUENCE BAS_STM_STATUS_id_seq OWNED BY BAS_STM_STATUS.techId;
+
     comment on column BAS_STM_STATUS.Sts_cd is 'STS_CD';
     comment on column BAS_STM_STATUS.Sts_oms is 'STS_OMS';
     comment on column BAS_STM_STATUS.Ssg_cd is 'SSG_CD';
@@ -3818,9 +4263,12 @@ CREATE TABLE BAS_STM_STATUS (
     comment on column BAS_STM_STATUS.Eindstatus is 'EINDSTATUS';
     comment on column BAS_STM_STATUS.Sts_e_loket is 'STS_E_LOKET';
 
-DROP TABLE IF EXISTS BAS_STM_STATUSOVERG_BIJ_BRIEF ;
+DROP TABLE IF EXISTS BAS_STM_STATUSOVERG_BIJ_BRIEF;
+
+CREATE SEQUENCE BAS_STM_STATUSOVERG_BIJ_BRIEF_id_seq;
+
 CREATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_STM_STATUSOVERG_BIJ_BRIEF_id_seq') PRIMARY KEY,
     Van_status varchar (3),
     Naar_status varchar (3),
     Ssg_cd varchar (1),
@@ -3831,6 +4279,8 @@ CREATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF (
     Mutatie_dat timestamp
 );
 
+ALTER SEQUENCE BAS_STM_STATUSOVERG_BIJ_BRIEF_id_seq OWNED BY BAS_STM_STATUSOVERG_BIJ_BRIEF.techId;
+
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Van_status is 'VAN_STATUS';
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Naar_status is 'NAAR_STATUS';
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Ssg_cd is 'SSG_CD';
@@ -3840,23 +4290,31 @@ CREATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF (
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Mutatie_user is 'MUTATIE_USER';
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Mutatie_dat is 'MUTATIE_DAT';
 
-DROP TABLE IF EXISTS BAS_VKM_TOEGEV_VAR_VELD_WAARDE ;
+DROP TABLE IF EXISTS BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
+
+CREATE SEQUENCE BAS_VKM_TOEGEV_VAR_VELD_WAARDE_id_seq;
+
 CREATE TABLE BAS_VKM_TOEGEV_VAR_VELD_WAARDE (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_VKM_TOEGEV_VAR_VELD_WAARDE_id_seq') PRIMARY KEY,
     Vkt_id bigint,
     Fysieke_naam varchar (30),
     Waarde varchar (60),
     Volgorde bigint
 );
 
+ALTER SEQUENCE BAS_VKM_TOEGEV_VAR_VELD_WAARDE_id_seq OWNED BY BAS_VKM_TOEGEV_VAR_VELD_WAARDE.techId;
+
     comment on column BAS_VKM_TOEGEV_VAR_VELD_WAARDE.Vkt_id is 'VKT_ID';
     comment on column BAS_VKM_TOEGEV_VAR_VELD_WAARDE.Fysieke_naam is 'FYSIEKE_NAAM';
     comment on column BAS_VKM_TOEGEV_VAR_VELD_WAARDE.Waarde is 'WAARDE';
     comment on column BAS_VKM_TOEGEV_VAR_VELD_WAARDE.Volgorde is 'VOLGORDE';
 
-DROP TABLE IF EXISTS BAS_VKM_TOEGEVOEGD_VAR_VELD ;
+DROP TABLE IF EXISTS BAS_VKM_TOEGEVOEGD_VAR_VELD;
+
+CREATE SEQUENCE BAS_VKM_TOEGEVOEGD_VAR_VELD_id_seq;
+
 CREATE TABLE BAS_VKM_TOEGEVOEGD_VAR_VELD (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_VKM_TOEGEVOEGD_VAR_VELD_id_seq') PRIMARY KEY,
     Vkt_id bigint,
     Fysieke_naam varchar (30),
     Datum_start timestamp,
@@ -3870,6 +4328,8 @@ CREATE TABLE BAS_VKM_TOEGEVOEGD_VAR_VELD (
     Helptekst varchar (72)
 );
 
+ALTER SEQUENCE BAS_VKM_TOEGEVOEGD_VAR_VELD_id_seq OWNED BY BAS_VKM_TOEGEVOEGD_VAR_VELD.techId;
+
     comment on column BAS_VKM_TOEGEVOEGD_VAR_VELD.Vkt_id is 'VKT_ID';
     comment on column BAS_VKM_TOEGEVOEGD_VAR_VELD.Fysieke_naam is 'FYSIEKE_NAAM';
     comment on column BAS_VKM_TOEGEVOEGD_VAR_VELD.Datum_start is 'DATUM_START';
@@ -3882,9 +4342,12 @@ CREATE TABLE BAS_VKM_TOEGEVOEGD_VAR_VELD (
     comment on column BAS_VKM_TOEGEVOEGD_VAR_VELD.Default_waarde is 'DEFAULT_WAARDE';
     comment on column BAS_VKM_TOEGEVOEGD_VAR_VELD.Helptekst is 'HELPTEKST';
 
-DROP TABLE IF EXISTS BAS_VKM_VAR_GEGEVENS ;
+DROP TABLE IF EXISTS BAS_VKM_VAR_GEGEVENS;
+
+CREATE SEQUENCE BAS_VKM_VAR_GEGEVENS_id_seq;
+
 CREATE TABLE BAS_VKM_VAR_GEGEVENS (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_VKM_VAR_GEGEVENS_id_seq') PRIMARY KEY,
     BEDRAG_01 numeric(24,6),
     BEDRAG_02 numeric(24,6),
     BEDRAG_03 numeric(24,6),
@@ -4217,6 +4680,8 @@ CREATE TABLE BAS_VKM_VAR_GEGEVENS (
     VVG_DOS_ID bigint
 );
 
+ALTER SEQUENCE BAS_VKM_VAR_GEGEVENS_id_seq OWNED BY BAS_VKM_VAR_GEGEVENS.techId;
+
     comment on column BAS_VKM_VAR_GEGEVENS.BEDRAG_01 is 'BEDRAG_01';
     comment on column BAS_VKM_VAR_GEGEVENS.BEDRAG_02 is 'BEDRAG_02';
     comment on column BAS_VKM_VAR_GEGEVENS.BEDRAG_03 is 'BEDRAG_03';
@@ -4548,9 +5013,12 @@ CREATE TABLE BAS_VKM_VAR_GEGEVENS (
     comment on column BAS_VKM_VAR_GEGEVENS.VVG_VKT_ID is 'VKT_ID';
     comment on column BAS_VKM_VAR_GEGEVENS.VVG_DOS_ID is 'DOS_ID';
 
-DROP TABLE IF EXISTS BAS_VKM_VAR_KAART ;
+DROP TABLE IF EXISTS BAS_VKM_VAR_KAART;
+
+CREATE SEQUENCE BAS_VKM_VAR_KAART_id_seq;
+
 CREATE TABLE BAS_VKM_VAR_KAART (
-    techId SERIAL PRIMARY KEY,
+    techId INTEGER NOT NULL DEFAULT nextval('BAS_VKM_VAR_KAART_id_seq') PRIMARY KEY,
     Vkt_id bigint,
     Kaart_naam varchar (30),
     Datum_start timestamp,
@@ -4568,6 +5036,8 @@ CREATE TABLE BAS_VKM_VAR_KAART (
     Geblokkeerd varchar (1),
     Copy_jn varchar (1)
 );
+
+ALTER SEQUENCE BAS_VKM_VAR_KAART_id_seq OWNED BY BAS_VKM_VAR_KAART.techId;
 
     comment on column BAS_VKM_VAR_KAART.Vkt_id is 'VKT_ID';
     comment on column BAS_VKM_VAR_KAART.Kaart_naam is 'KAART_NAAM';
