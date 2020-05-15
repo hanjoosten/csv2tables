@@ -3,6 +3,7 @@ module Types where
 
 import RIO
 import RIO.Process
+import RIO.Char
 
 -- | Command line arguments
 data Options = Options
@@ -26,9 +27,14 @@ instance HasProcessContext App where
 data Table = Table
   {tableNameOrg :: !String
   ,tableNameNew :: !String
-  ,attribs   :: [Attrib]
+  ,attribsAll   :: [Attrib]
   } deriving Show
 
+-- | filter is nodig omdat er een aantal attributen per abuis worden 
+--   geleverd, die ook nog eens niet goed zijn in te lezen. 
+attribs :: Table -> [Attrib]
+attribs = filter f . attribsAll
+  where f att = map toLower (attNameOrg att) /= "timestamp"
 data Attrib = Attrib
     { attTableOrg :: !String
     , attTableNew :: !String
@@ -39,6 +45,8 @@ data Attrib = Attrib
     , sasVarNum :: !Integer
     , sasLable :: !String
     , sasFormat :: !String
+    , sasFormatL :: !Integer
+    , sasFormatD :: !Integer
     } deriving Show
 instance Ord Attrib where
   compare a b = compare (attTableNew a, sasVarNum a) (attTableNew b, sasVarNum b)

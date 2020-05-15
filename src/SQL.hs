@@ -50,11 +50,17 @@ dataType att =
     case sasType att of
       1 -> case T.pack (sasFormat att) of 
              "" -> case sasLength att of
-                     8 -> "integer"
+                     8 -> if sasFormatD att == 0 
+                          then let intType 
+                                    | sasFormatL att > 9 = "bigint"
+                                    | sasFormatL att > 4 = "integer"
+                                    | otherwise = "smallint"
+                               in intType
+                          else "numeric("<>tshow (sasFormatL att)<>","<>tshow (sasFormatD att)<>")"
                      x -> "TODO "<>tshow x
              "DATETIME" -> case sasLength att of
                              8 -> "timestamp"
                              x -> "TODO: DATETIME ("<>tshow x<>")"
              x  ->  "TODO: sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
-      2 -> "varchar ("<>tshow (sasLength att)<>")"
+      2 -> "varchar ("<>tshow (sasFormatL att)<>")"
       x -> "TODO. sasType == "<>tshow x

@@ -45,7 +45,7 @@ mkTable atts = case NE.groupWith attTableNew atts of
    [x] ->  Table
       {tableNameOrg = attTableOrg (NE.head x)
       ,tableNameNew = attTableNew (NE.head x)
-      ,attribs   = atts
+      ,attribsAll   = atts
       }
    _ -> fatal $ "Multiple tables. Only attributes of a single table expected"
 
@@ -64,6 +64,8 @@ mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
     , sasVarNum = lkpInt "VARNUM" -- :: !Int
     , sasLable = lkpStr "LABEL" -- :: !String
     , sasFormat = lkpStr "FORMAT" -- :: !String
+    , sasFormatD = lkpInt "FORMATD"
+    , sasFormatL = lkpInt "FORMATL"
     } 
    where rawTableName = lkpStr "MEMNAME"
          alterTableName str = 

@@ -5,8 +5,7 @@ PROC SQL;
           t1.Creatie_user,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.timestamp
+          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.AOM_ACTIE_TCMG t1;
 QUIT;
 
@@ -1308,8 +1307,7 @@ PROC SQL;
           t1.Creatie_user,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Timestamp
+          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.DAM_DOSSIERGROEP_TCMG t1;
 QUIT;
 
@@ -1570,8 +1568,7 @@ PROC SQL;
           t1.Creatie_user,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Timestamp
+          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.FAM_STATUSHISTORIE_TCMG t1;
 QUIT;
 
@@ -1617,7 +1614,6 @@ PROC SQL;
           t1.Creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
           t1.Mutatie_user,
-          t1.Timestamp,
           t1.Cvk_id_geselecteerd,
           t1.Cvk_id_verwerkt,
           t1.Volgnummer,
@@ -1686,7 +1682,6 @@ PROC SQL;
           t1.Creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
           t1.Mutatie_user,
-          t1.Timestamp,
           t1.Bedrag_ex_btw,
           t1.Vst_volgnr,
           t1.Duurzaam_jn,
@@ -1748,7 +1743,6 @@ PROC SQL;
           t1.Nota_datum FORMAT=B8601DT19. AS Nota_datum,
           t1.Panel_datum FORMAT=B8601DT19. AS Panel_datum,
           t1.Overige_subsidie,
-          t1.Timestamp,
           t1.Ikb_naam,
           t1.Inkoopbevinding,
           t1.Inkoopbevinding_user,
@@ -1912,7 +1906,6 @@ PROC SQL;
           t1.Creatie_user,
           t1.Mutatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Timestamp,
           t1.Actief
      FROM DATAQASG.IOM_MEDEWERKERROL_TCMG t1;
 QUIT;
@@ -2857,7 +2850,6 @@ PROC SQL;
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Mutatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Timestamp,
           t1.Omzet,
           t1.Loonsom,
           t1.So_loonsom,
@@ -3416,7 +3408,6 @@ PROC SQL;
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Mutatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Timestamp,
           t1.Bdg_verdelen_100_pct_dp,
           t1.Bdg_verdelen_100_pct_th,
           t1.Iban,
@@ -3504,7 +3495,6 @@ PROC SQL;
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Mutatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Timestamp,
           t1.Senioriteit,
           t1.Mentor_id,
           t1.Vervang_id,
