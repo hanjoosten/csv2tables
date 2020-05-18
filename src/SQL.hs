@@ -18,7 +18,7 @@ loadStatement t =
 -- FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
       [ "TRUNCATE TABLE "<>T.pack (tableNameNew t)<>";" 
       , "\\COPY "<>T.pack (tableNameNew t)
-                 <>"("<>T.intercalate ", "(map (T.pack . attNameNew) . L.sort $ attribs t)
+                 <>"("<>T.intercalate ", " ("techId" : (map (T.pack . attNameNew) . L.sort $ attribs t))
                  <>") FROM 'PAD-NAAR_CSVs"<>T.pack (tableNameNew t)<>".csv' DELIMITER ',' CSV HEADER;"
       , ""]
 
@@ -28,15 +28,10 @@ makeCreateStatements = concatMap createStatement
 createStatement :: Table -> [Text]
 createStatement t = 
       [ "DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>";"
-      , ""
-      , "CREATE SEQUENCE "<> T.pack (tableNameNew t) <>"_id_seq;"
-      , ""
       , "CREATE TABLE "<>T.pack (tableNameNew t)<>" (" 
-      , "    techId INTEGER NOT NULL DEFAULT nextval('"<> T.pack (tableNameNew t) <>"_id_seq') PRIMARY KEY,"]
+      , "    techId INTEGER PRIMARY KEY,"]
    <> T.lines cols
    <> [ ");"
-      , ""
-      , "ALTER SEQUENCE "<> T.pack (tableNameNew t) <>"_id_seq OWNED BY "<> T.pack (tableNameNew t) <>".techId;"
       , ""
       ]
    <> comments
