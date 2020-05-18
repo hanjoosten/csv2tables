@@ -9,6 +9,11 @@ PROC SQL;
      FROM DATAQASG.AOM_ACTIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_AOM_ACTIE;
+  set WORK.BAS_AOM_ACTIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_AOM_ACTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_AOM_ACTIE.csv"
@@ -42,6 +47,11 @@ PROC SQL;
           t1.Tra_cd
      FROM DATAQASG.AOM_TRA_ACTIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_AOM_TRA_ACTIE;
+  set WORK.BAS_AOM_TRA_ACTIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_AOM_TRA_ACTIE
@@ -79,6 +89,11 @@ PROC SQL;
           t1.Tra_stop
      FROM DATAQASG.AOM_TRANSACTIETYPE_TCMG t1;
 QUIT;
+
+data WORK.BAS_AOM_TRANSACTIETYPE;
+  set WORK.BAS_AOM_TRANSACTIETYPE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_AOM_TRANSACTIETYPE
@@ -138,6 +153,11 @@ PROC SQL;
      FROM DATAQASG.BTM_BETALING_TCMG t1;
 QUIT;
 
+data WORK.BAS_BTM_BETALING;
+  set WORK.BAS_BTM_BETALING;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_BTM_BETALING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_BTM_BETALING.csv"
@@ -194,6 +214,11 @@ PROC SQL;
      FROM DATAQASG.BTM_HIST_BETALING_TCMG t1;
 QUIT;
 
+data WORK.BAS_BTM_HIST_BETALING;
+  set WORK.BAS_BTM_HIST_BETALING;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_BTM_HIST_BETALING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_BTM_HIST_BETALING.csv"
@@ -238,6 +263,11 @@ PROC SQL;
           t1.Org_cor_id
      FROM DATAQASG.COR_BERICHT_TCMG t1;
 QUIT;
+
+data WORK.BAS_COR_BERICHT;
+  set WORK.BAS_COR_BERICHT;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_COR_BERICHT
@@ -293,6 +323,11 @@ PROC SQL;
      FROM DATAQASG.COR_COR_PARAAF_TCMG t1;
 QUIT;
 
+data WORK.BAS_COR_COR_PARAAF;
+  set WORK.BAS_COR_COR_PARAAF;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_COR_COR_PARAAF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_COR_PARAAF.csv"
@@ -342,6 +377,11 @@ PROC SQL;
      FROM DATAQASG.COR_COR_SRT_TCMG t1;
 QUIT;
 
+data WORK.BAS_COR_COR_SRT;
+  set WORK.BAS_COR_COR_SRT;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_COR_COR_SRT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_COR_SRT.csv"
@@ -376,6 +416,11 @@ PROC SQL;
           t1.Mutatie_user
      FROM DATAQASG.COR_CORRESPONDENTIE_HIST_TCMG t1;
 QUIT;
+
+data WORK.BAS_COR_CORRESPONDENTIE_HIST;
+  set WORK.BAS_COR_CORRESPONDENTIE_HIST;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_COR_CORRESPONDENTIE_HIST
@@ -467,6 +512,11 @@ PROC SQL;
      FROM DATAQASG.COR_CORRESPONDENTIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_COR_CORRESPONDENTIE;
+  set WORK.BAS_COR_CORRESPONDENTIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_COR_CORRESPONDENTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_CORRESPONDENTIE.csv"
@@ -504,6 +554,11 @@ PROC SQL;
      FROM DATAQASG.COR_CST_SET_CST_TCMG t1;
 QUIT;
 
+data WORK.BAS_COR_CST_SET_CST;
+  set WORK.BAS_COR_CST_SET_CST;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_COR_CST_SET_CST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_CST_SET_CST.csv"
@@ -538,6 +593,11 @@ PROC SQL;
           t1.Rol_volg_cd
      FROM DATAQASG.COR_PARAAF_TCMG t1;
 QUIT;
+
+data WORK.BAS_COR_PARAAF;
+  set WORK.BAS_COR_PARAAF;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_COR_PARAAF
@@ -581,6 +641,11 @@ PROC SQL;
           t1.Termijn_weken
      FROM DATAQASG.COR_REACTIE_BIJ_COR_SRT_TCMG t1;
 QUIT;
+
+data WORK.BAS_COR_REACTIE_BIJ_COR_SRT;
+  set WORK.BAS_COR_REACTIE_BIJ_COR_SRT;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_COR_REACTIE_BIJ_COR_SRT
@@ -629,6 +694,11 @@ PROC SQL;
      FROM DATAQASG.COR_REGLSPEC_COR_TCMG t1;
 QUIT;
 
+data WORK.BAS_COR_REGLSPEC_COR;
+  set WORK.BAS_COR_REGLSPEC_COR;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_COR_REGLSPEC_COR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_REGLSPEC_COR.csv"
@@ -662,6 +732,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.COR_TRANSACTIEGROEP_BIJ_BRF_TCMG t1;
 QUIT;
+
+data WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
+  set WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF
@@ -703,6 +778,11 @@ PROC SQL;
      FROM DATAQASG.DAM_CONT_BIJ_DLN_COM_ADR_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR;
+  set WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_CONT_BIJ_DLN_COM_ADR.csv"
@@ -742,6 +822,11 @@ PROC SQL;
           t1.Vst_volgnr
      FROM DATAQASG.DAM_CONTACT_BIJ_DEELNAME_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_CONTACT_BIJ_DEELNAME;
+  set WORK.BAS_DAM_CONTACT_BIJ_DEELNAME;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_CONTACT_BIJ_DEELNAME
@@ -857,6 +942,11 @@ PROC SQL;
      FROM DATAQASG.DAM_DECLARATIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_DECLARATIE;
+  set WORK.BAS_DAM_DECLARATIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_DECLARATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DECLARATIE.csv"
@@ -897,6 +987,11 @@ PROC SQL;
      FROM DATAQASG.DAM_DEELNAME_ADRES_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_DEELNAME_ADRES;
+  set WORK.BAS_DAM_DEELNAME_ADRES;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_DEELNAME_ADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DEELNAME_ADRES.csv"
@@ -934,6 +1029,11 @@ PROC SQL;
           t1.Vst_volgnr
      FROM DATAQASG.DAM_DEELNAME_COM_ADRES_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_DEELNAME_COM_ADRES;
+  set WORK.BAS_DAM_DEELNAME_COM_ADRES;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_DEELNAME_COM_ADRES
@@ -1002,6 +1102,11 @@ PROC SQL;
      FROM DATAQASG.DAM_DEELNAME_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_DEELNAME;
+  set WORK.BAS_DAM_DEELNAME;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_DEELNAME
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DEELNAME.csv"
@@ -1061,6 +1166,11 @@ PROC SQL;
      FROM DATAQASG.DAM_DOS_BUDGETREGEL_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_DOS_BUDGETREGEL;
+  set WORK.BAS_DAM_DOS_BUDGETREGEL;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_DOS_BUDGETREGEL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOS_BUDGETREGEL.csv"
@@ -1094,6 +1204,11 @@ PROC SQL;
           t1.Mutatie_user
      FROM DATAQASG.DAM_DOSSIER_IN_GROEP_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_DOSSIER_IN_GROEP;
+  set WORK.BAS_DAM_DOSSIER_IN_GROEP;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_DOSSIER_IN_GROEP
@@ -1132,6 +1247,11 @@ PROC SQL;
           t1.Rel_id
      FROM DATAQASG.DAM_DOSSIER_NOTITIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_DOSSIER_NOTITIE;
+  set WORK.BAS_DAM_DOSSIER_NOTITIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_DOSSIER_NOTITIE
@@ -1326,6 +1446,11 @@ PROC SQL;
      FROM DATAQASG.DAM_DOSSIER_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_DOSSIER;
+  set WORK.BAS_DAM_DOSSIER;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_DOSSIER
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOSSIER.csv"
@@ -1361,6 +1486,11 @@ PROC SQL;
      FROM DATAQASG.DAM_DOSSIERGROEP_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_DOSSIERGROEP;
+  set WORK.BAS_DAM_DOSSIERGROEP;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_DOSSIERGROEP
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOSSIERGROEP.csv"
@@ -1395,6 +1525,11 @@ PROC SQL;
           t1.RAS_id
      FROM DATAQASG.DAM_LOKATIEADRES_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_LOKATIEADRES;
+  set WORK.BAS_DAM_LOKATIEADRES;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_LOKATIEADRES
@@ -1436,6 +1571,11 @@ PROC SQL;
      FROM DATAQASG.DAM_MDW_INTERN_HIST_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_MDW_INTERN_HIST;
+  set WORK.BAS_DAM_MDW_INTERN_HIST;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_MDW_INTERN_HIST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_MDW_INTERN_HIST.csv"
@@ -1473,6 +1613,11 @@ PROC SQL;
           t1.Rol_cd
      FROM DATAQASG.DAM_MDW_INTERN_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_MDW_INTERN;
+  set WORK.BAS_DAM_MDW_INTERN;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_MDW_INTERN
@@ -1514,6 +1659,11 @@ PROC SQL;
      FROM DATAQASG.DAM_STATUSHISTORIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_STATUSHISTORIE;
+  set WORK.BAS_DAM_STATUSHISTORIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_STATUSHISTORIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_STATUSHISTORIE.csv"
@@ -1548,6 +1698,11 @@ PROC SQL;
           t1.Toelichting
      FROM DATAQASG.DAM_TERMIJN_PARAAF_NOTITIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE;
+  set WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE
@@ -1598,6 +1753,11 @@ PROC SQL;
      FROM DATAQASG.DAM_TERMIJN_TCMG t1;
 QUIT;
 
+data WORK.BAS_DAM_TERMIJN;
+  set WORK.BAS_DAM_TERMIJN;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_DAM_TERMIJN
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_TERMIJN.csv"
@@ -1635,6 +1795,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.FAM_STATUSHISTORIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_FAM_STATUSHISTORIE;
+  set WORK.BAS_FAM_STATUSHISTORIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_FAM_STATUSHISTORIE
@@ -1690,6 +1855,11 @@ PROC SQL;
           t1.Imvb
      FROM DATAQASG.FAM_TRANSACTIE_REGEL_TCMG t1;
 QUIT;
+
+data WORK.BAS_FAM_TRANSACTIE_REGEL;
+  set WORK.BAS_FAM_TRANSACTIE_REGEL;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_FAM_TRANSACTIE_REGEL
@@ -1776,6 +1946,11 @@ PROC SQL;
      FROM DATAQASG.FAM_TRANSACTIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_FAM_TRANSACTIE;
+  set WORK.BAS_FAM_TRANSACTIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_FAM_TRANSACTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_TRANSACTIE.csv"
@@ -1820,6 +1995,11 @@ PROC SQL;
      FROM DATAQASG.FAM_VERPLICHTING_TCMG t1;
 QUIT;
 
+data WORK.BAS_FAM_VERPLICHTING;
+  set WORK.BAS_FAM_VERPLICHTING;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_FAM_VERPLICHTING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_VERPLICHTING.csv"
@@ -1852,6 +2032,11 @@ PROC SQL;
           t1.Mutatie_user
      FROM DATAQASG.IOM_FUNCTIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_IOM_FUNCTIE;
+  set WORK.BAS_IOM_FUNCTIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_IOM_FUNCTIE
@@ -1886,6 +2071,11 @@ PROC SQL;
           t1.Mutatie_user
      FROM DATAQASG.IOM_LOCATIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_IOM_LOCATIE;
+  set WORK.BAS_IOM_LOCATIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_IOM_LOCATIE
@@ -1954,6 +2144,11 @@ PROC SQL;
      FROM DATAQASG.IOM_MEDEWERKER_TCMG t1;
 QUIT;
 
+data WORK.BAS_IOM_MEDEWERKER;
+  set WORK.BAS_IOM_MEDEWERKER;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_IOM_MEDEWERKER
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_IOM_MEDEWERKER.csv"
@@ -1987,6 +2182,11 @@ PROC SQL;
           t1.Actief
      FROM DATAQASG.IOM_MEDEWERKERROL_TCMG t1;
 QUIT;
+
+data WORK.BAS_IOM_MEDEWERKERROL;
+  set WORK.BAS_IOM_MEDEWERKERROL;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_IOM_MEDEWERKERROL
@@ -2023,6 +2223,11 @@ PROC SQL;
      FROM DATAQASG.JZM_BEHANDELAAR_TCMG t1;
 QUIT;
 
+data WORK.BAS_JZM_BEHANDELAAR;
+  set WORK.BAS_JZM_BEHANDELAAR;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_JZM_BEHANDELAAR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BEHANDELAAR.csv"
@@ -2058,6 +2263,11 @@ PROC SQL;
           t1.Datum_schade FORMAT=B8601DT19. AS Datum_schade
      FROM DATAQASG.JZM_BEROEP_TCMG t1;
 QUIT;
+
+data WORK.BAS_JZM_BEROEP;
+  set WORK.BAS_JZM_BEROEP;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_JZM_BEROEP
@@ -2114,6 +2324,11 @@ PROC SQL;
      FROM DATAQASG.JZM_BEZWAAR_TCMG t1;
 QUIT;
 
+data WORK.BAS_JZM_BEZWAAR;
+  set WORK.BAS_JZM_BEZWAAR;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_JZM_BEZWAAR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BEZWAAR.csv"
@@ -2156,6 +2371,11 @@ PROC SQL;
           t1.Adviescommissie
      FROM DATAQASG.JZM_BEZWAAR_TERMIJN_HIST_TCMG t1;
 QUIT;
+
+data WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST;
+  set WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST
@@ -2229,6 +2449,11 @@ PROC SQL;
      FROM DATAQASG.JZM_BOB_WIZARD_TCMG t1;
 QUIT;
 
+data WORK.BAS_JZM_BOB_WIZARD;
+  set WORK.BAS_JZM_BOB_WIZARD;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_JZM_BOB_WIZARD
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BOB_WIZARD.csv"
@@ -2262,6 +2487,11 @@ PROC SQL;
      FROM DATAQASG.JZM_BRIEF_FUNCTIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_JZM_BRIEF_FUNCTIE;
+  set WORK.BAS_JZM_BRIEF_FUNCTIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_JZM_BRIEF_FUNCTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BRIEF_FUNCTIE.csv"
@@ -2294,6 +2524,11 @@ PROC SQL;
           t1.Mutatie_user
      FROM DATAQASG.JZM_FUNCTIE_VAN_BRIEF_TCMG t1;
 QUIT;
+
+data WORK.BAS_JZM_FUNCTIE_VAN_BRIEF;
+  set WORK.BAS_JZM_FUNCTIE_VAN_BRIEF;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_JZM_FUNCTIE_VAN_BRIEF
@@ -2353,6 +2588,11 @@ PROC SQL;
      FROM DATAQASG.JZM_PROCEDURE_TCMG t1;
 QUIT;
 
+data WORK.BAS_JZM_PROCEDURE;
+  set WORK.BAS_JZM_PROCEDURE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_JZM_PROCEDURE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_PROCEDURE.csv"
@@ -2387,6 +2627,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.JZM_REACTIE_TERMIJN_TCMG t1;
 QUIT;
+
+data WORK.BAS_JZM_REACTIE_TERMIJN;
+  set WORK.BAS_JZM_REACTIE_TERMIJN;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_JZM_REACTIE_TERMIJN
@@ -2428,6 +2673,11 @@ PROC SQL;
      FROM DATAQASG.JZM_STATUSREGEL_TCMG t1;
 QUIT;
 
+data WORK.BAS_JZM_STATUSREGEL;
+  set WORK.BAS_JZM_STATUSREGEL;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_JZM_STATUSREGEL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_STATUSREGEL.csv"
@@ -2459,6 +2709,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.JZM_UITSPRAAK_TCMG t1;
 QUIT;
+
+data WORK.BAS_JZM_UITSPRAAK;
+  set WORK.BAS_JZM_UITSPRAAK;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_JZM_UITSPRAAK
@@ -2505,6 +2760,11 @@ PROC SQL;
           t1.Straat
      FROM DATAQASG.OBJ_LOKATIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_OBJ_LOKATIE;
+  set WORK.BAS_OBJ_LOKATIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_OBJ_LOKATIE
@@ -2567,6 +2827,11 @@ PROC SQL;
      FROM DATAQASG.PCT_MUT_TCMG t1;
 QUIT;
 
+data WORK.BAS_PCT_MUT;
+  set WORK.BAS_PCT_MUT;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_PCT_MUT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_PCT_MUT.csv"
@@ -2610,6 +2875,11 @@ PROC SQL;
      FROM DATAQASG.PCT_TCMG t1;
 QUIT;
 
+data WORK.BAS_PCT;
+  set WORK.BAS_PCT;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_PCT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_PCT.csv"
@@ -2646,6 +2916,11 @@ PROC SQL;
           t1.Vst_volgnr
      FROM DATAQASG.RBM_ADRES_RELATIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_ADRES_RELATIE;
+  set WORK.BAS_RBM_ADRES_RELATIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_ADRES_RELATIE
@@ -2690,6 +2965,11 @@ PROC SQL;
      FROM DATAQASG.RBM_ADRES_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_ADRES;
+  set WORK.BAS_RBM_ADRES;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_ADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ADRES.csv"
@@ -2724,6 +3004,11 @@ PROC SQL;
           t1.Rca_id
      FROM DATAQASG.RBM_COM_ADRES_CP_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_COM_ADRES_CP;
+  set WORK.BAS_RBM_COM_ADRES_CP;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_COM_ADRES_CP
@@ -2760,6 +3045,11 @@ PROC SQL;
      FROM DATAQASG.RBM_COM_ADRES_RELATIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_COM_ADRES_RELATIE;
+  set WORK.BAS_RBM_COM_ADRES_RELATIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_COM_ADRES_RELATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_COM_ADRES_RELATIE.csv"
@@ -2794,6 +3084,11 @@ PROC SQL;
           t1.Referentie
      FROM DATAQASG.RBM_COM_ADRES_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_COM_ADRES;
+  set WORK.BAS_RBM_COM_ADRES;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_COM_ADRES
@@ -2836,6 +3131,11 @@ PROC SQL;
      FROM DATAQASG.RBM_CONTACTPERSOON_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_CONTACTPERSOON;
+  set WORK.BAS_RBM_CONTACTPERSOON;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_CONTACTPERSOON
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_CONTACTPERSOON.csv"
@@ -2865,6 +3165,11 @@ PROC SQL;
           t1.Vst_volgnr
      FROM DATAQASG.RBM_CP_VESTIGING_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_CP_VESTIGING;
+  set WORK.BAS_RBM_CP_VESTIGING;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_CP_VESTIGING
@@ -2901,6 +3206,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.RBM_ORG_BSI_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_ORG_BSI;
+  set WORK.BAS_RBM_ORG_BSI;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_ORG_BSI
@@ -2944,6 +3254,11 @@ PROC SQL;
           t1.Actuele_opheffings_cd
      FROM DATAQASG.RBM_ORG_FAILLIET_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_ORG_FAILLIET;
+  set WORK.BAS_RBM_ORG_FAILLIET;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_ORG_FAILLIET
@@ -2990,6 +3305,11 @@ PROC SQL;
      FROM DATAQASG.RBM_ORG_JAAR_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_ORG_JAAR;
+  set WORK.BAS_RBM_ORG_JAAR;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_ORG_JAAR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ORG_JAAR.csv"
@@ -3025,6 +3345,11 @@ PROC SQL;
           t1.Kkr_gevalideerd
      FROM DATAQASG.RBM_ORG_NAAM_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_ORG_NAAM;
+  set WORK.BAS_RBM_ORG_NAAM;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_ORG_NAAM
@@ -3069,6 +3394,11 @@ PROC SQL;
           t1.IB_VPB_Plichtig
      FROM DATAQASG.RBM_ORG_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_ORG;
+  set WORK.BAS_RBM_ORG;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_ORG
@@ -3119,6 +3449,11 @@ PROC SQL;
      FROM DATAQASG.RBM_PERSOON_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_PERSOON;
+  set WORK.BAS_RBM_PERSOON;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_PERSOON
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_PERSOON.csv"
@@ -3156,6 +3491,11 @@ PROC SQL;
           t1.User_akkoord
      FROM DATAQASG.RBM_REKENINGNRS_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_REKENINGNRS;
+  set WORK.BAS_RBM_REKENINGNRS;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_REKENINGNRS
@@ -3201,6 +3541,11 @@ PROC SQL;
      FROM DATAQASG.RBM_REKNR_MUT_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_REKNR_MUT;
+  set WORK.BAS_RBM_REKNR_MUT;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_REKNR_MUT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_REKNR_MUT.csv"
@@ -3245,6 +3590,11 @@ PROC SQL;
      FROM DATAQASG.RBM_RELATIE_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_RELATIE;
+  set WORK.BAS_RBM_RELATIE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_RELATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_RELATIE.csv"
@@ -3278,6 +3628,11 @@ PROC SQL;
           t1.Sbi_cd
      FROM DATAQASG.RBM_SBI_ORG_TCMG t1;
 QUIT;
+
+data WORK.BAS_RBM_SBI_ORG;
+  set WORK.BAS_RBM_SBI_ORG;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RBM_SBI_ORG
@@ -3325,6 +3680,11 @@ PROC SQL;
      FROM DATAQASG.RBM_VESTIGING_TCMG t1;
 QUIT;
 
+data WORK.BAS_RBM_VESTIGING;
+  set WORK.BAS_RBM_VESTIGING;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RBM_VESTIGING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_VESTIGING.csv"
@@ -3368,6 +3728,11 @@ PROC SQL;
      FROM DATAQASG.RDM_BUDGETONDERVERDELING_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_BUDGETONDERVERDELING;
+  set WORK.BAS_RDM_BUDGETONDERVERDELING;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_BUDGETONDERVERDELING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_BUDGETONDERVERDELING.csv"
@@ -3401,6 +3766,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.RDM_CLASSIFICATIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_RDM_CLASSIFICATIE;
+  set WORK.BAS_RDM_CLASSIFICATIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RDM_CLASSIFICATIE
@@ -3445,6 +3815,11 @@ PROC SQL;
      FROM DATAQASG.RDM_JAARBUDGET_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_JAARBUDGET;
+  set WORK.BAS_RDM_JAARBUDGET;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_JAARBUDGET
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_JAARBUDGET.csv"
@@ -3485,6 +3860,11 @@ PROC SQL;
      FROM DATAQASG.RDM_MANDAAT_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_MANDAAT;
+  set WORK.BAS_RDM_MANDAAT;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_MANDAAT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_MANDAAT.csv"
@@ -3520,6 +3900,11 @@ PROC SQL;
           t1.Datum_van FORMAT=B8601DT19. AS Datum_van
      FROM DATAQASG.RDM_OVEREENKOMST_DOCUMENT_TCMG t1;
 QUIT;
+
+data WORK.BAS_RDM_OVEREENKOMST_DOCUMENT;
+  set WORK.BAS_RDM_OVEREENKOMST_DOCUMENT;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RDM_OVEREENKOMST_DOCUMENT
@@ -3576,6 +3961,11 @@ PROC SQL;
      FROM DATAQASG.RDM_PERIODE_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_PERIODE;
+  set WORK.BAS_RDM_PERIODE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_PERIODE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_PERIODE.csv"
@@ -3618,6 +4008,11 @@ PROC SQL;
           t1.Budget_uitputting
      FROM DATAQASG.RDM_PRG_OVEREENKOMST_TCMG t1;
 QUIT;
+
+data WORK.BAS_RDM_PRG_OVEREENKOMST;
+  set WORK.BAS_RDM_PRG_OVEREENKOMST;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RDM_PRG_OVEREENKOMST
@@ -3662,6 +4057,11 @@ PROC SQL;
           t1.Mentor_rol_cd
      FROM DATAQASG.RDM_PROGRAMMAMEDEWERKERROL_TCMG t1;
 QUIT;
+
+data WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL;
+  set WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL
@@ -3726,6 +4126,11 @@ PROC SQL;
      FROM DATAQASG.RDM_REGELING_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_REGELING;
+  set WORK.BAS_RDM_REGELING;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_REGELING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_REGELING.csv"
@@ -3770,6 +4175,11 @@ PROC SQL;
      FROM DATAQASG.RDM_REGPAR_BUDGONDVERD_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_REGPAR_BUDGONDVERD;
+  set WORK.BAS_RDM_REGPAR_BUDGONDVERD;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_REGPAR_BUDGONDVERD
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_REGPAR_BUDGONDVERD.csv"
@@ -3806,6 +4216,11 @@ PROC SQL;
           t1.Xps_cd
      FROM DATAQASG.RDM_STATUSOVERG_BIJ_BRIEF_TCMG t1;
 QUIT;
+
+data WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF;
+  set WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF
@@ -3844,6 +4259,11 @@ PROC SQL;
      FROM DATAQASG.RDM_VARIABELE_TCMG t1;
 QUIT;
 
+data WORK.BAS_RDM_VARIABELE;
+  set WORK.BAS_RDM_VARIABELE;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_RDM_VARIABELE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_VARIABELE.csv"
@@ -3879,6 +4299,11 @@ PROC SQL;
      FROM DATAQASG.STM_BSI_TCMG t1;
 QUIT;
 
+data WORK.BAS_STM_BSI;
+  set WORK.BAS_STM_BSI;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_STM_BSI
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_BSI.csv"
@@ -3911,6 +4336,11 @@ PROC SQL;
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
      FROM DATAQASG.STM_REACTIE_TCMG t1;
 QUIT;
+
+data WORK.BAS_STM_REACTIE;
+  set WORK.BAS_STM_REACTIE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_STM_REACTIE
@@ -3952,6 +4382,11 @@ PROC SQL;
      FROM DATAQASG.STM_ROL_TCMG t1;
 QUIT;
 
+data WORK.BAS_STM_ROL;
+  set WORK.BAS_STM_ROL;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_STM_ROL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_ROL.csv"
@@ -3984,6 +4419,11 @@ PROC SQL;
           t1.Mutatie_user
      FROM DATAQASG.STM_SBI_TCMG t1;
 QUIT;
+
+data WORK.BAS_STM_SBI;
+  set WORK.BAS_STM_SBI;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_STM_SBI
@@ -4022,6 +4462,11 @@ PROC SQL;
      FROM DATAQASG.STM_STATUS_TCMG t1;
 QUIT;
 
+data WORK.BAS_STM_STATUS;
+  set WORK.BAS_STM_STATUS;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_STM_STATUS
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_STATUS.csv"
@@ -4057,6 +4502,11 @@ PROC SQL;
      FROM DATAQASG.STM_STATUSOVERG_BIJ_BRIEF_TCMG t1;
 QUIT;
 
+data WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF;
+  set WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_STATUSOVERG_BIJ_BRIEF.csv"
@@ -4087,6 +4537,11 @@ PROC SQL;
           t1.Volgorde
      FROM DATAQASG.VKM_TOEGEV_VAR_VELD_WAARDE_TCMG t1;
 QUIT;
+
+data WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
+  set WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE
@@ -4125,6 +4580,11 @@ PROC SQL;
           t1.Helptekst
      FROM DATAQASG.VKM_TOEGEVOEGD_VAR_VELD_TCMG t1;
 QUIT;
+
+data WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD;
+  set WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD
@@ -4483,6 +4943,11 @@ PROC SQL;
      FROM DATAQASG.VKM_VAR_GEGEVENS_TCMG t1;
 QUIT;
 
+data WORK.BAS_VKM_VAR_GEGEVENS;
+  set WORK.BAS_VKM_VAR_GEGEVENS;
+  techId=_n_;
+run;
+
 proc export
    data=WORK.BAS_VKM_VAR_GEGEVENS
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_VKM_VAR_GEGEVENS.csv"
@@ -4525,6 +4990,11 @@ PROC SQL;
           t1.Copy_jn
      FROM DATAQASG.VKM_VAR_KAART_TCMG t1;
 QUIT;
+
+data WORK.BAS_VKM_VAR_KAART;
+  set WORK.BAS_VKM_VAR_KAART;
+  techId=_n_;
+run;
 
 proc export
    data=WORK.BAS_VKM_VAR_KAART

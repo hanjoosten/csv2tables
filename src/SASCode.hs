@@ -33,6 +33,11 @@ createStatement t =
    <> [ "     FROM DATAQASG."<> T.pack (tableNameOrg t)<>" t1;"
       , "QUIT;"
       , ""
+      , "data WORK."<>tempTableName<>";"
+      , "  set WORK."<>tempTableName<>";"
+      , "  techId=_n_;"
+      , "run;"
+      , ""
       , "proc export"
       , "   data=WORK."<>tempTableName
       , "   outfile=\""<>outfilefull<>"\""
