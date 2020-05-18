@@ -18,7 +18,7 @@ loadStatement t =
 -- FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
       [ "TRUNCATE TABLE "<>T.pack (tableNameNew t)<>";" 
       , "\\COPY "<>T.pack (tableNameNew t)
-                 <>"("<>T.intercalate ", " ("techId" : (map (T.pack . attNameNew) . L.sort $ attribs t))
+                 <>"("<>T.intercalate ", " ((map (T.pack . attNameNew) . L.sort $ attribs t)++["techId"]  )
                  <>") FROM 'PAD-NAAR_CSVs"<>T.pack (tableNameNew t)<>".csv' DELIMITER ',' CSV HEADER;"
       , ""]
 
