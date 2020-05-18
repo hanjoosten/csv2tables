@@ -12,6 +12,7 @@ QUIT;
 proc export
    data=WORK.BAS_AOM_ACTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_AOM_ACTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -23,6 +24,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_AOM_ACTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_AOM_ACTIE.csv"
    dbms=csv;
@@ -44,6 +46,7 @@ QUIT;
 proc export
    data=WORK.BAS_AOM_TRA_ACTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_AOM_TRA_ACTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -55,6 +58,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_AOM_TRA_ACTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_AOM_TRA_ACTIE.csv"
    dbms=csv;
@@ -79,6 +83,7 @@ QUIT;
 proc export
    data=WORK.BAS_AOM_TRANSACTIETYPE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_AOM_TRANSACTIETYPE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -90,6 +95,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_AOM_TRANSACTIETYPE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_AOM_TRANSACTIETYPE.csv"
    dbms=csv;
@@ -135,6 +141,7 @@ QUIT;
 proc export
    data=WORK.BAS_BTM_BETALING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_BTM_BETALING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -146,6 +153,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_BTM_BETALING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_BTM_BETALING.csv"
    dbms=csv;
@@ -189,6 +197,7 @@ QUIT;
 proc export
    data=WORK.BAS_BTM_HIST_BETALING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_BTM_HIST_BETALING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -200,6 +209,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_BTM_HIST_BETALING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_BTM_HIST_BETALING.csv"
    dbms=csv;
@@ -232,6 +242,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_BERICHT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_BERICHT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -243,6 +254,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_BERICHT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_BERICHT.csv"
    dbms=csv;
@@ -284,6 +296,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_COR_PARAAF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_COR_PARAAF.csv"
+   replace
    dbms=csv;
 run;
 
@@ -295,6 +308,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_COR_PARAAF()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_COR_PARAAF.csv"
    dbms=csv;
@@ -331,6 +345,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_COR_SRT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_COR_SRT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -342,6 +357,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_COR_SRT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_COR_SRT.csv"
    dbms=csv;
@@ -364,6 +380,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_CORRESPONDENTIE_HIST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_CORRESPONDENTIE_HIST.csv"
+   replace
    dbms=csv;
 run;
 
@@ -375,6 +392,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_CORRESPONDENTIE_HIST()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_CORRESPONDENTIE_HIST.csv"
    dbms=csv;
@@ -452,6 +470,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_CORRESPONDENTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_CORRESPONDENTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -463,6 +482,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_CORRESPONDENTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_CORRESPONDENTIE.csv"
    dbms=csv;
@@ -487,6 +507,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_CST_SET_CST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_CST_SET_CST.csv"
+   replace
    dbms=csv;
 run;
 
@@ -498,6 +519,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_CST_SET_CST()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_CST_SET_CST.csv"
    dbms=csv;
@@ -520,6 +542,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_PARAAF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_PARAAF.csv"
+   replace
    dbms=csv;
 run;
 
@@ -531,6 +554,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_PARAAF()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_PARAAF.csv"
    dbms=csv;
@@ -561,6 +585,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_REACTIE_BIJ_COR_SRT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_REACTIE_BIJ_COR_SRT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -572,6 +597,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_REACTIE_BIJ_COR_SRT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_REACTIE_BIJ_COR_SRT.csv"
    dbms=csv;
@@ -606,6 +632,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_REGLSPEC_COR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_REGLSPEC_COR.csv"
+   replace
    dbms=csv;
 run;
 
@@ -617,6 +644,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_REGLSPEC_COR()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_REGLSPEC_COR.csv"
    dbms=csv;
@@ -638,6 +666,7 @@ QUIT;
 proc export
    data=WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_COR_TRANSACTIEGROEP_BIJ_BRF.csv"
+   replace
    dbms=csv;
 run;
 
@@ -649,6 +678,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_COR_TRANSACTIEGROEP_BIJ_BRF.csv"
    dbms=csv;
@@ -676,6 +706,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_CONT_BIJ_DLN_COM_ADR.csv"
+   replace
    dbms=csv;
 run;
 
@@ -687,6 +718,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_CONT_BIJ_DLN_COM_ADR.csv"
    dbms=csv;
@@ -714,6 +746,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_CONTACT_BIJ_DEELNAME
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_CONTACT_BIJ_DEELNAME.csv"
+   replace
    dbms=csv;
 run;
 
@@ -725,6 +758,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_CONTACT_BIJ_DEELNAME()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_CONTACT_BIJ_DEELNAME.csv"
    dbms=csv;
@@ -826,6 +860,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DECLARATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DECLARATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -837,6 +872,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DECLARATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DECLARATIE.csv"
    dbms=csv;
@@ -864,6 +900,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DEELNAME_ADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DEELNAME_ADRES.csv"
+   replace
    dbms=csv;
 run;
 
@@ -875,6 +912,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DEELNAME_ADRES()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DEELNAME_ADRES.csv"
    dbms=csv;
@@ -900,6 +938,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DEELNAME_COM_ADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DEELNAME_COM_ADRES.csv"
+   replace
    dbms=csv;
 run;
 
@@ -911,6 +950,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DEELNAME_COM_ADRES()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DEELNAME_COM_ADRES.csv"
    dbms=csv;
@@ -965,6 +1005,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DEELNAME
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DEELNAME.csv"
+   replace
    dbms=csv;
 run;
 
@@ -976,6 +1017,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DEELNAME()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DEELNAME.csv"
    dbms=csv;
@@ -1022,6 +1064,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DOS_BUDGETREGEL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOS_BUDGETREGEL.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1033,6 +1076,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DOS_BUDGETREGEL()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DOS_BUDGETREGEL.csv"
    dbms=csv;
@@ -1054,6 +1098,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DOSSIER_IN_GROEP
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOSSIER_IN_GROEP.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1065,6 +1110,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DOSSIER_IN_GROEP()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DOSSIER_IN_GROEP.csv"
    dbms=csv;
@@ -1090,6 +1136,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DOSSIER_NOTITIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOSSIER_NOTITIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1101,6 +1148,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DOSSIER_NOTITIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DOSSIER_NOTITIE.csv"
    dbms=csv;
@@ -1281,6 +1329,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DOSSIER
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOSSIER.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1292,6 +1341,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DOSSIER()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DOSSIER.csv"
    dbms=csv;
@@ -1314,6 +1364,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_DOSSIERGROEP
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_DOSSIERGROEP.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1325,6 +1376,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_DOSSIERGROEP()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_DOSSIERGROEP.csv"
    dbms=csv;
@@ -1347,6 +1399,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_LOKATIEADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_LOKATIEADRES.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1358,6 +1411,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_LOKATIEADRES()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_LOKATIEADRES.csv"
    dbms=csv;
@@ -1385,6 +1439,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_MDW_INTERN_HIST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_MDW_INTERN_HIST.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1396,6 +1451,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_MDW_INTERN_HIST()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_MDW_INTERN_HIST.csv"
    dbms=csv;
@@ -1421,6 +1477,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_MDW_INTERN
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_MDW_INTERN.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1432,6 +1489,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_MDW_INTERN()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_MDW_INTERN.csv"
    dbms=csv;
@@ -1459,6 +1517,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_STATUSHISTORIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_STATUSHISTORIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1470,6 +1529,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_STATUSHISTORIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_STATUSHISTORIE.csv"
    dbms=csv;
@@ -1492,6 +1552,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_TERMIJN_PARAAF_NOTITIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1503,6 +1564,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_TERMIJN_PARAAF_NOTITIE.csv"
    dbms=csv;
@@ -1539,6 +1601,7 @@ QUIT;
 proc export
    data=WORK.BAS_DAM_TERMIJN
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAM_TERMIJN.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1550,6 +1613,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_DAM_TERMIJN()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_DAM_TERMIJN.csv"
    dbms=csv;
@@ -1575,6 +1639,7 @@ QUIT;
 proc export
    data=WORK.BAS_FAM_STATUSHISTORIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_STATUSHISTORIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1586,6 +1651,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_FAM_STATUSHISTORIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_FAM_STATUSHISTORIE.csv"
    dbms=csv;
@@ -1628,6 +1694,7 @@ QUIT;
 proc export
    data=WORK.BAS_FAM_TRANSACTIE_REGEL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_TRANSACTIE_REGEL.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1639,6 +1706,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_FAM_TRANSACTIE_REGEL()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_FAM_TRANSACTIE_REGEL.csv"
    dbms=csv;
@@ -1711,6 +1779,7 @@ QUIT;
 proc export
    data=WORK.BAS_FAM_TRANSACTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_TRANSACTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1722,6 +1791,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_FAM_TRANSACTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_FAM_TRANSACTIE.csv"
    dbms=csv;
@@ -1753,6 +1823,7 @@ QUIT;
 proc export
    data=WORK.BAS_FAM_VERPLICHTING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_VERPLICHTING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1764,6 +1835,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_FAM_VERPLICHTING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_FAM_VERPLICHTING.csv"
    dbms=csv;
@@ -1784,6 +1856,7 @@ QUIT;
 proc export
    data=WORK.BAS_IOM_FUNCTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_IOM_FUNCTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1795,6 +1868,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_IOM_FUNCTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_IOM_FUNCTIE.csv"
    dbms=csv;
@@ -1816,6 +1890,7 @@ QUIT;
 proc export
    data=WORK.BAS_IOM_LOCATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_IOM_LOCATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1827,6 +1902,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_IOM_LOCATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_IOM_LOCATIE.csv"
    dbms=csv;
@@ -1881,6 +1957,7 @@ QUIT;
 proc export
    data=WORK.BAS_IOM_MEDEWERKER
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_IOM_MEDEWERKER.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1892,6 +1969,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_IOM_MEDEWERKER()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_IOM_MEDEWERKER.csv"
    dbms=csv;
@@ -1913,6 +1991,7 @@ QUIT;
 proc export
    data=WORK.BAS_IOM_MEDEWERKERROL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_IOM_MEDEWERKERROL.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1924,6 +2003,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_IOM_MEDEWERKERROL()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_IOM_MEDEWERKERROL.csv"
    dbms=csv;
@@ -1946,6 +2026,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_BEHANDELAAR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BEHANDELAAR.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1957,6 +2038,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_BEHANDELAAR()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_BEHANDELAAR.csv"
    dbms=csv;
@@ -1980,6 +2062,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_BEROEP
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BEROEP.csv"
+   replace
    dbms=csv;
 run;
 
@@ -1991,6 +2074,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_BEROEP()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_BEROEP.csv"
    dbms=csv;
@@ -2033,6 +2117,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_BEZWAAR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BEZWAAR.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2044,6 +2129,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_BEZWAAR()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_BEZWAAR.csv"
    dbms=csv;
@@ -2074,6 +2160,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BEZWAAR_TERMIJN_HIST.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2085,6 +2172,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_BEZWAAR_TERMIJN_HIST.csv"
    dbms=csv;
@@ -2144,6 +2232,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_BOB_WIZARD
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BOB_WIZARD.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2155,6 +2244,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_BOB_WIZARD()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_BOB_WIZARD.csv"
    dbms=csv;
@@ -2175,6 +2265,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_BRIEF_FUNCTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_BRIEF_FUNCTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2186,6 +2277,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_BRIEF_FUNCTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_BRIEF_FUNCTIE.csv"
    dbms=csv;
@@ -2206,6 +2298,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_FUNCTIE_VAN_BRIEF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_FUNCTIE_VAN_BRIEF.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2217,6 +2310,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_FUNCTIE_VAN_BRIEF()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_FUNCTIE_VAN_BRIEF.csv"
    dbms=csv;
@@ -2262,6 +2356,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_PROCEDURE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_PROCEDURE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2273,6 +2368,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_PROCEDURE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_PROCEDURE.csv"
    dbms=csv;
@@ -2295,6 +2391,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_REACTIE_TERMIJN
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_REACTIE_TERMIJN.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2306,6 +2403,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_REACTIE_TERMIJN()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_REACTIE_TERMIJN.csv"
    dbms=csv;
@@ -2333,6 +2431,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_STATUSREGEL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_STATUSREGEL.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2344,6 +2443,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_STATUSREGEL()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_STATUSREGEL.csv"
    dbms=csv;
@@ -2363,6 +2463,7 @@ QUIT;
 proc export
    data=WORK.BAS_JZM_UITSPRAAK
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_JZM_UITSPRAAK.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2374,6 +2475,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_JZM_UITSPRAAK()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_JZM_UITSPRAAK.csv"
    dbms=csv;
@@ -2407,6 +2509,7 @@ QUIT;
 proc export
    data=WORK.BAS_OBJ_LOKATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_OBJ_LOKATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2418,6 +2521,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_OBJ_LOKATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_OBJ_LOKATIE.csv"
    dbms=csv;
@@ -2466,6 +2570,7 @@ QUIT;
 proc export
    data=WORK.BAS_PCT_MUT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_PCT_MUT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2477,6 +2582,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_PCT_MUT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_PCT_MUT.csv"
    dbms=csv;
@@ -2507,6 +2613,7 @@ QUIT;
 proc export
    data=WORK.BAS_PCT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_PCT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2518,6 +2625,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_PCT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_PCT.csv"
    dbms=csv;
@@ -2542,6 +2650,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ADRES_RELATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ADRES_RELATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2553,6 +2662,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ADRES_RELATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ADRES_RELATIE.csv"
    dbms=csv;
@@ -2583,6 +2693,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ADRES.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2594,6 +2705,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ADRES()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ADRES.csv"
    dbms=csv;
@@ -2616,6 +2728,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_COM_ADRES_CP
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_COM_ADRES_CP.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2627,6 +2740,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_COM_ADRES_CP()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_COM_ADRES_CP.csv"
    dbms=csv;
@@ -2649,6 +2763,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_COM_ADRES_RELATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_COM_ADRES_RELATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2660,6 +2775,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_COM_ADRES_RELATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_COM_ADRES_RELATIE.csv"
    dbms=csv;
@@ -2682,6 +2798,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_COM_ADRES
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_COM_ADRES.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2693,6 +2810,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_COM_ADRES()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_COM_ADRES.csv"
    dbms=csv;
@@ -2721,6 +2839,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_CONTACTPERSOON
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_CONTACTPERSOON.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2732,6 +2851,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_CONTACTPERSOON()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_CONTACTPERSOON.csv"
    dbms=csv;
@@ -2749,6 +2869,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_CP_VESTIGING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_CP_VESTIGING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2760,6 +2881,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_CP_VESTIGING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_CP_VESTIGING.csv"
    dbms=csv;
@@ -2783,6 +2905,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ORG_BSI
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ORG_BSI.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2794,6 +2917,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ORG_BSI()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ORG_BSI.csv"
    dbms=csv;
@@ -2824,6 +2948,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ORG_FAILLIET
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ORG_FAILLIET.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2835,6 +2960,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ORG_FAILLIET()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ORG_FAILLIET.csv"
    dbms=csv;
@@ -2867,6 +2993,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ORG_JAAR
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ORG_JAAR.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2878,6 +3005,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ORG_JAAR()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ORG_JAAR.csv"
    dbms=csv;
@@ -2901,6 +3029,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ORG_NAAM
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ORG_NAAM.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2912,6 +3041,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ORG_NAAM()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ORG_NAAM.csv"
    dbms=csv;
@@ -2943,6 +3073,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_ORG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_ORG.csv"
+   replace
    dbms=csv;
 run;
 
@@ -2954,6 +3085,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_ORG()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_ORG.csv"
    dbms=csv;
@@ -2990,6 +3122,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_PERSOON
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_PERSOON.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3001,6 +3134,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_PERSOON()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_PERSOON.csv"
    dbms=csv;
@@ -3026,6 +3160,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_REKENINGNRS
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_REKENINGNRS.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3037,6 +3172,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_REKENINGNRS()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_REKENINGNRS.csv"
    dbms=csv;
@@ -3068,6 +3204,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_REKNR_MUT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_REKNR_MUT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3079,6 +3216,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_REKNR_MUT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_REKNR_MUT.csv"
    dbms=csv;
@@ -3110,6 +3248,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_RELATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_RELATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3121,6 +3260,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_RELATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_RELATIE.csv"
    dbms=csv;
@@ -3142,6 +3282,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_SBI_ORG
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_SBI_ORG.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3153,6 +3294,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_SBI_ORG()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_SBI_ORG.csv"
    dbms=csv;
@@ -3186,6 +3328,7 @@ QUIT;
 proc export
    data=WORK.BAS_RBM_VESTIGING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RBM_VESTIGING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3197,6 +3340,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RBM_VESTIGING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RBM_VESTIGING.csv"
    dbms=csv;
@@ -3227,6 +3371,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_BUDGETONDERVERDELING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_BUDGETONDERVERDELING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3238,6 +3383,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_BUDGETONDERVERDELING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_BUDGETONDERVERDELING.csv"
    dbms=csv;
@@ -3259,6 +3405,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_CLASSIFICATIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_CLASSIFICATIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3270,6 +3417,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_CLASSIFICATIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_CLASSIFICATIE.csv"
    dbms=csv;
@@ -3300,6 +3448,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_JAARBUDGET
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_JAARBUDGET.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3311,6 +3460,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_JAARBUDGET()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_JAARBUDGET.csv"
    dbms=csv;
@@ -3338,6 +3488,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_MANDAAT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_MANDAAT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3349,6 +3500,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_MANDAAT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_MANDAAT.csv"
    dbms=csv;
@@ -3372,6 +3524,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_OVEREENKOMST_DOCUMENT
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_OVEREENKOMST_DOCUMENT.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3383,6 +3536,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_OVEREENKOMST_DOCUMENT()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_OVEREENKOMST_DOCUMENT.csv"
    dbms=csv;
@@ -3425,6 +3579,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_PERIODE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_PERIODE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3436,6 +3591,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_PERIODE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_PERIODE.csv"
    dbms=csv;
@@ -3466,6 +3622,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_PRG_OVEREENKOMST
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_PRG_OVEREENKOMST.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3477,6 +3634,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_PRG_OVEREENKOMST()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_PRG_OVEREENKOMST.csv"
    dbms=csv;
@@ -3508,6 +3666,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_PROGRAMMAMEDEWERKERROL.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3519,6 +3678,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_PROGRAMMAMEDEWERKERROL.csv"
    dbms=csv;
@@ -3569,6 +3729,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_REGELING
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_REGELING.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3580,6 +3741,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_REGELING()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_REGELING.csv"
    dbms=csv;
@@ -3611,6 +3773,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_REGPAR_BUDGONDVERD
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_REGPAR_BUDGONDVERD.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3622,6 +3785,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_REGPAR_BUDGONDVERD()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_REGPAR_BUDGONDVERD.csv"
    dbms=csv;
@@ -3646,6 +3810,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_STATUSOVERG_BIJ_BRIEF.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3657,6 +3822,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_STATUSOVERG_BIJ_BRIEF.csv"
    dbms=csv;
@@ -3681,6 +3847,7 @@ QUIT;
 proc export
    data=WORK.BAS_RDM_VARIABELE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_RDM_VARIABELE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3692,6 +3859,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_RDM_VARIABELE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_RDM_VARIABELE.csv"
    dbms=csv;
@@ -3714,6 +3882,7 @@ QUIT;
 proc export
    data=WORK.BAS_STM_BSI
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_BSI.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3725,6 +3894,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_STM_BSI()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_STM_BSI.csv"
    dbms=csv;
@@ -3745,6 +3915,7 @@ QUIT;
 proc export
    data=WORK.BAS_STM_REACTIE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_REACTIE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3756,6 +3927,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_STM_REACTIE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_STM_REACTIE.csv"
    dbms=csv;
@@ -3783,6 +3955,7 @@ QUIT;
 proc export
    data=WORK.BAS_STM_ROL
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_ROL.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3794,6 +3967,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_STM_ROL()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_STM_ROL.csv"
    dbms=csv;
@@ -3814,6 +3988,7 @@ QUIT;
 proc export
    data=WORK.BAS_STM_SBI
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_SBI.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3825,6 +4000,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_STM_SBI()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_STM_SBI.csv"
    dbms=csv;
@@ -3849,6 +4025,7 @@ QUIT;
 proc export
    data=WORK.BAS_STM_STATUS
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_STATUS.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3860,6 +4037,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_STM_STATUS()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_STM_STATUS.csv"
    dbms=csv;
@@ -3882,6 +4060,7 @@ QUIT;
 proc export
    data=WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_STM_STATUSOVERG_BIJ_BRIEF.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3893,6 +4072,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_STM_STATUSOVERG_BIJ_BRIEF.csv"
    dbms=csv;
@@ -3911,6 +4091,7 @@ QUIT;
 proc export
    data=WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_VKM_TOEGEV_VAR_VELD_WAARDE.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3922,6 +4103,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_VKM_TOEGEV_VAR_VELD_WAARDE.csv"
    dbms=csv;
@@ -3947,6 +4129,7 @@ QUIT;
 proc export
    data=WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_VKM_TOEGEVOEGD_VAR_VELD.csv"
+   replace
    dbms=csv;
 run;
 
@@ -3958,6 +4141,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_VKM_TOEGEVOEGD_VAR_VELD.csv"
    dbms=csv;
@@ -4302,6 +4486,7 @@ QUIT;
 proc export
    data=WORK.BAS_VKM_VAR_GEGEVENS
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_VKM_VAR_GEGEVENS.csv"
+   replace
    dbms=csv;
 run;
 
@@ -4313,6 +4498,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_VKM_VAR_GEGEVENS()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_VKM_VAR_GEGEVENS.csv"
    dbms=csv;
@@ -4343,6 +4529,7 @@ QUIT;
 proc export
    data=WORK.BAS_VKM_VAR_KAART
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_VKM_VAR_KAART.csv"
+   replace
    dbms=csv;
 run;
 
@@ -4354,6 +4541,7 @@ PROC SURVEYSELECT DATA=WORK.BAS_VKM_VAR_KAART()
 RUN;
 
 proc export
+   replace
    data=WORK.RANDRandomSample
    outfile="\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\Samples\rnd_BAS_VKM_VAR_KAART.csv"
    dbms=csv;

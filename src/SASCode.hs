@@ -36,6 +36,7 @@ createStatement t =
       , "proc export"
       , "   data=WORK."<>tempTableName
       , "   outfile=\""<>outfilefull<>"\""
+      , "   replace"
       , "   dbms=csv;"
       , "run;"
       , ""
@@ -71,6 +72,7 @@ createStatement t =
         , "RUN;"
         , ""
         , "proc export"
+        , "   replace"
         , "   data=WORK.RANDRandomSample"
         , "   outfile=\""<>outfileSample<>"\""
         , "   dbms=csv;"
