@@ -67,7 +67,7 @@ createStatement t =
      mkCol att = 
           "t1."<>(if attNameNew att == attNameOrg att
                   then T.pack (attNameNew att)<>dataType att
-                  else "'"<>T.pack (attNameOrg att)<>"'n AS "<>T.pack (attNameNew att)
+                  else "'"<>T.pack (attNameOrg att)<>"'n"<>dataType att<>" AS "<>T.pack (attNameNew att)
                  ) 
      addSmallSample :: [Text]
      addSmallSample =
