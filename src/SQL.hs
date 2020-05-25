@@ -10,7 +10,11 @@ import qualified RIO.List as L
 import qualified RIO.Text as T
 
 makeLoadScript :: [Table] -> [Text]
-makeLoadScript = concatMap loadStatement
+makeLoadScript ts = 
+    [ "SET client_encoding = 'WINDOWS-1252';"
+    , ""
+    ]
+  <> concatMap loadStatement ts
 
 loadStatement :: Table -> [Text]
 loadStatement t = 

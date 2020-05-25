@@ -1,3 +1,4 @@
+SET client_encoding = 'WINDOWS-1252';
 TRUNCATE TABLE BAS_AOM_ACTIE;
 \COPY BAS_AOM_ACTIE(Actie_cd, Actie_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, techId) FROM 'PAD-NAAR_CSVsBAS_AOM_ACTIE.csv' DELIMITER ',' CSV HEADER;
 

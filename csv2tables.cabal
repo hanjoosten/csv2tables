@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 508e7c6e8d0f03939fc1612a52b3ae8e2e672bee4fd5f896f277b11900586c2c
+-- hash: 2b6382db167055073bbcce75beeb724f2141b1555e9b3c26b9c295d0a2400cd8
 
 name:           csv2tables
 version:        0.1.0.0
@@ -49,7 +49,6 @@ library
     , hspec
     , lens >=4.18
     , rio >=0.1.15.0
-    , xlsx
   default-language: Haskell2010
 
 executable csv2tables

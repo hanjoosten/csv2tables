@@ -38,8 +38,7 @@ ghc-options:
 
 library:
   source-dirs: src
-  dependencies:
-    - xlsx
+#  dependencies:
 
 executables:
   csv2tables:
