@@ -10,8 +10,9 @@ import qualified RIO.Text as T
 import qualified RIO.List as L
 
 tablesToCsv :: [Table] -> [Text]
-tablesToCsv = concatMap createStatement
-
+tablesToCsv = concatMap createStatement . filter isDossier
+  where isDossier :: Table -> Bool
+        isDossier t = tableNameNew t == "BAS_DAM_DOSSIER"
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
   where 
@@ -43,6 +44,7 @@ createStatement t =
       , "   outfile=\""<>outfilefull<>"\""
       , "   replace"
       , "   dbms=csv;"
+--      , "   LRECL=32767;"
       , "run;"
       , ""
       ]
