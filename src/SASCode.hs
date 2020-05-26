@@ -48,7 +48,7 @@ createStatement t =
       , "run;"
       , ""
       ]
-    <> addSmallSample
+    <> if False then addSmallSample else mempty
 --    <>[ ""  
 --      , "proc delete DATA=WORK."<>tempTableName<>";"
 --      , ""
