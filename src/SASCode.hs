@@ -1,4 +1,4 @@
-{-# LANGUAGE NoImplicitPrelude #-}
+﻿{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
 module SASCode 
     ( tablesToCsv
@@ -53,6 +53,7 @@ createStatement t =
       , ""
       ]
 -}
+    <> if False then addSmallSample else mempty
 
 --    <> addSmallSample
 --    <>[ ""  
