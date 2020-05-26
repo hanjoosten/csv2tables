@@ -8,7 +8,6 @@ module SASCode
 import Import
 import qualified RIO.Text as T
 import qualified RIO.List as L
-import qualified RIO.List.Partial as PARTIAL
 
 tablesToCsv :: [Table] -> [Text]
 tablesToCsv = concatMap createStatement . filter isDossier
@@ -131,12 +130,11 @@ createStatement t =
                 colNames :: [Text]
                 colNames = (map (T.pack . attNameNew) (attribs t) ++ ["techId"])
                 headerRow :: [Text]
-                headerRow = concatMap foo colNames
-                  where foo :: Text -> [Text]
-                        foo name = 
-                          [ "          "<>name<>" "
-                          , "       '"<>tshow (PARTIAL.maximum . map T.length $ colNames)<>"'x "
-                          ]
+                headerRow = L.intersperse  "       ','"
+                            (map foo colNames)
+                  where foo :: Text -> Text
+                        foo name = "          \""<>name<>"\" "
+                        
                 formatSegments :: [Text]
                 formatSegments = map foo (attribs t) ++
                   [ "       format techId best12. ; "
@@ -150,7 +148,27 @@ createStatement t =
                   ]
                   where 
                     foo :: Attrib -> Text
-                    foo att = "       put "<>(T.pack $ attNameNew att)<>" "<>csvFormat att<>" @;"
+                    foo att = T.intercalate "\n" $
+                        [ "       if missing("<>(T.pack $ attNameNew att)<>")"
+                        , "         then put \",\" @;"
+                        , "         else do;"
+                        , "                 if find("<>(T.pack $ attNameNew att)<>",'0A'x) > 0 and 2+klength("<>(T.pack $ attNameNew att)<>") = klength(quote(trim("<>(T.pack $ attNameNew att)<>")))"
+                        , "                   then put '22'x "<>(T.pack $ attNameNew att)<>" +(-1) '22'x \",\" @;"
+                        , "                   else put "<>(T.pack $ attNameNew att)<>" @;"
+                        ] 
+             --        <> (if sasType att == 1 
+             --               then [ "                 put \",\" @;"] 
+             --               else mempty
+             --        )    
+                     <> [ "              end;"
+                        ]
+--         else do;
+--                 if find(Titel,'0A'x) > 0 and 2+length(Titel) = length(quote(trim(Titel)))
+--                   then put '22'x Titel +(-1) '22'x "," @;
+--                   else put Titel @;
+--              end;
+
+
 
 
 csvFormat :: Attrib -> Text
@@ -164,7 +182,7 @@ csvFormat att =
                              8 -> "B8601DT19."
                              x -> " TODO: DATETIME ("<>tshow x<>")"
              x  ->  "TODO: sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
-      2 -> "$QUOTED"<>tshow (sasLength att+2)<>"."
+      2 -> ""
       x -> "TODO. sasType == "<>tshow x
 
 dataType :: Attrib -> Text
