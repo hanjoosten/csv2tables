@@ -10,9 +10,8 @@ import qualified RIO.Text as T
 import qualified RIO.List as L
 
 tablesToCsv :: [Table] -> [Text]
-tablesToCsv = concatMap createStatement . filter isDossier
-  where isDossier :: Table -> Bool
-        isDossier t = tableNameNew t == "BAS_DAM_DOSSIER"
+tablesToCsv = concatMap createStatement
+
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
   where 
