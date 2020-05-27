@@ -10,10 +10,10 @@ import qualified RIO.Text as T
 import qualified RIO.List as L
 
 tablesToCsv :: [Table] -> [Text]
-tablesToCsv = concatMap createStatement -- . filter testFilter
+tablesToCsv = concatMap createStatement -- . filter _testFilter
   where
-     testFilter :: Table -> Bool
-     testFilter t = "BAS_VKM_VAR_GEGEVENS" == tableNameNew t
+     _testFilter :: Table -> Bool
+     _testFilter t = "BAS_VKM_VAR_GEGEVENS" == tableNameNew t
 
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
@@ -42,34 +42,14 @@ createStatement t =
       , "run;"
       , ""
       ]
-    <> exportStatement outfilefull False
-{- Uitgecommentarieerd vanwege andere manier
-    <>[ "proc export"
-      , "   data=WORK."<>tempTableName
-      , "   outfile=\""<>outfilefull<>"\""
-      , "   replace"
-      , "   dbms=csv;"
---      , "   LRECL=32767;"
-      , "run;"
-      , ""
-      ]
--}
-    <> if False then addSmallSample else mempty
+    <> exportStatement outfilefull
 
---    <> addSmallSample
---    <>[ ""  
---      , "proc delete DATA=WORK."<>tempTableName<>";"
---      , ""
---      ]
    where
      tempTableName = T.take 32 $ T.pack (tableNameNew t)
      outDirPRD = "\\\\LNV.INTERN\\GRP\\TCMG\\002 Onderdelen\\34-kluismap MIRA Migratie bestanden\\SAS\\Output\\PRD\\"
      outfilefull = outDirPRD
                <> "RuweData\\"
                <> T.pack (tableNameNew t)<>".csv"
-     outfileSample = outDirPRD
-               <> "Samples\\"
-               <> "rnd_"<>T.pack (tableNameNew t)<>".csv"
      cols = "   SELECT "<> (T.intercalate ",\n          " . map mkCol . L.sort . attribs) t
      mkCol :: Attrib -> Text
      mkCol att = 
@@ -77,31 +57,9 @@ createStatement t =
                   then T.pack (attNameNew att)<>dataType att
                   else "'"<>T.pack (attNameOrg att)<>"'n"<>dataType att<>" AS "<>T.pack (attNameNew att)
                  ) 
-     addSmallSample :: [Text]
-     addSmallSample =
-        [ "PROC SURVEYSELECT DATA=WORK."<>tempTableName<>"()"
-        , "   OUT=WORK.RANDRandomSample"
-        , "   METHOD=SRS"
-        , "   SELECTALL"
-        , "   N=25;"
-        , "RUN;"
-        , ""
-        ]
-      <> exportStatement outfileSample True
-      <> map toSASComment
-        [ "proc export"
-        , "   replace"
-        , "   data=WORK.RANDRandomSample"
-        , "   outfile=\""<>outfileSample<>"\""
-        , "   dbms=csv;"
-        , "run;"
-        , ""
-        , "proc delete DATA=WORK.RANDRandomSample;"
-        ]
      exportStatement :: Text -- String containing the complete path of the file to write
-                     -> Bool   -- isRandomSubset?  
                      -> [Text]
-     exportStatement outfile isRandomSubset=
+     exportStatement outfile =
                   [ ""
                   , "data _null_; "
                   , "    %let _EFIERR_ = 0; /* set the ERROR detection macro variable */ "
@@ -114,7 +72,7 @@ createStatement t =
                 <> headerRow
                 <>[ "       ; "
                   , "     end; "
-                  , "   set  WORK."<>(if isRandomSubset then "RANDRandomSample" else tempTableName)<>"   end=EFIEOD; "
+                  , "   set  WORK."<>tempTableName<>"   end=EFIEOD; "
                   ]
                 <> formatSegments   
                 <>[ "     do; "
@@ -197,9 +155,6 @@ dataType att =
       2 -> ""
       x -> "TODO. sasType == "<>tshow x
 
-
-toSASComment :: Text -> Text
-toSASComment line = " /* " <> line <> " */ "
 
 -- | Dit is een opsomming van velden waar problemen met newline / UTF8 codering in voorkomen. 
 --   Voor de korte termijn gaan we die vullen met dummy tekst
