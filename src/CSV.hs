@@ -89,7 +89,7 @@ mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
          lkpStr :: String -> String
          lkpStr key = fromMaybe err $ Map.lookup key kvs
             where err =fatal $ "String is missing. (key = "<>T.pack key<>")." 
-         lkpInt :: String -> Integer
+         lkpInt :: String -> Int
          lkpInt key = fromMaybe err $ readMaybe $ lkpStr key
             where err =fatal $ "Value is not an integer."
 

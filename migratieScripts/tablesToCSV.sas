@@ -24533,13 +24533,8 @@ data _null_;
        put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        /* OPGELET: TEKSTBLOK_10 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
        put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
-       if missing(VARCHAR_60_01)
-         then put "," @;
-         else do;
-                 if find(VARCHAR_60_01,'0A'x) > 0 and 2+klength(VARCHAR_60_01) = klength(quote(trim(VARCHAR_60_01)))
-                   then put '22'x VARCHAR_60_01 +(-1) '22'x "," @;
-                   else put VARCHAR_60_01 @;
-              end;
+       /* OPGELET: VARCHAR_60_01 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. " +(-1) '22'x "," @;
        if missing(VARCHAR_60_02)
          then put "," @;
          else do;

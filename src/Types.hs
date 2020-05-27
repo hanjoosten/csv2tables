@@ -40,13 +40,13 @@ data Attrib = Attrib
     , attTableNew :: !String
     , attNameOrg  :: !String
     , attNameNew  :: !String
-    , sasType :: !Integer
-    , sasLength :: !Integer
-    , sasVarNum :: !Integer
+    , sasType :: !Int
+    , sasLength :: !Int
+    , sasVarNum :: !Int
     , sasLable :: !String
     , sasFormat :: !String
-    , sasFormatL :: !Integer
-    , sasFormatD :: !Integer
+    , sasFormatL :: !Int
+    , sasFormatD :: !Int
     } deriving Show
 instance Ord Attrib where
   compare a b = compare (attTableNew a, sasVarNum a) (attTableNew b, sasVarNum b)
