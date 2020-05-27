@@ -26,13 +26,13 @@ data _null_;
        ','
           "Actie_oms" 
        ','
-          "Creatie_dat" 
-       ','
           "Creatie_user" 
        ','
-          "Mutatie_dat" 
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
@@ -40,10 +40,10 @@ data _null_;
    set  WORK.BAS_AOM_ACTIE   end=EFIEOD; 
        format Actie_cd  ;
        format Actie_oms  ;
-       format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Creatie_dat B8601DT19. ;
        format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -61,13 +61,6 @@ data _null_;
                    then put '22'x Actie_oms +(-1) '22'x "," @;
                    else put Actie_oms @;
               end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
        if missing(Creatie_user)
          then put "," @;
          else do;
@@ -75,12 +68,12 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Creatie_dat)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -88,6 +81,13 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -396,112 +396,133 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aanleverdatum" 
+          "Rel_id" 
+       ','
+          "Tra_id" 
+       ','
+          "Reg_cd" 
+       ','
+          "Dos_cd" 
        ','
           "Bedrag" 
        ','
           "Bedrag_nlg" 
        ','
-          "Beg_bic" 
+          "Omschrijving" 
        ','
-          "Beg_iban" 
-       ','
-          "Betaal_datum" 
-       ','
-          "Betaalrun_id" 
-       ','
-          "Betaling_id" 
+          "Naam_begunstigde" 
        ','
           "Betalingskenmerk" 
        ','
-          "Betalingsverzoeknummer" 
+          "Plaats" 
        ','
-          "Bic" 
+          "Aanleverdatum" 
+       ','
+          "Status" 
+       ','
+          "Betaalrun_id" 
        ','
           "Bron" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Dos_cd" 
-       ','
-          "Iban" 
        ','
           "Invoerdatum" 
        ','
           "Mdw_id" 
        ','
+          "Betaling_id" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Creatie_user" 
+       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Naam_begunstigde" 
+          "Iban" 
        ','
-          "Omschrijving" 
+          "Bic" 
        ','
-          "On_hold_jn" 
+          "Beg_bic" 
        ','
-          "Parkeer_valutadatum" 
-       ','
-          "Plaats" 
-       ','
-          "Reg_cd" 
-       ','
-          "Rel_id" 
+          "Beg_iban" 
        ','
           "Sepa_betaling_indicatie" 
        ','
+          "Parkeer_valutadatum" 
+       ','
+          "Betalingsverzoeknummer" 
+       ','
+          "Betaal_datum" 
+       ','
+          "On_hold_jn" 
+       ','
           "Sepa_xsd_bevinding" 
-       ','
-          "Status" 
-       ','
-          "Tra_id" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_BTM_BETALING   end=EFIEOD; 
-       format Aanleverdatum B8601DT19. ;
+       format Rel_id best12. ;
+       format Tra_id best12. ;
+       format Reg_cd  ;
+       format Dos_cd  ;
        format Bedrag best12. ;
        format Bedrag_nlg best12. ;
-       format Beg_bic  ;
-       format Beg_iban  ;
-       format Betaal_datum B8601DT19. ;
-       format Betaalrun_id best12. ;
-       format Betaling_id best12. ;
+       format Omschrijving  ;
+       format Naam_begunstigde  ;
        format Betalingskenmerk  ;
-       format Betalingsverzoeknummer  ;
-       format Bic  ;
+       format Plaats  ;
+       format Aanleverdatum B8601DT19. ;
+       format Status  ;
+       format Betaalrun_id best12. ;
        format Bron  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Dos_cd  ;
-       format Iban  ;
        format Invoerdatum B8601DT19. ;
        format Mdw_id best12. ;
+       format Betaling_id best12. ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Naam_begunstigde  ;
-       format Omschrijving  ;
-       format On_hold_jn  ;
-       format Parkeer_valutadatum B8601DT19. ;
-       format Plaats  ;
-       format Reg_cd  ;
-       format Rel_id best12. ;
+       format Iban  ;
+       format Bic  ;
+       format Beg_bic  ;
+       format Beg_iban  ;
        format Sepa_betaling_indicatie  ;
+       format Parkeer_valutadatum B8601DT19. ;
+       format Betalingsverzoeknummer  ;
+       format Betaal_datum B8601DT19. ;
+       format On_hold_jn  ;
        format Sepa_xsd_bevinding  ;
-       format Status  ;
-       format Tra_id best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aanleverdatum)
+       if missing(Rel_id)
          then put "," @;
          else do;
-                 if find(Aanleverdatum,'0A'x) > 0 and 2+klength(Aanleverdatum) = klength(quote(trim(Aanleverdatum)))
-                   then put '22'x Aanleverdatum +(-1) '22'x "," @;
-                   else put Aanleverdatum @;
+                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
+                   then put '22'x Rel_id +(-1) '22'x "," @;
+                   else put Rel_id @;
+              end;
+       if missing(Tra_id)
+         then put "," @;
+         else do;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
+              end;
+       if missing(Reg_cd)
+         then put "," @;
+         else do;
+                 if find(Reg_cd,'0A'x) > 0 and 2+klength(Reg_cd) = klength(quote(trim(Reg_cd)))
+                   then put '22'x Reg_cd +(-1) '22'x "," @;
+                   else put Reg_cd @;
+              end;
+       if missing(Dos_cd)
+         then put "," @;
+         else do;
+                 if find(Dos_cd,'0A'x) > 0 and 2+klength(Dos_cd) = klength(quote(trim(Dos_cd)))
+                   then put '22'x Dos_cd +(-1) '22'x "," @;
+                   else put Dos_cd @;
               end;
        if missing(Bedrag)
          then put "," @;
@@ -517,40 +538,19 @@ data _null_;
                    then put '22'x Bedrag_nlg +(-1) '22'x "," @;
                    else put Bedrag_nlg @;
               end;
-       if missing(Beg_bic)
+       if missing(Omschrijving)
          then put "," @;
          else do;
-                 if find(Beg_bic,'0A'x) > 0 and 2+klength(Beg_bic) = klength(quote(trim(Beg_bic)))
-                   then put '22'x Beg_bic +(-1) '22'x "," @;
-                   else put Beg_bic @;
+                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
+                   then put '22'x Omschrijving +(-1) '22'x "," @;
+                   else put Omschrijving @;
               end;
-       if missing(Beg_iban)
+       if missing(Naam_begunstigde)
          then put "," @;
          else do;
-                 if find(Beg_iban,'0A'x) > 0 and 2+klength(Beg_iban) = klength(quote(trim(Beg_iban)))
-                   then put '22'x Beg_iban +(-1) '22'x "," @;
-                   else put Beg_iban @;
-              end;
-       if missing(Betaal_datum)
-         then put "," @;
-         else do;
-                 if find(Betaal_datum,'0A'x) > 0 and 2+klength(Betaal_datum) = klength(quote(trim(Betaal_datum)))
-                   then put '22'x Betaal_datum +(-1) '22'x "," @;
-                   else put Betaal_datum @;
-              end;
-       if missing(Betaalrun_id)
-         then put "," @;
-         else do;
-                 if find(Betaalrun_id,'0A'x) > 0 and 2+klength(Betaalrun_id) = klength(quote(trim(Betaalrun_id)))
-                   then put '22'x Betaalrun_id +(-1) '22'x "," @;
-                   else put Betaalrun_id @;
-              end;
-       if missing(Betaling_id)
-         then put "," @;
-         else do;
-                 if find(Betaling_id,'0A'x) > 0 and 2+klength(Betaling_id) = klength(quote(trim(Betaling_id)))
-                   then put '22'x Betaling_id +(-1) '22'x "," @;
-                   else put Betaling_id @;
+                 if find(Naam_begunstigde,'0A'x) > 0 and 2+klength(Naam_begunstigde) = klength(quote(trim(Naam_begunstigde)))
+                   then put '22'x Naam_begunstigde +(-1) '22'x "," @;
+                   else put Naam_begunstigde @;
               end;
        if missing(Betalingskenmerk)
          then put "," @;
@@ -559,19 +559,33 @@ data _null_;
                    then put '22'x Betalingskenmerk +(-1) '22'x "," @;
                    else put Betalingskenmerk @;
               end;
-       if missing(Betalingsverzoeknummer)
+       if missing(Plaats)
          then put "," @;
          else do;
-                 if find(Betalingsverzoeknummer,'0A'x) > 0 and 2+klength(Betalingsverzoeknummer) = klength(quote(trim(Betalingsverzoeknummer)))
-                   then put '22'x Betalingsverzoeknummer +(-1) '22'x "," @;
-                   else put Betalingsverzoeknummer @;
+                 if find(Plaats,'0A'x) > 0 and 2+klength(Plaats) = klength(quote(trim(Plaats)))
+                   then put '22'x Plaats +(-1) '22'x "," @;
+                   else put Plaats @;
               end;
-       if missing(Bic)
+       if missing(Aanleverdatum)
          then put "," @;
          else do;
-                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
-                   then put '22'x Bic +(-1) '22'x "," @;
-                   else put Bic @;
+                 if find(Aanleverdatum,'0A'x) > 0 and 2+klength(Aanleverdatum) = klength(quote(trim(Aanleverdatum)))
+                   then put '22'x Aanleverdatum +(-1) '22'x "," @;
+                   else put Aanleverdatum @;
+              end;
+       if missing(Status)
+         then put "," @;
+         else do;
+                 if find(Status,'0A'x) > 0 and 2+klength(Status) = klength(quote(trim(Status)))
+                   then put '22'x Status +(-1) '22'x "," @;
+                   else put Status @;
+              end;
+       if missing(Betaalrun_id)
+         then put "," @;
+         else do;
+                 if find(Betaalrun_id,'0A'x) > 0 and 2+klength(Betaalrun_id) = klength(quote(trim(Betaalrun_id)))
+                   then put '22'x Betaalrun_id +(-1) '22'x "," @;
+                   else put Betaalrun_id @;
               end;
        if missing(Bron)
          then put "," @;
@@ -579,34 +593,6 @@ data _null_;
                  if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
                    then put '22'x Bron +(-1) '22'x "," @;
                    else put Bron @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Dos_cd)
-         then put "," @;
-         else do;
-                 if find(Dos_cd,'0A'x) > 0 and 2+klength(Dos_cd) = klength(quote(trim(Dos_cd)))
-                   then put '22'x Dos_cd +(-1) '22'x "," @;
-                   else put Dos_cd @;
-              end;
-       if missing(Iban)
-         then put "," @;
-         else do;
-                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
-                   then put '22'x Iban +(-1) '22'x "," @;
-                   else put Iban @;
               end;
        if missing(Invoerdatum)
          then put "," @;
@@ -622,6 +608,27 @@ data _null_;
                    then put '22'x Mdw_id +(-1) '22'x "," @;
                    else put Mdw_id @;
               end;
+       if missing(Betaling_id)
+         then put "," @;
+         else do;
+                 if find(Betaling_id,'0A'x) > 0 and 2+klength(Betaling_id) = klength(quote(trim(Betaling_id)))
+                   then put '22'x Betaling_id +(-1) '22'x "," @;
+                   else put Betaling_id @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -636,54 +643,33 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Naam_begunstigde)
+       if missing(Iban)
          then put "," @;
          else do;
-                 if find(Naam_begunstigde,'0A'x) > 0 and 2+klength(Naam_begunstigde) = klength(quote(trim(Naam_begunstigde)))
-                   then put '22'x Naam_begunstigde +(-1) '22'x "," @;
-                   else put Naam_begunstigde @;
+                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
+                   then put '22'x Iban +(-1) '22'x "," @;
+                   else put Iban @;
               end;
-       if missing(Omschrijving)
+       if missing(Bic)
          then put "," @;
          else do;
-                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
-                   then put '22'x Omschrijving +(-1) '22'x "," @;
-                   else put Omschrijving @;
+                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
+                   then put '22'x Bic +(-1) '22'x "," @;
+                   else put Bic @;
               end;
-       if missing(On_hold_jn)
+       if missing(Beg_bic)
          then put "," @;
          else do;
-                 if find(On_hold_jn,'0A'x) > 0 and 2+klength(On_hold_jn) = klength(quote(trim(On_hold_jn)))
-                   then put '22'x On_hold_jn +(-1) '22'x "," @;
-                   else put On_hold_jn @;
+                 if find(Beg_bic,'0A'x) > 0 and 2+klength(Beg_bic) = klength(quote(trim(Beg_bic)))
+                   then put '22'x Beg_bic +(-1) '22'x "," @;
+                   else put Beg_bic @;
               end;
-       if missing(Parkeer_valutadatum)
+       if missing(Beg_iban)
          then put "," @;
          else do;
-                 if find(Parkeer_valutadatum,'0A'x) > 0 and 2+klength(Parkeer_valutadatum) = klength(quote(trim(Parkeer_valutadatum)))
-                   then put '22'x Parkeer_valutadatum +(-1) '22'x "," @;
-                   else put Parkeer_valutadatum @;
-              end;
-       if missing(Plaats)
-         then put "," @;
-         else do;
-                 if find(Plaats,'0A'x) > 0 and 2+klength(Plaats) = klength(quote(trim(Plaats)))
-                   then put '22'x Plaats +(-1) '22'x "," @;
-                   else put Plaats @;
-              end;
-       if missing(Reg_cd)
-         then put "," @;
-         else do;
-                 if find(Reg_cd,'0A'x) > 0 and 2+klength(Reg_cd) = klength(quote(trim(Reg_cd)))
-                   then put '22'x Reg_cd +(-1) '22'x "," @;
-                   else put Reg_cd @;
-              end;
-       if missing(Rel_id)
-         then put "," @;
-         else do;
-                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
-                   then put '22'x Rel_id +(-1) '22'x "," @;
-                   else put Rel_id @;
+                 if find(Beg_iban,'0A'x) > 0 and 2+klength(Beg_iban) = klength(quote(trim(Beg_iban)))
+                   then put '22'x Beg_iban +(-1) '22'x "," @;
+                   else put Beg_iban @;
               end;
        if missing(Sepa_betaling_indicatie)
          then put "," @;
@@ -692,26 +678,40 @@ data _null_;
                    then put '22'x Sepa_betaling_indicatie +(-1) '22'x "," @;
                    else put Sepa_betaling_indicatie @;
               end;
+       if missing(Parkeer_valutadatum)
+         then put "," @;
+         else do;
+                 if find(Parkeer_valutadatum,'0A'x) > 0 and 2+klength(Parkeer_valutadatum) = klength(quote(trim(Parkeer_valutadatum)))
+                   then put '22'x Parkeer_valutadatum +(-1) '22'x "," @;
+                   else put Parkeer_valutadatum @;
+              end;
+       if missing(Betalingsverzoeknummer)
+         then put "," @;
+         else do;
+                 if find(Betalingsverzoeknummer,'0A'x) > 0 and 2+klength(Betalingsverzoeknummer) = klength(quote(trim(Betalingsverzoeknummer)))
+                   then put '22'x Betalingsverzoeknummer +(-1) '22'x "," @;
+                   else put Betalingsverzoeknummer @;
+              end;
+       if missing(Betaal_datum)
+         then put "," @;
+         else do;
+                 if find(Betaal_datum,'0A'x) > 0 and 2+klength(Betaal_datum) = klength(quote(trim(Betaal_datum)))
+                   then put '22'x Betaal_datum +(-1) '22'x "," @;
+                   else put Betaal_datum @;
+              end;
+       if missing(On_hold_jn)
+         then put "," @;
+         else do;
+                 if find(On_hold_jn,'0A'x) > 0 and 2+klength(On_hold_jn) = klength(quote(trim(On_hold_jn)))
+                   then put '22'x On_hold_jn +(-1) '22'x "," @;
+                   else put On_hold_jn @;
+              end;
        if missing(Sepa_xsd_bevinding)
          then put "," @;
          else do;
                  if find(Sepa_xsd_bevinding,'0A'x) > 0 and 2+klength(Sepa_xsd_bevinding) = klength(quote(trim(Sepa_xsd_bevinding)))
                    then put '22'x Sepa_xsd_bevinding +(-1) '22'x "," @;
                    else put Sepa_xsd_bevinding @;
-              end;
-       if missing(Status)
-         then put "," @;
-         else do;
-                 if find(Status,'0A'x) > 0 and 2+klength(Status) = klength(quote(trim(Status)))
-                   then put '22'x Status +(-1) '22'x "," @;
-                   else put Status @;
-              end;
-       if missing(Tra_id)
-         then put "," @;
-         else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
               end;
        put techId best12. ; 
        ; 
@@ -767,106 +767,127 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aanleverdatum" 
+          "Rel_id" 
+       ','
+          "Tra_id" 
+       ','
+          "Reg_cd" 
+       ','
+          "Dos_cd" 
        ','
           "Bedrag" 
        ','
           "Bedrag_nlg" 
        ','
+          "Omschrijving" 
+       ','
+          "Naam_begunstigde" 
+       ','
+          "Plaats" 
+       ','
+          "Rekeningnummer" 
+       ','
+          "Senterrekening" 
+       ','
+          "Aanleverdatum" 
+       ','
+          "Betaalrun_id" 
+       ','
+          "Bron" 
+       ','
+          "Valutadatum" 
+       ','
+          "Invoerdatum" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mdw_id" 
+       ','
+          "Betalingskenmerk" 
+       ','
+          "Iban" 
+       ','
+          "Bic" 
+       ','
           "Beg_bic" 
        ','
           "Beg_iban" 
        ','
-          "Betaalrun_id" 
-       ','
-          "Betalingskenmerk" 
-       ','
-          "Betalingsverzoeknummer" 
-       ','
-          "Bic" 
-       ','
-          "Bron" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Dos_cd" 
-       ','
-          "Iban" 
-       ','
-          "Invoerdatum" 
-       ','
-          "Mdw_id" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Naam_begunstigde" 
-       ','
-          "Omschrijving" 
+          "Sepa_betaling_indicatie" 
        ','
           "Parkeer_valutadatum" 
        ','
-          "Plaats" 
-       ','
-          "Reg_cd" 
-       ','
-          "Rekeningnummer" 
-       ','
-          "Rel_id" 
-       ','
-          "Senterrekening" 
-       ','
-          "Sepa_betaling_indicatie" 
-       ','
-          "Tra_id" 
-       ','
-          "Valutadatum" 
+          "Betalingsverzoeknummer" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_BTM_HIST_BETALING   end=EFIEOD; 
-       format Aanleverdatum B8601DT19. ;
+       format Rel_id best12. ;
+       format Tra_id best12. ;
+       format Reg_cd  ;
+       format Dos_cd  ;
        format Bedrag best12. ;
        format Bedrag_nlg best12. ;
+       format Omschrijving  ;
+       format Naam_begunstigde  ;
+       format Plaats  ;
+       format Rekeningnummer best12. ;
+       format Senterrekening best12. ;
+       format Aanleverdatum B8601DT19. ;
+       format Betaalrun_id best12. ;
+       format Bron  ;
+       format Valutadatum B8601DT19. ;
+       format Invoerdatum B8601DT19. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mdw_id best12. ;
+       format Betalingskenmerk  ;
+       format Iban  ;
+       format Bic  ;
        format Beg_bic  ;
        format Beg_iban  ;
-       format Betaalrun_id best12. ;
-       format Betalingskenmerk  ;
-       format Betalingsverzoeknummer  ;
-       format Bic  ;
-       format Bron  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Dos_cd  ;
-       format Iban  ;
-       format Invoerdatum B8601DT19. ;
-       format Mdw_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Naam_begunstigde  ;
-       format Omschrijving  ;
-       format Parkeer_valutadatum B8601DT19. ;
-       format Plaats  ;
-       format Reg_cd  ;
-       format Rekeningnummer best12. ;
-       format Rel_id best12. ;
-       format Senterrekening best12. ;
        format Sepa_betaling_indicatie  ;
-       format Tra_id best12. ;
-       format Valutadatum B8601DT19. ;
+       format Parkeer_valutadatum B8601DT19. ;
+       format Betalingsverzoeknummer  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aanleverdatum)
+       if missing(Rel_id)
          then put "," @;
          else do;
-                 if find(Aanleverdatum,'0A'x) > 0 and 2+klength(Aanleverdatum) = klength(quote(trim(Aanleverdatum)))
-                   then put '22'x Aanleverdatum +(-1) '22'x "," @;
-                   else put Aanleverdatum @;
+                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
+                   then put '22'x Rel_id +(-1) '22'x "," @;
+                   else put Rel_id @;
+              end;
+       if missing(Tra_id)
+         then put "," @;
+         else do;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
+              end;
+       if missing(Reg_cd)
+         then put "," @;
+         else do;
+                 if find(Reg_cd,'0A'x) > 0 and 2+klength(Reg_cd) = klength(quote(trim(Reg_cd)))
+                   then put '22'x Reg_cd +(-1) '22'x "," @;
+                   else put Reg_cd @;
+              end;
+       if missing(Dos_cd)
+         then put "," @;
+         else do;
+                 if find(Dos_cd,'0A'x) > 0 and 2+klength(Dos_cd) = klength(quote(trim(Dos_cd)))
+                   then put '22'x Dos_cd +(-1) '22'x "," @;
+                   else put Dos_cd @;
               end;
        if missing(Bedrag)
          then put "," @;
@@ -882,6 +903,132 @@ data _null_;
                    then put '22'x Bedrag_nlg +(-1) '22'x "," @;
                    else put Bedrag_nlg @;
               end;
+       if missing(Omschrijving)
+         then put "," @;
+         else do;
+                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
+                   then put '22'x Omschrijving +(-1) '22'x "," @;
+                   else put Omschrijving @;
+              end;
+       if missing(Naam_begunstigde)
+         then put "," @;
+         else do;
+                 if find(Naam_begunstigde,'0A'x) > 0 and 2+klength(Naam_begunstigde) = klength(quote(trim(Naam_begunstigde)))
+                   then put '22'x Naam_begunstigde +(-1) '22'x "," @;
+                   else put Naam_begunstigde @;
+              end;
+       if missing(Plaats)
+         then put "," @;
+         else do;
+                 if find(Plaats,'0A'x) > 0 and 2+klength(Plaats) = klength(quote(trim(Plaats)))
+                   then put '22'x Plaats +(-1) '22'x "," @;
+                   else put Plaats @;
+              end;
+       if missing(Rekeningnummer)
+         then put "," @;
+         else do;
+                 if find(Rekeningnummer,'0A'x) > 0 and 2+klength(Rekeningnummer) = klength(quote(trim(Rekeningnummer)))
+                   then put '22'x Rekeningnummer +(-1) '22'x "," @;
+                   else put Rekeningnummer @;
+              end;
+       if missing(Senterrekening)
+         then put "," @;
+         else do;
+                 if find(Senterrekening,'0A'x) > 0 and 2+klength(Senterrekening) = klength(quote(trim(Senterrekening)))
+                   then put '22'x Senterrekening +(-1) '22'x "," @;
+                   else put Senterrekening @;
+              end;
+       if missing(Aanleverdatum)
+         then put "," @;
+         else do;
+                 if find(Aanleverdatum,'0A'x) > 0 and 2+klength(Aanleverdatum) = klength(quote(trim(Aanleverdatum)))
+                   then put '22'x Aanleverdatum +(-1) '22'x "," @;
+                   else put Aanleverdatum @;
+              end;
+       if missing(Betaalrun_id)
+         then put "," @;
+         else do;
+                 if find(Betaalrun_id,'0A'x) > 0 and 2+klength(Betaalrun_id) = klength(quote(trim(Betaalrun_id)))
+                   then put '22'x Betaalrun_id +(-1) '22'x "," @;
+                   else put Betaalrun_id @;
+              end;
+       if missing(Bron)
+         then put "," @;
+         else do;
+                 if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
+                   then put '22'x Bron +(-1) '22'x "," @;
+                   else put Bron @;
+              end;
+       if missing(Valutadatum)
+         then put "," @;
+         else do;
+                 if find(Valutadatum,'0A'x) > 0 and 2+klength(Valutadatum) = klength(quote(trim(Valutadatum)))
+                   then put '22'x Valutadatum +(-1) '22'x "," @;
+                   else put Valutadatum @;
+              end;
+       if missing(Invoerdatum)
+         then put "," @;
+         else do;
+                 if find(Invoerdatum,'0A'x) > 0 and 2+klength(Invoerdatum) = klength(quote(trim(Invoerdatum)))
+                   then put '22'x Invoerdatum +(-1) '22'x "," @;
+                   else put Invoerdatum @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mdw_id)
+         then put "," @;
+         else do;
+                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
+                   then put '22'x Mdw_id +(-1) '22'x "," @;
+                   else put Mdw_id @;
+              end;
+       if missing(Betalingskenmerk)
+         then put "," @;
+         else do;
+                 if find(Betalingskenmerk,'0A'x) > 0 and 2+klength(Betalingskenmerk) = klength(quote(trim(Betalingskenmerk)))
+                   then put '22'x Betalingskenmerk +(-1) '22'x "," @;
+                   else put Betalingskenmerk @;
+              end;
+       if missing(Iban)
+         then put "," @;
+         else do;
+                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
+                   then put '22'x Iban +(-1) '22'x "," @;
+                   else put Iban @;
+              end;
+       if missing(Bic)
+         then put "," @;
+         else do;
+                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
+                   then put '22'x Bic +(-1) '22'x "," @;
+                   else put Bic @;
+              end;
        if missing(Beg_bic)
          then put "," @;
          else do;
@@ -896,110 +1043,12 @@ data _null_;
                    then put '22'x Beg_iban +(-1) '22'x "," @;
                    else put Beg_iban @;
               end;
-       if missing(Betaalrun_id)
+       if missing(Sepa_betaling_indicatie)
          then put "," @;
          else do;
-                 if find(Betaalrun_id,'0A'x) > 0 and 2+klength(Betaalrun_id) = klength(quote(trim(Betaalrun_id)))
-                   then put '22'x Betaalrun_id +(-1) '22'x "," @;
-                   else put Betaalrun_id @;
-              end;
-       if missing(Betalingskenmerk)
-         then put "," @;
-         else do;
-                 if find(Betalingskenmerk,'0A'x) > 0 and 2+klength(Betalingskenmerk) = klength(quote(trim(Betalingskenmerk)))
-                   then put '22'x Betalingskenmerk +(-1) '22'x "," @;
-                   else put Betalingskenmerk @;
-              end;
-       if missing(Betalingsverzoeknummer)
-         then put "," @;
-         else do;
-                 if find(Betalingsverzoeknummer,'0A'x) > 0 and 2+klength(Betalingsverzoeknummer) = klength(quote(trim(Betalingsverzoeknummer)))
-                   then put '22'x Betalingsverzoeknummer +(-1) '22'x "," @;
-                   else put Betalingsverzoeknummer @;
-              end;
-       if missing(Bic)
-         then put "," @;
-         else do;
-                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
-                   then put '22'x Bic +(-1) '22'x "," @;
-                   else put Bic @;
-              end;
-       if missing(Bron)
-         then put "," @;
-         else do;
-                 if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
-                   then put '22'x Bron +(-1) '22'x "," @;
-                   else put Bron @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Dos_cd)
-         then put "," @;
-         else do;
-                 if find(Dos_cd,'0A'x) > 0 and 2+klength(Dos_cd) = klength(quote(trim(Dos_cd)))
-                   then put '22'x Dos_cd +(-1) '22'x "," @;
-                   else put Dos_cd @;
-              end;
-       if missing(Iban)
-         then put "," @;
-         else do;
-                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
-                   then put '22'x Iban +(-1) '22'x "," @;
-                   else put Iban @;
-              end;
-       if missing(Invoerdatum)
-         then put "," @;
-         else do;
-                 if find(Invoerdatum,'0A'x) > 0 and 2+klength(Invoerdatum) = klength(quote(trim(Invoerdatum)))
-                   then put '22'x Invoerdatum +(-1) '22'x "," @;
-                   else put Invoerdatum @;
-              end;
-       if missing(Mdw_id)
-         then put "," @;
-         else do;
-                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
-                   then put '22'x Mdw_id +(-1) '22'x "," @;
-                   else put Mdw_id @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Naam_begunstigde)
-         then put "," @;
-         else do;
-                 if find(Naam_begunstigde,'0A'x) > 0 and 2+klength(Naam_begunstigde) = klength(quote(trim(Naam_begunstigde)))
-                   then put '22'x Naam_begunstigde +(-1) '22'x "," @;
-                   else put Naam_begunstigde @;
-              end;
-       if missing(Omschrijving)
-         then put "," @;
-         else do;
-                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
-                   then put '22'x Omschrijving +(-1) '22'x "," @;
-                   else put Omschrijving @;
+                 if find(Sepa_betaling_indicatie,'0A'x) > 0 and 2+klength(Sepa_betaling_indicatie) = klength(quote(trim(Sepa_betaling_indicatie)))
+                   then put '22'x Sepa_betaling_indicatie +(-1) '22'x "," @;
+                   else put Sepa_betaling_indicatie @;
               end;
        if missing(Parkeer_valutadatum)
          then put "," @;
@@ -1008,61 +1057,12 @@ data _null_;
                    then put '22'x Parkeer_valutadatum +(-1) '22'x "," @;
                    else put Parkeer_valutadatum @;
               end;
-       if missing(Plaats)
+       if missing(Betalingsverzoeknummer)
          then put "," @;
          else do;
-                 if find(Plaats,'0A'x) > 0 and 2+klength(Plaats) = klength(quote(trim(Plaats)))
-                   then put '22'x Plaats +(-1) '22'x "," @;
-                   else put Plaats @;
-              end;
-       if missing(Reg_cd)
-         then put "," @;
-         else do;
-                 if find(Reg_cd,'0A'x) > 0 and 2+klength(Reg_cd) = klength(quote(trim(Reg_cd)))
-                   then put '22'x Reg_cd +(-1) '22'x "," @;
-                   else put Reg_cd @;
-              end;
-       if missing(Rekeningnummer)
-         then put "," @;
-         else do;
-                 if find(Rekeningnummer,'0A'x) > 0 and 2+klength(Rekeningnummer) = klength(quote(trim(Rekeningnummer)))
-                   then put '22'x Rekeningnummer +(-1) '22'x "," @;
-                   else put Rekeningnummer @;
-              end;
-       if missing(Rel_id)
-         then put "," @;
-         else do;
-                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
-                   then put '22'x Rel_id +(-1) '22'x "," @;
-                   else put Rel_id @;
-              end;
-       if missing(Senterrekening)
-         then put "," @;
-         else do;
-                 if find(Senterrekening,'0A'x) > 0 and 2+klength(Senterrekening) = klength(quote(trim(Senterrekening)))
-                   then put '22'x Senterrekening +(-1) '22'x "," @;
-                   else put Senterrekening @;
-              end;
-       if missing(Sepa_betaling_indicatie)
-         then put "," @;
-         else do;
-                 if find(Sepa_betaling_indicatie,'0A'x) > 0 and 2+klength(Sepa_betaling_indicatie) = klength(quote(trim(Sepa_betaling_indicatie)))
-                   then put '22'x Sepa_betaling_indicatie +(-1) '22'x "," @;
-                   else put Sepa_betaling_indicatie @;
-              end;
-       if missing(Tra_id)
-         then put "," @;
-         else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
-              end;
-       if missing(Valutadatum)
-         then put "," @;
-         else do;
-                 if find(Valutadatum,'0A'x) > 0 and 2+klength(Valutadatum) = klength(quote(trim(Valutadatum)))
-                   then put '22'x Valutadatum +(-1) '22'x "," @;
-                   else put Valutadatum @;
+                 if find(Betalingsverzoeknummer,'0A'x) > 0 and 2+klength(Betalingsverzoeknummer) = klength(quote(trim(Betalingsverzoeknummer)))
+                   then put '22'x Betalingsverzoeknummer +(-1) '22'x "," @;
+                   else put Betalingsverzoeknummer @;
               end;
        put techId best12. ; 
        ; 
@@ -1107,102 +1107,67 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Afzender_id" 
-       ','
-          "Archief_cor_id" 
-       ','
-          "Batch_status" 
-       ','
-          "Bron" 
-       ','
-          "Certserienummer" 
-       ','
           "Cor_id" 
        ','
           "Ed_bericht_id" 
        ','
-          "Handtekening_ok" 
+          "Afzender_id" 
        ','
-          "Ingezien" 
-       ','
-          "Inhoud" 
+          "Ontvanger_id" 
        ','
           "Inkomend" 
+       ','
+          "Handtekening_ok" 
        ','
           "Ondertekenaar_id" 
        ','
           "Onderwerp" 
        ','
-          "Ontvanger_id" 
+          "Inhoud" 
        ','
-          "Org_cor_id" 
+          "Certserienummer" 
        ','
-          "Plattetekst" 
+          "Batch_status" 
        ','
           "Status_overzetten_bericht" 
        ','
+          "Ingezien" 
+       ','
+          "Plattetekst" 
+       ','
           "Status_verzending" 
+       ','
+          "Archief_cor_id" 
+       ','
+          "Bron" 
+       ','
+          "Org_cor_id" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_COR_BERICHT   end=EFIEOD; 
-       format Afzender_id best12. ;
-       format Archief_cor_id best12. ;
-       format Batch_status best12. ;
-       format Bron  ;
-       format Certserienummer  ;
        format Cor_id best12. ;
        format Ed_bericht_id best12. ;
-       format Handtekening_ok  ;
-       format Ingezien  ;
-       format Inhoud  ;
+       format Afzender_id best12. ;
+       format Ontvanger_id best12. ;
        format Inkomend  ;
+       format Handtekening_ok  ;
        format Ondertekenaar_id best12. ;
        format Onderwerp  ;
-       format Ontvanger_id best12. ;
-       format Org_cor_id best12. ;
-       format Plattetekst  ;
+       format Inhoud  ;
+       format Certserienummer  ;
+       format Batch_status best12. ;
        format Status_overzetten_bericht best12. ;
+       format Ingezien  ;
+       format Plattetekst  ;
        format Status_verzending  ;
+       format Archief_cor_id best12. ;
+       format Bron  ;
+       format Org_cor_id best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Afzender_id)
-         then put "," @;
-         else do;
-                 if find(Afzender_id,'0A'x) > 0 and 2+klength(Afzender_id) = klength(quote(trim(Afzender_id)))
-                   then put '22'x Afzender_id +(-1) '22'x "," @;
-                   else put Afzender_id @;
-              end;
-       if missing(Archief_cor_id)
-         then put "," @;
-         else do;
-                 if find(Archief_cor_id,'0A'x) > 0 and 2+klength(Archief_cor_id) = klength(quote(trim(Archief_cor_id)))
-                   then put '22'x Archief_cor_id +(-1) '22'x "," @;
-                   else put Archief_cor_id @;
-              end;
-       if missing(Batch_status)
-         then put "," @;
-         else do;
-                 if find(Batch_status,'0A'x) > 0 and 2+klength(Batch_status) = klength(quote(trim(Batch_status)))
-                   then put '22'x Batch_status +(-1) '22'x "," @;
-                   else put Batch_status @;
-              end;
-       if missing(Bron)
-         then put "," @;
-         else do;
-                 if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
-                   then put '22'x Bron +(-1) '22'x "," @;
-                   else put Bron @;
-              end;
-       if missing(Certserienummer)
-         then put "," @;
-         else do;
-                 if find(Certserienummer,'0A'x) > 0 and 2+klength(Certserienummer) = klength(quote(trim(Certserienummer)))
-                   then put '22'x Certserienummer +(-1) '22'x "," @;
-                   else put Certserienummer @;
-              end;
        if missing(Cor_id)
          then put "," @;
          else do;
@@ -1217,26 +1182,19 @@ data _null_;
                    then put '22'x Ed_bericht_id +(-1) '22'x "," @;
                    else put Ed_bericht_id @;
               end;
-       if missing(Handtekening_ok)
+       if missing(Afzender_id)
          then put "," @;
          else do;
-                 if find(Handtekening_ok,'0A'x) > 0 and 2+klength(Handtekening_ok) = klength(quote(trim(Handtekening_ok)))
-                   then put '22'x Handtekening_ok +(-1) '22'x "," @;
-                   else put Handtekening_ok @;
+                 if find(Afzender_id,'0A'x) > 0 and 2+klength(Afzender_id) = klength(quote(trim(Afzender_id)))
+                   then put '22'x Afzender_id +(-1) '22'x "," @;
+                   else put Afzender_id @;
               end;
-       if missing(Ingezien)
+       if missing(Ontvanger_id)
          then put "," @;
          else do;
-                 if find(Ingezien,'0A'x) > 0 and 2+klength(Ingezien) = klength(quote(trim(Ingezien)))
-                   then put '22'x Ingezien +(-1) '22'x "," @;
-                   else put Ingezien @;
-              end;
-       if missing(Inhoud)
-         then put "," @;
-         else do;
-                 if find(Inhoud,'0A'x) > 0 and 2+klength(Inhoud) = klength(quote(trim(Inhoud)))
-                   then put '22'x Inhoud +(-1) '22'x "," @;
-                   else put Inhoud @;
+                 if find(Ontvanger_id,'0A'x) > 0 and 2+klength(Ontvanger_id) = klength(quote(trim(Ontvanger_id)))
+                   then put '22'x Ontvanger_id +(-1) '22'x "," @;
+                   else put Ontvanger_id @;
               end;
        if missing(Inkomend)
          then put "," @;
@@ -1244,6 +1202,13 @@ data _null_;
                  if find(Inkomend,'0A'x) > 0 and 2+klength(Inkomend) = klength(quote(trim(Inkomend)))
                    then put '22'x Inkomend +(-1) '22'x "," @;
                    else put Inkomend @;
+              end;
+       if missing(Handtekening_ok)
+         then put "," @;
+         else do;
+                 if find(Handtekening_ok,'0A'x) > 0 and 2+klength(Handtekening_ok) = klength(quote(trim(Handtekening_ok)))
+                   then put '22'x Handtekening_ok +(-1) '22'x "," @;
+                   else put Handtekening_ok @;
               end;
        if missing(Ondertekenaar_id)
          then put "," @;
@@ -1259,26 +1224,26 @@ data _null_;
                    then put '22'x Onderwerp +(-1) '22'x "," @;
                    else put Onderwerp @;
               end;
-       if missing(Ontvanger_id)
+       if missing(Inhoud)
          then put "," @;
          else do;
-                 if find(Ontvanger_id,'0A'x) > 0 and 2+klength(Ontvanger_id) = klength(quote(trim(Ontvanger_id)))
-                   then put '22'x Ontvanger_id +(-1) '22'x "," @;
-                   else put Ontvanger_id @;
+                 if find(Inhoud,'0A'x) > 0 and 2+klength(Inhoud) = klength(quote(trim(Inhoud)))
+                   then put '22'x Inhoud +(-1) '22'x "," @;
+                   else put Inhoud @;
               end;
-       if missing(Org_cor_id)
+       if missing(Certserienummer)
          then put "," @;
          else do;
-                 if find(Org_cor_id,'0A'x) > 0 and 2+klength(Org_cor_id) = klength(quote(trim(Org_cor_id)))
-                   then put '22'x Org_cor_id +(-1) '22'x "," @;
-                   else put Org_cor_id @;
+                 if find(Certserienummer,'0A'x) > 0 and 2+klength(Certserienummer) = klength(quote(trim(Certserienummer)))
+                   then put '22'x Certserienummer +(-1) '22'x "," @;
+                   else put Certserienummer @;
               end;
-       if missing(Plattetekst)
+       if missing(Batch_status)
          then put "," @;
          else do;
-                 if find(Plattetekst,'0A'x) > 0 and 2+klength(Plattetekst) = klength(quote(trim(Plattetekst)))
-                   then put '22'x Plattetekst +(-1) '22'x "," @;
-                   else put Plattetekst @;
+                 if find(Batch_status,'0A'x) > 0 and 2+klength(Batch_status) = klength(quote(trim(Batch_status)))
+                   then put '22'x Batch_status +(-1) '22'x "," @;
+                   else put Batch_status @;
               end;
        if missing(Status_overzetten_bericht)
          then put "," @;
@@ -1287,12 +1252,47 @@ data _null_;
                    then put '22'x Status_overzetten_bericht +(-1) '22'x "," @;
                    else put Status_overzetten_bericht @;
               end;
+       if missing(Ingezien)
+         then put "," @;
+         else do;
+                 if find(Ingezien,'0A'x) > 0 and 2+klength(Ingezien) = klength(quote(trim(Ingezien)))
+                   then put '22'x Ingezien +(-1) '22'x "," @;
+                   else put Ingezien @;
+              end;
+       if missing(Plattetekst)
+         then put "," @;
+         else do;
+                 if find(Plattetekst,'0A'x) > 0 and 2+klength(Plattetekst) = klength(quote(trim(Plattetekst)))
+                   then put '22'x Plattetekst +(-1) '22'x "," @;
+                   else put Plattetekst @;
+              end;
        if missing(Status_verzending)
          then put "," @;
          else do;
                  if find(Status_verzending,'0A'x) > 0 and 2+klength(Status_verzending) = klength(quote(trim(Status_verzending)))
                    then put '22'x Status_verzending +(-1) '22'x "," @;
                    else put Status_verzending @;
+              end;
+       if missing(Archief_cor_id)
+         then put "," @;
+         else do;
+                 if find(Archief_cor_id,'0A'x) > 0 and 2+klength(Archief_cor_id) = klength(quote(trim(Archief_cor_id)))
+                   then put '22'x Archief_cor_id +(-1) '22'x "," @;
+                   else put Archief_cor_id @;
+              end;
+       if missing(Bron)
+         then put "," @;
+         else do;
+                 if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
+                   then put '22'x Bron +(-1) '22'x "," @;
+                   else put Bron @;
+              end;
+       if missing(Org_cor_id)
+         then put "," @;
+         else do;
+                 if find(Org_cor_id,'0A'x) > 0 and 2+klength(Org_cor_id) = klength(quote(trim(Org_cor_id)))
+                   then put '22'x Org_cor_id +(-1) '22'x "," @;
+                   else put Org_cor_id @;
               end;
        put techId best12. ; 
        ; 
@@ -1670,114 +1670,79 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Bezoek" 
-       ','
-          "Bob_brief" 
-       ','
-          "Correctie_jn" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
           "Cst_cd" 
        ','
           "Cst_oms" 
        ','
           "Cst_template" 
        ','
+          "Regeling" 
+       ','
+          "Thema" 
+       ','
           "Dossier" 
-       ','
-          "Externe_naam" 
-       ','
-          "Intern_jn" 
-       ','
-          "Juridisch" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Organisatie" 
        ','
           "Project" 
        ','
-          "Regeling" 
+          "Organisatie" 
        ','
-          "Stempel_sj" 
-       ','
-          "Thema" 
+          "Bezoek" 
        ','
           "Transactie" 
        ','
           "Uitgaand_inkomend" 
        ','
+          "Juridisch" 
+       ','
+          "Stempel_sj" 
+       ','
+          "Bob_brief" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Creatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
           "Vorderingbeheer" 
+       ','
+          "Externe_naam" 
+       ','
+          "Correctie_jn" 
+       ','
+          "Intern_jn" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_COR_COR_SRT   end=EFIEOD; 
-       format Bezoek  ;
-       format Bob_brief  ;
-       format Correctie_jn  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
        format Cst_cd  ;
        format Cst_oms  ;
        format Cst_template  ;
-       format Dossier  ;
-       format Externe_naam  ;
-       format Intern_jn  ;
-       format Juridisch  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Organisatie  ;
-       format Project  ;
        format Regeling  ;
-       format Stempel_sj  ;
        format Thema  ;
+       format Dossier  ;
+       format Project  ;
+       format Organisatie  ;
+       format Bezoek  ;
        format Transactie  ;
        format Uitgaand_inkomend  ;
+       format Juridisch  ;
+       format Stempel_sj  ;
+       format Bob_brief  ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mutatie_user  ;
        format Vorderingbeheer  ;
+       format Externe_naam  ;
+       format Correctie_jn  ;
+       format Intern_jn  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Bezoek)
-         then put "," @;
-         else do;
-                 if find(Bezoek,'0A'x) > 0 and 2+klength(Bezoek) = klength(quote(trim(Bezoek)))
-                   then put '22'x Bezoek +(-1) '22'x "," @;
-                   else put Bezoek @;
-              end;
-       if missing(Bob_brief)
-         then put "," @;
-         else do;
-                 if find(Bob_brief,'0A'x) > 0 and 2+klength(Bob_brief) = klength(quote(trim(Bob_brief)))
-                   then put '22'x Bob_brief +(-1) '22'x "," @;
-                   else put Bob_brief @;
-              end;
-       if missing(Correctie_jn)
-         then put "," @;
-         else do;
-                 if find(Correctie_jn,'0A'x) > 0 and 2+klength(Correctie_jn) = klength(quote(trim(Correctie_jn)))
-                   then put '22'x Correctie_jn +(-1) '22'x "," @;
-                   else put Correctie_jn @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
        if missing(Cst_cd)
          then put "," @;
          else do;
@@ -1799,54 +1764,26 @@ data _null_;
                    then put '22'x Cst_template +(-1) '22'x "," @;
                    else put Cst_template @;
               end;
+       if missing(Regeling)
+         then put "," @;
+         else do;
+                 if find(Regeling,'0A'x) > 0 and 2+klength(Regeling) = klength(quote(trim(Regeling)))
+                   then put '22'x Regeling +(-1) '22'x "," @;
+                   else put Regeling @;
+              end;
+       if missing(Thema)
+         then put "," @;
+         else do;
+                 if find(Thema,'0A'x) > 0 and 2+klength(Thema) = klength(quote(trim(Thema)))
+                   then put '22'x Thema +(-1) '22'x "," @;
+                   else put Thema @;
+              end;
        if missing(Dossier)
          then put "," @;
          else do;
                  if find(Dossier,'0A'x) > 0 and 2+klength(Dossier) = klength(quote(trim(Dossier)))
                    then put '22'x Dossier +(-1) '22'x "," @;
                    else put Dossier @;
-              end;
-       if missing(Externe_naam)
-         then put "," @;
-         else do;
-                 if find(Externe_naam,'0A'x) > 0 and 2+klength(Externe_naam) = klength(quote(trim(Externe_naam)))
-                   then put '22'x Externe_naam +(-1) '22'x "," @;
-                   else put Externe_naam @;
-              end;
-       if missing(Intern_jn)
-         then put "," @;
-         else do;
-                 if find(Intern_jn,'0A'x) > 0 and 2+klength(Intern_jn) = klength(quote(trim(Intern_jn)))
-                   then put '22'x Intern_jn +(-1) '22'x "," @;
-                   else put Intern_jn @;
-              end;
-       if missing(Juridisch)
-         then put "," @;
-         else do;
-                 if find(Juridisch,'0A'x) > 0 and 2+klength(Juridisch) = klength(quote(trim(Juridisch)))
-                   then put '22'x Juridisch +(-1) '22'x "," @;
-                   else put Juridisch @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Organisatie)
-         then put "," @;
-         else do;
-                 if find(Organisatie,'0A'x) > 0 and 2+klength(Organisatie) = klength(quote(trim(Organisatie)))
-                   then put '22'x Organisatie +(-1) '22'x "," @;
-                   else put Organisatie @;
               end;
        if missing(Project)
          then put "," @;
@@ -1855,26 +1792,19 @@ data _null_;
                    then put '22'x Project +(-1) '22'x "," @;
                    else put Project @;
               end;
-       if missing(Regeling)
+       if missing(Organisatie)
          then put "," @;
          else do;
-                 if find(Regeling,'0A'x) > 0 and 2+klength(Regeling) = klength(quote(trim(Regeling)))
-                   then put '22'x Regeling +(-1) '22'x "," @;
-                   else put Regeling @;
+                 if find(Organisatie,'0A'x) > 0 and 2+klength(Organisatie) = klength(quote(trim(Organisatie)))
+                   then put '22'x Organisatie +(-1) '22'x "," @;
+                   else put Organisatie @;
               end;
-       if missing(Stempel_sj)
+       if missing(Bezoek)
          then put "," @;
          else do;
-                 if find(Stempel_sj,'0A'x) > 0 and 2+klength(Stempel_sj) = klength(quote(trim(Stempel_sj)))
-                   then put '22'x Stempel_sj +(-1) '22'x "," @;
-                   else put Stempel_sj @;
-              end;
-       if missing(Thema)
-         then put "," @;
-         else do;
-                 if find(Thema,'0A'x) > 0 and 2+klength(Thema) = klength(quote(trim(Thema)))
-                   then put '22'x Thema +(-1) '22'x "," @;
-                   else put Thema @;
+                 if find(Bezoek,'0A'x) > 0 and 2+klength(Bezoek) = klength(quote(trim(Bezoek)))
+                   then put '22'x Bezoek +(-1) '22'x "," @;
+                   else put Bezoek @;
               end;
        if missing(Transactie)
          then put "," @;
@@ -1890,12 +1820,82 @@ data _null_;
                    then put '22'x Uitgaand_inkomend +(-1) '22'x "," @;
                    else put Uitgaand_inkomend @;
               end;
+       if missing(Juridisch)
+         then put "," @;
+         else do;
+                 if find(Juridisch,'0A'x) > 0 and 2+klength(Juridisch) = klength(quote(trim(Juridisch)))
+                   then put '22'x Juridisch +(-1) '22'x "," @;
+                   else put Juridisch @;
+              end;
+       if missing(Stempel_sj)
+         then put "," @;
+         else do;
+                 if find(Stempel_sj,'0A'x) > 0 and 2+klength(Stempel_sj) = klength(quote(trim(Stempel_sj)))
+                   then put '22'x Stempel_sj +(-1) '22'x "," @;
+                   else put Stempel_sj @;
+              end;
+       if missing(Bob_brief)
+         then put "," @;
+         else do;
+                 if find(Bob_brief,'0A'x) > 0 and 2+klength(Bob_brief) = klength(quote(trim(Bob_brief)))
+                   then put '22'x Bob_brief +(-1) '22'x "," @;
+                   else put Bob_brief @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
        if missing(Vorderingbeheer)
          then put "," @;
          else do;
                  if find(Vorderingbeheer,'0A'x) > 0 and 2+klength(Vorderingbeheer) = klength(quote(trim(Vorderingbeheer)))
                    then put '22'x Vorderingbeheer +(-1) '22'x "," @;
                    else put Vorderingbeheer @;
+              end;
+       if missing(Externe_naam)
+         then put "," @;
+         else do;
+                 if find(Externe_naam,'0A'x) > 0 and 2+klength(Externe_naam) = klength(quote(trim(Externe_naam)))
+                   then put '22'x Externe_naam +(-1) '22'x "," @;
+                   else put Externe_naam @;
+              end;
+       if missing(Correctie_jn)
+         then put "," @;
+         else do;
+                 if find(Correctie_jn,'0A'x) > 0 and 2+klength(Correctie_jn) = klength(quote(trim(Correctie_jn)))
+                   then put '22'x Correctie_jn +(-1) '22'x "," @;
+                   else put Correctie_jn @;
+              end;
+       if missing(Intern_jn)
+         then put "," @;
+         else do;
+                 if find(Intern_jn,'0A'x) > 0 and 2+klength(Intern_jn) = klength(quote(trim(Intern_jn)))
+                   then put '22'x Intern_jn +(-1) '22'x "," @;
+                   else put Intern_jn @;
               end;
        put techId best12. ; 
        ; 
@@ -1932,7 +1932,11 @@ data _null_;
        put 
           "Cor_id" 
        ','
+          "Volg_nr" 
+       ','
           "Correctie_code" 
+       ','
+          "Oude_verzenddatum" 
        ','
           "Creatie_dat" 
        ','
@@ -1942,22 +1946,18 @@ data _null_;
        ','
           "Mutatie_user" 
        ','
-          "Oude_verzenddatum" 
-       ','
-          "Volg_nr" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_COR_CORRESPONDENTIE_HIST   end=EFIEOD; 
        format Cor_id best12. ;
+       format Volg_nr best12. ;
        format Correctie_code  ;
+       format Oude_verzenddatum B8601DT19. ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Oude_verzenddatum B8601DT19. ;
-       format Volg_nr best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -1968,12 +1968,26 @@ data _null_;
                    then put '22'x Cor_id +(-1) '22'x "," @;
                    else put Cor_id @;
               end;
+       if missing(Volg_nr)
+         then put "," @;
+         else do;
+                 if find(Volg_nr,'0A'x) > 0 and 2+klength(Volg_nr) = klength(quote(trim(Volg_nr)))
+                   then put '22'x Volg_nr +(-1) '22'x "," @;
+                   else put Volg_nr @;
+              end;
        if missing(Correctie_code)
          then put "," @;
          else do;
                  if find(Correctie_code,'0A'x) > 0 and 2+klength(Correctie_code) = klength(quote(trim(Correctie_code)))
                    then put '22'x Correctie_code +(-1) '22'x "," @;
                    else put Correctie_code @;
+              end;
+       if missing(Oude_verzenddatum)
+         then put "," @;
+         else do;
+                 if find(Oude_verzenddatum,'0A'x) > 0 and 2+klength(Oude_verzenddatum) = klength(quote(trim(Oude_verzenddatum)))
+                   then put '22'x Oude_verzenddatum +(-1) '22'x "," @;
+                   else put Oude_verzenddatum @;
               end;
        if missing(Creatie_dat)
          then put "," @;
@@ -2002,20 +2016,6 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
-              end;
-       if missing(Oude_verzenddatum)
-         then put "," @;
-         else do;
-                 if find(Oude_verzenddatum,'0A'x) > 0 and 2+klength(Oude_verzenddatum) = klength(quote(trim(Oude_verzenddatum)))
-                   then put '22'x Oude_verzenddatum +(-1) '22'x "," @;
-                   else put Oude_verzenddatum @;
-              end;
-       if missing(Volg_nr)
-         then put "," @;
-         else do;
-                 if find(Volg_nr,'0A'x) > 0 and 2+klength(Volg_nr) = klength(quote(trim(Volg_nr)))
-                   then put '22'x Volg_nr +(-1) '22'x "," @;
-                   else put Volg_nr @;
               end;
        put techId best12. ; 
        ; 
@@ -2185,6 +2185,8 @@ data _null_;
        ','
           "Mutatie_user" 
        ','
+          "naam_organisatie" 
+       ','
           "Ok_JN" 
        ','
           "Omschrijving" 
@@ -2228,8 +2230,6 @@ data _null_;
           "Xml_inhoud" 
        ','
           "Xsl" 
-       ','
-          "naam_organisatie" 
        ','
           "techId" 
        ; 
@@ -2275,6 +2275,7 @@ data _null_;
        format Mdw_id_contpers_intern best12. ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
+       format naam_organisatie  ;
        format Ok_JN  ;
        format Omschrijving  ;
        format Open_brief  ;
@@ -2297,7 +2298,6 @@ data _null_;
        format Wordbrief_akkoord  ;
        format Xml_inhoud  ;
        format Xsl  ;
-       format naam_organisatie  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -2581,6 +2581,13 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
+       if missing(naam_organisatie)
+         then put "," @;
+         else do;
+                 if find(naam_organisatie,'0A'x) > 0 and 2+klength(naam_organisatie) = klength(quote(trim(naam_organisatie)))
+                   then put '22'x naam_organisatie +(-1) '22'x "," @;
+                   else put naam_organisatie @;
+              end;
        if missing(Ok_JN)
          then put "," @;
          else do;
@@ -2735,13 +2742,6 @@ data _null_;
                    then put '22'x Xsl +(-1) '22'x "," @;
                    else put Xsl @;
               end;
-       if missing(naam_organisatie)
-         then put "," @;
-         else do;
-                 if find(naam_organisatie,'0A'x) > 0 and 2+klength(naam_organisatie) = klength(quote(trim(naam_organisatie)))
-                   then put '22'x naam_organisatie +(-1) '22'x "," @;
-                   else put naam_organisatie @;
-              end;
        put techId best12. ; 
        ; 
      end; 
@@ -2777,43 +2777,71 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Reg_id" 
+       ','
+          "Cst_cd" 
+       ','
+          "Cst_cd_2" 
+       ','
+          "Verzenddatum_jn" 
+       ','
           "Afgehandeld_jn" 
        ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
        ','
-          "Cst_cd" 
-       ','
-          "Cst_cd_2" 
-       ','
-          "Genereer_jn" 
-       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Reg_id" 
-       ','
-          "Verzenddatum_jn" 
+          "Genereer_jn" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_COR_CST_SET_CST   end=EFIEOD; 
+       format Reg_id best12. ;
+       format Cst_cd  ;
+       format Cst_cd_2  ;
+       format Verzenddatum_jn  ;
        format Afgehandeld_jn  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Cst_cd  ;
-       format Cst_cd_2  ;
-       format Genereer_jn  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Reg_id best12. ;
-       format Verzenddatum_jn  ;
+       format Genereer_jn  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Reg_id)
+         then put "," @;
+         else do;
+                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
+                   then put '22'x Reg_id +(-1) '22'x "," @;
+                   else put Reg_id @;
+              end;
+       if missing(Cst_cd)
+         then put "," @;
+         else do;
+                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
+                   then put '22'x Cst_cd +(-1) '22'x "," @;
+                   else put Cst_cd @;
+              end;
+       if missing(Cst_cd_2)
+         then put "," @;
+         else do;
+                 if find(Cst_cd_2,'0A'x) > 0 and 2+klength(Cst_cd_2) = klength(quote(trim(Cst_cd_2)))
+                   then put '22'x Cst_cd_2 +(-1) '22'x "," @;
+                   else put Cst_cd_2 @;
+              end;
+       if missing(Verzenddatum_jn)
+         then put "," @;
+         else do;
+                 if find(Verzenddatum_jn,'0A'x) > 0 and 2+klength(Verzenddatum_jn) = klength(quote(trim(Verzenddatum_jn)))
+                   then put '22'x Verzenddatum_jn +(-1) '22'x "," @;
+                   else put Verzenddatum_jn @;
+              end;
        if missing(Afgehandeld_jn)
          then put "," @;
          else do;
@@ -2835,27 +2863,6 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Cst_cd)
-         then put "," @;
-         else do;
-                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
-                   then put '22'x Cst_cd +(-1) '22'x "," @;
-                   else put Cst_cd @;
-              end;
-       if missing(Cst_cd_2)
-         then put "," @;
-         else do;
-                 if find(Cst_cd_2,'0A'x) > 0 and 2+klength(Cst_cd_2) = klength(quote(trim(Cst_cd_2)))
-                   then put '22'x Cst_cd_2 +(-1) '22'x "," @;
-                   else put Cst_cd_2 @;
-              end;
-       if missing(Genereer_jn)
-         then put "," @;
-         else do;
-                 if find(Genereer_jn,'0A'x) > 0 and 2+klength(Genereer_jn) = klength(quote(trim(Genereer_jn)))
-                   then put '22'x Genereer_jn +(-1) '22'x "," @;
-                   else put Genereer_jn @;
-              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -2870,19 +2877,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Reg_id)
+       if missing(Genereer_jn)
          then put "," @;
          else do;
-                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
-                   then put '22'x Reg_id +(-1) '22'x "," @;
-                   else put Reg_id @;
-              end;
-       if missing(Verzenddatum_jn)
-         then put "," @;
-         else do;
-                 if find(Verzenddatum_jn,'0A'x) > 0 and 2+klength(Verzenddatum_jn) = klength(quote(trim(Verzenddatum_jn)))
-                   then put '22'x Verzenddatum_jn +(-1) '22'x "," @;
-                   else put Verzenddatum_jn @;
+                 if find(Genereer_jn,'0A'x) > 0 and 2+klength(Genereer_jn) = klength(quote(trim(Genereer_jn)))
+                   then put '22'x Genereer_jn +(-1) '22'x "," @;
+                   else put Genereer_jn @;
               end;
        put techId best12. ; 
        ; 
@@ -2917,51 +2917,37 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Cst_cd" 
-       ','
-          "Mdw_rol_niveau" 
-       ','
           "Reg_id" 
        ','
-          "Rol_cd" 
-       ','
-          "Rol_volg_cd" 
+          "Cst_cd" 
        ','
           "Type_paraaf" 
        ','
-          "Vaste_paraaf_jn" 
+          "Rol_cd" 
+       ','
+          "Mdw_rol_niveau" 
        ','
           "Volgorde" 
+       ','
+          "Vaste_paraaf_jn" 
+       ','
+          "Rol_volg_cd" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_COR_PARAAF   end=EFIEOD; 
-       format Cst_cd  ;
-       format Mdw_rol_niveau  ;
        format Reg_id best12. ;
-       format Rol_cd  ;
-       format Rol_volg_cd  ;
+       format Cst_cd  ;
        format Type_paraaf  ;
-       format Vaste_paraaf_jn  ;
+       format Rol_cd  ;
+       format Mdw_rol_niveau  ;
        format Volgorde best12. ;
+       format Vaste_paraaf_jn  ;
+       format Rol_volg_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Cst_cd)
-         then put "," @;
-         else do;
-                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
-                   then put '22'x Cst_cd +(-1) '22'x "," @;
-                   else put Cst_cd @;
-              end;
-       if missing(Mdw_rol_niveau)
-         then put "," @;
-         else do;
-                 if find(Mdw_rol_niveau,'0A'x) > 0 and 2+klength(Mdw_rol_niveau) = klength(quote(trim(Mdw_rol_niveau)))
-                   then put '22'x Mdw_rol_niveau +(-1) '22'x "," @;
-                   else put Mdw_rol_niveau @;
-              end;
        if missing(Reg_id)
          then put "," @;
          else do;
@@ -2969,19 +2955,12 @@ data _null_;
                    then put '22'x Reg_id +(-1) '22'x "," @;
                    else put Reg_id @;
               end;
-       if missing(Rol_cd)
+       if missing(Cst_cd)
          then put "," @;
          else do;
-                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
-                   then put '22'x Rol_cd +(-1) '22'x "," @;
-                   else put Rol_cd @;
-              end;
-       if missing(Rol_volg_cd)
-         then put "," @;
-         else do;
-                 if find(Rol_volg_cd,'0A'x) > 0 and 2+klength(Rol_volg_cd) = klength(quote(trim(Rol_volg_cd)))
-                   then put '22'x Rol_volg_cd +(-1) '22'x "," @;
-                   else put Rol_volg_cd @;
+                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
+                   then put '22'x Cst_cd +(-1) '22'x "," @;
+                   else put Cst_cd @;
               end;
        if missing(Type_paraaf)
          then put "," @;
@@ -2990,12 +2969,19 @@ data _null_;
                    then put '22'x Type_paraaf +(-1) '22'x "," @;
                    else put Type_paraaf @;
               end;
-       if missing(Vaste_paraaf_jn)
+       if missing(Rol_cd)
          then put "," @;
          else do;
-                 if find(Vaste_paraaf_jn,'0A'x) > 0 and 2+klength(Vaste_paraaf_jn) = klength(quote(trim(Vaste_paraaf_jn)))
-                   then put '22'x Vaste_paraaf_jn +(-1) '22'x "," @;
-                   else put Vaste_paraaf_jn @;
+                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
+                   then put '22'x Rol_cd +(-1) '22'x "," @;
+                   else put Rol_cd @;
+              end;
+       if missing(Mdw_rol_niveau)
+         then put "," @;
+         else do;
+                 if find(Mdw_rol_niveau,'0A'x) > 0 and 2+klength(Mdw_rol_niveau) = klength(quote(trim(Mdw_rol_niveau)))
+                   then put '22'x Mdw_rol_niveau +(-1) '22'x "," @;
+                   else put Mdw_rol_niveau @;
               end;
        if missing(Volgorde)
          then put "," @;
@@ -3003,6 +2989,20 @@ data _null_;
                  if find(Volgorde,'0A'x) > 0 and 2+klength(Volgorde) = klength(quote(trim(Volgorde)))
                    then put '22'x Volgorde +(-1) '22'x "," @;
                    else put Volgorde @;
+              end;
+       if missing(Vaste_paraaf_jn)
+         then put "," @;
+         else do;
+                 if find(Vaste_paraaf_jn,'0A'x) > 0 and 2+klength(Vaste_paraaf_jn) = klength(quote(trim(Vaste_paraaf_jn)))
+                   then put '22'x Vaste_paraaf_jn +(-1) '22'x "," @;
+                   else put Vaste_paraaf_jn @;
+              end;
+       if missing(Rol_volg_cd)
+         then put "," @;
+         else do;
+                 if find(Rol_volg_cd,'0A'x) > 0 and 2+klength(Rol_volg_cd) = klength(quote(trim(Rol_volg_cd)))
+                   then put '22'x Rol_volg_cd +(-1) '22'x "," @;
+                   else put Rol_volg_cd @;
               end;
        put techId best12. ; 
        ; 
@@ -3498,29 +3498,29 @@ data _null_;
        put 
           "Cor_id" 
        ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Tra_id" 
        ','
           "Dos_id" 
        ','
-          "Mutatie_dat" 
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Tra_id" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF   end=EFIEOD; 
        format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Tra_id best12. ;
+       format Dos_id best12. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -3531,19 +3531,12 @@ data _null_;
                    then put '22'x Cor_id +(-1) '22'x "," @;
                    else put Cor_id @;
               end;
-       if missing(Creatie_dat)
+       if missing(Tra_id)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
               end;
        if missing(Dos_id)
          then put "," @;
@@ -3552,12 +3545,19 @@ data _null_;
                    then put '22'x Dos_id +(-1) '22'x "," @;
                    else put Dos_id @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -3566,12 +3566,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Tra_id)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -3611,6 +3611,8 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "creatie_dat" 
+       ','
           "Creatie_user" 
        ','
           "Dcs_id" 
@@ -3635,12 +3637,11 @@ data _null_;
        ','
           "Vst_volgnr" 
        ','
-          "creatie_dat" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR   end=EFIEOD; 
+       format creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Dcs_id best12. ;
        format Dos_id best12. ;
@@ -3653,10 +3654,16 @@ data _null_;
        format Rol_cd  ;
        format Rol_cd_van  ;
        format Vst_volgnr best12. ;
-       format creatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(creatie_dat)
+         then put "," @;
+         else do;
+                 if find(creatie_dat,'0A'x) > 0 and 2+klength(creatie_dat) = klength(quote(trim(creatie_dat)))
+                   then put '22'x creatie_dat +(-1) '22'x "," @;
+                   else put creatie_dat @;
+              end;
        if missing(Creatie_user)
          then put "," @;
          else do;
@@ -3740,13 +3747,6 @@ data _null_;
                  if find(Vst_volgnr,'0A'x) > 0 and 2+klength(Vst_volgnr) = klength(quote(trim(Vst_volgnr)))
                    then put '22'x Vst_volgnr +(-1) '22'x "," @;
                    else put Vst_volgnr @;
-              end;
-       if missing(creatie_dat)
-         then put "," @;
-         else do;
-                 if find(creatie_dat,'0A'x) > 0 and 2+klength(creatie_dat) = klength(quote(trim(creatie_dat)))
-                   then put '22'x creatie_dat +(-1) '22'x "," @;
-                   else put creatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -4067,6 +4067,8 @@ data _null_;
        ','
           "Inboedeltuinrente" 
        ','
+          "inboedeltuinrentedatum" 
+       ','
           "Inboedeltuintoegekend" 
        ','
           "Inkomstendervingaangevraagd" 
@@ -4106,6 +4108,8 @@ data _null_;
           "Opslagaantalweken" 
        ','
           "Opslaghandtoegekend" 
+       ','
+          "opslagrente" 
        ','
           "Opslagrentedatum" 
        ','
@@ -4205,10 +4209,6 @@ data _null_;
        ','
           "Zorgtoegekend" 
        ','
-          "inboedeltuinrentedatum" 
-       ','
-          "opslagrente" 
-       ','
           "techId" 
        ; 
      end; 
@@ -4229,6 +4229,7 @@ data _null_;
        format Inboedeltuinaangevraagd best12. ;
        format Inboedeltuinhandtoegekend best12. ;
        format Inboedeltuinrente best12. ;
+       format inboedeltuinrentedatum B8601DT19. ;
        format Inboedeltuintoegekend best12. ;
        format Inkomstendervingaangevraagd best12. ;
        format Inkomstendervinghandtoegekend best12. ;
@@ -4249,6 +4250,7 @@ data _null_;
        format Opslagaangevraagd best12. ;
        format Opslagaantalweken best12. ;
        format Opslaghandtoegekend best12. ;
+       format opslagrente best12. ;
        format Opslagrentedatum B8601DT19. ;
        format Opslagtoegekend best12. ;
        format Overlastaangevraagd best12. ;
@@ -4298,8 +4300,6 @@ data _null_;
        format Zorgrente best12. ;
        format Zorgrentedatum B8601DT19. ;
        format Zorgtoegekend best12. ;
-       format inboedeltuinrentedatum B8601DT19. ;
-       format opslagrente best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -4414,6 +4414,13 @@ data _null_;
                  if find(Inboedeltuinrente,'0A'x) > 0 and 2+klength(Inboedeltuinrente) = klength(quote(trim(Inboedeltuinrente)))
                    then put '22'x Inboedeltuinrente +(-1) '22'x "," @;
                    else put Inboedeltuinrente @;
+              end;
+       if missing(inboedeltuinrentedatum)
+         then put "," @;
+         else do;
+                 if find(inboedeltuinrentedatum,'0A'x) > 0 and 2+klength(inboedeltuinrentedatum) = klength(quote(trim(inboedeltuinrentedatum)))
+                   then put '22'x inboedeltuinrentedatum +(-1) '22'x "," @;
+                   else put inboedeltuinrentedatum @;
               end;
        if missing(Inboedeltuintoegekend)
          then put "," @;
@@ -4554,6 +4561,13 @@ data _null_;
                  if find(Opslaghandtoegekend,'0A'x) > 0 and 2+klength(Opslaghandtoegekend) = klength(quote(trim(Opslaghandtoegekend)))
                    then put '22'x Opslaghandtoegekend +(-1) '22'x "," @;
                    else put Opslaghandtoegekend @;
+              end;
+       if missing(opslagrente)
+         then put "," @;
+         else do;
+                 if find(opslagrente,'0A'x) > 0 and 2+klength(opslagrente) = klength(quote(trim(opslagrente)))
+                   then put '22'x opslagrente +(-1) '22'x "," @;
+                   else put opslagrente @;
               end;
        if missing(Opslagrentedatum)
          then put "," @;
@@ -4897,20 +4911,6 @@ data _null_;
                  if find(Zorgtoegekend,'0A'x) > 0 and 2+klength(Zorgtoegekend) = klength(quote(trim(Zorgtoegekend)))
                    then put '22'x Zorgtoegekend +(-1) '22'x "," @;
                    else put Zorgtoegekend @;
-              end;
-       if missing(inboedeltuinrentedatum)
-         then put "," @;
-         else do;
-                 if find(inboedeltuinrentedatum,'0A'x) > 0 and 2+klength(inboedeltuinrentedatum) = klength(quote(trim(inboedeltuinrentedatum)))
-                   then put '22'x inboedeltuinrentedatum +(-1) '22'x "," @;
-                   else put inboedeltuinrentedatum @;
-              end;
-       if missing(opslagrente)
-         then put "," @;
-         else do;
-                 if find(opslagrente,'0A'x) > 0 and 2+klength(opslagrente) = klength(quote(trim(opslagrente)))
-                   then put '22'x opslagrente +(-1) '22'x "," @;
-                   else put opslagrente @;
               end;
        put techId best12. ; 
        ; 
@@ -5769,47 +5769,51 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Afl_neg_einddeclaratie" 
+          "Dos_id" 
+       ','
+          "Tra_id" 
+       ','
+          "Volgnummer" 
+       ','
+          "Ovk_nr" 
+       ','
+          "Rpt_nr" 
+       ','
+          "Bgt_cd" 
+       ','
+          "Verleend" 
+       ','
+          "Ingetrokken" 
+       ','
+          "Gedeclareerd" 
        ','
           "Betaald" 
        ','
-          "Bgt_cd" 
+          "Vastgesteld" 
+       ','
+          "Openstaand" 
+       ','
+          "Opeisbaar" 
+       ','
+          "Def_verleend" 
+       ','
+          "Def_ingetrokken" 
+       ','
+          "Def_gedeclareerd" 
+       ','
+          "Def_openstaand" 
        ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
        ','
-          "Cvk_id" 
-       ','
-          "Def_gedeclareerd" 
-       ','
-          "Def_ingetrokken" 
-       ','
-          "Def_neg_einddeclaratie" 
-       ','
-          "Def_openstaand" 
-       ','
-          "Def_verleend" 
-       ','
-          "Dos_id" 
-       ','
-          "Gedeclareerd" 
-       ','
-          "Ingetrokken" 
-       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
        ','
+          "Rpe_datum_van" 
+       ','
           "Neg_einddeclaratie" 
-       ','
-          "Opeisbaar" 
-       ','
-          "Openstaand" 
-       ','
-          "Ovk_nr" 
-       ','
-          "Per_Deelnemer" 
        ','
           "Prg_id" 
        ','
@@ -5817,67 +5821,119 @@ data _null_;
        ','
           "Reg_nr" 
        ','
-          "Rpe_datum_van" 
+          "Afl_neg_einddeclaratie" 
        ','
-          "Rpt_nr" 
+          "Def_neg_einddeclaratie" 
+       ','
+          "Cvk_id" 
+       ','
+          "Vpl_volgnummer" 
        ','
           "Rpt_nr_oud" 
        ','
-          "Tra_id" 
-       ','
-          "Vastgesteld" 
-       ','
-          "Verleend" 
-       ','
-          "Volgnummer" 
-       ','
-          "Vpl_volgnummer" 
+          "Per_Deelnemer" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_DAM_DOS_BUDGETREGEL   end=EFIEOD; 
-       format Afl_neg_einddeclaratie best12. ;
-       format Betaald best12. ;
+       format Dos_id best12. ;
+       format Tra_id best12. ;
+       format Volgnummer best12. ;
+       format Ovk_nr  ;
+       format Rpt_nr best12. ;
        format Bgt_cd  ;
+       format Verleend best12. ;
+       format Ingetrokken best12. ;
+       format Gedeclareerd best12. ;
+       format Betaald best12. ;
+       format Vastgesteld best12. ;
+       format Openstaand best12. ;
+       format Opeisbaar best12. ;
+       format Def_verleend best12. ;
+       format Def_ingetrokken best12. ;
+       format Def_gedeclareerd best12. ;
+       format Def_openstaand best12. ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Cvk_id best12. ;
-       format Def_gedeclareerd best12. ;
-       format Def_ingetrokken best12. ;
-       format Def_neg_einddeclaratie best12. ;
-       format Def_openstaand best12. ;
-       format Def_verleend best12. ;
-       format Dos_id best12. ;
-       format Gedeclareerd best12. ;
-       format Ingetrokken best12. ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
+       format Rpe_datum_van B8601DT19. ;
        format Neg_einddeclaratie best12. ;
-       format Opeisbaar best12. ;
-       format Openstaand best12. ;
-       format Ovk_nr  ;
-       format Per_Deelnemer  ;
        format Prg_id best12. ;
        format Reg_id best12. ;
        format Reg_nr best12. ;
-       format Rpe_datum_van B8601DT19. ;
-       format Rpt_nr best12. ;
-       format Rpt_nr_oud  ;
-       format Tra_id best12. ;
-       format Vastgesteld best12. ;
-       format Verleend best12. ;
-       format Volgnummer best12. ;
+       format Afl_neg_einddeclaratie best12. ;
+       format Def_neg_einddeclaratie best12. ;
+       format Cvk_id best12. ;
        format Vpl_volgnummer best12. ;
+       format Rpt_nr_oud  ;
+       format Per_Deelnemer  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Afl_neg_einddeclaratie)
+       if missing(Dos_id)
          then put "," @;
          else do;
-                 if find(Afl_neg_einddeclaratie,'0A'x) > 0 and 2+klength(Afl_neg_einddeclaratie) = klength(quote(trim(Afl_neg_einddeclaratie)))
-                   then put '22'x Afl_neg_einddeclaratie +(-1) '22'x "," @;
-                   else put Afl_neg_einddeclaratie @;
+                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
+                   then put '22'x Dos_id +(-1) '22'x "," @;
+                   else put Dos_id @;
+              end;
+       if missing(Tra_id)
+         then put "," @;
+         else do;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
+              end;
+       if missing(Volgnummer)
+         then put "," @;
+         else do;
+                 if find(Volgnummer,'0A'x) > 0 and 2+klength(Volgnummer) = klength(quote(trim(Volgnummer)))
+                   then put '22'x Volgnummer +(-1) '22'x "," @;
+                   else put Volgnummer @;
+              end;
+       if missing(Ovk_nr)
+         then put "," @;
+         else do;
+                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
+                   then put '22'x Ovk_nr +(-1) '22'x "," @;
+                   else put Ovk_nr @;
+              end;
+       if missing(Rpt_nr)
+         then put "," @;
+         else do;
+                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
+                   then put '22'x Rpt_nr +(-1) '22'x "," @;
+                   else put Rpt_nr @;
+              end;
+       if missing(Bgt_cd)
+         then put "," @;
+         else do;
+                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
+                   then put '22'x Bgt_cd +(-1) '22'x "," @;
+                   else put Bgt_cd @;
+              end;
+       if missing(Verleend)
+         then put "," @;
+         else do;
+                 if find(Verleend,'0A'x) > 0 and 2+klength(Verleend) = klength(quote(trim(Verleend)))
+                   then put '22'x Verleend +(-1) '22'x "," @;
+                   else put Verleend @;
+              end;
+       if missing(Ingetrokken)
+         then put "," @;
+         else do;
+                 if find(Ingetrokken,'0A'x) > 0 and 2+klength(Ingetrokken) = klength(quote(trim(Ingetrokken)))
+                   then put '22'x Ingetrokken +(-1) '22'x "," @;
+                   else put Ingetrokken @;
+              end;
+       if missing(Gedeclareerd)
+         then put "," @;
+         else do;
+                 if find(Gedeclareerd,'0A'x) > 0 and 2+klength(Gedeclareerd) = klength(quote(trim(Gedeclareerd)))
+                   then put '22'x Gedeclareerd +(-1) '22'x "," @;
+                   else put Gedeclareerd @;
               end;
        if missing(Betaald)
          then put "," @;
@@ -5886,12 +5942,54 @@ data _null_;
                    then put '22'x Betaald +(-1) '22'x "," @;
                    else put Betaald @;
               end;
-       if missing(Bgt_cd)
+       if missing(Vastgesteld)
          then put "," @;
          else do;
-                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
-                   then put '22'x Bgt_cd +(-1) '22'x "," @;
-                   else put Bgt_cd @;
+                 if find(Vastgesteld,'0A'x) > 0 and 2+klength(Vastgesteld) = klength(quote(trim(Vastgesteld)))
+                   then put '22'x Vastgesteld +(-1) '22'x "," @;
+                   else put Vastgesteld @;
+              end;
+       if missing(Openstaand)
+         then put "," @;
+         else do;
+                 if find(Openstaand,'0A'x) > 0 and 2+klength(Openstaand) = klength(quote(trim(Openstaand)))
+                   then put '22'x Openstaand +(-1) '22'x "," @;
+                   else put Openstaand @;
+              end;
+       if missing(Opeisbaar)
+         then put "," @;
+         else do;
+                 if find(Opeisbaar,'0A'x) > 0 and 2+klength(Opeisbaar) = klength(quote(trim(Opeisbaar)))
+                   then put '22'x Opeisbaar +(-1) '22'x "," @;
+                   else put Opeisbaar @;
+              end;
+       if missing(Def_verleend)
+         then put "," @;
+         else do;
+                 if find(Def_verleend,'0A'x) > 0 and 2+klength(Def_verleend) = klength(quote(trim(Def_verleend)))
+                   then put '22'x Def_verleend +(-1) '22'x "," @;
+                   else put Def_verleend @;
+              end;
+       if missing(Def_ingetrokken)
+         then put "," @;
+         else do;
+                 if find(Def_ingetrokken,'0A'x) > 0 and 2+klength(Def_ingetrokken) = klength(quote(trim(Def_ingetrokken)))
+                   then put '22'x Def_ingetrokken +(-1) '22'x "," @;
+                   else put Def_ingetrokken @;
+              end;
+       if missing(Def_gedeclareerd)
+         then put "," @;
+         else do;
+                 if find(Def_gedeclareerd,'0A'x) > 0 and 2+klength(Def_gedeclareerd) = klength(quote(trim(Def_gedeclareerd)))
+                   then put '22'x Def_gedeclareerd +(-1) '22'x "," @;
+                   else put Def_gedeclareerd @;
+              end;
+       if missing(Def_openstaand)
+         then put "," @;
+         else do;
+                 if find(Def_openstaand,'0A'x) > 0 and 2+klength(Def_openstaand) = klength(quote(trim(Def_openstaand)))
+                   then put '22'x Def_openstaand +(-1) '22'x "," @;
+                   else put Def_openstaand @;
               end;
        if missing(Creatie_dat)
          then put "," @;
@@ -5907,69 +6005,6 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Cvk_id)
-         then put "," @;
-         else do;
-                 if find(Cvk_id,'0A'x) > 0 and 2+klength(Cvk_id) = klength(quote(trim(Cvk_id)))
-                   then put '22'x Cvk_id +(-1) '22'x "," @;
-                   else put Cvk_id @;
-              end;
-       if missing(Def_gedeclareerd)
-         then put "," @;
-         else do;
-                 if find(Def_gedeclareerd,'0A'x) > 0 and 2+klength(Def_gedeclareerd) = klength(quote(trim(Def_gedeclareerd)))
-                   then put '22'x Def_gedeclareerd +(-1) '22'x "," @;
-                   else put Def_gedeclareerd @;
-              end;
-       if missing(Def_ingetrokken)
-         then put "," @;
-         else do;
-                 if find(Def_ingetrokken,'0A'x) > 0 and 2+klength(Def_ingetrokken) = klength(quote(trim(Def_ingetrokken)))
-                   then put '22'x Def_ingetrokken +(-1) '22'x "," @;
-                   else put Def_ingetrokken @;
-              end;
-       if missing(Def_neg_einddeclaratie)
-         then put "," @;
-         else do;
-                 if find(Def_neg_einddeclaratie,'0A'x) > 0 and 2+klength(Def_neg_einddeclaratie) = klength(quote(trim(Def_neg_einddeclaratie)))
-                   then put '22'x Def_neg_einddeclaratie +(-1) '22'x "," @;
-                   else put Def_neg_einddeclaratie @;
-              end;
-       if missing(Def_openstaand)
-         then put "," @;
-         else do;
-                 if find(Def_openstaand,'0A'x) > 0 and 2+klength(Def_openstaand) = klength(quote(trim(Def_openstaand)))
-                   then put '22'x Def_openstaand +(-1) '22'x "," @;
-                   else put Def_openstaand @;
-              end;
-       if missing(Def_verleend)
-         then put "," @;
-         else do;
-                 if find(Def_verleend,'0A'x) > 0 and 2+klength(Def_verleend) = klength(quote(trim(Def_verleend)))
-                   then put '22'x Def_verleend +(-1) '22'x "," @;
-                   else put Def_verleend @;
-              end;
-       if missing(Dos_id)
-         then put "," @;
-         else do;
-                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
-                   then put '22'x Dos_id +(-1) '22'x "," @;
-                   else put Dos_id @;
-              end;
-       if missing(Gedeclareerd)
-         then put "," @;
-         else do;
-                 if find(Gedeclareerd,'0A'x) > 0 and 2+klength(Gedeclareerd) = klength(quote(trim(Gedeclareerd)))
-                   then put '22'x Gedeclareerd +(-1) '22'x "," @;
-                   else put Gedeclareerd @;
-              end;
-       if missing(Ingetrokken)
-         then put "," @;
-         else do;
-                 if find(Ingetrokken,'0A'x) > 0 and 2+klength(Ingetrokken) = klength(quote(trim(Ingetrokken)))
-                   then put '22'x Ingetrokken +(-1) '22'x "," @;
-                   else put Ingetrokken @;
-              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -5984,40 +6019,19 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
+       if missing(Rpe_datum_van)
+         then put "," @;
+         else do;
+                 if find(Rpe_datum_van,'0A'x) > 0 and 2+klength(Rpe_datum_van) = klength(quote(trim(Rpe_datum_van)))
+                   then put '22'x Rpe_datum_van +(-1) '22'x "," @;
+                   else put Rpe_datum_van @;
+              end;
        if missing(Neg_einddeclaratie)
          then put "," @;
          else do;
                  if find(Neg_einddeclaratie,'0A'x) > 0 and 2+klength(Neg_einddeclaratie) = klength(quote(trim(Neg_einddeclaratie)))
                    then put '22'x Neg_einddeclaratie +(-1) '22'x "," @;
                    else put Neg_einddeclaratie @;
-              end;
-       if missing(Opeisbaar)
-         then put "," @;
-         else do;
-                 if find(Opeisbaar,'0A'x) > 0 and 2+klength(Opeisbaar) = klength(quote(trim(Opeisbaar)))
-                   then put '22'x Opeisbaar +(-1) '22'x "," @;
-                   else put Opeisbaar @;
-              end;
-       if missing(Openstaand)
-         then put "," @;
-         else do;
-                 if find(Openstaand,'0A'x) > 0 and 2+klength(Openstaand) = klength(quote(trim(Openstaand)))
-                   then put '22'x Openstaand +(-1) '22'x "," @;
-                   else put Openstaand @;
-              end;
-       if missing(Ovk_nr)
-         then put "," @;
-         else do;
-                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
-                   then put '22'x Ovk_nr +(-1) '22'x "," @;
-                   else put Ovk_nr @;
-              end;
-       if missing(Per_Deelnemer)
-         then put "," @;
-         else do;
-                 if find(Per_Deelnemer,'0A'x) > 0 and 2+klength(Per_Deelnemer) = klength(quote(trim(Per_Deelnemer)))
-                   then put '22'x Per_Deelnemer +(-1) '22'x "," @;
-                   else put Per_Deelnemer @;
               end;
        if missing(Prg_id)
          then put "," @;
@@ -6040,19 +6054,33 @@ data _null_;
                    then put '22'x Reg_nr +(-1) '22'x "," @;
                    else put Reg_nr @;
               end;
-       if missing(Rpe_datum_van)
+       if missing(Afl_neg_einddeclaratie)
          then put "," @;
          else do;
-                 if find(Rpe_datum_van,'0A'x) > 0 and 2+klength(Rpe_datum_van) = klength(quote(trim(Rpe_datum_van)))
-                   then put '22'x Rpe_datum_van +(-1) '22'x "," @;
-                   else put Rpe_datum_van @;
+                 if find(Afl_neg_einddeclaratie,'0A'x) > 0 and 2+klength(Afl_neg_einddeclaratie) = klength(quote(trim(Afl_neg_einddeclaratie)))
+                   then put '22'x Afl_neg_einddeclaratie +(-1) '22'x "," @;
+                   else put Afl_neg_einddeclaratie @;
               end;
-       if missing(Rpt_nr)
+       if missing(Def_neg_einddeclaratie)
          then put "," @;
          else do;
-                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
-                   then put '22'x Rpt_nr +(-1) '22'x "," @;
-                   else put Rpt_nr @;
+                 if find(Def_neg_einddeclaratie,'0A'x) > 0 and 2+klength(Def_neg_einddeclaratie) = klength(quote(trim(Def_neg_einddeclaratie)))
+                   then put '22'x Def_neg_einddeclaratie +(-1) '22'x "," @;
+                   else put Def_neg_einddeclaratie @;
+              end;
+       if missing(Cvk_id)
+         then put "," @;
+         else do;
+                 if find(Cvk_id,'0A'x) > 0 and 2+klength(Cvk_id) = klength(quote(trim(Cvk_id)))
+                   then put '22'x Cvk_id +(-1) '22'x "," @;
+                   else put Cvk_id @;
+              end;
+       if missing(Vpl_volgnummer)
+         then put "," @;
+         else do;
+                 if find(Vpl_volgnummer,'0A'x) > 0 and 2+klength(Vpl_volgnummer) = klength(quote(trim(Vpl_volgnummer)))
+                   then put '22'x Vpl_volgnummer +(-1) '22'x "," @;
+                   else put Vpl_volgnummer @;
               end;
        if missing(Rpt_nr_oud)
          then put "," @;
@@ -6061,40 +6089,12 @@ data _null_;
                    then put '22'x Rpt_nr_oud +(-1) '22'x "," @;
                    else put Rpt_nr_oud @;
               end;
-       if missing(Tra_id)
+       if missing(Per_Deelnemer)
          then put "," @;
          else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
-              end;
-       if missing(Vastgesteld)
-         then put "," @;
-         else do;
-                 if find(Vastgesteld,'0A'x) > 0 and 2+klength(Vastgesteld) = klength(quote(trim(Vastgesteld)))
-                   then put '22'x Vastgesteld +(-1) '22'x "," @;
-                   else put Vastgesteld @;
-              end;
-       if missing(Verleend)
-         then put "," @;
-         else do;
-                 if find(Verleend,'0A'x) > 0 and 2+klength(Verleend) = klength(quote(trim(Verleend)))
-                   then put '22'x Verleend +(-1) '22'x "," @;
-                   else put Verleend @;
-              end;
-       if missing(Volgnummer)
-         then put "," @;
-         else do;
-                 if find(Volgnummer,'0A'x) > 0 and 2+klength(Volgnummer) = klength(quote(trim(Volgnummer)))
-                   then put '22'x Volgnummer +(-1) '22'x "," @;
-                   else put Volgnummer @;
-              end;
-       if missing(Vpl_volgnummer)
-         then put "," @;
-         else do;
-                 if find(Vpl_volgnummer,'0A'x) > 0 and 2+klength(Vpl_volgnummer) = klength(quote(trim(Vpl_volgnummer)))
-                   then put '22'x Vpl_volgnummer +(-1) '22'x "," @;
-                   else put Vpl_volgnummer @;
+                 if find(Per_Deelnemer,'0A'x) > 0 and 2+klength(Per_Deelnemer) = klength(quote(trim(Per_Deelnemer)))
+                   then put '22'x Per_Deelnemer +(-1) '22'x "," @;
+                   else put Per_Deelnemer @;
               end;
        put techId best12. ; 
        ; 
@@ -6549,9 +6549,9 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aangeboden_aan_ZER" 
-       ','
           "Aangevraagd_bedrag" 
+       ','
+          "Aantal_dagenopschorting" 
        ','
           "Aantal_ICT_projecten" 
        ','
@@ -6560,8 +6560,6 @@ data _null_;
           "Aantal_SO_werknemers" 
        ','
           "Aantal_SO_zlf" 
-       ','
-          "Aantal_dagenopschorting" 
        ','
           "Aanvang_dat" 
        ','
@@ -6573,10 +6571,6 @@ data _null_;
        ','
           "Afdrachtsvermindering" 
        ','
-          "Afgelost_op_onvoorw_hoofdsom" 
-       ','
-          "Afgelost_op_onvoorw_rente" 
-       ','
           "Afhandeldatum" 
        ','
           "Afhandelwijze" 
@@ -6584,6 +6578,8 @@ data _null_;
           "Afl_neg_einddeclaratie" 
        ','
           "Akkoord_verlenen" 
+       ','
+          "aut_verwerkt_imp" 
        ','
           "Auth_id_indiener" 
        ','
@@ -6599,8 +6595,6 @@ data _null_;
        ','
           "Batchstatusstat" 
        ','
-          "Begrote_SO_loonsom" 
-       ','
           "Behandelingsronde" 
        ','
           "Beoordelingswijze" 
@@ -6609,19 +6603,17 @@ data _null_;
        ','
           "Beslissing_cd" 
        ','
-          "Cerhoud_id_Ondertekenaar" 
-       ','
           "Checksum" 
        ','
           "Classificatie" 
        ','
           "Cluster_nr" 
        ','
+          "Controle_activiteit" 
+       ','
           "Commercieel_perspectief" 
        ','
           "Contractjaar" 
-       ','
-          "Controle_activiteit" 
        ','
           "Conversiedossier" 
        ','
@@ -6631,19 +6623,17 @@ data _null_;
        ','
           "Creatie_user" 
        ','
+          "Jaardossier_WBSO" 
+       ','
           "Datum_in" 
        ','
           "Datum_renteberekening" 
        ','
           "Datum_status" 
        ','
-          "Direct_opeisbaar_gesteld" 
+          "Volgnr_diskette" 
        ','
-          "Direct_opeisbare_hoofdsom" 
-       ','
-          "Direct_opeisbare_rente" 
-       ','
-          "Direct_opeisbare_vordering" 
+          "Volgnr_diskette_na_import" 
        ','
           "Dos_cd" 
        ','
@@ -6695,9 +6685,9 @@ data _null_;
        ','
           "Inleen_binnen_Fiscale_eenheid" 
        ','
-          "Jaar" 
+          "Meldingnummer_IRWA" 
        ','
-          "Jaardossier_WBSO" 
+          "Jaar" 
        ','
           "Jaardossier_bron_dos_id" 
        ','
@@ -6707,29 +6697,17 @@ data _null_;
        ','
           "Krat_nr" 
        ','
-          "Kwijtsch_voorw_rente" 
-       ','
-          "Kwijtsch_direct_opeisbaar" 
-       ','
-          "Kwijtsch_onvoorw_hoofdsom" 
-       ','
-          "Kwijtsch_onvoorw_rente" 
-       ','
-          "Kwijtsch_voorw_hoofdsom" 
-       ','
-          "LB_nummer_komt_overeen" 
-       ','
           "Laatste_jr_aflossing" 
        ','
           "Laatste_pcs_id" 
        ','
           "Landnaam" 
        ','
+          "LB_nummer_komt_overeen" 
+       ','
           "Machtiging_JN" 
        ','
           "Mdw_cd" 
-       ','
-          "Meldingnummer_IRWA" 
        ','
           "Mentorterugkoppeling" 
        ','
@@ -6751,13 +6729,15 @@ data _null_;
        ','
           "Offertebedrag" 
        ','
+          "Cerhoud_id_Ondertekenaar" 
+       ','
           "Ontvangstdatum" 
        ','
           "Oorspr_einddatum" 
        ','
-          "Opdrachtvorm_cd" 
-       ','
           "Overige_subsidie" 
+       ','
+          "Opdrachtvorm_cd" 
        ','
           "Perc_verrekenen" 
        ','
@@ -6769,11 +6749,11 @@ data _null_;
        ','
           "Projectomschrijving" 
        ','
+          "Ranking" 
+       ','
           "RDA_Afhandeling_forfaitair" 
        ','
           "RDA_aangevraagd" 
-       ','
-          "Ranking" 
        ','
           "Referentie" 
        ','
@@ -6785,124 +6765,142 @@ data _null_;
        ','
           "Rente_perc" 
        ','
-          "SO_loon" 
-       ','
-          "SO_uren" 
-       ','
           "Samenwerkingsverband1" 
        ','
           "Samenwerkingsverband2" 
        ','
+          "SO_loon" 
+       ','
+          "Begrote_SO_loonsom" 
+       ','
+          "SO_uren" 
+       ','
           "Startmaand" 
        ','
-          "Status_E_Diensten" 
-       ','
-          "Status_E_Loket" 
-       ','
-          "Status_TT" 
+          "Statuscode" 
        ','
           "Status_cert" 
        ','
           "Status_oud" 
        ','
-          "Statuscode" 
+          "status_SO_uurloon" 
+       ','
+          "Status_TT" 
        ','
           "Statusgroep" 
        ','
           "Statustermijn" 
        ','
-          "Technisch_Cor_id" 
+          "Status_E_Diensten" 
+       ','
+          "Status_E_Loket" 
        ','
           "Technisch_succes" 
        ','
+          "Technisch_Cor_id" 
+       ','
           "Titel" 
+       ','
+          "Afgelost_op_onvoorw_hoofdsom" 
+       ','
+          "Afgelost_op_onvoorw_rente" 
        ','
           "Totaal_afgelost_op_hoofdsom" 
        ','
+          "Totaal_ontvangen_rente" 
+       ','
           "Totaal_bijgeschreven_rente" 
        ','
+          "Direct_opeisbare_vordering" 
+       ','
+          "Direct_opeisbare_hoofdsom" 
+       ','
+          "Direct_opeisbare_rente" 
+       ','
           "Totaal_gecommitteerd_bedrag" 
+       ','
+          "Zegge_Totaal_gecommitteerd" 
        ','
           "Totaal_gedeclareerd_bedrag" 
        ','
           "Totaal_geschoonde_kosten" 
        ','
+          "Totale_hoofdsom" 
+       ','
           "Totaal_ingetrokken_bedrag" 
+       ','
+          "Kwijtsch_onvoorw_hoofdsom" 
+       ','
+          "Kwijtsch_onvoorw_rente" 
+       ','
+          "Kwijtsch_direct_opeisbaar" 
+       ','
+          "Kwijtsch_voorw_hoofdsom" 
+       ','
+          "Kwijtsch_voorw_rente" 
        ','
           "Totaal_kwijtgescholden_bedrag" 
        ','
-          "Totaal_ontvangen_rente" 
-       ','
           "Totaal_openstaand_bedrag" 
+       ','
+          "Direct_opeisbaar_gesteld" 
        ','
           "Totaal_uitbetaald" 
        ','
           "Totaal_verleend_bedrag" 
        ','
-          "Totale_hoofdsom" 
-       ','
           "Uitlening_binnen_Fisc_eenheid" 
        ','
           "Uurloon_jaar" 
        ','
-          "VV_Aanvraagnummer" 
-       ','
           "Vaststellen_batch" 
-       ','
-          "Vaststelling_conform_aanvraag" 
        ','
           "Vergoedingsperc" 
        ','
           "Volgnr_LB" 
        ','
-          "Volgnr_diskette" 
-       ','
-          "Volgnr_diskette_na_import" 
-       ','
           "Voorlopig_gecommitteerd" 
        ','
           "Voorlopig_gedeclareerd" 
        ','
-          "Vorie_aanvraagperiode" 
-       ','
           "Vorig_aanvraag_bedrijf_nr" 
-       ','
-          "Vorig_aanvraag_volgnr" 
        ','
           "Vorig_aanvraagjaar" 
        ','
           "Vorig_aanvraagnummer" 
        ','
+          "Vorie_aanvraagperiode" 
+       ','
+          "Vorig_aanvraag_volgnr" 
+       ','
+          "Vaststelling_conform_aanvraag" 
+       ','
+          "VV_Aanvraagnummer" 
+       ','
           "Wel_akkoord_niet_verlenen" 
        ','
-          "Zegge_Totaal_gecommitteerd" 
-       ','
-          "aut_verwerkt_imp" 
-       ','
-          "status_SO_uurloon" 
+          "Aangeboden_aan_ZER" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_DAM_DOSSIER   end=EFIEOD; 
-       format Aangeboden_aan_ZER  ;
        format Aangevraagd_bedrag best12. ;
+       format Aantal_dagenopschorting best12. ;
        format Aantal_ICT_projecten best12. ;
        format Aantal_SO_projecten best12. ;
        format Aantal_SO_werknemers best12. ;
        format Aantal_SO_zlf best12. ;
-       format Aantal_dagenopschorting best12. ;
        format Aanvang_dat B8601DT19. ;
        format Aanvraag_volgnr best12. ;
        format Aanvraagsoort  ;
        format Acceptatie_sts  ;
        format Afdrachtsvermindering  ;
-       format Afgelost_op_onvoorw_hoofdsom best12. ;
-       format Afgelost_op_onvoorw_rente best12. ;
        format Afhandeldatum B8601DT19. ;
        format Afhandelwijze  ;
        format Afl_neg_einddeclaratie best12. ;
        format Akkoord_verlenen  ;
+       format aut_verwerkt_imp  ;
        format Auth_id_indiener best12. ;
        format Auth_id_ondertekenaar best12. ;
        format Auth_prg_id best12. ;
@@ -6910,29 +6908,26 @@ data _null_;
        format Batchstatuscert  ;
        format Batchstatusref  ;
        format Batchstatusstat  ;
-       format Begrote_SO_loonsom best12. ;
        format Behandelingsronde best12. ;
        format Beoordelingswijze  ;
        format Berekende_rente best12. ;
        format Beslissing_cd  ;
-       format Cerhoud_id_Ondertekenaar best12. ;
        format Checksum best12. ;
        format Classificatie  ;
        format Cluster_nr best12. ;
+       format Controle_activiteit  ;
        format Commercieel_perspectief  ;
        format Contractjaar best12. ;
-       format Controle_activiteit  ;
        format Conversiedossier  ;
        format Correspondentie_via_email  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
+       format Jaardossier_WBSO  ;
        format Datum_in B8601DT19. ;
        format Datum_renteberekening B8601DT19. ;
        format Datum_status B8601DT19. ;
-       format Direct_opeisbaar_gesteld best12. ;
-       format Direct_opeisbare_hoofdsom best12. ;
-       format Direct_opeisbare_rente best12. ;
-       format Direct_opeisbare_vordering best12. ;
+       format Volgnr_diskette best12. ;
+       format Volgnr_diskette_na_import best12. ;
        format Dos_cd  ;
        format Dos_id best12. ;
        format Dos_id_aanvulling best12. ;
@@ -6958,24 +6953,18 @@ data _null_;
        format Ingezien  ;
        format Inkoopcat_cd  ;
        format Inleen_binnen_Fiscale_eenheid  ;
+       format Meldingnummer_IRWA  ;
        format Jaar best12. ;
-       format Jaardossier_WBSO  ;
        format Jaardossier_bron_dos_id best12. ;
        format Jaardossier_dos_id best12. ;
        format Korte_titel  ;
        format Krat_nr best12. ;
-       format Kwijtsch_voorw_rente best12. ;
-       format Kwijtsch_direct_opeisbaar best12. ;
-       format Kwijtsch_onvoorw_hoofdsom best12. ;
-       format Kwijtsch_onvoorw_rente best12. ;
-       format Kwijtsch_voorw_hoofdsom best12. ;
-       format LB_nummer_komt_overeen  ;
        format Laatste_jr_aflossing best12. ;
        format Laatste_pcs_id best12. ;
        format Landnaam  ;
+       format LB_nummer_komt_overeen  ;
        format Machtiging_JN  ;
        format Mdw_cd  ;
-       format Meldingnummer_IRWA  ;
        format Mentorterugkoppeling  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_dat_vst B8601DT19. ;
@@ -6986,87 +6975,98 @@ data _null_;
        format Notities  ;
        format Octrooien best12. ;
        format Offertebedrag best12. ;
+       format Cerhoud_id_Ondertekenaar best12. ;
        format Ontvangstdatum B8601DT19. ;
        format Oorspr_einddatum B8601DT19. ;
-       format Opdrachtvorm_cd  ;
        format Overige_subsidie  ;
+       format Opdrachtvorm_cd  ;
        format Perc_verrekenen best12. ;
        format Periode_nr best12. ;
        format Prioriteit best12. ;
        format Prioriteitsdatum B8601DT19. ;
        format Projectomschrijving  ;
+       format Ranking best12. ;
        format RDA_Afhandeling_forfaitair  ;
        format RDA_aangevraagd  ;
-       format Ranking best12. ;
        format Referentie  ;
        format Reg_id best12. ;
        format Reg_nr best12. ;
        format Rel_id_Aanvrager best12. ;
        format Rente_perc best12. ;
-       format SO_loon best12. ;
-       format SO_uren best12. ;
        format Samenwerkingsverband1  ;
        format Samenwerkingsverband2  ;
+       format SO_loon best12. ;
+       format Begrote_SO_loonsom best12. ;
+       format SO_uren best12. ;
        format Startmaand best12. ;
-       format Status_E_Diensten  ;
-       format Status_E_Loket  ;
-       format Status_TT  ;
+       format Statuscode  ;
        format Status_cert  ;
        format Status_oud  ;
-       format Statuscode  ;
+       format status_SO_uurloon  ;
+       format Status_TT  ;
        format Statusgroep  ;
        format Statustermijn B8601DT19. ;
-       format Technisch_Cor_id best12. ;
+       format Status_E_Diensten  ;
+       format Status_E_Loket  ;
        format Technisch_succes best12. ;
+       format Technisch_Cor_id best12. ;
        format Titel  ;
+       format Afgelost_op_onvoorw_hoofdsom best12. ;
+       format Afgelost_op_onvoorw_rente best12. ;
        format Totaal_afgelost_op_hoofdsom best12. ;
+       format Totaal_ontvangen_rente best12. ;
        format Totaal_bijgeschreven_rente best12. ;
+       format Direct_opeisbare_vordering best12. ;
+       format Direct_opeisbare_hoofdsom best12. ;
+       format Direct_opeisbare_rente best12. ;
        format Totaal_gecommitteerd_bedrag best12. ;
+       format Zegge_Totaal_gecommitteerd  ;
        format Totaal_gedeclareerd_bedrag best12. ;
        format Totaal_geschoonde_kosten best12. ;
+       format Totale_hoofdsom best12. ;
        format Totaal_ingetrokken_bedrag best12. ;
+       format Kwijtsch_onvoorw_hoofdsom best12. ;
+       format Kwijtsch_onvoorw_rente best12. ;
+       format Kwijtsch_direct_opeisbaar best12. ;
+       format Kwijtsch_voorw_hoofdsom best12. ;
+       format Kwijtsch_voorw_rente best12. ;
        format Totaal_kwijtgescholden_bedrag best12. ;
-       format Totaal_ontvangen_rente best12. ;
        format Totaal_openstaand_bedrag best12. ;
+       format Direct_opeisbaar_gesteld best12. ;
        format Totaal_uitbetaald best12. ;
        format Totaal_verleend_bedrag best12. ;
-       format Totale_hoofdsom best12. ;
        format Uitlening_binnen_Fisc_eenheid  ;
        format Uurloon_jaar best12. ;
-       format VV_Aanvraagnummer  ;
        format Vaststellen_batch  ;
-       format Vaststelling_conform_aanvraag  ;
        format Vergoedingsperc best12. ;
        format Volgnr_LB best12. ;
-       format Volgnr_diskette best12. ;
-       format Volgnr_diskette_na_import best12. ;
        format Voorlopig_gecommitteerd best12. ;
        format Voorlopig_gedeclareerd best12. ;
-       format Vorie_aanvraagperiode best12. ;
        format Vorig_aanvraag_bedrijf_nr best12. ;
-       format Vorig_aanvraag_volgnr best12. ;
        format Vorig_aanvraagjaar best12. ;
        format Vorig_aanvraagnummer  ;
+       format Vorie_aanvraagperiode best12. ;
+       format Vorig_aanvraag_volgnr best12. ;
+       format Vaststelling_conform_aanvraag  ;
+       format VV_Aanvraagnummer  ;
        format Wel_akkoord_niet_verlenen  ;
-       format Zegge_Totaal_gecommitteerd  ;
-       format aut_verwerkt_imp  ;
-       format status_SO_uurloon  ;
+       format Aangeboden_aan_ZER  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aangeboden_aan_ZER)
-         then put "," @;
-         else do;
-                 if find(Aangeboden_aan_ZER,'0A'x) > 0 and 2+klength(Aangeboden_aan_ZER) = klength(quote(trim(Aangeboden_aan_ZER)))
-                   then put '22'x Aangeboden_aan_ZER +(-1) '22'x "," @;
-                   else put Aangeboden_aan_ZER @;
-              end;
        if missing(Aangevraagd_bedrag)
          then put "," @;
          else do;
                  if find(Aangevraagd_bedrag,'0A'x) > 0 and 2+klength(Aangevraagd_bedrag) = klength(quote(trim(Aangevraagd_bedrag)))
                    then put '22'x Aangevraagd_bedrag +(-1) '22'x "," @;
                    else put Aangevraagd_bedrag @;
+              end;
+       if missing(Aantal_dagenopschorting)
+         then put "," @;
+         else do;
+                 if find(Aantal_dagenopschorting,'0A'x) > 0 and 2+klength(Aantal_dagenopschorting) = klength(quote(trim(Aantal_dagenopschorting)))
+                   then put '22'x Aantal_dagenopschorting +(-1) '22'x "," @;
+                   else put Aantal_dagenopschorting @;
               end;
        if missing(Aantal_ICT_projecten)
          then put "," @;
@@ -7095,13 +7095,6 @@ data _null_;
                  if find(Aantal_SO_zlf,'0A'x) > 0 and 2+klength(Aantal_SO_zlf) = klength(quote(trim(Aantal_SO_zlf)))
                    then put '22'x Aantal_SO_zlf +(-1) '22'x "," @;
                    else put Aantal_SO_zlf @;
-              end;
-       if missing(Aantal_dagenopschorting)
-         then put "," @;
-         else do;
-                 if find(Aantal_dagenopschorting,'0A'x) > 0 and 2+klength(Aantal_dagenopschorting) = klength(quote(trim(Aantal_dagenopschorting)))
-                   then put '22'x Aantal_dagenopschorting +(-1) '22'x "," @;
-                   else put Aantal_dagenopschorting @;
               end;
        if missing(Aanvang_dat)
          then put "," @;
@@ -7138,20 +7131,6 @@ data _null_;
                    then put '22'x Afdrachtsvermindering +(-1) '22'x "," @;
                    else put Afdrachtsvermindering @;
               end;
-       if missing(Afgelost_op_onvoorw_hoofdsom)
-         then put "," @;
-         else do;
-                 if find(Afgelost_op_onvoorw_hoofdsom,'0A'x) > 0 and 2+klength(Afgelost_op_onvoorw_hoofdsom) = klength(quote(trim(Afgelost_op_onvoorw_hoofdsom)))
-                   then put '22'x Afgelost_op_onvoorw_hoofdsom +(-1) '22'x "," @;
-                   else put Afgelost_op_onvoorw_hoofdsom @;
-              end;
-       if missing(Afgelost_op_onvoorw_rente)
-         then put "," @;
-         else do;
-                 if find(Afgelost_op_onvoorw_rente,'0A'x) > 0 and 2+klength(Afgelost_op_onvoorw_rente) = klength(quote(trim(Afgelost_op_onvoorw_rente)))
-                   then put '22'x Afgelost_op_onvoorw_rente +(-1) '22'x "," @;
-                   else put Afgelost_op_onvoorw_rente @;
-              end;
        if missing(Afhandeldatum)
          then put "," @;
          else do;
@@ -7179,6 +7158,13 @@ data _null_;
                  if find(Akkoord_verlenen,'0A'x) > 0 and 2+klength(Akkoord_verlenen) = klength(quote(trim(Akkoord_verlenen)))
                    then put '22'x Akkoord_verlenen +(-1) '22'x "," @;
                    else put Akkoord_verlenen @;
+              end;
+       if missing(aut_verwerkt_imp)
+         then put "," @;
+         else do;
+                 if find(aut_verwerkt_imp,'0A'x) > 0 and 2+klength(aut_verwerkt_imp) = klength(quote(trim(aut_verwerkt_imp)))
+                   then put '22'x aut_verwerkt_imp +(-1) '22'x "," @;
+                   else put aut_verwerkt_imp @;
               end;
        if missing(Auth_id_indiener)
          then put "," @;
@@ -7229,13 +7215,6 @@ data _null_;
                    then put '22'x Batchstatusstat +(-1) '22'x "," @;
                    else put Batchstatusstat @;
               end;
-       if missing(Begrote_SO_loonsom)
-         then put "," @;
-         else do;
-                 if find(Begrote_SO_loonsom,'0A'x) > 0 and 2+klength(Begrote_SO_loonsom) = klength(quote(trim(Begrote_SO_loonsom)))
-                   then put '22'x Begrote_SO_loonsom +(-1) '22'x "," @;
-                   else put Begrote_SO_loonsom @;
-              end;
        if missing(Behandelingsronde)
          then put "," @;
          else do;
@@ -7264,13 +7243,6 @@ data _null_;
                    then put '22'x Beslissing_cd +(-1) '22'x "," @;
                    else put Beslissing_cd @;
               end;
-       if missing(Cerhoud_id_Ondertekenaar)
-         then put "," @;
-         else do;
-                 if find(Cerhoud_id_Ondertekenaar,'0A'x) > 0 and 2+klength(Cerhoud_id_Ondertekenaar) = klength(quote(trim(Cerhoud_id_Ondertekenaar)))
-                   then put '22'x Cerhoud_id_Ondertekenaar +(-1) '22'x "," @;
-                   else put Cerhoud_id_Ondertekenaar @;
-              end;
        if missing(Checksum)
          then put "," @;
          else do;
@@ -7292,6 +7264,13 @@ data _null_;
                    then put '22'x Cluster_nr +(-1) '22'x "," @;
                    else put Cluster_nr @;
               end;
+       if missing(Controle_activiteit)
+         then put "," @;
+         else do;
+                 if find(Controle_activiteit,'0A'x) > 0 and 2+klength(Controle_activiteit) = klength(quote(trim(Controle_activiteit)))
+                   then put '22'x Controle_activiteit +(-1) '22'x "," @;
+                   else put Controle_activiteit @;
+              end;
        if missing(Commercieel_perspectief)
          then put "," @;
          else do;
@@ -7305,13 +7284,6 @@ data _null_;
                  if find(Contractjaar,'0A'x) > 0 and 2+klength(Contractjaar) = klength(quote(trim(Contractjaar)))
                    then put '22'x Contractjaar +(-1) '22'x "," @;
                    else put Contractjaar @;
-              end;
-       if missing(Controle_activiteit)
-         then put "," @;
-         else do;
-                 if find(Controle_activiteit,'0A'x) > 0 and 2+klength(Controle_activiteit) = klength(quote(trim(Controle_activiteit)))
-                   then put '22'x Controle_activiteit +(-1) '22'x "," @;
-                   else put Controle_activiteit @;
               end;
        if missing(Conversiedossier)
          then put "," @;
@@ -7341,6 +7313,13 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
+       if missing(Jaardossier_WBSO)
+         then put "," @;
+         else do;
+                 if find(Jaardossier_WBSO,'0A'x) > 0 and 2+klength(Jaardossier_WBSO) = klength(quote(trim(Jaardossier_WBSO)))
+                   then put '22'x Jaardossier_WBSO +(-1) '22'x "," @;
+                   else put Jaardossier_WBSO @;
+              end;
        if missing(Datum_in)
          then put "," @;
          else do;
@@ -7362,33 +7341,19 @@ data _null_;
                    then put '22'x Datum_status +(-1) '22'x "," @;
                    else put Datum_status @;
               end;
-       if missing(Direct_opeisbaar_gesteld)
+       if missing(Volgnr_diskette)
          then put "," @;
          else do;
-                 if find(Direct_opeisbaar_gesteld,'0A'x) > 0 and 2+klength(Direct_opeisbaar_gesteld) = klength(quote(trim(Direct_opeisbaar_gesteld)))
-                   then put '22'x Direct_opeisbaar_gesteld +(-1) '22'x "," @;
-                   else put Direct_opeisbaar_gesteld @;
+                 if find(Volgnr_diskette,'0A'x) > 0 and 2+klength(Volgnr_diskette) = klength(quote(trim(Volgnr_diskette)))
+                   then put '22'x Volgnr_diskette +(-1) '22'x "," @;
+                   else put Volgnr_diskette @;
               end;
-       if missing(Direct_opeisbare_hoofdsom)
+       if missing(Volgnr_diskette_na_import)
          then put "," @;
          else do;
-                 if find(Direct_opeisbare_hoofdsom,'0A'x) > 0 and 2+klength(Direct_opeisbare_hoofdsom) = klength(quote(trim(Direct_opeisbare_hoofdsom)))
-                   then put '22'x Direct_opeisbare_hoofdsom +(-1) '22'x "," @;
-                   else put Direct_opeisbare_hoofdsom @;
-              end;
-       if missing(Direct_opeisbare_rente)
-         then put "," @;
-         else do;
-                 if find(Direct_opeisbare_rente,'0A'x) > 0 and 2+klength(Direct_opeisbare_rente) = klength(quote(trim(Direct_opeisbare_rente)))
-                   then put '22'x Direct_opeisbare_rente +(-1) '22'x "," @;
-                   else put Direct_opeisbare_rente @;
-              end;
-       if missing(Direct_opeisbare_vordering)
-         then put "," @;
-         else do;
-                 if find(Direct_opeisbare_vordering,'0A'x) > 0 and 2+klength(Direct_opeisbare_vordering) = klength(quote(trim(Direct_opeisbare_vordering)))
-                   then put '22'x Direct_opeisbare_vordering +(-1) '22'x "," @;
-                   else put Direct_opeisbare_vordering @;
+                 if find(Volgnr_diskette_na_import,'0A'x) > 0 and 2+klength(Volgnr_diskette_na_import) = klength(quote(trim(Volgnr_diskette_na_import)))
+                   then put '22'x Volgnr_diskette_na_import +(-1) '22'x "," @;
+                   else put Volgnr_diskette_na_import @;
               end;
        if missing(Dos_cd)
          then put "," @;
@@ -7565,19 +7530,19 @@ data _null_;
                    then put '22'x Inleen_binnen_Fiscale_eenheid +(-1) '22'x "," @;
                    else put Inleen_binnen_Fiscale_eenheid @;
               end;
+       if missing(Meldingnummer_IRWA)
+         then put "," @;
+         else do;
+                 if find(Meldingnummer_IRWA,'0A'x) > 0 and 2+klength(Meldingnummer_IRWA) = klength(quote(trim(Meldingnummer_IRWA)))
+                   then put '22'x Meldingnummer_IRWA +(-1) '22'x "," @;
+                   else put Meldingnummer_IRWA @;
+              end;
        if missing(Jaar)
          then put "," @;
          else do;
                  if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
                    then put '22'x Jaar +(-1) '22'x "," @;
                    else put Jaar @;
-              end;
-       if missing(Jaardossier_WBSO)
-         then put "," @;
-         else do;
-                 if find(Jaardossier_WBSO,'0A'x) > 0 and 2+klength(Jaardossier_WBSO) = klength(quote(trim(Jaardossier_WBSO)))
-                   then put '22'x Jaardossier_WBSO +(-1) '22'x "," @;
-                   else put Jaardossier_WBSO @;
               end;
        if missing(Jaardossier_bron_dos_id)
          then put "," @;
@@ -7607,48 +7572,6 @@ data _null_;
                    then put '22'x Krat_nr +(-1) '22'x "," @;
                    else put Krat_nr @;
               end;
-       if missing(Kwijtsch_voorw_rente)
-         then put "," @;
-         else do;
-                 if find(Kwijtsch_voorw_rente,'0A'x) > 0 and 2+klength(Kwijtsch_voorw_rente) = klength(quote(trim(Kwijtsch_voorw_rente)))
-                   then put '22'x Kwijtsch_voorw_rente +(-1) '22'x "," @;
-                   else put Kwijtsch_voorw_rente @;
-              end;
-       if missing(Kwijtsch_direct_opeisbaar)
-         then put "," @;
-         else do;
-                 if find(Kwijtsch_direct_opeisbaar,'0A'x) > 0 and 2+klength(Kwijtsch_direct_opeisbaar) = klength(quote(trim(Kwijtsch_direct_opeisbaar)))
-                   then put '22'x Kwijtsch_direct_opeisbaar +(-1) '22'x "," @;
-                   else put Kwijtsch_direct_opeisbaar @;
-              end;
-       if missing(Kwijtsch_onvoorw_hoofdsom)
-         then put "," @;
-         else do;
-                 if find(Kwijtsch_onvoorw_hoofdsom,'0A'x) > 0 and 2+klength(Kwijtsch_onvoorw_hoofdsom) = klength(quote(trim(Kwijtsch_onvoorw_hoofdsom)))
-                   then put '22'x Kwijtsch_onvoorw_hoofdsom +(-1) '22'x "," @;
-                   else put Kwijtsch_onvoorw_hoofdsom @;
-              end;
-       if missing(Kwijtsch_onvoorw_rente)
-         then put "," @;
-         else do;
-                 if find(Kwijtsch_onvoorw_rente,'0A'x) > 0 and 2+klength(Kwijtsch_onvoorw_rente) = klength(quote(trim(Kwijtsch_onvoorw_rente)))
-                   then put '22'x Kwijtsch_onvoorw_rente +(-1) '22'x "," @;
-                   else put Kwijtsch_onvoorw_rente @;
-              end;
-       if missing(Kwijtsch_voorw_hoofdsom)
-         then put "," @;
-         else do;
-                 if find(Kwijtsch_voorw_hoofdsom,'0A'x) > 0 and 2+klength(Kwijtsch_voorw_hoofdsom) = klength(quote(trim(Kwijtsch_voorw_hoofdsom)))
-                   then put '22'x Kwijtsch_voorw_hoofdsom +(-1) '22'x "," @;
-                   else put Kwijtsch_voorw_hoofdsom @;
-              end;
-       if missing(LB_nummer_komt_overeen)
-         then put "," @;
-         else do;
-                 if find(LB_nummer_komt_overeen,'0A'x) > 0 and 2+klength(LB_nummer_komt_overeen) = klength(quote(trim(LB_nummer_komt_overeen)))
-                   then put '22'x LB_nummer_komt_overeen +(-1) '22'x "," @;
-                   else put LB_nummer_komt_overeen @;
-              end;
        if missing(Laatste_jr_aflossing)
          then put "," @;
          else do;
@@ -7670,6 +7593,13 @@ data _null_;
                    then put '22'x Landnaam +(-1) '22'x "," @;
                    else put Landnaam @;
               end;
+       if missing(LB_nummer_komt_overeen)
+         then put "," @;
+         else do;
+                 if find(LB_nummer_komt_overeen,'0A'x) > 0 and 2+klength(LB_nummer_komt_overeen) = klength(quote(trim(LB_nummer_komt_overeen)))
+                   then put '22'x LB_nummer_komt_overeen +(-1) '22'x "," @;
+                   else put LB_nummer_komt_overeen @;
+              end;
        if missing(Machtiging_JN)
          then put "," @;
          else do;
@@ -7683,13 +7613,6 @@ data _null_;
                  if find(Mdw_cd,'0A'x) > 0 and 2+klength(Mdw_cd) = klength(quote(trim(Mdw_cd)))
                    then put '22'x Mdw_cd +(-1) '22'x "," @;
                    else put Mdw_cd @;
-              end;
-       if missing(Meldingnummer_IRWA)
-         then put "," @;
-         else do;
-                 if find(Meldingnummer_IRWA,'0A'x) > 0 and 2+klength(Meldingnummer_IRWA) = klength(quote(trim(Meldingnummer_IRWA)))
-                   then put '22'x Meldingnummer_IRWA +(-1) '22'x "," @;
-                   else put Meldingnummer_IRWA @;
               end;
        if missing(Mentorterugkoppeling)
          then put "," @;
@@ -7761,6 +7684,13 @@ data _null_;
                    then put '22'x Offertebedrag +(-1) '22'x "," @;
                    else put Offertebedrag @;
               end;
+       if missing(Cerhoud_id_Ondertekenaar)
+         then put "," @;
+         else do;
+                 if find(Cerhoud_id_Ondertekenaar,'0A'x) > 0 and 2+klength(Cerhoud_id_Ondertekenaar) = klength(quote(trim(Cerhoud_id_Ondertekenaar)))
+                   then put '22'x Cerhoud_id_Ondertekenaar +(-1) '22'x "," @;
+                   else put Cerhoud_id_Ondertekenaar @;
+              end;
        if missing(Ontvangstdatum)
          then put "," @;
          else do;
@@ -7775,19 +7705,19 @@ data _null_;
                    then put '22'x Oorspr_einddatum +(-1) '22'x "," @;
                    else put Oorspr_einddatum @;
               end;
-       if missing(Opdrachtvorm_cd)
-         then put "," @;
-         else do;
-                 if find(Opdrachtvorm_cd,'0A'x) > 0 and 2+klength(Opdrachtvorm_cd) = klength(quote(trim(Opdrachtvorm_cd)))
-                   then put '22'x Opdrachtvorm_cd +(-1) '22'x "," @;
-                   else put Opdrachtvorm_cd @;
-              end;
        if missing(Overige_subsidie)
          then put "," @;
          else do;
                  if find(Overige_subsidie,'0A'x) > 0 and 2+klength(Overige_subsidie) = klength(quote(trim(Overige_subsidie)))
                    then put '22'x Overige_subsidie +(-1) '22'x "," @;
                    else put Overige_subsidie @;
+              end;
+       if missing(Opdrachtvorm_cd)
+         then put "," @;
+         else do;
+                 if find(Opdrachtvorm_cd,'0A'x) > 0 and 2+klength(Opdrachtvorm_cd) = klength(quote(trim(Opdrachtvorm_cd)))
+                   then put '22'x Opdrachtvorm_cd +(-1) '22'x "," @;
+                   else put Opdrachtvorm_cd @;
               end;
        if missing(Perc_verrekenen)
          then put "," @;
@@ -7824,6 +7754,13 @@ data _null_;
                    then put '22'x Projectomschrijving +(-1) '22'x "," @;
                    else put Projectomschrijving @;
               end;
+       if missing(Ranking)
+         then put "," @;
+         else do;
+                 if find(Ranking,'0A'x) > 0 and 2+klength(Ranking) = klength(quote(trim(Ranking)))
+                   then put '22'x Ranking +(-1) '22'x "," @;
+                   else put Ranking @;
+              end;
        if missing(RDA_Afhandeling_forfaitair)
          then put "," @;
          else do;
@@ -7837,13 +7774,6 @@ data _null_;
                  if find(RDA_aangevraagd,'0A'x) > 0 and 2+klength(RDA_aangevraagd) = klength(quote(trim(RDA_aangevraagd)))
                    then put '22'x RDA_aangevraagd +(-1) '22'x "," @;
                    else put RDA_aangevraagd @;
-              end;
-       if missing(Ranking)
-         then put "," @;
-         else do;
-                 if find(Ranking,'0A'x) > 0 and 2+klength(Ranking) = klength(quote(trim(Ranking)))
-                   then put '22'x Ranking +(-1) '22'x "," @;
-                   else put Ranking @;
               end;
        if missing(Referentie)
          then put "," @;
@@ -7880,20 +7810,6 @@ data _null_;
                    then put '22'x Rente_perc +(-1) '22'x "," @;
                    else put Rente_perc @;
               end;
-       if missing(SO_loon)
-         then put "," @;
-         else do;
-                 if find(SO_loon,'0A'x) > 0 and 2+klength(SO_loon) = klength(quote(trim(SO_loon)))
-                   then put '22'x SO_loon +(-1) '22'x "," @;
-                   else put SO_loon @;
-              end;
-       if missing(SO_uren)
-         then put "," @;
-         else do;
-                 if find(SO_uren,'0A'x) > 0 and 2+klength(SO_uren) = klength(quote(trim(SO_uren)))
-                   then put '22'x SO_uren +(-1) '22'x "," @;
-                   else put SO_uren @;
-              end;
        if missing(Samenwerkingsverband1)
          then put "," @;
          else do;
@@ -7908,6 +7824,27 @@ data _null_;
                    then put '22'x Samenwerkingsverband2 +(-1) '22'x "," @;
                    else put Samenwerkingsverband2 @;
               end;
+       if missing(SO_loon)
+         then put "," @;
+         else do;
+                 if find(SO_loon,'0A'x) > 0 and 2+klength(SO_loon) = klength(quote(trim(SO_loon)))
+                   then put '22'x SO_loon +(-1) '22'x "," @;
+                   else put SO_loon @;
+              end;
+       if missing(Begrote_SO_loonsom)
+         then put "," @;
+         else do;
+                 if find(Begrote_SO_loonsom,'0A'x) > 0 and 2+klength(Begrote_SO_loonsom) = klength(quote(trim(Begrote_SO_loonsom)))
+                   then put '22'x Begrote_SO_loonsom +(-1) '22'x "," @;
+                   else put Begrote_SO_loonsom @;
+              end;
+       if missing(SO_uren)
+         then put "," @;
+         else do;
+                 if find(SO_uren,'0A'x) > 0 and 2+klength(SO_uren) = klength(quote(trim(SO_uren)))
+                   then put '22'x SO_uren +(-1) '22'x "," @;
+                   else put SO_uren @;
+              end;
        if missing(Startmaand)
          then put "," @;
          else do;
@@ -7915,26 +7852,12 @@ data _null_;
                    then put '22'x Startmaand +(-1) '22'x "," @;
                    else put Startmaand @;
               end;
-       if missing(Status_E_Diensten)
+       if missing(Statuscode)
          then put "," @;
          else do;
-                 if find(Status_E_Diensten,'0A'x) > 0 and 2+klength(Status_E_Diensten) = klength(quote(trim(Status_E_Diensten)))
-                   then put '22'x Status_E_Diensten +(-1) '22'x "," @;
-                   else put Status_E_Diensten @;
-              end;
-       if missing(Status_E_Loket)
-         then put "," @;
-         else do;
-                 if find(Status_E_Loket,'0A'x) > 0 and 2+klength(Status_E_Loket) = klength(quote(trim(Status_E_Loket)))
-                   then put '22'x Status_E_Loket +(-1) '22'x "," @;
-                   else put Status_E_Loket @;
-              end;
-       if missing(Status_TT)
-         then put "," @;
-         else do;
-                 if find(Status_TT,'0A'x) > 0 and 2+klength(Status_TT) = klength(quote(trim(Status_TT)))
-                   then put '22'x Status_TT +(-1) '22'x "," @;
-                   else put Status_TT @;
+                 if find(Statuscode,'0A'x) > 0 and 2+klength(Statuscode) = klength(quote(trim(Statuscode)))
+                   then put '22'x Statuscode +(-1) '22'x "," @;
+                   else put Statuscode @;
               end;
        if missing(Status_cert)
          then put "," @;
@@ -7950,12 +7873,19 @@ data _null_;
                    then put '22'x Status_oud +(-1) '22'x "," @;
                    else put Status_oud @;
               end;
-       if missing(Statuscode)
+       if missing(status_SO_uurloon)
          then put "," @;
          else do;
-                 if find(Statuscode,'0A'x) > 0 and 2+klength(Statuscode) = klength(quote(trim(Statuscode)))
-                   then put '22'x Statuscode +(-1) '22'x "," @;
-                   else put Statuscode @;
+                 if find(status_SO_uurloon,'0A'x) > 0 and 2+klength(status_SO_uurloon) = klength(quote(trim(status_SO_uurloon)))
+                   then put '22'x status_SO_uurloon +(-1) '22'x "," @;
+                   else put status_SO_uurloon @;
+              end;
+       if missing(Status_TT)
+         then put "," @;
+         else do;
+                 if find(Status_TT,'0A'x) > 0 and 2+klength(Status_TT) = klength(quote(trim(Status_TT)))
+                   then put '22'x Status_TT +(-1) '22'x "," @;
+                   else put Status_TT @;
               end;
        if missing(Statusgroep)
          then put "," @;
@@ -7971,12 +7901,19 @@ data _null_;
                    then put '22'x Statustermijn +(-1) '22'x "," @;
                    else put Statustermijn @;
               end;
-       if missing(Technisch_Cor_id)
+       if missing(Status_E_Diensten)
          then put "," @;
          else do;
-                 if find(Technisch_Cor_id,'0A'x) > 0 and 2+klength(Technisch_Cor_id) = klength(quote(trim(Technisch_Cor_id)))
-                   then put '22'x Technisch_Cor_id +(-1) '22'x "," @;
-                   else put Technisch_Cor_id @;
+                 if find(Status_E_Diensten,'0A'x) > 0 and 2+klength(Status_E_Diensten) = klength(quote(trim(Status_E_Diensten)))
+                   then put '22'x Status_E_Diensten +(-1) '22'x "," @;
+                   else put Status_E_Diensten @;
+              end;
+       if missing(Status_E_Loket)
+         then put "," @;
+         else do;
+                 if find(Status_E_Loket,'0A'x) > 0 and 2+klength(Status_E_Loket) = klength(quote(trim(Status_E_Loket)))
+                   then put '22'x Status_E_Loket +(-1) '22'x "," @;
+                   else put Status_E_Loket @;
               end;
        if missing(Technisch_succes)
          then put "," @;
@@ -7985,12 +7922,33 @@ data _null_;
                    then put '22'x Technisch_succes +(-1) '22'x "," @;
                    else put Technisch_succes @;
               end;
+       if missing(Technisch_Cor_id)
+         then put "," @;
+         else do;
+                 if find(Technisch_Cor_id,'0A'x) > 0 and 2+klength(Technisch_Cor_id) = klength(quote(trim(Technisch_Cor_id)))
+                   then put '22'x Technisch_Cor_id +(-1) '22'x "," @;
+                   else put Technisch_Cor_id @;
+              end;
        if missing(Titel)
          then put "," @;
          else do;
                  if find(Titel,'0A'x) > 0 and 2+klength(Titel) = klength(quote(trim(Titel)))
                    then put '22'x Titel +(-1) '22'x "," @;
                    else put Titel @;
+              end;
+       if missing(Afgelost_op_onvoorw_hoofdsom)
+         then put "," @;
+         else do;
+                 if find(Afgelost_op_onvoorw_hoofdsom,'0A'x) > 0 and 2+klength(Afgelost_op_onvoorw_hoofdsom) = klength(quote(trim(Afgelost_op_onvoorw_hoofdsom)))
+                   then put '22'x Afgelost_op_onvoorw_hoofdsom +(-1) '22'x "," @;
+                   else put Afgelost_op_onvoorw_hoofdsom @;
+              end;
+       if missing(Afgelost_op_onvoorw_rente)
+         then put "," @;
+         else do;
+                 if find(Afgelost_op_onvoorw_rente,'0A'x) > 0 and 2+klength(Afgelost_op_onvoorw_rente) = klength(quote(trim(Afgelost_op_onvoorw_rente)))
+                   then put '22'x Afgelost_op_onvoorw_rente +(-1) '22'x "," @;
+                   else put Afgelost_op_onvoorw_rente @;
               end;
        if missing(Totaal_afgelost_op_hoofdsom)
          then put "," @;
@@ -7999,6 +7957,13 @@ data _null_;
                    then put '22'x Totaal_afgelost_op_hoofdsom +(-1) '22'x "," @;
                    else put Totaal_afgelost_op_hoofdsom @;
               end;
+       if missing(Totaal_ontvangen_rente)
+         then put "," @;
+         else do;
+                 if find(Totaal_ontvangen_rente,'0A'x) > 0 and 2+klength(Totaal_ontvangen_rente) = klength(quote(trim(Totaal_ontvangen_rente)))
+                   then put '22'x Totaal_ontvangen_rente +(-1) '22'x "," @;
+                   else put Totaal_ontvangen_rente @;
+              end;
        if missing(Totaal_bijgeschreven_rente)
          then put "," @;
          else do;
@@ -8006,12 +7971,40 @@ data _null_;
                    then put '22'x Totaal_bijgeschreven_rente +(-1) '22'x "," @;
                    else put Totaal_bijgeschreven_rente @;
               end;
+       if missing(Direct_opeisbare_vordering)
+         then put "," @;
+         else do;
+                 if find(Direct_opeisbare_vordering,'0A'x) > 0 and 2+klength(Direct_opeisbare_vordering) = klength(quote(trim(Direct_opeisbare_vordering)))
+                   then put '22'x Direct_opeisbare_vordering +(-1) '22'x "," @;
+                   else put Direct_opeisbare_vordering @;
+              end;
+       if missing(Direct_opeisbare_hoofdsom)
+         then put "," @;
+         else do;
+                 if find(Direct_opeisbare_hoofdsom,'0A'x) > 0 and 2+klength(Direct_opeisbare_hoofdsom) = klength(quote(trim(Direct_opeisbare_hoofdsom)))
+                   then put '22'x Direct_opeisbare_hoofdsom +(-1) '22'x "," @;
+                   else put Direct_opeisbare_hoofdsom @;
+              end;
+       if missing(Direct_opeisbare_rente)
+         then put "," @;
+         else do;
+                 if find(Direct_opeisbare_rente,'0A'x) > 0 and 2+klength(Direct_opeisbare_rente) = klength(quote(trim(Direct_opeisbare_rente)))
+                   then put '22'x Direct_opeisbare_rente +(-1) '22'x "," @;
+                   else put Direct_opeisbare_rente @;
+              end;
        if missing(Totaal_gecommitteerd_bedrag)
          then put "," @;
          else do;
                  if find(Totaal_gecommitteerd_bedrag,'0A'x) > 0 and 2+klength(Totaal_gecommitteerd_bedrag) = klength(quote(trim(Totaal_gecommitteerd_bedrag)))
                    then put '22'x Totaal_gecommitteerd_bedrag +(-1) '22'x "," @;
                    else put Totaal_gecommitteerd_bedrag @;
+              end;
+       if missing(Zegge_Totaal_gecommitteerd)
+         then put "," @;
+         else do;
+                 if find(Zegge_Totaal_gecommitteerd,'0A'x) > 0 and 2+klength(Zegge_Totaal_gecommitteerd) = klength(quote(trim(Zegge_Totaal_gecommitteerd)))
+                   then put '22'x Zegge_Totaal_gecommitteerd +(-1) '22'x "," @;
+                   else put Zegge_Totaal_gecommitteerd @;
               end;
        if missing(Totaal_gedeclareerd_bedrag)
          then put "," @;
@@ -8027,12 +8020,54 @@ data _null_;
                    then put '22'x Totaal_geschoonde_kosten +(-1) '22'x "," @;
                    else put Totaal_geschoonde_kosten @;
               end;
+       if missing(Totale_hoofdsom)
+         then put "," @;
+         else do;
+                 if find(Totale_hoofdsom,'0A'x) > 0 and 2+klength(Totale_hoofdsom) = klength(quote(trim(Totale_hoofdsom)))
+                   then put '22'x Totale_hoofdsom +(-1) '22'x "," @;
+                   else put Totale_hoofdsom @;
+              end;
        if missing(Totaal_ingetrokken_bedrag)
          then put "," @;
          else do;
                  if find(Totaal_ingetrokken_bedrag,'0A'x) > 0 and 2+klength(Totaal_ingetrokken_bedrag) = klength(quote(trim(Totaal_ingetrokken_bedrag)))
                    then put '22'x Totaal_ingetrokken_bedrag +(-1) '22'x "," @;
                    else put Totaal_ingetrokken_bedrag @;
+              end;
+       if missing(Kwijtsch_onvoorw_hoofdsom)
+         then put "," @;
+         else do;
+                 if find(Kwijtsch_onvoorw_hoofdsom,'0A'x) > 0 and 2+klength(Kwijtsch_onvoorw_hoofdsom) = klength(quote(trim(Kwijtsch_onvoorw_hoofdsom)))
+                   then put '22'x Kwijtsch_onvoorw_hoofdsom +(-1) '22'x "," @;
+                   else put Kwijtsch_onvoorw_hoofdsom @;
+              end;
+       if missing(Kwijtsch_onvoorw_rente)
+         then put "," @;
+         else do;
+                 if find(Kwijtsch_onvoorw_rente,'0A'x) > 0 and 2+klength(Kwijtsch_onvoorw_rente) = klength(quote(trim(Kwijtsch_onvoorw_rente)))
+                   then put '22'x Kwijtsch_onvoorw_rente +(-1) '22'x "," @;
+                   else put Kwijtsch_onvoorw_rente @;
+              end;
+       if missing(Kwijtsch_direct_opeisbaar)
+         then put "," @;
+         else do;
+                 if find(Kwijtsch_direct_opeisbaar,'0A'x) > 0 and 2+klength(Kwijtsch_direct_opeisbaar) = klength(quote(trim(Kwijtsch_direct_opeisbaar)))
+                   then put '22'x Kwijtsch_direct_opeisbaar +(-1) '22'x "," @;
+                   else put Kwijtsch_direct_opeisbaar @;
+              end;
+       if missing(Kwijtsch_voorw_hoofdsom)
+         then put "," @;
+         else do;
+                 if find(Kwijtsch_voorw_hoofdsom,'0A'x) > 0 and 2+klength(Kwijtsch_voorw_hoofdsom) = klength(quote(trim(Kwijtsch_voorw_hoofdsom)))
+                   then put '22'x Kwijtsch_voorw_hoofdsom +(-1) '22'x "," @;
+                   else put Kwijtsch_voorw_hoofdsom @;
+              end;
+       if missing(Kwijtsch_voorw_rente)
+         then put "," @;
+         else do;
+                 if find(Kwijtsch_voorw_rente,'0A'x) > 0 and 2+klength(Kwijtsch_voorw_rente) = klength(quote(trim(Kwijtsch_voorw_rente)))
+                   then put '22'x Kwijtsch_voorw_rente +(-1) '22'x "," @;
+                   else put Kwijtsch_voorw_rente @;
               end;
        if missing(Totaal_kwijtgescholden_bedrag)
          then put "," @;
@@ -8041,19 +8076,19 @@ data _null_;
                    then put '22'x Totaal_kwijtgescholden_bedrag +(-1) '22'x "," @;
                    else put Totaal_kwijtgescholden_bedrag @;
               end;
-       if missing(Totaal_ontvangen_rente)
-         then put "," @;
-         else do;
-                 if find(Totaal_ontvangen_rente,'0A'x) > 0 and 2+klength(Totaal_ontvangen_rente) = klength(quote(trim(Totaal_ontvangen_rente)))
-                   then put '22'x Totaal_ontvangen_rente +(-1) '22'x "," @;
-                   else put Totaal_ontvangen_rente @;
-              end;
        if missing(Totaal_openstaand_bedrag)
          then put "," @;
          else do;
                  if find(Totaal_openstaand_bedrag,'0A'x) > 0 and 2+klength(Totaal_openstaand_bedrag) = klength(quote(trim(Totaal_openstaand_bedrag)))
                    then put '22'x Totaal_openstaand_bedrag +(-1) '22'x "," @;
                    else put Totaal_openstaand_bedrag @;
+              end;
+       if missing(Direct_opeisbaar_gesteld)
+         then put "," @;
+         else do;
+                 if find(Direct_opeisbaar_gesteld,'0A'x) > 0 and 2+klength(Direct_opeisbaar_gesteld) = klength(quote(trim(Direct_opeisbaar_gesteld)))
+                   then put '22'x Direct_opeisbaar_gesteld +(-1) '22'x "," @;
+                   else put Direct_opeisbaar_gesteld @;
               end;
        if missing(Totaal_uitbetaald)
          then put "," @;
@@ -8069,13 +8104,6 @@ data _null_;
                    then put '22'x Totaal_verleend_bedrag +(-1) '22'x "," @;
                    else put Totaal_verleend_bedrag @;
               end;
-       if missing(Totale_hoofdsom)
-         then put "," @;
-         else do;
-                 if find(Totale_hoofdsom,'0A'x) > 0 and 2+klength(Totale_hoofdsom) = klength(quote(trim(Totale_hoofdsom)))
-                   then put '22'x Totale_hoofdsom +(-1) '22'x "," @;
-                   else put Totale_hoofdsom @;
-              end;
        if missing(Uitlening_binnen_Fisc_eenheid)
          then put "," @;
          else do;
@@ -8090,26 +8118,12 @@ data _null_;
                    then put '22'x Uurloon_jaar +(-1) '22'x "," @;
                    else put Uurloon_jaar @;
               end;
-       if missing(VV_Aanvraagnummer)
-         then put "," @;
-         else do;
-                 if find(VV_Aanvraagnummer,'0A'x) > 0 and 2+klength(VV_Aanvraagnummer) = klength(quote(trim(VV_Aanvraagnummer)))
-                   then put '22'x VV_Aanvraagnummer +(-1) '22'x "," @;
-                   else put VV_Aanvraagnummer @;
-              end;
        if missing(Vaststellen_batch)
          then put "," @;
          else do;
                  if find(Vaststellen_batch,'0A'x) > 0 and 2+klength(Vaststellen_batch) = klength(quote(trim(Vaststellen_batch)))
                    then put '22'x Vaststellen_batch +(-1) '22'x "," @;
                    else put Vaststellen_batch @;
-              end;
-       if missing(Vaststelling_conform_aanvraag)
-         then put "," @;
-         else do;
-                 if find(Vaststelling_conform_aanvraag,'0A'x) > 0 and 2+klength(Vaststelling_conform_aanvraag) = klength(quote(trim(Vaststelling_conform_aanvraag)))
-                   then put '22'x Vaststelling_conform_aanvraag +(-1) '22'x "," @;
-                   else put Vaststelling_conform_aanvraag @;
               end;
        if missing(Vergoedingsperc)
          then put "," @;
@@ -8125,20 +8139,6 @@ data _null_;
                    then put '22'x Volgnr_LB +(-1) '22'x "," @;
                    else put Volgnr_LB @;
               end;
-       if missing(Volgnr_diskette)
-         then put "," @;
-         else do;
-                 if find(Volgnr_diskette,'0A'x) > 0 and 2+klength(Volgnr_diskette) = klength(quote(trim(Volgnr_diskette)))
-                   then put '22'x Volgnr_diskette +(-1) '22'x "," @;
-                   else put Volgnr_diskette @;
-              end;
-       if missing(Volgnr_diskette_na_import)
-         then put "," @;
-         else do;
-                 if find(Volgnr_diskette_na_import,'0A'x) > 0 and 2+klength(Volgnr_diskette_na_import) = klength(quote(trim(Volgnr_diskette_na_import)))
-                   then put '22'x Volgnr_diskette_na_import +(-1) '22'x "," @;
-                   else put Volgnr_diskette_na_import @;
-              end;
        if missing(Voorlopig_gecommitteerd)
          then put "," @;
          else do;
@@ -8153,26 +8153,12 @@ data _null_;
                    then put '22'x Voorlopig_gedeclareerd +(-1) '22'x "," @;
                    else put Voorlopig_gedeclareerd @;
               end;
-       if missing(Vorie_aanvraagperiode)
-         then put "," @;
-         else do;
-                 if find(Vorie_aanvraagperiode,'0A'x) > 0 and 2+klength(Vorie_aanvraagperiode) = klength(quote(trim(Vorie_aanvraagperiode)))
-                   then put '22'x Vorie_aanvraagperiode +(-1) '22'x "," @;
-                   else put Vorie_aanvraagperiode @;
-              end;
        if missing(Vorig_aanvraag_bedrijf_nr)
          then put "," @;
          else do;
                  if find(Vorig_aanvraag_bedrijf_nr,'0A'x) > 0 and 2+klength(Vorig_aanvraag_bedrijf_nr) = klength(quote(trim(Vorig_aanvraag_bedrijf_nr)))
                    then put '22'x Vorig_aanvraag_bedrijf_nr +(-1) '22'x "," @;
                    else put Vorig_aanvraag_bedrijf_nr @;
-              end;
-       if missing(Vorig_aanvraag_volgnr)
-         then put "," @;
-         else do;
-                 if find(Vorig_aanvraag_volgnr,'0A'x) > 0 and 2+klength(Vorig_aanvraag_volgnr) = klength(quote(trim(Vorig_aanvraag_volgnr)))
-                   then put '22'x Vorig_aanvraag_volgnr +(-1) '22'x "," @;
-                   else put Vorig_aanvraag_volgnr @;
               end;
        if missing(Vorig_aanvraagjaar)
          then put "," @;
@@ -8188,6 +8174,34 @@ data _null_;
                    then put '22'x Vorig_aanvraagnummer +(-1) '22'x "," @;
                    else put Vorig_aanvraagnummer @;
               end;
+       if missing(Vorie_aanvraagperiode)
+         then put "," @;
+         else do;
+                 if find(Vorie_aanvraagperiode,'0A'x) > 0 and 2+klength(Vorie_aanvraagperiode) = klength(quote(trim(Vorie_aanvraagperiode)))
+                   then put '22'x Vorie_aanvraagperiode +(-1) '22'x "," @;
+                   else put Vorie_aanvraagperiode @;
+              end;
+       if missing(Vorig_aanvraag_volgnr)
+         then put "," @;
+         else do;
+                 if find(Vorig_aanvraag_volgnr,'0A'x) > 0 and 2+klength(Vorig_aanvraag_volgnr) = klength(quote(trim(Vorig_aanvraag_volgnr)))
+                   then put '22'x Vorig_aanvraag_volgnr +(-1) '22'x "," @;
+                   else put Vorig_aanvraag_volgnr @;
+              end;
+       if missing(Vaststelling_conform_aanvraag)
+         then put "," @;
+         else do;
+                 if find(Vaststelling_conform_aanvraag,'0A'x) > 0 and 2+klength(Vaststelling_conform_aanvraag) = klength(quote(trim(Vaststelling_conform_aanvraag)))
+                   then put '22'x Vaststelling_conform_aanvraag +(-1) '22'x "," @;
+                   else put Vaststelling_conform_aanvraag @;
+              end;
+       if missing(VV_Aanvraagnummer)
+         then put "," @;
+         else do;
+                 if find(VV_Aanvraagnummer,'0A'x) > 0 and 2+klength(VV_Aanvraagnummer) = klength(quote(trim(VV_Aanvraagnummer)))
+                   then put '22'x VV_Aanvraagnummer +(-1) '22'x "," @;
+                   else put VV_Aanvraagnummer @;
+              end;
        if missing(Wel_akkoord_niet_verlenen)
          then put "," @;
          else do;
@@ -8195,26 +8209,12 @@ data _null_;
                    then put '22'x Wel_akkoord_niet_verlenen +(-1) '22'x "," @;
                    else put Wel_akkoord_niet_verlenen @;
               end;
-       if missing(Zegge_Totaal_gecommitteerd)
+       if missing(Aangeboden_aan_ZER)
          then put "," @;
          else do;
-                 if find(Zegge_Totaal_gecommitteerd,'0A'x) > 0 and 2+klength(Zegge_Totaal_gecommitteerd) = klength(quote(trim(Zegge_Totaal_gecommitteerd)))
-                   then put '22'x Zegge_Totaal_gecommitteerd +(-1) '22'x "," @;
-                   else put Zegge_Totaal_gecommitteerd @;
-              end;
-       if missing(aut_verwerkt_imp)
-         then put "," @;
-         else do;
-                 if find(aut_verwerkt_imp,'0A'x) > 0 and 2+klength(aut_verwerkt_imp) = klength(quote(trim(aut_verwerkt_imp)))
-                   then put '22'x aut_verwerkt_imp +(-1) '22'x "," @;
-                   else put aut_verwerkt_imp @;
-              end;
-       if missing(status_SO_uurloon)
-         then put "," @;
-         else do;
-                 if find(status_SO_uurloon,'0A'x) > 0 and 2+klength(status_SO_uurloon) = klength(quote(trim(status_SO_uurloon)))
-                   then put '22'x status_SO_uurloon +(-1) '22'x "," @;
-                   else put status_SO_uurloon @;
+                 if find(Aangeboden_aan_ZER,'0A'x) > 0 and 2+klength(Aangeboden_aan_ZER) = klength(quote(trim(Aangeboden_aan_ZER)))
+                   then put '22'x Aangeboden_aan_ZER +(-1) '22'x "," @;
+                   else put Aangeboden_aan_ZER @;
               end;
        put techId best12. ; 
        ; 
@@ -8249,58 +8249,37 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Age_id" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
           "Ddg_id" 
        ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
+          "Age_id" 
        ','
           "Naam" 
        ','
           "Toelichting" 
        ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_DAM_DOSSIERGROEP   end=EFIEOD; 
-       format Age_id best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
        format Ddg_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
+       format Age_id best12. ;
        format Naam  ;
        format Toelichting  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Age_id)
-         then put "," @;
-         else do;
-                 if find(Age_id,'0A'x) > 0 and 2+klength(Age_id) = klength(quote(trim(Age_id)))
-                   then put '22'x Age_id +(-1) '22'x "," @;
-                   else put Age_id @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
        if missing(Ddg_id)
          then put "," @;
          else do;
@@ -8308,19 +8287,12 @@ data _null_;
                    then put '22'x Ddg_id +(-1) '22'x "," @;
                    else put Ddg_id @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Age_id)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
+                 if find(Age_id,'0A'x) > 0 and 2+klength(Age_id) = klength(quote(trim(Age_id)))
+                   then put '22'x Age_id +(-1) '22'x "," @;
+                   else put Age_id @;
               end;
        if missing(Naam)
          then put "," @;
@@ -8335,6 +8307,34 @@ data _null_;
                  if find(Toelichting,'0A'x) > 0 and 2+klength(Toelichting) = klength(quote(trim(Toelichting)))
                    then put '22'x Toelichting +(-1) '22'x "," @;
                    else put Toelichting @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -8494,58 +8494,114 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Dos_id" 
+       ','
+          "Prg_id" 
+       ','
+          "Mdw_id" 
+       ','
+          "Rol_cd" 
+       ','
+          "Datum_van" 
+       ','
+          "Datum_tot" 
+       ','
           "Behandelend" 
+       ','
+          "Notitie" 
+       ','
+          "Mdw_id_voorheen" 
        ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
        ','
-          "Datum_tot" 
-       ','
-          "Datum_van" 
-       ','
-          "Dos_id" 
-       ','
-          "Mdw_id" 
-       ','
-          "Mdw_id_voorheen" 
-       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
-       ','
-          "Notitie" 
-       ','
-          "Prg_id" 
-       ','
-          "Rol_cd" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_DAM_MDW_INTERN_HIST   end=EFIEOD; 
+       format Dos_id best12. ;
+       format Prg_id best12. ;
+       format Mdw_id best12. ;
+       format Rol_cd  ;
+       format Datum_van B8601DT19. ;
+       format Datum_tot B8601DT19. ;
        format Behandelend  ;
+       format Notitie  ;
+       format Mdw_id_voorheen best12. ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Datum_tot B8601DT19. ;
-       format Datum_van B8601DT19. ;
-       format Dos_id best12. ;
-       format Mdw_id best12. ;
-       format Mdw_id_voorheen best12. ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Notitie  ;
-       format Prg_id best12. ;
-       format Rol_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Dos_id)
+         then put "," @;
+         else do;
+                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
+                   then put '22'x Dos_id +(-1) '22'x "," @;
+                   else put Dos_id @;
+              end;
+       if missing(Prg_id)
+         then put "," @;
+         else do;
+                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
+                   then put '22'x Prg_id +(-1) '22'x "," @;
+                   else put Prg_id @;
+              end;
+       if missing(Mdw_id)
+         then put "," @;
+         else do;
+                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
+                   then put '22'x Mdw_id +(-1) '22'x "," @;
+                   else put Mdw_id @;
+              end;
+       if missing(Rol_cd)
+         then put "," @;
+         else do;
+                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
+                   then put '22'x Rol_cd +(-1) '22'x "," @;
+                   else put Rol_cd @;
+              end;
+       if missing(Datum_van)
+         then put "," @;
+         else do;
+                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
+                   then put '22'x Datum_van +(-1) '22'x "," @;
+                   else put Datum_van @;
+              end;
+       if missing(Datum_tot)
+         then put "," @;
+         else do;
+                 if find(Datum_tot,'0A'x) > 0 and 2+klength(Datum_tot) = klength(quote(trim(Datum_tot)))
+                   then put '22'x Datum_tot +(-1) '22'x "," @;
+                   else put Datum_tot @;
+              end;
        if missing(Behandelend)
          then put "," @;
          else do;
                  if find(Behandelend,'0A'x) > 0 and 2+klength(Behandelend) = klength(quote(trim(Behandelend)))
                    then put '22'x Behandelend +(-1) '22'x "," @;
                    else put Behandelend @;
+              end;
+       if missing(Notitie)
+         then put "," @;
+         else do;
+                 if find(Notitie,'0A'x) > 0 and 2+klength(Notitie) = klength(quote(trim(Notitie)))
+                   then put '22'x Notitie +(-1) '22'x "," @;
+                   else put Notitie @;
+              end;
+       if missing(Mdw_id_voorheen)
+         then put "," @;
+         else do;
+                 if find(Mdw_id_voorheen,'0A'x) > 0 and 2+klength(Mdw_id_voorheen) = klength(quote(trim(Mdw_id_voorheen)))
+                   then put '22'x Mdw_id_voorheen +(-1) '22'x "," @;
+                   else put Mdw_id_voorheen @;
               end;
        if missing(Creatie_dat)
          then put "," @;
@@ -8561,41 +8617,6 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Datum_tot)
-         then put "," @;
-         else do;
-                 if find(Datum_tot,'0A'x) > 0 and 2+klength(Datum_tot) = klength(quote(trim(Datum_tot)))
-                   then put '22'x Datum_tot +(-1) '22'x "," @;
-                   else put Datum_tot @;
-              end;
-       if missing(Datum_van)
-         then put "," @;
-         else do;
-                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
-                   then put '22'x Datum_van +(-1) '22'x "," @;
-                   else put Datum_van @;
-              end;
-       if missing(Dos_id)
-         then put "," @;
-         else do;
-                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
-                   then put '22'x Dos_id +(-1) '22'x "," @;
-                   else put Dos_id @;
-              end;
-       if missing(Mdw_id)
-         then put "," @;
-         else do;
-                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
-                   then put '22'x Mdw_id +(-1) '22'x "," @;
-                   else put Mdw_id @;
-              end;
-       if missing(Mdw_id_voorheen)
-         then put "," @;
-         else do;
-                 if find(Mdw_id_voorheen,'0A'x) > 0 and 2+klength(Mdw_id_voorheen) = klength(quote(trim(Mdw_id_voorheen)))
-                   then put '22'x Mdw_id_voorheen +(-1) '22'x "," @;
-                   else put Mdw_id_voorheen @;
-              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -8609,27 +8630,6 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
-              end;
-       if missing(Notitie)
-         then put "," @;
-         else do;
-                 if find(Notitie,'0A'x) > 0 and 2+klength(Notitie) = klength(quote(trim(Notitie)))
-                   then put '22'x Notitie +(-1) '22'x "," @;
-                   else put Notitie @;
-              end;
-       if missing(Prg_id)
-         then put "," @;
-         else do;
-                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
-                   then put '22'x Prg_id +(-1) '22'x "," @;
-                   else put Prg_id @;
-              end;
-       if missing(Rol_cd)
-         then put "," @;
-         else do;
-                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
-                   then put '22'x Rol_cd +(-1) '22'x "," @;
-                   else put Rol_cd @;
               end;
        put techId best12. ; 
        ; 
@@ -9391,19 +9391,11 @@ data _null_;
        put 
           "Commentaar" 
        ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Datum_van" 
        ','
           "Datum_tot" 
        ','
-          "Datum_van" 
-       ','
           "Dos_id" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
        ','
           "Ssg_cd" 
        ','
@@ -9411,21 +9403,29 @@ data _null_;
        ','
           "Tra_id" 
        ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_FAM_STATUSHISTORIE   end=EFIEOD; 
        format Commentaar  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum_tot B8601DT19. ;
        format Datum_van B8601DT19. ;
+       format Datum_tot B8601DT19. ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Ssg_cd  ;
        format Sts_cd  ;
        format Tra_id best12. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -9436,19 +9436,12 @@ data _null_;
                    then put '22'x Commentaar +(-1) '22'x "," @;
                    else put Commentaar @;
               end;
-       if missing(Creatie_dat)
+       if missing(Datum_van)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
+                   then put '22'x Datum_van +(-1) '22'x "," @;
+                   else put Datum_van @;
               end;
        if missing(Datum_tot)
          then put "," @;
@@ -9457,33 +9450,12 @@ data _null_;
                    then put '22'x Datum_tot +(-1) '22'x "," @;
                    else put Datum_tot @;
               end;
-       if missing(Datum_van)
-         then put "," @;
-         else do;
-                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
-                   then put '22'x Datum_van +(-1) '22'x "," @;
-                   else put Datum_van @;
-              end;
        if missing(Dos_id)
          then put "," @;
          else do;
                  if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
                    then put '22'x Dos_id +(-1) '22'x "," @;
                    else put Dos_id @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
               end;
        if missing(Ssg_cd)
          then put "," @;
@@ -9505,6 +9477,34 @@ data _null_;
                  if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
                    then put '22'x Tra_id +(-1) '22'x "," @;
                    else put Tra_id @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -9559,208 +9559,110 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Bedrag" 
+          "Tra_id" 
        ','
-          "Bgt_cd" 
-       ','
-          "Bic" 
-       ','
-          "Boeking" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Cvk_id_geselecteerd" 
-       ','
-          "Cvk_id_verwerkt" 
-       ','
-          "Gecorrigeerd_jn" 
-       ','
-          "Iban" 
-       ','
-          "Imvb" 
-       ','
-          "Jaar" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Naar_oracle" 
-       ','
-          "Omhang_jaar" 
+          "Rpt_nr" 
        ','
           "Ovk_nr" 
        ','
+          "Bgt_cd" 
+       ','
+          "Rpe_datum_van" 
+       ','
+          "Vpl_tra_id" 
+       ','
           "Prg_id" 
+       ','
+          "Vpl_volgnummer" 
+       ','
+          "Jaar" 
        ','
           "Reg_id" 
        ','
           "Reg_nr" 
        ','
-          "Rpe_datum_van" 
-       ','
-          "Rpt_nr" 
-       ','
-          "Rpt_nr_oud" 
-       ','
-          "Tra_id" 
+          "Bedrag" 
        ','
           "Valutadatum" 
        ','
+          "Iban" 
+       ','
+          "Bic" 
+       ','
+          "Omhang_jaar" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Creatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Cvk_id_geselecteerd" 
+       ','
+          "Cvk_id_verwerkt" 
+       ','
           "Volgnummer" 
        ','
-          "Vpl_tra_id" 
+          "Gecorrigeerd_jn" 
        ','
-          "Vpl_volgnummer" 
+          "Rpt_nr_oud" 
+       ','
+          "Naar_oracle" 
+       ','
+          "Boeking" 
+       ','
+          "Imvb" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_FAM_TRANSACTIE_REGEL   end=EFIEOD; 
-       format Bedrag best12. ;
-       format Bgt_cd  ;
-       format Bic  ;
-       format Boeking  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Cvk_id_geselecteerd best12. ;
-       format Cvk_id_verwerkt best12. ;
-       format Gecorrigeerd_jn  ;
-       format Iban  ;
-       format Imvb  ;
-       format Jaar best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Naar_oracle  ;
-       format Omhang_jaar best12. ;
+       format Tra_id best12. ;
+       format Rpt_nr best12. ;
        format Ovk_nr  ;
+       format Bgt_cd  ;
+       format Rpe_datum_van B8601DT19. ;
+       format Vpl_tra_id best12. ;
        format Prg_id best12. ;
+       format Vpl_volgnummer best12. ;
+       format Jaar best12. ;
        format Reg_id best12. ;
        format Reg_nr best12. ;
-       format Rpe_datum_van B8601DT19. ;
-       format Rpt_nr best12. ;
-       format Rpt_nr_oud  ;
-       format Tra_id best12. ;
+       format Bedrag best12. ;
        format Valutadatum B8601DT19. ;
+       format Iban  ;
+       format Bic  ;
+       format Omhang_jaar best12. ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Cvk_id_geselecteerd best12. ;
+       format Cvk_id_verwerkt best12. ;
        format Volgnummer best12. ;
-       format Vpl_tra_id best12. ;
-       format Vpl_volgnummer best12. ;
+       format Gecorrigeerd_jn  ;
+       format Rpt_nr_oud  ;
+       format Naar_oracle  ;
+       format Boeking  ;
+       format Imvb  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Bedrag)
+       if missing(Tra_id)
          then put "," @;
          else do;
-                 if find(Bedrag,'0A'x) > 0 and 2+klength(Bedrag) = klength(quote(trim(Bedrag)))
-                   then put '22'x Bedrag +(-1) '22'x "," @;
-                   else put Bedrag @;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
               end;
-       if missing(Bgt_cd)
+       if missing(Rpt_nr)
          then put "," @;
          else do;
-                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
-                   then put '22'x Bgt_cd +(-1) '22'x "," @;
-                   else put Bgt_cd @;
-              end;
-       if missing(Bic)
-         then put "," @;
-         else do;
-                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
-                   then put '22'x Bic +(-1) '22'x "," @;
-                   else put Bic @;
-              end;
-       if missing(Boeking)
-         then put "," @;
-         else do;
-                 if find(Boeking,'0A'x) > 0 and 2+klength(Boeking) = klength(quote(trim(Boeking)))
-                   then put '22'x Boeking +(-1) '22'x "," @;
-                   else put Boeking @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Cvk_id_geselecteerd)
-         then put "," @;
-         else do;
-                 if find(Cvk_id_geselecteerd,'0A'x) > 0 and 2+klength(Cvk_id_geselecteerd) = klength(quote(trim(Cvk_id_geselecteerd)))
-                   then put '22'x Cvk_id_geselecteerd +(-1) '22'x "," @;
-                   else put Cvk_id_geselecteerd @;
-              end;
-       if missing(Cvk_id_verwerkt)
-         then put "," @;
-         else do;
-                 if find(Cvk_id_verwerkt,'0A'x) > 0 and 2+klength(Cvk_id_verwerkt) = klength(quote(trim(Cvk_id_verwerkt)))
-                   then put '22'x Cvk_id_verwerkt +(-1) '22'x "," @;
-                   else put Cvk_id_verwerkt @;
-              end;
-       if missing(Gecorrigeerd_jn)
-         then put "," @;
-         else do;
-                 if find(Gecorrigeerd_jn,'0A'x) > 0 and 2+klength(Gecorrigeerd_jn) = klength(quote(trim(Gecorrigeerd_jn)))
-                   then put '22'x Gecorrigeerd_jn +(-1) '22'x "," @;
-                   else put Gecorrigeerd_jn @;
-              end;
-       if missing(Iban)
-         then put "," @;
-         else do;
-                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
-                   then put '22'x Iban +(-1) '22'x "," @;
-                   else put Iban @;
-              end;
-       if missing(Imvb)
-         then put "," @;
-         else do;
-                 if find(Imvb,'0A'x) > 0 and 2+klength(Imvb) = klength(quote(trim(Imvb)))
-                   then put '22'x Imvb +(-1) '22'x "," @;
-                   else put Imvb @;
-              end;
-       if missing(Jaar)
-         then put "," @;
-         else do;
-                 if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
-                   then put '22'x Jaar +(-1) '22'x "," @;
-                   else put Jaar @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Naar_oracle)
-         then put "," @;
-         else do;
-                 if find(Naar_oracle,'0A'x) > 0 and 2+klength(Naar_oracle) = klength(quote(trim(Naar_oracle)))
-                   then put '22'x Naar_oracle +(-1) '22'x "," @;
-                   else put Naar_oracle @;
-              end;
-       if missing(Omhang_jaar)
-         then put "," @;
-         else do;
-                 if find(Omhang_jaar,'0A'x) > 0 and 2+klength(Omhang_jaar) = klength(quote(trim(Omhang_jaar)))
-                   then put '22'x Omhang_jaar +(-1) '22'x "," @;
-                   else put Omhang_jaar @;
+                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
+                   then put '22'x Rpt_nr +(-1) '22'x "," @;
+                   else put Rpt_nr @;
               end;
        if missing(Ovk_nr)
          then put "," @;
@@ -9769,12 +9671,47 @@ data _null_;
                    then put '22'x Ovk_nr +(-1) '22'x "," @;
                    else put Ovk_nr @;
               end;
+       if missing(Bgt_cd)
+         then put "," @;
+         else do;
+                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
+                   then put '22'x Bgt_cd +(-1) '22'x "," @;
+                   else put Bgt_cd @;
+              end;
+       if missing(Rpe_datum_van)
+         then put "," @;
+         else do;
+                 if find(Rpe_datum_van,'0A'x) > 0 and 2+klength(Rpe_datum_van) = klength(quote(trim(Rpe_datum_van)))
+                   then put '22'x Rpe_datum_van +(-1) '22'x "," @;
+                   else put Rpe_datum_van @;
+              end;
+       if missing(Vpl_tra_id)
+         then put "," @;
+         else do;
+                 if find(Vpl_tra_id,'0A'x) > 0 and 2+klength(Vpl_tra_id) = klength(quote(trim(Vpl_tra_id)))
+                   then put '22'x Vpl_tra_id +(-1) '22'x "," @;
+                   else put Vpl_tra_id @;
+              end;
        if missing(Prg_id)
          then put "," @;
          else do;
                  if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
                    then put '22'x Prg_id +(-1) '22'x "," @;
                    else put Prg_id @;
+              end;
+       if missing(Vpl_volgnummer)
+         then put "," @;
+         else do;
+                 if find(Vpl_volgnummer,'0A'x) > 0 and 2+klength(Vpl_volgnummer) = klength(quote(trim(Vpl_volgnummer)))
+                   then put '22'x Vpl_volgnummer +(-1) '22'x "," @;
+                   else put Vpl_volgnummer @;
+              end;
+       if missing(Jaar)
+         then put "," @;
+         else do;
+                 if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
+                   then put '22'x Jaar +(-1) '22'x "," @;
+                   else put Jaar @;
               end;
        if missing(Reg_id)
          then put "," @;
@@ -9790,33 +9727,12 @@ data _null_;
                    then put '22'x Reg_nr +(-1) '22'x "," @;
                    else put Reg_nr @;
               end;
-       if missing(Rpe_datum_van)
+       if missing(Bedrag)
          then put "," @;
          else do;
-                 if find(Rpe_datum_van,'0A'x) > 0 and 2+klength(Rpe_datum_van) = klength(quote(trim(Rpe_datum_van)))
-                   then put '22'x Rpe_datum_van +(-1) '22'x "," @;
-                   else put Rpe_datum_van @;
-              end;
-       if missing(Rpt_nr)
-         then put "," @;
-         else do;
-                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
-                   then put '22'x Rpt_nr +(-1) '22'x "," @;
-                   else put Rpt_nr @;
-              end;
-       if missing(Rpt_nr_oud)
-         then put "," @;
-         else do;
-                 if find(Rpt_nr_oud,'0A'x) > 0 and 2+klength(Rpt_nr_oud) = klength(quote(trim(Rpt_nr_oud)))
-                   then put '22'x Rpt_nr_oud +(-1) '22'x "," @;
-                   else put Rpt_nr_oud @;
-              end;
-       if missing(Tra_id)
-         then put "," @;
-         else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
+                 if find(Bedrag,'0A'x) > 0 and 2+klength(Bedrag) = klength(quote(trim(Bedrag)))
+                   then put '22'x Bedrag +(-1) '22'x "," @;
+                   else put Bedrag @;
               end;
        if missing(Valutadatum)
          then put "," @;
@@ -9825,6 +9741,69 @@ data _null_;
                    then put '22'x Valutadatum +(-1) '22'x "," @;
                    else put Valutadatum @;
               end;
+       if missing(Iban)
+         then put "," @;
+         else do;
+                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
+                   then put '22'x Iban +(-1) '22'x "," @;
+                   else put Iban @;
+              end;
+       if missing(Bic)
+         then put "," @;
+         else do;
+                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
+                   then put '22'x Bic +(-1) '22'x "," @;
+                   else put Bic @;
+              end;
+       if missing(Omhang_jaar)
+         then put "," @;
+         else do;
+                 if find(Omhang_jaar,'0A'x) > 0 and 2+klength(Omhang_jaar) = klength(quote(trim(Omhang_jaar)))
+                   then put '22'x Omhang_jaar +(-1) '22'x "," @;
+                   else put Omhang_jaar @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Cvk_id_geselecteerd)
+         then put "," @;
+         else do;
+                 if find(Cvk_id_geselecteerd,'0A'x) > 0 and 2+klength(Cvk_id_geselecteerd) = klength(quote(trim(Cvk_id_geselecteerd)))
+                   then put '22'x Cvk_id_geselecteerd +(-1) '22'x "," @;
+                   else put Cvk_id_geselecteerd @;
+              end;
+       if missing(Cvk_id_verwerkt)
+         then put "," @;
+         else do;
+                 if find(Cvk_id_verwerkt,'0A'x) > 0 and 2+klength(Cvk_id_verwerkt) = klength(quote(trim(Cvk_id_verwerkt)))
+                   then put '22'x Cvk_id_verwerkt +(-1) '22'x "," @;
+                   else put Cvk_id_verwerkt @;
+              end;
        if missing(Volgnummer)
          then put "," @;
          else do;
@@ -9832,19 +9811,40 @@ data _null_;
                    then put '22'x Volgnummer +(-1) '22'x "," @;
                    else put Volgnummer @;
               end;
-       if missing(Vpl_tra_id)
+       if missing(Gecorrigeerd_jn)
          then put "," @;
          else do;
-                 if find(Vpl_tra_id,'0A'x) > 0 and 2+klength(Vpl_tra_id) = klength(quote(trim(Vpl_tra_id)))
-                   then put '22'x Vpl_tra_id +(-1) '22'x "," @;
-                   else put Vpl_tra_id @;
+                 if find(Gecorrigeerd_jn,'0A'x) > 0 and 2+klength(Gecorrigeerd_jn) = klength(quote(trim(Gecorrigeerd_jn)))
+                   then put '22'x Gecorrigeerd_jn +(-1) '22'x "," @;
+                   else put Gecorrigeerd_jn @;
               end;
-       if missing(Vpl_volgnummer)
+       if missing(Rpt_nr_oud)
          then put "," @;
          else do;
-                 if find(Vpl_volgnummer,'0A'x) > 0 and 2+klength(Vpl_volgnummer) = klength(quote(trim(Vpl_volgnummer)))
-                   then put '22'x Vpl_volgnummer +(-1) '22'x "," @;
-                   else put Vpl_volgnummer @;
+                 if find(Rpt_nr_oud,'0A'x) > 0 and 2+klength(Rpt_nr_oud) = klength(quote(trim(Rpt_nr_oud)))
+                   then put '22'x Rpt_nr_oud +(-1) '22'x "," @;
+                   else put Rpt_nr_oud @;
+              end;
+       if missing(Naar_oracle)
+         then put "," @;
+         else do;
+                 if find(Naar_oracle,'0A'x) > 0 and 2+klength(Naar_oracle) = klength(quote(trim(Naar_oracle)))
+                   then put '22'x Naar_oracle +(-1) '22'x "," @;
+                   else put Naar_oracle @;
+              end;
+       if missing(Boeking)
+         then put "," @;
+         else do;
+                 if find(Boeking,'0A'x) > 0 and 2+klength(Boeking) = klength(quote(trim(Boeking)))
+                   then put '22'x Boeking +(-1) '22'x "," @;
+                   else put Boeking @;
+              end;
+       if missing(Imvb)
+         then put "," @;
+         else do;
+                 if find(Imvb,'0A'x) > 0 and 2+klength(Imvb) = klength(quote(trim(Imvb)))
+                   then put '22'x Imvb +(-1) '22'x "," @;
+                   else put Imvb @;
               end;
        put techId best12. ; 
        ; 
@@ -9929,417 +9929,200 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Afgelost" 
+          "Volgnummer" 
        ','
-          "Afreken_tra_id" 
-       ','
-          "Bedrag_ex_btw" 
-       ','
-          "Bedrag_nlg" 
-       ','
-          "Correctie" 
-       ','
-          "Correctie_bedrag_bob" 
-       ','
-          "Correctie_volgnr" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Datum" 
-       ','
-          "Datum_acc_afd" 
-       ','
-          "Dos_id" 
-       ','
-          "Duurzaam_jn" 
-       ','
-          "Fam_aflossing" 
-       ','
-          "Fam_betaalritme" 
-       ','
-          "Fam_bij_rente" 
-       ','
-          "Fam_budgetmutatie" 
-       ','
-          "Fam_declaratie" 
-       ','
-          "Fam_kwijtschelding" 
-       ','
-          "Fam_overboeking" 
-       ','
-          "Fam_rest_aflossing" 
-       ','
-          "Fam_rest_voorschot" 
-       ','
-          "Fam_verplichting" 
-       ','
-          "Fam_vordering" 
-       ','
-          "Fam_vordering_afhandeling" 
-       ','
-          "Jaar" 
-       ','
-          "Jz_id" 
-       ','
-          "Kwijtgescholden" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Omhang_jaar" 
-       ','
-          "Omhang_jn" 
-       ','
-          "On_hold" 
+          "Tra_id" 
        ','
           "Prg_id" 
        ','
+          "Jaar" 
+       ','
+          "Dos_id" 
+       ','
+          "Tra_cd" 
+       ','
           "Reden" 
        ','
-          "Referentie" 
+          "bedrag" 
+       ','
+          "Bedrag_nlg" 
+       ','
+          "Datum" 
+       ','
+          "Valutadatum" 
+       ','
+          "Fam_verplichting" 
+       ','
+          "Fam_declaratie" 
+       ','
+          "Fam_bij_rente" 
+       ','
+          "Fam_kwijtschelding" 
+       ','
+          "Fam_rest_voorschot" 
+       ','
+          "Fam_overboeking" 
+       ','
+          "Fam_aflossing" 
+       ','
+          "Fam_budgetmutatie" 
+       ','
+          "Fam_rest_aflossing" 
+       ','
+          "Fam_betaalritme" 
+       ','
+          "Sts_cd" 
+       ','
+          "Ssg_cd" 
+       ','
+          "Correctie" 
+       ','
+          "Correctie_volgnr" 
+       ','
+          "Tra_id_van" 
+       ','
+          "Vst_id" 
        ','
           "Rel_id" 
        ','
           "Rol_cd" 
        ','
-          "Run_id" 
+          "Datum_acc_afd" 
        ','
-          "Ssg_cd" 
+          "Referentie" 
        ','
-          "Storneren" 
+          "Creatie_dat" 
        ','
-          "Sts_cd" 
+          "Creatie_user" 
        ','
-          "Termijn_uitstel" 
+          "Mutatie_dat" 
        ','
-          "Tmp_vordering_id" 
+          "Mutatie_user" 
        ','
-          "Tra_cd" 
-       ','
-          "Tra_id" 
-       ','
-          "Tra_id_dcv" 
-       ','
-          "Tra_id_ean_eap" 
-       ','
-          "Tra_id_rv" 
-       ','
-          "Tra_id_van" 
-       ','
-          "Valutadatum" 
-       ','
-          "Volgnummer" 
-       ','
-          "Vordering_bedrag" 
-       ','
-          "Vordering_status" 
-       ','
-          "Vordering_tra_id" 
-       ','
-          "Vst_id" 
+          "Bedrag_ex_btw" 
        ','
           "Vst_volgnr" 
        ','
-          "bedrag" 
+          "Duurzaam_jn" 
+       ','
+          "Run_id" 
+       ','
+          "Fam_vordering" 
+       ','
+          "Fam_vordering_afhandeling" 
+       ','
+          "Vordering_tra_id" 
+       ','
+          "Storneren" 
+       ','
+          "Vordering_bedrag" 
+       ','
+          "Afgelost" 
+       ','
+          "Kwijtgescholden" 
+       ','
+          "Tmp_vordering_id" 
+       ','
+          "Omhang_jaar" 
+       ','
+          "Omhang_jn" 
+       ','
+          "Tra_id_rv" 
+       ','
+          "Tra_id_dcv" 
+       ','
+          "Jz_id" 
+       ','
+          "Afreken_tra_id" 
+       ','
+          "Correctie_bedrag_bob" 
+       ','
+          "Vordering_status" 
+       ','
+          "On_hold" 
+       ','
+          "Termijn_uitstel" 
+       ','
+          "Tra_id_ean_eap" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_FAM_TRANSACTIE   end=EFIEOD; 
-       format Afgelost best12. ;
-       format Afreken_tra_id best12. ;
-       format Bedrag_ex_btw best12. ;
-       format Bedrag_nlg best12. ;
-       format Correctie  ;
-       format Correctie_bedrag_bob best12. ;
-       format Correctie_volgnr best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum B8601DT19. ;
-       format Datum_acc_afd B8601DT19. ;
-       format Dos_id best12. ;
-       format Duurzaam_jn  ;
-       format Fam_aflossing  ;
-       format Fam_betaalritme  ;
-       format Fam_bij_rente  ;
-       format Fam_budgetmutatie  ;
-       format Fam_declaratie  ;
-       format Fam_kwijtschelding  ;
-       format Fam_overboeking  ;
-       format Fam_rest_aflossing  ;
-       format Fam_rest_voorschot  ;
-       format Fam_verplichting  ;
-       format Fam_vordering  ;
-       format Fam_vordering_afhandeling  ;
-       format Jaar best12. ;
-       format Jz_id best12. ;
-       format Kwijtgescholden best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Omhang_jaar best12. ;
-       format Omhang_jn  ;
-       format On_hold  ;
+       format Volgnummer best12. ;
+       format Tra_id best12. ;
        format Prg_id best12. ;
+       format Jaar best12. ;
+       format Dos_id best12. ;
+       format Tra_cd  ;
        format Reden  ;
-       format Referentie  ;
+       format bedrag best12. ;
+       format Bedrag_nlg best12. ;
+       format Datum B8601DT19. ;
+       format Valutadatum B8601DT19. ;
+       format Fam_verplichting  ;
+       format Fam_declaratie  ;
+       format Fam_bij_rente  ;
+       format Fam_kwijtschelding  ;
+       format Fam_rest_voorschot  ;
+       format Fam_overboeking  ;
+       format Fam_aflossing  ;
+       format Fam_budgetmutatie  ;
+       format Fam_rest_aflossing  ;
+       format Fam_betaalritme  ;
+       format Sts_cd  ;
+       format Ssg_cd  ;
+       format Correctie  ;
+       format Correctie_volgnr best12. ;
+       format Tra_id_van best12. ;
+       format Vst_id best12. ;
        format Rel_id best12. ;
        format Rol_cd  ;
-       format Run_id best12. ;
-       format Ssg_cd  ;
-       format Storneren  ;
-       format Sts_cd  ;
-       format Termijn_uitstel B8601DT19. ;
-       format Tmp_vordering_id best12. ;
-       format Tra_cd  ;
-       format Tra_id best12. ;
-       format Tra_id_dcv best12. ;
-       format Tra_id_ean_eap best12. ;
-       format Tra_id_rv best12. ;
-       format Tra_id_van best12. ;
-       format Valutadatum B8601DT19. ;
-       format Volgnummer best12. ;
-       format Vordering_bedrag best12. ;
-       format Vordering_status  ;
-       format Vordering_tra_id best12. ;
-       format Vst_id best12. ;
+       format Datum_acc_afd B8601DT19. ;
+       format Referentie  ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Bedrag_ex_btw best12. ;
        format Vst_volgnr best12. ;
-       format bedrag best12. ;
+       format Duurzaam_jn  ;
+       format Run_id best12. ;
+       format Fam_vordering  ;
+       format Fam_vordering_afhandeling  ;
+       format Vordering_tra_id best12. ;
+       format Storneren  ;
+       format Vordering_bedrag best12. ;
+       format Afgelost best12. ;
+       format Kwijtgescholden best12. ;
+       format Tmp_vordering_id best12. ;
+       format Omhang_jaar best12. ;
+       format Omhang_jn  ;
+       format Tra_id_rv best12. ;
+       format Tra_id_dcv best12. ;
+       format Jz_id best12. ;
+       format Afreken_tra_id best12. ;
+       format Correctie_bedrag_bob best12. ;
+       format Vordering_status  ;
+       format On_hold  ;
+       format Termijn_uitstel B8601DT19. ;
+       format Tra_id_ean_eap best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Afgelost)
+       if missing(Volgnummer)
          then put "," @;
          else do;
-                 if find(Afgelost,'0A'x) > 0 and 2+klength(Afgelost) = klength(quote(trim(Afgelost)))
-                   then put '22'x Afgelost +(-1) '22'x "," @;
-                   else put Afgelost @;
+                 if find(Volgnummer,'0A'x) > 0 and 2+klength(Volgnummer) = klength(quote(trim(Volgnummer)))
+                   then put '22'x Volgnummer +(-1) '22'x "," @;
+                   else put Volgnummer @;
               end;
-       if missing(Afreken_tra_id)
+       if missing(Tra_id)
          then put "," @;
          else do;
-                 if find(Afreken_tra_id,'0A'x) > 0 and 2+klength(Afreken_tra_id) = klength(quote(trim(Afreken_tra_id)))
-                   then put '22'x Afreken_tra_id +(-1) '22'x "," @;
-                   else put Afreken_tra_id @;
-              end;
-       if missing(Bedrag_ex_btw)
-         then put "," @;
-         else do;
-                 if find(Bedrag_ex_btw,'0A'x) > 0 and 2+klength(Bedrag_ex_btw) = klength(quote(trim(Bedrag_ex_btw)))
-                   then put '22'x Bedrag_ex_btw +(-1) '22'x "," @;
-                   else put Bedrag_ex_btw @;
-              end;
-       if missing(Bedrag_nlg)
-         then put "," @;
-         else do;
-                 if find(Bedrag_nlg,'0A'x) > 0 and 2+klength(Bedrag_nlg) = klength(quote(trim(Bedrag_nlg)))
-                   then put '22'x Bedrag_nlg +(-1) '22'x "," @;
-                   else put Bedrag_nlg @;
-              end;
-       if missing(Correctie)
-         then put "," @;
-         else do;
-                 if find(Correctie,'0A'x) > 0 and 2+klength(Correctie) = klength(quote(trim(Correctie)))
-                   then put '22'x Correctie +(-1) '22'x "," @;
-                   else put Correctie @;
-              end;
-       if missing(Correctie_bedrag_bob)
-         then put "," @;
-         else do;
-                 if find(Correctie_bedrag_bob,'0A'x) > 0 and 2+klength(Correctie_bedrag_bob) = klength(quote(trim(Correctie_bedrag_bob)))
-                   then put '22'x Correctie_bedrag_bob +(-1) '22'x "," @;
-                   else put Correctie_bedrag_bob @;
-              end;
-       if missing(Correctie_volgnr)
-         then put "," @;
-         else do;
-                 if find(Correctie_volgnr,'0A'x) > 0 and 2+klength(Correctie_volgnr) = klength(quote(trim(Correctie_volgnr)))
-                   then put '22'x Correctie_volgnr +(-1) '22'x "," @;
-                   else put Correctie_volgnr @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Datum)
-         then put "," @;
-         else do;
-                 if find(Datum,'0A'x) > 0 and 2+klength(Datum) = klength(quote(trim(Datum)))
-                   then put '22'x Datum +(-1) '22'x "," @;
-                   else put Datum @;
-              end;
-       if missing(Datum_acc_afd)
-         then put "," @;
-         else do;
-                 if find(Datum_acc_afd,'0A'x) > 0 and 2+klength(Datum_acc_afd) = klength(quote(trim(Datum_acc_afd)))
-                   then put '22'x Datum_acc_afd +(-1) '22'x "," @;
-                   else put Datum_acc_afd @;
-              end;
-       if missing(Dos_id)
-         then put "," @;
-         else do;
-                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
-                   then put '22'x Dos_id +(-1) '22'x "," @;
-                   else put Dos_id @;
-              end;
-       if missing(Duurzaam_jn)
-         then put "," @;
-         else do;
-                 if find(Duurzaam_jn,'0A'x) > 0 and 2+klength(Duurzaam_jn) = klength(quote(trim(Duurzaam_jn)))
-                   then put '22'x Duurzaam_jn +(-1) '22'x "," @;
-                   else put Duurzaam_jn @;
-              end;
-       if missing(Fam_aflossing)
-         then put "," @;
-         else do;
-                 if find(Fam_aflossing,'0A'x) > 0 and 2+klength(Fam_aflossing) = klength(quote(trim(Fam_aflossing)))
-                   then put '22'x Fam_aflossing +(-1) '22'x "," @;
-                   else put Fam_aflossing @;
-              end;
-       if missing(Fam_betaalritme)
-         then put "," @;
-         else do;
-                 if find(Fam_betaalritme,'0A'x) > 0 and 2+klength(Fam_betaalritme) = klength(quote(trim(Fam_betaalritme)))
-                   then put '22'x Fam_betaalritme +(-1) '22'x "," @;
-                   else put Fam_betaalritme @;
-              end;
-       if missing(Fam_bij_rente)
-         then put "," @;
-         else do;
-                 if find(Fam_bij_rente,'0A'x) > 0 and 2+klength(Fam_bij_rente) = klength(quote(trim(Fam_bij_rente)))
-                   then put '22'x Fam_bij_rente +(-1) '22'x "," @;
-                   else put Fam_bij_rente @;
-              end;
-       if missing(Fam_budgetmutatie)
-         then put "," @;
-         else do;
-                 if find(Fam_budgetmutatie,'0A'x) > 0 and 2+klength(Fam_budgetmutatie) = klength(quote(trim(Fam_budgetmutatie)))
-                   then put '22'x Fam_budgetmutatie +(-1) '22'x "," @;
-                   else put Fam_budgetmutatie @;
-              end;
-       if missing(Fam_declaratie)
-         then put "," @;
-         else do;
-                 if find(Fam_declaratie,'0A'x) > 0 and 2+klength(Fam_declaratie) = klength(quote(trim(Fam_declaratie)))
-                   then put '22'x Fam_declaratie +(-1) '22'x "," @;
-                   else put Fam_declaratie @;
-              end;
-       if missing(Fam_kwijtschelding)
-         then put "," @;
-         else do;
-                 if find(Fam_kwijtschelding,'0A'x) > 0 and 2+klength(Fam_kwijtschelding) = klength(quote(trim(Fam_kwijtschelding)))
-                   then put '22'x Fam_kwijtschelding +(-1) '22'x "," @;
-                   else put Fam_kwijtschelding @;
-              end;
-       if missing(Fam_overboeking)
-         then put "," @;
-         else do;
-                 if find(Fam_overboeking,'0A'x) > 0 and 2+klength(Fam_overboeking) = klength(quote(trim(Fam_overboeking)))
-                   then put '22'x Fam_overboeking +(-1) '22'x "," @;
-                   else put Fam_overboeking @;
-              end;
-       if missing(Fam_rest_aflossing)
-         then put "," @;
-         else do;
-                 if find(Fam_rest_aflossing,'0A'x) > 0 and 2+klength(Fam_rest_aflossing) = klength(quote(trim(Fam_rest_aflossing)))
-                   then put '22'x Fam_rest_aflossing +(-1) '22'x "," @;
-                   else put Fam_rest_aflossing @;
-              end;
-       if missing(Fam_rest_voorschot)
-         then put "," @;
-         else do;
-                 if find(Fam_rest_voorschot,'0A'x) > 0 and 2+klength(Fam_rest_voorschot) = klength(quote(trim(Fam_rest_voorschot)))
-                   then put '22'x Fam_rest_voorschot +(-1) '22'x "," @;
-                   else put Fam_rest_voorschot @;
-              end;
-       if missing(Fam_verplichting)
-         then put "," @;
-         else do;
-                 if find(Fam_verplichting,'0A'x) > 0 and 2+klength(Fam_verplichting) = klength(quote(trim(Fam_verplichting)))
-                   then put '22'x Fam_verplichting +(-1) '22'x "," @;
-                   else put Fam_verplichting @;
-              end;
-       if missing(Fam_vordering)
-         then put "," @;
-         else do;
-                 if find(Fam_vordering,'0A'x) > 0 and 2+klength(Fam_vordering) = klength(quote(trim(Fam_vordering)))
-                   then put '22'x Fam_vordering +(-1) '22'x "," @;
-                   else put Fam_vordering @;
-              end;
-       if missing(Fam_vordering_afhandeling)
-         then put "," @;
-         else do;
-                 if find(Fam_vordering_afhandeling,'0A'x) > 0 and 2+klength(Fam_vordering_afhandeling) = klength(quote(trim(Fam_vordering_afhandeling)))
-                   then put '22'x Fam_vordering_afhandeling +(-1) '22'x "," @;
-                   else put Fam_vordering_afhandeling @;
-              end;
-       if missing(Jaar)
-         then put "," @;
-         else do;
-                 if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
-                   then put '22'x Jaar +(-1) '22'x "," @;
-                   else put Jaar @;
-              end;
-       if missing(Jz_id)
-         then put "," @;
-         else do;
-                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
-                   then put '22'x Jz_id +(-1) '22'x "," @;
-                   else put Jz_id @;
-              end;
-       if missing(Kwijtgescholden)
-         then put "," @;
-         else do;
-                 if find(Kwijtgescholden,'0A'x) > 0 and 2+klength(Kwijtgescholden) = klength(quote(trim(Kwijtgescholden)))
-                   then put '22'x Kwijtgescholden +(-1) '22'x "," @;
-                   else put Kwijtgescholden @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Omhang_jaar)
-         then put "," @;
-         else do;
-                 if find(Omhang_jaar,'0A'x) > 0 and 2+klength(Omhang_jaar) = klength(quote(trim(Omhang_jaar)))
-                   then put '22'x Omhang_jaar +(-1) '22'x "," @;
-                   else put Omhang_jaar @;
-              end;
-       if missing(Omhang_jn)
-         then put "," @;
-         else do;
-                 if find(Omhang_jn,'0A'x) > 0 and 2+klength(Omhang_jn) = klength(quote(trim(Omhang_jn)))
-                   then put '22'x Omhang_jn +(-1) '22'x "," @;
-                   else put Omhang_jn @;
-              end;
-       if missing(On_hold)
-         then put "," @;
-         else do;
-                 if find(On_hold,'0A'x) > 0 and 2+klength(On_hold) = klength(quote(trim(On_hold)))
-                   then put '22'x On_hold +(-1) '22'x "," @;
-                   else put On_hold @;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
               end;
        if missing(Prg_id)
          then put "," @;
@@ -10348,6 +10131,27 @@ data _null_;
                    then put '22'x Prg_id +(-1) '22'x "," @;
                    else put Prg_id @;
               end;
+       if missing(Jaar)
+         then put "," @;
+         else do;
+                 if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
+                   then put '22'x Jaar +(-1) '22'x "," @;
+                   else put Jaar @;
+              end;
+       if missing(Dos_id)
+         then put "," @;
+         else do;
+                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
+                   then put '22'x Dos_id +(-1) '22'x "," @;
+                   else put Dos_id @;
+              end;
+       if missing(Tra_cd)
+         then put "," @;
+         else do;
+                 if find(Tra_cd,'0A'x) > 0 and 2+klength(Tra_cd) = klength(quote(trim(Tra_cd)))
+                   then put '22'x Tra_cd +(-1) '22'x "," @;
+                   else put Tra_cd @;
+              end;
        if missing(Reden)
          then put "," @;
          else do;
@@ -10355,12 +10159,145 @@ data _null_;
                    then put '22'x Reden +(-1) '22'x "," @;
                    else put Reden @;
               end;
-       if missing(Referentie)
+       if missing(bedrag)
          then put "," @;
          else do;
-                 if find(Referentie,'0A'x) > 0 and 2+klength(Referentie) = klength(quote(trim(Referentie)))
-                   then put '22'x Referentie +(-1) '22'x "," @;
-                   else put Referentie @;
+                 if find(bedrag,'0A'x) > 0 and 2+klength(bedrag) = klength(quote(trim(bedrag)))
+                   then put '22'x bedrag +(-1) '22'x "," @;
+                   else put bedrag @;
+              end;
+       if missing(Bedrag_nlg)
+         then put "," @;
+         else do;
+                 if find(Bedrag_nlg,'0A'x) > 0 and 2+klength(Bedrag_nlg) = klength(quote(trim(Bedrag_nlg)))
+                   then put '22'x Bedrag_nlg +(-1) '22'x "," @;
+                   else put Bedrag_nlg @;
+              end;
+       if missing(Datum)
+         then put "," @;
+         else do;
+                 if find(Datum,'0A'x) > 0 and 2+klength(Datum) = klength(quote(trim(Datum)))
+                   then put '22'x Datum +(-1) '22'x "," @;
+                   else put Datum @;
+              end;
+       if missing(Valutadatum)
+         then put "," @;
+         else do;
+                 if find(Valutadatum,'0A'x) > 0 and 2+klength(Valutadatum) = klength(quote(trim(Valutadatum)))
+                   then put '22'x Valutadatum +(-1) '22'x "," @;
+                   else put Valutadatum @;
+              end;
+       if missing(Fam_verplichting)
+         then put "," @;
+         else do;
+                 if find(Fam_verplichting,'0A'x) > 0 and 2+klength(Fam_verplichting) = klength(quote(trim(Fam_verplichting)))
+                   then put '22'x Fam_verplichting +(-1) '22'x "," @;
+                   else put Fam_verplichting @;
+              end;
+       if missing(Fam_declaratie)
+         then put "," @;
+         else do;
+                 if find(Fam_declaratie,'0A'x) > 0 and 2+klength(Fam_declaratie) = klength(quote(trim(Fam_declaratie)))
+                   then put '22'x Fam_declaratie +(-1) '22'x "," @;
+                   else put Fam_declaratie @;
+              end;
+       if missing(Fam_bij_rente)
+         then put "," @;
+         else do;
+                 if find(Fam_bij_rente,'0A'x) > 0 and 2+klength(Fam_bij_rente) = klength(quote(trim(Fam_bij_rente)))
+                   then put '22'x Fam_bij_rente +(-1) '22'x "," @;
+                   else put Fam_bij_rente @;
+              end;
+       if missing(Fam_kwijtschelding)
+         then put "," @;
+         else do;
+                 if find(Fam_kwijtschelding,'0A'x) > 0 and 2+klength(Fam_kwijtschelding) = klength(quote(trim(Fam_kwijtschelding)))
+                   then put '22'x Fam_kwijtschelding +(-1) '22'x "," @;
+                   else put Fam_kwijtschelding @;
+              end;
+       if missing(Fam_rest_voorschot)
+         then put "," @;
+         else do;
+                 if find(Fam_rest_voorschot,'0A'x) > 0 and 2+klength(Fam_rest_voorschot) = klength(quote(trim(Fam_rest_voorschot)))
+                   then put '22'x Fam_rest_voorschot +(-1) '22'x "," @;
+                   else put Fam_rest_voorschot @;
+              end;
+       if missing(Fam_overboeking)
+         then put "," @;
+         else do;
+                 if find(Fam_overboeking,'0A'x) > 0 and 2+klength(Fam_overboeking) = klength(quote(trim(Fam_overboeking)))
+                   then put '22'x Fam_overboeking +(-1) '22'x "," @;
+                   else put Fam_overboeking @;
+              end;
+       if missing(Fam_aflossing)
+         then put "," @;
+         else do;
+                 if find(Fam_aflossing,'0A'x) > 0 and 2+klength(Fam_aflossing) = klength(quote(trim(Fam_aflossing)))
+                   then put '22'x Fam_aflossing +(-1) '22'x "," @;
+                   else put Fam_aflossing @;
+              end;
+       if missing(Fam_budgetmutatie)
+         then put "," @;
+         else do;
+                 if find(Fam_budgetmutatie,'0A'x) > 0 and 2+klength(Fam_budgetmutatie) = klength(quote(trim(Fam_budgetmutatie)))
+                   then put '22'x Fam_budgetmutatie +(-1) '22'x "," @;
+                   else put Fam_budgetmutatie @;
+              end;
+       if missing(Fam_rest_aflossing)
+         then put "," @;
+         else do;
+                 if find(Fam_rest_aflossing,'0A'x) > 0 and 2+klength(Fam_rest_aflossing) = klength(quote(trim(Fam_rest_aflossing)))
+                   then put '22'x Fam_rest_aflossing +(-1) '22'x "," @;
+                   else put Fam_rest_aflossing @;
+              end;
+       if missing(Fam_betaalritme)
+         then put "," @;
+         else do;
+                 if find(Fam_betaalritme,'0A'x) > 0 and 2+klength(Fam_betaalritme) = klength(quote(trim(Fam_betaalritme)))
+                   then put '22'x Fam_betaalritme +(-1) '22'x "," @;
+                   else put Fam_betaalritme @;
+              end;
+       if missing(Sts_cd)
+         then put "," @;
+         else do;
+                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
+                   then put '22'x Sts_cd +(-1) '22'x "," @;
+                   else put Sts_cd @;
+              end;
+       if missing(Ssg_cd)
+         then put "," @;
+         else do;
+                 if find(Ssg_cd,'0A'x) > 0 and 2+klength(Ssg_cd) = klength(quote(trim(Ssg_cd)))
+                   then put '22'x Ssg_cd +(-1) '22'x "," @;
+                   else put Ssg_cd @;
+              end;
+       if missing(Correctie)
+         then put "," @;
+         else do;
+                 if find(Correctie,'0A'x) > 0 and 2+klength(Correctie) = klength(quote(trim(Correctie)))
+                   then put '22'x Correctie +(-1) '22'x "," @;
+                   else put Correctie @;
+              end;
+       if missing(Correctie_volgnr)
+         then put "," @;
+         else do;
+                 if find(Correctie_volgnr,'0A'x) > 0 and 2+klength(Correctie_volgnr) = klength(quote(trim(Correctie_volgnr)))
+                   then put '22'x Correctie_volgnr +(-1) '22'x "," @;
+                   else put Correctie_volgnr @;
+              end;
+       if missing(Tra_id_van)
+         then put "," @;
+         else do;
+                 if find(Tra_id_van,'0A'x) > 0 and 2+klength(Tra_id_van) = klength(quote(trim(Tra_id_van)))
+                   then put '22'x Tra_id_van +(-1) '22'x "," @;
+                   else put Tra_id_van @;
+              end;
+       if missing(Vst_id)
+         then put "," @;
+         else do;
+                 if find(Vst_id,'0A'x) > 0 and 2+klength(Vst_id) = klength(quote(trim(Vst_id)))
+                   then put '22'x Vst_id +(-1) '22'x "," @;
+                   else put Vst_id @;
               end;
        if missing(Rel_id)
          then put "," @;
@@ -10376,131 +10313,54 @@ data _null_;
                    then put '22'x Rol_cd +(-1) '22'x "," @;
                    else put Rol_cd @;
               end;
-       if missing(Run_id)
+       if missing(Datum_acc_afd)
          then put "," @;
          else do;
-                 if find(Run_id,'0A'x) > 0 and 2+klength(Run_id) = klength(quote(trim(Run_id)))
-                   then put '22'x Run_id +(-1) '22'x "," @;
-                   else put Run_id @;
+                 if find(Datum_acc_afd,'0A'x) > 0 and 2+klength(Datum_acc_afd) = klength(quote(trim(Datum_acc_afd)))
+                   then put '22'x Datum_acc_afd +(-1) '22'x "," @;
+                   else put Datum_acc_afd @;
               end;
-       if missing(Ssg_cd)
+       if missing(Referentie)
          then put "," @;
          else do;
-                 if find(Ssg_cd,'0A'x) > 0 and 2+klength(Ssg_cd) = klength(quote(trim(Ssg_cd)))
-                   then put '22'x Ssg_cd +(-1) '22'x "," @;
-                   else put Ssg_cd @;
+                 if find(Referentie,'0A'x) > 0 and 2+klength(Referentie) = klength(quote(trim(Referentie)))
+                   then put '22'x Referentie +(-1) '22'x "," @;
+                   else put Referentie @;
               end;
-       if missing(Storneren)
+       if missing(Creatie_dat)
          then put "," @;
          else do;
-                 if find(Storneren,'0A'x) > 0 and 2+klength(Storneren) = klength(quote(trim(Storneren)))
-                   then put '22'x Storneren +(-1) '22'x "," @;
-                   else put Storneren @;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
-       if missing(Sts_cd)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
-                   then put '22'x Sts_cd +(-1) '22'x "," @;
-                   else put Sts_cd @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
               end;
-       if missing(Termijn_uitstel)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Termijn_uitstel,'0A'x) > 0 and 2+klength(Termijn_uitstel) = klength(quote(trim(Termijn_uitstel)))
-                   then put '22'x Termijn_uitstel +(-1) '22'x "," @;
-                   else put Termijn_uitstel @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
-       if missing(Tmp_vordering_id)
+       if missing(Mutatie_user)
          then put "," @;
          else do;
-                 if find(Tmp_vordering_id,'0A'x) > 0 and 2+klength(Tmp_vordering_id) = klength(quote(trim(Tmp_vordering_id)))
-                   then put '22'x Tmp_vordering_id +(-1) '22'x "," @;
-                   else put Tmp_vordering_id @;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
               end;
-       if missing(Tra_cd)
+       if missing(Bedrag_ex_btw)
          then put "," @;
          else do;
-                 if find(Tra_cd,'0A'x) > 0 and 2+klength(Tra_cd) = klength(quote(trim(Tra_cd)))
-                   then put '22'x Tra_cd +(-1) '22'x "," @;
-                   else put Tra_cd @;
-              end;
-       if missing(Tra_id)
-         then put "," @;
-         else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
-              end;
-       if missing(Tra_id_dcv)
-         then put "," @;
-         else do;
-                 if find(Tra_id_dcv,'0A'x) > 0 and 2+klength(Tra_id_dcv) = klength(quote(trim(Tra_id_dcv)))
-                   then put '22'x Tra_id_dcv +(-1) '22'x "," @;
-                   else put Tra_id_dcv @;
-              end;
-       if missing(Tra_id_ean_eap)
-         then put "," @;
-         else do;
-                 if find(Tra_id_ean_eap,'0A'x) > 0 and 2+klength(Tra_id_ean_eap) = klength(quote(trim(Tra_id_ean_eap)))
-                   then put '22'x Tra_id_ean_eap +(-1) '22'x "," @;
-                   else put Tra_id_ean_eap @;
-              end;
-       if missing(Tra_id_rv)
-         then put "," @;
-         else do;
-                 if find(Tra_id_rv,'0A'x) > 0 and 2+klength(Tra_id_rv) = klength(quote(trim(Tra_id_rv)))
-                   then put '22'x Tra_id_rv +(-1) '22'x "," @;
-                   else put Tra_id_rv @;
-              end;
-       if missing(Tra_id_van)
-         then put "," @;
-         else do;
-                 if find(Tra_id_van,'0A'x) > 0 and 2+klength(Tra_id_van) = klength(quote(trim(Tra_id_van)))
-                   then put '22'x Tra_id_van +(-1) '22'x "," @;
-                   else put Tra_id_van @;
-              end;
-       if missing(Valutadatum)
-         then put "," @;
-         else do;
-                 if find(Valutadatum,'0A'x) > 0 and 2+klength(Valutadatum) = klength(quote(trim(Valutadatum)))
-                   then put '22'x Valutadatum +(-1) '22'x "," @;
-                   else put Valutadatum @;
-              end;
-       if missing(Volgnummer)
-         then put "," @;
-         else do;
-                 if find(Volgnummer,'0A'x) > 0 and 2+klength(Volgnummer) = klength(quote(trim(Volgnummer)))
-                   then put '22'x Volgnummer +(-1) '22'x "," @;
-                   else put Volgnummer @;
-              end;
-       if missing(Vordering_bedrag)
-         then put "," @;
-         else do;
-                 if find(Vordering_bedrag,'0A'x) > 0 and 2+klength(Vordering_bedrag) = klength(quote(trim(Vordering_bedrag)))
-                   then put '22'x Vordering_bedrag +(-1) '22'x "," @;
-                   else put Vordering_bedrag @;
-              end;
-       if missing(Vordering_status)
-         then put "," @;
-         else do;
-                 if find(Vordering_status,'0A'x) > 0 and 2+klength(Vordering_status) = klength(quote(trim(Vordering_status)))
-                   then put '22'x Vordering_status +(-1) '22'x "," @;
-                   else put Vordering_status @;
-              end;
-       if missing(Vordering_tra_id)
-         then put "," @;
-         else do;
-                 if find(Vordering_tra_id,'0A'x) > 0 and 2+klength(Vordering_tra_id) = klength(quote(trim(Vordering_tra_id)))
-                   then put '22'x Vordering_tra_id +(-1) '22'x "," @;
-                   else put Vordering_tra_id @;
-              end;
-       if missing(Vst_id)
-         then put "," @;
-         else do;
-                 if find(Vst_id,'0A'x) > 0 and 2+klength(Vst_id) = klength(quote(trim(Vst_id)))
-                   then put '22'x Vst_id +(-1) '22'x "," @;
-                   else put Vst_id @;
+                 if find(Bedrag_ex_btw,'0A'x) > 0 and 2+klength(Bedrag_ex_btw) = klength(quote(trim(Bedrag_ex_btw)))
+                   then put '22'x Bedrag_ex_btw +(-1) '22'x "," @;
+                   else put Bedrag_ex_btw @;
               end;
        if missing(Vst_volgnr)
          then put "," @;
@@ -10509,12 +10369,152 @@ data _null_;
                    then put '22'x Vst_volgnr +(-1) '22'x "," @;
                    else put Vst_volgnr @;
               end;
-       if missing(bedrag)
+       if missing(Duurzaam_jn)
          then put "," @;
          else do;
-                 if find(bedrag,'0A'x) > 0 and 2+klength(bedrag) = klength(quote(trim(bedrag)))
-                   then put '22'x bedrag +(-1) '22'x "," @;
-                   else put bedrag @;
+                 if find(Duurzaam_jn,'0A'x) > 0 and 2+klength(Duurzaam_jn) = klength(quote(trim(Duurzaam_jn)))
+                   then put '22'x Duurzaam_jn +(-1) '22'x "," @;
+                   else put Duurzaam_jn @;
+              end;
+       if missing(Run_id)
+         then put "," @;
+         else do;
+                 if find(Run_id,'0A'x) > 0 and 2+klength(Run_id) = klength(quote(trim(Run_id)))
+                   then put '22'x Run_id +(-1) '22'x "," @;
+                   else put Run_id @;
+              end;
+       if missing(Fam_vordering)
+         then put "," @;
+         else do;
+                 if find(Fam_vordering,'0A'x) > 0 and 2+klength(Fam_vordering) = klength(quote(trim(Fam_vordering)))
+                   then put '22'x Fam_vordering +(-1) '22'x "," @;
+                   else put Fam_vordering @;
+              end;
+       if missing(Fam_vordering_afhandeling)
+         then put "," @;
+         else do;
+                 if find(Fam_vordering_afhandeling,'0A'x) > 0 and 2+klength(Fam_vordering_afhandeling) = klength(quote(trim(Fam_vordering_afhandeling)))
+                   then put '22'x Fam_vordering_afhandeling +(-1) '22'x "," @;
+                   else put Fam_vordering_afhandeling @;
+              end;
+       if missing(Vordering_tra_id)
+         then put "," @;
+         else do;
+                 if find(Vordering_tra_id,'0A'x) > 0 and 2+klength(Vordering_tra_id) = klength(quote(trim(Vordering_tra_id)))
+                   then put '22'x Vordering_tra_id +(-1) '22'x "," @;
+                   else put Vordering_tra_id @;
+              end;
+       if missing(Storneren)
+         then put "," @;
+         else do;
+                 if find(Storneren,'0A'x) > 0 and 2+klength(Storneren) = klength(quote(trim(Storneren)))
+                   then put '22'x Storneren +(-1) '22'x "," @;
+                   else put Storneren @;
+              end;
+       if missing(Vordering_bedrag)
+         then put "," @;
+         else do;
+                 if find(Vordering_bedrag,'0A'x) > 0 and 2+klength(Vordering_bedrag) = klength(quote(trim(Vordering_bedrag)))
+                   then put '22'x Vordering_bedrag +(-1) '22'x "," @;
+                   else put Vordering_bedrag @;
+              end;
+       if missing(Afgelost)
+         then put "," @;
+         else do;
+                 if find(Afgelost,'0A'x) > 0 and 2+klength(Afgelost) = klength(quote(trim(Afgelost)))
+                   then put '22'x Afgelost +(-1) '22'x "," @;
+                   else put Afgelost @;
+              end;
+       if missing(Kwijtgescholden)
+         then put "," @;
+         else do;
+                 if find(Kwijtgescholden,'0A'x) > 0 and 2+klength(Kwijtgescholden) = klength(quote(trim(Kwijtgescholden)))
+                   then put '22'x Kwijtgescholden +(-1) '22'x "," @;
+                   else put Kwijtgescholden @;
+              end;
+       if missing(Tmp_vordering_id)
+         then put "," @;
+         else do;
+                 if find(Tmp_vordering_id,'0A'x) > 0 and 2+klength(Tmp_vordering_id) = klength(quote(trim(Tmp_vordering_id)))
+                   then put '22'x Tmp_vordering_id +(-1) '22'x "," @;
+                   else put Tmp_vordering_id @;
+              end;
+       if missing(Omhang_jaar)
+         then put "," @;
+         else do;
+                 if find(Omhang_jaar,'0A'x) > 0 and 2+klength(Omhang_jaar) = klength(quote(trim(Omhang_jaar)))
+                   then put '22'x Omhang_jaar +(-1) '22'x "," @;
+                   else put Omhang_jaar @;
+              end;
+       if missing(Omhang_jn)
+         then put "," @;
+         else do;
+                 if find(Omhang_jn,'0A'x) > 0 and 2+klength(Omhang_jn) = klength(quote(trim(Omhang_jn)))
+                   then put '22'x Omhang_jn +(-1) '22'x "," @;
+                   else put Omhang_jn @;
+              end;
+       if missing(Tra_id_rv)
+         then put "," @;
+         else do;
+                 if find(Tra_id_rv,'0A'x) > 0 and 2+klength(Tra_id_rv) = klength(quote(trim(Tra_id_rv)))
+                   then put '22'x Tra_id_rv +(-1) '22'x "," @;
+                   else put Tra_id_rv @;
+              end;
+       if missing(Tra_id_dcv)
+         then put "," @;
+         else do;
+                 if find(Tra_id_dcv,'0A'x) > 0 and 2+klength(Tra_id_dcv) = klength(quote(trim(Tra_id_dcv)))
+                   then put '22'x Tra_id_dcv +(-1) '22'x "," @;
+                   else put Tra_id_dcv @;
+              end;
+       if missing(Jz_id)
+         then put "," @;
+         else do;
+                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
+                   then put '22'x Jz_id +(-1) '22'x "," @;
+                   else put Jz_id @;
+              end;
+       if missing(Afreken_tra_id)
+         then put "," @;
+         else do;
+                 if find(Afreken_tra_id,'0A'x) > 0 and 2+klength(Afreken_tra_id) = klength(quote(trim(Afreken_tra_id)))
+                   then put '22'x Afreken_tra_id +(-1) '22'x "," @;
+                   else put Afreken_tra_id @;
+              end;
+       if missing(Correctie_bedrag_bob)
+         then put "," @;
+         else do;
+                 if find(Correctie_bedrag_bob,'0A'x) > 0 and 2+klength(Correctie_bedrag_bob) = klength(quote(trim(Correctie_bedrag_bob)))
+                   then put '22'x Correctie_bedrag_bob +(-1) '22'x "," @;
+                   else put Correctie_bedrag_bob @;
+              end;
+       if missing(Vordering_status)
+         then put "," @;
+         else do;
+                 if find(Vordering_status,'0A'x) > 0 and 2+klength(Vordering_status) = klength(quote(trim(Vordering_status)))
+                   then put '22'x Vordering_status +(-1) '22'x "," @;
+                   else put Vordering_status @;
+              end;
+       if missing(On_hold)
+         then put "," @;
+         else do;
+                 if find(On_hold,'0A'x) > 0 and 2+klength(On_hold) = klength(quote(trim(On_hold)))
+                   then put '22'x On_hold +(-1) '22'x "," @;
+                   else put On_hold @;
+              end;
+       if missing(Termijn_uitstel)
+         then put "," @;
+         else do;
+                 if find(Termijn_uitstel,'0A'x) > 0 and 2+klength(Termijn_uitstel) = klength(quote(trim(Termijn_uitstel)))
+                   then put '22'x Termijn_uitstel +(-1) '22'x "," @;
+                   else put Termijn_uitstel @;
+              end;
+       if missing(Tra_id_ean_eap)
+         then put "," @;
+         else do;
+                 if find(Tra_id_ean_eap,'0A'x) > 0 and 2+klength(Tra_id_ean_eap) = klength(quote(trim(Tra_id_ean_eap)))
+                   then put '22'x Tra_id_ean_eap +(-1) '22'x "," @;
+                   else put Tra_id_ean_eap @;
               end;
        put techId best12. ; 
        ; 
@@ -10558,9 +10558,31 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Betalingsverzoeknummer" 
+          "Tra_id" 
+       ','
+          "Reg_id" 
+       ','
+          "Reg_nr" 
+       ','
+          "Verplichtingssoort" 
+       ','
+          "Omschrijving" 
+       ','
+          "Totaal_ingediend" 
        ','
           "Gevraagd" 
+       ','
+          "Totaal_geschoond" 
+       ','
+          "Vergoedings_pct" 
+       ','
+          "Intake_datum" 
+       ','
+          "Nota_datum" 
+       ','
+          "Panel_datum" 
+       ','
+          "Overige_subsidie" 
        ','
           "Ikb_naam" 
        ','
@@ -10568,60 +10590,73 @@ data _null_;
        ','
           "Inkoopbevinding_user" 
        ','
-          "Intake_datum" 
-       ','
-          "Nota_datum" 
-       ','
-          "Omschrijving" 
-       ','
-          "Overige_subsidie" 
-       ','
-          "Panel_datum" 
-       ','
-          "Reg_id" 
-       ','
-          "Reg_nr" 
-       ','
-          "Totaal_geschoond" 
-       ','
-          "Totaal_ingediend" 
-       ','
-          "Tra_id" 
-       ','
-          "Vergoedings_pct" 
-       ','
-          "Verplichtingssoort" 
+          "Betalingsverzoeknummer" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_FAM_VERPLICHTING   end=EFIEOD; 
-       format Betalingsverzoeknummer  ;
+       format Tra_id best12. ;
+       format Reg_id best12. ;
+       format Reg_nr best12. ;
+       format Verplichtingssoort  ;
+       format Omschrijving  ;
+       format Totaal_ingediend best12. ;
        format Gevraagd best12. ;
+       format Totaal_geschoond best12. ;
+       format Vergoedings_pct best12. ;
+       format Intake_datum B8601DT19. ;
+       format Nota_datum B8601DT19. ;
+       format Panel_datum B8601DT19. ;
+       format Overige_subsidie best12. ;
        format Ikb_naam  ;
        format Inkoopbevinding  ;
        format Inkoopbevinding_user  ;
-       format Intake_datum B8601DT19. ;
-       format Nota_datum B8601DT19. ;
-       format Omschrijving  ;
-       format Overige_subsidie best12. ;
-       format Panel_datum B8601DT19. ;
-       format Reg_id best12. ;
-       format Reg_nr best12. ;
-       format Totaal_geschoond best12. ;
-       format Totaal_ingediend best12. ;
-       format Tra_id best12. ;
-       format Vergoedings_pct best12. ;
-       format Verplichtingssoort  ;
+       format Betalingsverzoeknummer  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Betalingsverzoeknummer)
+       if missing(Tra_id)
          then put "," @;
          else do;
-                 if find(Betalingsverzoeknummer,'0A'x) > 0 and 2+klength(Betalingsverzoeknummer) = klength(quote(trim(Betalingsverzoeknummer)))
-                   then put '22'x Betalingsverzoeknummer +(-1) '22'x "," @;
-                   else put Betalingsverzoeknummer @;
+                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
+                   then put '22'x Tra_id +(-1) '22'x "," @;
+                   else put Tra_id @;
+              end;
+       if missing(Reg_id)
+         then put "," @;
+         else do;
+                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
+                   then put '22'x Reg_id +(-1) '22'x "," @;
+                   else put Reg_id @;
+              end;
+       if missing(Reg_nr)
+         then put "," @;
+         else do;
+                 if find(Reg_nr,'0A'x) > 0 and 2+klength(Reg_nr) = klength(quote(trim(Reg_nr)))
+                   then put '22'x Reg_nr +(-1) '22'x "," @;
+                   else put Reg_nr @;
+              end;
+       if missing(Verplichtingssoort)
+         then put "," @;
+         else do;
+                 if find(Verplichtingssoort,'0A'x) > 0 and 2+klength(Verplichtingssoort) = klength(quote(trim(Verplichtingssoort)))
+                   then put '22'x Verplichtingssoort +(-1) '22'x "," @;
+                   else put Verplichtingssoort @;
+              end;
+       if missing(Omschrijving)
+         then put "," @;
+         else do;
+                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
+                   then put '22'x Omschrijving +(-1) '22'x "," @;
+                   else put Omschrijving @;
+              end;
+       if missing(Totaal_ingediend)
+         then put "," @;
+         else do;
+                 if find(Totaal_ingediend,'0A'x) > 0 and 2+klength(Totaal_ingediend) = klength(quote(trim(Totaal_ingediend)))
+                   then put '22'x Totaal_ingediend +(-1) '22'x "," @;
+                   else put Totaal_ingediend @;
               end;
        if missing(Gevraagd)
          then put "," @;
@@ -10629,6 +10664,48 @@ data _null_;
                  if find(Gevraagd,'0A'x) > 0 and 2+klength(Gevraagd) = klength(quote(trim(Gevraagd)))
                    then put '22'x Gevraagd +(-1) '22'x "," @;
                    else put Gevraagd @;
+              end;
+       if missing(Totaal_geschoond)
+         then put "," @;
+         else do;
+                 if find(Totaal_geschoond,'0A'x) > 0 and 2+klength(Totaal_geschoond) = klength(quote(trim(Totaal_geschoond)))
+                   then put '22'x Totaal_geschoond +(-1) '22'x "," @;
+                   else put Totaal_geschoond @;
+              end;
+       if missing(Vergoedings_pct)
+         then put "," @;
+         else do;
+                 if find(Vergoedings_pct,'0A'x) > 0 and 2+klength(Vergoedings_pct) = klength(quote(trim(Vergoedings_pct)))
+                   then put '22'x Vergoedings_pct +(-1) '22'x "," @;
+                   else put Vergoedings_pct @;
+              end;
+       if missing(Intake_datum)
+         then put "," @;
+         else do;
+                 if find(Intake_datum,'0A'x) > 0 and 2+klength(Intake_datum) = klength(quote(trim(Intake_datum)))
+                   then put '22'x Intake_datum +(-1) '22'x "," @;
+                   else put Intake_datum @;
+              end;
+       if missing(Nota_datum)
+         then put "," @;
+         else do;
+                 if find(Nota_datum,'0A'x) > 0 and 2+klength(Nota_datum) = klength(quote(trim(Nota_datum)))
+                   then put '22'x Nota_datum +(-1) '22'x "," @;
+                   else put Nota_datum @;
+              end;
+       if missing(Panel_datum)
+         then put "," @;
+         else do;
+                 if find(Panel_datum,'0A'x) > 0 and 2+klength(Panel_datum) = klength(quote(trim(Panel_datum)))
+                   then put '22'x Panel_datum +(-1) '22'x "," @;
+                   else put Panel_datum @;
+              end;
+       if missing(Overige_subsidie)
+         then put "," @;
+         else do;
+                 if find(Overige_subsidie,'0A'x) > 0 and 2+klength(Overige_subsidie) = klength(quote(trim(Overige_subsidie)))
+                   then put '22'x Overige_subsidie +(-1) '22'x "," @;
+                   else put Overige_subsidie @;
               end;
        if missing(Ikb_naam)
          then put "," @;
@@ -10651,89 +10728,12 @@ data _null_;
                    then put '22'x Inkoopbevinding_user +(-1) '22'x "," @;
                    else put Inkoopbevinding_user @;
               end;
-       if missing(Intake_datum)
+       if missing(Betalingsverzoeknummer)
          then put "," @;
          else do;
-                 if find(Intake_datum,'0A'x) > 0 and 2+klength(Intake_datum) = klength(quote(trim(Intake_datum)))
-                   then put '22'x Intake_datum +(-1) '22'x "," @;
-                   else put Intake_datum @;
-              end;
-       if missing(Nota_datum)
-         then put "," @;
-         else do;
-                 if find(Nota_datum,'0A'x) > 0 and 2+klength(Nota_datum) = klength(quote(trim(Nota_datum)))
-                   then put '22'x Nota_datum +(-1) '22'x "," @;
-                   else put Nota_datum @;
-              end;
-       if missing(Omschrijving)
-         then put "," @;
-         else do;
-                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
-                   then put '22'x Omschrijving +(-1) '22'x "," @;
-                   else put Omschrijving @;
-              end;
-       if missing(Overige_subsidie)
-         then put "," @;
-         else do;
-                 if find(Overige_subsidie,'0A'x) > 0 and 2+klength(Overige_subsidie) = klength(quote(trim(Overige_subsidie)))
-                   then put '22'x Overige_subsidie +(-1) '22'x "," @;
-                   else put Overige_subsidie @;
-              end;
-       if missing(Panel_datum)
-         then put "," @;
-         else do;
-                 if find(Panel_datum,'0A'x) > 0 and 2+klength(Panel_datum) = klength(quote(trim(Panel_datum)))
-                   then put '22'x Panel_datum +(-1) '22'x "," @;
-                   else put Panel_datum @;
-              end;
-       if missing(Reg_id)
-         then put "," @;
-         else do;
-                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
-                   then put '22'x Reg_id +(-1) '22'x "," @;
-                   else put Reg_id @;
-              end;
-       if missing(Reg_nr)
-         then put "," @;
-         else do;
-                 if find(Reg_nr,'0A'x) > 0 and 2+klength(Reg_nr) = klength(quote(trim(Reg_nr)))
-                   then put '22'x Reg_nr +(-1) '22'x "," @;
-                   else put Reg_nr @;
-              end;
-       if missing(Totaal_geschoond)
-         then put "," @;
-         else do;
-                 if find(Totaal_geschoond,'0A'x) > 0 and 2+klength(Totaal_geschoond) = klength(quote(trim(Totaal_geschoond)))
-                   then put '22'x Totaal_geschoond +(-1) '22'x "," @;
-                   else put Totaal_geschoond @;
-              end;
-       if missing(Totaal_ingediend)
-         then put "," @;
-         else do;
-                 if find(Totaal_ingediend,'0A'x) > 0 and 2+klength(Totaal_ingediend) = klength(quote(trim(Totaal_ingediend)))
-                   then put '22'x Totaal_ingediend +(-1) '22'x "," @;
-                   else put Totaal_ingediend @;
-              end;
-       if missing(Tra_id)
-         then put "," @;
-         else do;
-                 if find(Tra_id,'0A'x) > 0 and 2+klength(Tra_id) = klength(quote(trim(Tra_id)))
-                   then put '22'x Tra_id +(-1) '22'x "," @;
-                   else put Tra_id @;
-              end;
-       if missing(Vergoedings_pct)
-         then put "," @;
-         else do;
-                 if find(Vergoedings_pct,'0A'x) > 0 and 2+klength(Vergoedings_pct) = klength(quote(trim(Vergoedings_pct)))
-                   then put '22'x Vergoedings_pct +(-1) '22'x "," @;
-                   else put Vergoedings_pct @;
-              end;
-       if missing(Verplichtingssoort)
-         then put "," @;
-         else do;
-                 if find(Verplichtingssoort,'0A'x) > 0 and 2+klength(Verplichtingssoort) = klength(quote(trim(Verplichtingssoort)))
-                   then put '22'x Verplichtingssoort +(-1) '22'x "," @;
-                   else put Verplichtingssoort @;
+                 if find(Betalingsverzoeknummer,'0A'x) > 0 and 2+klength(Betalingsverzoeknummer) = klength(quote(trim(Betalingsverzoeknummer)))
+                   then put '22'x Betalingsverzoeknummer +(-1) '22'x "," @;
+                   else put Betalingsverzoeknummer @;
               end;
        put techId best12. ; 
        ; 
@@ -10865,34 +10865,48 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Loc_cd" 
+       ','
+          "Omschrijving" 
+       ','
           "Actief" 
        ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
        ','
-          "Loc_cd" 
-       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
-       ','
-          "Omschrijving" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_IOM_LOCATIE   end=EFIEOD; 
+       format Loc_cd  ;
+       format Omschrijving  ;
        format Actief  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Loc_cd  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Omschrijving  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Loc_cd)
+         then put "," @;
+         else do;
+                 if find(Loc_cd,'0A'x) > 0 and 2+klength(Loc_cd) = klength(quote(trim(Loc_cd)))
+                   then put '22'x Loc_cd +(-1) '22'x "," @;
+                   else put Loc_cd @;
+              end;
+       if missing(Omschrijving)
+         then put "," @;
+         else do;
+                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
+                   then put '22'x Omschrijving +(-1) '22'x "," @;
+                   else put Omschrijving @;
+              end;
        if missing(Actief)
          then put "," @;
          else do;
@@ -10914,13 +10928,6 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Loc_cd)
-         then put "," @;
-         else do;
-                 if find(Loc_cd,'0A'x) > 0 and 2+klength(Loc_cd) = klength(quote(trim(Loc_cd)))
-                   then put '22'x Loc_cd +(-1) '22'x "," @;
-                   else put Loc_cd @;
-              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -10934,13 +10941,6 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
-              end;
-       if missing(Omschrijving)
-         then put "," @;
-         else do;
-                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
-                   then put '22'x Omschrijving +(-1) '22'x "," @;
-                   else put Omschrijving @;
               end;
        put techId best12. ; 
        ; 
@@ -11446,40 +11446,47 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Actief" 
+          "Mdw_id" 
+       ','
+          "Rol_cd" 
        ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
        ','
-          "Mdw_id" 
+          "Mutatie_user" 
        ','
           "Mutatie_dat" 
        ','
-          "Mutatie_user" 
-       ','
-          "Rol_cd" 
+          "Actief" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_IOM_MEDEWERKERROL   end=EFIEOD; 
-       format Actief  ;
+       format Mdw_id best12. ;
+       format Rol_cd  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Mdw_id best12. ;
-       format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Rol_cd  ;
+       format Mutatie_dat B8601DT19. ;
+       format Actief  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Actief)
+       if missing(Mdw_id)
          then put "," @;
          else do;
-                 if find(Actief,'0A'x) > 0 and 2+klength(Actief) = klength(quote(trim(Actief)))
-                   then put '22'x Actief +(-1) '22'x "," @;
-                   else put Actief @;
+                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
+                   then put '22'x Mdw_id +(-1) '22'x "," @;
+                   else put Mdw_id @;
+              end;
+       if missing(Rol_cd)
+         then put "," @;
+         else do;
+                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
+                   then put '22'x Rol_cd +(-1) '22'x "," @;
+                   else put Rol_cd @;
               end;
        if missing(Creatie_dat)
          then put "," @;
@@ -11495,12 +11502,12 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Mdw_id)
+       if missing(Mutatie_user)
          then put "," @;
          else do;
-                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
-                   then put '22'x Mdw_id +(-1) '22'x "," @;
-                   else put Mdw_id @;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
               end;
        if missing(Mutatie_dat)
          then put "," @;
@@ -11509,19 +11516,12 @@ data _null_;
                    then put '22'x Mutatie_dat +(-1) '22'x "," @;
                    else put Mutatie_dat @;
               end;
-       if missing(Mutatie_user)
+       if missing(Actief)
          then put "," @;
          else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Rol_cd)
-         then put "," @;
-         else do;
-                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
-                   then put '22'x Rol_cd +(-1) '22'x "," @;
-                   else put Rol_cd @;
+                 if find(Actief,'0A'x) > 0 and 2+klength(Actief) = klength(quote(trim(Actief)))
+                   then put '22'x Actief +(-1) '22'x "," @;
+                   else put Actief @;
               end;
        put techId best12. ; 
        ; 
@@ -11556,57 +11556,43 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Eigenaar" 
+          "Mdw_id" 
        ','
           "Jz_id" 
        ','
-          "Mdw_id" 
+          "Rol_cd" 
        ','
-          "Mutatie_dat" 
+          "Eigenaar" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Rol_cd" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_BEHANDELAAR   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Eigenaar  ;
-       format Jz_id best12. ;
        format Mdw_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
+       format Jz_id best12. ;
        format Rol_cd  ;
+       format Eigenaar  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
+       if missing(Mdw_id)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Eigenaar)
-         then put "," @;
-         else do;
-                 if find(Eigenaar,'0A'x) > 0 and 2+klength(Eigenaar) = klength(quote(trim(Eigenaar)))
-                   then put '22'x Eigenaar +(-1) '22'x "," @;
-                   else put Eigenaar @;
+                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
+                   then put '22'x Mdw_id +(-1) '22'x "," @;
+                   else put Mdw_id @;
               end;
        if missing(Jz_id)
          then put "," @;
@@ -11615,19 +11601,33 @@ data _null_;
                    then put '22'x Jz_id +(-1) '22'x "," @;
                    else put Jz_id @;
               end;
-       if missing(Mdw_id)
+       if missing(Rol_cd)
          then put "," @;
          else do;
-                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
-                   then put '22'x Mdw_id +(-1) '22'x "," @;
-                   else put Mdw_id @;
+                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
+                   then put '22'x Rol_cd +(-1) '22'x "," @;
+                   else put Rol_cd @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Eigenaar)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Eigenaar,'0A'x) > 0 and 2+klength(Eigenaar) = klength(quote(trim(Eigenaar)))
+                   then put '22'x Eigenaar +(-1) '22'x "," @;
+                   else put Eigenaar @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -11636,12 +11636,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Rol_cd)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
-                   then put '22'x Rol_cd +(-1) '22'x "," @;
-                   else put Rol_cd @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -11677,40 +11677,82 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Jz_id" 
+       ','
+          "Bzr_id" 
+       ','
+          "Zaaknummer" 
+       ','
+          "Datum_zitting" 
+       ','
+          "Uitspraak" 
+       ','
+          "Datum_uitspr" 
+       ','
           "Bedrag_schade" 
        ','
           "Bedrag_schade_nlg" 
        ','
-          "Bzr_id" 
-       ','
           "Datum_schade" 
-       ','
-          "Datum_uitspr" 
-       ','
-          "Datum_zitting" 
-       ','
-          "Jz_id" 
-       ','
-          "Uitspraak" 
-       ','
-          "Zaaknummer" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_BEROEP   end=EFIEOD; 
+       format Jz_id best12. ;
+       format Bzr_id best12. ;
+       format Zaaknummer  ;
+       format Datum_zitting B8601DT19. ;
+       format Uitspraak  ;
+       format Datum_uitspr B8601DT19. ;
        format Bedrag_schade best12. ;
        format Bedrag_schade_nlg best12. ;
-       format Bzr_id best12. ;
        format Datum_schade B8601DT19. ;
-       format Datum_uitspr B8601DT19. ;
-       format Datum_zitting B8601DT19. ;
-       format Jz_id best12. ;
-       format Uitspraak  ;
-       format Zaaknummer  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Jz_id)
+         then put "," @;
+         else do;
+                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
+                   then put '22'x Jz_id +(-1) '22'x "," @;
+                   else put Jz_id @;
+              end;
+       if missing(Bzr_id)
+         then put "," @;
+         else do;
+                 if find(Bzr_id,'0A'x) > 0 and 2+klength(Bzr_id) = klength(quote(trim(Bzr_id)))
+                   then put '22'x Bzr_id +(-1) '22'x "," @;
+                   else put Bzr_id @;
+              end;
+       if missing(Zaaknummer)
+         then put "," @;
+         else do;
+                 if find(Zaaknummer,'0A'x) > 0 and 2+klength(Zaaknummer) = klength(quote(trim(Zaaknummer)))
+                   then put '22'x Zaaknummer +(-1) '22'x "," @;
+                   else put Zaaknummer @;
+              end;
+       if missing(Datum_zitting)
+         then put "," @;
+         else do;
+                 if find(Datum_zitting,'0A'x) > 0 and 2+klength(Datum_zitting) = klength(quote(trim(Datum_zitting)))
+                   then put '22'x Datum_zitting +(-1) '22'x "," @;
+                   else put Datum_zitting @;
+              end;
+       if missing(Uitspraak)
+         then put "," @;
+         else do;
+                 if find(Uitspraak,'0A'x) > 0 and 2+klength(Uitspraak) = klength(quote(trim(Uitspraak)))
+                   then put '22'x Uitspraak +(-1) '22'x "," @;
+                   else put Uitspraak @;
+              end;
+       if missing(Datum_uitspr)
+         then put "," @;
+         else do;
+                 if find(Datum_uitspr,'0A'x) > 0 and 2+klength(Datum_uitspr) = klength(quote(trim(Datum_uitspr)))
+                   then put '22'x Datum_uitspr +(-1) '22'x "," @;
+                   else put Datum_uitspr @;
+              end;
        if missing(Bedrag_schade)
          then put "," @;
          else do;
@@ -11725,54 +11767,12 @@ data _null_;
                    then put '22'x Bedrag_schade_nlg +(-1) '22'x "," @;
                    else put Bedrag_schade_nlg @;
               end;
-       if missing(Bzr_id)
-         then put "," @;
-         else do;
-                 if find(Bzr_id,'0A'x) > 0 and 2+klength(Bzr_id) = klength(quote(trim(Bzr_id)))
-                   then put '22'x Bzr_id +(-1) '22'x "," @;
-                   else put Bzr_id @;
-              end;
        if missing(Datum_schade)
          then put "," @;
          else do;
                  if find(Datum_schade,'0A'x) > 0 and 2+klength(Datum_schade) = klength(quote(trim(Datum_schade)))
                    then put '22'x Datum_schade +(-1) '22'x "," @;
                    else put Datum_schade @;
-              end;
-       if missing(Datum_uitspr)
-         then put "," @;
-         else do;
-                 if find(Datum_uitspr,'0A'x) > 0 and 2+klength(Datum_uitspr) = klength(quote(trim(Datum_uitspr)))
-                   then put '22'x Datum_uitspr +(-1) '22'x "," @;
-                   else put Datum_uitspr @;
-              end;
-       if missing(Datum_zitting)
-         then put "," @;
-         else do;
-                 if find(Datum_zitting,'0A'x) > 0 and 2+klength(Datum_zitting) = klength(quote(trim(Datum_zitting)))
-                   then put '22'x Datum_zitting +(-1) '22'x "," @;
-                   else put Datum_zitting @;
-              end;
-       if missing(Jz_id)
-         then put "," @;
-         else do;
-                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
-                   then put '22'x Jz_id +(-1) '22'x "," @;
-                   else put Jz_id @;
-              end;
-       if missing(Uitspraak)
-         then put "," @;
-         else do;
-                 if find(Uitspraak,'0A'x) > 0 and 2+klength(Uitspraak) = klength(quote(trim(Uitspraak)))
-                   then put '22'x Uitspraak +(-1) '22'x "," @;
-                   else put Uitspraak @;
-              end;
-       if missing(Zaaknummer)
-         then put "," @;
-         else do;
-                 if find(Zaaknummer,'0A'x) > 0 and 2+klength(Zaaknummer) = klength(quote(trim(Zaaknummer)))
-                   then put '22'x Zaaknummer +(-1) '22'x "," @;
-                   else put Zaaknummer @;
               end;
        put techId best12. ; 
        ; 
@@ -11827,31 +11827,35 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Adviescommissie" 
-       ','
-          "App_verschenen" 
+          "Jz_id" 
        ','
           "Belasting_cd" 
        ','
-          "Datum_1e_heropname_schade" 
-       ','
-          "Datum_2e_heropname_schade" 
-       ','
           "Datum_compleet" 
        ','
-          "Datum_def_schouw" 
-       ','
-          "Datum_hoorzitting" 
+          "Wachttijd" 
        ','
           "Datum_hoorzitting_org" 
        ','
-          "Datum_ontvangst" 
+          "Tijd_hoorzitting_org" 
        ','
-          "Datum_orig_schouw" 
+          "Datum_hoorzitting" 
+       ','
+          "Tijd_hoorzitting" 
+       ','
+          "App_verschenen" 
+       ','
+          "Datum_ontvangst" 
        ','
           "Datum_vragenbrief" 
        ','
-          "Jz_id" 
+          "Wett_termijn_7_1" 
+       ','
+          "Wett_termijn_7_3" 
+       ','
+          "Wett_termijn_datum" 
+       ','
+          "Uitstel_datum" 
        ','
           "Overschrijding_datum" 
        ','
@@ -11861,76 +11865,65 @@ data _null_;
        ','
           "Reken_wett_termijn_7_1" 
        ','
+          "Adviescommissie" 
+       ','
+          "Datum_1e_heropname_schade" 
+       ','
           "Tijd_1e_heropname_schade" 
+       ','
+          "Datum_2e_heropname_schade" 
        ','
           "Tijd_2e_heropname_schade" 
        ','
-          "Tijd_def_schouw" 
-       ','
-          "Tijd_hoorzitting" 
-       ','
-          "Tijd_hoorzitting_org" 
+          "Datum_orig_schouw" 
        ','
           "Tijd_orig_schouw" 
        ','
-          "Uitstel_datum" 
+          "Datum_def_schouw" 
        ','
-          "Wachttijd" 
-       ','
-          "Wett_termijn_7_1" 
-       ','
-          "Wett_termijn_7_3" 
-       ','
-          "Wett_termijn_datum" 
+          "Tijd_def_schouw" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_BEZWAAR   end=EFIEOD; 
-       format Adviescommissie  ;
-       format App_verschenen  ;
-       format Belasting_cd  ;
-       format Datum_1e_heropname_schade B8601DT19. ;
-       format Datum_2e_heropname_schade B8601DT19. ;
-       format Datum_compleet B8601DT19. ;
-       format Datum_def_schouw B8601DT19. ;
-       format Datum_hoorzitting B8601DT19. ;
-       format Datum_hoorzitting_org B8601DT19. ;
-       format Datum_ontvangst B8601DT19. ;
-       format Datum_orig_schouw B8601DT19. ;
-       format Datum_vragenbrief B8601DT19. ;
        format Jz_id best12. ;
+       format Belasting_cd  ;
+       format Datum_compleet B8601DT19. ;
+       format Wachttijd best12. ;
+       format Datum_hoorzitting_org B8601DT19. ;
+       format Tijd_hoorzitting_org B8601DT19. ;
+       format Datum_hoorzitting B8601DT19. ;
+       format Tijd_hoorzitting B8601DT19. ;
+       format App_verschenen  ;
+       format Datum_ontvangst B8601DT19. ;
+       format Datum_vragenbrief B8601DT19. ;
+       format Wett_termijn_7_1 B8601DT19. ;
+       format Wett_termijn_7_3 B8601DT19. ;
+       format Wett_termijn_datum B8601DT19. ;
+       format Uitstel_datum B8601DT19. ;
        format Overschrijding_datum B8601DT19. ;
        format Primair_lid_3 B8601DT19. ;
        format Reken_cor_id best12. ;
        format Reken_wett_termijn_7_1 B8601DT19. ;
+       format Adviescommissie  ;
+       format Datum_1e_heropname_schade B8601DT19. ;
        format Tijd_1e_heropname_schade B8601DT19. ;
+       format Datum_2e_heropname_schade B8601DT19. ;
        format Tijd_2e_heropname_schade B8601DT19. ;
-       format Tijd_def_schouw B8601DT19. ;
-       format Tijd_hoorzitting B8601DT19. ;
-       format Tijd_hoorzitting_org B8601DT19. ;
+       format Datum_orig_schouw B8601DT19. ;
        format Tijd_orig_schouw B8601DT19. ;
-       format Uitstel_datum B8601DT19. ;
-       format Wachttijd best12. ;
-       format Wett_termijn_7_1 B8601DT19. ;
-       format Wett_termijn_7_3 B8601DT19. ;
-       format Wett_termijn_datum B8601DT19. ;
+       format Datum_def_schouw B8601DT19. ;
+       format Tijd_def_schouw B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Adviescommissie)
+       if missing(Jz_id)
          then put "," @;
          else do;
-                 if find(Adviescommissie,'0A'x) > 0 and 2+klength(Adviescommissie) = klength(quote(trim(Adviescommissie)))
-                   then put '22'x Adviescommissie +(-1) '22'x "," @;
-                   else put Adviescommissie @;
-              end;
-       if missing(App_verschenen)
-         then put "," @;
-         else do;
-                 if find(App_verschenen,'0A'x) > 0 and 2+klength(App_verschenen) = klength(quote(trim(App_verschenen)))
-                   then put '22'x App_verschenen +(-1) '22'x "," @;
-                   else put App_verschenen @;
+                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
+                   then put '22'x Jz_id +(-1) '22'x "," @;
+                   else put Jz_id @;
               end;
        if missing(Belasting_cd)
          then put "," @;
@@ -11939,20 +11932,6 @@ data _null_;
                    then put '22'x Belasting_cd +(-1) '22'x "," @;
                    else put Belasting_cd @;
               end;
-       if missing(Datum_1e_heropname_schade)
-         then put "," @;
-         else do;
-                 if find(Datum_1e_heropname_schade,'0A'x) > 0 and 2+klength(Datum_1e_heropname_schade) = klength(quote(trim(Datum_1e_heropname_schade)))
-                   then put '22'x Datum_1e_heropname_schade +(-1) '22'x "," @;
-                   else put Datum_1e_heropname_schade @;
-              end;
-       if missing(Datum_2e_heropname_schade)
-         then put "," @;
-         else do;
-                 if find(Datum_2e_heropname_schade,'0A'x) > 0 and 2+klength(Datum_2e_heropname_schade) = klength(quote(trim(Datum_2e_heropname_schade)))
-                   then put '22'x Datum_2e_heropname_schade +(-1) '22'x "," @;
-                   else put Datum_2e_heropname_schade @;
-              end;
        if missing(Datum_compleet)
          then put "," @;
          else do;
@@ -11960,19 +11939,12 @@ data _null_;
                    then put '22'x Datum_compleet +(-1) '22'x "," @;
                    else put Datum_compleet @;
               end;
-       if missing(Datum_def_schouw)
+       if missing(Wachttijd)
          then put "," @;
          else do;
-                 if find(Datum_def_schouw,'0A'x) > 0 and 2+klength(Datum_def_schouw) = klength(quote(trim(Datum_def_schouw)))
-                   then put '22'x Datum_def_schouw +(-1) '22'x "," @;
-                   else put Datum_def_schouw @;
-              end;
-       if missing(Datum_hoorzitting)
-         then put "," @;
-         else do;
-                 if find(Datum_hoorzitting,'0A'x) > 0 and 2+klength(Datum_hoorzitting) = klength(quote(trim(Datum_hoorzitting)))
-                   then put '22'x Datum_hoorzitting +(-1) '22'x "," @;
-                   else put Datum_hoorzitting @;
+                 if find(Wachttijd,'0A'x) > 0 and 2+klength(Wachttijd) = klength(quote(trim(Wachttijd)))
+                   then put '22'x Wachttijd +(-1) '22'x "," @;
+                   else put Wachttijd @;
               end;
        if missing(Datum_hoorzitting_org)
          then put "," @;
@@ -11981,19 +11953,40 @@ data _null_;
                    then put '22'x Datum_hoorzitting_org +(-1) '22'x "," @;
                    else put Datum_hoorzitting_org @;
               end;
+       if missing(Tijd_hoorzitting_org)
+         then put "," @;
+         else do;
+                 if find(Tijd_hoorzitting_org,'0A'x) > 0 and 2+klength(Tijd_hoorzitting_org) = klength(quote(trim(Tijd_hoorzitting_org)))
+                   then put '22'x Tijd_hoorzitting_org +(-1) '22'x "," @;
+                   else put Tijd_hoorzitting_org @;
+              end;
+       if missing(Datum_hoorzitting)
+         then put "," @;
+         else do;
+                 if find(Datum_hoorzitting,'0A'x) > 0 and 2+klength(Datum_hoorzitting) = klength(quote(trim(Datum_hoorzitting)))
+                   then put '22'x Datum_hoorzitting +(-1) '22'x "," @;
+                   else put Datum_hoorzitting @;
+              end;
+       if missing(Tijd_hoorzitting)
+         then put "," @;
+         else do;
+                 if find(Tijd_hoorzitting,'0A'x) > 0 and 2+klength(Tijd_hoorzitting) = klength(quote(trim(Tijd_hoorzitting)))
+                   then put '22'x Tijd_hoorzitting +(-1) '22'x "," @;
+                   else put Tijd_hoorzitting @;
+              end;
+       if missing(App_verschenen)
+         then put "," @;
+         else do;
+                 if find(App_verschenen,'0A'x) > 0 and 2+klength(App_verschenen) = klength(quote(trim(App_verschenen)))
+                   then put '22'x App_verschenen +(-1) '22'x "," @;
+                   else put App_verschenen @;
+              end;
        if missing(Datum_ontvangst)
          then put "," @;
          else do;
                  if find(Datum_ontvangst,'0A'x) > 0 and 2+klength(Datum_ontvangst) = klength(quote(trim(Datum_ontvangst)))
                    then put '22'x Datum_ontvangst +(-1) '22'x "," @;
                    else put Datum_ontvangst @;
-              end;
-       if missing(Datum_orig_schouw)
-         then put "," @;
-         else do;
-                 if find(Datum_orig_schouw,'0A'x) > 0 and 2+klength(Datum_orig_schouw) = klength(quote(trim(Datum_orig_schouw)))
-                   then put '22'x Datum_orig_schouw +(-1) '22'x "," @;
-                   else put Datum_orig_schouw @;
               end;
        if missing(Datum_vragenbrief)
          then put "," @;
@@ -12002,12 +11995,33 @@ data _null_;
                    then put '22'x Datum_vragenbrief +(-1) '22'x "," @;
                    else put Datum_vragenbrief @;
               end;
-       if missing(Jz_id)
+       if missing(Wett_termijn_7_1)
          then put "," @;
          else do;
-                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
-                   then put '22'x Jz_id +(-1) '22'x "," @;
-                   else put Jz_id @;
+                 if find(Wett_termijn_7_1,'0A'x) > 0 and 2+klength(Wett_termijn_7_1) = klength(quote(trim(Wett_termijn_7_1)))
+                   then put '22'x Wett_termijn_7_1 +(-1) '22'x "," @;
+                   else put Wett_termijn_7_1 @;
+              end;
+       if missing(Wett_termijn_7_3)
+         then put "," @;
+         else do;
+                 if find(Wett_termijn_7_3,'0A'x) > 0 and 2+klength(Wett_termijn_7_3) = klength(quote(trim(Wett_termijn_7_3)))
+                   then put '22'x Wett_termijn_7_3 +(-1) '22'x "," @;
+                   else put Wett_termijn_7_3 @;
+              end;
+       if missing(Wett_termijn_datum)
+         then put "," @;
+         else do;
+                 if find(Wett_termijn_datum,'0A'x) > 0 and 2+klength(Wett_termijn_datum) = klength(quote(trim(Wett_termijn_datum)))
+                   then put '22'x Wett_termijn_datum +(-1) '22'x "," @;
+                   else put Wett_termijn_datum @;
+              end;
+       if missing(Uitstel_datum)
+         then put "," @;
+         else do;
+                 if find(Uitstel_datum,'0A'x) > 0 and 2+klength(Uitstel_datum) = klength(quote(trim(Uitstel_datum)))
+                   then put '22'x Uitstel_datum +(-1) '22'x "," @;
+                   else put Uitstel_datum @;
               end;
        if missing(Overschrijding_datum)
          then put "," @;
@@ -12037,12 +12051,33 @@ data _null_;
                    then put '22'x Reken_wett_termijn_7_1 +(-1) '22'x "," @;
                    else put Reken_wett_termijn_7_1 @;
               end;
+       if missing(Adviescommissie)
+         then put "," @;
+         else do;
+                 if find(Adviescommissie,'0A'x) > 0 and 2+klength(Adviescommissie) = klength(quote(trim(Adviescommissie)))
+                   then put '22'x Adviescommissie +(-1) '22'x "," @;
+                   else put Adviescommissie @;
+              end;
+       if missing(Datum_1e_heropname_schade)
+         then put "," @;
+         else do;
+                 if find(Datum_1e_heropname_schade,'0A'x) > 0 and 2+klength(Datum_1e_heropname_schade) = klength(quote(trim(Datum_1e_heropname_schade)))
+                   then put '22'x Datum_1e_heropname_schade +(-1) '22'x "," @;
+                   else put Datum_1e_heropname_schade @;
+              end;
        if missing(Tijd_1e_heropname_schade)
          then put "," @;
          else do;
                  if find(Tijd_1e_heropname_schade,'0A'x) > 0 and 2+klength(Tijd_1e_heropname_schade) = klength(quote(trim(Tijd_1e_heropname_schade)))
                    then put '22'x Tijd_1e_heropname_schade +(-1) '22'x "," @;
                    else put Tijd_1e_heropname_schade @;
+              end;
+       if missing(Datum_2e_heropname_schade)
+         then put "," @;
+         else do;
+                 if find(Datum_2e_heropname_schade,'0A'x) > 0 and 2+klength(Datum_2e_heropname_schade) = klength(quote(trim(Datum_2e_heropname_schade)))
+                   then put '22'x Datum_2e_heropname_schade +(-1) '22'x "," @;
+                   else put Datum_2e_heropname_schade @;
               end;
        if missing(Tijd_2e_heropname_schade)
          then put "," @;
@@ -12051,26 +12086,12 @@ data _null_;
                    then put '22'x Tijd_2e_heropname_schade +(-1) '22'x "," @;
                    else put Tijd_2e_heropname_schade @;
               end;
-       if missing(Tijd_def_schouw)
+       if missing(Datum_orig_schouw)
          then put "," @;
          else do;
-                 if find(Tijd_def_schouw,'0A'x) > 0 and 2+klength(Tijd_def_schouw) = klength(quote(trim(Tijd_def_schouw)))
-                   then put '22'x Tijd_def_schouw +(-1) '22'x "," @;
-                   else put Tijd_def_schouw @;
-              end;
-       if missing(Tijd_hoorzitting)
-         then put "," @;
-         else do;
-                 if find(Tijd_hoorzitting,'0A'x) > 0 and 2+klength(Tijd_hoorzitting) = klength(quote(trim(Tijd_hoorzitting)))
-                   then put '22'x Tijd_hoorzitting +(-1) '22'x "," @;
-                   else put Tijd_hoorzitting @;
-              end;
-       if missing(Tijd_hoorzitting_org)
-         then put "," @;
-         else do;
-                 if find(Tijd_hoorzitting_org,'0A'x) > 0 and 2+klength(Tijd_hoorzitting_org) = klength(quote(trim(Tijd_hoorzitting_org)))
-                   then put '22'x Tijd_hoorzitting_org +(-1) '22'x "," @;
-                   else put Tijd_hoorzitting_org @;
+                 if find(Datum_orig_schouw,'0A'x) > 0 and 2+klength(Datum_orig_schouw) = klength(quote(trim(Datum_orig_schouw)))
+                   then put '22'x Datum_orig_schouw +(-1) '22'x "," @;
+                   else put Datum_orig_schouw @;
               end;
        if missing(Tijd_orig_schouw)
          then put "," @;
@@ -12079,40 +12100,19 @@ data _null_;
                    then put '22'x Tijd_orig_schouw +(-1) '22'x "," @;
                    else put Tijd_orig_schouw @;
               end;
-       if missing(Uitstel_datum)
+       if missing(Datum_def_schouw)
          then put "," @;
          else do;
-                 if find(Uitstel_datum,'0A'x) > 0 and 2+klength(Uitstel_datum) = klength(quote(trim(Uitstel_datum)))
-                   then put '22'x Uitstel_datum +(-1) '22'x "," @;
-                   else put Uitstel_datum @;
+                 if find(Datum_def_schouw,'0A'x) > 0 and 2+klength(Datum_def_schouw) = klength(quote(trim(Datum_def_schouw)))
+                   then put '22'x Datum_def_schouw +(-1) '22'x "," @;
+                   else put Datum_def_schouw @;
               end;
-       if missing(Wachttijd)
+       if missing(Tijd_def_schouw)
          then put "," @;
          else do;
-                 if find(Wachttijd,'0A'x) > 0 and 2+klength(Wachttijd) = klength(quote(trim(Wachttijd)))
-                   then put '22'x Wachttijd +(-1) '22'x "," @;
-                   else put Wachttijd @;
-              end;
-       if missing(Wett_termijn_7_1)
-         then put "," @;
-         else do;
-                 if find(Wett_termijn_7_1,'0A'x) > 0 and 2+klength(Wett_termijn_7_1) = klength(quote(trim(Wett_termijn_7_1)))
-                   then put '22'x Wett_termijn_7_1 +(-1) '22'x "," @;
-                   else put Wett_termijn_7_1 @;
-              end;
-       if missing(Wett_termijn_7_3)
-         then put "," @;
-         else do;
-                 if find(Wett_termijn_7_3,'0A'x) > 0 and 2+klength(Wett_termijn_7_3) = klength(quote(trim(Wett_termijn_7_3)))
-                   then put '22'x Wett_termijn_7_3 +(-1) '22'x "," @;
-                   else put Wett_termijn_7_3 @;
-              end;
-       if missing(Wett_termijn_datum)
-         then put "," @;
-         else do;
-                 if find(Wett_termijn_datum,'0A'x) > 0 and 2+klength(Wett_termijn_datum) = klength(quote(trim(Wett_termijn_datum)))
-                   then put '22'x Wett_termijn_datum +(-1) '22'x "," @;
-                   else put Wett_termijn_datum @;
+                 if find(Tijd_def_schouw,'0A'x) > 0 and 2+klength(Tijd_def_schouw) = klength(quote(trim(Tijd_def_schouw)))
+                   then put '22'x Tijd_def_schouw +(-1) '22'x "," @;
+                   else put Tijd_def_schouw @;
               end;
        put techId best12. ; 
        ; 
@@ -12155,137 +12155,67 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Adviescommissie" 
-       ','
-          "Cor_id" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
           "Jz_id" 
-       ','
-          "Jz_nr" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Overschrijding_datum" 
-       ','
-          "Sts_cd" 
-       ','
-          "Uitstel_datum" 
        ','
           "Vanaf_datum" 
        ','
           "Volg_nr" 
        ','
+          "Jz_nr" 
+       ','
+          "Cor_id" 
+       ','
+          "Wijziging_in" 
+       ','
+          "Sts_cd" 
+       ','
           "Wett_termijn_7_1" 
        ','
           "Wett_termijn_7_3" 
        ','
-          "Wijziging_in" 
+          "Uitstel_datum" 
+       ','
+          "Overschrijding_datum" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Adviescommissie" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST   end=EFIEOD; 
-       format Adviescommissie  ;
-       format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
        format Jz_id best12. ;
-       format Jz_nr  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Overschrijding_datum B8601DT19. ;
-       format Sts_cd  ;
-       format Uitstel_datum B8601DT19. ;
        format Vanaf_datum B8601DT19. ;
        format Volg_nr best12. ;
+       format Jz_nr  ;
+       format Cor_id best12. ;
+       format Wijziging_in  ;
+       format Sts_cd  ;
        format Wett_termijn_7_1 B8601DT19. ;
        format Wett_termijn_7_3 B8601DT19. ;
-       format Wijziging_in  ;
+       format Uitstel_datum B8601DT19. ;
+       format Overschrijding_datum B8601DT19. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Adviescommissie  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Adviescommissie)
-         then put "," @;
-         else do;
-                 if find(Adviescommissie,'0A'x) > 0 and 2+klength(Adviescommissie) = klength(quote(trim(Adviescommissie)))
-                   then put '22'x Adviescommissie +(-1) '22'x "," @;
-                   else put Adviescommissie @;
-              end;
-       if missing(Cor_id)
-         then put "," @;
-         else do;
-                 if find(Cor_id,'0A'x) > 0 and 2+klength(Cor_id) = klength(quote(trim(Cor_id)))
-                   then put '22'x Cor_id +(-1) '22'x "," @;
-                   else put Cor_id @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
        if missing(Jz_id)
          then put "," @;
          else do;
                  if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
                    then put '22'x Jz_id +(-1) '22'x "," @;
                    else put Jz_id @;
-              end;
-       if missing(Jz_nr)
-         then put "," @;
-         else do;
-                 if find(Jz_nr,'0A'x) > 0 and 2+klength(Jz_nr) = klength(quote(trim(Jz_nr)))
-                   then put '22'x Jz_nr +(-1) '22'x "," @;
-                   else put Jz_nr @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Overschrijding_datum)
-         then put "," @;
-         else do;
-                 if find(Overschrijding_datum,'0A'x) > 0 and 2+klength(Overschrijding_datum) = klength(quote(trim(Overschrijding_datum)))
-                   then put '22'x Overschrijding_datum +(-1) '22'x "," @;
-                   else put Overschrijding_datum @;
-              end;
-       if missing(Sts_cd)
-         then put "," @;
-         else do;
-                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
-                   then put '22'x Sts_cd +(-1) '22'x "," @;
-                   else put Sts_cd @;
-              end;
-       if missing(Uitstel_datum)
-         then put "," @;
-         else do;
-                 if find(Uitstel_datum,'0A'x) > 0 and 2+klength(Uitstel_datum) = klength(quote(trim(Uitstel_datum)))
-                   then put '22'x Uitstel_datum +(-1) '22'x "," @;
-                   else put Uitstel_datum @;
               end;
        if missing(Vanaf_datum)
          then put "," @;
@@ -12301,6 +12231,34 @@ data _null_;
                    then put '22'x Volg_nr +(-1) '22'x "," @;
                    else put Volg_nr @;
               end;
+       if missing(Jz_nr)
+         then put "," @;
+         else do;
+                 if find(Jz_nr,'0A'x) > 0 and 2+klength(Jz_nr) = klength(quote(trim(Jz_nr)))
+                   then put '22'x Jz_nr +(-1) '22'x "," @;
+                   else put Jz_nr @;
+              end;
+       if missing(Cor_id)
+         then put "," @;
+         else do;
+                 if find(Cor_id,'0A'x) > 0 and 2+klength(Cor_id) = klength(quote(trim(Cor_id)))
+                   then put '22'x Cor_id +(-1) '22'x "," @;
+                   else put Cor_id @;
+              end;
+       if missing(Wijziging_in)
+         then put "," @;
+         else do;
+                 if find(Wijziging_in,'0A'x) > 0 and 2+klength(Wijziging_in) = klength(quote(trim(Wijziging_in)))
+                   then put '22'x Wijziging_in +(-1) '22'x "," @;
+                   else put Wijziging_in @;
+              end;
+       if missing(Sts_cd)
+         then put "," @;
+         else do;
+                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
+                   then put '22'x Sts_cd +(-1) '22'x "," @;
+                   else put Sts_cd @;
+              end;
        if missing(Wett_termijn_7_1)
          then put "," @;
          else do;
@@ -12315,12 +12273,54 @@ data _null_;
                    then put '22'x Wett_termijn_7_3 +(-1) '22'x "," @;
                    else put Wett_termijn_7_3 @;
               end;
-       if missing(Wijziging_in)
+       if missing(Uitstel_datum)
          then put "," @;
          else do;
-                 if find(Wijziging_in,'0A'x) > 0 and 2+klength(Wijziging_in) = klength(quote(trim(Wijziging_in)))
-                   then put '22'x Wijziging_in +(-1) '22'x "," @;
-                   else put Wijziging_in @;
+                 if find(Uitstel_datum,'0A'x) > 0 and 2+klength(Uitstel_datum) = klength(quote(trim(Uitstel_datum)))
+                   then put '22'x Uitstel_datum +(-1) '22'x "," @;
+                   else put Uitstel_datum @;
+              end;
+       if missing(Overschrijding_datum)
+         then put "," @;
+         else do;
+                 if find(Overschrijding_datum,'0A'x) > 0 and 2+klength(Overschrijding_datum) = klength(quote(trim(Overschrijding_datum)))
+                   then put '22'x Overschrijding_datum +(-1) '22'x "," @;
+                   else put Overschrijding_datum @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Adviescommissie)
+         then put "," @;
+         else do;
+                 if find(Adviescommissie,'0A'x) > 0 and 2+klength(Adviescommissie) = klength(quote(trim(Adviescommissie)))
+                   then put '22'x Adviescommissie +(-1) '22'x "," @;
+                   else put Adviescommissie @;
               end;
        put techId best12. ; 
        ; 
@@ -12392,182 +12392,161 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aanmaken_bob" 
+          "Jz_id" 
        ','
-          "Bedrag_afspraak_afd" 
-       ','
-          "Bedrag_tra_cd_1" 
-       ','
-          "Bedrag_tra_cd_2" 
-       ','
-          "Bedrag_tra_cd_3" 
+          "Verleen_bedrag" 
        ','
           "Betaal_bedrag" 
        ','
-          "Betaald_na" 
+          "Vaststelling_bedrag" 
+       ','
+          "Tra_cd_1" 
+       ','
+          "Bedrag_tra_cd_1" 
+       ','
+          "Tra_cd_2" 
+       ','
+          "Bedrag_tra_cd_2" 
+       ','
+          "Tra_cd_3" 
+       ','
+          "Bedrag_tra_cd_3" 
+       ','
+          "Sts_cd_voor" 
+       ','
+          "Sts_cd_na" 
+       ','
+          "Verleend_voor" 
+       ','
+          "Gedeclareerd_voor" 
        ','
           "Betaald_voor" 
        ','
-          "Cor_id_beschikking" 
+          "Ingetrokken_voor" 
        ','
-          "Creatie_dat" 
+          "Open_vordering_voor" 
        ','
-          "Creatie_user" 
+          "Open_verlening_voor" 
+       ','
+          "Verleen_na" 
+       ','
+          "Gedeclareerd_na" 
+       ','
+          "Betaald_na" 
+       ','
+          "Ingetrokken_na" 
+       ','
+          "Open_vordering_na" 
+       ','
+          "Open_verlening_na" 
+       ','
+          "Aanmaken_bob" 
+       ','
+          "Verwijder_trans" 
        ','
           "Cst_cd" 
        ','
           "Cst_cd_beschikking" 
        ','
-          "Datum_afd" 
+          "Cor_id_beschikking" 
+       ','
+          "Tra_id_beschikking_1" 
+       ','
+          "Tra_cd_beschikking_1" 
+       ','
+          "Tra_bedrag_beschikking_1" 
+       ','
+          "Tra_id_beschikking_2" 
+       ','
+          "Tra_cd_beschikking_2" 
+       ','
+          "Tra_bedrag_beschikking_2" 
+       ','
+          "Tra_id_afd" 
+       ','
+          "Bedrag_afspraak_afd" 
        ','
           "Datum_afspraak_afd" 
        ','
-          "Gedeclareerd_na" 
+          "Datum_afd" 
        ','
-          "Gedeclareerd_voor" 
+          "Tra_cd_afd" 
        ','
-          "Ingetrokken_na" 
-       ','
-          "Ingetrokken_voor" 
-       ','
-          "Jz_id" 
+          "Vordering_tra_id_afd" 
        ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Open_verlening_na" 
+          "Creatie_dat" 
        ','
-          "Open_verlening_voor" 
-       ','
-          "Open_vordering_na" 
-       ','
-          "Open_vordering_voor" 
-       ','
-          "Sts_cd_na" 
-       ','
-          "Sts_cd_voor" 
-       ','
-          "Tra_bedrag_beschikking_1" 
-       ','
-          "Tra_bedrag_beschikking_2" 
-       ','
-          "Tra_cd_1" 
-       ','
-          "Tra_cd_2" 
-       ','
-          "Tra_cd_3" 
-       ','
-          "Tra_cd_afd" 
-       ','
-          "Tra_cd_beschikking_1" 
-       ','
-          "Tra_cd_beschikking_2" 
-       ','
-          "Tra_id_afd" 
-       ','
-          "Tra_id_beschikking_1" 
-       ','
-          "Tra_id_beschikking_2" 
-       ','
-          "Vaststelling_bedrag" 
-       ','
-          "Verleen_bedrag" 
-       ','
-          "Verleen_na" 
-       ','
-          "Verleend_voor" 
-       ','
-          "Verwijder_trans" 
-       ','
-          "Vordering_tra_id_afd" 
+          "Creatie_user" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_BOB_WIZARD   end=EFIEOD; 
-       format Aanmaken_bob  ;
-       format Bedrag_afspraak_afd best12. ;
-       format Bedrag_tra_cd_1 best12. ;
-       format Bedrag_tra_cd_2 best12. ;
-       format Bedrag_tra_cd_3 best12. ;
+       format Jz_id best12. ;
+       format Verleen_bedrag best12. ;
        format Betaal_bedrag best12. ;
-       format Betaald_na best12. ;
+       format Vaststelling_bedrag best12. ;
+       format Tra_cd_1  ;
+       format Bedrag_tra_cd_1 best12. ;
+       format Tra_cd_2  ;
+       format Bedrag_tra_cd_2 best12. ;
+       format Tra_cd_3  ;
+       format Bedrag_tra_cd_3 best12. ;
+       format Sts_cd_voor  ;
+       format Sts_cd_na  ;
+       format Verleend_voor best12. ;
+       format Gedeclareerd_voor best12. ;
        format Betaald_voor best12. ;
-       format Cor_id_beschikking best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
+       format Ingetrokken_voor best12. ;
+       format Open_vordering_voor best12. ;
+       format Open_verlening_voor best12. ;
+       format Verleen_na best12. ;
+       format Gedeclareerd_na best12. ;
+       format Betaald_na best12. ;
+       format Ingetrokken_na best12. ;
+       format Open_vordering_na best12. ;
+       format Open_verlening_na best12. ;
+       format Aanmaken_bob  ;
+       format Verwijder_trans  ;
        format Cst_cd  ;
        format Cst_cd_beschikking  ;
-       format Datum_afd B8601DT19. ;
+       format Cor_id_beschikking best12. ;
+       format Tra_id_beschikking_1 best12. ;
+       format Tra_cd_beschikking_1  ;
+       format Tra_bedrag_beschikking_1 best12. ;
+       format Tra_id_beschikking_2 best12. ;
+       format Tra_cd_beschikking_2  ;
+       format Tra_bedrag_beschikking_2 best12. ;
+       format Tra_id_afd best12. ;
+       format Bedrag_afspraak_afd best12. ;
        format Datum_afspraak_afd B8601DT19. ;
-       format Gedeclareerd_na best12. ;
-       format Gedeclareerd_voor best12. ;
-       format Ingetrokken_na best12. ;
-       format Ingetrokken_voor best12. ;
-       format Jz_id best12. ;
+       format Datum_afd B8601DT19. ;
+       format Tra_cd_afd  ;
+       format Vordering_tra_id_afd best12. ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Open_verlening_na best12. ;
-       format Open_verlening_voor best12. ;
-       format Open_vordering_na best12. ;
-       format Open_vordering_voor best12. ;
-       format Sts_cd_na  ;
-       format Sts_cd_voor  ;
-       format Tra_bedrag_beschikking_1 best12. ;
-       format Tra_bedrag_beschikking_2 best12. ;
-       format Tra_cd_1  ;
-       format Tra_cd_2  ;
-       format Tra_cd_3  ;
-       format Tra_cd_afd  ;
-       format Tra_cd_beschikking_1  ;
-       format Tra_cd_beschikking_2  ;
-       format Tra_id_afd best12. ;
-       format Tra_id_beschikking_1 best12. ;
-       format Tra_id_beschikking_2 best12. ;
-       format Vaststelling_bedrag best12. ;
-       format Verleen_bedrag best12. ;
-       format Verleen_na best12. ;
-       format Verleend_voor best12. ;
-       format Verwijder_trans  ;
-       format Vordering_tra_id_afd best12. ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aanmaken_bob)
+       if missing(Jz_id)
          then put "," @;
          else do;
-                 if find(Aanmaken_bob,'0A'x) > 0 and 2+klength(Aanmaken_bob) = klength(quote(trim(Aanmaken_bob)))
-                   then put '22'x Aanmaken_bob +(-1) '22'x "," @;
-                   else put Aanmaken_bob @;
+                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
+                   then put '22'x Jz_id +(-1) '22'x "," @;
+                   else put Jz_id @;
               end;
-       if missing(Bedrag_afspraak_afd)
+       if missing(Verleen_bedrag)
          then put "," @;
          else do;
-                 if find(Bedrag_afspraak_afd,'0A'x) > 0 and 2+klength(Bedrag_afspraak_afd) = klength(quote(trim(Bedrag_afspraak_afd)))
-                   then put '22'x Bedrag_afspraak_afd +(-1) '22'x "," @;
-                   else put Bedrag_afspraak_afd @;
-              end;
-       if missing(Bedrag_tra_cd_1)
-         then put "," @;
-         else do;
-                 if find(Bedrag_tra_cd_1,'0A'x) > 0 and 2+klength(Bedrag_tra_cd_1) = klength(quote(trim(Bedrag_tra_cd_1)))
-                   then put '22'x Bedrag_tra_cd_1 +(-1) '22'x "," @;
-                   else put Bedrag_tra_cd_1 @;
-              end;
-       if missing(Bedrag_tra_cd_2)
-         then put "," @;
-         else do;
-                 if find(Bedrag_tra_cd_2,'0A'x) > 0 and 2+klength(Bedrag_tra_cd_2) = klength(quote(trim(Bedrag_tra_cd_2)))
-                   then put '22'x Bedrag_tra_cd_2 +(-1) '22'x "," @;
-                   else put Bedrag_tra_cd_2 @;
-              end;
-       if missing(Bedrag_tra_cd_3)
-         then put "," @;
-         else do;
-                 if find(Bedrag_tra_cd_3,'0A'x) > 0 and 2+klength(Bedrag_tra_cd_3) = klength(quote(trim(Bedrag_tra_cd_3)))
-                   then put '22'x Bedrag_tra_cd_3 +(-1) '22'x "," @;
-                   else put Bedrag_tra_cd_3 @;
+                 if find(Verleen_bedrag,'0A'x) > 0 and 2+klength(Verleen_bedrag) = klength(quote(trim(Verleen_bedrag)))
+                   then put '22'x Verleen_bedrag +(-1) '22'x "," @;
+                   else put Verleen_bedrag @;
               end;
        if missing(Betaal_bedrag)
          then put "," @;
@@ -12576,12 +12555,82 @@ data _null_;
                    then put '22'x Betaal_bedrag +(-1) '22'x "," @;
                    else put Betaal_bedrag @;
               end;
-       if missing(Betaald_na)
+       if missing(Vaststelling_bedrag)
          then put "," @;
          else do;
-                 if find(Betaald_na,'0A'x) > 0 and 2+klength(Betaald_na) = klength(quote(trim(Betaald_na)))
-                   then put '22'x Betaald_na +(-1) '22'x "," @;
-                   else put Betaald_na @;
+                 if find(Vaststelling_bedrag,'0A'x) > 0 and 2+klength(Vaststelling_bedrag) = klength(quote(trim(Vaststelling_bedrag)))
+                   then put '22'x Vaststelling_bedrag +(-1) '22'x "," @;
+                   else put Vaststelling_bedrag @;
+              end;
+       if missing(Tra_cd_1)
+         then put "," @;
+         else do;
+                 if find(Tra_cd_1,'0A'x) > 0 and 2+klength(Tra_cd_1) = klength(quote(trim(Tra_cd_1)))
+                   then put '22'x Tra_cd_1 +(-1) '22'x "," @;
+                   else put Tra_cd_1 @;
+              end;
+       if missing(Bedrag_tra_cd_1)
+         then put "," @;
+         else do;
+                 if find(Bedrag_tra_cd_1,'0A'x) > 0 and 2+klength(Bedrag_tra_cd_1) = klength(quote(trim(Bedrag_tra_cd_1)))
+                   then put '22'x Bedrag_tra_cd_1 +(-1) '22'x "," @;
+                   else put Bedrag_tra_cd_1 @;
+              end;
+       if missing(Tra_cd_2)
+         then put "," @;
+         else do;
+                 if find(Tra_cd_2,'0A'x) > 0 and 2+klength(Tra_cd_2) = klength(quote(trim(Tra_cd_2)))
+                   then put '22'x Tra_cd_2 +(-1) '22'x "," @;
+                   else put Tra_cd_2 @;
+              end;
+       if missing(Bedrag_tra_cd_2)
+         then put "," @;
+         else do;
+                 if find(Bedrag_tra_cd_2,'0A'x) > 0 and 2+klength(Bedrag_tra_cd_2) = klength(quote(trim(Bedrag_tra_cd_2)))
+                   then put '22'x Bedrag_tra_cd_2 +(-1) '22'x "," @;
+                   else put Bedrag_tra_cd_2 @;
+              end;
+       if missing(Tra_cd_3)
+         then put "," @;
+         else do;
+                 if find(Tra_cd_3,'0A'x) > 0 and 2+klength(Tra_cd_3) = klength(quote(trim(Tra_cd_3)))
+                   then put '22'x Tra_cd_3 +(-1) '22'x "," @;
+                   else put Tra_cd_3 @;
+              end;
+       if missing(Bedrag_tra_cd_3)
+         then put "," @;
+         else do;
+                 if find(Bedrag_tra_cd_3,'0A'x) > 0 and 2+klength(Bedrag_tra_cd_3) = klength(quote(trim(Bedrag_tra_cd_3)))
+                   then put '22'x Bedrag_tra_cd_3 +(-1) '22'x "," @;
+                   else put Bedrag_tra_cd_3 @;
+              end;
+       if missing(Sts_cd_voor)
+         then put "," @;
+         else do;
+                 if find(Sts_cd_voor,'0A'x) > 0 and 2+klength(Sts_cd_voor) = klength(quote(trim(Sts_cd_voor)))
+                   then put '22'x Sts_cd_voor +(-1) '22'x "," @;
+                   else put Sts_cd_voor @;
+              end;
+       if missing(Sts_cd_na)
+         then put "," @;
+         else do;
+                 if find(Sts_cd_na,'0A'x) > 0 and 2+klength(Sts_cd_na) = klength(quote(trim(Sts_cd_na)))
+                   then put '22'x Sts_cd_na +(-1) '22'x "," @;
+                   else put Sts_cd_na @;
+              end;
+       if missing(Verleend_voor)
+         then put "," @;
+         else do;
+                 if find(Verleend_voor,'0A'x) > 0 and 2+klength(Verleend_voor) = klength(quote(trim(Verleend_voor)))
+                   then put '22'x Verleend_voor +(-1) '22'x "," @;
+                   else put Verleend_voor @;
+              end;
+       if missing(Gedeclareerd_voor)
+         then put "," @;
+         else do;
+                 if find(Gedeclareerd_voor,'0A'x) > 0 and 2+klength(Gedeclareerd_voor) = klength(quote(trim(Gedeclareerd_voor)))
+                   then put '22'x Gedeclareerd_voor +(-1) '22'x "," @;
+                   else put Gedeclareerd_voor @;
               end;
        if missing(Betaald_voor)
          then put "," @;
@@ -12590,26 +12639,82 @@ data _null_;
                    then put '22'x Betaald_voor +(-1) '22'x "," @;
                    else put Betaald_voor @;
               end;
-       if missing(Cor_id_beschikking)
+       if missing(Ingetrokken_voor)
          then put "," @;
          else do;
-                 if find(Cor_id_beschikking,'0A'x) > 0 and 2+klength(Cor_id_beschikking) = klength(quote(trim(Cor_id_beschikking)))
-                   then put '22'x Cor_id_beschikking +(-1) '22'x "," @;
-                   else put Cor_id_beschikking @;
+                 if find(Ingetrokken_voor,'0A'x) > 0 and 2+klength(Ingetrokken_voor) = klength(quote(trim(Ingetrokken_voor)))
+                   then put '22'x Ingetrokken_voor +(-1) '22'x "," @;
+                   else put Ingetrokken_voor @;
               end;
-       if missing(Creatie_dat)
+       if missing(Open_vordering_voor)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
+                 if find(Open_vordering_voor,'0A'x) > 0 and 2+klength(Open_vordering_voor) = klength(quote(trim(Open_vordering_voor)))
+                   then put '22'x Open_vordering_voor +(-1) '22'x "," @;
+                   else put Open_vordering_voor @;
               end;
-       if missing(Creatie_user)
+       if missing(Open_verlening_voor)
          then put "," @;
          else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Open_verlening_voor,'0A'x) > 0 and 2+klength(Open_verlening_voor) = klength(quote(trim(Open_verlening_voor)))
+                   then put '22'x Open_verlening_voor +(-1) '22'x "," @;
+                   else put Open_verlening_voor @;
+              end;
+       if missing(Verleen_na)
+         then put "," @;
+         else do;
+                 if find(Verleen_na,'0A'x) > 0 and 2+klength(Verleen_na) = klength(quote(trim(Verleen_na)))
+                   then put '22'x Verleen_na +(-1) '22'x "," @;
+                   else put Verleen_na @;
+              end;
+       if missing(Gedeclareerd_na)
+         then put "," @;
+         else do;
+                 if find(Gedeclareerd_na,'0A'x) > 0 and 2+klength(Gedeclareerd_na) = klength(quote(trim(Gedeclareerd_na)))
+                   then put '22'x Gedeclareerd_na +(-1) '22'x "," @;
+                   else put Gedeclareerd_na @;
+              end;
+       if missing(Betaald_na)
+         then put "," @;
+         else do;
+                 if find(Betaald_na,'0A'x) > 0 and 2+klength(Betaald_na) = klength(quote(trim(Betaald_na)))
+                   then put '22'x Betaald_na +(-1) '22'x "," @;
+                   else put Betaald_na @;
+              end;
+       if missing(Ingetrokken_na)
+         then put "," @;
+         else do;
+                 if find(Ingetrokken_na,'0A'x) > 0 and 2+klength(Ingetrokken_na) = klength(quote(trim(Ingetrokken_na)))
+                   then put '22'x Ingetrokken_na +(-1) '22'x "," @;
+                   else put Ingetrokken_na @;
+              end;
+       if missing(Open_vordering_na)
+         then put "," @;
+         else do;
+                 if find(Open_vordering_na,'0A'x) > 0 and 2+klength(Open_vordering_na) = klength(quote(trim(Open_vordering_na)))
+                   then put '22'x Open_vordering_na +(-1) '22'x "," @;
+                   else put Open_vordering_na @;
+              end;
+       if missing(Open_verlening_na)
+         then put "," @;
+         else do;
+                 if find(Open_verlening_na,'0A'x) > 0 and 2+klength(Open_verlening_na) = klength(quote(trim(Open_verlening_na)))
+                   then put '22'x Open_verlening_na +(-1) '22'x "," @;
+                   else put Open_verlening_na @;
+              end;
+       if missing(Aanmaken_bob)
+         then put "," @;
+         else do;
+                 if find(Aanmaken_bob,'0A'x) > 0 and 2+klength(Aanmaken_bob) = klength(quote(trim(Aanmaken_bob)))
+                   then put '22'x Aanmaken_bob +(-1) '22'x "," @;
+                   else put Aanmaken_bob @;
+              end;
+       if missing(Verwijder_trans)
+         then put "," @;
+         else do;
+                 if find(Verwijder_trans,'0A'x) > 0 and 2+klength(Verwijder_trans) = klength(quote(trim(Verwijder_trans)))
+                   then put '22'x Verwijder_trans +(-1) '22'x "," @;
+                   else put Verwijder_trans @;
               end;
        if missing(Cst_cd)
          then put "," @;
@@ -12625,12 +12730,68 @@ data _null_;
                    then put '22'x Cst_cd_beschikking +(-1) '22'x "," @;
                    else put Cst_cd_beschikking @;
               end;
-       if missing(Datum_afd)
+       if missing(Cor_id_beschikking)
          then put "," @;
          else do;
-                 if find(Datum_afd,'0A'x) > 0 and 2+klength(Datum_afd) = klength(quote(trim(Datum_afd)))
-                   then put '22'x Datum_afd +(-1) '22'x "," @;
-                   else put Datum_afd @;
+                 if find(Cor_id_beschikking,'0A'x) > 0 and 2+klength(Cor_id_beschikking) = klength(quote(trim(Cor_id_beschikking)))
+                   then put '22'x Cor_id_beschikking +(-1) '22'x "," @;
+                   else put Cor_id_beschikking @;
+              end;
+       if missing(Tra_id_beschikking_1)
+         then put "," @;
+         else do;
+                 if find(Tra_id_beschikking_1,'0A'x) > 0 and 2+klength(Tra_id_beschikking_1) = klength(quote(trim(Tra_id_beschikking_1)))
+                   then put '22'x Tra_id_beschikking_1 +(-1) '22'x "," @;
+                   else put Tra_id_beschikking_1 @;
+              end;
+       if missing(Tra_cd_beschikking_1)
+         then put "," @;
+         else do;
+                 if find(Tra_cd_beschikking_1,'0A'x) > 0 and 2+klength(Tra_cd_beschikking_1) = klength(quote(trim(Tra_cd_beschikking_1)))
+                   then put '22'x Tra_cd_beschikking_1 +(-1) '22'x "," @;
+                   else put Tra_cd_beschikking_1 @;
+              end;
+       if missing(Tra_bedrag_beschikking_1)
+         then put "," @;
+         else do;
+                 if find(Tra_bedrag_beschikking_1,'0A'x) > 0 and 2+klength(Tra_bedrag_beschikking_1) = klength(quote(trim(Tra_bedrag_beschikking_1)))
+                   then put '22'x Tra_bedrag_beschikking_1 +(-1) '22'x "," @;
+                   else put Tra_bedrag_beschikking_1 @;
+              end;
+       if missing(Tra_id_beschikking_2)
+         then put "," @;
+         else do;
+                 if find(Tra_id_beschikking_2,'0A'x) > 0 and 2+klength(Tra_id_beschikking_2) = klength(quote(trim(Tra_id_beschikking_2)))
+                   then put '22'x Tra_id_beschikking_2 +(-1) '22'x "," @;
+                   else put Tra_id_beschikking_2 @;
+              end;
+       if missing(Tra_cd_beschikking_2)
+         then put "," @;
+         else do;
+                 if find(Tra_cd_beschikking_2,'0A'x) > 0 and 2+klength(Tra_cd_beschikking_2) = klength(quote(trim(Tra_cd_beschikking_2)))
+                   then put '22'x Tra_cd_beschikking_2 +(-1) '22'x "," @;
+                   else put Tra_cd_beschikking_2 @;
+              end;
+       if missing(Tra_bedrag_beschikking_2)
+         then put "," @;
+         else do;
+                 if find(Tra_bedrag_beschikking_2,'0A'x) > 0 and 2+klength(Tra_bedrag_beschikking_2) = klength(quote(trim(Tra_bedrag_beschikking_2)))
+                   then put '22'x Tra_bedrag_beschikking_2 +(-1) '22'x "," @;
+                   else put Tra_bedrag_beschikking_2 @;
+              end;
+       if missing(Tra_id_afd)
+         then put "," @;
+         else do;
+                 if find(Tra_id_afd,'0A'x) > 0 and 2+klength(Tra_id_afd) = klength(quote(trim(Tra_id_afd)))
+                   then put '22'x Tra_id_afd +(-1) '22'x "," @;
+                   else put Tra_id_afd @;
+              end;
+       if missing(Bedrag_afspraak_afd)
+         then put "," @;
+         else do;
+                 if find(Bedrag_afspraak_afd,'0A'x) > 0 and 2+klength(Bedrag_afspraak_afd) = klength(quote(trim(Bedrag_afspraak_afd)))
+                   then put '22'x Bedrag_afspraak_afd +(-1) '22'x "," @;
+                   else put Bedrag_afspraak_afd @;
               end;
        if missing(Datum_afspraak_afd)
          then put "," @;
@@ -12639,40 +12800,26 @@ data _null_;
                    then put '22'x Datum_afspraak_afd +(-1) '22'x "," @;
                    else put Datum_afspraak_afd @;
               end;
-       if missing(Gedeclareerd_na)
+       if missing(Datum_afd)
          then put "," @;
          else do;
-                 if find(Gedeclareerd_na,'0A'x) > 0 and 2+klength(Gedeclareerd_na) = klength(quote(trim(Gedeclareerd_na)))
-                   then put '22'x Gedeclareerd_na +(-1) '22'x "," @;
-                   else put Gedeclareerd_na @;
+                 if find(Datum_afd,'0A'x) > 0 and 2+klength(Datum_afd) = klength(quote(trim(Datum_afd)))
+                   then put '22'x Datum_afd +(-1) '22'x "," @;
+                   else put Datum_afd @;
               end;
-       if missing(Gedeclareerd_voor)
+       if missing(Tra_cd_afd)
          then put "," @;
          else do;
-                 if find(Gedeclareerd_voor,'0A'x) > 0 and 2+klength(Gedeclareerd_voor) = klength(quote(trim(Gedeclareerd_voor)))
-                   then put '22'x Gedeclareerd_voor +(-1) '22'x "," @;
-                   else put Gedeclareerd_voor @;
+                 if find(Tra_cd_afd,'0A'x) > 0 and 2+klength(Tra_cd_afd) = klength(quote(trim(Tra_cd_afd)))
+                   then put '22'x Tra_cd_afd +(-1) '22'x "," @;
+                   else put Tra_cd_afd @;
               end;
-       if missing(Ingetrokken_na)
+       if missing(Vordering_tra_id_afd)
          then put "," @;
          else do;
-                 if find(Ingetrokken_na,'0A'x) > 0 and 2+klength(Ingetrokken_na) = klength(quote(trim(Ingetrokken_na)))
-                   then put '22'x Ingetrokken_na +(-1) '22'x "," @;
-                   else put Ingetrokken_na @;
-              end;
-       if missing(Ingetrokken_voor)
-         then put "," @;
-         else do;
-                 if find(Ingetrokken_voor,'0A'x) > 0 and 2+klength(Ingetrokken_voor) = klength(quote(trim(Ingetrokken_voor)))
-                   then put '22'x Ingetrokken_voor +(-1) '22'x "," @;
-                   else put Ingetrokken_voor @;
-              end;
-       if missing(Jz_id)
-         then put "," @;
-         else do;
-                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
-                   then put '22'x Jz_id +(-1) '22'x "," @;
-                   else put Jz_id @;
+                 if find(Vordering_tra_id_afd,'0A'x) > 0 and 2+klength(Vordering_tra_id_afd) = klength(quote(trim(Vordering_tra_id_afd)))
+                   then put '22'x Vordering_tra_id_afd +(-1) '22'x "," @;
+                   else put Vordering_tra_id_afd @;
               end;
        if missing(Mutatie_dat)
          then put "," @;
@@ -12688,166 +12835,19 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Open_verlening_na)
+       if missing(Creatie_dat)
          then put "," @;
          else do;
-                 if find(Open_verlening_na,'0A'x) > 0 and 2+klength(Open_verlening_na) = klength(quote(trim(Open_verlening_na)))
-                   then put '22'x Open_verlening_na +(-1) '22'x "," @;
-                   else put Open_verlening_na @;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
-       if missing(Open_verlening_voor)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Open_verlening_voor,'0A'x) > 0 and 2+klength(Open_verlening_voor) = klength(quote(trim(Open_verlening_voor)))
-                   then put '22'x Open_verlening_voor +(-1) '22'x "," @;
-                   else put Open_verlening_voor @;
-              end;
-       if missing(Open_vordering_na)
-         then put "," @;
-         else do;
-                 if find(Open_vordering_na,'0A'x) > 0 and 2+klength(Open_vordering_na) = klength(quote(trim(Open_vordering_na)))
-                   then put '22'x Open_vordering_na +(-1) '22'x "," @;
-                   else put Open_vordering_na @;
-              end;
-       if missing(Open_vordering_voor)
-         then put "," @;
-         else do;
-                 if find(Open_vordering_voor,'0A'x) > 0 and 2+klength(Open_vordering_voor) = klength(quote(trim(Open_vordering_voor)))
-                   then put '22'x Open_vordering_voor +(-1) '22'x "," @;
-                   else put Open_vordering_voor @;
-              end;
-       if missing(Sts_cd_na)
-         then put "," @;
-         else do;
-                 if find(Sts_cd_na,'0A'x) > 0 and 2+klength(Sts_cd_na) = klength(quote(trim(Sts_cd_na)))
-                   then put '22'x Sts_cd_na +(-1) '22'x "," @;
-                   else put Sts_cd_na @;
-              end;
-       if missing(Sts_cd_voor)
-         then put "," @;
-         else do;
-                 if find(Sts_cd_voor,'0A'x) > 0 and 2+klength(Sts_cd_voor) = klength(quote(trim(Sts_cd_voor)))
-                   then put '22'x Sts_cd_voor +(-1) '22'x "," @;
-                   else put Sts_cd_voor @;
-              end;
-       if missing(Tra_bedrag_beschikking_1)
-         then put "," @;
-         else do;
-                 if find(Tra_bedrag_beschikking_1,'0A'x) > 0 and 2+klength(Tra_bedrag_beschikking_1) = klength(quote(trim(Tra_bedrag_beschikking_1)))
-                   then put '22'x Tra_bedrag_beschikking_1 +(-1) '22'x "," @;
-                   else put Tra_bedrag_beschikking_1 @;
-              end;
-       if missing(Tra_bedrag_beschikking_2)
-         then put "," @;
-         else do;
-                 if find(Tra_bedrag_beschikking_2,'0A'x) > 0 and 2+klength(Tra_bedrag_beschikking_2) = klength(quote(trim(Tra_bedrag_beschikking_2)))
-                   then put '22'x Tra_bedrag_beschikking_2 +(-1) '22'x "," @;
-                   else put Tra_bedrag_beschikking_2 @;
-              end;
-       if missing(Tra_cd_1)
-         then put "," @;
-         else do;
-                 if find(Tra_cd_1,'0A'x) > 0 and 2+klength(Tra_cd_1) = klength(quote(trim(Tra_cd_1)))
-                   then put '22'x Tra_cd_1 +(-1) '22'x "," @;
-                   else put Tra_cd_1 @;
-              end;
-       if missing(Tra_cd_2)
-         then put "," @;
-         else do;
-                 if find(Tra_cd_2,'0A'x) > 0 and 2+klength(Tra_cd_2) = klength(quote(trim(Tra_cd_2)))
-                   then put '22'x Tra_cd_2 +(-1) '22'x "," @;
-                   else put Tra_cd_2 @;
-              end;
-       if missing(Tra_cd_3)
-         then put "," @;
-         else do;
-                 if find(Tra_cd_3,'0A'x) > 0 and 2+klength(Tra_cd_3) = klength(quote(trim(Tra_cd_3)))
-                   then put '22'x Tra_cd_3 +(-1) '22'x "," @;
-                   else put Tra_cd_3 @;
-              end;
-       if missing(Tra_cd_afd)
-         then put "," @;
-         else do;
-                 if find(Tra_cd_afd,'0A'x) > 0 and 2+klength(Tra_cd_afd) = klength(quote(trim(Tra_cd_afd)))
-                   then put '22'x Tra_cd_afd +(-1) '22'x "," @;
-                   else put Tra_cd_afd @;
-              end;
-       if missing(Tra_cd_beschikking_1)
-         then put "," @;
-         else do;
-                 if find(Tra_cd_beschikking_1,'0A'x) > 0 and 2+klength(Tra_cd_beschikking_1) = klength(quote(trim(Tra_cd_beschikking_1)))
-                   then put '22'x Tra_cd_beschikking_1 +(-1) '22'x "," @;
-                   else put Tra_cd_beschikking_1 @;
-              end;
-       if missing(Tra_cd_beschikking_2)
-         then put "," @;
-         else do;
-                 if find(Tra_cd_beschikking_2,'0A'x) > 0 and 2+klength(Tra_cd_beschikking_2) = klength(quote(trim(Tra_cd_beschikking_2)))
-                   then put '22'x Tra_cd_beschikking_2 +(-1) '22'x "," @;
-                   else put Tra_cd_beschikking_2 @;
-              end;
-       if missing(Tra_id_afd)
-         then put "," @;
-         else do;
-                 if find(Tra_id_afd,'0A'x) > 0 and 2+klength(Tra_id_afd) = klength(quote(trim(Tra_id_afd)))
-                   then put '22'x Tra_id_afd +(-1) '22'x "," @;
-                   else put Tra_id_afd @;
-              end;
-       if missing(Tra_id_beschikking_1)
-         then put "," @;
-         else do;
-                 if find(Tra_id_beschikking_1,'0A'x) > 0 and 2+klength(Tra_id_beschikking_1) = klength(quote(trim(Tra_id_beschikking_1)))
-                   then put '22'x Tra_id_beschikking_1 +(-1) '22'x "," @;
-                   else put Tra_id_beschikking_1 @;
-              end;
-       if missing(Tra_id_beschikking_2)
-         then put "," @;
-         else do;
-                 if find(Tra_id_beschikking_2,'0A'x) > 0 and 2+klength(Tra_id_beschikking_2) = klength(quote(trim(Tra_id_beschikking_2)))
-                   then put '22'x Tra_id_beschikking_2 +(-1) '22'x "," @;
-                   else put Tra_id_beschikking_2 @;
-              end;
-       if missing(Vaststelling_bedrag)
-         then put "," @;
-         else do;
-                 if find(Vaststelling_bedrag,'0A'x) > 0 and 2+klength(Vaststelling_bedrag) = klength(quote(trim(Vaststelling_bedrag)))
-                   then put '22'x Vaststelling_bedrag +(-1) '22'x "," @;
-                   else put Vaststelling_bedrag @;
-              end;
-       if missing(Verleen_bedrag)
-         then put "," @;
-         else do;
-                 if find(Verleen_bedrag,'0A'x) > 0 and 2+klength(Verleen_bedrag) = klength(quote(trim(Verleen_bedrag)))
-                   then put '22'x Verleen_bedrag +(-1) '22'x "," @;
-                   else put Verleen_bedrag @;
-              end;
-       if missing(Verleen_na)
-         then put "," @;
-         else do;
-                 if find(Verleen_na,'0A'x) > 0 and 2+klength(Verleen_na) = klength(quote(trim(Verleen_na)))
-                   then put '22'x Verleen_na +(-1) '22'x "," @;
-                   else put Verleen_na @;
-              end;
-       if missing(Verleend_voor)
-         then put "," @;
-         else do;
-                 if find(Verleend_voor,'0A'x) > 0 and 2+klength(Verleend_voor) = klength(quote(trim(Verleend_voor)))
-                   then put '22'x Verleend_voor +(-1) '22'x "," @;
-                   else put Verleend_voor @;
-              end;
-       if missing(Verwijder_trans)
-         then put "," @;
-         else do;
-                 if find(Verwijder_trans,'0A'x) > 0 and 2+klength(Verwijder_trans) = klength(quote(trim(Verwijder_trans)))
-                   then put '22'x Verwijder_trans +(-1) '22'x "," @;
-                   else put Verwijder_trans @;
-              end;
-       if missing(Vordering_tra_id_afd)
-         then put "," @;
-         else do;
-                 if find(Vordering_tra_id_afd,'0A'x) > 0 and 2+klength(Vordering_tra_id_afd) = klength(quote(trim(Vordering_tra_id_afd)))
-                   then put '22'x Vordering_tra_id_afd +(-1) '22'x "," @;
-                   else put Vordering_tra_id_afd @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
               end;
        put techId best12. ; 
        ; 
@@ -12880,31 +12880,45 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Fnc_cd" 
+       ','
+          "Oms" 
+       ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
-       ','
-          "Fnc_cd" 
        ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Oms" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_BRIEF_FUNCTIE   end=EFIEOD; 
+       format Fnc_cd  ;
+       format Oms  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Fnc_cd  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Oms  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Fnc_cd)
+         then put "," @;
+         else do;
+                 if find(Fnc_cd,'0A'x) > 0 and 2+klength(Fnc_cd) = klength(quote(trim(Fnc_cd)))
+                   then put '22'x Fnc_cd +(-1) '22'x "," @;
+                   else put Fnc_cd @;
+              end;
+       if missing(Oms)
+         then put "," @;
+         else do;
+                 if find(Oms,'0A'x) > 0 and 2+klength(Oms) = klength(quote(trim(Oms)))
+                   then put '22'x Oms +(-1) '22'x "," @;
+                   else put Oms @;
+              end;
        if missing(Creatie_dat)
          then put "," @;
          else do;
@@ -12919,13 +12933,6 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Fnc_cd)
-         then put "," @;
-         else do;
-                 if find(Fnc_cd,'0A'x) > 0 and 2+klength(Fnc_cd) = klength(quote(trim(Fnc_cd)))
-                   then put '22'x Fnc_cd +(-1) '22'x "," @;
-                   else put Fnc_cd @;
-              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -12939,13 +12946,6 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
-              end;
-       if missing(Oms)
-         then put "," @;
-         else do;
-                 if find(Oms,'0A'x) > 0 and 2+klength(Oms) = klength(quote(trim(Oms)))
-                   then put '22'x Oms +(-1) '22'x "," @;
-                   else put Oms @;
               end;
        put techId best12. ; 
        ; 
@@ -12978,13 +12978,13 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Fnc_cd" 
        ','
           "Cst_cd" 
        ','
-          "Fnc_cd" 
+          "Creatie_dat" 
+       ','
+          "Creatie_user" 
        ','
           "Mutatie_dat" 
        ','
@@ -12994,15 +12994,29 @@ data _null_;
        ; 
      end; 
    set  WORK.BAS_JZM_FUNCTIE_VAN_BRIEF   end=EFIEOD; 
+       format Fnc_cd  ;
+       format Cst_cd  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Cst_cd  ;
-       format Fnc_cd  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Fnc_cd)
+         then put "," @;
+         else do;
+                 if find(Fnc_cd,'0A'x) > 0 and 2+klength(Fnc_cd) = klength(quote(trim(Fnc_cd)))
+                   then put '22'x Fnc_cd +(-1) '22'x "," @;
+                   else put Fnc_cd @;
+              end;
+       if missing(Cst_cd)
+         then put "," @;
+         else do;
+                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
+                   then put '22'x Cst_cd +(-1) '22'x "," @;
+                   else put Cst_cd @;
+              end;
        if missing(Creatie_dat)
          then put "," @;
          else do;
@@ -13016,20 +13030,6 @@ data _null_;
                  if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
-              end;
-       if missing(Cst_cd)
-         then put "," @;
-         else do;
-                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
-                   then put '22'x Cst_cd +(-1) '22'x "," @;
-                   else put Cst_cd @;
-              end;
-       if missing(Fnc_cd)
-         then put "," @;
-         else do;
-                 if find(Fnc_cd,'0A'x) > 0 and 2+klength(Fnc_cd) = klength(quote(trim(Fnc_cd)))
-                   then put '22'x Fnc_cd +(-1) '22'x "," @;
-                   else put Fnc_cd @;
               end;
        if missing(Mutatie_dat)
          then put "," @;
@@ -13101,211 +13101,106 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aard_bob" 
-       ','
-          "Actiedatum" 
-       ','
-          "Actuele_beh_mdw_id" 
-       ','
-          "Actuele_beh_rol_cd" 
-       ','
-          "Afhandeldatum" 
-       ','
-          "Bedrag_bob" 
-       ','
-          "Cor_id" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Datum_dos_jz" 
-       ','
-          "Dos_id" 
-       ','
-          "Dos_ssg_cd" 
-       ','
-          "Dos_sts_cd" 
-       ','
-          "Hoofdproces" 
-       ','
-          "Indieningsdatum" 
-       ','
           "Jaar" 
        ','
-          "Jz_id" 
+          "Volgnr" 
        ','
           "Jz_nr" 
        ','
-          "Jzm_beroep" 
+          "Jz_id" 
+       ','
+          "Sts_cd" 
+       ','
+          "Ssg_cd" 
+       ','
+          "Dos_id" 
+       ','
+          "Cor_id" 
+       ','
+          "Dos_sts_cd" 
+       ','
+          "Dos_ssg_cd" 
+       ','
+          "Indieningsdatum" 
+       ','
+          "Datum_dos_jz" 
+       ','
+          "Actiedatum" 
+       ','
+          "Afhandeldatum" 
+       ','
+          "Notities" 
+       ','
+          "Proc_type" 
        ','
           "Jzm_bezwaar" 
+       ','
+          "Jzm_beroep" 
        ','
           "Jzm_hoger_beroep" 
        ','
           "Jzm_verz_schadeverg" 
        ','
-          "Mutatie_dat" 
+          "Actuele_beh_mdw_id" 
        ','
-          "Mutatie_user" 
-       ','
-          "Notities" 
+          "Actuele_beh_rol_cd" 
        ','
           "Problematiekcode" 
        ','
-          "Proc_type" 
+          "Bedrag_bob" 
        ','
-          "Ssg_cd" 
+          "Aard_bob" 
        ','
-          "Sts_cd" 
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
        ','
           "Technisch_cor_id" 
        ','
-          "Volgnr" 
+          "Hoofdproces" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_PROCEDURE   end=EFIEOD; 
-       format Aard_bob  ;
-       format Actiedatum B8601DT19. ;
-       format Actuele_beh_mdw_id best12. ;
-       format Actuele_beh_rol_cd  ;
-       format Afhandeldatum B8601DT19. ;
-       format Bedrag_bob best12. ;
-       format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum_dos_jz B8601DT19. ;
-       format Dos_id best12. ;
-       format Dos_ssg_cd  ;
-       format Dos_sts_cd  ;
-       format Hoofdproces  ;
-       format Indieningsdatum B8601DT19. ;
        format Jaar best12. ;
-       format Jz_id best12. ;
+       format Volgnr best12. ;
        format Jz_nr  ;
-       format Jzm_beroep  ;
+       format Jz_id best12. ;
+       format Sts_cd  ;
+       format Ssg_cd  ;
+       format Dos_id best12. ;
+       format Cor_id best12. ;
+       format Dos_sts_cd  ;
+       format Dos_ssg_cd  ;
+       format Indieningsdatum B8601DT19. ;
+       format Datum_dos_jz B8601DT19. ;
+       format Actiedatum B8601DT19. ;
+       format Afhandeldatum B8601DT19. ;
+       format Notities  ;
+       format Proc_type  ;
        format Jzm_bezwaar  ;
+       format Jzm_beroep  ;
        format Jzm_hoger_beroep  ;
        format Jzm_verz_schadeverg  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Notities  ;
+       format Actuele_beh_mdw_id best12. ;
+       format Actuele_beh_rol_cd  ;
        format Problematiekcode best12. ;
-       format Proc_type  ;
-       format Ssg_cd  ;
-       format Sts_cd  ;
+       format Bedrag_bob best12. ;
+       format Aard_bob  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format Technisch_cor_id best12. ;
-       format Volgnr best12. ;
+       format Hoofdproces  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aard_bob)
-         then put "," @;
-         else do;
-                 if find(Aard_bob,'0A'x) > 0 and 2+klength(Aard_bob) = klength(quote(trim(Aard_bob)))
-                   then put '22'x Aard_bob +(-1) '22'x "," @;
-                   else put Aard_bob @;
-              end;
-       if missing(Actiedatum)
-         then put "," @;
-         else do;
-                 if find(Actiedatum,'0A'x) > 0 and 2+klength(Actiedatum) = klength(quote(trim(Actiedatum)))
-                   then put '22'x Actiedatum +(-1) '22'x "," @;
-                   else put Actiedatum @;
-              end;
-       if missing(Actuele_beh_mdw_id)
-         then put "," @;
-         else do;
-                 if find(Actuele_beh_mdw_id,'0A'x) > 0 and 2+klength(Actuele_beh_mdw_id) = klength(quote(trim(Actuele_beh_mdw_id)))
-                   then put '22'x Actuele_beh_mdw_id +(-1) '22'x "," @;
-                   else put Actuele_beh_mdw_id @;
-              end;
-       if missing(Actuele_beh_rol_cd)
-         then put "," @;
-         else do;
-                 if find(Actuele_beh_rol_cd,'0A'x) > 0 and 2+klength(Actuele_beh_rol_cd) = klength(quote(trim(Actuele_beh_rol_cd)))
-                   then put '22'x Actuele_beh_rol_cd +(-1) '22'x "," @;
-                   else put Actuele_beh_rol_cd @;
-              end;
-       if missing(Afhandeldatum)
-         then put "," @;
-         else do;
-                 if find(Afhandeldatum,'0A'x) > 0 and 2+klength(Afhandeldatum) = klength(quote(trim(Afhandeldatum)))
-                   then put '22'x Afhandeldatum +(-1) '22'x "," @;
-                   else put Afhandeldatum @;
-              end;
-       if missing(Bedrag_bob)
-         then put "," @;
-         else do;
-                 if find(Bedrag_bob,'0A'x) > 0 and 2+klength(Bedrag_bob) = klength(quote(trim(Bedrag_bob)))
-                   then put '22'x Bedrag_bob +(-1) '22'x "," @;
-                   else put Bedrag_bob @;
-              end;
-       if missing(Cor_id)
-         then put "," @;
-         else do;
-                 if find(Cor_id,'0A'x) > 0 and 2+klength(Cor_id) = klength(quote(trim(Cor_id)))
-                   then put '22'x Cor_id +(-1) '22'x "," @;
-                   else put Cor_id @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Datum_dos_jz)
-         then put "," @;
-         else do;
-                 if find(Datum_dos_jz,'0A'x) > 0 and 2+klength(Datum_dos_jz) = klength(quote(trim(Datum_dos_jz)))
-                   then put '22'x Datum_dos_jz +(-1) '22'x "," @;
-                   else put Datum_dos_jz @;
-              end;
-       if missing(Dos_id)
-         then put "," @;
-         else do;
-                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
-                   then put '22'x Dos_id +(-1) '22'x "," @;
-                   else put Dos_id @;
-              end;
-       if missing(Dos_ssg_cd)
-         then put "," @;
-         else do;
-                 if find(Dos_ssg_cd,'0A'x) > 0 and 2+klength(Dos_ssg_cd) = klength(quote(trim(Dos_ssg_cd)))
-                   then put '22'x Dos_ssg_cd +(-1) '22'x "," @;
-                   else put Dos_ssg_cd @;
-              end;
-       if missing(Dos_sts_cd)
-         then put "," @;
-         else do;
-                 if find(Dos_sts_cd,'0A'x) > 0 and 2+klength(Dos_sts_cd) = klength(quote(trim(Dos_sts_cd)))
-                   then put '22'x Dos_sts_cd +(-1) '22'x "," @;
-                   else put Dos_sts_cd @;
-              end;
-       if missing(Hoofdproces)
-         then put "," @;
-         else do;
-                 if find(Hoofdproces,'0A'x) > 0 and 2+klength(Hoofdproces) = klength(quote(trim(Hoofdproces)))
-                   then put '22'x Hoofdproces +(-1) '22'x "," @;
-                   else put Hoofdproces @;
-              end;
-       if missing(Indieningsdatum)
-         then put "," @;
-         else do;
-                 if find(Indieningsdatum,'0A'x) > 0 and 2+klength(Indieningsdatum) = klength(quote(trim(Indieningsdatum)))
-                   then put '22'x Indieningsdatum +(-1) '22'x "," @;
-                   else put Indieningsdatum @;
-              end;
        if missing(Jaar)
          then put "," @;
          else do;
@@ -13313,12 +13208,12 @@ data _null_;
                    then put '22'x Jaar +(-1) '22'x "," @;
                    else put Jaar @;
               end;
-       if missing(Jz_id)
+       if missing(Volgnr)
          then put "," @;
          else do;
-                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
-                   then put '22'x Jz_id +(-1) '22'x "," @;
-                   else put Jz_id @;
+                 if find(Volgnr,'0A'x) > 0 and 2+klength(Volgnr) = klength(quote(trim(Volgnr)))
+                   then put '22'x Volgnr +(-1) '22'x "," @;
+                   else put Volgnr @;
               end;
        if missing(Jz_nr)
          then put "," @;
@@ -13327,12 +13222,96 @@ data _null_;
                    then put '22'x Jz_nr +(-1) '22'x "," @;
                    else put Jz_nr @;
               end;
-       if missing(Jzm_beroep)
+       if missing(Jz_id)
          then put "," @;
          else do;
-                 if find(Jzm_beroep,'0A'x) > 0 and 2+klength(Jzm_beroep) = klength(quote(trim(Jzm_beroep)))
-                   then put '22'x Jzm_beroep +(-1) '22'x "," @;
-                   else put Jzm_beroep @;
+                 if find(Jz_id,'0A'x) > 0 and 2+klength(Jz_id) = klength(quote(trim(Jz_id)))
+                   then put '22'x Jz_id +(-1) '22'x "," @;
+                   else put Jz_id @;
+              end;
+       if missing(Sts_cd)
+         then put "," @;
+         else do;
+                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
+                   then put '22'x Sts_cd +(-1) '22'x "," @;
+                   else put Sts_cd @;
+              end;
+       if missing(Ssg_cd)
+         then put "," @;
+         else do;
+                 if find(Ssg_cd,'0A'x) > 0 and 2+klength(Ssg_cd) = klength(quote(trim(Ssg_cd)))
+                   then put '22'x Ssg_cd +(-1) '22'x "," @;
+                   else put Ssg_cd @;
+              end;
+       if missing(Dos_id)
+         then put "," @;
+         else do;
+                 if find(Dos_id,'0A'x) > 0 and 2+klength(Dos_id) = klength(quote(trim(Dos_id)))
+                   then put '22'x Dos_id +(-1) '22'x "," @;
+                   else put Dos_id @;
+              end;
+       if missing(Cor_id)
+         then put "," @;
+         else do;
+                 if find(Cor_id,'0A'x) > 0 and 2+klength(Cor_id) = klength(quote(trim(Cor_id)))
+                   then put '22'x Cor_id +(-1) '22'x "," @;
+                   else put Cor_id @;
+              end;
+       if missing(Dos_sts_cd)
+         then put "," @;
+         else do;
+                 if find(Dos_sts_cd,'0A'x) > 0 and 2+klength(Dos_sts_cd) = klength(quote(trim(Dos_sts_cd)))
+                   then put '22'x Dos_sts_cd +(-1) '22'x "," @;
+                   else put Dos_sts_cd @;
+              end;
+       if missing(Dos_ssg_cd)
+         then put "," @;
+         else do;
+                 if find(Dos_ssg_cd,'0A'x) > 0 and 2+klength(Dos_ssg_cd) = klength(quote(trim(Dos_ssg_cd)))
+                   then put '22'x Dos_ssg_cd +(-1) '22'x "," @;
+                   else put Dos_ssg_cd @;
+              end;
+       if missing(Indieningsdatum)
+         then put "," @;
+         else do;
+                 if find(Indieningsdatum,'0A'x) > 0 and 2+klength(Indieningsdatum) = klength(quote(trim(Indieningsdatum)))
+                   then put '22'x Indieningsdatum +(-1) '22'x "," @;
+                   else put Indieningsdatum @;
+              end;
+       if missing(Datum_dos_jz)
+         then put "," @;
+         else do;
+                 if find(Datum_dos_jz,'0A'x) > 0 and 2+klength(Datum_dos_jz) = klength(quote(trim(Datum_dos_jz)))
+                   then put '22'x Datum_dos_jz +(-1) '22'x "," @;
+                   else put Datum_dos_jz @;
+              end;
+       if missing(Actiedatum)
+         then put "," @;
+         else do;
+                 if find(Actiedatum,'0A'x) > 0 and 2+klength(Actiedatum) = klength(quote(trim(Actiedatum)))
+                   then put '22'x Actiedatum +(-1) '22'x "," @;
+                   else put Actiedatum @;
+              end;
+       if missing(Afhandeldatum)
+         then put "," @;
+         else do;
+                 if find(Afhandeldatum,'0A'x) > 0 and 2+klength(Afhandeldatum) = klength(quote(trim(Afhandeldatum)))
+                   then put '22'x Afhandeldatum +(-1) '22'x "," @;
+                   else put Afhandeldatum @;
+              end;
+       if missing(Notities)
+         then put "," @;
+         else do;
+                 if find(Notities,'0A'x) > 0 and 2+klength(Notities) = klength(quote(trim(Notities)))
+                   then put '22'x Notities +(-1) '22'x "," @;
+                   else put Notities @;
+              end;
+       if missing(Proc_type)
+         then put "," @;
+         else do;
+                 if find(Proc_type,'0A'x) > 0 and 2+klength(Proc_type) = klength(quote(trim(Proc_type)))
+                   then put '22'x Proc_type +(-1) '22'x "," @;
+                   else put Proc_type @;
               end;
        if missing(Jzm_bezwaar)
          then put "," @;
@@ -13340,6 +13319,13 @@ data _null_;
                  if find(Jzm_bezwaar,'0A'x) > 0 and 2+klength(Jzm_bezwaar) = klength(quote(trim(Jzm_bezwaar)))
                    then put '22'x Jzm_bezwaar +(-1) '22'x "," @;
                    else put Jzm_bezwaar @;
+              end;
+       if missing(Jzm_beroep)
+         then put "," @;
+         else do;
+                 if find(Jzm_beroep,'0A'x) > 0 and 2+klength(Jzm_beroep) = klength(quote(trim(Jzm_beroep)))
+                   then put '22'x Jzm_beroep +(-1) '22'x "," @;
+                   else put Jzm_beroep @;
               end;
        if missing(Jzm_hoger_beroep)
          then put "," @;
@@ -13355,26 +13341,19 @@ data _null_;
                    then put '22'x Jzm_verz_schadeverg +(-1) '22'x "," @;
                    else put Jzm_verz_schadeverg @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Actuele_beh_mdw_id)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Actuele_beh_mdw_id,'0A'x) > 0 and 2+klength(Actuele_beh_mdw_id) = klength(quote(trim(Actuele_beh_mdw_id)))
+                   then put '22'x Actuele_beh_mdw_id +(-1) '22'x "," @;
+                   else put Actuele_beh_mdw_id @;
               end;
-       if missing(Mutatie_user)
+       if missing(Actuele_beh_rol_cd)
          then put "," @;
          else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Notities)
-         then put "," @;
-         else do;
-                 if find(Notities,'0A'x) > 0 and 2+klength(Notities) = klength(quote(trim(Notities)))
-                   then put '22'x Notities +(-1) '22'x "," @;
-                   else put Notities @;
+                 if find(Actuele_beh_rol_cd,'0A'x) > 0 and 2+klength(Actuele_beh_rol_cd) = klength(quote(trim(Actuele_beh_rol_cd)))
+                   then put '22'x Actuele_beh_rol_cd +(-1) '22'x "," @;
+                   else put Actuele_beh_rol_cd @;
               end;
        if missing(Problematiekcode)
          then put "," @;
@@ -13383,26 +13362,47 @@ data _null_;
                    then put '22'x Problematiekcode +(-1) '22'x "," @;
                    else put Problematiekcode @;
               end;
-       if missing(Proc_type)
+       if missing(Bedrag_bob)
          then put "," @;
          else do;
-                 if find(Proc_type,'0A'x) > 0 and 2+klength(Proc_type) = klength(quote(trim(Proc_type)))
-                   then put '22'x Proc_type +(-1) '22'x "," @;
-                   else put Proc_type @;
+                 if find(Bedrag_bob,'0A'x) > 0 and 2+klength(Bedrag_bob) = klength(quote(trim(Bedrag_bob)))
+                   then put '22'x Bedrag_bob +(-1) '22'x "," @;
+                   else put Bedrag_bob @;
               end;
-       if missing(Ssg_cd)
+       if missing(Aard_bob)
          then put "," @;
          else do;
-                 if find(Ssg_cd,'0A'x) > 0 and 2+klength(Ssg_cd) = klength(quote(trim(Ssg_cd)))
-                   then put '22'x Ssg_cd +(-1) '22'x "," @;
-                   else put Ssg_cd @;
+                 if find(Aard_bob,'0A'x) > 0 and 2+klength(Aard_bob) = klength(quote(trim(Aard_bob)))
+                   then put '22'x Aard_bob +(-1) '22'x "," @;
+                   else put Aard_bob @;
               end;
-       if missing(Sts_cd)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
-                   then put '22'x Sts_cd +(-1) '22'x "," @;
-                   else put Sts_cd @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        if missing(Technisch_cor_id)
          then put "," @;
@@ -13411,12 +13411,12 @@ data _null_;
                    then put '22'x Technisch_cor_id +(-1) '22'x "," @;
                    else put Technisch_cor_id @;
               end;
-       if missing(Volgnr)
+       if missing(Hoofdproces)
          then put "," @;
          else do;
-                 if find(Volgnr,'0A'x) > 0 and 2+klength(Volgnr) = klength(quote(trim(Volgnr)))
-                   then put '22'x Volgnr +(-1) '22'x "," @;
-                   else put Volgnr @;
+                 if find(Hoofdproces,'0A'x) > 0 and 2+klength(Hoofdproces) = klength(quote(trim(Hoofdproces)))
+                   then put '22'x Hoofdproces +(-1) '22'x "," @;
+                   else put Hoofdproces @;
               end;
        put techId best12. ; 
        ; 
@@ -13451,50 +13451,43 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Rol_cd" 
        ','
           "Cst_cd" 
        ','
-          "Mutatie_dat" 
+          "Reactie_cd" 
+       ','
+          "Termijn" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Reactie_cd" 
-       ','
-          "Rol_cd" 
-       ','
-          "Termijn" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_REACTIE_TERMIJN   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Cst_cd  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Reactie_cd  ;
        format Rol_cd  ;
+       format Cst_cd  ;
+       format Reactie_cd  ;
        format Termijn best12. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
+       if missing(Rol_cd)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
+                   then put '22'x Rol_cd +(-1) '22'x "," @;
+                   else put Rol_cd @;
               end;
        if missing(Cst_cd)
          then put "," @;
@@ -13503,12 +13496,33 @@ data _null_;
                    then put '22'x Cst_cd +(-1) '22'x "," @;
                    else put Cst_cd @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Reactie_cd)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Reactie_cd,'0A'x) > 0 and 2+klength(Reactie_cd) = klength(quote(trim(Reactie_cd)))
+                   then put '22'x Reactie_cd +(-1) '22'x "," @;
+                   else put Reactie_cd @;
+              end;
+       if missing(Termijn)
+         then put "," @;
+         else do;
+                 if find(Termijn,'0A'x) > 0 and 2+klength(Termijn) = klength(quote(trim(Termijn)))
+                   then put '22'x Termijn +(-1) '22'x "," @;
+                   else put Termijn @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -13517,26 +13531,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Reactie_cd)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Reactie_cd,'0A'x) > 0 and 2+klength(Reactie_cd) = klength(quote(trim(Reactie_cd)))
-                   then put '22'x Reactie_cd +(-1) '22'x "," @;
-                   else put Reactie_cd @;
-              end;
-       if missing(Rol_cd)
-         then put "," @;
-         else do;
-                 if find(Rol_cd,'0A'x) > 0 and 2+klength(Rol_cd) = klength(quote(trim(Rol_cd)))
-                   then put '22'x Rol_cd +(-1) '22'x "," @;
-                   else put Rol_cd @;
-              end;
-       if missing(Termijn)
-         then put "," @;
-         else do;
-                 if find(Termijn,'0A'x) > 0 and 2+klength(Termijn) = klength(quote(trim(Termijn)))
-                   then put '22'x Termijn +(-1) '22'x "," @;
-                   else put Termijn @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -13576,29 +13576,29 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Commentaar" 
-       ','
-          "Cor_id_tot" 
-       ','
-          "Cor_id_van" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Datum_van" 
        ','
           "Datum_tot" 
        ','
-          "Datum_van" 
-       ','
           "Jz_id" 
        ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
+          "Sts_cd" 
        ','
           "Ssg_cd" 
        ','
-          "Sts_cd" 
+          "Commentaar" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Cor_id_van" 
+       ','
+          "Cor_id_tot" 
        ','
           "Volg_nr" 
        ','
@@ -13606,56 +13606,28 @@ data _null_;
        ; 
      end; 
    set  WORK.BAS_JZM_STATUSREGEL   end=EFIEOD; 
-       format Commentaar  ;
-       format Cor_id_tot best12. ;
-       format Cor_id_van best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum_tot B8601DT19. ;
        format Datum_van B8601DT19. ;
+       format Datum_tot B8601DT19. ;
        format Jz_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Ssg_cd  ;
        format Sts_cd  ;
+       format Ssg_cd  ;
+       format Commentaar  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Cor_id_van best12. ;
+       format Cor_id_tot best12. ;
        format Volg_nr best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Commentaar)
+       if missing(Datum_van)
          then put "," @;
          else do;
-                 if find(Commentaar,'0A'x) > 0 and 2+klength(Commentaar) = klength(quote(trim(Commentaar)))
-                   then put '22'x Commentaar +(-1) '22'x "," @;
-                   else put Commentaar @;
-              end;
-       if missing(Cor_id_tot)
-         then put "," @;
-         else do;
-                 if find(Cor_id_tot,'0A'x) > 0 and 2+klength(Cor_id_tot) = klength(quote(trim(Cor_id_tot)))
-                   then put '22'x Cor_id_tot +(-1) '22'x "," @;
-                   else put Cor_id_tot @;
-              end;
-       if missing(Cor_id_van)
-         then put "," @;
-         else do;
-                 if find(Cor_id_van,'0A'x) > 0 and 2+klength(Cor_id_van) = klength(quote(trim(Cor_id_van)))
-                   then put '22'x Cor_id_van +(-1) '22'x "," @;
-                   else put Cor_id_van @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
+                   then put '22'x Datum_van +(-1) '22'x "," @;
+                   else put Datum_van @;
               end;
        if missing(Datum_tot)
          then put "," @;
@@ -13664,13 +13636,6 @@ data _null_;
                    then put '22'x Datum_tot +(-1) '22'x "," @;
                    else put Datum_tot @;
               end;
-       if missing(Datum_van)
-         then put "," @;
-         else do;
-                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
-                   then put '22'x Datum_van +(-1) '22'x "," @;
-                   else put Datum_van @;
-              end;
        if missing(Jz_id)
          then put "," @;
          else do;
@@ -13678,19 +13643,12 @@ data _null_;
                    then put '22'x Jz_id +(-1) '22'x "," @;
                    else put Jz_id @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Sts_cd)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
+                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
+                   then put '22'x Sts_cd +(-1) '22'x "," @;
+                   else put Sts_cd @;
               end;
        if missing(Ssg_cd)
          then put "," @;
@@ -13699,12 +13657,54 @@ data _null_;
                    then put '22'x Ssg_cd +(-1) '22'x "," @;
                    else put Ssg_cd @;
               end;
-       if missing(Sts_cd)
+       if missing(Commentaar)
          then put "," @;
          else do;
-                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
-                   then put '22'x Sts_cd +(-1) '22'x "," @;
-                   else put Sts_cd @;
+                 if find(Commentaar,'0A'x) > 0 and 2+klength(Commentaar) = klength(quote(trim(Commentaar)))
+                   then put '22'x Commentaar +(-1) '22'x "," @;
+                   else put Commentaar @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Cor_id_van)
+         then put "," @;
+         else do;
+                 if find(Cor_id_van,'0A'x) > 0 and 2+klength(Cor_id_van) = klength(quote(trim(Cor_id_van)))
+                   then put '22'x Cor_id_van +(-1) '22'x "," @;
+                   else put Cor_id_van @;
+              end;
+       if missing(Cor_id_tot)
+         then put "," @;
+         else do;
+                 if find(Cor_id_tot,'0A'x) > 0 and 2+klength(Cor_id_tot) = klength(quote(trim(Cor_id_tot)))
+                   then put '22'x Cor_id_tot +(-1) '22'x "," @;
+                   else put Cor_id_tot @;
               end;
        if missing(Volg_nr)
          then put "," @;
@@ -13743,34 +13743,34 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
+          "Uitspraak" 
        ','
           "Creatie_user" 
        ','
-          "Mutatie_dat" 
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Uitspraak" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_JZM_UITSPRAAK   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Uitspraak  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
+       if missing(Uitspraak)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
+                 if find(Uitspraak,'0A'x) > 0 and 2+klength(Uitspraak) = klength(quote(trim(Uitspraak)))
+                   then put '22'x Uitspraak +(-1) '22'x "," @;
+                   else put Uitspraak @;
               end;
        if missing(Creatie_user)
          then put "," @;
@@ -13779,12 +13779,12 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Creatie_dat)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -13793,12 +13793,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Uitspraak)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Uitspraak,'0A'x) > 0 and 2+klength(Uitspraak) = klength(quote(trim(Uitspraak)))
-                   then put '22'x Uitspraak +(-1) '22'x "," @;
-                   else put Uitspraak @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -14100,122 +14100,115 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Mutatie_ind" 
-       ','
           "Mutatie_srt" 
        ','
-          "New_cebuco_code" 
-       ','
-          "New_cijfer" 
-       ','
-          "New_codebreekpunt_tm" 
-       ','
-          "New_codebreekpunt_van" 
-       ','
-          "New_extract_straatnaam" 
-       ','
-          "New_extract_woonplaats" 
-       ','
-          "New_gemeentecode" 
-       ','
-          "New_gemeentenaam" 
-       ','
-          "New_letter" 
-       ','
-          "New_provinciecode" 
-       ','
-          "New_reeksindicatie" 
-       ','
-          "New_straatnaam_nen" 
-       ','
-          "New_straatnaam_off" 
-       ','
-          "New_straatnaam_ptt" 
-       ','
-          "New_woonplaatsnaam_nen" 
-       ','
-          "New_woonplaatsnaam_ptt" 
-       ','
-          "Old_cebuco_code" 
+          "Mutatie_ind" 
        ','
           "Old_cijfer" 
        ','
-          "Old_codebreekpunt_tm" 
+          "Old_letter" 
+       ','
+          "Old_reeksindicatie" 
        ','
           "Old_codebreekpunt_van" 
        ','
-          "Old_extract_straatnaam" 
+          "Old_codebreekpunt_tm" 
        ','
-          "Old_extract_woonplaats" 
+          "Old_woonplaatsnaam_ptt" 
        ','
-          "Old_gemeentecode" 
+          "Old_woonplaatsnaam_nen" 
        ','
-          "Old_gemeentenaam" 
-       ','
-          "Old_letter" 
-       ','
-          "Old_provinciecode" 
-       ','
-          "Old_reeksindicatie" 
+          "Old_straatnaam_ptt" 
        ','
           "Old_straatnaam_nen" 
        ','
           "Old_straatnaam_off" 
        ','
-          "Old_straatnaam_ptt" 
+          "Old_extract_woonplaats" 
        ','
-          "Old_woonplaatsnaam_nen" 
+          "Old_extract_straatnaam" 
        ','
-          "Old_woonplaatsnaam_ptt" 
+          "Old_gemeentecode" 
+       ','
+          "Old_gemeentenaam" 
+       ','
+          "Old_provinciecode" 
+       ','
+          "Old_cebuco_code" 
+       ','
+          "New_cijfer" 
+       ','
+          "New_letter" 
+       ','
+          "New_reeksindicatie" 
+       ','
+          "New_codebreekpunt_van" 
+       ','
+          "New_codebreekpunt_tm" 
+       ','
+          "New_woonplaatsnaam_ptt" 
+       ','
+          "New_woonplaatsnaam_nen" 
+       ','
+          "New_straatnaam_ptt" 
+       ','
+          "New_straatnaam_nen" 
+       ','
+          "New_straatnaam_off" 
+       ','
+          "New_extract_woonplaats" 
+       ','
+          "New_extract_straatnaam" 
+       ','
+          "New_gemeentecode" 
+       ','
+          "New_gemeentenaam" 
+       ','
+          "New_provinciecode" 
+       ','
+          "New_cebuco_code" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_PCT_MUT   end=EFIEOD; 
-       format Mutatie_ind  ;
        format Mutatie_srt  ;
-       format New_cebuco_code  ;
-       format New_cijfer  ;
-       format New_codebreekpunt_tm  ;
-       format New_codebreekpunt_van  ;
-       format New_extract_straatnaam  ;
-       format New_extract_woonplaats  ;
-       format New_gemeentecode  ;
-       format New_gemeentenaam  ;
-       format New_letter  ;
-       format New_provinciecode  ;
-       format New_reeksindicatie  ;
-       format New_straatnaam_nen  ;
-       format New_straatnaam_off  ;
-       format New_straatnaam_ptt  ;
-       format New_woonplaatsnaam_nen  ;
-       format New_woonplaatsnaam_ptt  ;
-       format Old_cebuco_code  ;
+       format Mutatie_ind  ;
        format Old_cijfer  ;
-       format Old_codebreekpunt_tm  ;
-       format Old_codebreekpunt_van  ;
-       format Old_extract_straatnaam  ;
-       format Old_extract_woonplaats  ;
-       format Old_gemeentecode  ;
-       format Old_gemeentenaam  ;
        format Old_letter  ;
-       format Old_provinciecode  ;
        format Old_reeksindicatie  ;
+       format Old_codebreekpunt_van  ;
+       format Old_codebreekpunt_tm  ;
+       format Old_woonplaatsnaam_ptt  ;
+       format Old_woonplaatsnaam_nen  ;
+       format Old_straatnaam_ptt  ;
        format Old_straatnaam_nen  ;
        format Old_straatnaam_off  ;
-       format Old_straatnaam_ptt  ;
-       format Old_woonplaatsnaam_nen  ;
-       format Old_woonplaatsnaam_ptt  ;
+       format Old_extract_woonplaats  ;
+       format Old_extract_straatnaam  ;
+       format Old_gemeentecode  ;
+       format Old_gemeentenaam  ;
+       format Old_provinciecode  ;
+       format Old_cebuco_code  ;
+       format New_cijfer  ;
+       format New_letter  ;
+       format New_reeksindicatie  ;
+       format New_codebreekpunt_van  ;
+       format New_codebreekpunt_tm  ;
+       format New_woonplaatsnaam_ptt  ;
+       format New_woonplaatsnaam_nen  ;
+       format New_straatnaam_ptt  ;
+       format New_straatnaam_nen  ;
+       format New_straatnaam_off  ;
+       format New_extract_woonplaats  ;
+       format New_extract_straatnaam  ;
+       format New_gemeentecode  ;
+       format New_gemeentenaam  ;
+       format New_provinciecode  ;
+       format New_cebuco_code  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Mutatie_ind)
-         then put "," @;
-         else do;
-                 if find(Mutatie_ind,'0A'x) > 0 and 2+klength(Mutatie_ind) = klength(quote(trim(Mutatie_ind)))
-                   then put '22'x Mutatie_ind +(-1) '22'x "," @;
-                   else put Mutatie_ind @;
-              end;
        if missing(Mutatie_srt)
          then put "," @;
          else do;
@@ -14223,124 +14216,12 @@ data _null_;
                    then put '22'x Mutatie_srt +(-1) '22'x "," @;
                    else put Mutatie_srt @;
               end;
-       if missing(New_cebuco_code)
+       if missing(Mutatie_ind)
          then put "," @;
          else do;
-                 if find(New_cebuco_code,'0A'x) > 0 and 2+klength(New_cebuco_code) = klength(quote(trim(New_cebuco_code)))
-                   then put '22'x New_cebuco_code +(-1) '22'x "," @;
-                   else put New_cebuco_code @;
-              end;
-       if missing(New_cijfer)
-         then put "," @;
-         else do;
-                 if find(New_cijfer,'0A'x) > 0 and 2+klength(New_cijfer) = klength(quote(trim(New_cijfer)))
-                   then put '22'x New_cijfer +(-1) '22'x "," @;
-                   else put New_cijfer @;
-              end;
-       if missing(New_codebreekpunt_tm)
-         then put "," @;
-         else do;
-                 if find(New_codebreekpunt_tm,'0A'x) > 0 and 2+klength(New_codebreekpunt_tm) = klength(quote(trim(New_codebreekpunt_tm)))
-                   then put '22'x New_codebreekpunt_tm +(-1) '22'x "," @;
-                   else put New_codebreekpunt_tm @;
-              end;
-       if missing(New_codebreekpunt_van)
-         then put "," @;
-         else do;
-                 if find(New_codebreekpunt_van,'0A'x) > 0 and 2+klength(New_codebreekpunt_van) = klength(quote(trim(New_codebreekpunt_van)))
-                   then put '22'x New_codebreekpunt_van +(-1) '22'x "," @;
-                   else put New_codebreekpunt_van @;
-              end;
-       if missing(New_extract_straatnaam)
-         then put "," @;
-         else do;
-                 if find(New_extract_straatnaam,'0A'x) > 0 and 2+klength(New_extract_straatnaam) = klength(quote(trim(New_extract_straatnaam)))
-                   then put '22'x New_extract_straatnaam +(-1) '22'x "," @;
-                   else put New_extract_straatnaam @;
-              end;
-       if missing(New_extract_woonplaats)
-         then put "," @;
-         else do;
-                 if find(New_extract_woonplaats,'0A'x) > 0 and 2+klength(New_extract_woonplaats) = klength(quote(trim(New_extract_woonplaats)))
-                   then put '22'x New_extract_woonplaats +(-1) '22'x "," @;
-                   else put New_extract_woonplaats @;
-              end;
-       if missing(New_gemeentecode)
-         then put "," @;
-         else do;
-                 if find(New_gemeentecode,'0A'x) > 0 and 2+klength(New_gemeentecode) = klength(quote(trim(New_gemeentecode)))
-                   then put '22'x New_gemeentecode +(-1) '22'x "," @;
-                   else put New_gemeentecode @;
-              end;
-       if missing(New_gemeentenaam)
-         then put "," @;
-         else do;
-                 if find(New_gemeentenaam,'0A'x) > 0 and 2+klength(New_gemeentenaam) = klength(quote(trim(New_gemeentenaam)))
-                   then put '22'x New_gemeentenaam +(-1) '22'x "," @;
-                   else put New_gemeentenaam @;
-              end;
-       if missing(New_letter)
-         then put "," @;
-         else do;
-                 if find(New_letter,'0A'x) > 0 and 2+klength(New_letter) = klength(quote(trim(New_letter)))
-                   then put '22'x New_letter +(-1) '22'x "," @;
-                   else put New_letter @;
-              end;
-       if missing(New_provinciecode)
-         then put "," @;
-         else do;
-                 if find(New_provinciecode,'0A'x) > 0 and 2+klength(New_provinciecode) = klength(quote(trim(New_provinciecode)))
-                   then put '22'x New_provinciecode +(-1) '22'x "," @;
-                   else put New_provinciecode @;
-              end;
-       if missing(New_reeksindicatie)
-         then put "," @;
-         else do;
-                 if find(New_reeksindicatie,'0A'x) > 0 and 2+klength(New_reeksindicatie) = klength(quote(trim(New_reeksindicatie)))
-                   then put '22'x New_reeksindicatie +(-1) '22'x "," @;
-                   else put New_reeksindicatie @;
-              end;
-       if missing(New_straatnaam_nen)
-         then put "," @;
-         else do;
-                 if find(New_straatnaam_nen,'0A'x) > 0 and 2+klength(New_straatnaam_nen) = klength(quote(trim(New_straatnaam_nen)))
-                   then put '22'x New_straatnaam_nen +(-1) '22'x "," @;
-                   else put New_straatnaam_nen @;
-              end;
-       if missing(New_straatnaam_off)
-         then put "," @;
-         else do;
-                 if find(New_straatnaam_off,'0A'x) > 0 and 2+klength(New_straatnaam_off) = klength(quote(trim(New_straatnaam_off)))
-                   then put '22'x New_straatnaam_off +(-1) '22'x "," @;
-                   else put New_straatnaam_off @;
-              end;
-       if missing(New_straatnaam_ptt)
-         then put "," @;
-         else do;
-                 if find(New_straatnaam_ptt,'0A'x) > 0 and 2+klength(New_straatnaam_ptt) = klength(quote(trim(New_straatnaam_ptt)))
-                   then put '22'x New_straatnaam_ptt +(-1) '22'x "," @;
-                   else put New_straatnaam_ptt @;
-              end;
-       if missing(New_woonplaatsnaam_nen)
-         then put "," @;
-         else do;
-                 if find(New_woonplaatsnaam_nen,'0A'x) > 0 and 2+klength(New_woonplaatsnaam_nen) = klength(quote(trim(New_woonplaatsnaam_nen)))
-                   then put '22'x New_woonplaatsnaam_nen +(-1) '22'x "," @;
-                   else put New_woonplaatsnaam_nen @;
-              end;
-       if missing(New_woonplaatsnaam_ptt)
-         then put "," @;
-         else do;
-                 if find(New_woonplaatsnaam_ptt,'0A'x) > 0 and 2+klength(New_woonplaatsnaam_ptt) = klength(quote(trim(New_woonplaatsnaam_ptt)))
-                   then put '22'x New_woonplaatsnaam_ptt +(-1) '22'x "," @;
-                   else put New_woonplaatsnaam_ptt @;
-              end;
-       if missing(Old_cebuco_code)
-         then put "," @;
-         else do;
-                 if find(Old_cebuco_code,'0A'x) > 0 and 2+klength(Old_cebuco_code) = klength(quote(trim(Old_cebuco_code)))
-                   then put '22'x Old_cebuco_code +(-1) '22'x "," @;
-                   else put Old_cebuco_code @;
+                 if find(Mutatie_ind,'0A'x) > 0 and 2+klength(Mutatie_ind) = klength(quote(trim(Mutatie_ind)))
+                   then put '22'x Mutatie_ind +(-1) '22'x "," @;
+                   else put Mutatie_ind @;
               end;
        if missing(Old_cijfer)
          then put "," @;
@@ -14349,12 +14230,19 @@ data _null_;
                    then put '22'x Old_cijfer +(-1) '22'x "," @;
                    else put Old_cijfer @;
               end;
-       if missing(Old_codebreekpunt_tm)
+       if missing(Old_letter)
          then put "," @;
          else do;
-                 if find(Old_codebreekpunt_tm,'0A'x) > 0 and 2+klength(Old_codebreekpunt_tm) = klength(quote(trim(Old_codebreekpunt_tm)))
-                   then put '22'x Old_codebreekpunt_tm +(-1) '22'x "," @;
-                   else put Old_codebreekpunt_tm @;
+                 if find(Old_letter,'0A'x) > 0 and 2+klength(Old_letter) = klength(quote(trim(Old_letter)))
+                   then put '22'x Old_letter +(-1) '22'x "," @;
+                   else put Old_letter @;
+              end;
+       if missing(Old_reeksindicatie)
+         then put "," @;
+         else do;
+                 if find(Old_reeksindicatie,'0A'x) > 0 and 2+klength(Old_reeksindicatie) = klength(quote(trim(Old_reeksindicatie)))
+                   then put '22'x Old_reeksindicatie +(-1) '22'x "," @;
+                   else put Old_reeksindicatie @;
               end;
        if missing(Old_codebreekpunt_van)
          then put "," @;
@@ -14363,54 +14251,33 @@ data _null_;
                    then put '22'x Old_codebreekpunt_van +(-1) '22'x "," @;
                    else put Old_codebreekpunt_van @;
               end;
-       if missing(Old_extract_straatnaam)
+       if missing(Old_codebreekpunt_tm)
          then put "," @;
          else do;
-                 if find(Old_extract_straatnaam,'0A'x) > 0 and 2+klength(Old_extract_straatnaam) = klength(quote(trim(Old_extract_straatnaam)))
-                   then put '22'x Old_extract_straatnaam +(-1) '22'x "," @;
-                   else put Old_extract_straatnaam @;
+                 if find(Old_codebreekpunt_tm,'0A'x) > 0 and 2+klength(Old_codebreekpunt_tm) = klength(quote(trim(Old_codebreekpunt_tm)))
+                   then put '22'x Old_codebreekpunt_tm +(-1) '22'x "," @;
+                   else put Old_codebreekpunt_tm @;
               end;
-       if missing(Old_extract_woonplaats)
+       if missing(Old_woonplaatsnaam_ptt)
          then put "," @;
          else do;
-                 if find(Old_extract_woonplaats,'0A'x) > 0 and 2+klength(Old_extract_woonplaats) = klength(quote(trim(Old_extract_woonplaats)))
-                   then put '22'x Old_extract_woonplaats +(-1) '22'x "," @;
-                   else put Old_extract_woonplaats @;
+                 if find(Old_woonplaatsnaam_ptt,'0A'x) > 0 and 2+klength(Old_woonplaatsnaam_ptt) = klength(quote(trim(Old_woonplaatsnaam_ptt)))
+                   then put '22'x Old_woonplaatsnaam_ptt +(-1) '22'x "," @;
+                   else put Old_woonplaatsnaam_ptt @;
               end;
-       if missing(Old_gemeentecode)
+       if missing(Old_woonplaatsnaam_nen)
          then put "," @;
          else do;
-                 if find(Old_gemeentecode,'0A'x) > 0 and 2+klength(Old_gemeentecode) = klength(quote(trim(Old_gemeentecode)))
-                   then put '22'x Old_gemeentecode +(-1) '22'x "," @;
-                   else put Old_gemeentecode @;
+                 if find(Old_woonplaatsnaam_nen,'0A'x) > 0 and 2+klength(Old_woonplaatsnaam_nen) = klength(quote(trim(Old_woonplaatsnaam_nen)))
+                   then put '22'x Old_woonplaatsnaam_nen +(-1) '22'x "," @;
+                   else put Old_woonplaatsnaam_nen @;
               end;
-       if missing(Old_gemeentenaam)
+       if missing(Old_straatnaam_ptt)
          then put "," @;
          else do;
-                 if find(Old_gemeentenaam,'0A'x) > 0 and 2+klength(Old_gemeentenaam) = klength(quote(trim(Old_gemeentenaam)))
-                   then put '22'x Old_gemeentenaam +(-1) '22'x "," @;
-                   else put Old_gemeentenaam @;
-              end;
-       if missing(Old_letter)
-         then put "," @;
-         else do;
-                 if find(Old_letter,'0A'x) > 0 and 2+klength(Old_letter) = klength(quote(trim(Old_letter)))
-                   then put '22'x Old_letter +(-1) '22'x "," @;
-                   else put Old_letter @;
-              end;
-       if missing(Old_provinciecode)
-         then put "," @;
-         else do;
-                 if find(Old_provinciecode,'0A'x) > 0 and 2+klength(Old_provinciecode) = klength(quote(trim(Old_provinciecode)))
-                   then put '22'x Old_provinciecode +(-1) '22'x "," @;
-                   else put Old_provinciecode @;
-              end;
-       if missing(Old_reeksindicatie)
-         then put "," @;
-         else do;
-                 if find(Old_reeksindicatie,'0A'x) > 0 and 2+klength(Old_reeksindicatie) = klength(quote(trim(Old_reeksindicatie)))
-                   then put '22'x Old_reeksindicatie +(-1) '22'x "," @;
-                   else put Old_reeksindicatie @;
+                 if find(Old_straatnaam_ptt,'0A'x) > 0 and 2+klength(Old_straatnaam_ptt) = klength(quote(trim(Old_straatnaam_ptt)))
+                   then put '22'x Old_straatnaam_ptt +(-1) '22'x "," @;
+                   else put Old_straatnaam_ptt @;
               end;
        if missing(Old_straatnaam_nen)
          then put "," @;
@@ -14426,26 +14293,159 @@ data _null_;
                    then put '22'x Old_straatnaam_off +(-1) '22'x "," @;
                    else put Old_straatnaam_off @;
               end;
-       if missing(Old_straatnaam_ptt)
+       if missing(Old_extract_woonplaats)
          then put "," @;
          else do;
-                 if find(Old_straatnaam_ptt,'0A'x) > 0 and 2+klength(Old_straatnaam_ptt) = klength(quote(trim(Old_straatnaam_ptt)))
-                   then put '22'x Old_straatnaam_ptt +(-1) '22'x "," @;
-                   else put Old_straatnaam_ptt @;
+                 if find(Old_extract_woonplaats,'0A'x) > 0 and 2+klength(Old_extract_woonplaats) = klength(quote(trim(Old_extract_woonplaats)))
+                   then put '22'x Old_extract_woonplaats +(-1) '22'x "," @;
+                   else put Old_extract_woonplaats @;
               end;
-       if missing(Old_woonplaatsnaam_nen)
+       if missing(Old_extract_straatnaam)
          then put "," @;
          else do;
-                 if find(Old_woonplaatsnaam_nen,'0A'x) > 0 and 2+klength(Old_woonplaatsnaam_nen) = klength(quote(trim(Old_woonplaatsnaam_nen)))
-                   then put '22'x Old_woonplaatsnaam_nen +(-1) '22'x "," @;
-                   else put Old_woonplaatsnaam_nen @;
+                 if find(Old_extract_straatnaam,'0A'x) > 0 and 2+klength(Old_extract_straatnaam) = klength(quote(trim(Old_extract_straatnaam)))
+                   then put '22'x Old_extract_straatnaam +(-1) '22'x "," @;
+                   else put Old_extract_straatnaam @;
               end;
-       if missing(Old_woonplaatsnaam_ptt)
+       if missing(Old_gemeentecode)
          then put "," @;
          else do;
-                 if find(Old_woonplaatsnaam_ptt,'0A'x) > 0 and 2+klength(Old_woonplaatsnaam_ptt) = klength(quote(trim(Old_woonplaatsnaam_ptt)))
-                   then put '22'x Old_woonplaatsnaam_ptt +(-1) '22'x "," @;
-                   else put Old_woonplaatsnaam_ptt @;
+                 if find(Old_gemeentecode,'0A'x) > 0 and 2+klength(Old_gemeentecode) = klength(quote(trim(Old_gemeentecode)))
+                   then put '22'x Old_gemeentecode +(-1) '22'x "," @;
+                   else put Old_gemeentecode @;
+              end;
+       if missing(Old_gemeentenaam)
+         then put "," @;
+         else do;
+                 if find(Old_gemeentenaam,'0A'x) > 0 and 2+klength(Old_gemeentenaam) = klength(quote(trim(Old_gemeentenaam)))
+                   then put '22'x Old_gemeentenaam +(-1) '22'x "," @;
+                   else put Old_gemeentenaam @;
+              end;
+       if missing(Old_provinciecode)
+         then put "," @;
+         else do;
+                 if find(Old_provinciecode,'0A'x) > 0 and 2+klength(Old_provinciecode) = klength(quote(trim(Old_provinciecode)))
+                   then put '22'x Old_provinciecode +(-1) '22'x "," @;
+                   else put Old_provinciecode @;
+              end;
+       if missing(Old_cebuco_code)
+         then put "," @;
+         else do;
+                 if find(Old_cebuco_code,'0A'x) > 0 and 2+klength(Old_cebuco_code) = klength(quote(trim(Old_cebuco_code)))
+                   then put '22'x Old_cebuco_code +(-1) '22'x "," @;
+                   else put Old_cebuco_code @;
+              end;
+       if missing(New_cijfer)
+         then put "," @;
+         else do;
+                 if find(New_cijfer,'0A'x) > 0 and 2+klength(New_cijfer) = klength(quote(trim(New_cijfer)))
+                   then put '22'x New_cijfer +(-1) '22'x "," @;
+                   else put New_cijfer @;
+              end;
+       if missing(New_letter)
+         then put "," @;
+         else do;
+                 if find(New_letter,'0A'x) > 0 and 2+klength(New_letter) = klength(quote(trim(New_letter)))
+                   then put '22'x New_letter +(-1) '22'x "," @;
+                   else put New_letter @;
+              end;
+       if missing(New_reeksindicatie)
+         then put "," @;
+         else do;
+                 if find(New_reeksindicatie,'0A'x) > 0 and 2+klength(New_reeksindicatie) = klength(quote(trim(New_reeksindicatie)))
+                   then put '22'x New_reeksindicatie +(-1) '22'x "," @;
+                   else put New_reeksindicatie @;
+              end;
+       if missing(New_codebreekpunt_van)
+         then put "," @;
+         else do;
+                 if find(New_codebreekpunt_van,'0A'x) > 0 and 2+klength(New_codebreekpunt_van) = klength(quote(trim(New_codebreekpunt_van)))
+                   then put '22'x New_codebreekpunt_van +(-1) '22'x "," @;
+                   else put New_codebreekpunt_van @;
+              end;
+       if missing(New_codebreekpunt_tm)
+         then put "," @;
+         else do;
+                 if find(New_codebreekpunt_tm,'0A'x) > 0 and 2+klength(New_codebreekpunt_tm) = klength(quote(trim(New_codebreekpunt_tm)))
+                   then put '22'x New_codebreekpunt_tm +(-1) '22'x "," @;
+                   else put New_codebreekpunt_tm @;
+              end;
+       if missing(New_woonplaatsnaam_ptt)
+         then put "," @;
+         else do;
+                 if find(New_woonplaatsnaam_ptt,'0A'x) > 0 and 2+klength(New_woonplaatsnaam_ptt) = klength(quote(trim(New_woonplaatsnaam_ptt)))
+                   then put '22'x New_woonplaatsnaam_ptt +(-1) '22'x "," @;
+                   else put New_woonplaatsnaam_ptt @;
+              end;
+       if missing(New_woonplaatsnaam_nen)
+         then put "," @;
+         else do;
+                 if find(New_woonplaatsnaam_nen,'0A'x) > 0 and 2+klength(New_woonplaatsnaam_nen) = klength(quote(trim(New_woonplaatsnaam_nen)))
+                   then put '22'x New_woonplaatsnaam_nen +(-1) '22'x "," @;
+                   else put New_woonplaatsnaam_nen @;
+              end;
+       if missing(New_straatnaam_ptt)
+         then put "," @;
+         else do;
+                 if find(New_straatnaam_ptt,'0A'x) > 0 and 2+klength(New_straatnaam_ptt) = klength(quote(trim(New_straatnaam_ptt)))
+                   then put '22'x New_straatnaam_ptt +(-1) '22'x "," @;
+                   else put New_straatnaam_ptt @;
+              end;
+       if missing(New_straatnaam_nen)
+         then put "," @;
+         else do;
+                 if find(New_straatnaam_nen,'0A'x) > 0 and 2+klength(New_straatnaam_nen) = klength(quote(trim(New_straatnaam_nen)))
+                   then put '22'x New_straatnaam_nen +(-1) '22'x "," @;
+                   else put New_straatnaam_nen @;
+              end;
+       if missing(New_straatnaam_off)
+         then put "," @;
+         else do;
+                 if find(New_straatnaam_off,'0A'x) > 0 and 2+klength(New_straatnaam_off) = klength(quote(trim(New_straatnaam_off)))
+                   then put '22'x New_straatnaam_off +(-1) '22'x "," @;
+                   else put New_straatnaam_off @;
+              end;
+       if missing(New_extract_woonplaats)
+         then put "," @;
+         else do;
+                 if find(New_extract_woonplaats,'0A'x) > 0 and 2+klength(New_extract_woonplaats) = klength(quote(trim(New_extract_woonplaats)))
+                   then put '22'x New_extract_woonplaats +(-1) '22'x "," @;
+                   else put New_extract_woonplaats @;
+              end;
+       if missing(New_extract_straatnaam)
+         then put "," @;
+         else do;
+                 if find(New_extract_straatnaam,'0A'x) > 0 and 2+klength(New_extract_straatnaam) = klength(quote(trim(New_extract_straatnaam)))
+                   then put '22'x New_extract_straatnaam +(-1) '22'x "," @;
+                   else put New_extract_straatnaam @;
+              end;
+       if missing(New_gemeentecode)
+         then put "," @;
+         else do;
+                 if find(New_gemeentecode,'0A'x) > 0 and 2+klength(New_gemeentecode) = klength(quote(trim(New_gemeentecode)))
+                   then put '22'x New_gemeentecode +(-1) '22'x "," @;
+                   else put New_gemeentecode @;
+              end;
+       if missing(New_gemeentenaam)
+         then put "," @;
+         else do;
+                 if find(New_gemeentenaam,'0A'x) > 0 and 2+klength(New_gemeentenaam) = klength(quote(trim(New_gemeentenaam)))
+                   then put '22'x New_gemeentenaam +(-1) '22'x "," @;
+                   else put New_gemeentenaam @;
+              end;
+       if missing(New_provinciecode)
+         then put "," @;
+         else do;
+                 if find(New_provinciecode,'0A'x) > 0 and 2+klength(New_provinciecode) = klength(quote(trim(New_provinciecode)))
+                   then put '22'x New_provinciecode +(-1) '22'x "," @;
+                   else put New_provinciecode @;
+              end;
+       if missing(New_cebuco_code)
+         then put "," @;
+         else do;
+                 if find(New_cebuco_code,'0A'x) > 0 and 2+klength(New_cebuco_code) = klength(quote(trim(New_cebuco_code)))
+                   then put '22'x New_cebuco_code +(-1) '22'x "," @;
+                   else put New_cebuco_code @;
               end;
        put techId best12. ; 
        ; 
@@ -14488,116 +14488,67 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Cebuco_code" 
-       ','
           "Cijfer" 
-       ','
-          "Codebreekpunt_tm" 
-       ','
-          "Codebreekpunt_van" 
-       ','
-          "Extract_straatnaam" 
-       ','
-          "Extract_woonplaats" 
-       ','
-          "Gemeentecode" 
-       ','
-          "Gemeentenaam" 
        ','
           "Letter" 
        ','
-          "Provinciecode" 
-       ','
           "Reeksindicatie" 
+       ','
+          "Codebreekpunt_van" 
+       ','
+          "Codebreekpunt_tm" 
+       ','
+          "Woonplaatsnaam_ptt" 
+       ','
+          "Woonplaatsnaam_nen" 
+       ','
+          "Straatnaam_ptt" 
        ','
           "Straatnaam_nen" 
        ','
           "Straatnaam_off" 
        ','
-          "Straatnaam_ptt" 
+          "Extract_woonplaats" 
        ','
-          "Woonplaatsnaam_nen" 
+          "Extract_straatnaam" 
        ','
-          "Woonplaatsnaam_ptt" 
+          "Gemeentecode" 
+       ','
+          "Gemeentenaam" 
+       ','
+          "Provinciecode" 
+       ','
+          "Cebuco_code" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_PCT   end=EFIEOD; 
-       format Cebuco_code  ;
        format Cijfer  ;
-       format Codebreekpunt_tm  ;
-       format Codebreekpunt_van  ;
-       format Extract_straatnaam  ;
-       format Extract_woonplaats  ;
-       format Gemeentecode  ;
-       format Gemeentenaam  ;
        format Letter  ;
-       format Provinciecode  ;
        format Reeksindicatie  ;
+       format Codebreekpunt_van  ;
+       format Codebreekpunt_tm  ;
+       format Woonplaatsnaam_ptt  ;
+       format Woonplaatsnaam_nen  ;
+       format Straatnaam_ptt  ;
        format Straatnaam_nen  ;
        format Straatnaam_off  ;
-       format Straatnaam_ptt  ;
-       format Woonplaatsnaam_nen  ;
-       format Woonplaatsnaam_ptt  ;
+       format Extract_woonplaats  ;
+       format Extract_straatnaam  ;
+       format Gemeentecode  ;
+       format Gemeentenaam  ;
+       format Provinciecode  ;
+       format Cebuco_code  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Cebuco_code)
-         then put "," @;
-         else do;
-                 if find(Cebuco_code,'0A'x) > 0 and 2+klength(Cebuco_code) = klength(quote(trim(Cebuco_code)))
-                   then put '22'x Cebuco_code +(-1) '22'x "," @;
-                   else put Cebuco_code @;
-              end;
        if missing(Cijfer)
          then put "," @;
          else do;
                  if find(Cijfer,'0A'x) > 0 and 2+klength(Cijfer) = klength(quote(trim(Cijfer)))
                    then put '22'x Cijfer +(-1) '22'x "," @;
                    else put Cijfer @;
-              end;
-       if missing(Codebreekpunt_tm)
-         then put "," @;
-         else do;
-                 if find(Codebreekpunt_tm,'0A'x) > 0 and 2+klength(Codebreekpunt_tm) = klength(quote(trim(Codebreekpunt_tm)))
-                   then put '22'x Codebreekpunt_tm +(-1) '22'x "," @;
-                   else put Codebreekpunt_tm @;
-              end;
-       if missing(Codebreekpunt_van)
-         then put "," @;
-         else do;
-                 if find(Codebreekpunt_van,'0A'x) > 0 and 2+klength(Codebreekpunt_van) = klength(quote(trim(Codebreekpunt_van)))
-                   then put '22'x Codebreekpunt_van +(-1) '22'x "," @;
-                   else put Codebreekpunt_van @;
-              end;
-       if missing(Extract_straatnaam)
-         then put "," @;
-         else do;
-                 if find(Extract_straatnaam,'0A'x) > 0 and 2+klength(Extract_straatnaam) = klength(quote(trim(Extract_straatnaam)))
-                   then put '22'x Extract_straatnaam +(-1) '22'x "," @;
-                   else put Extract_straatnaam @;
-              end;
-       if missing(Extract_woonplaats)
-         then put "," @;
-         else do;
-                 if find(Extract_woonplaats,'0A'x) > 0 and 2+klength(Extract_woonplaats) = klength(quote(trim(Extract_woonplaats)))
-                   then put '22'x Extract_woonplaats +(-1) '22'x "," @;
-                   else put Extract_woonplaats @;
-              end;
-       if missing(Gemeentecode)
-         then put "," @;
-         else do;
-                 if find(Gemeentecode,'0A'x) > 0 and 2+klength(Gemeentecode) = klength(quote(trim(Gemeentecode)))
-                   then put '22'x Gemeentecode +(-1) '22'x "," @;
-                   else put Gemeentecode @;
-              end;
-       if missing(Gemeentenaam)
-         then put "," @;
-         else do;
-                 if find(Gemeentenaam,'0A'x) > 0 and 2+klength(Gemeentenaam) = klength(quote(trim(Gemeentenaam)))
-                   then put '22'x Gemeentenaam +(-1) '22'x "," @;
-                   else put Gemeentenaam @;
               end;
        if missing(Letter)
          then put "," @;
@@ -14606,19 +14557,47 @@ data _null_;
                    then put '22'x Letter +(-1) '22'x "," @;
                    else put Letter @;
               end;
-       if missing(Provinciecode)
-         then put "," @;
-         else do;
-                 if find(Provinciecode,'0A'x) > 0 and 2+klength(Provinciecode) = klength(quote(trim(Provinciecode)))
-                   then put '22'x Provinciecode +(-1) '22'x "," @;
-                   else put Provinciecode @;
-              end;
        if missing(Reeksindicatie)
          then put "," @;
          else do;
                  if find(Reeksindicatie,'0A'x) > 0 and 2+klength(Reeksindicatie) = klength(quote(trim(Reeksindicatie)))
                    then put '22'x Reeksindicatie +(-1) '22'x "," @;
                    else put Reeksindicatie @;
+              end;
+       if missing(Codebreekpunt_van)
+         then put "," @;
+         else do;
+                 if find(Codebreekpunt_van,'0A'x) > 0 and 2+klength(Codebreekpunt_van) = klength(quote(trim(Codebreekpunt_van)))
+                   then put '22'x Codebreekpunt_van +(-1) '22'x "," @;
+                   else put Codebreekpunt_van @;
+              end;
+       if missing(Codebreekpunt_tm)
+         then put "," @;
+         else do;
+                 if find(Codebreekpunt_tm,'0A'x) > 0 and 2+klength(Codebreekpunt_tm) = klength(quote(trim(Codebreekpunt_tm)))
+                   then put '22'x Codebreekpunt_tm +(-1) '22'x "," @;
+                   else put Codebreekpunt_tm @;
+              end;
+       if missing(Woonplaatsnaam_ptt)
+         then put "," @;
+         else do;
+                 if find(Woonplaatsnaam_ptt,'0A'x) > 0 and 2+klength(Woonplaatsnaam_ptt) = klength(quote(trim(Woonplaatsnaam_ptt)))
+                   then put '22'x Woonplaatsnaam_ptt +(-1) '22'x "," @;
+                   else put Woonplaatsnaam_ptt @;
+              end;
+       if missing(Woonplaatsnaam_nen)
+         then put "," @;
+         else do;
+                 if find(Woonplaatsnaam_nen,'0A'x) > 0 and 2+klength(Woonplaatsnaam_nen) = klength(quote(trim(Woonplaatsnaam_nen)))
+                   then put '22'x Woonplaatsnaam_nen +(-1) '22'x "," @;
+                   else put Woonplaatsnaam_nen @;
+              end;
+       if missing(Straatnaam_ptt)
+         then put "," @;
+         else do;
+                 if find(Straatnaam_ptt,'0A'x) > 0 and 2+klength(Straatnaam_ptt) = klength(quote(trim(Straatnaam_ptt)))
+                   then put '22'x Straatnaam_ptt +(-1) '22'x "," @;
+                   else put Straatnaam_ptt @;
               end;
        if missing(Straatnaam_nen)
          then put "," @;
@@ -14634,26 +14613,47 @@ data _null_;
                    then put '22'x Straatnaam_off +(-1) '22'x "," @;
                    else put Straatnaam_off @;
               end;
-       if missing(Straatnaam_ptt)
+       if missing(Extract_woonplaats)
          then put "," @;
          else do;
-                 if find(Straatnaam_ptt,'0A'x) > 0 and 2+klength(Straatnaam_ptt) = klength(quote(trim(Straatnaam_ptt)))
-                   then put '22'x Straatnaam_ptt +(-1) '22'x "," @;
-                   else put Straatnaam_ptt @;
+                 if find(Extract_woonplaats,'0A'x) > 0 and 2+klength(Extract_woonplaats) = klength(quote(trim(Extract_woonplaats)))
+                   then put '22'x Extract_woonplaats +(-1) '22'x "," @;
+                   else put Extract_woonplaats @;
               end;
-       if missing(Woonplaatsnaam_nen)
+       if missing(Extract_straatnaam)
          then put "," @;
          else do;
-                 if find(Woonplaatsnaam_nen,'0A'x) > 0 and 2+klength(Woonplaatsnaam_nen) = klength(quote(trim(Woonplaatsnaam_nen)))
-                   then put '22'x Woonplaatsnaam_nen +(-1) '22'x "," @;
-                   else put Woonplaatsnaam_nen @;
+                 if find(Extract_straatnaam,'0A'x) > 0 and 2+klength(Extract_straatnaam) = klength(quote(trim(Extract_straatnaam)))
+                   then put '22'x Extract_straatnaam +(-1) '22'x "," @;
+                   else put Extract_straatnaam @;
               end;
-       if missing(Woonplaatsnaam_ptt)
+       if missing(Gemeentecode)
          then put "," @;
          else do;
-                 if find(Woonplaatsnaam_ptt,'0A'x) > 0 and 2+klength(Woonplaatsnaam_ptt) = klength(quote(trim(Woonplaatsnaam_ptt)))
-                   then put '22'x Woonplaatsnaam_ptt +(-1) '22'x "," @;
-                   else put Woonplaatsnaam_ptt @;
+                 if find(Gemeentecode,'0A'x) > 0 and 2+klength(Gemeentecode) = klength(quote(trim(Gemeentecode)))
+                   then put '22'x Gemeentecode +(-1) '22'x "," @;
+                   else put Gemeentecode @;
+              end;
+       if missing(Gemeentenaam)
+         then put "," @;
+         else do;
+                 if find(Gemeentenaam,'0A'x) > 0 and 2+klength(Gemeentenaam) = klength(quote(trim(Gemeentenaam)))
+                   then put '22'x Gemeentenaam +(-1) '22'x "," @;
+                   else put Gemeentenaam @;
+              end;
+       if missing(Provinciecode)
+         then put "," @;
+         else do;
+                 if find(Provinciecode,'0A'x) > 0 and 2+klength(Provinciecode) = klength(quote(trim(Provinciecode)))
+                   then put '22'x Provinciecode +(-1) '22'x "," @;
+                   else put Provinciecode @;
+              end;
+       if missing(Cebuco_code)
+         then put "," @;
+         else do;
+                 if find(Cebuco_code,'0A'x) > 0 and 2+klength(Cebuco_code) = klength(quote(trim(Cebuco_code)))
+                   then put '22'x Cebuco_code +(-1) '22'x "," @;
+                   else put Cebuco_code @;
               end;
        put techId best12. ; 
        ; 
@@ -14842,6 +14842,8 @@ data _null_;
        ','
           "Creatie_dat" 
        ','
+          "creatie_user" 
+       ','
           "Huisnr" 
        ','
           "Huisnr_toe" 
@@ -14853,6 +14855,8 @@ data _null_;
           "Locatie_oms" 
        ','
           "Mutatie_dat" 
+       ','
+          "mutatie_user" 
        ','
           "Plaatsnaam" 
        ','
@@ -14866,30 +14870,26 @@ data _null_;
        ','
           "Validatie" 
        ','
-          "creatie_user" 
-       ','
-          "mutatie_user" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_ADRES   end=EFIEOD; 
        format Barcode  ;
        format Creatie_dat B8601DT19. ;
+       format creatie_user  ;
        format Huisnr best12. ;
        format Huisnr_toe  ;
        format Ias_id best12. ;
        format Landnaam  ;
        format Locatie_oms  ;
        format Mutatie_dat B8601DT19. ;
+       format mutatie_user  ;
        format Plaatsnaam  ;
        format Postcd  ;
        format Prov_cd  ;
        format Ras_id best12. ;
        format Straat  ;
        format Validatie  ;
-       format creatie_user  ;
-       format mutatie_user  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -14906,6 +14906,13 @@ data _null_;
                  if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
                    then put '22'x Creatie_dat +(-1) '22'x "," @;
                    else put Creatie_dat @;
+              end;
+       if missing(creatie_user)
+         then put "," @;
+         else do;
+                 if find(creatie_user,'0A'x) > 0 and 2+klength(creatie_user) = klength(quote(trim(creatie_user)))
+                   then put '22'x creatie_user +(-1) '22'x "," @;
+                   else put creatie_user @;
               end;
        if missing(Huisnr)
          then put "," @;
@@ -14949,6 +14956,13 @@ data _null_;
                    then put '22'x Mutatie_dat +(-1) '22'x "," @;
                    else put Mutatie_dat @;
               end;
+       if missing(mutatie_user)
+         then put "," @;
+         else do;
+                 if find(mutatie_user,'0A'x) > 0 and 2+klength(mutatie_user) = klength(quote(trim(mutatie_user)))
+                   then put '22'x mutatie_user +(-1) '22'x "," @;
+                   else put mutatie_user @;
+              end;
        if missing(Plaatsnaam)
          then put "," @;
          else do;
@@ -14991,20 +15005,6 @@ data _null_;
                    then put '22'x Validatie +(-1) '22'x "," @;
                    else put Validatie @;
               end;
-       if missing(creatie_user)
-         then put "," @;
-         else do;
-                 if find(creatie_user,'0A'x) > 0 and 2+klength(creatie_user) = klength(quote(trim(creatie_user)))
-                   then put '22'x creatie_user +(-1) '22'x "," @;
-                   else put creatie_user @;
-              end;
-       if missing(mutatie_user)
-         then put "," @;
-         else do;
-                 if find(mutatie_user,'0A'x) > 0 and 2+klength(mutatie_user) = klength(quote(trim(mutatie_user)))
-                   then put '22'x mutatie_user +(-1) '22'x "," @;
-                   else put mutatie_user @;
-              end;
        put techId best12. ; 
        ; 
      end; 
@@ -15040,6 +15040,8 @@ data _null_;
        put 
           "Creatie_dat" 
        ','
+          "creatie_user" 
+       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
@@ -15052,20 +15054,18 @@ data _null_;
        ','
           "Rca_id" 
        ','
-          "creatie_user" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_COM_ADRES_CP   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
+       format creatie_user  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
        format Org_id best12. ;
        format Per_id best12. ;
        format Rav_id best12. ;
        format Rca_id best12. ;
-       format creatie_user  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -15075,6 +15075,13 @@ data _null_;
                  if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
                    then put '22'x Creatie_dat +(-1) '22'x "," @;
                    else put Creatie_dat @;
+              end;
+       if missing(creatie_user)
+         then put "," @;
+         else do;
+                 if find(creatie_user,'0A'x) > 0 and 2+klength(creatie_user) = klength(quote(trim(creatie_user)))
+                   then put '22'x creatie_user +(-1) '22'x "," @;
+                   else put creatie_user @;
               end;
        if missing(Mutatie_dat)
          then put "," @;
@@ -15117,13 +15124,6 @@ data _null_;
                  if find(Rca_id,'0A'x) > 0 and 2+klength(Rca_id) = klength(quote(trim(Rca_id)))
                    then put '22'x Rca_id +(-1) '22'x "," @;
                    else put Rca_id @;
-              end;
-       if missing(creatie_user)
-         then put "," @;
-         else do;
-                 if find(creatie_user,'0A'x) > 0 and 2+klength(creatie_user) = klength(quote(trim(creatie_user)))
-                   then put '22'x creatie_user +(-1) '22'x "," @;
-                   else put creatie_user @;
               end;
        put techId best12. ; 
        ; 
@@ -15290,9 +15290,9 @@ data _null_;
        ','
           "Rca_id" 
        ','
-          "Referentie" 
-       ','
           "Telnr_email" 
+       ','
+          "Referentie" 
        ','
           "techId" 
        ; 
@@ -15304,8 +15304,8 @@ data _null_;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
        format Rca_id best12. ;
-       format Referentie  ;
        format Telnr_email  ;
+       format Referentie  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -15351,19 +15351,19 @@ data _null_;
                    then put '22'x Rca_id +(-1) '22'x "," @;
                    else put Rca_id @;
               end;
-       if missing(Referentie)
-         then put "," @;
-         else do;
-                 if find(Referentie,'0A'x) > 0 and 2+klength(Referentie) = klength(quote(trim(Referentie)))
-                   then put '22'x Referentie +(-1) '22'x "," @;
-                   else put Referentie @;
-              end;
        if missing(Telnr_email)
          then put "," @;
          else do;
                  if find(Telnr_email,'0A'x) > 0 and 2+klength(Telnr_email) = klength(quote(trim(Telnr_email)))
                    then put '22'x Telnr_email +(-1) '22'x "," @;
                    else put Telnr_email @;
+              end;
+       if missing(Referentie)
+         then put "," @;
+         else do;
+                 if find(Referentie,'0A'x) > 0 and 2+klength(Referentie) = klength(quote(trim(Referentie)))
+                   then put '22'x Referentie +(-1) '22'x "," @;
+                   else put Referentie @;
               end;
        put techId best12. ; 
        ; 
@@ -15650,46 +15650,46 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Begindatum" 
+          "Rel_id" 
        ','
           "Bsi_cd" 
        ','
-          "Creatie_dat" 
+          "Volg_nr" 
        ','
-          "Creatie_user" 
+          "Begindatum" 
        ','
           "Einddatum" 
        ','
-          "Mutatie_dat" 
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Rel_id" 
-       ','
-          "Volg_nr" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_ORG_BSI   end=EFIEOD; 
-       format Begindatum B8601DT19. ;
-       format Bsi_cd  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Einddatum B8601DT19. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Rel_id best12. ;
+       format Bsi_cd  ;
        format Volg_nr best12. ;
+       format Begindatum B8601DT19. ;
+       format Einddatum B8601DT19. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Begindatum)
+       if missing(Rel_id)
          then put "," @;
          else do;
-                 if find(Begindatum,'0A'x) > 0 and 2+klength(Begindatum) = klength(quote(trim(Begindatum)))
-                   then put '22'x Begindatum +(-1) '22'x "," @;
-                   else put Begindatum @;
+                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
+                   then put '22'x Rel_id +(-1) '22'x "," @;
+                   else put Rel_id @;
               end;
        if missing(Bsi_cd)
          then put "," @;
@@ -15698,19 +15698,19 @@ data _null_;
                    then put '22'x Bsi_cd +(-1) '22'x "," @;
                    else put Bsi_cd @;
               end;
-       if missing(Creatie_dat)
+       if missing(Volg_nr)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
+                 if find(Volg_nr,'0A'x) > 0 and 2+klength(Volg_nr) = klength(quote(trim(Volg_nr)))
+                   then put '22'x Volg_nr +(-1) '22'x "," @;
+                   else put Volg_nr @;
               end;
-       if missing(Creatie_user)
+       if missing(Begindatum)
          then put "," @;
          else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Begindatum,'0A'x) > 0 and 2+klength(Begindatum) = klength(quote(trim(Begindatum)))
+                   then put '22'x Begindatum +(-1) '22'x "," @;
+                   else put Begindatum @;
               end;
        if missing(Einddatum)
          then put "," @;
@@ -15719,12 +15719,19 @@ data _null_;
                    then put '22'x Einddatum +(-1) '22'x "," @;
                    else put Einddatum @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -15733,19 +15740,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Rel_id)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
-                   then put '22'x Rel_id +(-1) '22'x "," @;
-                   else put Rel_id @;
-              end;
-       if missing(Volg_nr)
-         then put "," @;
-         else do;
-                 if find(Volg_nr,'0A'x) > 0 and 2+klength(Volg_nr) = klength(quote(trim(Volg_nr)))
-                   then put '22'x Volg_nr +(-1) '22'x "," @;
-                   else put Volg_nr @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -15788,81 +15788,67 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Actuele_faillisement_cd" 
-       ','
-          "Actuele_opheffings_cd" 
-       ','
-          "Actuele_status" 
+          "Kvk_nr" 
        ','
           "Graydon_bedrijfsnr" 
-       ','
-          "Handelsnaam" 
-       ','
-          "Huisnr_postbusnr" 
-       ','
-          "Huisnr_toevoeging" 
        ','
           "Kvk_dossiernr" 
        ','
           "Kvk_kamernr" 
        ','
-          "Kvk_nr" 
-       ','
           "Kvk_subdossiernr" 
-       ','
-          "Land" 
        ','
           "Naam" 
        ','
-          "Postcode" 
+          "Handelsnaam" 
        ','
           "Straatnaam_postbus" 
        ','
+          "Huisnr_postbusnr" 
+       ','
+          "Huisnr_toevoeging" 
+       ','
+          "Postcode" 
+       ','
           "Woonplaats" 
+       ','
+          "Land" 
+       ','
+          "Actuele_faillisement_cd" 
+       ','
+          "Actuele_status" 
+       ','
+          "Actuele_opheffings_cd" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_ORG_FAILLIET   end=EFIEOD; 
-       format Actuele_faillisement_cd  ;
-       format Actuele_opheffings_cd  ;
-       format Actuele_status  ;
+       format Kvk_nr  ;
        format Graydon_bedrijfsnr best12. ;
-       format Handelsnaam  ;
-       format Huisnr_postbusnr best12. ;
-       format Huisnr_toevoeging  ;
        format Kvk_dossiernr best12. ;
        format Kvk_kamernr best12. ;
-       format Kvk_nr  ;
        format Kvk_subdossiernr best12. ;
-       format Land  ;
        format Naam  ;
-       format Postcode  ;
+       format Handelsnaam  ;
        format Straatnaam_postbus  ;
+       format Huisnr_postbusnr best12. ;
+       format Huisnr_toevoeging  ;
+       format Postcode  ;
        format Woonplaats  ;
+       format Land  ;
+       format Actuele_faillisement_cd  ;
+       format Actuele_status  ;
+       format Actuele_opheffings_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Actuele_faillisement_cd)
+       if missing(Kvk_nr)
          then put "," @;
          else do;
-                 if find(Actuele_faillisement_cd,'0A'x) > 0 and 2+klength(Actuele_faillisement_cd) = klength(quote(trim(Actuele_faillisement_cd)))
-                   then put '22'x Actuele_faillisement_cd +(-1) '22'x "," @;
-                   else put Actuele_faillisement_cd @;
-              end;
-       if missing(Actuele_opheffings_cd)
-         then put "," @;
-         else do;
-                 if find(Actuele_opheffings_cd,'0A'x) > 0 and 2+klength(Actuele_opheffings_cd) = klength(quote(trim(Actuele_opheffings_cd)))
-                   then put '22'x Actuele_opheffings_cd +(-1) '22'x "," @;
-                   else put Actuele_opheffings_cd @;
-              end;
-       if missing(Actuele_status)
-         then put "," @;
-         else do;
-                 if find(Actuele_status,'0A'x) > 0 and 2+klength(Actuele_status) = klength(quote(trim(Actuele_status)))
-                   then put '22'x Actuele_status +(-1) '22'x "," @;
-                   else put Actuele_status @;
+                 if find(Kvk_nr,'0A'x) > 0 and 2+klength(Kvk_nr) = klength(quote(trim(Kvk_nr)))
+                   then put '22'x Kvk_nr +(-1) '22'x "," @;
+                   else put Kvk_nr @;
               end;
        if missing(Graydon_bedrijfsnr)
          then put "," @;
@@ -15870,27 +15856,6 @@ data _null_;
                  if find(Graydon_bedrijfsnr,'0A'x) > 0 and 2+klength(Graydon_bedrijfsnr) = klength(quote(trim(Graydon_bedrijfsnr)))
                    then put '22'x Graydon_bedrijfsnr +(-1) '22'x "," @;
                    else put Graydon_bedrijfsnr @;
-              end;
-       if missing(Handelsnaam)
-         then put "," @;
-         else do;
-                 if find(Handelsnaam,'0A'x) > 0 and 2+klength(Handelsnaam) = klength(quote(trim(Handelsnaam)))
-                   then put '22'x Handelsnaam +(-1) '22'x "," @;
-                   else put Handelsnaam @;
-              end;
-       if missing(Huisnr_postbusnr)
-         then put "," @;
-         else do;
-                 if find(Huisnr_postbusnr,'0A'x) > 0 and 2+klength(Huisnr_postbusnr) = klength(quote(trim(Huisnr_postbusnr)))
-                   then put '22'x Huisnr_postbusnr +(-1) '22'x "," @;
-                   else put Huisnr_postbusnr @;
-              end;
-       if missing(Huisnr_toevoeging)
-         then put "," @;
-         else do;
-                 if find(Huisnr_toevoeging,'0A'x) > 0 and 2+klength(Huisnr_toevoeging) = klength(quote(trim(Huisnr_toevoeging)))
-                   then put '22'x Huisnr_toevoeging +(-1) '22'x "," @;
-                   else put Huisnr_toevoeging @;
               end;
        if missing(Kvk_dossiernr)
          then put "," @;
@@ -15906,26 +15871,12 @@ data _null_;
                    then put '22'x Kvk_kamernr +(-1) '22'x "," @;
                    else put Kvk_kamernr @;
               end;
-       if missing(Kvk_nr)
-         then put "," @;
-         else do;
-                 if find(Kvk_nr,'0A'x) > 0 and 2+klength(Kvk_nr) = klength(quote(trim(Kvk_nr)))
-                   then put '22'x Kvk_nr +(-1) '22'x "," @;
-                   else put Kvk_nr @;
-              end;
        if missing(Kvk_subdossiernr)
          then put "," @;
          else do;
                  if find(Kvk_subdossiernr,'0A'x) > 0 and 2+klength(Kvk_subdossiernr) = klength(quote(trim(Kvk_subdossiernr)))
                    then put '22'x Kvk_subdossiernr +(-1) '22'x "," @;
                    else put Kvk_subdossiernr @;
-              end;
-       if missing(Land)
-         then put "," @;
-         else do;
-                 if find(Land,'0A'x) > 0 and 2+klength(Land) = klength(quote(trim(Land)))
-                   then put '22'x Land +(-1) '22'x "," @;
-                   else put Land @;
               end;
        if missing(Naam)
          then put "," @;
@@ -15934,12 +15885,12 @@ data _null_;
                    then put '22'x Naam +(-1) '22'x "," @;
                    else put Naam @;
               end;
-       if missing(Postcode)
+       if missing(Handelsnaam)
          then put "," @;
          else do;
-                 if find(Postcode,'0A'x) > 0 and 2+klength(Postcode) = klength(quote(trim(Postcode)))
-                   then put '22'x Postcode +(-1) '22'x "," @;
-                   else put Postcode @;
+                 if find(Handelsnaam,'0A'x) > 0 and 2+klength(Handelsnaam) = klength(quote(trim(Handelsnaam)))
+                   then put '22'x Handelsnaam +(-1) '22'x "," @;
+                   else put Handelsnaam @;
               end;
        if missing(Straatnaam_postbus)
          then put "," @;
@@ -15948,12 +15899,61 @@ data _null_;
                    then put '22'x Straatnaam_postbus +(-1) '22'x "," @;
                    else put Straatnaam_postbus @;
               end;
+       if missing(Huisnr_postbusnr)
+         then put "," @;
+         else do;
+                 if find(Huisnr_postbusnr,'0A'x) > 0 and 2+klength(Huisnr_postbusnr) = klength(quote(trim(Huisnr_postbusnr)))
+                   then put '22'x Huisnr_postbusnr +(-1) '22'x "," @;
+                   else put Huisnr_postbusnr @;
+              end;
+       if missing(Huisnr_toevoeging)
+         then put "," @;
+         else do;
+                 if find(Huisnr_toevoeging,'0A'x) > 0 and 2+klength(Huisnr_toevoeging) = klength(quote(trim(Huisnr_toevoeging)))
+                   then put '22'x Huisnr_toevoeging +(-1) '22'x "," @;
+                   else put Huisnr_toevoeging @;
+              end;
+       if missing(Postcode)
+         then put "," @;
+         else do;
+                 if find(Postcode,'0A'x) > 0 and 2+klength(Postcode) = klength(quote(trim(Postcode)))
+                   then put '22'x Postcode +(-1) '22'x "," @;
+                   else put Postcode @;
+              end;
        if missing(Woonplaats)
          then put "," @;
          else do;
                  if find(Woonplaats,'0A'x) > 0 and 2+klength(Woonplaats) = klength(quote(trim(Woonplaats)))
                    then put '22'x Woonplaats +(-1) '22'x "," @;
                    else put Woonplaats @;
+              end;
+       if missing(Land)
+         then put "," @;
+         else do;
+                 if find(Land,'0A'x) > 0 and 2+klength(Land) = klength(quote(trim(Land)))
+                   then put '22'x Land +(-1) '22'x "," @;
+                   else put Land @;
+              end;
+       if missing(Actuele_faillisement_cd)
+         then put "," @;
+         else do;
+                 if find(Actuele_faillisement_cd,'0A'x) > 0 and 2+klength(Actuele_faillisement_cd) = klength(quote(trim(Actuele_faillisement_cd)))
+                   then put '22'x Actuele_faillisement_cd +(-1) '22'x "," @;
+                   else put Actuele_faillisement_cd @;
+              end;
+       if missing(Actuele_status)
+         then put "," @;
+         else do;
+                 if find(Actuele_status,'0A'x) > 0 and 2+klength(Actuele_status) = klength(quote(trim(Actuele_status)))
+                   then put '22'x Actuele_status +(-1) '22'x "," @;
+                   else put Actuele_status @;
+              end;
+       if missing(Actuele_opheffings_cd)
+         then put "," @;
+         else do;
+                 if find(Actuele_opheffings_cd,'0A'x) > 0 and 2+klength(Actuele_opheffings_cd) = klength(quote(trim(Actuele_opheffings_cd)))
+                   then put '22'x Actuele_opheffings_cd +(-1) '22'x "," @;
+                   else put Actuele_opheffings_cd @;
               end;
        put techId best12. ; 
        ; 
@@ -15998,73 +15998,80 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aantal_so_werknemers" 
+          "Rel_id" 
+       ','
+          "Jaar" 
        ','
           "Aantal_werknemers" 
        ','
-          "Balanstotaal" 
-       ','
-          "Bron" 
+          "Creatie_user" 
        ','
           "Creatie_dat" 
        ','
-          "Creatie_user" 
+          "Mutatie_user" 
        ','
-          "Jaar" 
+          "Mutatie_dat" 
+       ','
+          "Omzet" 
+       ','
+          "Loonsom" 
+       ','
+          "So_loonsom" 
+       ','
+          "Max_so_vermindering" 
+       ','
+          "Peildatum" 
+       ','
+          "Aantal_so_werknemers" 
+       ','
+          "Bron" 
+       ','
+          "Senterniveau_jn" 
        ','
           "Lb_verm_voorlopig" 
        ','
           "Lb_vermindering_eindafrekening" 
        ','
-          "Loonsom" 
-       ','
-          "Max_so_vermindering" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Omzet" 
-       ','
-          "Peildatum" 
-       ','
-          "Rel_id" 
-       ','
-          "Senterniveau_jn" 
-       ','
-          "So_loonsom" 
+          "Balanstotaal" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_ORG_JAAR   end=EFIEOD; 
-       format Aantal_so_werknemers best12. ;
-       format Aantal_werknemers best12. ;
-       format Balanstotaal best12. ;
-       format Bron  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
+       format Rel_id best12. ;
        format Jaar best12. ;
+       format Aantal_werknemers best12. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Omzet best12. ;
+       format Loonsom best12. ;
+       format So_loonsom best12. ;
+       format Max_so_vermindering best12. ;
+       format Peildatum B8601DT19. ;
+       format Aantal_so_werknemers best12. ;
+       format Bron  ;
+       format Senterniveau_jn  ;
        format Lb_verm_voorlopig best12. ;
        format Lb_vermindering_eindafrekening best12. ;
-       format Loonsom best12. ;
-       format Max_so_vermindering best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Omzet best12. ;
-       format Peildatum B8601DT19. ;
-       format Rel_id best12. ;
-       format Senterniveau_jn  ;
-       format So_loonsom best12. ;
+       format Balanstotaal best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aantal_so_werknemers)
+       if missing(Rel_id)
          then put "," @;
          else do;
-                 if find(Aantal_so_werknemers,'0A'x) > 0 and 2+klength(Aantal_so_werknemers) = klength(quote(trim(Aantal_so_werknemers)))
-                   then put '22'x Aantal_so_werknemers +(-1) '22'x "," @;
-                   else put Aantal_so_werknemers @;
+                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
+                   then put '22'x Rel_id +(-1) '22'x "," @;
+                   else put Rel_id @;
+              end;
+       if missing(Jaar)
+         then put "," @;
+         else do;
+                 if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
+                   then put '22'x Jaar +(-1) '22'x "," @;
+                   else put Jaar @;
               end;
        if missing(Aantal_werknemers)
          then put "," @;
@@ -16073,19 +16080,12 @@ data _null_;
                    then put '22'x Aantal_werknemers +(-1) '22'x "," @;
                    else put Aantal_werknemers @;
               end;
-       if missing(Balanstotaal)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Balanstotaal,'0A'x) > 0 and 2+klength(Balanstotaal) = klength(quote(trim(Balanstotaal)))
-                   then put '22'x Balanstotaal +(-1) '22'x "," @;
-                   else put Balanstotaal @;
-              end;
-       if missing(Bron)
-         then put "," @;
-         else do;
-                 if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
-                   then put '22'x Bron +(-1) '22'x "," @;
-                   else put Bron @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
               end;
        if missing(Creatie_dat)
          then put "," @;
@@ -16094,19 +16094,75 @@ data _null_;
                    then put '22'x Creatie_dat +(-1) '22'x "," @;
                    else put Creatie_dat @;
               end;
-       if missing(Creatie_user)
+       if missing(Mutatie_user)
          then put "," @;
          else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
               end;
-       if missing(Jaar)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
-                   then put '22'x Jaar +(-1) '22'x "," @;
-                   else put Jaar @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Omzet)
+         then put "," @;
+         else do;
+                 if find(Omzet,'0A'x) > 0 and 2+klength(Omzet) = klength(quote(trim(Omzet)))
+                   then put '22'x Omzet +(-1) '22'x "," @;
+                   else put Omzet @;
+              end;
+       if missing(Loonsom)
+         then put "," @;
+         else do;
+                 if find(Loonsom,'0A'x) > 0 and 2+klength(Loonsom) = klength(quote(trim(Loonsom)))
+                   then put '22'x Loonsom +(-1) '22'x "," @;
+                   else put Loonsom @;
+              end;
+       if missing(So_loonsom)
+         then put "," @;
+         else do;
+                 if find(So_loonsom,'0A'x) > 0 and 2+klength(So_loonsom) = klength(quote(trim(So_loonsom)))
+                   then put '22'x So_loonsom +(-1) '22'x "," @;
+                   else put So_loonsom @;
+              end;
+       if missing(Max_so_vermindering)
+         then put "," @;
+         else do;
+                 if find(Max_so_vermindering,'0A'x) > 0 and 2+klength(Max_so_vermindering) = klength(quote(trim(Max_so_vermindering)))
+                   then put '22'x Max_so_vermindering +(-1) '22'x "," @;
+                   else put Max_so_vermindering @;
+              end;
+       if missing(Peildatum)
+         then put "," @;
+         else do;
+                 if find(Peildatum,'0A'x) > 0 and 2+klength(Peildatum) = klength(quote(trim(Peildatum)))
+                   then put '22'x Peildatum +(-1) '22'x "," @;
+                   else put Peildatum @;
+              end;
+       if missing(Aantal_so_werknemers)
+         then put "," @;
+         else do;
+                 if find(Aantal_so_werknemers,'0A'x) > 0 and 2+klength(Aantal_so_werknemers) = klength(quote(trim(Aantal_so_werknemers)))
+                   then put '22'x Aantal_so_werknemers +(-1) '22'x "," @;
+                   else put Aantal_so_werknemers @;
+              end;
+       if missing(Bron)
+         then put "," @;
+         else do;
+                 if find(Bron,'0A'x) > 0 and 2+klength(Bron) = klength(quote(trim(Bron)))
+                   then put '22'x Bron +(-1) '22'x "," @;
+                   else put Bron @;
+              end;
+       if missing(Senterniveau_jn)
+         then put "," @;
+         else do;
+                 if find(Senterniveau_jn,'0A'x) > 0 and 2+klength(Senterniveau_jn) = klength(quote(trim(Senterniveau_jn)))
+                   then put '22'x Senterniveau_jn +(-1) '22'x "," @;
+                   else put Senterniveau_jn @;
               end;
        if missing(Lb_verm_voorlopig)
          then put "," @;
@@ -16122,68 +16178,12 @@ data _null_;
                    then put '22'x Lb_vermindering_eindafrekening +(-1) '22'x "," @;
                    else put Lb_vermindering_eindafrekening @;
               end;
-       if missing(Loonsom)
+       if missing(Balanstotaal)
          then put "," @;
          else do;
-                 if find(Loonsom,'0A'x) > 0 and 2+klength(Loonsom) = klength(quote(trim(Loonsom)))
-                   then put '22'x Loonsom +(-1) '22'x "," @;
-                   else put Loonsom @;
-              end;
-       if missing(Max_so_vermindering)
-         then put "," @;
-         else do;
-                 if find(Max_so_vermindering,'0A'x) > 0 and 2+klength(Max_so_vermindering) = klength(quote(trim(Max_so_vermindering)))
-                   then put '22'x Max_so_vermindering +(-1) '22'x "," @;
-                   else put Max_so_vermindering @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Omzet)
-         then put "," @;
-         else do;
-                 if find(Omzet,'0A'x) > 0 and 2+klength(Omzet) = klength(quote(trim(Omzet)))
-                   then put '22'x Omzet +(-1) '22'x "," @;
-                   else put Omzet @;
-              end;
-       if missing(Peildatum)
-         then put "," @;
-         else do;
-                 if find(Peildatum,'0A'x) > 0 and 2+klength(Peildatum) = klength(quote(trim(Peildatum)))
-                   then put '22'x Peildatum +(-1) '22'x "," @;
-                   else put Peildatum @;
-              end;
-       if missing(Rel_id)
-         then put "," @;
-         else do;
-                 if find(Rel_id,'0A'x) > 0 and 2+klength(Rel_id) = klength(quote(trim(Rel_id)))
-                   then put '22'x Rel_id +(-1) '22'x "," @;
-                   else put Rel_id @;
-              end;
-       if missing(Senterniveau_jn)
-         then put "," @;
-         else do;
-                 if find(Senterniveau_jn,'0A'x) > 0 and 2+klength(Senterniveau_jn) = klength(quote(trim(Senterniveau_jn)))
-                   then put '22'x Senterniveau_jn +(-1) '22'x "," @;
-                   else put Senterniveau_jn @;
-              end;
-       if missing(So_loonsom)
-         then put "," @;
-         else do;
-                 if find(So_loonsom,'0A'x) > 0 and 2+klength(So_loonsom) = klength(quote(trim(So_loonsom)))
-                   then put '22'x So_loonsom +(-1) '22'x "," @;
-                   else put So_loonsom @;
+                 if find(Balanstotaal,'0A'x) > 0 and 2+klength(Balanstotaal) = klength(quote(trim(Balanstotaal)))
+                   then put '22'x Balanstotaal +(-1) '22'x "," @;
+                   else put Balanstotaal @;
               end;
        put techId best12. ; 
        ; 
@@ -16219,16 +16219,6 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Kkr_gevalideerd" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
           "Org_id" 
        ','
           "Org_naam" 
@@ -16237,57 +16227,32 @@ data _null_;
        ','
           "Sushi_foutmelding" 
        ','
+          "Creatie_dat" 
+       ','
+          "Creatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Kkr_gevalideerd" 
+       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_ORG_NAAM   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Kkr_gevalideerd  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Org_id best12. ;
        format Org_naam  ;
        format Org_naam_type  ;
        format Sushi_foutmelding  ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Kkr_gevalideerd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Kkr_gevalideerd)
-         then put "," @;
-         else do;
-                 if find(Kkr_gevalideerd,'0A'x) > 0 and 2+klength(Kkr_gevalideerd) = klength(quote(trim(Kkr_gevalideerd)))
-                   then put '22'x Kkr_gevalideerd +(-1) '22'x "," @;
-                   else put Kkr_gevalideerd @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
        if missing(Org_id)
          then put "," @;
          else do;
@@ -16315,6 +16280,41 @@ data _null_;
                  if find(Sushi_foutmelding,'0A'x) > 0 and 2+klength(Sushi_foutmelding) = klength(quote(trim(Sushi_foutmelding)))
                    then put '22'x Sushi_foutmelding +(-1) '22'x "," @;
                    else put Sushi_foutmelding @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Kkr_gevalideerd)
+         then put "," @;
+         else do;
+                 if find(Kkr_gevalideerd,'0A'x) > 0 and 2+klength(Kkr_gevalideerd) = klength(quote(trim(Kkr_gevalideerd)))
+                   then put '22'x Kkr_gevalideerd +(-1) '22'x "," @;
+                   else put Kkr_gevalideerd @;
               end;
        put techId best12. ; 
        ; 
@@ -16358,23 +16358,21 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "BTW_nummer" 
-       ','
-          "BTW_plichtig" 
-       ','
           "Bik_Cd" 
        ','
           "Bron_jr" 
        ','
-          "IB_VPB_Plichtig" 
+          "BTW_nummer" 
+       ','
+          "BTW_plichtig" 
        ','
           "IB_plichtig_sinds" 
        ','
           "Jaar_oprichting" 
        ','
-          "KVK_nr" 
-       ','
           "Kkr_RSIN_afwijkend" 
+       ','
+          "KVK_nr" 
        ','
           "Naam" 
        ','
@@ -16386,50 +16384,38 @@ data _null_;
        ','
           "Status_org" 
        ','
-          "VPB_IB_nummer" 
-       ','
           "Volg_nr_LB" 
        ','
           "Voortzetting_van_rel_id" 
+       ','
+          "VPB_IB_nummer" 
+       ','
+          "IB_VPB_Plichtig" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_ORG   end=EFIEOD; 
-       format BTW_nummer  ;
-       format BTW_plichtig  ;
        format Bik_Cd  ;
        format Bron_jr  ;
-       format IB_VPB_Plichtig  ;
+       format BTW_nummer  ;
+       format BTW_plichtig  ;
        format IB_plichtig_sinds B8601DT19. ;
        format Jaar_oprichting best12. ;
-       format KVK_nr  ;
        format Kkr_RSIN_afwijkend  ;
+       format KVK_nr  ;
        format Naam  ;
        format Notitie  ;
        format Rel_id best12. ;
        format Rvm_cd  ;
        format Status_org  ;
-       format VPB_IB_nummer  ;
        format Volg_nr_LB best12. ;
        format Voortzetting_van_rel_id  ;
+       format VPB_IB_nummer  ;
+       format IB_VPB_Plichtig  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(BTW_nummer)
-         then put "," @;
-         else do;
-                 if find(BTW_nummer,'0A'x) > 0 and 2+klength(BTW_nummer) = klength(quote(trim(BTW_nummer)))
-                   then put '22'x BTW_nummer +(-1) '22'x "," @;
-                   else put BTW_nummer @;
-              end;
-       if missing(BTW_plichtig)
-         then put "," @;
-         else do;
-                 if find(BTW_plichtig,'0A'x) > 0 and 2+klength(BTW_plichtig) = klength(quote(trim(BTW_plichtig)))
-                   then put '22'x BTW_plichtig +(-1) '22'x "," @;
-                   else put BTW_plichtig @;
-              end;
        if missing(Bik_Cd)
          then put "," @;
          else do;
@@ -16444,12 +16430,19 @@ data _null_;
                    then put '22'x Bron_jr +(-1) '22'x "," @;
                    else put Bron_jr @;
               end;
-       if missing(IB_VPB_Plichtig)
+       if missing(BTW_nummer)
          then put "," @;
          else do;
-                 if find(IB_VPB_Plichtig,'0A'x) > 0 and 2+klength(IB_VPB_Plichtig) = klength(quote(trim(IB_VPB_Plichtig)))
-                   then put '22'x IB_VPB_Plichtig +(-1) '22'x "," @;
-                   else put IB_VPB_Plichtig @;
+                 if find(BTW_nummer,'0A'x) > 0 and 2+klength(BTW_nummer) = klength(quote(trim(BTW_nummer)))
+                   then put '22'x BTW_nummer +(-1) '22'x "," @;
+                   else put BTW_nummer @;
+              end;
+       if missing(BTW_plichtig)
+         then put "," @;
+         else do;
+                 if find(BTW_plichtig,'0A'x) > 0 and 2+klength(BTW_plichtig) = klength(quote(trim(BTW_plichtig)))
+                   then put '22'x BTW_plichtig +(-1) '22'x "," @;
+                   else put BTW_plichtig @;
               end;
        if missing(IB_plichtig_sinds)
          then put "," @;
@@ -16465,19 +16458,19 @@ data _null_;
                    then put '22'x Jaar_oprichting +(-1) '22'x "," @;
                    else put Jaar_oprichting @;
               end;
-       if missing(KVK_nr)
-         then put "," @;
-         else do;
-                 if find(KVK_nr,'0A'x) > 0 and 2+klength(KVK_nr) = klength(quote(trim(KVK_nr)))
-                   then put '22'x KVK_nr +(-1) '22'x "," @;
-                   else put KVK_nr @;
-              end;
        if missing(Kkr_RSIN_afwijkend)
          then put "," @;
          else do;
                  if find(Kkr_RSIN_afwijkend,'0A'x) > 0 and 2+klength(Kkr_RSIN_afwijkend) = klength(quote(trim(Kkr_RSIN_afwijkend)))
                    then put '22'x Kkr_RSIN_afwijkend +(-1) '22'x "," @;
                    else put Kkr_RSIN_afwijkend @;
+              end;
+       if missing(KVK_nr)
+         then put "," @;
+         else do;
+                 if find(KVK_nr,'0A'x) > 0 and 2+klength(KVK_nr) = klength(quote(trim(KVK_nr)))
+                   then put '22'x KVK_nr +(-1) '22'x "," @;
+                   else put KVK_nr @;
               end;
        if missing(Naam)
          then put "," @;
@@ -16514,13 +16507,6 @@ data _null_;
                    then put '22'x Status_org +(-1) '22'x "," @;
                    else put Status_org @;
               end;
-       if missing(VPB_IB_nummer)
-         then put "," @;
-         else do;
-                 if find(VPB_IB_nummer,'0A'x) > 0 and 2+klength(VPB_IB_nummer) = klength(quote(trim(VPB_IB_nummer)))
-                   then put '22'x VPB_IB_nummer +(-1) '22'x "," @;
-                   else put VPB_IB_nummer @;
-              end;
        if missing(Volg_nr_LB)
          then put "," @;
          else do;
@@ -16534,6 +16520,20 @@ data _null_;
                  if find(Voortzetting_van_rel_id,'0A'x) > 0 and 2+klength(Voortzetting_van_rel_id) = klength(quote(trim(Voortzetting_van_rel_id)))
                    then put '22'x Voortzetting_van_rel_id +(-1) '22'x "," @;
                    else put Voortzetting_van_rel_id @;
+              end;
+       if missing(VPB_IB_nummer)
+         then put "," @;
+         else do;
+                 if find(VPB_IB_nummer,'0A'x) > 0 and 2+klength(VPB_IB_nummer) = klength(quote(trim(VPB_IB_nummer)))
+                   then put '22'x VPB_IB_nummer +(-1) '22'x "," @;
+                   else put VPB_IB_nummer @;
+              end;
+       if missing(IB_VPB_Plichtig)
+         then put "," @;
+         else do;
+                 if find(IB_VPB_Plichtig,'0A'x) > 0 and 2+klength(IB_VPB_Plichtig) = klength(quote(trim(IB_VPB_Plichtig)))
+                   then put '22'x IB_VPB_Plichtig +(-1) '22'x "," @;
+                   else put IB_VPB_Plichtig @;
               end;
        put techId best12. ; 
        ; 
@@ -17004,169 +17004,64 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Bic" 
-       ','
-          "Datum_mutatie" 
-       ','
-          "Externe_bron_cd" 
-       ','
-          "Gebruiker" 
-       ','
-          "Iban" 
-       ','
-          "New_bankgironr" 
-       ','
-          "New_banknaam" 
-       ','
-          "New_bic" 
-       ','
-          "New_goedkeuring_sts" 
-       ','
-          "New_iban" 
-       ','
-          "New_user_akkoord" 
-       ','
-          "Org_bankgironr" 
-       ','
-          "Org_banknaam" 
-       ','
-          "Org_goedkeuring_sts" 
-       ','
-          "Org_user_akkoord" 
-       ','
           "Rel_id" 
        ','
           "Volgnummer" 
+       ','
+          "Org_banknaam" 
+       ','
+          "Org_bankgironr" 
+       ','
+          "New_banknaam" 
+       ','
+          "New_bankgironr" 
+       ','
+          "Gebruiker" 
+       ','
+          "Datum_mutatie" 
+       ','
+          "Iban" 
+       ','
+          "New_iban" 
+       ','
+          "Bic" 
+       ','
+          "New_bic" 
+       ','
+          "Org_user_akkoord" 
+       ','
+          "New_user_akkoord" 
+       ','
+          "Org_goedkeuring_sts" 
+       ','
+          "New_goedkeuring_sts" 
+       ','
+          "Externe_bron_cd" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RBM_REKNR_MUT   end=EFIEOD; 
-       format Bic  ;
-       format Datum_mutatie B8601DT19. ;
-       format Externe_bron_cd  ;
-       format Gebruiker  ;
-       format Iban  ;
-       format New_bankgironr  ;
-       format New_banknaam  ;
-       format New_bic  ;
-       format New_goedkeuring_sts  ;
-       format New_iban  ;
-       format New_user_akkoord  ;
-       format Org_bankgironr  ;
-       format Org_banknaam  ;
-       format Org_goedkeuring_sts  ;
-       format Org_user_akkoord  ;
        format Rel_id best12. ;
        format Volgnummer best12. ;
+       format Org_banknaam  ;
+       format Org_bankgironr  ;
+       format New_banknaam  ;
+       format New_bankgironr  ;
+       format Gebruiker  ;
+       format Datum_mutatie B8601DT19. ;
+       format Iban  ;
+       format New_iban  ;
+       format Bic  ;
+       format New_bic  ;
+       format Org_user_akkoord  ;
+       format New_user_akkoord  ;
+       format Org_goedkeuring_sts  ;
+       format New_goedkeuring_sts  ;
+       format Externe_bron_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Bic)
-         then put "," @;
-         else do;
-                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
-                   then put '22'x Bic +(-1) '22'x "," @;
-                   else put Bic @;
-              end;
-       if missing(Datum_mutatie)
-         then put "," @;
-         else do;
-                 if find(Datum_mutatie,'0A'x) > 0 and 2+klength(Datum_mutatie) = klength(quote(trim(Datum_mutatie)))
-                   then put '22'x Datum_mutatie +(-1) '22'x "," @;
-                   else put Datum_mutatie @;
-              end;
-       if missing(Externe_bron_cd)
-         then put "," @;
-         else do;
-                 if find(Externe_bron_cd,'0A'x) > 0 and 2+klength(Externe_bron_cd) = klength(quote(trim(Externe_bron_cd)))
-                   then put '22'x Externe_bron_cd +(-1) '22'x "," @;
-                   else put Externe_bron_cd @;
-              end;
-       if missing(Gebruiker)
-         then put "," @;
-         else do;
-                 if find(Gebruiker,'0A'x) > 0 and 2+klength(Gebruiker) = klength(quote(trim(Gebruiker)))
-                   then put '22'x Gebruiker +(-1) '22'x "," @;
-                   else put Gebruiker @;
-              end;
-       if missing(Iban)
-         then put "," @;
-         else do;
-                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
-                   then put '22'x Iban +(-1) '22'x "," @;
-                   else put Iban @;
-              end;
-       if missing(New_bankgironr)
-         then put "," @;
-         else do;
-                 if find(New_bankgironr,'0A'x) > 0 and 2+klength(New_bankgironr) = klength(quote(trim(New_bankgironr)))
-                   then put '22'x New_bankgironr +(-1) '22'x "," @;
-                   else put New_bankgironr @;
-              end;
-       if missing(New_banknaam)
-         then put "," @;
-         else do;
-                 if find(New_banknaam,'0A'x) > 0 and 2+klength(New_banknaam) = klength(quote(trim(New_banknaam)))
-                   then put '22'x New_banknaam +(-1) '22'x "," @;
-                   else put New_banknaam @;
-              end;
-       if missing(New_bic)
-         then put "," @;
-         else do;
-                 if find(New_bic,'0A'x) > 0 and 2+klength(New_bic) = klength(quote(trim(New_bic)))
-                   then put '22'x New_bic +(-1) '22'x "," @;
-                   else put New_bic @;
-              end;
-       if missing(New_goedkeuring_sts)
-         then put "," @;
-         else do;
-                 if find(New_goedkeuring_sts,'0A'x) > 0 and 2+klength(New_goedkeuring_sts) = klength(quote(trim(New_goedkeuring_sts)))
-                   then put '22'x New_goedkeuring_sts +(-1) '22'x "," @;
-                   else put New_goedkeuring_sts @;
-              end;
-       if missing(New_iban)
-         then put "," @;
-         else do;
-                 if find(New_iban,'0A'x) > 0 and 2+klength(New_iban) = klength(quote(trim(New_iban)))
-                   then put '22'x New_iban +(-1) '22'x "," @;
-                   else put New_iban @;
-              end;
-       if missing(New_user_akkoord)
-         then put "," @;
-         else do;
-                 if find(New_user_akkoord,'0A'x) > 0 and 2+klength(New_user_akkoord) = klength(quote(trim(New_user_akkoord)))
-                   then put '22'x New_user_akkoord +(-1) '22'x "," @;
-                   else put New_user_akkoord @;
-              end;
-       if missing(Org_bankgironr)
-         then put "," @;
-         else do;
-                 if find(Org_bankgironr,'0A'x) > 0 and 2+klength(Org_bankgironr) = klength(quote(trim(Org_bankgironr)))
-                   then put '22'x Org_bankgironr +(-1) '22'x "," @;
-                   else put Org_bankgironr @;
-              end;
-       if missing(Org_banknaam)
-         then put "," @;
-         else do;
-                 if find(Org_banknaam,'0A'x) > 0 and 2+klength(Org_banknaam) = klength(quote(trim(Org_banknaam)))
-                   then put '22'x Org_banknaam +(-1) '22'x "," @;
-                   else put Org_banknaam @;
-              end;
-       if missing(Org_goedkeuring_sts)
-         then put "," @;
-         else do;
-                 if find(Org_goedkeuring_sts,'0A'x) > 0 and 2+klength(Org_goedkeuring_sts) = klength(quote(trim(Org_goedkeuring_sts)))
-                   then put '22'x Org_goedkeuring_sts +(-1) '22'x "," @;
-                   else put Org_goedkeuring_sts @;
-              end;
-       if missing(Org_user_akkoord)
-         then put "," @;
-         else do;
-                 if find(Org_user_akkoord,'0A'x) > 0 and 2+klength(Org_user_akkoord) = klength(quote(trim(Org_user_akkoord)))
-                   then put '22'x Org_user_akkoord +(-1) '22'x "," @;
-                   else put Org_user_akkoord @;
-              end;
        if missing(Rel_id)
          then put "," @;
          else do;
@@ -17180,6 +17075,111 @@ data _null_;
                  if find(Volgnummer,'0A'x) > 0 and 2+klength(Volgnummer) = klength(quote(trim(Volgnummer)))
                    then put '22'x Volgnummer +(-1) '22'x "," @;
                    else put Volgnummer @;
+              end;
+       if missing(Org_banknaam)
+         then put "," @;
+         else do;
+                 if find(Org_banknaam,'0A'x) > 0 and 2+klength(Org_banknaam) = klength(quote(trim(Org_banknaam)))
+                   then put '22'x Org_banknaam +(-1) '22'x "," @;
+                   else put Org_banknaam @;
+              end;
+       if missing(Org_bankgironr)
+         then put "," @;
+         else do;
+                 if find(Org_bankgironr,'0A'x) > 0 and 2+klength(Org_bankgironr) = klength(quote(trim(Org_bankgironr)))
+                   then put '22'x Org_bankgironr +(-1) '22'x "," @;
+                   else put Org_bankgironr @;
+              end;
+       if missing(New_banknaam)
+         then put "," @;
+         else do;
+                 if find(New_banknaam,'0A'x) > 0 and 2+klength(New_banknaam) = klength(quote(trim(New_banknaam)))
+                   then put '22'x New_banknaam +(-1) '22'x "," @;
+                   else put New_banknaam @;
+              end;
+       if missing(New_bankgironr)
+         then put "," @;
+         else do;
+                 if find(New_bankgironr,'0A'x) > 0 and 2+klength(New_bankgironr) = klength(quote(trim(New_bankgironr)))
+                   then put '22'x New_bankgironr +(-1) '22'x "," @;
+                   else put New_bankgironr @;
+              end;
+       if missing(Gebruiker)
+         then put "," @;
+         else do;
+                 if find(Gebruiker,'0A'x) > 0 and 2+klength(Gebruiker) = klength(quote(trim(Gebruiker)))
+                   then put '22'x Gebruiker +(-1) '22'x "," @;
+                   else put Gebruiker @;
+              end;
+       if missing(Datum_mutatie)
+         then put "," @;
+         else do;
+                 if find(Datum_mutatie,'0A'x) > 0 and 2+klength(Datum_mutatie) = klength(quote(trim(Datum_mutatie)))
+                   then put '22'x Datum_mutatie +(-1) '22'x "," @;
+                   else put Datum_mutatie @;
+              end;
+       if missing(Iban)
+         then put "," @;
+         else do;
+                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
+                   then put '22'x Iban +(-1) '22'x "," @;
+                   else put Iban @;
+              end;
+       if missing(New_iban)
+         then put "," @;
+         else do;
+                 if find(New_iban,'0A'x) > 0 and 2+klength(New_iban) = klength(quote(trim(New_iban)))
+                   then put '22'x New_iban +(-1) '22'x "," @;
+                   else put New_iban @;
+              end;
+       if missing(Bic)
+         then put "," @;
+         else do;
+                 if find(Bic,'0A'x) > 0 and 2+klength(Bic) = klength(quote(trim(Bic)))
+                   then put '22'x Bic +(-1) '22'x "," @;
+                   else put Bic @;
+              end;
+       if missing(New_bic)
+         then put "," @;
+         else do;
+                 if find(New_bic,'0A'x) > 0 and 2+klength(New_bic) = klength(quote(trim(New_bic)))
+                   then put '22'x New_bic +(-1) '22'x "," @;
+                   else put New_bic @;
+              end;
+       if missing(Org_user_akkoord)
+         then put "," @;
+         else do;
+                 if find(Org_user_akkoord,'0A'x) > 0 and 2+klength(Org_user_akkoord) = klength(quote(trim(Org_user_akkoord)))
+                   then put '22'x Org_user_akkoord +(-1) '22'x "," @;
+                   else put Org_user_akkoord @;
+              end;
+       if missing(New_user_akkoord)
+         then put "," @;
+         else do;
+                 if find(New_user_akkoord,'0A'x) > 0 and 2+klength(New_user_akkoord) = klength(quote(trim(New_user_akkoord)))
+                   then put '22'x New_user_akkoord +(-1) '22'x "," @;
+                   else put New_user_akkoord @;
+              end;
+       if missing(Org_goedkeuring_sts)
+         then put "," @;
+         else do;
+                 if find(Org_goedkeuring_sts,'0A'x) > 0 and 2+klength(Org_goedkeuring_sts) = klength(quote(trim(Org_goedkeuring_sts)))
+                   then put '22'x Org_goedkeuring_sts +(-1) '22'x "," @;
+                   else put Org_goedkeuring_sts @;
+              end;
+       if missing(New_goedkeuring_sts)
+         then put "," @;
+         else do;
+                 if find(New_goedkeuring_sts,'0A'x) > 0 and 2+klength(New_goedkeuring_sts) = klength(quote(trim(New_goedkeuring_sts)))
+                   then put '22'x New_goedkeuring_sts +(-1) '22'x "," @;
+                   else put New_goedkeuring_sts @;
+              end;
+       if missing(Externe_bron_cd)
+         then put "," @;
+         else do;
+                 if find(Externe_bron_cd,'0A'x) > 0 and 2+klength(Externe_bron_cd) = klength(quote(trim(Externe_bron_cd)))
+                   then put '22'x Externe_bron_cd +(-1) '22'x "," @;
+                   else put Externe_bron_cd @;
               end;
        put techId best12. ; 
        ; 
@@ -17231,6 +17231,8 @@ data _null_;
        ','
           "Creatie_dat" 
        ','
+          "creatie_user" 
+       ','
           "Fiscaalnr" 
        ','
           "IdE_id" 
@@ -17243,6 +17245,8 @@ data _null_;
        ','
           "Mutatie_dat" 
        ','
+          "mutatie_user" 
+       ','
           "Rbm_org" 
        ','
           "Rbm_persoon" 
@@ -17253,10 +17257,6 @@ data _null_;
        ','
           "Relatietype" 
        ','
-          "creatie_user" 
-       ','
-          "mutatie_user" 
-       ','
           "techId" 
        ; 
      end; 
@@ -17265,19 +17265,19 @@ data _null_;
        format Auth_id best12. ;
        format Belastingeenheid best12. ;
        format Creatie_dat B8601DT19. ;
+       format creatie_user  ;
        format Fiscaalnr  ;
        format IdE_id best12. ;
        format Invoer_id best12. ;
        format KR_Gevalideerd  ;
        format Kkr_Relatie_id  ;
        format Mutatie_dat B8601DT19. ;
+       format mutatie_user  ;
        format Rbm_org  ;
        format Rbm_persoon  ;
        format Ref_kkr_relatie_id  ;
        format Rel_id best12. ;
        format Relatietype  ;
-       format creatie_user  ;
-       format mutatie_user  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -17308,6 +17308,13 @@ data _null_;
                  if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
                    then put '22'x Creatie_dat +(-1) '22'x "," @;
                    else put Creatie_dat @;
+              end;
+       if missing(creatie_user)
+         then put "," @;
+         else do;
+                 if find(creatie_user,'0A'x) > 0 and 2+klength(creatie_user) = klength(quote(trim(creatie_user)))
+                   then put '22'x creatie_user +(-1) '22'x "," @;
+                   else put creatie_user @;
               end;
        if missing(Fiscaalnr)
          then put "," @;
@@ -17351,6 +17358,13 @@ data _null_;
                    then put '22'x Mutatie_dat +(-1) '22'x "," @;
                    else put Mutatie_dat @;
               end;
+       if missing(mutatie_user)
+         then put "," @;
+         else do;
+                 if find(mutatie_user,'0A'x) > 0 and 2+klength(mutatie_user) = klength(quote(trim(mutatie_user)))
+                   then put '22'x mutatie_user +(-1) '22'x "," @;
+                   else put mutatie_user @;
+              end;
        if missing(Rbm_org)
          then put "," @;
          else do;
@@ -17385,20 +17399,6 @@ data _null_;
                  if find(Relatietype,'0A'x) > 0 and 2+klength(Relatietype) = klength(quote(trim(Relatietype)))
                    then put '22'x Relatietype +(-1) '22'x "," @;
                    else put Relatietype @;
-              end;
-       if missing(creatie_user)
-         then put "," @;
-         else do;
-                 if find(creatie_user,'0A'x) > 0 and 2+klength(creatie_user) = klength(quote(trim(creatie_user)))
-                   then put '22'x creatie_user +(-1) '22'x "," @;
-                   else put creatie_user @;
-              end;
-       if missing(mutatie_user)
-         then put "," @;
-         else do;
-                 if find(mutatie_user,'0A'x) > 0 and 2+klength(mutatie_user) = klength(quote(trim(mutatie_user)))
-                   then put '22'x mutatie_user +(-1) '22'x "," @;
-                   else put mutatie_user @;
               end;
        put techId best12. ; 
        ; 
@@ -17990,34 +17990,41 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Prg_id" 
+       ','
           "Class_cd" 
        ','
           "Class_oms" 
        ','
-          "Creatie_dat" 
-       ','
           "Creatie_user" 
        ','
-          "Mutatie_dat" 
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Prg_id" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_CLASSIFICATIE   end=EFIEOD; 
+       format Prg_id best12. ;
        format Class_cd  ;
        format Class_oms  ;
-       format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Creatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Prg_id best12. ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Prg_id)
+         then put "," @;
+         else do;
+                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
+                   then put '22'x Prg_id +(-1) '22'x "," @;
+                   else put Prg_id @;
+              end;
        if missing(Class_cd)
          then put "," @;
          else do;
@@ -18032,13 +18039,6 @@ data _null_;
                    then put '22'x Class_oms +(-1) '22'x "," @;
                    else put Class_oms @;
               end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
        if missing(Creatie_user)
          then put "," @;
          else do;
@@ -18046,12 +18046,12 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Creatie_dat)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -18060,12 +18060,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Prg_id)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
-                   then put '22'x Prg_id +(-1) '22'x "," @;
-                   else put Prg_id @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -18313,27 +18313,27 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
+          "Mdt_id" 
        ','
-          "Creatie_user" 
+          "Middelen_type" 
        ','
           "Mandaat_srt" 
        ','
           "Max_bedrag" 
        ','
-          "Mdt_id" 
-       ','
-          "Mdw_id" 
-       ','
-          "Middelen_type" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
+          "Rdm_mandaat_rol" 
        ','
           "Rdm_mandaat_mdw" 
        ','
-          "Rdm_mandaat_rol" 
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mdw_id" 
        ','
           "Reg_id" 
        ','
@@ -18343,35 +18343,35 @@ data _null_;
        ; 
      end; 
    set  WORK.BAS_RDM_MANDAAT   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
+       format Mdt_id best12. ;
+       format Middelen_type  ;
        format Mandaat_srt  ;
        format Max_bedrag best12. ;
-       format Mdt_id best12. ;
-       format Mdw_id best12. ;
-       format Middelen_type  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Rdm_mandaat_mdw  ;
        format Rdm_mandaat_rol  ;
+       format Rdm_mandaat_mdw  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mdw_id best12. ;
        format Reg_id best12. ;
        format Rol_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
+       if missing(Mdt_id)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
+                 if find(Mdt_id,'0A'x) > 0 and 2+klength(Mdt_id) = klength(quote(trim(Mdt_id)))
+                   then put '22'x Mdt_id +(-1) '22'x "," @;
+                   else put Mdt_id @;
               end;
-       if missing(Creatie_user)
+       if missing(Middelen_type)
          then put "," @;
          else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Middelen_type,'0A'x) > 0 and 2+klength(Middelen_type) = klength(quote(trim(Middelen_type)))
+                   then put '22'x Middelen_type +(-1) '22'x "," @;
+                   else put Middelen_type @;
               end;
        if missing(Mandaat_srt)
          then put "," @;
@@ -18387,40 +18387,12 @@ data _null_;
                    then put '22'x Max_bedrag +(-1) '22'x "," @;
                    else put Max_bedrag @;
               end;
-       if missing(Mdt_id)
+       if missing(Rdm_mandaat_rol)
          then put "," @;
          else do;
-                 if find(Mdt_id,'0A'x) > 0 and 2+klength(Mdt_id) = klength(quote(trim(Mdt_id)))
-                   then put '22'x Mdt_id +(-1) '22'x "," @;
-                   else put Mdt_id @;
-              end;
-       if missing(Mdw_id)
-         then put "," @;
-         else do;
-                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
-                   then put '22'x Mdw_id +(-1) '22'x "," @;
-                   else put Mdw_id @;
-              end;
-       if missing(Middelen_type)
-         then put "," @;
-         else do;
-                 if find(Middelen_type,'0A'x) > 0 and 2+klength(Middelen_type) = klength(quote(trim(Middelen_type)))
-                   then put '22'x Middelen_type +(-1) '22'x "," @;
-                   else put Middelen_type @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
+                 if find(Rdm_mandaat_rol,'0A'x) > 0 and 2+klength(Rdm_mandaat_rol) = klength(quote(trim(Rdm_mandaat_rol)))
+                   then put '22'x Rdm_mandaat_rol +(-1) '22'x "," @;
+                   else put Rdm_mandaat_rol @;
               end;
        if missing(Rdm_mandaat_mdw)
          then put "," @;
@@ -18429,12 +18401,40 @@ data _null_;
                    then put '22'x Rdm_mandaat_mdw +(-1) '22'x "," @;
                    else put Rdm_mandaat_mdw @;
               end;
-       if missing(Rdm_mandaat_rol)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Rdm_mandaat_rol,'0A'x) > 0 and 2+klength(Rdm_mandaat_rol) = klength(quote(trim(Rdm_mandaat_rol)))
-                   then put '22'x Rdm_mandaat_rol +(-1) '22'x "," @;
-                   else put Rdm_mandaat_rol @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mdw_id)
+         then put "," @;
+         else do;
+                 if find(Mdw_id,'0A'x) > 0 and 2+klength(Mdw_id) = klength(quote(trim(Mdw_id)))
+                   then put '22'x Mdw_id +(-1) '22'x "," @;
+                   else put Mdw_id @;
               end;
        if missing(Reg_id)
          then put "," @;
@@ -18484,67 +18484,46 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Bgt_cd" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Datum_van" 
+          "Ovk_nr" 
        ','
           "Doc_naam" 
        ','
-          "Mutatie_dat" 
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Ovk_nr" 
+          "Mutatie_dat" 
+       ','
+          "Bgt_cd" 
        ','
           "Rpt_nr" 
+       ','
+          "Datum_van" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_OVEREENKOMST_DOCUMENT   end=EFIEOD; 
-       format Bgt_cd  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum_van B8601DT19. ;
-       format Doc_naam  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Ovk_nr  ;
+       format Doc_naam  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Bgt_cd  ;
        format Rpt_nr best12. ;
+       format Datum_van B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Bgt_cd)
+       if missing(Ovk_nr)
          then put "," @;
          else do;
-                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
-                   then put '22'x Bgt_cd +(-1) '22'x "," @;
-                   else put Bgt_cd @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Datum_van)
-         then put "," @;
-         else do;
-                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
-                   then put '22'x Datum_van +(-1) '22'x "," @;
-                   else put Datum_van @;
+                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
+                   then put '22'x Ovk_nr +(-1) '22'x "," @;
+                   else put Ovk_nr @;
               end;
        if missing(Doc_naam)
          then put "," @;
@@ -18553,12 +18532,19 @@ data _null_;
                    then put '22'x Doc_naam +(-1) '22'x "," @;
                    else put Doc_naam @;
               end;
-       if missing(Mutatie_dat)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -18567,12 +18553,19 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Ovk_nr)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
-                   then put '22'x Ovk_nr +(-1) '22'x "," @;
-                   else put Ovk_nr @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Bgt_cd)
+         then put "," @;
+         else do;
+                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
+                   then put '22'x Bgt_cd +(-1) '22'x "," @;
+                   else put Bgt_cd @;
               end;
        if missing(Rpt_nr)
          then put "," @;
@@ -18580,6 +18573,13 @@ data _null_;
                  if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
                    then put '22'x Rpt_nr +(-1) '22'x "," @;
                    else put Rpt_nr @;
+              end;
+       if missing(Datum_van)
+         then put "," @;
+         else do;
+                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
+                   then put '22'x Datum_van +(-1) '22'x "," @;
+                   else put Datum_van @;
               end;
        put techId best12. ; 
        ; 
@@ -18634,110 +18634,138 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Aflossing" 
+          "Ovk_nr" 
        ','
-          "Auto_oracle" 
-       ','
-          "Auto_sap_jn" 
-       ','
-          "Bdg_verdelen_100_pct_dp" 
-       ','
-          "Bdg_verdelen_100_pct_th" 
-       ','
-          "Beschik_datum" 
+          "Rpt_nr" 
        ','
           "Bgt_cd" 
        ','
-          "Bic" 
-       ','
-          "Boeking" 
-       ','
-          "Comm_rente_pct" 
-       ','
-          "Correctie_code" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Datum_van" 
        ','
           "Datum_tot" 
        ','
-          "Datum_van" 
-       ','
-          "Fin_soort" 
-       ','
-          "Iban" 
-       ','
-          "Imvb" 
-       ','
-          "Kenmerk_lijn" 
-       ','
           "Kopieer_periode" 
        ','
-          "Mutatie_dat" 
+          "Auto_sap_jn" 
        ','
-          "Mutatie_user" 
+          "Comm_rente_pct" 
        ','
-          "Omschrijving" 
-       ','
-          "Ovk_nr" 
-       ','
-          "Prg_cd" 
-       ','
-          "Rpt_nr" 
+          "Beschik_datum" 
        ','
           "Tot_budget" 
        ','
           "Verdeeld_budget" 
        ','
+          "Omschrijving" 
+       ','
+          "Prg_cd" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Bdg_verdelen_100_pct_dp" 
+       ','
+          "Bdg_verdelen_100_pct_th" 
+       ','
+          "Iban" 
+       ','
+          "Bic" 
+       ','
+          "Imvb" 
+       ','
+          "Correctie_code" 
+       ','
+          "Auto_oracle" 
+       ','
+          "Boeking" 
+       ','
+          "Fin_soort" 
+       ','
+          "Kenmerk_lijn" 
+       ','
+          "Aflossing" 
+       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_PERIODE   end=EFIEOD; 
-       format Aflossing best12. ;
-       format Auto_oracle  ;
-       format Auto_sap_jn  ;
-       format Bdg_verdelen_100_pct_dp  ;
-       format Bdg_verdelen_100_pct_th  ;
-       format Beschik_datum B8601DT19. ;
-       format Bgt_cd  ;
-       format Bic  ;
-       format Boeking  ;
-       format Comm_rente_pct best12. ;
-       format Correctie_code  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum_tot B8601DT19. ;
-       format Datum_van B8601DT19. ;
-       format Fin_soort  ;
-       format Iban  ;
-       format Imvb best12. ;
-       format Kenmerk_lijn  ;
-       format Kopieer_periode  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Omschrijving  ;
        format Ovk_nr  ;
-       format Prg_cd  ;
        format Rpt_nr best12. ;
+       format Bgt_cd  ;
+       format Datum_van B8601DT19. ;
+       format Datum_tot B8601DT19. ;
+       format Kopieer_periode  ;
+       format Auto_sap_jn  ;
+       format Comm_rente_pct best12. ;
+       format Beschik_datum B8601DT19. ;
        format Tot_budget best12. ;
        format Verdeeld_budget best12. ;
+       format Omschrijving  ;
+       format Prg_cd  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Bdg_verdelen_100_pct_dp  ;
+       format Bdg_verdelen_100_pct_th  ;
+       format Iban  ;
+       format Bic  ;
+       format Imvb best12. ;
+       format Correctie_code  ;
+       format Auto_oracle  ;
+       format Boeking  ;
+       format Fin_soort  ;
+       format Kenmerk_lijn  ;
+       format Aflossing best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Aflossing)
+       if missing(Ovk_nr)
          then put "," @;
          else do;
-                 if find(Aflossing,'0A'x) > 0 and 2+klength(Aflossing) = klength(quote(trim(Aflossing)))
-                   then put '22'x Aflossing +(-1) '22'x "," @;
-                   else put Aflossing @;
+                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
+                   then put '22'x Ovk_nr +(-1) '22'x "," @;
+                   else put Ovk_nr @;
               end;
-       if missing(Auto_oracle)
+       if missing(Rpt_nr)
          then put "," @;
          else do;
-                 if find(Auto_oracle,'0A'x) > 0 and 2+klength(Auto_oracle) = klength(quote(trim(Auto_oracle)))
-                   then put '22'x Auto_oracle +(-1) '22'x "," @;
-                   else put Auto_oracle @;
+                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
+                   then put '22'x Rpt_nr +(-1) '22'x "," @;
+                   else put Rpt_nr @;
+              end;
+       if missing(Bgt_cd)
+         then put "," @;
+         else do;
+                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
+                   then put '22'x Bgt_cd +(-1) '22'x "," @;
+                   else put Bgt_cd @;
+              end;
+       if missing(Datum_van)
+         then put "," @;
+         else do;
+                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
+                   then put '22'x Datum_van +(-1) '22'x "," @;
+                   else put Datum_van @;
+              end;
+       if missing(Datum_tot)
+         then put "," @;
+         else do;
+                 if find(Datum_tot,'0A'x) > 0 and 2+klength(Datum_tot) = klength(quote(trim(Datum_tot)))
+                   then put '22'x Datum_tot +(-1) '22'x "," @;
+                   else put Datum_tot @;
+              end;
+       if missing(Kopieer_periode)
+         then put "," @;
+         else do;
+                 if find(Kopieer_periode,'0A'x) > 0 and 2+klength(Kopieer_periode) = klength(quote(trim(Kopieer_periode)))
+                   then put '22'x Kopieer_periode +(-1) '22'x "," @;
+                   else put Kopieer_periode @;
               end;
        if missing(Auto_sap_jn)
          then put "," @;
@@ -18745,6 +18773,76 @@ data _null_;
                  if find(Auto_sap_jn,'0A'x) > 0 and 2+klength(Auto_sap_jn) = klength(quote(trim(Auto_sap_jn)))
                    then put '22'x Auto_sap_jn +(-1) '22'x "," @;
                    else put Auto_sap_jn @;
+              end;
+       if missing(Comm_rente_pct)
+         then put "," @;
+         else do;
+                 if find(Comm_rente_pct,'0A'x) > 0 and 2+klength(Comm_rente_pct) = klength(quote(trim(Comm_rente_pct)))
+                   then put '22'x Comm_rente_pct +(-1) '22'x "," @;
+                   else put Comm_rente_pct @;
+              end;
+       if missing(Beschik_datum)
+         then put "," @;
+         else do;
+                 if find(Beschik_datum,'0A'x) > 0 and 2+klength(Beschik_datum) = klength(quote(trim(Beschik_datum)))
+                   then put '22'x Beschik_datum +(-1) '22'x "," @;
+                   else put Beschik_datum @;
+              end;
+       if missing(Tot_budget)
+         then put "," @;
+         else do;
+                 if find(Tot_budget,'0A'x) > 0 and 2+klength(Tot_budget) = klength(quote(trim(Tot_budget)))
+                   then put '22'x Tot_budget +(-1) '22'x "," @;
+                   else put Tot_budget @;
+              end;
+       if missing(Verdeeld_budget)
+         then put "," @;
+         else do;
+                 if find(Verdeeld_budget,'0A'x) > 0 and 2+klength(Verdeeld_budget) = klength(quote(trim(Verdeeld_budget)))
+                   then put '22'x Verdeeld_budget +(-1) '22'x "," @;
+                   else put Verdeeld_budget @;
+              end;
+       if missing(Omschrijving)
+         then put "," @;
+         else do;
+                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
+                   then put '22'x Omschrijving +(-1) '22'x "," @;
+                   else put Omschrijving @;
+              end;
+       if missing(Prg_cd)
+         then put "," @;
+         else do;
+                 if find(Prg_cd,'0A'x) > 0 and 2+klength(Prg_cd) = klength(quote(trim(Prg_cd)))
+                   then put '22'x Prg_cd +(-1) '22'x "," @;
+                   else put Prg_cd @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        if missing(Bdg_verdelen_100_pct_dp)
          then put "," @;
@@ -18760,19 +18858,12 @@ data _null_;
                    then put '22'x Bdg_verdelen_100_pct_th +(-1) '22'x "," @;
                    else put Bdg_verdelen_100_pct_th @;
               end;
-       if missing(Beschik_datum)
+       if missing(Iban)
          then put "," @;
          else do;
-                 if find(Beschik_datum,'0A'x) > 0 and 2+klength(Beschik_datum) = klength(quote(trim(Beschik_datum)))
-                   then put '22'x Beschik_datum +(-1) '22'x "," @;
-                   else put Beschik_datum @;
-              end;
-       if missing(Bgt_cd)
-         then put "," @;
-         else do;
-                 if find(Bgt_cd,'0A'x) > 0 and 2+klength(Bgt_cd) = klength(quote(trim(Bgt_cd)))
-                   then put '22'x Bgt_cd +(-1) '22'x "," @;
-                   else put Bgt_cd @;
+                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
+                   then put '22'x Iban +(-1) '22'x "," @;
+                   else put Iban @;
               end;
        if missing(Bic)
          then put "," @;
@@ -18781,19 +18872,12 @@ data _null_;
                    then put '22'x Bic +(-1) '22'x "," @;
                    else put Bic @;
               end;
-       if missing(Boeking)
+       if missing(Imvb)
          then put "," @;
          else do;
-                 if find(Boeking,'0A'x) > 0 and 2+klength(Boeking) = klength(quote(trim(Boeking)))
-                   then put '22'x Boeking +(-1) '22'x "," @;
-                   else put Boeking @;
-              end;
-       if missing(Comm_rente_pct)
-         then put "," @;
-         else do;
-                 if find(Comm_rente_pct,'0A'x) > 0 and 2+klength(Comm_rente_pct) = klength(quote(trim(Comm_rente_pct)))
-                   then put '22'x Comm_rente_pct +(-1) '22'x "," @;
-                   else put Comm_rente_pct @;
+                 if find(Imvb,'0A'x) > 0 and 2+klength(Imvb) = klength(quote(trim(Imvb)))
+                   then put '22'x Imvb +(-1) '22'x "," @;
+                   else put Imvb @;
               end;
        if missing(Correctie_code)
          then put "," @;
@@ -18802,33 +18886,19 @@ data _null_;
                    then put '22'x Correctie_code +(-1) '22'x "," @;
                    else put Correctie_code @;
               end;
-       if missing(Creatie_dat)
+       if missing(Auto_oracle)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
+                 if find(Auto_oracle,'0A'x) > 0 and 2+klength(Auto_oracle) = klength(quote(trim(Auto_oracle)))
+                   then put '22'x Auto_oracle +(-1) '22'x "," @;
+                   else put Auto_oracle @;
               end;
-       if missing(Creatie_user)
+       if missing(Boeking)
          then put "," @;
          else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Datum_tot)
-         then put "," @;
-         else do;
-                 if find(Datum_tot,'0A'x) > 0 and 2+klength(Datum_tot) = klength(quote(trim(Datum_tot)))
-                   then put '22'x Datum_tot +(-1) '22'x "," @;
-                   else put Datum_tot @;
-              end;
-       if missing(Datum_van)
-         then put "," @;
-         else do;
-                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
-                   then put '22'x Datum_van +(-1) '22'x "," @;
-                   else put Datum_van @;
+                 if find(Boeking,'0A'x) > 0 and 2+klength(Boeking) = klength(quote(trim(Boeking)))
+                   then put '22'x Boeking +(-1) '22'x "," @;
+                   else put Boeking @;
               end;
        if missing(Fin_soort)
          then put "," @;
@@ -18837,20 +18907,6 @@ data _null_;
                    then put '22'x Fin_soort +(-1) '22'x "," @;
                    else put Fin_soort @;
               end;
-       if missing(Iban)
-         then put "," @;
-         else do;
-                 if find(Iban,'0A'x) > 0 and 2+klength(Iban) = klength(quote(trim(Iban)))
-                   then put '22'x Iban +(-1) '22'x "," @;
-                   else put Iban @;
-              end;
-       if missing(Imvb)
-         then put "," @;
-         else do;
-                 if find(Imvb,'0A'x) > 0 and 2+klength(Imvb) = klength(quote(trim(Imvb)))
-                   then put '22'x Imvb +(-1) '22'x "," @;
-                   else put Imvb @;
-              end;
        if missing(Kenmerk_lijn)
          then put "," @;
          else do;
@@ -18858,68 +18914,12 @@ data _null_;
                    then put '22'x Kenmerk_lijn +(-1) '22'x "," @;
                    else put Kenmerk_lijn @;
               end;
-       if missing(Kopieer_periode)
+       if missing(Aflossing)
          then put "," @;
          else do;
-                 if find(Kopieer_periode,'0A'x) > 0 and 2+klength(Kopieer_periode) = klength(quote(trim(Kopieer_periode)))
-                   then put '22'x Kopieer_periode +(-1) '22'x "," @;
-                   else put Kopieer_periode @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Omschrijving)
-         then put "," @;
-         else do;
-                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
-                   then put '22'x Omschrijving +(-1) '22'x "," @;
-                   else put Omschrijving @;
-              end;
-       if missing(Ovk_nr)
-         then put "," @;
-         else do;
-                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
-                   then put '22'x Ovk_nr +(-1) '22'x "," @;
-                   else put Ovk_nr @;
-              end;
-       if missing(Prg_cd)
-         then put "," @;
-         else do;
-                 if find(Prg_cd,'0A'x) > 0 and 2+klength(Prg_cd) = klength(quote(trim(Prg_cd)))
-                   then put '22'x Prg_cd +(-1) '22'x "," @;
-                   else put Prg_cd @;
-              end;
-       if missing(Rpt_nr)
-         then put "," @;
-         else do;
-                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
-                   then put '22'x Rpt_nr +(-1) '22'x "," @;
-                   else put Rpt_nr @;
-              end;
-       if missing(Tot_budget)
-         then put "," @;
-         else do;
-                 if find(Tot_budget,'0A'x) > 0 and 2+klength(Tot_budget) = klength(quote(trim(Tot_budget)))
-                   then put '22'x Tot_budget +(-1) '22'x "," @;
-                   else put Tot_budget @;
-              end;
-       if missing(Verdeeld_budget)
-         then put "," @;
-         else do;
-                 if find(Verdeeld_budget,'0A'x) > 0 and 2+klength(Verdeeld_budget) = klength(quote(trim(Verdeeld_budget)))
-                   then put '22'x Verdeeld_budget +(-1) '22'x "," @;
-                   else put Verdeeld_budget @;
+                 if find(Aflossing,'0A'x) > 0 and 2+klength(Aflossing) = klength(quote(trim(Aflossing)))
+                   then put '22'x Aflossing +(-1) '22'x "," @;
+                   else put Aflossing @;
               end;
        put techId best12. ; 
        ; 
@@ -18962,137 +18962,67 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Budget_uitputting" 
-       ','
-          "Contractdatum" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Datum_tot" 
-       ','
-          "Datum_van" 
-       ','
-          "Inhoud" 
-       ','
-          "Mjp_jn" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Ovk_budget_controle" 
+          "Prg_id" 
        ','
           "Ovk_nr" 
        ','
-          "Prg_id" 
+          "Datum_van" 
+       ','
+          "Datum_tot" 
+       ','
+          "Inhoud" 
        ','
           "Status" 
        ','
+          "Contractdatum" 
+       ','
           "Totaal_budget" 
        ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mjp_jn" 
+       ','
+          "Ovk_budget_controle" 
+       ','
           "Vrij_budget" 
+       ','
+          "Budget_uitputting" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_PRG_OVEREENKOMST   end=EFIEOD; 
-       format Budget_uitputting best12. ;
-       format Contractdatum B8601DT19. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Datum_tot B8601DT19. ;
-       format Datum_van B8601DT19. ;
-       format Inhoud  ;
-       format Mjp_jn  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Ovk_budget_controle  ;
-       format Ovk_nr  ;
        format Prg_id best12. ;
+       format Ovk_nr  ;
+       format Datum_van B8601DT19. ;
+       format Datum_tot B8601DT19. ;
+       format Inhoud  ;
        format Status  ;
+       format Contractdatum B8601DT19. ;
        format Totaal_budget best12. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mjp_jn  ;
+       format Ovk_budget_controle  ;
        format Vrij_budget best12. ;
+       format Budget_uitputting best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Budget_uitputting)
+       if missing(Prg_id)
          then put "," @;
          else do;
-                 if find(Budget_uitputting,'0A'x) > 0 and 2+klength(Budget_uitputting) = klength(quote(trim(Budget_uitputting)))
-                   then put '22'x Budget_uitputting +(-1) '22'x "," @;
-                   else put Budget_uitputting @;
-              end;
-       if missing(Contractdatum)
-         then put "," @;
-         else do;
-                 if find(Contractdatum,'0A'x) > 0 and 2+klength(Contractdatum) = klength(quote(trim(Contractdatum)))
-                   then put '22'x Contractdatum +(-1) '22'x "," @;
-                   else put Contractdatum @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Datum_tot)
-         then put "," @;
-         else do;
-                 if find(Datum_tot,'0A'x) > 0 and 2+klength(Datum_tot) = klength(quote(trim(Datum_tot)))
-                   then put '22'x Datum_tot +(-1) '22'x "," @;
-                   else put Datum_tot @;
-              end;
-       if missing(Datum_van)
-         then put "," @;
-         else do;
-                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
-                   then put '22'x Datum_van +(-1) '22'x "," @;
-                   else put Datum_van @;
-              end;
-       if missing(Inhoud)
-         then put "," @;
-         else do;
-                 if find(Inhoud,'0A'x) > 0 and 2+klength(Inhoud) = klength(quote(trim(Inhoud)))
-                   then put '22'x Inhoud +(-1) '22'x "," @;
-                   else put Inhoud @;
-              end;
-       if missing(Mjp_jn)
-         then put "," @;
-         else do;
-                 if find(Mjp_jn,'0A'x) > 0 and 2+klength(Mjp_jn) = klength(quote(trim(Mjp_jn)))
-                   then put '22'x Mjp_jn +(-1) '22'x "," @;
-                   else put Mjp_jn @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Ovk_budget_controle)
-         then put "," @;
-         else do;
-                 if find(Ovk_budget_controle,'0A'x) > 0 and 2+klength(Ovk_budget_controle) = klength(quote(trim(Ovk_budget_controle)))
-                   then put '22'x Ovk_budget_controle +(-1) '22'x "," @;
-                   else put Ovk_budget_controle @;
+                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
+                   then put '22'x Prg_id +(-1) '22'x "," @;
+                   else put Prg_id @;
               end;
        if missing(Ovk_nr)
          then put "," @;
@@ -19101,12 +19031,26 @@ data _null_;
                    then put '22'x Ovk_nr +(-1) '22'x "," @;
                    else put Ovk_nr @;
               end;
-       if missing(Prg_id)
+       if missing(Datum_van)
          then put "," @;
          else do;
-                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
-                   then put '22'x Prg_id +(-1) '22'x "," @;
-                   else put Prg_id @;
+                 if find(Datum_van,'0A'x) > 0 and 2+klength(Datum_van) = klength(quote(trim(Datum_van)))
+                   then put '22'x Datum_van +(-1) '22'x "," @;
+                   else put Datum_van @;
+              end;
+       if missing(Datum_tot)
+         then put "," @;
+         else do;
+                 if find(Datum_tot,'0A'x) > 0 and 2+klength(Datum_tot) = klength(quote(trim(Datum_tot)))
+                   then put '22'x Datum_tot +(-1) '22'x "," @;
+                   else put Datum_tot @;
+              end;
+       if missing(Inhoud)
+         then put "," @;
+         else do;
+                 if find(Inhoud,'0A'x) > 0 and 2+klength(Inhoud) = klength(quote(trim(Inhoud)))
+                   then put '22'x Inhoud +(-1) '22'x "," @;
+                   else put Inhoud @;
               end;
        if missing(Status)
          then put "," @;
@@ -19115,6 +19059,13 @@ data _null_;
                    then put '22'x Status +(-1) '22'x "," @;
                    else put Status @;
               end;
+       if missing(Contractdatum)
+         then put "," @;
+         else do;
+                 if find(Contractdatum,'0A'x) > 0 and 2+klength(Contractdatum) = klength(quote(trim(Contractdatum)))
+                   then put '22'x Contractdatum +(-1) '22'x "," @;
+                   else put Contractdatum @;
+              end;
        if missing(Totaal_budget)
          then put "," @;
          else do;
@@ -19122,12 +19073,61 @@ data _null_;
                    then put '22'x Totaal_budget +(-1) '22'x "," @;
                    else put Totaal_budget @;
               end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mjp_jn)
+         then put "," @;
+         else do;
+                 if find(Mjp_jn,'0A'x) > 0 and 2+klength(Mjp_jn) = klength(quote(trim(Mjp_jn)))
+                   then put '22'x Mjp_jn +(-1) '22'x "," @;
+                   else put Mjp_jn @;
+              end;
+       if missing(Ovk_budget_controle)
+         then put "," @;
+         else do;
+                 if find(Ovk_budget_controle,'0A'x) > 0 and 2+klength(Ovk_budget_controle) = klength(quote(trim(Ovk_budget_controle)))
+                   then put '22'x Ovk_budget_controle +(-1) '22'x "," @;
+                   else put Ovk_budget_controle @;
+              end;
        if missing(Vrij_budget)
          then put "," @;
          else do;
                  if find(Vrij_budget,'0A'x) > 0 and 2+klength(Vrij_budget) = klength(quote(trim(Vrij_budget)))
                    then put '22'x Vrij_budget +(-1) '22'x "," @;
                    else put Vrij_budget @;
+              end;
+       if missing(Budget_uitputting)
+         then put "," @;
+         else do;
+                 if find(Budget_uitputting,'0A'x) > 0 and 2+klength(Budget_uitputting) = klength(quote(trim(Budget_uitputting)))
+                   then put '22'x Budget_uitputting +(-1) '22'x "," @;
+                   else put Budget_uitputting @;
               end;
        put techId best12. ; 
        ; 
@@ -19171,98 +19171,70 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Acc_id" 
-       ','
-          "Actief" 
-       ','
-          "Auth_mdw_cd" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Prg_id" 
        ','
           "Mdw_id" 
        ','
-          "Mdw_id_parf_naar" 
-       ','
-          "Mentor_id" 
-       ','
-          "Mentor_rol_cd" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Opmerking" 
-       ','
-          "Prg_id" 
+          "Auth_mdw_cd" 
        ','
           "Rol_cd" 
        ','
+          "Actief" 
+       ','
+          "Opmerking" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
           "Senioriteit" 
+       ','
+          "Mentor_id" 
        ','
           "Vervang_id" 
        ','
           "Vervang_rol" 
        ','
+          "Acc_id" 
+       ','
+          "Mdw_id_parf_naar" 
+       ','
+          "Mentor_rol_cd" 
+       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL   end=EFIEOD; 
-       format Acc_id best12. ;
-       format Actief  ;
-       format Auth_mdw_cd  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Mdw_id best12. ;
-       format Mdw_id_parf_naar best12. ;
-       format Mentor_id best12. ;
-       format Mentor_rol_cd  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Opmerking  ;
        format Prg_id best12. ;
+       format Mdw_id best12. ;
+       format Auth_mdw_cd  ;
        format Rol_cd  ;
+       format Actief  ;
+       format Opmerking  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format Senioriteit  ;
+       format Mentor_id best12. ;
        format Vervang_id best12. ;
        format Vervang_rol  ;
+       format Acc_id best12. ;
+       format Mdw_id_parf_naar best12. ;
+       format Mentor_rol_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Acc_id)
+       if missing(Prg_id)
          then put "," @;
          else do;
-                 if find(Acc_id,'0A'x) > 0 and 2+klength(Acc_id) = klength(quote(trim(Acc_id)))
-                   then put '22'x Acc_id +(-1) '22'x "," @;
-                   else put Acc_id @;
-              end;
-       if missing(Actief)
-         then put "," @;
-         else do;
-                 if find(Actief,'0A'x) > 0 and 2+klength(Actief) = klength(quote(trim(Actief)))
-                   then put '22'x Actief +(-1) '22'x "," @;
-                   else put Actief @;
-              end;
-       if missing(Auth_mdw_cd)
-         then put "," @;
-         else do;
-                 if find(Auth_mdw_cd,'0A'x) > 0 and 2+klength(Auth_mdw_cd) = klength(quote(trim(Auth_mdw_cd)))
-                   then put '22'x Auth_mdw_cd +(-1) '22'x "," @;
-                   else put Auth_mdw_cd @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
+                   then put '22'x Prg_id +(-1) '22'x "," @;
+                   else put Prg_id @;
               end;
        if missing(Mdw_id)
          then put "," @;
@@ -19271,54 +19243,12 @@ data _null_;
                    then put '22'x Mdw_id +(-1) '22'x "," @;
                    else put Mdw_id @;
               end;
-       if missing(Mdw_id_parf_naar)
+       if missing(Auth_mdw_cd)
          then put "," @;
          else do;
-                 if find(Mdw_id_parf_naar,'0A'x) > 0 and 2+klength(Mdw_id_parf_naar) = klength(quote(trim(Mdw_id_parf_naar)))
-                   then put '22'x Mdw_id_parf_naar +(-1) '22'x "," @;
-                   else put Mdw_id_parf_naar @;
-              end;
-       if missing(Mentor_id)
-         then put "," @;
-         else do;
-                 if find(Mentor_id,'0A'x) > 0 and 2+klength(Mentor_id) = klength(quote(trim(Mentor_id)))
-                   then put '22'x Mentor_id +(-1) '22'x "," @;
-                   else put Mentor_id @;
-              end;
-       if missing(Mentor_rol_cd)
-         then put "," @;
-         else do;
-                 if find(Mentor_rol_cd,'0A'x) > 0 and 2+klength(Mentor_rol_cd) = klength(quote(trim(Mentor_rol_cd)))
-                   then put '22'x Mentor_rol_cd +(-1) '22'x "," @;
-                   else put Mentor_rol_cd @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Opmerking)
-         then put "," @;
-         else do;
-                 if find(Opmerking,'0A'x) > 0 and 2+klength(Opmerking) = klength(quote(trim(Opmerking)))
-                   then put '22'x Opmerking +(-1) '22'x "," @;
-                   else put Opmerking @;
-              end;
-       if missing(Prg_id)
-         then put "," @;
-         else do;
-                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
-                   then put '22'x Prg_id +(-1) '22'x "," @;
-                   else put Prg_id @;
+                 if find(Auth_mdw_cd,'0A'x) > 0 and 2+klength(Auth_mdw_cd) = klength(quote(trim(Auth_mdw_cd)))
+                   then put '22'x Auth_mdw_cd +(-1) '22'x "," @;
+                   else put Auth_mdw_cd @;
               end;
        if missing(Rol_cd)
          then put "," @;
@@ -19327,12 +19257,61 @@ data _null_;
                    then put '22'x Rol_cd +(-1) '22'x "," @;
                    else put Rol_cd @;
               end;
+       if missing(Actief)
+         then put "," @;
+         else do;
+                 if find(Actief,'0A'x) > 0 and 2+klength(Actief) = klength(quote(trim(Actief)))
+                   then put '22'x Actief +(-1) '22'x "," @;
+                   else put Actief @;
+              end;
+       if missing(Opmerking)
+         then put "," @;
+         else do;
+                 if find(Opmerking,'0A'x) > 0 and 2+klength(Opmerking) = klength(quote(trim(Opmerking)))
+                   then put '22'x Opmerking +(-1) '22'x "," @;
+                   else put Opmerking @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
        if missing(Senioriteit)
          then put "," @;
          else do;
                  if find(Senioriteit,'0A'x) > 0 and 2+klength(Senioriteit) = klength(quote(trim(Senioriteit)))
                    then put '22'x Senioriteit +(-1) '22'x "," @;
                    else put Senioriteit @;
+              end;
+       if missing(Mentor_id)
+         then put "," @;
+         else do;
+                 if find(Mentor_id,'0A'x) > 0 and 2+klength(Mentor_id) = klength(quote(trim(Mentor_id)))
+                   then put '22'x Mentor_id +(-1) '22'x "," @;
+                   else put Mentor_id @;
               end;
        if missing(Vervang_id)
          then put "," @;
@@ -19347,6 +19326,27 @@ data _null_;
                  if find(Vervang_rol,'0A'x) > 0 and 2+klength(Vervang_rol) = klength(quote(trim(Vervang_rol)))
                    then put '22'x Vervang_rol +(-1) '22'x "," @;
                    else put Vervang_rol @;
+              end;
+       if missing(Acc_id)
+         then put "," @;
+         else do;
+                 if find(Acc_id,'0A'x) > 0 and 2+klength(Acc_id) = klength(quote(trim(Acc_id)))
+                   then put '22'x Acc_id +(-1) '22'x "," @;
+                   else put Acc_id @;
+              end;
+       if missing(Mdw_id_parf_naar)
+         then put "," @;
+         else do;
+                 if find(Mdw_id_parf_naar,'0A'x) > 0 and 2+klength(Mdw_id_parf_naar) = klength(quote(trim(Mdw_id_parf_naar)))
+                   then put '22'x Mdw_id_parf_naar +(-1) '22'x "," @;
+                   else put Mdw_id_parf_naar @;
+              end;
+       if missing(Mentor_rol_cd)
+         then put "," @;
+         else do;
+                 if find(Mentor_rol_cd,'0A'x) > 0 and 2+klength(Mentor_rol_cd) = klength(quote(trim(Mentor_rol_cd)))
+                   then put '22'x Mentor_rol_cd +(-1) '22'x "," @;
+                   else put Mentor_rol_cd @;
               end;
        put techId best12. ; 
        ; 
@@ -19409,302 +19409,127 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Auto_insert_sde_jn" 
-       ','
-          "Auto_samenvoeg_jn" 
-       ','
-          "Betaalmodule" 
-       ','
-          "Budgetbewaking_hard" 
-       ','
-          "Budgetbewaking_pct" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Cst_set_cd" 
-       ','
-          "Dcp_automatisch_jn" 
-       ','
-          "Dig_parf_mand" 
-       ','
-          "Dos_referentie_jaar" 
-       ','
-          "Eind_datum" 
-       ','
-          "Fin_schermen" 
-       ','
-          "Fpc_status" 
-       ','
-          "Geblokkeerd_jn" 
-       ','
-          "Ic_helptekst" 
-       ','
-          "Ingangs_datum" 
-       ','
-          "Ingangsdatum_zer" 
-       ','
-          "Mail_bericht_parafering" 
-       ','
-          "Min_id" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Paraf_mandat_pr_rol_jn" 
-       ','
-          "Prg_id" 
-       ','
-          "Pub_datum" 
-       ','
-          "Rap_freq" 
+          "Reg_id" 
        ','
           "Reg_cd" 
        ','
-          "Reg_document" 
-       ','
-          "Reg_geen_dig_parafering" 
-       ','
-          "Reg_id" 
-       ','
-          "Reg_mail_adres" 
-       ','
           "Reg_oms" 
        ','
-          "Reg_prefix" 
-       ','
-          "Regelingscontrole" 
+          "Prg_id" 
        ','
           "Thema" 
        ','
+          "Rap_freq" 
+       ','
+          "Ingangs_datum" 
+       ','
+          "Pub_datum" 
+       ','
+          "Eind_datum" 
+       ','
+          "Reg_document" 
+       ','
+          "Betaalmodule" 
+       ','
+          "Regelingscontrole" 
+       ','
+          "Ic_helptekst" 
+       ','
+          "Geblokkeerd_jn" 
+       ','
+          "Min_id" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Reg_prefix" 
+       ','
           "Volg_nr" 
+       ','
+          "Mail_bericht_parafering" 
+       ','
+          "Reg_mail_adres" 
+       ','
+          "Reg_geen_dig_parafering" 
+       ','
+          "Fin_schermen" 
+       ','
+          "Budgetbewaking_pct" 
+       ','
+          "Budgetbewaking_hard" 
+       ','
+          "Dig_parf_mand" 
+       ','
+          "Cst_set_cd" 
+       ','
+          "Auto_samenvoeg_jn" 
+       ','
+          "Fpc_status" 
+       ','
+          "Dcp_automatisch_jn" 
+       ','
+          "Paraf_mandat_pr_rol_jn" 
+       ','
+          "Dos_referentie_jaar" 
+       ','
+          "Auto_insert_sde_jn" 
+       ','
+          "Ingangsdatum_zer" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_REGELING   end=EFIEOD; 
-       format Auto_insert_sde_jn  ;
-       format Auto_samenvoeg_jn  ;
-       format Betaalmodule  ;
-       format Budgetbewaking_hard  ;
-       format Budgetbewaking_pct best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Cst_set_cd  ;
-       format Dcp_automatisch_jn  ;
-       format Dig_parf_mand  ;
-       format Dos_referentie_jaar  ;
-       format Eind_datum B8601DT19. ;
-       format Fin_schermen  ;
-       format Fpc_status  ;
-       format Geblokkeerd_jn  ;
-       format Ic_helptekst  ;
-       format Ingangs_datum B8601DT19. ;
-       format Ingangsdatum_zer B8601DT19. ;
-       format Mail_bericht_parafering  ;
-       format Min_id best12. ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Paraf_mandat_pr_rol_jn  ;
-       format Prg_id best12. ;
-       format Pub_datum B8601DT19. ;
-       format Rap_freq best12. ;
-       format Reg_cd  ;
-       format Reg_document  ;
-       format Reg_geen_dig_parafering  ;
        format Reg_id best12. ;
-       format Reg_mail_adres  ;
+       format Reg_cd  ;
        format Reg_oms  ;
-       format Reg_prefix  ;
-       format Regelingscontrole  ;
+       format Prg_id best12. ;
        format Thema  ;
+       format Rap_freq best12. ;
+       format Ingangs_datum B8601DT19. ;
+       format Pub_datum B8601DT19. ;
+       format Eind_datum B8601DT19. ;
+       format Reg_document  ;
+       format Betaalmodule  ;
+       format Regelingscontrole  ;
+       format Ic_helptekst  ;
+       format Geblokkeerd_jn  ;
+       format Min_id best12. ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Reg_prefix  ;
        format Volg_nr best12. ;
+       format Mail_bericht_parafering  ;
+       format Reg_mail_adres  ;
+       format Reg_geen_dig_parafering  ;
+       format Fin_schermen  ;
+       format Budgetbewaking_pct best12. ;
+       format Budgetbewaking_hard  ;
+       format Dig_parf_mand  ;
+       format Cst_set_cd  ;
+       format Auto_samenvoeg_jn  ;
+       format Fpc_status  ;
+       format Dcp_automatisch_jn  ;
+       format Paraf_mandat_pr_rol_jn  ;
+       format Dos_referentie_jaar  ;
+       format Auto_insert_sde_jn  ;
+       format Ingangsdatum_zer B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Auto_insert_sde_jn)
+       if missing(Reg_id)
          then put "," @;
          else do;
-                 if find(Auto_insert_sde_jn,'0A'x) > 0 and 2+klength(Auto_insert_sde_jn) = klength(quote(trim(Auto_insert_sde_jn)))
-                   then put '22'x Auto_insert_sde_jn +(-1) '22'x "," @;
-                   else put Auto_insert_sde_jn @;
-              end;
-       if missing(Auto_samenvoeg_jn)
-         then put "," @;
-         else do;
-                 if find(Auto_samenvoeg_jn,'0A'x) > 0 and 2+klength(Auto_samenvoeg_jn) = klength(quote(trim(Auto_samenvoeg_jn)))
-                   then put '22'x Auto_samenvoeg_jn +(-1) '22'x "," @;
-                   else put Auto_samenvoeg_jn @;
-              end;
-       if missing(Betaalmodule)
-         then put "," @;
-         else do;
-                 if find(Betaalmodule,'0A'x) > 0 and 2+klength(Betaalmodule) = klength(quote(trim(Betaalmodule)))
-                   then put '22'x Betaalmodule +(-1) '22'x "," @;
-                   else put Betaalmodule @;
-              end;
-       if missing(Budgetbewaking_hard)
-         then put "," @;
-         else do;
-                 if find(Budgetbewaking_hard,'0A'x) > 0 and 2+klength(Budgetbewaking_hard) = klength(quote(trim(Budgetbewaking_hard)))
-                   then put '22'x Budgetbewaking_hard +(-1) '22'x "," @;
-                   else put Budgetbewaking_hard @;
-              end;
-       if missing(Budgetbewaking_pct)
-         then put "," @;
-         else do;
-                 if find(Budgetbewaking_pct,'0A'x) > 0 and 2+klength(Budgetbewaking_pct) = klength(quote(trim(Budgetbewaking_pct)))
-                   then put '22'x Budgetbewaking_pct +(-1) '22'x "," @;
-                   else put Budgetbewaking_pct @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Cst_set_cd)
-         then put "," @;
-         else do;
-                 if find(Cst_set_cd,'0A'x) > 0 and 2+klength(Cst_set_cd) = klength(quote(trim(Cst_set_cd)))
-                   then put '22'x Cst_set_cd +(-1) '22'x "," @;
-                   else put Cst_set_cd @;
-              end;
-       if missing(Dcp_automatisch_jn)
-         then put "," @;
-         else do;
-                 if find(Dcp_automatisch_jn,'0A'x) > 0 and 2+klength(Dcp_automatisch_jn) = klength(quote(trim(Dcp_automatisch_jn)))
-                   then put '22'x Dcp_automatisch_jn +(-1) '22'x "," @;
-                   else put Dcp_automatisch_jn @;
-              end;
-       if missing(Dig_parf_mand)
-         then put "," @;
-         else do;
-                 if find(Dig_parf_mand,'0A'x) > 0 and 2+klength(Dig_parf_mand) = klength(quote(trim(Dig_parf_mand)))
-                   then put '22'x Dig_parf_mand +(-1) '22'x "," @;
-                   else put Dig_parf_mand @;
-              end;
-       if missing(Dos_referentie_jaar)
-         then put "," @;
-         else do;
-                 if find(Dos_referentie_jaar,'0A'x) > 0 and 2+klength(Dos_referentie_jaar) = klength(quote(trim(Dos_referentie_jaar)))
-                   then put '22'x Dos_referentie_jaar +(-1) '22'x "," @;
-                   else put Dos_referentie_jaar @;
-              end;
-       if missing(Eind_datum)
-         then put "," @;
-         else do;
-                 if find(Eind_datum,'0A'x) > 0 and 2+klength(Eind_datum) = klength(quote(trim(Eind_datum)))
-                   then put '22'x Eind_datum +(-1) '22'x "," @;
-                   else put Eind_datum @;
-              end;
-       if missing(Fin_schermen)
-         then put "," @;
-         else do;
-                 if find(Fin_schermen,'0A'x) > 0 and 2+klength(Fin_schermen) = klength(quote(trim(Fin_schermen)))
-                   then put '22'x Fin_schermen +(-1) '22'x "," @;
-                   else put Fin_schermen @;
-              end;
-       if missing(Fpc_status)
-         then put "," @;
-         else do;
-                 if find(Fpc_status,'0A'x) > 0 and 2+klength(Fpc_status) = klength(quote(trim(Fpc_status)))
-                   then put '22'x Fpc_status +(-1) '22'x "," @;
-                   else put Fpc_status @;
-              end;
-       if missing(Geblokkeerd_jn)
-         then put "," @;
-         else do;
-                 if find(Geblokkeerd_jn,'0A'x) > 0 and 2+klength(Geblokkeerd_jn) = klength(quote(trim(Geblokkeerd_jn)))
-                   then put '22'x Geblokkeerd_jn +(-1) '22'x "," @;
-                   else put Geblokkeerd_jn @;
-              end;
-       if missing(Ic_helptekst)
-         then put "," @;
-         else do;
-                 if find(Ic_helptekst,'0A'x) > 0 and 2+klength(Ic_helptekst) = klength(quote(trim(Ic_helptekst)))
-                   then put '22'x Ic_helptekst +(-1) '22'x "," @;
-                   else put Ic_helptekst @;
-              end;
-       if missing(Ingangs_datum)
-         then put "," @;
-         else do;
-                 if find(Ingangs_datum,'0A'x) > 0 and 2+klength(Ingangs_datum) = klength(quote(trim(Ingangs_datum)))
-                   then put '22'x Ingangs_datum +(-1) '22'x "," @;
-                   else put Ingangs_datum @;
-              end;
-       if missing(Ingangsdatum_zer)
-         then put "," @;
-         else do;
-                 if find(Ingangsdatum_zer,'0A'x) > 0 and 2+klength(Ingangsdatum_zer) = klength(quote(trim(Ingangsdatum_zer)))
-                   then put '22'x Ingangsdatum_zer +(-1) '22'x "," @;
-                   else put Ingangsdatum_zer @;
-              end;
-       if missing(Mail_bericht_parafering)
-         then put "," @;
-         else do;
-                 if find(Mail_bericht_parafering,'0A'x) > 0 and 2+klength(Mail_bericht_parafering) = klength(quote(trim(Mail_bericht_parafering)))
-                   then put '22'x Mail_bericht_parafering +(-1) '22'x "," @;
-                   else put Mail_bericht_parafering @;
-              end;
-       if missing(Min_id)
-         then put "," @;
-         else do;
-                 if find(Min_id,'0A'x) > 0 and 2+klength(Min_id) = klength(quote(trim(Min_id)))
-                   then put '22'x Min_id +(-1) '22'x "," @;
-                   else put Min_id @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Paraf_mandat_pr_rol_jn)
-         then put "," @;
-         else do;
-                 if find(Paraf_mandat_pr_rol_jn,'0A'x) > 0 and 2+klength(Paraf_mandat_pr_rol_jn) = klength(quote(trim(Paraf_mandat_pr_rol_jn)))
-                   then put '22'x Paraf_mandat_pr_rol_jn +(-1) '22'x "," @;
-                   else put Paraf_mandat_pr_rol_jn @;
-              end;
-       if missing(Prg_id)
-         then put "," @;
-         else do;
-                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
-                   then put '22'x Prg_id +(-1) '22'x "," @;
-                   else put Prg_id @;
-              end;
-       if missing(Pub_datum)
-         then put "," @;
-         else do;
-                 if find(Pub_datum,'0A'x) > 0 and 2+klength(Pub_datum) = klength(quote(trim(Pub_datum)))
-                   then put '22'x Pub_datum +(-1) '22'x "," @;
-                   else put Pub_datum @;
-              end;
-       if missing(Rap_freq)
-         then put "," @;
-         else do;
-                 if find(Rap_freq,'0A'x) > 0 and 2+klength(Rap_freq) = klength(quote(trim(Rap_freq)))
-                   then put '22'x Rap_freq +(-1) '22'x "," @;
-                   else put Rap_freq @;
+                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
+                   then put '22'x Reg_id +(-1) '22'x "," @;
+                   else put Reg_id @;
               end;
        if missing(Reg_cd)
          then put "," @;
@@ -19713,34 +19538,6 @@ data _null_;
                    then put '22'x Reg_cd +(-1) '22'x "," @;
                    else put Reg_cd @;
               end;
-       if missing(Reg_document)
-         then put "," @;
-         else do;
-                 if find(Reg_document,'0A'x) > 0 and 2+klength(Reg_document) = klength(quote(trim(Reg_document)))
-                   then put '22'x Reg_document +(-1) '22'x "," @;
-                   else put Reg_document @;
-              end;
-       if missing(Reg_geen_dig_parafering)
-         then put "," @;
-         else do;
-                 if find(Reg_geen_dig_parafering,'0A'x) > 0 and 2+klength(Reg_geen_dig_parafering) = klength(quote(trim(Reg_geen_dig_parafering)))
-                   then put '22'x Reg_geen_dig_parafering +(-1) '22'x "," @;
-                   else put Reg_geen_dig_parafering @;
-              end;
-       if missing(Reg_id)
-         then put "," @;
-         else do;
-                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
-                   then put '22'x Reg_id +(-1) '22'x "," @;
-                   else put Reg_id @;
-              end;
-       if missing(Reg_mail_adres)
-         then put "," @;
-         else do;
-                 if find(Reg_mail_adres,'0A'x) > 0 and 2+klength(Reg_mail_adres) = klength(quote(trim(Reg_mail_adres)))
-                   then put '22'x Reg_mail_adres +(-1) '22'x "," @;
-                   else put Reg_mail_adres @;
-              end;
        if missing(Reg_oms)
          then put "," @;
          else do;
@@ -19748,19 +19545,12 @@ data _null_;
                    then put '22'x Reg_oms +(-1) '22'x "," @;
                    else put Reg_oms @;
               end;
-       if missing(Reg_prefix)
+       if missing(Prg_id)
          then put "," @;
          else do;
-                 if find(Reg_prefix,'0A'x) > 0 and 2+klength(Reg_prefix) = klength(quote(trim(Reg_prefix)))
-                   then put '22'x Reg_prefix +(-1) '22'x "," @;
-                   else put Reg_prefix @;
-              end;
-       if missing(Regelingscontrole)
-         then put "," @;
-         else do;
-                 if find(Regelingscontrole,'0A'x) > 0 and 2+klength(Regelingscontrole) = klength(quote(trim(Regelingscontrole)))
-                   then put '22'x Regelingscontrole +(-1) '22'x "," @;
-                   else put Regelingscontrole @;
+                 if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
+                   then put '22'x Prg_id +(-1) '22'x "," @;
+                   else put Prg_id @;
               end;
        if missing(Thema)
          then put "," @;
@@ -19769,12 +19559,222 @@ data _null_;
                    then put '22'x Thema +(-1) '22'x "," @;
                    else put Thema @;
               end;
+       if missing(Rap_freq)
+         then put "," @;
+         else do;
+                 if find(Rap_freq,'0A'x) > 0 and 2+klength(Rap_freq) = klength(quote(trim(Rap_freq)))
+                   then put '22'x Rap_freq +(-1) '22'x "," @;
+                   else put Rap_freq @;
+              end;
+       if missing(Ingangs_datum)
+         then put "," @;
+         else do;
+                 if find(Ingangs_datum,'0A'x) > 0 and 2+klength(Ingangs_datum) = klength(quote(trim(Ingangs_datum)))
+                   then put '22'x Ingangs_datum +(-1) '22'x "," @;
+                   else put Ingangs_datum @;
+              end;
+       if missing(Pub_datum)
+         then put "," @;
+         else do;
+                 if find(Pub_datum,'0A'x) > 0 and 2+klength(Pub_datum) = klength(quote(trim(Pub_datum)))
+                   then put '22'x Pub_datum +(-1) '22'x "," @;
+                   else put Pub_datum @;
+              end;
+       if missing(Eind_datum)
+         then put "," @;
+         else do;
+                 if find(Eind_datum,'0A'x) > 0 and 2+klength(Eind_datum) = klength(quote(trim(Eind_datum)))
+                   then put '22'x Eind_datum +(-1) '22'x "," @;
+                   else put Eind_datum @;
+              end;
+       if missing(Reg_document)
+         then put "," @;
+         else do;
+                 if find(Reg_document,'0A'x) > 0 and 2+klength(Reg_document) = klength(quote(trim(Reg_document)))
+                   then put '22'x Reg_document +(-1) '22'x "," @;
+                   else put Reg_document @;
+              end;
+       if missing(Betaalmodule)
+         then put "," @;
+         else do;
+                 if find(Betaalmodule,'0A'x) > 0 and 2+klength(Betaalmodule) = klength(quote(trim(Betaalmodule)))
+                   then put '22'x Betaalmodule +(-1) '22'x "," @;
+                   else put Betaalmodule @;
+              end;
+       if missing(Regelingscontrole)
+         then put "," @;
+         else do;
+                 if find(Regelingscontrole,'0A'x) > 0 and 2+klength(Regelingscontrole) = klength(quote(trim(Regelingscontrole)))
+                   then put '22'x Regelingscontrole +(-1) '22'x "," @;
+                   else put Regelingscontrole @;
+              end;
+       if missing(Ic_helptekst)
+         then put "," @;
+         else do;
+                 if find(Ic_helptekst,'0A'x) > 0 and 2+klength(Ic_helptekst) = klength(quote(trim(Ic_helptekst)))
+                   then put '22'x Ic_helptekst +(-1) '22'x "," @;
+                   else put Ic_helptekst @;
+              end;
+       if missing(Geblokkeerd_jn)
+         then put "," @;
+         else do;
+                 if find(Geblokkeerd_jn,'0A'x) > 0 and 2+klength(Geblokkeerd_jn) = klength(quote(trim(Geblokkeerd_jn)))
+                   then put '22'x Geblokkeerd_jn +(-1) '22'x "," @;
+                   else put Geblokkeerd_jn @;
+              end;
+       if missing(Min_id)
+         then put "," @;
+         else do;
+                 if find(Min_id,'0A'x) > 0 and 2+klength(Min_id) = klength(quote(trim(Min_id)))
+                   then put '22'x Min_id +(-1) '22'x "," @;
+                   else put Min_id @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Reg_prefix)
+         then put "," @;
+         else do;
+                 if find(Reg_prefix,'0A'x) > 0 and 2+klength(Reg_prefix) = klength(quote(trim(Reg_prefix)))
+                   then put '22'x Reg_prefix +(-1) '22'x "," @;
+                   else put Reg_prefix @;
+              end;
        if missing(Volg_nr)
          then put "," @;
          else do;
                  if find(Volg_nr,'0A'x) > 0 and 2+klength(Volg_nr) = klength(quote(trim(Volg_nr)))
                    then put '22'x Volg_nr +(-1) '22'x "," @;
                    else put Volg_nr @;
+              end;
+       if missing(Mail_bericht_parafering)
+         then put "," @;
+         else do;
+                 if find(Mail_bericht_parafering,'0A'x) > 0 and 2+klength(Mail_bericht_parafering) = klength(quote(trim(Mail_bericht_parafering)))
+                   then put '22'x Mail_bericht_parafering +(-1) '22'x "," @;
+                   else put Mail_bericht_parafering @;
+              end;
+       if missing(Reg_mail_adres)
+         then put "," @;
+         else do;
+                 if find(Reg_mail_adres,'0A'x) > 0 and 2+klength(Reg_mail_adres) = klength(quote(trim(Reg_mail_adres)))
+                   then put '22'x Reg_mail_adres +(-1) '22'x "," @;
+                   else put Reg_mail_adres @;
+              end;
+       if missing(Reg_geen_dig_parafering)
+         then put "," @;
+         else do;
+                 if find(Reg_geen_dig_parafering,'0A'x) > 0 and 2+klength(Reg_geen_dig_parafering) = klength(quote(trim(Reg_geen_dig_parafering)))
+                   then put '22'x Reg_geen_dig_parafering +(-1) '22'x "," @;
+                   else put Reg_geen_dig_parafering @;
+              end;
+       if missing(Fin_schermen)
+         then put "," @;
+         else do;
+                 if find(Fin_schermen,'0A'x) > 0 and 2+klength(Fin_schermen) = klength(quote(trim(Fin_schermen)))
+                   then put '22'x Fin_schermen +(-1) '22'x "," @;
+                   else put Fin_schermen @;
+              end;
+       if missing(Budgetbewaking_pct)
+         then put "," @;
+         else do;
+                 if find(Budgetbewaking_pct,'0A'x) > 0 and 2+klength(Budgetbewaking_pct) = klength(quote(trim(Budgetbewaking_pct)))
+                   then put '22'x Budgetbewaking_pct +(-1) '22'x "," @;
+                   else put Budgetbewaking_pct @;
+              end;
+       if missing(Budgetbewaking_hard)
+         then put "," @;
+         else do;
+                 if find(Budgetbewaking_hard,'0A'x) > 0 and 2+klength(Budgetbewaking_hard) = klength(quote(trim(Budgetbewaking_hard)))
+                   then put '22'x Budgetbewaking_hard +(-1) '22'x "," @;
+                   else put Budgetbewaking_hard @;
+              end;
+       if missing(Dig_parf_mand)
+         then put "," @;
+         else do;
+                 if find(Dig_parf_mand,'0A'x) > 0 and 2+klength(Dig_parf_mand) = klength(quote(trim(Dig_parf_mand)))
+                   then put '22'x Dig_parf_mand +(-1) '22'x "," @;
+                   else put Dig_parf_mand @;
+              end;
+       if missing(Cst_set_cd)
+         then put "," @;
+         else do;
+                 if find(Cst_set_cd,'0A'x) > 0 and 2+klength(Cst_set_cd) = klength(quote(trim(Cst_set_cd)))
+                   then put '22'x Cst_set_cd +(-1) '22'x "," @;
+                   else put Cst_set_cd @;
+              end;
+       if missing(Auto_samenvoeg_jn)
+         then put "," @;
+         else do;
+                 if find(Auto_samenvoeg_jn,'0A'x) > 0 and 2+klength(Auto_samenvoeg_jn) = klength(quote(trim(Auto_samenvoeg_jn)))
+                   then put '22'x Auto_samenvoeg_jn +(-1) '22'x "," @;
+                   else put Auto_samenvoeg_jn @;
+              end;
+       if missing(Fpc_status)
+         then put "," @;
+         else do;
+                 if find(Fpc_status,'0A'x) > 0 and 2+klength(Fpc_status) = klength(quote(trim(Fpc_status)))
+                   then put '22'x Fpc_status +(-1) '22'x "," @;
+                   else put Fpc_status @;
+              end;
+       if missing(Dcp_automatisch_jn)
+         then put "," @;
+         else do;
+                 if find(Dcp_automatisch_jn,'0A'x) > 0 and 2+klength(Dcp_automatisch_jn) = klength(quote(trim(Dcp_automatisch_jn)))
+                   then put '22'x Dcp_automatisch_jn +(-1) '22'x "," @;
+                   else put Dcp_automatisch_jn @;
+              end;
+       if missing(Paraf_mandat_pr_rol_jn)
+         then put "," @;
+         else do;
+                 if find(Paraf_mandat_pr_rol_jn,'0A'x) > 0 and 2+klength(Paraf_mandat_pr_rol_jn) = klength(quote(trim(Paraf_mandat_pr_rol_jn)))
+                   then put '22'x Paraf_mandat_pr_rol_jn +(-1) '22'x "," @;
+                   else put Paraf_mandat_pr_rol_jn @;
+              end;
+       if missing(Dos_referentie_jaar)
+         then put "," @;
+         else do;
+                 if find(Dos_referentie_jaar,'0A'x) > 0 and 2+klength(Dos_referentie_jaar) = klength(quote(trim(Dos_referentie_jaar)))
+                   then put '22'x Dos_referentie_jaar +(-1) '22'x "," @;
+                   else put Dos_referentie_jaar @;
+              end;
+       if missing(Auto_insert_sde_jn)
+         then put "," @;
+         else do;
+                 if find(Auto_insert_sde_jn,'0A'x) > 0 and 2+klength(Auto_insert_sde_jn) = klength(quote(trim(Auto_insert_sde_jn)))
+                   then put '22'x Auto_insert_sde_jn +(-1) '22'x "," @;
+                   else put Auto_insert_sde_jn @;
+              end;
+       if missing(Ingangsdatum_zer)
+         then put "," @;
+         else do;
+                 if find(Ingangsdatum_zer,'0A'x) > 0 and 2+klength(Ingangsdatum_zer) = klength(quote(trim(Ingangsdatum_zer)))
+                   then put '22'x Ingangsdatum_zer +(-1) '22'x "," @;
+                   else put Ingangsdatum_zer @;
               end;
        put techId best12. ; 
        ; 
@@ -19818,64 +19818,78 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Ovk_nr" 
+       ','
+          "Rpt_nr" 
+       ','
           "Bgt_cd" 
        ','
-          "Budget" 
-       ','
-          "Budget_uitputting" 
-       ','
-          "Correctie_budget" 
-       ','
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
+          "Rpe_datum_van" 
        ','
           "Jaar" 
-       ','
-          "Koppelen_jn" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Ovk_nr" 
        ','
           "Reg_id" 
        ','
           "Reg_nr" 
        ','
-          "Rpe_datum_van" 
+          "Budget" 
        ','
-          "Rpt_nr" 
+          "Budget_uitputting" 
        ','
-          "Rpt_nr_oud" 
+          "Koppelen_jn" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Creatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Correctie_budget" 
        ','
           "Vrij_budget" 
+       ','
+          "Rpt_nr_oud" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_REGPAR_BUDGONDVERD   end=EFIEOD; 
-       format Bgt_cd  ;
-       format Budget best12. ;
-       format Budget_uitputting best12. ;
-       format Correctie_budget best12. ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Jaar best12. ;
-       format Koppelen_jn  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Ovk_nr  ;
+       format Rpt_nr best12. ;
+       format Bgt_cd  ;
+       format Rpe_datum_van B8601DT19. ;
+       format Jaar best12. ;
        format Reg_id best12. ;
        format Reg_nr best12. ;
-       format Rpe_datum_van B8601DT19. ;
-       format Rpt_nr best12. ;
-       format Rpt_nr_oud  ;
+       format Budget best12. ;
+       format Budget_uitputting best12. ;
+       format Koppelen_jn  ;
+       format Creatie_dat B8601DT19. ;
+       format Creatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Correctie_budget best12. ;
        format Vrij_budget best12. ;
+       format Rpt_nr_oud  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Ovk_nr)
+         then put "," @;
+         else do;
+                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
+                   then put '22'x Ovk_nr +(-1) '22'x "," @;
+                   else put Ovk_nr @;
+              end;
+       if missing(Rpt_nr)
+         then put "," @;
+         else do;
+                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
+                   then put '22'x Rpt_nr +(-1) '22'x "," @;
+                   else put Rpt_nr @;
+              end;
        if missing(Bgt_cd)
          then put "," @;
          else do;
@@ -19883,40 +19897,12 @@ data _null_;
                    then put '22'x Bgt_cd +(-1) '22'x "," @;
                    else put Bgt_cd @;
               end;
-       if missing(Budget)
+       if missing(Rpe_datum_van)
          then put "," @;
          else do;
-                 if find(Budget,'0A'x) > 0 and 2+klength(Budget) = klength(quote(trim(Budget)))
-                   then put '22'x Budget +(-1) '22'x "," @;
-                   else put Budget @;
-              end;
-       if missing(Budget_uitputting)
-         then put "," @;
-         else do;
-                 if find(Budget_uitputting,'0A'x) > 0 and 2+klength(Budget_uitputting) = klength(quote(trim(Budget_uitputting)))
-                   then put '22'x Budget_uitputting +(-1) '22'x "," @;
-                   else put Budget_uitputting @;
-              end;
-       if missing(Correctie_budget)
-         then put "," @;
-         else do;
-                 if find(Correctie_budget,'0A'x) > 0 and 2+klength(Correctie_budget) = klength(quote(trim(Correctie_budget)))
-                   then put '22'x Correctie_budget +(-1) '22'x "," @;
-                   else put Correctie_budget @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
+                 if find(Rpe_datum_van,'0A'x) > 0 and 2+klength(Rpe_datum_van) = klength(quote(trim(Rpe_datum_van)))
+                   then put '22'x Rpe_datum_van +(-1) '22'x "," @;
+                   else put Rpe_datum_van @;
               end;
        if missing(Jaar)
          then put "," @;
@@ -19924,34 +19910,6 @@ data _null_;
                  if find(Jaar,'0A'x) > 0 and 2+klength(Jaar) = klength(quote(trim(Jaar)))
                    then put '22'x Jaar +(-1) '22'x "," @;
                    else put Jaar @;
-              end;
-       if missing(Koppelen_jn)
-         then put "," @;
-         else do;
-                 if find(Koppelen_jn,'0A'x) > 0 and 2+klength(Koppelen_jn) = klength(quote(trim(Koppelen_jn)))
-                   then put '22'x Koppelen_jn +(-1) '22'x "," @;
-                   else put Koppelen_jn @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Ovk_nr)
-         then put "," @;
-         else do;
-                 if find(Ovk_nr,'0A'x) > 0 and 2+klength(Ovk_nr) = klength(quote(trim(Ovk_nr)))
-                   then put '22'x Ovk_nr +(-1) '22'x "," @;
-                   else put Ovk_nr @;
               end;
        if missing(Reg_id)
          then put "," @;
@@ -19967,26 +19925,61 @@ data _null_;
                    then put '22'x Reg_nr +(-1) '22'x "," @;
                    else put Reg_nr @;
               end;
-       if missing(Rpe_datum_van)
+       if missing(Budget)
          then put "," @;
          else do;
-                 if find(Rpe_datum_van,'0A'x) > 0 and 2+klength(Rpe_datum_van) = klength(quote(trim(Rpe_datum_van)))
-                   then put '22'x Rpe_datum_van +(-1) '22'x "," @;
-                   else put Rpe_datum_van @;
+                 if find(Budget,'0A'x) > 0 and 2+klength(Budget) = klength(quote(trim(Budget)))
+                   then put '22'x Budget +(-1) '22'x "," @;
+                   else put Budget @;
               end;
-       if missing(Rpt_nr)
+       if missing(Budget_uitputting)
          then put "," @;
          else do;
-                 if find(Rpt_nr,'0A'x) > 0 and 2+klength(Rpt_nr) = klength(quote(trim(Rpt_nr)))
-                   then put '22'x Rpt_nr +(-1) '22'x "," @;
-                   else put Rpt_nr @;
+                 if find(Budget_uitputting,'0A'x) > 0 and 2+klength(Budget_uitputting) = klength(quote(trim(Budget_uitputting)))
+                   then put '22'x Budget_uitputting +(-1) '22'x "," @;
+                   else put Budget_uitputting @;
               end;
-       if missing(Rpt_nr_oud)
+       if missing(Koppelen_jn)
          then put "," @;
          else do;
-                 if find(Rpt_nr_oud,'0A'x) > 0 and 2+klength(Rpt_nr_oud) = klength(quote(trim(Rpt_nr_oud)))
-                   then put '22'x Rpt_nr_oud +(-1) '22'x "," @;
-                   else put Rpt_nr_oud @;
+                 if find(Koppelen_jn,'0A'x) > 0 and 2+klength(Koppelen_jn) = klength(quote(trim(Koppelen_jn)))
+                   then put '22'x Koppelen_jn +(-1) '22'x "," @;
+                   else put Koppelen_jn @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Correctie_budget)
+         then put "," @;
+         else do;
+                 if find(Correctie_budget,'0A'x) > 0 and 2+klength(Correctie_budget) = klength(quote(trim(Correctie_budget)))
+                   then put '22'x Correctie_budget +(-1) '22'x "," @;
+                   else put Correctie_budget @;
               end;
        if missing(Vrij_budget)
          then put "," @;
@@ -19994,6 +19987,13 @@ data _null_;
                  if find(Vrij_budget,'0A'x) > 0 and 2+klength(Vrij_budget) = klength(quote(trim(Vrij_budget)))
                    then put '22'x Vrij_budget +(-1) '22'x "," @;
                    else put Vrij_budget @;
+              end;
+       if missing(Rpt_nr_oud)
+         then put "," @;
+         else do;
+                 if find(Rpt_nr_oud,'0A'x) > 0 and 2+klength(Rpt_nr_oud) = klength(quote(trim(Rpt_nr_oud)))
+                   then put '22'x Rpt_nr_oud +(-1) '22'x "," @;
+                   else put Rpt_nr_oud @;
               end;
        put techId best12. ; 
        ; 
@@ -20030,23 +20030,23 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Cst_cd" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
           "Reg_id" 
-       ','
-          "Status_naar" 
        ','
           "Status_van" 
        ','
           "Statusgroep" 
+       ','
+          "Status_naar" 
+       ','
+          "Cst_cd" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
        ','
           "Xps_cd" 
        ','
@@ -20054,67 +20054,25 @@ data _null_;
        ; 
      end; 
    set  WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Cst_cd  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Reg_id best12. ;
-       format Status_naar  ;
        format Status_van  ;
        format Statusgroep  ;
+       format Status_naar  ;
+       format Cst_cd  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format Xps_cd  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Cst_cd)
-         then put "," @;
-         else do;
-                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
-                   then put '22'x Cst_cd +(-1) '22'x "," @;
-                   else put Cst_cd @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
        if missing(Reg_id)
          then put "," @;
          else do;
                  if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
                    then put '22'x Reg_id +(-1) '22'x "," @;
                    else put Reg_id @;
-              end;
-       if missing(Status_naar)
-         then put "," @;
-         else do;
-                 if find(Status_naar,'0A'x) > 0 and 2+klength(Status_naar) = klength(quote(trim(Status_naar)))
-                   then put '22'x Status_naar +(-1) '22'x "," @;
-                   else put Status_naar @;
               end;
        if missing(Status_van)
          then put "," @;
@@ -20129,6 +20087,48 @@ data _null_;
                  if find(Statusgroep,'0A'x) > 0 and 2+klength(Statusgroep) = klength(quote(trim(Statusgroep)))
                    then put '22'x Statusgroep +(-1) '22'x "," @;
                    else put Statusgroep @;
+              end;
+       if missing(Status_naar)
+         then put "," @;
+         else do;
+                 if find(Status_naar,'0A'x) > 0 and 2+klength(Status_naar) = klength(quote(trim(Status_naar)))
+                   then put '22'x Status_naar +(-1) '22'x "," @;
+                   else put Status_naar @;
+              end;
+       if missing(Cst_cd)
+         then put "," @;
+         else do;
+                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
+                   then put '22'x Cst_cd +(-1) '22'x "," @;
+                   else put Cst_cd @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        if missing(Xps_cd)
          then put "," @;
@@ -20172,49 +20172,49 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Begindatum" 
+          "Reg_id" 
        ','
           "Code" 
+       ','
+          "Begindatum" 
+       ','
+          "Inhoud" 
+       ','
+          "Toelichting" 
+       ','
+          "Einddatum" 
        ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
        ','
-          "Einddatum" 
-       ','
-          "Inhoud" 
-       ','
           "Mutatie_dat" 
        ','
           "Mutatie_user" 
-       ','
-          "Reg_id" 
-       ','
-          "Toelichting" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_RDM_VARIABELE   end=EFIEOD; 
-       format Begindatum B8601DT19. ;
+       format Reg_id best12. ;
        format Code  ;
+       format Begindatum B8601DT19. ;
+       format Inhoud  ;
+       format Toelichting  ;
+       format Einddatum B8601DT19. ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Einddatum B8601DT19. ;
-       format Inhoud  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Reg_id best12. ;
-       format Toelichting  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Begindatum)
+       if missing(Reg_id)
          then put "," @;
          else do;
-                 if find(Begindatum,'0A'x) > 0 and 2+klength(Begindatum) = klength(quote(trim(Begindatum)))
-                   then put '22'x Begindatum +(-1) '22'x "," @;
-                   else put Begindatum @;
+                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
+                   then put '22'x Reg_id +(-1) '22'x "," @;
+                   else put Reg_id @;
               end;
        if missing(Code)
          then put "," @;
@@ -20222,6 +20222,34 @@ data _null_;
                  if find(Code,'0A'x) > 0 and 2+klength(Code) = klength(quote(trim(Code)))
                    then put '22'x Code +(-1) '22'x "," @;
                    else put Code @;
+              end;
+       if missing(Begindatum)
+         then put "," @;
+         else do;
+                 if find(Begindatum,'0A'x) > 0 and 2+klength(Begindatum) = klength(quote(trim(Begindatum)))
+                   then put '22'x Begindatum +(-1) '22'x "," @;
+                   else put Begindatum @;
+              end;
+       if missing(Inhoud)
+         then put "," @;
+         else do;
+                 if find(Inhoud,'0A'x) > 0 and 2+klength(Inhoud) = klength(quote(trim(Inhoud)))
+                   then put '22'x Inhoud +(-1) '22'x "," @;
+                   else put Inhoud @;
+              end;
+       if missing(Toelichting)
+         then put "," @;
+         else do;
+                 if find(Toelichting,'0A'x) > 0 and 2+klength(Toelichting) = klength(quote(trim(Toelichting)))
+                   then put '22'x Toelichting +(-1) '22'x "," @;
+                   else put Toelichting @;
+              end;
+       if missing(Einddatum)
+         then put "," @;
+         else do;
+                 if find(Einddatum,'0A'x) > 0 and 2+klength(Einddatum) = klength(quote(trim(Einddatum)))
+                   then put '22'x Einddatum +(-1) '22'x "," @;
+                   else put Einddatum @;
               end;
        if missing(Creatie_dat)
          then put "," @;
@@ -20237,20 +20265,6 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Einddatum)
-         then put "," @;
-         else do;
-                 if find(Einddatum,'0A'x) > 0 and 2+klength(Einddatum) = klength(quote(trim(Einddatum)))
-                   then put '22'x Einddatum +(-1) '22'x "," @;
-                   else put Einddatum @;
-              end;
-       if missing(Inhoud)
-         then put "," @;
-         else do;
-                 if find(Inhoud,'0A'x) > 0 and 2+klength(Inhoud) = klength(quote(trim(Inhoud)))
-                   then put '22'x Inhoud +(-1) '22'x "," @;
-                   else put Inhoud @;
-              end;
        if missing(Mutatie_dat)
          then put "," @;
          else do;
@@ -20264,20 +20278,6 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
-              end;
-       if missing(Reg_id)
-         then put "," @;
-         else do;
-                 if find(Reg_id,'0A'x) > 0 and 2+klength(Reg_id) = klength(quote(trim(Reg_id)))
-                   then put '22'x Reg_id +(-1) '22'x "," @;
-                   else put Reg_id @;
-              end;
-       if missing(Toelichting)
-         then put "," @;
-         else do;
-                 if find(Toelichting,'0A'x) > 0 and 2+klength(Toelichting) = klength(quote(trim(Toelichting)))
-                   then put '22'x Toelichting +(-1) '22'x "," @;
-                   else put Toelichting @;
               end;
        put techId best12. ; 
        ; 
@@ -20312,37 +20312,51 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Startdatum" 
+       ','
+          "Einddatum" 
+       ','
           "Bsi_cd" 
        ','
           "Bsi_oms" 
        ','
-          "Creatie_dat" 
-       ','
           "Creatie_user" 
        ','
-          "Einddatum" 
-       ','
-          "Mutatie_dat" 
+          "Creatie_dat" 
        ','
           "Mutatie_user" 
        ','
-          "Startdatum" 
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_STM_BSI   end=EFIEOD; 
+       format Startdatum B8601DT19. ;
+       format Einddatum B8601DT19. ;
        format Bsi_cd  ;
        format Bsi_oms  ;
-       format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
-       format Einddatum B8601DT19. ;
-       format Mutatie_dat B8601DT19. ;
+       format Creatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Startdatum B8601DT19. ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Startdatum)
+         then put "," @;
+         else do;
+                 if find(Startdatum,'0A'x) > 0 and 2+klength(Startdatum) = klength(quote(trim(Startdatum)))
+                   then put '22'x Startdatum +(-1) '22'x "," @;
+                   else put Startdatum @;
+              end;
+       if missing(Einddatum)
+         then put "," @;
+         else do;
+                 if find(Einddatum,'0A'x) > 0 and 2+klength(Einddatum) = klength(quote(trim(Einddatum)))
+                   then put '22'x Einddatum +(-1) '22'x "," @;
+                   else put Einddatum @;
+              end;
        if missing(Bsi_cd)
          then put "," @;
          else do;
@@ -20357,13 +20371,6 @@ data _null_;
                    then put '22'x Bsi_oms +(-1) '22'x "," @;
                    else put Bsi_oms @;
               end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
        if missing(Creatie_user)
          then put "," @;
          else do;
@@ -20371,19 +20378,12 @@ data _null_;
                    then put '22'x Creatie_user +(-1) '22'x "," @;
                    else put Creatie_user @;
               end;
-       if missing(Einddatum)
+       if missing(Creatie_dat)
          then put "," @;
          else do;
-                 if find(Einddatum,'0A'x) > 0 and 2+klength(Einddatum) = klength(quote(trim(Einddatum)))
-                   then put '22'x Einddatum +(-1) '22'x "," @;
-                   else put Einddatum @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
               end;
        if missing(Mutatie_user)
          then put "," @;
@@ -20392,12 +20392,12 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Startdatum)
+       if missing(Mutatie_dat)
          then put "," @;
          else do;
-                 if find(Startdatum,'0A'x) > 0 and 2+klength(Startdatum) = klength(quote(trim(Startdatum)))
-                   then put '22'x Startdatum +(-1) '22'x "," @;
-                   else put Startdatum @;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -20430,59 +20430,31 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
           "Reactie_cd" 
        ','
           "Reactie_oms" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_STM_REACTIE   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
        format Reactie_cd  ;
        format Reactie_oms  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
        if missing(Reactie_cd)
          then put "," @;
          else do;
@@ -20496,6 +20468,34 @@ data _null_;
                  if find(Reactie_oms,'0A'x) > 0 and 2+klength(Reactie_oms) = klength(quote(trim(Reactie_oms)))
                    then put '22'x Reactie_oms +(-1) '22'x "," @;
                    else put Reactie_oms @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -20535,122 +20535,52 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Rol_cd" 
+       ','
+          "Rol_oms" 
+       ','
+          "Interne_rol" 
+       ','
+          "Externe_rol" 
+       ','
+          "Organisatie_rol" 
+       ','
           "Controller" 
+       ','
+          "Creatie_user" 
        ','
           "Creatie_dat" 
        ','
-          "Creatie_user" 
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
+       ','
+          "Type_rol" 
        ','
           "Ed_rol_cd" 
        ','
           "Ed_rol_oms" 
        ','
-          "Externe_rol" 
-       ','
-          "Interne_rol" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
-       ','
-          "Organisatie_rol" 
-       ','
-          "Rol_cd" 
-       ','
-          "Rol_oms" 
-       ','
-          "Type_rol" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_STM_ROL   end=EFIEOD; 
-       format Controller  ;
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Ed_rol_cd best12. ;
-       format Ed_rol_oms  ;
-       format Externe_rol  ;
-       format Interne_rol  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Organisatie_rol  ;
        format Rol_cd  ;
        format Rol_oms  ;
+       format Interne_rol  ;
+       format Externe_rol  ;
+       format Organisatie_rol  ;
+       format Controller  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format Type_rol  ;
+       format Ed_rol_cd best12. ;
+       format Ed_rol_oms  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Controller)
-         then put "," @;
-         else do;
-                 if find(Controller,'0A'x) > 0 and 2+klength(Controller) = klength(quote(trim(Controller)))
-                   then put '22'x Controller +(-1) '22'x "," @;
-                   else put Controller @;
-              end;
-       if missing(Creatie_dat)
-         then put "," @;
-         else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Ed_rol_cd)
-         then put "," @;
-         else do;
-                 if find(Ed_rol_cd,'0A'x) > 0 and 2+klength(Ed_rol_cd) = klength(quote(trim(Ed_rol_cd)))
-                   then put '22'x Ed_rol_cd +(-1) '22'x "," @;
-                   else put Ed_rol_cd @;
-              end;
-       if missing(Ed_rol_oms)
-         then put "," @;
-         else do;
-                 if find(Ed_rol_oms,'0A'x) > 0 and 2+klength(Ed_rol_oms) = klength(quote(trim(Ed_rol_oms)))
-                   then put '22'x Ed_rol_oms +(-1) '22'x "," @;
-                   else put Ed_rol_oms @;
-              end;
-       if missing(Externe_rol)
-         then put "," @;
-         else do;
-                 if find(Externe_rol,'0A'x) > 0 and 2+klength(Externe_rol) = klength(quote(trim(Externe_rol)))
-                   then put '22'x Externe_rol +(-1) '22'x "," @;
-                   else put Externe_rol @;
-              end;
-       if missing(Interne_rol)
-         then put "," @;
-         else do;
-                 if find(Interne_rol,'0A'x) > 0 and 2+klength(Interne_rol) = klength(quote(trim(Interne_rol)))
-                   then put '22'x Interne_rol +(-1) '22'x "," @;
-                   else put Interne_rol @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
-              end;
-       if missing(Organisatie_rol)
-         then put "," @;
-         else do;
-                 if find(Organisatie_rol,'0A'x) > 0 and 2+klength(Organisatie_rol) = klength(quote(trim(Organisatie_rol)))
-                   then put '22'x Organisatie_rol +(-1) '22'x "," @;
-                   else put Organisatie_rol @;
-              end;
        if missing(Rol_cd)
          then put "," @;
          else do;
@@ -20665,12 +20595,82 @@ data _null_;
                    then put '22'x Rol_oms +(-1) '22'x "," @;
                    else put Rol_oms @;
               end;
+       if missing(Interne_rol)
+         then put "," @;
+         else do;
+                 if find(Interne_rol,'0A'x) > 0 and 2+klength(Interne_rol) = klength(quote(trim(Interne_rol)))
+                   then put '22'x Interne_rol +(-1) '22'x "," @;
+                   else put Interne_rol @;
+              end;
+       if missing(Externe_rol)
+         then put "," @;
+         else do;
+                 if find(Externe_rol,'0A'x) > 0 and 2+klength(Externe_rol) = klength(quote(trim(Externe_rol)))
+                   then put '22'x Externe_rol +(-1) '22'x "," @;
+                   else put Externe_rol @;
+              end;
+       if missing(Organisatie_rol)
+         then put "," @;
+         else do;
+                 if find(Organisatie_rol,'0A'x) > 0 and 2+klength(Organisatie_rol) = klength(quote(trim(Organisatie_rol)))
+                   then put '22'x Organisatie_rol +(-1) '22'x "," @;
+                   else put Organisatie_rol @;
+              end;
+       if missing(Controller)
+         then put "," @;
+         else do;
+                 if find(Controller,'0A'x) > 0 and 2+klength(Controller) = klength(quote(trim(Controller)))
+                   then put '22'x Controller +(-1) '22'x "," @;
+                   else put Controller @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
+              end;
        if missing(Type_rol)
          then put "," @;
          else do;
                  if find(Type_rol,'0A'x) > 0 and 2+klength(Type_rol) = klength(quote(trim(Type_rol)))
                    then put '22'x Type_rol +(-1) '22'x "," @;
                    else put Type_rol @;
+              end;
+       if missing(Ed_rol_cd)
+         then put "," @;
+         else do;
+                 if find(Ed_rol_cd,'0A'x) > 0 and 2+klength(Ed_rol_cd) = klength(quote(trim(Ed_rol_cd)))
+                   then put '22'x Ed_rol_cd +(-1) '22'x "," @;
+                   else put Ed_rol_cd @;
+              end;
+       if missing(Ed_rol_oms)
+         then put "," @;
+         else do;
+                 if find(Ed_rol_oms,'0A'x) > 0 and 2+klength(Ed_rol_oms) = klength(quote(trim(Ed_rol_oms)))
+                   then put '22'x Ed_rol_oms +(-1) '22'x "," @;
+                   else put Ed_rol_oms @;
               end;
        put techId best12. ; 
        ; 
@@ -20703,6 +20703,10 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
+          "Sbi_cd" 
+       ','
+          "Sbi_oms" 
+       ','
           "Creatie_dat" 
        ','
           "Creatie_user" 
@@ -20711,23 +20715,33 @@ data _null_;
        ','
           "Mutatie_user" 
        ','
-          "Sbi_cd" 
-       ','
-          "Sbi_oms" 
-       ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_STM_SBI   end=EFIEOD; 
+       format Sbi_cd best12. ;
+       format Sbi_oms  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Mutatie_dat B8601DT19. ;
        format Mutatie_user  ;
-       format Sbi_cd best12. ;
-       format Sbi_oms  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
+       if missing(Sbi_cd)
+         then put "," @;
+         else do;
+                 if find(Sbi_cd,'0A'x) > 0 and 2+klength(Sbi_cd) = klength(quote(trim(Sbi_cd)))
+                   then put '22'x Sbi_cd +(-1) '22'x "," @;
+                   else put Sbi_cd @;
+              end;
+       if missing(Sbi_oms)
+         then put "," @;
+         else do;
+                 if find(Sbi_oms,'0A'x) > 0 and 2+klength(Sbi_oms) = klength(quote(trim(Sbi_oms)))
+                   then put '22'x Sbi_oms +(-1) '22'x "," @;
+                   else put Sbi_oms @;
+              end;
        if missing(Creatie_dat)
          then put "," @;
          else do;
@@ -20755,20 +20769,6 @@ data _null_;
                  if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
-              end;
-       if missing(Sbi_cd)
-         then put "," @;
-         else do;
-                 if find(Sbi_cd,'0A'x) > 0 and 2+klength(Sbi_cd) = klength(quote(trim(Sbi_cd)))
-                   then put '22'x Sbi_cd +(-1) '22'x "," @;
-                   else put Sbi_cd @;
-              end;
-       if missing(Sbi_oms)
-         then put "," @;
-         else do;
-                 if find(Sbi_oms,'0A'x) > 0 and 2+klength(Sbi_oms) = klength(quote(trim(Sbi_oms)))
-                   then put '22'x Sbi_oms +(-1) '22'x "," @;
-                   else put Sbi_oms @;
               end;
        put techId best12. ; 
        ; 
@@ -20805,77 +20805,56 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
+          "Sts_cd" 
        ','
-          "Creatie_user" 
-       ','
-          "Eindstatus" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
+          "Sts_oms" 
        ','
           "Ssg_cd" 
        ','
-          "Sts_cd" 
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
        ','
           "Sts_e_indienen" 
        ','
-          "Sts_e_loket" 
+          "Eindstatus" 
        ','
-          "Sts_oms" 
+          "Sts_e_loket" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_STM_STATUS   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Eindstatus  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
-       format Ssg_cd  ;
        format Sts_cd  ;
-       format Sts_e_indienen  ;
-       format Sts_e_loket  ;
        format Sts_oms  ;
+       format Ssg_cd  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
+       format Sts_e_indienen  ;
+       format Eindstatus  ;
+       format Sts_e_loket  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
+       if missing(Sts_cd)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
+                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
+                   then put '22'x Sts_cd +(-1) '22'x "," @;
+                   else put Sts_cd @;
               end;
-       if missing(Creatie_user)
+       if missing(Sts_oms)
          then put "," @;
          else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Eindstatus)
-         then put "," @;
-         else do;
-                 if find(Eindstatus,'0A'x) > 0 and 2+klength(Eindstatus) = klength(quote(trim(Eindstatus)))
-                   then put '22'x Eindstatus +(-1) '22'x "," @;
-                   else put Eindstatus @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
+                 if find(Sts_oms,'0A'x) > 0 and 2+klength(Sts_oms) = klength(quote(trim(Sts_oms)))
+                   then put '22'x Sts_oms +(-1) '22'x "," @;
+                   else put Sts_oms @;
               end;
        if missing(Ssg_cd)
          then put "," @;
@@ -20884,12 +20863,33 @@ data _null_;
                    then put '22'x Ssg_cd +(-1) '22'x "," @;
                    else put Ssg_cd @;
               end;
-       if missing(Sts_cd)
+       if missing(Creatie_user)
          then put "," @;
          else do;
-                 if find(Sts_cd,'0A'x) > 0 and 2+klength(Sts_cd) = klength(quote(trim(Sts_cd)))
-                   then put '22'x Sts_cd +(-1) '22'x "," @;
-                   else put Sts_cd @;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        if missing(Sts_e_indienen)
          then put "," @;
@@ -20898,19 +20898,19 @@ data _null_;
                    then put '22'x Sts_e_indienen +(-1) '22'x "," @;
                    else put Sts_e_indienen @;
               end;
+       if missing(Eindstatus)
+         then put "," @;
+         else do;
+                 if find(Eindstatus,'0A'x) > 0 and 2+klength(Eindstatus) = klength(quote(trim(Eindstatus)))
+                   then put '22'x Eindstatus +(-1) '22'x "," @;
+                   else put Eindstatus @;
+              end;
        if missing(Sts_e_loket)
          then put "," @;
          else do;
                  if find(Sts_e_loket,'0A'x) > 0 and 2+klength(Sts_e_loket) = klength(quote(trim(Sts_e_loket)))
                    then put '22'x Sts_e_loket +(-1) '22'x "," @;
                    else put Sts_e_loket @;
-              end;
-       if missing(Sts_oms)
-         then put "," @;
-         else do;
-                 if find(Sts_oms,'0A'x) > 0 and 2+klength(Sts_oms) = klength(quote(trim(Sts_oms)))
-                   then put '22'x Sts_oms +(-1) '22'x "," @;
-                   else put Sts_oms @;
               end;
        put techId best12. ; 
        ; 
@@ -20945,71 +20945,43 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Creatie_dat" 
-       ','
-          "Creatie_user" 
-       ','
-          "Cst_cd" 
-       ','
-          "Mutatie_dat" 
-       ','
-          "Mutatie_user" 
+          "Van_status" 
        ','
           "Naar_status" 
        ','
           "Ssg_cd" 
        ','
-          "Van_status" 
+          "Cst_cd" 
+       ','
+          "Creatie_user" 
+       ','
+          "Creatie_dat" 
+       ','
+          "Mutatie_user" 
+       ','
+          "Mutatie_dat" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
-       format Creatie_user  ;
-       format Cst_cd  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_user  ;
+       format Van_status  ;
        format Naar_status  ;
        format Ssg_cd  ;
-       format Van_status  ;
+       format Cst_cd  ;
+       format Creatie_user  ;
+       format Creatie_dat B8601DT19. ;
+       format Mutatie_user  ;
+       format Mutatie_dat B8601DT19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Creatie_dat)
+       if missing(Van_status)
          then put "," @;
          else do;
-                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
-                   then put '22'x Creatie_dat +(-1) '22'x "," @;
-                   else put Creatie_dat @;
-              end;
-       if missing(Creatie_user)
-         then put "," @;
-         else do;
-                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
-                   then put '22'x Creatie_user +(-1) '22'x "," @;
-                   else put Creatie_user @;
-              end;
-       if missing(Cst_cd)
-         then put "," @;
-         else do;
-                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
-                   then put '22'x Cst_cd +(-1) '22'x "," @;
-                   else put Cst_cd @;
-              end;
-       if missing(Mutatie_dat)
-         then put "," @;
-         else do;
-                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
-                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
-                   else put Mutatie_dat @;
-              end;
-       if missing(Mutatie_user)
-         then put "," @;
-         else do;
-                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
-                   then put '22'x Mutatie_user +(-1) '22'x "," @;
-                   else put Mutatie_user @;
+                 if find(Van_status,'0A'x) > 0 and 2+klength(Van_status) = klength(quote(trim(Van_status)))
+                   then put '22'x Van_status +(-1) '22'x "," @;
+                   else put Van_status @;
               end;
        if missing(Naar_status)
          then put "," @;
@@ -21025,12 +20997,40 @@ data _null_;
                    then put '22'x Ssg_cd +(-1) '22'x "," @;
                    else put Ssg_cd @;
               end;
-       if missing(Van_status)
+       if missing(Cst_cd)
          then put "," @;
          else do;
-                 if find(Van_status,'0A'x) > 0 and 2+klength(Van_status) = klength(quote(trim(Van_status)))
-                   then put '22'x Van_status +(-1) '22'x "," @;
-                   else put Van_status @;
+                 if find(Cst_cd,'0A'x) > 0 and 2+klength(Cst_cd) = klength(quote(trim(Cst_cd)))
+                   then put '22'x Cst_cd +(-1) '22'x "," @;
+                   else put Cst_cd @;
+              end;
+       if missing(Creatie_user)
+         then put "," @;
+         else do;
+                 if find(Creatie_user,'0A'x) > 0 and 2+klength(Creatie_user) = klength(quote(trim(Creatie_user)))
+                   then put '22'x Creatie_user +(-1) '22'x "," @;
+                   else put Creatie_user @;
+              end;
+       if missing(Creatie_dat)
+         then put "," @;
+         else do;
+                 if find(Creatie_dat,'0A'x) > 0 and 2+klength(Creatie_dat) = klength(quote(trim(Creatie_dat)))
+                   then put '22'x Creatie_dat +(-1) '22'x "," @;
+                   else put Creatie_dat @;
+              end;
+       if missing(Mutatie_user)
+         then put "," @;
+         else do;
+                 if find(Mutatie_user,'0A'x) > 0 and 2+klength(Mutatie_user) = klength(quote(trim(Mutatie_user)))
+                   then put '22'x Mutatie_user +(-1) '22'x "," @;
+                   else put Mutatie_user @;
+              end;
+       if missing(Mutatie_dat)
+         then put "," @;
+         else do;
+                 if find(Mutatie_dat,'0A'x) > 0 and 2+klength(Mutatie_dat) = klength(quote(trim(Mutatie_dat)))
+                   then put '22'x Mutatie_dat +(-1) '22'x "," @;
+                   else put Mutatie_dat @;
               end;
        put techId best12. ; 
        ; 
@@ -21061,32 +21061,25 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Fysieke_naam" 
-       ','
           "Vkt_id" 
        ','
-          "Volgorde" 
+          "Fysieke_naam" 
        ','
           "Waarde" 
+       ','
+          "Volgorde" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE   end=EFIEOD; 
-       format Fysieke_naam  ;
        format Vkt_id best12. ;
-       format Volgorde best12. ;
+       format Fysieke_naam  ;
        format Waarde  ;
+       format Volgorde best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Fysieke_naam)
-         then put "," @;
-         else do;
-                 if find(Fysieke_naam,'0A'x) > 0 and 2+klength(Fysieke_naam) = klength(quote(trim(Fysieke_naam)))
-                   then put '22'x Fysieke_naam +(-1) '22'x "," @;
-                   else put Fysieke_naam @;
-              end;
        if missing(Vkt_id)
          then put "," @;
          else do;
@@ -21094,12 +21087,12 @@ data _null_;
                    then put '22'x Vkt_id +(-1) '22'x "," @;
                    else put Vkt_id @;
               end;
-       if missing(Volgorde)
+       if missing(Fysieke_naam)
          then put "," @;
          else do;
-                 if find(Volgorde,'0A'x) > 0 and 2+klength(Volgorde) = klength(quote(trim(Volgorde)))
-                   then put '22'x Volgorde +(-1) '22'x "," @;
-                   else put Volgorde @;
+                 if find(Fysieke_naam,'0A'x) > 0 and 2+klength(Fysieke_naam) = klength(quote(trim(Fysieke_naam)))
+                   then put '22'x Fysieke_naam +(-1) '22'x "," @;
+                   else put Fysieke_naam @;
               end;
        if missing(Waarde)
          then put "," @;
@@ -21107,6 +21100,13 @@ data _null_;
                  if find(Waarde,'0A'x) > 0 and 2+klength(Waarde) = klength(quote(trim(Waarde)))
                    then put '22'x Waarde +(-1) '22'x "," @;
                    else put Waarde @;
+              end;
+       if missing(Volgorde)
+         then put "," @;
+         else do;
+                 if find(Volgorde,'0A'x) > 0 and 2+klength(Volgorde) = klength(quote(trim(Volgorde)))
+                   then put '22'x Volgorde +(-1) '22'x "," @;
+                   else put Volgorde @;
               end;
        put techId best12. ; 
        ; 
@@ -21144,66 +21144,52 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Datum_einde" 
-       ','
-          "Datum_start" 
-       ','
-          "Default_waarde" 
+          "Vkt_id" 
        ','
           "Fysieke_naam" 
        ','
-          "Helptekst" 
+          "Datum_start" 
        ','
-          "Max_waarde" 
+          "Datum_einde" 
        ','
-          "Min_waarde" 
-       ','
-          "Prompt" 
+          "Volgorde" 
        ','
           "Verplicht_jn" 
        ','
-          "Vkt_id" 
+          "Prompt" 
        ','
-          "Volgorde" 
+          "Min_waarde" 
+       ','
+          "Max_waarde" 
+       ','
+          "Default_waarde" 
+       ','
+          "Helptekst" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD   end=EFIEOD; 
-       format Datum_einde B8601DT19. ;
-       format Datum_start B8601DT19. ;
-       format Default_waarde  ;
-       format Fysieke_naam  ;
-       format Helptekst  ;
-       format Max_waarde best12. ;
-       format Min_waarde best12. ;
-       format Prompt  ;
-       format Verplicht_jn  ;
        format Vkt_id best12. ;
+       format Fysieke_naam  ;
+       format Datum_start B8601DT19. ;
+       format Datum_einde B8601DT19. ;
        format Volgorde best12. ;
+       format Verplicht_jn  ;
+       format Prompt  ;
+       format Min_waarde best12. ;
+       format Max_waarde best12. ;
+       format Default_waarde  ;
+       format Helptekst  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Datum_einde)
+       if missing(Vkt_id)
          then put "," @;
          else do;
-                 if find(Datum_einde,'0A'x) > 0 and 2+klength(Datum_einde) = klength(quote(trim(Datum_einde)))
-                   then put '22'x Datum_einde +(-1) '22'x "," @;
-                   else put Datum_einde @;
-              end;
-       if missing(Datum_start)
-         then put "," @;
-         else do;
-                 if find(Datum_start,'0A'x) > 0 and 2+klength(Datum_start) = klength(quote(trim(Datum_start)))
-                   then put '22'x Datum_start +(-1) '22'x "," @;
-                   else put Datum_start @;
-              end;
-       if missing(Default_waarde)
-         then put "," @;
-         else do;
-                 if find(Default_waarde,'0A'x) > 0 and 2+klength(Default_waarde) = klength(quote(trim(Default_waarde)))
-                   then put '22'x Default_waarde +(-1) '22'x "," @;
-                   else put Default_waarde @;
+                 if find(Vkt_id,'0A'x) > 0 and 2+klength(Vkt_id) = klength(quote(trim(Vkt_id)))
+                   then put '22'x Vkt_id +(-1) '22'x "," @;
+                   else put Vkt_id @;
               end;
        if missing(Fysieke_naam)
          then put "," @;
@@ -21212,33 +21198,26 @@ data _null_;
                    then put '22'x Fysieke_naam +(-1) '22'x "," @;
                    else put Fysieke_naam @;
               end;
-       if missing(Helptekst)
+       if missing(Datum_start)
          then put "," @;
          else do;
-                 if find(Helptekst,'0A'x) > 0 and 2+klength(Helptekst) = klength(quote(trim(Helptekst)))
-                   then put '22'x Helptekst +(-1) '22'x "," @;
-                   else put Helptekst @;
+                 if find(Datum_start,'0A'x) > 0 and 2+klength(Datum_start) = klength(quote(trim(Datum_start)))
+                   then put '22'x Datum_start +(-1) '22'x "," @;
+                   else put Datum_start @;
               end;
-       if missing(Max_waarde)
+       if missing(Datum_einde)
          then put "," @;
          else do;
-                 if find(Max_waarde,'0A'x) > 0 and 2+klength(Max_waarde) = klength(quote(trim(Max_waarde)))
-                   then put '22'x Max_waarde +(-1) '22'x "," @;
-                   else put Max_waarde @;
+                 if find(Datum_einde,'0A'x) > 0 and 2+klength(Datum_einde) = klength(quote(trim(Datum_einde)))
+                   then put '22'x Datum_einde +(-1) '22'x "," @;
+                   else put Datum_einde @;
               end;
-       if missing(Min_waarde)
+       if missing(Volgorde)
          then put "," @;
          else do;
-                 if find(Min_waarde,'0A'x) > 0 and 2+klength(Min_waarde) = klength(quote(trim(Min_waarde)))
-                   then put '22'x Min_waarde +(-1) '22'x "," @;
-                   else put Min_waarde @;
-              end;
-       if missing(Prompt)
-         then put "," @;
-         else do;
-                 if find(Prompt,'0A'x) > 0 and 2+klength(Prompt) = klength(quote(trim(Prompt)))
-                   then put '22'x Prompt +(-1) '22'x "," @;
-                   else put Prompt @;
+                 if find(Volgorde,'0A'x) > 0 and 2+klength(Volgorde) = klength(quote(trim(Volgorde)))
+                   then put '22'x Volgorde +(-1) '22'x "," @;
+                   else put Volgorde @;
               end;
        if missing(Verplicht_jn)
          then put "," @;
@@ -21247,19 +21226,40 @@ data _null_;
                    then put '22'x Verplicht_jn +(-1) '22'x "," @;
                    else put Verplicht_jn @;
               end;
-       if missing(Vkt_id)
+       if missing(Prompt)
          then put "," @;
          else do;
-                 if find(Vkt_id,'0A'x) > 0 and 2+klength(Vkt_id) = klength(quote(trim(Vkt_id)))
-                   then put '22'x Vkt_id +(-1) '22'x "," @;
-                   else put Vkt_id @;
+                 if find(Prompt,'0A'x) > 0 and 2+klength(Prompt) = klength(quote(trim(Prompt)))
+                   then put '22'x Prompt +(-1) '22'x "," @;
+                   else put Prompt @;
               end;
-       if missing(Volgorde)
+       if missing(Min_waarde)
          then put "," @;
          else do;
-                 if find(Volgorde,'0A'x) > 0 and 2+klength(Volgorde) = klength(quote(trim(Volgorde)))
-                   then put '22'x Volgorde +(-1) '22'x "," @;
-                   else put Volgorde @;
+                 if find(Min_waarde,'0A'x) > 0 and 2+klength(Min_waarde) = klength(quote(trim(Min_waarde)))
+                   then put '22'x Min_waarde +(-1) '22'x "," @;
+                   else put Min_waarde @;
+              end;
+       if missing(Max_waarde)
+         then put "," @;
+         else do;
+                 if find(Max_waarde,'0A'x) > 0 and 2+klength(Max_waarde) = klength(quote(trim(Max_waarde)))
+                   then put '22'x Max_waarde +(-1) '22'x "," @;
+                   else put Max_waarde @;
+              end;
+       if missing(Default_waarde)
+         then put "," @;
+         else do;
+                 if find(Default_waarde,'0A'x) > 0 and 2+klength(Default_waarde) = klength(quote(trim(Default_waarde)))
+                   then put '22'x Default_waarde +(-1) '22'x "," @;
+                   else put Default_waarde @;
+              end;
+       if missing(Helptekst)
+         then put "," @;
+         else do;
+                 if find(Helptekst,'0A'x) > 0 and 2+klength(Helptekst) = klength(quote(trim(Helptekst)))
+                   then put '22'x Helptekst +(-1) '22'x "," @;
+                   else put Helptekst @;
               end;
        put techId best12. ; 
        ; 
@@ -22268,13 +22268,13 @@ data _null_;
        ','
           "VGS_ID" 
        ','
-          "VVG_DOS_ID" 
-       ','
           "VVG_VKM_VAR_GEGEVENS_DOS" 
        ','
           "VVG_VKM_VAR_GEGEVENS_PRG" 
        ','
           "VVG_VKT_ID" 
+       ','
+          "VVG_DOS_ID" 
        ','
           "techId" 
        ; 
@@ -22606,10 +22606,10 @@ data _null_;
        format VARCHAR_60_39  ;
        format VARCHAR_60_40  ;
        format VGS_ID best12. ;
-       format VVG_DOS_ID best12. ;
        format VVG_VKM_VAR_GEGEVENS_DOS  ;
        format VVG_VKM_VAR_GEGEVENS_PRG  ;
        format VVG_VKT_ID best12. ;
+       format VVG_DOS_ID best12. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -24895,13 +24895,6 @@ data _null_;
                    then put '22'x VGS_ID +(-1) '22'x "," @;
                    else put VGS_ID @;
               end;
-       if missing(VVG_DOS_ID)
-         then put "," @;
-         else do;
-                 if find(VVG_DOS_ID,'0A'x) > 0 and 2+klength(VVG_DOS_ID) = klength(quote(trim(VVG_DOS_ID)))
-                   then put '22'x VVG_DOS_ID +(-1) '22'x "," @;
-                   else put VVG_DOS_ID @;
-              end;
        if missing(VVG_VKM_VAR_GEGEVENS_DOS)
          then put "," @;
          else do;
@@ -24922,6 +24915,13 @@ data _null_;
                  if find(VVG_VKT_ID,'0A'x) > 0 and 2+klength(VVG_VKT_ID) = klength(quote(trim(VVG_VKT_ID)))
                    then put '22'x VVG_VKT_ID +(-1) '22'x "," @;
                    else put VVG_VKT_ID @;
+              end;
+       if missing(VVG_DOS_ID)
+         then put "," @;
+         else do;
+                 if find(VVG_DOS_ID,'0A'x) > 0 and 2+klength(VVG_DOS_ID) = klength(quote(trim(VVG_DOS_ID)))
+                   then put '22'x VVG_DOS_ID +(-1) '22'x "," @;
+                   else put VVG_DOS_ID @;
               end;
        put techId best12. ; 
        ; 
@@ -24964,27 +24964,27 @@ data _null_;
     if _n_ = 1 then        /* write column names or labels */ 
      do; 
        put 
-          "Copy_jn" 
-       ','
-          "Datum_einde" 
-       ','
-          "Datum_start" 
-       ','
-          "Geblokkeerd" 
+          "Vkt_id" 
        ','
           "Kaart_naam" 
        ','
+          "Datum_start" 
+       ','
+          "Datum_einde" 
+       ','
           "Omschrijving" 
        ','
-          "Prg_id" 
+          "Vkm_var_kaart_dos" 
        ','
-          "Reg_Nr" 
+          "Vkm_var_kaart_prg" 
+       ','
+          "Prg_id" 
        ','
           "Reg_id" 
        ','
           "Reg_id_regpar" 
        ','
-          "Vkm_var_kaart_dos" 
+          "Reg_Nr" 
        ','
           "Vkm_var_kaart_dos_prg" 
        ','
@@ -24992,60 +24992,39 @@ data _null_;
        ','
           "Vkm_var_kaart_dos_regpar" 
        ','
-          "Vkm_var_kaart_prg" 
+          "Geblokkeerd" 
        ','
-          "Vkt_id" 
+          "Copy_jn" 
        ','
           "techId" 
        ; 
      end; 
    set  WORK.BAS_VKM_VAR_KAART   end=EFIEOD; 
-       format Copy_jn  ;
-       format Datum_einde B8601DT19. ;
-       format Datum_start B8601DT19. ;
-       format Geblokkeerd  ;
+       format Vkt_id best12. ;
        format Kaart_naam  ;
+       format Datum_start B8601DT19. ;
+       format Datum_einde B8601DT19. ;
        format Omschrijving  ;
+       format Vkm_var_kaart_dos  ;
+       format Vkm_var_kaart_prg  ;
        format Prg_id best12. ;
-       format Reg_Nr best12. ;
        format Reg_id best12. ;
        format Reg_id_regpar best12. ;
-       format Vkm_var_kaart_dos  ;
+       format Reg_Nr best12. ;
        format Vkm_var_kaart_dos_prg  ;
        format Vkm_var_kaart_dos_reg  ;
        format Vkm_var_kaart_dos_regpar  ;
-       format Vkm_var_kaart_prg  ;
-       format Vkt_id best12. ;
+       format Geblokkeerd  ;
+       format Copy_jn  ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
-       if missing(Copy_jn)
+       if missing(Vkt_id)
          then put "," @;
          else do;
-                 if find(Copy_jn,'0A'x) > 0 and 2+klength(Copy_jn) = klength(quote(trim(Copy_jn)))
-                   then put '22'x Copy_jn +(-1) '22'x "," @;
-                   else put Copy_jn @;
-              end;
-       if missing(Datum_einde)
-         then put "," @;
-         else do;
-                 if find(Datum_einde,'0A'x) > 0 and 2+klength(Datum_einde) = klength(quote(trim(Datum_einde)))
-                   then put '22'x Datum_einde +(-1) '22'x "," @;
-                   else put Datum_einde @;
-              end;
-       if missing(Datum_start)
-         then put "," @;
-         else do;
-                 if find(Datum_start,'0A'x) > 0 and 2+klength(Datum_start) = klength(quote(trim(Datum_start)))
-                   then put '22'x Datum_start +(-1) '22'x "," @;
-                   else put Datum_start @;
-              end;
-       if missing(Geblokkeerd)
-         then put "," @;
-         else do;
-                 if find(Geblokkeerd,'0A'x) > 0 and 2+klength(Geblokkeerd) = klength(quote(trim(Geblokkeerd)))
-                   then put '22'x Geblokkeerd +(-1) '22'x "," @;
-                   else put Geblokkeerd @;
+                 if find(Vkt_id,'0A'x) > 0 and 2+klength(Vkt_id) = klength(quote(trim(Vkt_id)))
+                   then put '22'x Vkt_id +(-1) '22'x "," @;
+                   else put Vkt_id @;
               end;
        if missing(Kaart_naam)
          then put "," @;
@@ -25054,6 +25033,20 @@ data _null_;
                    then put '22'x Kaart_naam +(-1) '22'x "," @;
                    else put Kaart_naam @;
               end;
+       if missing(Datum_start)
+         then put "," @;
+         else do;
+                 if find(Datum_start,'0A'x) > 0 and 2+klength(Datum_start) = klength(quote(trim(Datum_start)))
+                   then put '22'x Datum_start +(-1) '22'x "," @;
+                   else put Datum_start @;
+              end;
+       if missing(Datum_einde)
+         then put "," @;
+         else do;
+                 if find(Datum_einde,'0A'x) > 0 and 2+klength(Datum_einde) = klength(quote(trim(Datum_einde)))
+                   then put '22'x Datum_einde +(-1) '22'x "," @;
+                   else put Datum_einde @;
+              end;
        if missing(Omschrijving)
          then put "," @;
          else do;
@@ -25061,19 +25054,26 @@ data _null_;
                    then put '22'x Omschrijving +(-1) '22'x "," @;
                    else put Omschrijving @;
               end;
+       if missing(Vkm_var_kaart_dos)
+         then put "," @;
+         else do;
+                 if find(Vkm_var_kaart_dos,'0A'x) > 0 and 2+klength(Vkm_var_kaart_dos) = klength(quote(trim(Vkm_var_kaart_dos)))
+                   then put '22'x Vkm_var_kaart_dos +(-1) '22'x "," @;
+                   else put Vkm_var_kaart_dos @;
+              end;
+       if missing(Vkm_var_kaart_prg)
+         then put "," @;
+         else do;
+                 if find(Vkm_var_kaart_prg,'0A'x) > 0 and 2+klength(Vkm_var_kaart_prg) = klength(quote(trim(Vkm_var_kaart_prg)))
+                   then put '22'x Vkm_var_kaart_prg +(-1) '22'x "," @;
+                   else put Vkm_var_kaart_prg @;
+              end;
        if missing(Prg_id)
          then put "," @;
          else do;
                  if find(Prg_id,'0A'x) > 0 and 2+klength(Prg_id) = klength(quote(trim(Prg_id)))
                    then put '22'x Prg_id +(-1) '22'x "," @;
                    else put Prg_id @;
-              end;
-       if missing(Reg_Nr)
-         then put "," @;
-         else do;
-                 if find(Reg_Nr,'0A'x) > 0 and 2+klength(Reg_Nr) = klength(quote(trim(Reg_Nr)))
-                   then put '22'x Reg_Nr +(-1) '22'x "," @;
-                   else put Reg_Nr @;
               end;
        if missing(Reg_id)
          then put "," @;
@@ -25089,12 +25089,12 @@ data _null_;
                    then put '22'x Reg_id_regpar +(-1) '22'x "," @;
                    else put Reg_id_regpar @;
               end;
-       if missing(Vkm_var_kaart_dos)
+       if missing(Reg_Nr)
          then put "," @;
          else do;
-                 if find(Vkm_var_kaart_dos,'0A'x) > 0 and 2+klength(Vkm_var_kaart_dos) = klength(quote(trim(Vkm_var_kaart_dos)))
-                   then put '22'x Vkm_var_kaart_dos +(-1) '22'x "," @;
-                   else put Vkm_var_kaart_dos @;
+                 if find(Reg_Nr,'0A'x) > 0 and 2+klength(Reg_Nr) = klength(quote(trim(Reg_Nr)))
+                   then put '22'x Reg_Nr +(-1) '22'x "," @;
+                   else put Reg_Nr @;
               end;
        if missing(Vkm_var_kaart_dos_prg)
          then put "," @;
@@ -25117,19 +25117,19 @@ data _null_;
                    then put '22'x Vkm_var_kaart_dos_regpar +(-1) '22'x "," @;
                    else put Vkm_var_kaart_dos_regpar @;
               end;
-       if missing(Vkm_var_kaart_prg)
+       if missing(Geblokkeerd)
          then put "," @;
          else do;
-                 if find(Vkm_var_kaart_prg,'0A'x) > 0 and 2+klength(Vkm_var_kaart_prg) = klength(quote(trim(Vkm_var_kaart_prg)))
-                   then put '22'x Vkm_var_kaart_prg +(-1) '22'x "," @;
-                   else put Vkm_var_kaart_prg @;
+                 if find(Geblokkeerd,'0A'x) > 0 and 2+klength(Geblokkeerd) = klength(quote(trim(Geblokkeerd)))
+                   then put '22'x Geblokkeerd +(-1) '22'x "," @;
+                   else put Geblokkeerd @;
               end;
-       if missing(Vkt_id)
+       if missing(Copy_jn)
          then put "," @;
          else do;
-                 if find(Vkt_id,'0A'x) > 0 and 2+klength(Vkt_id) = klength(quote(trim(Vkt_id)))
-                   then put '22'x Vkt_id +(-1) '22'x "," @;
-                   else put Vkt_id @;
+                 if find(Copy_jn,'0A'x) > 0 and 2+klength(Copy_jn) = klength(quote(trim(Copy_jn)))
+                   then put '22'x Copy_jn +(-1) '22'x "," @;
+                   else put Copy_jn @;
               end;
        put techId best12. ; 
        ; 

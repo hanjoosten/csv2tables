@@ -16,7 +16,7 @@ modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
   where 
     modNames :: Table -> [Text]
-    modNames = map attShow . filter isModified . attribs
+    modNames = map attShow . filter isModified . L.sort . attribs
     isModified :: Attrib -> Bool
     isModified att = attNameOrg att /= attNameNew att
     attShow :: Attrib ->  Text
@@ -127,7 +127,7 @@ createStatement t =
                   ]
               where
                 colNames :: [Text]
-                colNames = (map (T.pack . attNameNew) (attribs t) ++ ["techId"])
+                colNames = (map (T.pack . attNameNew) (L.sort $ attribs t) ++ ["techId"])
                 headerRow :: [Text]
                 headerRow = L.intersperse  "       ','"
                             (map foo colNames)
@@ -135,14 +135,14 @@ createStatement t =
                         foo name = "          \""<>name<>"\" "
                         
                 formatSegments :: [Text]
-                formatSegments = map foo (attribs t) ++
+                formatSegments = map foo (L.sort $ attribs t) ++
                   [ "       format techId best12. ; "
                   ]
                   where 
                     foo :: Attrib -> Text
                     foo att = "       format "<>(T.pack $ attNameNew att)<>" "<>csvFormat att<>" ;"
                 putSegments :: [Text]
-                putSegments = map foo (attribs t) ++
+                putSegments = map foo (L.sort $ attribs t) ++
                   [ "       put techId best12. ; "
                   ]
                   where 
