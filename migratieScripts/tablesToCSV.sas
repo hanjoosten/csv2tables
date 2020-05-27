@@ -2595,13 +2595,8 @@ data _null_;
                    then put '22'x Ok_JN +(-1) '22'x "," @;
                    else put Ok_JN @;
               end;
-       if missing(Omschrijving)
-         then put "," @;
-         else do;
-                 if find(Omschrijving,'0A'x) > 0 and 2+klength(Omschrijving) = klength(quote(trim(Omschrijving)))
-                   then put '22'x Omschrijving +(-1) '22'x "," @;
-                   else put Omschrijving @;
-              end;
+       /* OPGELET: Omschrijving WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        if missing(Open_brief)
          then put "," @;
          else do;
@@ -4527,13 +4522,8 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Notitie)
-         then put "," @;
-         else do;
-                 if find(Notitie,'0A'x) > 0 and 2+klength(Notitie) = klength(quote(trim(Notitie)))
-                   then put '22'x Notitie +(-1) '22'x "," @;
-                   else put Notitie @;
-              end;
+       /* OPGELET: Notitie WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        if missing(Oorzaak)
          then put "," @;
          else do;
@@ -6337,13 +6327,8 @@ data _null_;
                    then put '22'x Mutatie_user +(-1) '22'x "," @;
                    else put Mutatie_user @;
               end;
-       if missing(Notitie)
-         then put "," @;
-         else do;
-                 if find(Notitie,'0A'x) > 0 and 2+klength(Notitie) = klength(quote(trim(Notitie)))
-                   then put '22'x Notitie +(-1) '22'x "," @;
-                   else put Notitie @;
-              end;
+       /* OPGELET: Notitie WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        if missing(Notitietype_naam)
          then put "," @;
          else do;
@@ -9072,13 +9057,8 @@ data _null_;
                    then put '22'x Ter_id +(-1) '22'x "," @;
                    else put Ter_id @;
               end;
-       if missing(Toelichting)
-         then put "," @;
-         else do;
-                 if find(Toelichting,'0A'x) > 0 and 2+klength(Toelichting) = klength(quote(trim(Toelichting)))
-                   then put '22'x Toelichting +(-1) '22'x "," @;
-                   else put Toelichting @;
-              end;
+       /* OPGELET: Toelichting WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        put techId best12. ; 
        ; 
      end; 
@@ -20237,13 +20217,8 @@ data _null_;
                    then put '22'x Inhoud +(-1) '22'x "," @;
                    else put Inhoud @;
               end;
-       if missing(Toelichting)
-         then put "," @;
-         else do;
-                 if find(Toelichting,'0A'x) > 0 and 2+klength(Toelichting) = klength(quote(trim(Toelichting)))
-                   then put '22'x Toelichting +(-1) '22'x "," @;
-                   else put Toelichting @;
-              end;
+       /* OPGELET: Toelichting WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        if missing(Einddatum)
          then put "," @;
          else do;
@@ -24538,76 +24513,26 @@ data _null_;
                    then put '22'x OPTIONBUTTON_20 +(-1) '22'x "," @;
                    else put OPTIONBUTTON_20 @;
               end;
-       if missing(TEKSTBLOK_01)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_01,'0A'x) > 0 and 2+klength(TEKSTBLOK_01) = klength(quote(trim(TEKSTBLOK_01)))
-                   then put '22'x TEKSTBLOK_01 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_01 @;
-              end;
-       if missing(TEKSTBLOK_02)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_02,'0A'x) > 0 and 2+klength(TEKSTBLOK_02) = klength(quote(trim(TEKSTBLOK_02)))
-                   then put '22'x TEKSTBLOK_02 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_02 @;
-              end;
-       if missing(TEKSTBLOK_03)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_03,'0A'x) > 0 and 2+klength(TEKSTBLOK_03) = klength(quote(trim(TEKSTBLOK_03)))
-                   then put '22'x TEKSTBLOK_03 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_03 @;
-              end;
-       if missing(TEKSTBLOK_04)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_04,'0A'x) > 0 and 2+klength(TEKSTBLOK_04) = klength(quote(trim(TEKSTBLOK_04)))
-                   then put '22'x TEKSTBLOK_04 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_04 @;
-              end;
-       if missing(TEKSTBLOK_05)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_05,'0A'x) > 0 and 2+klength(TEKSTBLOK_05) = klength(quote(trim(TEKSTBLOK_05)))
-                   then put '22'x TEKSTBLOK_05 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_05 @;
-              end;
-       if missing(TEKSTBLOK_06)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_06,'0A'x) > 0 and 2+klength(TEKSTBLOK_06) = klength(quote(trim(TEKSTBLOK_06)))
-                   then put '22'x TEKSTBLOK_06 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_06 @;
-              end;
-       if missing(TEKSTBLOK_07)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_07,'0A'x) > 0 and 2+klength(TEKSTBLOK_07) = klength(quote(trim(TEKSTBLOK_07)))
-                   then put '22'x TEKSTBLOK_07 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_07 @;
-              end;
-       if missing(TEKSTBLOK_08)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_08,'0A'x) > 0 and 2+klength(TEKSTBLOK_08) = klength(quote(trim(TEKSTBLOK_08)))
-                   then put '22'x TEKSTBLOK_08 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_08 @;
-              end;
-       if missing(TEKSTBLOK_09)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_09,'0A'x) > 0 and 2+klength(TEKSTBLOK_09) = klength(quote(trim(TEKSTBLOK_09)))
-                   then put '22'x TEKSTBLOK_09 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_09 @;
-              end;
-       if missing(TEKSTBLOK_10)
-         then put "," @;
-         else do;
-                 if find(TEKSTBLOK_10,'0A'x) > 0 and 2+klength(TEKSTBLOK_10) = klength(quote(trim(TEKSTBLOK_10)))
-                   then put '22'x TEKSTBLOK_10 +(-1) '22'x "," @;
-                   else put TEKSTBLOK_10 @;
-              end;
+       /* OPGELET: TEKSTBLOK_01 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_02 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_03 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_04 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_05 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_06 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_07 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_08 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_09 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
+       /* OPGELET: TEKSTBLOK_10 WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */
+       put '22'x "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor." +(-1) '22'x "," @;
        if missing(VARCHAR_60_01)
          then put "," @;
          else do;

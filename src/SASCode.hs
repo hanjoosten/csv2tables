@@ -10,7 +10,10 @@ import qualified RIO.Text as T
 import qualified RIO.List as L
 
 tablesToCsv :: [Table] -> [Text]
-tablesToCsv = concatMap createStatement
+tablesToCsv = concatMap createStatement -- . filter testFilter
+  where
+     testFilter :: Table -> Bool
+     testFilter t = "BAS_VKM_VAR_GEGEVENS" == tableNameNew t
 
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
@@ -148,25 +151,21 @@ createStatement t =
                   where 
                     foo :: Attrib -> Text
                     foo att = T.intercalate "\n" $
+                      if hasProblems att 
+                      then 
+                        [ "       /* OPGELET: "<>(T.pack $ attNameNew att)<>" WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */"
+                        , "       put '22'x "<>tshow dummyTekst<>" +(-1) '22'x \",\" @;"
+                        ]
+                      else 
                         [ "       if missing("<>(T.pack $ attNameNew att)<>")"
                         , "         then put \",\" @;"
                         , "         else do;"
                         , "                 if find("<>(T.pack $ attNameNew att)<>",'0A'x) > 0 and 2+klength("<>(T.pack $ attNameNew att)<>") = klength(quote(trim("<>(T.pack $ attNameNew att)<>")))"
                         , "                   then put '22'x "<>(T.pack $ attNameNew att)<>" +(-1) '22'x \",\" @;"
                         , "                   else put "<>(T.pack $ attNameNew att)<>" @;"
-                        ] 
-             --        <> (if sasType att == 1 
-             --               then [ "                 put \",\" @;"] 
-             --               else mempty
-             --        )    
-                     <> [ "              end;"
+                        , "              end;"
                         ]
---         else do;
---                 if find(Titel,'0A'x) > 0 and 2+length(Titel) = length(quote(trim(Titel)))
---                   then put '22'x Titel +(-1) '22'x "," @;
---                   else put Titel @;
---              end;
-
+                    
 
 
 
@@ -201,3 +200,17 @@ dataType att =
 
 toSASComment :: Text -> Text
 toSASComment line = " /* " <> line <> " */ "
+
+-- | Dit is een opsomming van velden waar problemen met newline / UTF8 codering in voorkomen. 
+--   Voor de korte termijn gaan we die vullen met dummy tekst
+hasProblems :: Attrib -> Bool
+hasProblems att = or
+   [ attTableNew att == "BAS_COR_CORRESPONDENTIE" && attNameNew att == "Omschrijving"
+   , attTableNew att == "BAS_DAM_DECLARATIE"      && attNameNew att == "Notitie"
+   , attTableNew att == "BAS_DAM_DOSSIER_NOTITIE" && attNameNew att == "Notitie"
+   , attTableNew att == "BAS_DAM_TERMIJN_PARAAF_NOTITIE" && attNameNew att == "Toelichting"
+   , attTableNew att == "BAS_RDM_VARIABELE" && attNameNew att == "Toelichting"
+   , attTableNew att == "BAS_VKM_VAR_GEGEVENS" && take 10 (attNameNew att) == "TEKSTBLOK_"
+   ]
+dummyTekst :: Text
+dummyTekst = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
