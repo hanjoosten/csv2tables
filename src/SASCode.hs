@@ -8,12 +8,13 @@ module SASCode
 import Import
 import qualified RIO.Text as T
 import qualified RIO.List as L
+import           Data.Hashable
 
 tablesToCsv :: [Table] -> [Text]
 tablesToCsv = concatMap createStatement -- . filter _testFilter
   where
      _testFilter :: Table -> Bool
-     _testFilter t = "BAS_VKM_VAR_GEGEVENS" == tableNameNew t
+     _testFilter t = "BAS_DAM_DOSSIER_NOTITIE" == tableNameNew t
 
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
@@ -117,15 +118,29 @@ createStatement t =
                       else 
                         [ "       if missing("<>(T.pack $ attNameNew att)<>")"
                         , "         then put \",\" @;"
-                        , "         else do;"
-                        , "                 if find("<>(T.pack $ attNameNew att)<>",'0A'x) > 0 and 2+klength("<>(T.pack $ attNameNew att)<>") = klength(quote(trim("<>(T.pack $ attNameNew att)<>")))"
-                        , "                   then put '22'x "<>(T.pack $ attNameNew att)<>" +(-1) '22'x \",\" @;"
-                        , "                   else put "<>(T.pack $ attNameNew att)<>" @;"
+                        ] <>
+                        (if sasType att == 2 
+                         then -- We hebben te maken met een tekst. Die kan mogelijk te lang zijn. Bovendien moet die worden voorzien van quotes.
+                        [ "         else do;"
+                        , "                   "<>attrLengte<>"=length("<>(T.pack $ attNameNew att)<>");"
+                        , "                   "<>aantalLF<>" = countc("<>(T.pack $ attNameNew att)<>",'0A'x);"
+                        , "                   "<>maxPassend<>"="<>(tshow $ sasFormatL att)<>"-1-"<>aantalLF<>";"
+                        , "                   if "<>attrLengte<>" > "<>maxPassend
+                        , "                     then "<>passend<>" = substr("<>(T.pack $ attNameNew att)<>",1,"<>maxPassend<>");"
+                        , "                     else "<>passend<>" = "<>(T.pack $ attNameNew att)<>";"
+                        , "                   put "<>passend<>" ~ @;" -- Het ~ forceert het gebruik van dubbele quotes. 
                         , "              end;"
                         ]
-                    
-
-
+                         else -- een eenvoudige numerieke waarde.
+                        [ "         else put "<>(T.pack $ attNameNew att)<>" @;"
+                        ])
+                     where maxPassend,attrLengte,passend,aantalLF :: Text
+                           maxPassend = mkAttrName "maxPassend"
+                           attrLengte = mkAttrName "attrLengte"
+                           passend    = mkAttrName "passend"
+                           aantalLF   = mkAttrName "aantalLF"
+                           mkAttrName :: Text -> Text 
+                           mkAttrName pref = T.take 32 $ pref <> "_"<>(tshow . abs . hash . attNameNew $ att)
 
 csvFormat :: Attrib -> Text
 csvFormat att =
@@ -159,6 +174,7 @@ dataType att =
 -- | Dit is een opsomming van velden waar problemen met newline / UTF8 codering in voorkomen. 
 --   Voor de korte termijn gaan we die vullen met dummy tekst
 hasProblems :: Attrib -> Bool
+hasProblems _ = False
 hasProblems att = or
    [ attTableNew att == "BAS_COR_CORRESPONDENTIE" && attNameNew att == "Omschrijving"
    , attTableNew att == "BAS_DAM_DECLARATIE"      && attNameNew att == "Notitie"

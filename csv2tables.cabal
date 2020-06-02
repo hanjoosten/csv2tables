@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2b6382db167055073bbcce75beeb724f2141b1555e9b3c26b9c295d0a2400cd8
+-- hash: 4c2fb1444bd295311df96515f44a25205cb0031ccfd7719adeac42682efaeeb2
 
 name:           csv2tables
 version:        0.1.0.0
@@ -46,6 +46,7 @@ library
       Cabal >=3.0.1
     , base >=4.11 && <10
     , csv >=0.1
+    , hashable >=1.3
     , hspec
     , lens >=4.18
     , rio >=0.1.15.0
@@ -63,6 +64,7 @@ executable csv2tables
     , base >=4.11 && <10
     , csv >=0.1
     , csv2tables
+    , hashable >=1.3
     , hspec
     , lens >=4.18
     , optparse-simple
@@ -83,6 +85,7 @@ test-suite csv2tables-test
     , base >=4.11 && <10
     , csv >=0.1
     , csv2tables
+    , hashable >=1.3
     , hspec
     , lens >=4.18
     , rio >=0.1.15.0
