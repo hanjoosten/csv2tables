@@ -125,7 +125,7 @@ createStatement t =
                         , "                   "<>attrLengte<>"=length("<>(T.pack $ attNameNew att)<>");"
                         , "                   "<>aantalLF<>" = countc("<>(T.pack $ attNameNew att)<>",'0A'x);"
                         , "                   "<>maxPassend<>"="<>(tshow $ sasFormatL att)<>"-1-"<>aantalLF<>";"
-                        , "                   if "<>attrLengte<>" > "<>maxPassend
+                        , "                   if "<>attrLengte<>" > max("<>maxPassend<>",1000)"
                         , "                     then "<>passend<>" = substr("<>(T.pack $ attNameNew att)<>",1,"<>maxPassend<>");"
                         , "                     else "<>passend<>" = "<>(T.pack $ attNameNew att)<>";"
                         , "                   put "<>passend<>" ~ @;" -- Het ~ forceert het gebruik van dubbele quotes. 

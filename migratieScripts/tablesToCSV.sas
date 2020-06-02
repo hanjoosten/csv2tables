@@ -53,7 +53,7 @@ data _null_;
                    attrLengte_3709574036420749824=length(Actie_cd);
                    aantalLF_3709574036420749824 = countc(Actie_cd,'0A'x);
                    maxPassend_3709574036420749824=3-1-aantalLF_3709574036420749824;
-                   if attrLengte_3709574036420749824 > maxPassend_3709574036420749824
+                   if attrLengte_3709574036420749824 > max(maxPassend_3709574036420749824,1000)
                      then passend_3709574036420749824 = substr(Actie_cd,1,maxPassend_3709574036420749824);
                      else passend_3709574036420749824 = Actie_cd;
                    put passend_3709574036420749824 ~ @;
@@ -64,7 +64,7 @@ data _null_;
                    attrLengte_896475843107592045=length(Actie_oms);
                    aantalLF_896475843107592045 = countc(Actie_oms,'0A'x);
                    maxPassend_896475843107592045=60-1-aantalLF_896475843107592045;
-                   if attrLengte_896475843107592045 > maxPassend_896475843107592045
+                   if attrLengte_896475843107592045 > max(maxPassend_896475843107592045,1000)
                      then passend_896475843107592045 = substr(Actie_oms,1,maxPassend_896475843107592045);
                      else passend_896475843107592045 = Actie_oms;
                    put passend_896475843107592045 ~ @;
@@ -75,7 +75,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -89,7 +89,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -163,7 +163,7 @@ data _null_;
                    attrLengte_3709574036420749824=length(Actie_cd);
                    aantalLF_3709574036420749824 = countc(Actie_cd,'0A'x);
                    maxPassend_3709574036420749824=3-1-aantalLF_3709574036420749824;
-                   if attrLengte_3709574036420749824 > maxPassend_3709574036420749824
+                   if attrLengte_3709574036420749824 > max(maxPassend_3709574036420749824,1000)
                      then passend_3709574036420749824 = substr(Actie_cd,1,maxPassend_3709574036420749824);
                      else passend_3709574036420749824 = Actie_cd;
                    put passend_3709574036420749824 ~ @;
@@ -174,7 +174,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -188,7 +188,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -202,7 +202,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -213,7 +213,7 @@ data _null_;
                    attrLengte_6253283794989270681=length(Tra_cd);
                    aantalLF_6253283794989270681 = countc(Tra_cd,'0A'x);
                    maxPassend_6253283794989270681=3-1-aantalLF_6253283794989270681;
-                   if attrLengte_6253283794989270681 > maxPassend_6253283794989270681
+                   if attrLengte_6253283794989270681 > max(maxPassend_6253283794989270681,1000)
                      then passend_6253283794989270681 = substr(Tra_cd,1,maxPassend_6253283794989270681);
                      else passend_6253283794989270681 = Tra_cd;
                    put passend_6253283794989270681 ~ @;
@@ -296,7 +296,7 @@ data _null_;
                    attrLengte_5831362457227599872=length(Beleidsadministratie_jn);
                    aantalLF_5831362457227599872 = countc(Beleidsadministratie_jn,'0A'x);
                    maxPassend_5831362457227599872=1-1-aantalLF_5831362457227599872;
-                   if attrLengte_5831362457227599872 > maxPassend_5831362457227599872
+                   if attrLengte_5831362457227599872 > max(maxPassend_5831362457227599872,1000)
                      then passend_5831362457227599872 = substr(Beleidsadministratie_jn,1,maxPassend_5831362457227599872);
                      else passend_5831362457227599872 = Beleidsadministratie_jn;
                    put passend_5831362457227599872 ~ @;
@@ -310,7 +310,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -321,7 +321,7 @@ data _null_;
                    attrLengte_117035809429087224=length(Geldstroom_jn);
                    aantalLF_117035809429087224 = countc(Geldstroom_jn,'0A'x);
                    maxPassend_117035809429087224=1-1-aantalLF_117035809429087224;
-                   if attrLengte_117035809429087224 > maxPassend_117035809429087224
+                   if attrLengte_117035809429087224 > max(maxPassend_117035809429087224,1000)
                      then passend_117035809429087224 = substr(Geldstroom_jn,1,maxPassend_117035809429087224);
                      else passend_117035809429087224 = Geldstroom_jn;
                    put passend_117035809429087224 ~ @;
@@ -332,7 +332,7 @@ data _null_;
                    attrLengte_4062840293532491438=length(Mdw_mandaat_jn);
                    aantalLF_4062840293532491438 = countc(Mdw_mandaat_jn,'0A'x);
                    maxPassend_4062840293532491438=1-1-aantalLF_4062840293532491438;
-                   if attrLengte_4062840293532491438 > maxPassend_4062840293532491438
+                   if attrLengte_4062840293532491438 > max(maxPassend_4062840293532491438,1000)
                      then passend_4062840293532491438 = substr(Mdw_mandaat_jn,1,maxPassend_4062840293532491438);
                      else passend_4062840293532491438 = Mdw_mandaat_jn;
                    put passend_4062840293532491438 ~ @;
@@ -346,7 +346,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -357,7 +357,7 @@ data _null_;
                    attrLengte_6253283794989270681=length(Tra_cd);
                    aantalLF_6253283794989270681 = countc(Tra_cd,'0A'x);
                    maxPassend_6253283794989270681=3-1-aantalLF_6253283794989270681;
-                   if attrLengte_6253283794989270681 > maxPassend_6253283794989270681
+                   if attrLengte_6253283794989270681 > max(maxPassend_6253283794989270681,1000)
                      then passend_6253283794989270681 = substr(Tra_cd,1,maxPassend_6253283794989270681);
                      else passend_6253283794989270681 = Tra_cd;
                    put passend_6253283794989270681 ~ @;
@@ -368,7 +368,7 @@ data _null_;
                    attrLengte_349044137099503532=length(Tra_oms);
                    aantalLF_349044137099503532 = countc(Tra_oms,'0A'x);
                    maxPassend_349044137099503532=50-1-aantalLF_349044137099503532;
-                   if attrLengte_349044137099503532 > maxPassend_349044137099503532
+                   if attrLengte_349044137099503532 > max(maxPassend_349044137099503532,1000)
                      then passend_349044137099503532 = substr(Tra_oms,1,maxPassend_349044137099503532);
                      else passend_349044137099503532 = Tra_oms;
                    put passend_349044137099503532 ~ @;
@@ -379,7 +379,7 @@ data _null_;
                    attrLengte_9100607069926000314=length(Tra_stop);
                    aantalLF_9100607069926000314 = countc(Tra_stop,'0A'x);
                    maxPassend_9100607069926000314=1-1-aantalLF_9100607069926000314;
-                   if attrLengte_9100607069926000314 > maxPassend_9100607069926000314
+                   if attrLengte_9100607069926000314 > max(maxPassend_9100607069926000314,1000)
                      then passend_9100607069926000314 = substr(Tra_stop,1,maxPassend_9100607069926000314);
                      else passend_9100607069926000314 = Tra_stop;
                    put passend_9100607069926000314 ~ @;
@@ -552,7 +552,7 @@ data _null_;
                    attrLengte_8089610682312470086=length(Reg_cd);
                    aantalLF_8089610682312470086 = countc(Reg_cd,'0A'x);
                    maxPassend_8089610682312470086=20-1-aantalLF_8089610682312470086;
-                   if attrLengte_8089610682312470086 > maxPassend_8089610682312470086
+                   if attrLengte_8089610682312470086 > max(maxPassend_8089610682312470086,1000)
                      then passend_8089610682312470086 = substr(Reg_cd,1,maxPassend_8089610682312470086);
                      else passend_8089610682312470086 = Reg_cd;
                    put passend_8089610682312470086 ~ @;
@@ -563,7 +563,7 @@ data _null_;
                    attrLengte_673625142560997166=length(Dos_cd);
                    aantalLF_673625142560997166 = countc(Dos_cd,'0A'x);
                    maxPassend_673625142560997166=10-1-aantalLF_673625142560997166;
-                   if attrLengte_673625142560997166 > maxPassend_673625142560997166
+                   if attrLengte_673625142560997166 > max(maxPassend_673625142560997166,1000)
                      then passend_673625142560997166 = substr(Dos_cd,1,maxPassend_673625142560997166);
                      else passend_673625142560997166 = Dos_cd;
                    put passend_673625142560997166 ~ @;
@@ -580,7 +580,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=64-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -591,7 +591,7 @@ data _null_;
                    attrLengte_2297573122993302389=length(Naam_begunstigde);
                    aantalLF_2297573122993302389 = countc(Naam_begunstigde,'0A'x);
                    maxPassend_2297573122993302389=60-1-aantalLF_2297573122993302389;
-                   if attrLengte_2297573122993302389 > maxPassend_2297573122993302389
+                   if attrLengte_2297573122993302389 > max(maxPassend_2297573122993302389,1000)
                      then passend_2297573122993302389 = substr(Naam_begunstigde,1,maxPassend_2297573122993302389);
                      else passend_2297573122993302389 = Naam_begunstigde;
                    put passend_2297573122993302389 ~ @;
@@ -602,7 +602,7 @@ data _null_;
                    attrLengte_8016713407944005678=length(Betalingskenmerk);
                    aantalLF_8016713407944005678 = countc(Betalingskenmerk,'0A'x);
                    maxPassend_8016713407944005678=5-1-aantalLF_8016713407944005678;
-                   if attrLengte_8016713407944005678 > maxPassend_8016713407944005678
+                   if attrLengte_8016713407944005678 > max(maxPassend_8016713407944005678,1000)
                      then passend_8016713407944005678 = substr(Betalingskenmerk,1,maxPassend_8016713407944005678);
                      else passend_8016713407944005678 = Betalingskenmerk;
                    put passend_8016713407944005678 ~ @;
@@ -613,7 +613,7 @@ data _null_;
                    attrLengte_2948830150786152657=length(Plaats);
                    aantalLF_2948830150786152657 = countc(Plaats,'0A'x);
                    maxPassend_2948830150786152657=80-1-aantalLF_2948830150786152657;
-                   if attrLengte_2948830150786152657 > maxPassend_2948830150786152657
+                   if attrLengte_2948830150786152657 > max(maxPassend_2948830150786152657,1000)
                      then passend_2948830150786152657 = substr(Plaats,1,maxPassend_2948830150786152657);
                      else passend_2948830150786152657 = Plaats;
                    put passend_2948830150786152657 ~ @;
@@ -627,7 +627,7 @@ data _null_;
                    attrLengte_5988018406811650736=length(Status);
                    aantalLF_5988018406811650736 = countc(Status,'0A'x);
                    maxPassend_5988018406811650736=1-1-aantalLF_5988018406811650736;
-                   if attrLengte_5988018406811650736 > maxPassend_5988018406811650736
+                   if attrLengte_5988018406811650736 > max(maxPassend_5988018406811650736,1000)
                      then passend_5988018406811650736 = substr(Status,1,maxPassend_5988018406811650736);
                      else passend_5988018406811650736 = Status;
                    put passend_5988018406811650736 ~ @;
@@ -641,7 +641,7 @@ data _null_;
                    attrLengte_431232146876537749=length(Bron);
                    aantalLF_431232146876537749 = countc(Bron,'0A'x);
                    maxPassend_431232146876537749=4-1-aantalLF_431232146876537749;
-                   if attrLengte_431232146876537749 > maxPassend_431232146876537749
+                   if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
                    put passend_431232146876537749 ~ @;
@@ -664,7 +664,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -678,7 +678,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -689,7 +689,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -700,7 +700,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -711,7 +711,7 @@ data _null_;
                    attrLengte_106646185054892784=length(Beg_bic);
                    aantalLF_106646185054892784 = countc(Beg_bic,'0A'x);
                    maxPassend_106646185054892784=11-1-aantalLF_106646185054892784;
-                   if attrLengte_106646185054892784 > maxPassend_106646185054892784
+                   if attrLengte_106646185054892784 > max(maxPassend_106646185054892784,1000)
                      then passend_106646185054892784 = substr(Beg_bic,1,maxPassend_106646185054892784);
                      else passend_106646185054892784 = Beg_bic;
                    put passend_106646185054892784 ~ @;
@@ -722,7 +722,7 @@ data _null_;
                    attrLengte_6065333816954667525=length(Beg_iban);
                    aantalLF_6065333816954667525 = countc(Beg_iban,'0A'x);
                    maxPassend_6065333816954667525=34-1-aantalLF_6065333816954667525;
-                   if attrLengte_6065333816954667525 > maxPassend_6065333816954667525
+                   if attrLengte_6065333816954667525 > max(maxPassend_6065333816954667525,1000)
                      then passend_6065333816954667525 = substr(Beg_iban,1,maxPassend_6065333816954667525);
                      else passend_6065333816954667525 = Beg_iban;
                    put passend_6065333816954667525 ~ @;
@@ -733,7 +733,7 @@ data _null_;
                    attrLengte_6326571350773995732=length(Sepa_betaling_indicatie);
                    aantalLF_6326571350773995732 = countc(Sepa_betaling_indicatie,'0A'x);
                    maxPassend_6326571350773995732=1-1-aantalLF_6326571350773995732;
-                   if attrLengte_6326571350773995732 > maxPassend_6326571350773995732
+                   if attrLengte_6326571350773995732 > max(maxPassend_6326571350773995732,1000)
                      then passend_6326571350773995732 = substr(Sepa_betaling_indicatie,1,maxPassend_6326571350773995732);
                      else passend_6326571350773995732 = Sepa_betaling_indicatie;
                    put passend_6326571350773995732 ~ @;
@@ -747,7 +747,7 @@ data _null_;
                    attrLengte_7008902060440754439=length(Betalingsverzoeknummer);
                    aantalLF_7008902060440754439 = countc(Betalingsverzoeknummer,'0A'x);
                    maxPassend_7008902060440754439=40-1-aantalLF_7008902060440754439;
-                   if attrLengte_7008902060440754439 > maxPassend_7008902060440754439
+                   if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
                      then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
                      else passend_7008902060440754439 = Betalingsverzoeknummer;
                    put passend_7008902060440754439 ~ @;
@@ -761,7 +761,7 @@ data _null_;
                    attrLengte_5900692461372151366=length(On_hold_jn);
                    aantalLF_5900692461372151366 = countc(On_hold_jn,'0A'x);
                    maxPassend_5900692461372151366=1-1-aantalLF_5900692461372151366;
-                   if attrLengte_5900692461372151366 > maxPassend_5900692461372151366
+                   if attrLengte_5900692461372151366 > max(maxPassend_5900692461372151366,1000)
                      then passend_5900692461372151366 = substr(On_hold_jn,1,maxPassend_5900692461372151366);
                      else passend_5900692461372151366 = On_hold_jn;
                    put passend_5900692461372151366 ~ @;
@@ -772,7 +772,7 @@ data _null_;
                    attrLengte_5950732349416649908=length(Sepa_xsd_bevinding);
                    aantalLF_5950732349416649908 = countc(Sepa_xsd_bevinding,'0A'x);
                    maxPassend_5950732349416649908=2048-1-aantalLF_5950732349416649908;
-                   if attrLengte_5950732349416649908 > maxPassend_5950732349416649908
+                   if attrLengte_5950732349416649908 > max(maxPassend_5950732349416649908,1000)
                      then passend_5950732349416649908 = substr(Sepa_xsd_bevinding,1,maxPassend_5950732349416649908);
                      else passend_5950732349416649908 = Sepa_xsd_bevinding;
                    put passend_5950732349416649908 ~ @;
@@ -937,7 +937,7 @@ data _null_;
                    attrLengte_8089610682312470086=length(Reg_cd);
                    aantalLF_8089610682312470086 = countc(Reg_cd,'0A'x);
                    maxPassend_8089610682312470086=20-1-aantalLF_8089610682312470086;
-                   if attrLengte_8089610682312470086 > maxPassend_8089610682312470086
+                   if attrLengte_8089610682312470086 > max(maxPassend_8089610682312470086,1000)
                      then passend_8089610682312470086 = substr(Reg_cd,1,maxPassend_8089610682312470086);
                      else passend_8089610682312470086 = Reg_cd;
                    put passend_8089610682312470086 ~ @;
@@ -948,7 +948,7 @@ data _null_;
                    attrLengte_673625142560997166=length(Dos_cd);
                    aantalLF_673625142560997166 = countc(Dos_cd,'0A'x);
                    maxPassend_673625142560997166=20-1-aantalLF_673625142560997166;
-                   if attrLengte_673625142560997166 > maxPassend_673625142560997166
+                   if attrLengte_673625142560997166 > max(maxPassend_673625142560997166,1000)
                      then passend_673625142560997166 = substr(Dos_cd,1,maxPassend_673625142560997166);
                      else passend_673625142560997166 = Dos_cd;
                    put passend_673625142560997166 ~ @;
@@ -965,7 +965,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=64-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -976,7 +976,7 @@ data _null_;
                    attrLengte_2297573122993302389=length(Naam_begunstigde);
                    aantalLF_2297573122993302389 = countc(Naam_begunstigde,'0A'x);
                    maxPassend_2297573122993302389=60-1-aantalLF_2297573122993302389;
-                   if attrLengte_2297573122993302389 > maxPassend_2297573122993302389
+                   if attrLengte_2297573122993302389 > max(maxPassend_2297573122993302389,1000)
                      then passend_2297573122993302389 = substr(Naam_begunstigde,1,maxPassend_2297573122993302389);
                      else passend_2297573122993302389 = Naam_begunstigde;
                    put passend_2297573122993302389 ~ @;
@@ -987,7 +987,7 @@ data _null_;
                    attrLengte_2948830150786152657=length(Plaats);
                    aantalLF_2948830150786152657 = countc(Plaats,'0A'x);
                    maxPassend_2948830150786152657=30-1-aantalLF_2948830150786152657;
-                   if attrLengte_2948830150786152657 > maxPassend_2948830150786152657
+                   if attrLengte_2948830150786152657 > max(maxPassend_2948830150786152657,1000)
                      then passend_2948830150786152657 = substr(Plaats,1,maxPassend_2948830150786152657);
                      else passend_2948830150786152657 = Plaats;
                    put passend_2948830150786152657 ~ @;
@@ -1010,7 +1010,7 @@ data _null_;
                    attrLengte_431232146876537749=length(Bron);
                    aantalLF_431232146876537749 = countc(Bron,'0A'x);
                    maxPassend_431232146876537749=4-1-aantalLF_431232146876537749;
-                   if attrLengte_431232146876537749 > maxPassend_431232146876537749
+                   if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
                    put passend_431232146876537749 ~ @;
@@ -1027,7 +1027,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -1041,7 +1041,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -1058,7 +1058,7 @@ data _null_;
                    attrLengte_8016713407944005678=length(Betalingskenmerk);
                    aantalLF_8016713407944005678 = countc(Betalingskenmerk,'0A'x);
                    maxPassend_8016713407944005678=5-1-aantalLF_8016713407944005678;
-                   if attrLengte_8016713407944005678 > maxPassend_8016713407944005678
+                   if attrLengte_8016713407944005678 > max(maxPassend_8016713407944005678,1000)
                      then passend_8016713407944005678 = substr(Betalingskenmerk,1,maxPassend_8016713407944005678);
                      else passend_8016713407944005678 = Betalingskenmerk;
                    put passend_8016713407944005678 ~ @;
@@ -1069,7 +1069,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -1080,7 +1080,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -1091,7 +1091,7 @@ data _null_;
                    attrLengte_106646185054892784=length(Beg_bic);
                    aantalLF_106646185054892784 = countc(Beg_bic,'0A'x);
                    maxPassend_106646185054892784=11-1-aantalLF_106646185054892784;
-                   if attrLengte_106646185054892784 > maxPassend_106646185054892784
+                   if attrLengte_106646185054892784 > max(maxPassend_106646185054892784,1000)
                      then passend_106646185054892784 = substr(Beg_bic,1,maxPassend_106646185054892784);
                      else passend_106646185054892784 = Beg_bic;
                    put passend_106646185054892784 ~ @;
@@ -1102,7 +1102,7 @@ data _null_;
                    attrLengte_6065333816954667525=length(Beg_iban);
                    aantalLF_6065333816954667525 = countc(Beg_iban,'0A'x);
                    maxPassend_6065333816954667525=34-1-aantalLF_6065333816954667525;
-                   if attrLengte_6065333816954667525 > maxPassend_6065333816954667525
+                   if attrLengte_6065333816954667525 > max(maxPassend_6065333816954667525,1000)
                      then passend_6065333816954667525 = substr(Beg_iban,1,maxPassend_6065333816954667525);
                      else passend_6065333816954667525 = Beg_iban;
                    put passend_6065333816954667525 ~ @;
@@ -1113,7 +1113,7 @@ data _null_;
                    attrLengte_6326571350773995732=length(Sepa_betaling_indicatie);
                    aantalLF_6326571350773995732 = countc(Sepa_betaling_indicatie,'0A'x);
                    maxPassend_6326571350773995732=1-1-aantalLF_6326571350773995732;
-                   if attrLengte_6326571350773995732 > maxPassend_6326571350773995732
+                   if attrLengte_6326571350773995732 > max(maxPassend_6326571350773995732,1000)
                      then passend_6326571350773995732 = substr(Sepa_betaling_indicatie,1,maxPassend_6326571350773995732);
                      else passend_6326571350773995732 = Sepa_betaling_indicatie;
                    put passend_6326571350773995732 ~ @;
@@ -1127,7 +1127,7 @@ data _null_;
                    attrLengte_7008902060440754439=length(Betalingsverzoeknummer);
                    aantalLF_7008902060440754439 = countc(Betalingsverzoeknummer,'0A'x);
                    maxPassend_7008902060440754439=40-1-aantalLF_7008902060440754439;
-                   if attrLengte_7008902060440754439 > maxPassend_7008902060440754439
+                   if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
                      then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
                      else passend_7008902060440754439 = Betalingsverzoeknummer;
                    put passend_7008902060440754439 ~ @;
@@ -1254,7 +1254,7 @@ data _null_;
                    attrLengte_5282571717016298821=length(Inkomend);
                    aantalLF_5282571717016298821 = countc(Inkomend,'0A'x);
                    maxPassend_5282571717016298821=1-1-aantalLF_5282571717016298821;
-                   if attrLengte_5282571717016298821 > maxPassend_5282571717016298821
+                   if attrLengte_5282571717016298821 > max(maxPassend_5282571717016298821,1000)
                      then passend_5282571717016298821 = substr(Inkomend,1,maxPassend_5282571717016298821);
                      else passend_5282571717016298821 = Inkomend;
                    put passend_5282571717016298821 ~ @;
@@ -1265,7 +1265,7 @@ data _null_;
                    attrLengte_2912998615907010652=length(Handtekening_ok);
                    aantalLF_2912998615907010652 = countc(Handtekening_ok,'0A'x);
                    maxPassend_2912998615907010652=1-1-aantalLF_2912998615907010652;
-                   if attrLengte_2912998615907010652 > maxPassend_2912998615907010652
+                   if attrLengte_2912998615907010652 > max(maxPassend_2912998615907010652,1000)
                      then passend_2912998615907010652 = substr(Handtekening_ok,1,maxPassend_2912998615907010652);
                      else passend_2912998615907010652 = Handtekening_ok;
                    put passend_2912998615907010652 ~ @;
@@ -1279,7 +1279,7 @@ data _null_;
                    attrLengte_2629230589794466549=length(Onderwerp);
                    aantalLF_2629230589794466549 = countc(Onderwerp,'0A'x);
                    maxPassend_2629230589794466549=256-1-aantalLF_2629230589794466549;
-                   if attrLengte_2629230589794466549 > maxPassend_2629230589794466549
+                   if attrLengte_2629230589794466549 > max(maxPassend_2629230589794466549,1000)
                      then passend_2629230589794466549 = substr(Onderwerp,1,maxPassend_2629230589794466549);
                      else passend_2629230589794466549 = Onderwerp;
                    put passend_2629230589794466549 ~ @;
@@ -1290,7 +1290,7 @@ data _null_;
                    attrLengte_4250420340675441405=length(Inhoud);
                    aantalLF_4250420340675441405 = countc(Inhoud,'0A'x);
                    maxPassend_4250420340675441405=2048-1-aantalLF_4250420340675441405;
-                   if attrLengte_4250420340675441405 > maxPassend_4250420340675441405
+                   if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;
                    put passend_4250420340675441405 ~ @;
@@ -1301,7 +1301,7 @@ data _null_;
                    attrLengte_5407225052503955637=length(Certserienummer);
                    aantalLF_5407225052503955637 = countc(Certserienummer,'0A'x);
                    maxPassend_5407225052503955637=50-1-aantalLF_5407225052503955637;
-                   if attrLengte_5407225052503955637 > maxPassend_5407225052503955637
+                   if attrLengte_5407225052503955637 > max(maxPassend_5407225052503955637,1000)
                      then passend_5407225052503955637 = substr(Certserienummer,1,maxPassend_5407225052503955637);
                      else passend_5407225052503955637 = Certserienummer;
                    put passend_5407225052503955637 ~ @;
@@ -1318,7 +1318,7 @@ data _null_;
                    attrLengte_1317667042141340245=length(Ingezien);
                    aantalLF_1317667042141340245 = countc(Ingezien,'0A'x);
                    maxPassend_1317667042141340245=1-1-aantalLF_1317667042141340245;
-                   if attrLengte_1317667042141340245 > maxPassend_1317667042141340245
+                   if attrLengte_1317667042141340245 > max(maxPassend_1317667042141340245,1000)
                      then passend_1317667042141340245 = substr(Ingezien,1,maxPassend_1317667042141340245);
                      else passend_1317667042141340245 = Ingezien;
                    put passend_1317667042141340245 ~ @;
@@ -1329,7 +1329,7 @@ data _null_;
                    attrLengte_8175108294013713534=length(Plattetekst);
                    aantalLF_8175108294013713534 = countc(Plattetekst,'0A'x);
                    maxPassend_8175108294013713534=8000-1-aantalLF_8175108294013713534;
-                   if attrLengte_8175108294013713534 > maxPassend_8175108294013713534
+                   if attrLengte_8175108294013713534 > max(maxPassend_8175108294013713534,1000)
                      then passend_8175108294013713534 = substr(Plattetekst,1,maxPassend_8175108294013713534);
                      else passend_8175108294013713534 = Plattetekst;
                    put passend_8175108294013713534 ~ @;
@@ -1340,7 +1340,7 @@ data _null_;
                    attrLengte_2254035059619672552=length(Status_verzending);
                    aantalLF_2254035059619672552 = countc(Status_verzending,'0A'x);
                    maxPassend_2254035059619672552=1-1-aantalLF_2254035059619672552;
-                   if attrLengte_2254035059619672552 > maxPassend_2254035059619672552
+                   if attrLengte_2254035059619672552 > max(maxPassend_2254035059619672552,1000)
                      then passend_2254035059619672552 = substr(Status_verzending,1,maxPassend_2254035059619672552);
                      else passend_2254035059619672552 = Status_verzending;
                    put passend_2254035059619672552 ~ @;
@@ -1354,7 +1354,7 @@ data _null_;
                    attrLengte_431232146876537749=length(Bron);
                    aantalLF_431232146876537749 = countc(Bron,'0A'x);
                    maxPassend_431232146876537749=10-1-aantalLF_431232146876537749;
-                   if attrLengte_431232146876537749 > maxPassend_431232146876537749
+                   if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
                    put passend_431232146876537749 ~ @;
@@ -1511,7 +1511,7 @@ data _null_;
                    attrLengte_3254373303073869725=length(Acc_rol_cd);
                    aantalLF_3254373303073869725 = countc(Acc_rol_cd,'0A'x);
                    maxPassend_3254373303073869725=3-1-aantalLF_3254373303073869725;
-                   if attrLengte_3254373303073869725 > maxPassend_3254373303073869725
+                   if attrLengte_3254373303073869725 > max(maxPassend_3254373303073869725,1000)
                      then passend_3254373303073869725 = substr(Acc_rol_cd,1,maxPassend_3254373303073869725);
                      else passend_3254373303073869725 = Acc_rol_cd;
                    put passend_3254373303073869725 ~ @;
@@ -1522,7 +1522,7 @@ data _null_;
                    attrLengte_3697483008035648365=length(Acc_vaste_paraaf_jn);
                    aantalLF_3697483008035648365 = countc(Acc_vaste_paraaf_jn,'0A'x);
                    maxPassend_3697483008035648365=1-1-aantalLF_3697483008035648365;
-                   if attrLengte_3697483008035648365 > maxPassend_3697483008035648365
+                   if attrLengte_3697483008035648365 > max(maxPassend_3697483008035648365,1000)
                      then passend_3697483008035648365 = substr(Acc_vaste_paraaf_jn,1,maxPassend_3697483008035648365);
                      else passend_3697483008035648365 = Acc_vaste_paraaf_jn;
                    put passend_3697483008035648365 ~ @;
@@ -1533,7 +1533,7 @@ data _null_;
                    attrLengte_8174010947375060304=length(Afgehandeld_JN);
                    aantalLF_8174010947375060304 = countc(Afgehandeld_JN,'0A'x);
                    maxPassend_8174010947375060304=1-1-aantalLF_8174010947375060304;
-                   if attrLengte_8174010947375060304 > maxPassend_8174010947375060304
+                   if attrLengte_8174010947375060304 > max(maxPassend_8174010947375060304,1000)
                      then passend_8174010947375060304 = substr(Afgehandeld_JN,1,maxPassend_8174010947375060304);
                      else passend_8174010947375060304 = Afgehandeld_JN;
                    put passend_8174010947375060304 ~ @;
@@ -1544,7 +1544,7 @@ data _null_;
                    attrLengte_2314859752596432566=length(Akkoord);
                    aantalLF_2314859752596432566 = countc(Akkoord,'0A'x);
                    maxPassend_2314859752596432566=1-1-aantalLF_2314859752596432566;
-                   if attrLengte_2314859752596432566 > maxPassend_2314859752596432566
+                   if attrLengte_2314859752596432566 > max(maxPassend_2314859752596432566,1000)
                      then passend_2314859752596432566 = substr(Akkoord,1,maxPassend_2314859752596432566);
                      else passend_2314859752596432566 = Akkoord;
                    put passend_2314859752596432566 ~ @;
@@ -1564,7 +1564,7 @@ data _null_;
                    attrLengte_5935686088021903046=length(Creatie_ok_JN);
                    aantalLF_5935686088021903046 = countc(Creatie_ok_JN,'0A'x);
                    maxPassend_5935686088021903046=1-1-aantalLF_5935686088021903046;
-                   if attrLengte_5935686088021903046 > maxPassend_5935686088021903046
+                   if attrLengte_5935686088021903046 > max(maxPassend_5935686088021903046,1000)
                      then passend_5935686088021903046 = substr(Creatie_ok_JN,1,maxPassend_5935686088021903046);
                      else passend_5935686088021903046 = Creatie_ok_JN;
                    put passend_5935686088021903046 ~ @;
@@ -1575,7 +1575,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -1589,7 +1589,7 @@ data _null_;
                    attrLengte_6412683484080074523=length(Email_JN);
                    aantalLF_6412683484080074523 = countc(Email_JN,'0A'x);
                    maxPassend_6412683484080074523=1-1-aantalLF_6412683484080074523;
-                   if attrLengte_6412683484080074523 > maxPassend_6412683484080074523
+                   if attrLengte_6412683484080074523 > max(maxPassend_6412683484080074523,1000)
                      then passend_6412683484080074523 = substr(Email_JN,1,maxPassend_6412683484080074523);
                      else passend_6412683484080074523 = Email_JN;
                    put passend_6412683484080074523 ~ @;
@@ -1600,7 +1600,7 @@ data _null_;
                    attrLengte_106515610534061913=length(Mandaat_ok_JN);
                    aantalLF_106515610534061913 = countc(Mandaat_ok_JN,'0A'x);
                    maxPassend_106515610534061913=1-1-aantalLF_106515610534061913;
-                   if attrLengte_106515610534061913 > maxPassend_106515610534061913
+                   if attrLengte_106515610534061913 > max(maxPassend_106515610534061913,1000)
                      then passend_106515610534061913 = substr(Mandaat_ok_JN,1,maxPassend_106515610534061913);
                      else passend_106515610534061913 = Mandaat_ok_JN;
                    put passend_106515610534061913 ~ @;
@@ -1623,7 +1623,7 @@ data _null_;
                    attrLengte_4071847926047268398=length(Mdw_mandaat_JN);
                    aantalLF_4071847926047268398 = countc(Mdw_mandaat_JN,'0A'x);
                    maxPassend_4071847926047268398=1-1-aantalLF_4071847926047268398;
-                   if attrLengte_4071847926047268398 > maxPassend_4071847926047268398
+                   if attrLengte_4071847926047268398 > max(maxPassend_4071847926047268398,1000)
                      then passend_4071847926047268398 = substr(Mdw_mandaat_JN,1,maxPassend_4071847926047268398);
                      else passend_4071847926047268398 = Mdw_mandaat_JN;
                    put passend_4071847926047268398 ~ @;
@@ -1637,7 +1637,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -1648,7 +1648,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -1659,7 +1659,7 @@ data _null_;
                    attrLengte_5817162024855271556=length(Rol_ok_JN);
                    aantalLF_5817162024855271556 = countc(Rol_ok_JN,'0A'x);
                    maxPassend_5817162024855271556=1-1-aantalLF_5817162024855271556;
-                   if attrLengte_5817162024855271556 > maxPassend_5817162024855271556
+                   if attrLengte_5817162024855271556 > max(maxPassend_5817162024855271556,1000)
                      then passend_5817162024855271556 = substr(Rol_ok_JN,1,maxPassend_5817162024855271556);
                      else passend_5817162024855271556 = Rol_ok_JN;
                    put passend_5817162024855271556 ~ @;
@@ -1670,7 +1670,7 @@ data _null_;
                    attrLengte_8388230177475286743=length(Rol_volg_cd);
                    aantalLF_8388230177475286743 = countc(Rol_volg_cd,'0A'x);
                    maxPassend_8388230177475286743=1-1-aantalLF_8388230177475286743;
-                   if attrLengte_8388230177475286743 > maxPassend_8388230177475286743
+                   if attrLengte_8388230177475286743 > max(maxPassend_8388230177475286743,1000)
                      then passend_8388230177475286743 = substr(Rol_volg_cd,1,maxPassend_8388230177475286743);
                      else passend_8388230177475286743 = Rol_volg_cd;
                    put passend_8388230177475286743 ~ @;
@@ -1681,7 +1681,7 @@ data _null_;
                    attrLengte_4385385912596099835=length(Toelichting);
                    aantalLF_4385385912596099835 = countc(Toelichting,'0A'x);
                    maxPassend_4385385912596099835=2000-1-aantalLF_4385385912596099835;
-                   if attrLengte_4385385912596099835 > maxPassend_4385385912596099835
+                   if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
                    put passend_4385385912596099835 ~ @;
@@ -1692,7 +1692,7 @@ data _null_;
                    attrLengte_8346042569885215607=length(Type_paraaf);
                    aantalLF_8346042569885215607 = countc(Type_paraaf,'0A'x);
                    maxPassend_8346042569885215607=1-1-aantalLF_8346042569885215607;
-                   if attrLengte_8346042569885215607 > maxPassend_8346042569885215607
+                   if attrLengte_8346042569885215607 > max(maxPassend_8346042569885215607,1000)
                      then passend_8346042569885215607 = substr(Type_paraaf,1,maxPassend_8346042569885215607);
                      else passend_8346042569885215607 = Type_paraaf;
                    put passend_8346042569885215607 ~ @;
@@ -1703,7 +1703,7 @@ data _null_;
                    attrLengte_3312341310812503389=length(Vaste_paraaf);
                    aantalLF_3312341310812503389 = countc(Vaste_paraaf,'0A'x);
                    maxPassend_3312341310812503389=1-1-aantalLF_3312341310812503389;
-                   if attrLengte_3312341310812503389 > maxPassend_3312341310812503389
+                   if attrLengte_3312341310812503389 > max(maxPassend_3312341310812503389,1000)
                      then passend_3312341310812503389 = substr(Vaste_paraaf,1,maxPassend_3312341310812503389);
                      else passend_3312341310812503389 = Vaste_paraaf;
                    put passend_3312341310812503389 ~ @;
@@ -1837,7 +1837,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -1848,7 +1848,7 @@ data _null_;
                    attrLengte_595247200272468379=length(Cst_oms);
                    aantalLF_595247200272468379 = countc(Cst_oms,'0A'x);
                    maxPassend_595247200272468379=60-1-aantalLF_595247200272468379;
-                   if attrLengte_595247200272468379 > maxPassend_595247200272468379
+                   if attrLengte_595247200272468379 > max(maxPassend_595247200272468379,1000)
                      then passend_595247200272468379 = substr(Cst_oms,1,maxPassend_595247200272468379);
                      else passend_595247200272468379 = Cst_oms;
                    put passend_595247200272468379 ~ @;
@@ -1859,7 +1859,7 @@ data _null_;
                    attrLengte_4791577805552596401=length(Cst_template);
                    aantalLF_4791577805552596401 = countc(Cst_template,'0A'x);
                    maxPassend_4791577805552596401=100-1-aantalLF_4791577805552596401;
-                   if attrLengte_4791577805552596401 > maxPassend_4791577805552596401
+                   if attrLengte_4791577805552596401 > max(maxPassend_4791577805552596401,1000)
                      then passend_4791577805552596401 = substr(Cst_template,1,maxPassend_4791577805552596401);
                      else passend_4791577805552596401 = Cst_template;
                    put passend_4791577805552596401 ~ @;
@@ -1870,7 +1870,7 @@ data _null_;
                    attrLengte_3492344684937610391=length(Regeling);
                    aantalLF_3492344684937610391 = countc(Regeling,'0A'x);
                    maxPassend_3492344684937610391=1-1-aantalLF_3492344684937610391;
-                   if attrLengte_3492344684937610391 > maxPassend_3492344684937610391
+                   if attrLengte_3492344684937610391 > max(maxPassend_3492344684937610391,1000)
                      then passend_3492344684937610391 = substr(Regeling,1,maxPassend_3492344684937610391);
                      else passend_3492344684937610391 = Regeling;
                    put passend_3492344684937610391 ~ @;
@@ -1881,7 +1881,7 @@ data _null_;
                    attrLengte_4904519751506790512=length(Thema);
                    aantalLF_4904519751506790512 = countc(Thema,'0A'x);
                    maxPassend_4904519751506790512=1-1-aantalLF_4904519751506790512;
-                   if attrLengte_4904519751506790512 > maxPassend_4904519751506790512
+                   if attrLengte_4904519751506790512 > max(maxPassend_4904519751506790512,1000)
                      then passend_4904519751506790512 = substr(Thema,1,maxPassend_4904519751506790512);
                      else passend_4904519751506790512 = Thema;
                    put passend_4904519751506790512 ~ @;
@@ -1892,7 +1892,7 @@ data _null_;
                    attrLengte_8919092385214382786=length(Dossier);
                    aantalLF_8919092385214382786 = countc(Dossier,'0A'x);
                    maxPassend_8919092385214382786=1-1-aantalLF_8919092385214382786;
-                   if attrLengte_8919092385214382786 > maxPassend_8919092385214382786
+                   if attrLengte_8919092385214382786 > max(maxPassend_8919092385214382786,1000)
                      then passend_8919092385214382786 = substr(Dossier,1,maxPassend_8919092385214382786);
                      else passend_8919092385214382786 = Dossier;
                    put passend_8919092385214382786 ~ @;
@@ -1903,7 +1903,7 @@ data _null_;
                    attrLengte_5535917770018830202=length(Project);
                    aantalLF_5535917770018830202 = countc(Project,'0A'x);
                    maxPassend_5535917770018830202=1-1-aantalLF_5535917770018830202;
-                   if attrLengte_5535917770018830202 > maxPassend_5535917770018830202
+                   if attrLengte_5535917770018830202 > max(maxPassend_5535917770018830202,1000)
                      then passend_5535917770018830202 = substr(Project,1,maxPassend_5535917770018830202);
                      else passend_5535917770018830202 = Project;
                    put passend_5535917770018830202 ~ @;
@@ -1914,7 +1914,7 @@ data _null_;
                    attrLengte_2037302649681328841=length(Organisatie);
                    aantalLF_2037302649681328841 = countc(Organisatie,'0A'x);
                    maxPassend_2037302649681328841=1-1-aantalLF_2037302649681328841;
-                   if attrLengte_2037302649681328841 > maxPassend_2037302649681328841
+                   if attrLengte_2037302649681328841 > max(maxPassend_2037302649681328841,1000)
                      then passend_2037302649681328841 = substr(Organisatie,1,maxPassend_2037302649681328841);
                      else passend_2037302649681328841 = Organisatie;
                    put passend_2037302649681328841 ~ @;
@@ -1925,7 +1925,7 @@ data _null_;
                    attrLengte_2419639035702251160=length(Bezoek);
                    aantalLF_2419639035702251160 = countc(Bezoek,'0A'x);
                    maxPassend_2419639035702251160=1-1-aantalLF_2419639035702251160;
-                   if attrLengte_2419639035702251160 > maxPassend_2419639035702251160
+                   if attrLengte_2419639035702251160 > max(maxPassend_2419639035702251160,1000)
                      then passend_2419639035702251160 = substr(Bezoek,1,maxPassend_2419639035702251160);
                      else passend_2419639035702251160 = Bezoek;
                    put passend_2419639035702251160 ~ @;
@@ -1936,7 +1936,7 @@ data _null_;
                    attrLengte_7995705138229212290=length(Transactie);
                    aantalLF_7995705138229212290 = countc(Transactie,'0A'x);
                    maxPassend_7995705138229212290=1-1-aantalLF_7995705138229212290;
-                   if attrLengte_7995705138229212290 > maxPassend_7995705138229212290
+                   if attrLengte_7995705138229212290 > max(maxPassend_7995705138229212290,1000)
                      then passend_7995705138229212290 = substr(Transactie,1,maxPassend_7995705138229212290);
                      else passend_7995705138229212290 = Transactie;
                    put passend_7995705138229212290 ~ @;
@@ -1947,7 +1947,7 @@ data _null_;
                    attrLengte_6586222269152653008=length(Uitgaand_inkomend);
                    aantalLF_6586222269152653008 = countc(Uitgaand_inkomend,'0A'x);
                    maxPassend_6586222269152653008=1-1-aantalLF_6586222269152653008;
-                   if attrLengte_6586222269152653008 > maxPassend_6586222269152653008
+                   if attrLengte_6586222269152653008 > max(maxPassend_6586222269152653008,1000)
                      then passend_6586222269152653008 = substr(Uitgaand_inkomend,1,maxPassend_6586222269152653008);
                      else passend_6586222269152653008 = Uitgaand_inkomend;
                    put passend_6586222269152653008 ~ @;
@@ -1958,7 +1958,7 @@ data _null_;
                    attrLengte_7451151554839174622=length(Juridisch);
                    aantalLF_7451151554839174622 = countc(Juridisch,'0A'x);
                    maxPassend_7451151554839174622=1-1-aantalLF_7451151554839174622;
-                   if attrLengte_7451151554839174622 > maxPassend_7451151554839174622
+                   if attrLengte_7451151554839174622 > max(maxPassend_7451151554839174622,1000)
                      then passend_7451151554839174622 = substr(Juridisch,1,maxPassend_7451151554839174622);
                      else passend_7451151554839174622 = Juridisch;
                    put passend_7451151554839174622 ~ @;
@@ -1969,7 +1969,7 @@ data _null_;
                    attrLengte_3944169568955711548=length(Stempel_sj);
                    aantalLF_3944169568955711548 = countc(Stempel_sj,'0A'x);
                    maxPassend_3944169568955711548=1-1-aantalLF_3944169568955711548;
-                   if attrLengte_3944169568955711548 > maxPassend_3944169568955711548
+                   if attrLengte_3944169568955711548 > max(maxPassend_3944169568955711548,1000)
                      then passend_3944169568955711548 = substr(Stempel_sj,1,maxPassend_3944169568955711548);
                      else passend_3944169568955711548 = Stempel_sj;
                    put passend_3944169568955711548 ~ @;
@@ -1980,7 +1980,7 @@ data _null_;
                    attrLengte_5045286369681625287=length(Bob_brief);
                    aantalLF_5045286369681625287 = countc(Bob_brief,'0A'x);
                    maxPassend_5045286369681625287=1-1-aantalLF_5045286369681625287;
-                   if attrLengte_5045286369681625287 > maxPassend_5045286369681625287
+                   if attrLengte_5045286369681625287 > max(maxPassend_5045286369681625287,1000)
                      then passend_5045286369681625287 = substr(Bob_brief,1,maxPassend_5045286369681625287);
                      else passend_5045286369681625287 = Bob_brief;
                    put passend_5045286369681625287 ~ @;
@@ -1994,7 +1994,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -2008,7 +2008,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -2019,7 +2019,7 @@ data _null_;
                    attrLengte_8266925566993179280=length(Vorderingbeheer);
                    aantalLF_8266925566993179280 = countc(Vorderingbeheer,'0A'x);
                    maxPassend_8266925566993179280=1-1-aantalLF_8266925566993179280;
-                   if attrLengte_8266925566993179280 > maxPassend_8266925566993179280
+                   if attrLengte_8266925566993179280 > max(maxPassend_8266925566993179280,1000)
                      then passend_8266925566993179280 = substr(Vorderingbeheer,1,maxPassend_8266925566993179280);
                      else passend_8266925566993179280 = Vorderingbeheer;
                    put passend_8266925566993179280 ~ @;
@@ -2030,7 +2030,7 @@ data _null_;
                    attrLengte_6290916302080128697=length(Externe_naam);
                    aantalLF_6290916302080128697 = countc(Externe_naam,'0A'x);
                    maxPassend_6290916302080128697=65-1-aantalLF_6290916302080128697;
-                   if attrLengte_6290916302080128697 > maxPassend_6290916302080128697
+                   if attrLengte_6290916302080128697 > max(maxPassend_6290916302080128697,1000)
                      then passend_6290916302080128697 = substr(Externe_naam,1,maxPassend_6290916302080128697);
                      else passend_6290916302080128697 = Externe_naam;
                    put passend_6290916302080128697 ~ @;
@@ -2041,7 +2041,7 @@ data _null_;
                    attrLengte_7084844533107672031=length(Correctie_jn);
                    aantalLF_7084844533107672031 = countc(Correctie_jn,'0A'x);
                    maxPassend_7084844533107672031=1-1-aantalLF_7084844533107672031;
-                   if attrLengte_7084844533107672031 > maxPassend_7084844533107672031
+                   if attrLengte_7084844533107672031 > max(maxPassend_7084844533107672031,1000)
                      then passend_7084844533107672031 = substr(Correctie_jn,1,maxPassend_7084844533107672031);
                      else passend_7084844533107672031 = Correctie_jn;
                    put passend_7084844533107672031 ~ @;
@@ -2052,7 +2052,7 @@ data _null_;
                    attrLengte_6616792436424895680=length(Intern_jn);
                    aantalLF_6616792436424895680 = countc(Intern_jn,'0A'x);
                    maxPassend_6616792436424895680=1-1-aantalLF_6616792436424895680;
-                   if attrLengte_6616792436424895680 > maxPassend_6616792436424895680
+                   if attrLengte_6616792436424895680 > max(maxPassend_6616792436424895680,1000)
                      then passend_6616792436424895680 = substr(Intern_jn,1,maxPassend_6616792436424895680);
                      else passend_6616792436424895680 = Intern_jn;
                    put passend_6616792436424895680 ~ @;
@@ -2133,7 +2133,7 @@ data _null_;
                    attrLengte_8136469209690216678=length(Correctie_code);
                    aantalLF_8136469209690216678 = countc(Correctie_code,'0A'x);
                    maxPassend_8136469209690216678=5-1-aantalLF_8136469209690216678;
-                   if attrLengte_8136469209690216678 > maxPassend_8136469209690216678
+                   if attrLengte_8136469209690216678 > max(maxPassend_8136469209690216678,1000)
                      then passend_8136469209690216678 = substr(Correctie_code,1,maxPassend_8136469209690216678);
                      else passend_8136469209690216678 = Correctie_code;
                    put passend_8136469209690216678 ~ @;
@@ -2150,7 +2150,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -2164,7 +2164,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -2462,7 +2462,7 @@ data _null_;
                    attrLengte_4300803410724717524=length(Afgedrukt_JN);
                    aantalLF_4300803410724717524 = countc(Afgedrukt_JN,'0A'x);
                    maxPassend_4300803410724717524=1-1-aantalLF_4300803410724717524;
-                   if attrLengte_4300803410724717524 > maxPassend_4300803410724717524
+                   if attrLengte_4300803410724717524 > max(maxPassend_4300803410724717524,1000)
                      then passend_4300803410724717524 = substr(Afgedrukt_JN,1,maxPassend_4300803410724717524);
                      else passend_4300803410724717524 = Afgedrukt_JN;
                    put passend_4300803410724717524 ~ @;
@@ -2473,7 +2473,7 @@ data _null_;
                    attrLengte_7804948874982929418=length(Afgehandeld);
                    aantalLF_7804948874982929418 = countc(Afgehandeld,'0A'x);
                    maxPassend_7804948874982929418=1-1-aantalLF_7804948874982929418;
-                   if attrLengte_7804948874982929418 > maxPassend_7804948874982929418
+                   if attrLengte_7804948874982929418 > max(maxPassend_7804948874982929418,1000)
                      then passend_7804948874982929418 = substr(Afgehandeld,1,maxPassend_7804948874982929418);
                      else passend_7804948874982929418 = Afgehandeld;
                    put passend_7804948874982929418 ~ @;
@@ -2484,7 +2484,7 @@ data _null_;
                    attrLengte_1833190793819299497=length(Archiveren);
                    aantalLF_1833190793819299497 = countc(Archiveren,'0A'x);
                    maxPassend_1833190793819299497=1-1-aantalLF_1833190793819299497;
-                   if attrLengte_1833190793819299497 > maxPassend_1833190793819299497
+                   if attrLengte_1833190793819299497 > max(maxPassend_1833190793819299497,1000)
                      then passend_1833190793819299497 = substr(Archiveren,1,maxPassend_1833190793819299497);
                      else passend_1833190793819299497 = Archiveren;
                    put passend_1833190793819299497 ~ @;
@@ -2495,7 +2495,7 @@ data _null_;
                    attrLengte_1059307689160233507=length(Bas_da_melding);
                    aantalLF_1059307689160233507 = countc(Bas_da_melding,'0A'x);
                    maxPassend_1059307689160233507=2048-1-aantalLF_1059307689160233507;
-                   if attrLengte_1059307689160233507 > maxPassend_1059307689160233507
+                   if attrLengte_1059307689160233507 > max(maxPassend_1059307689160233507,1000)
                      then passend_1059307689160233507 = substr(Bas_da_melding,1,maxPassend_1059307689160233507);
                      else passend_1059307689160233507 = Bas_da_melding;
                    put passend_1059307689160233507 ~ @;
@@ -2512,7 +2512,7 @@ data _null_;
                    attrLengte_1120661312267482359=length(Bos_status);
                    aantalLF_1120661312267482359 = countc(Bos_status,'0A'x);
                    maxPassend_1120661312267482359=2-1-aantalLF_1120661312267482359;
-                   if attrLengte_1120661312267482359 > maxPassend_1120661312267482359
+                   if attrLengte_1120661312267482359 > max(maxPassend_1120661312267482359,1000)
                      then passend_1120661312267482359 = substr(Bos_status,1,maxPassend_1120661312267482359);
                      else passend_1120661312267482359 = Bos_status;
                    put passend_1120661312267482359 ~ @;
@@ -2529,7 +2529,7 @@ data _null_;
                    attrLengte_9126614030551897497=length(Cor_bericht);
                    aantalLF_9126614030551897497 = countc(Cor_bericht,'0A'x);
                    maxPassend_9126614030551897497=1-1-aantalLF_9126614030551897497;
-                   if attrLengte_9126614030551897497 > maxPassend_9126614030551897497
+                   if attrLengte_9126614030551897497 > max(maxPassend_9126614030551897497,1000)
                      then passend_9126614030551897497 = substr(Cor_bericht,1,maxPassend_9126614030551897497);
                      else passend_9126614030551897497 = Cor_bericht;
                    put passend_9126614030551897497 ~ @;
@@ -2555,7 +2555,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -2566,7 +2566,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -2580,7 +2580,7 @@ data _null_;
                    attrLengte_5989136901746980486=length(Datum_ok);
                    aantalLF_5989136901746980486 = countc(Datum_ok,'0A'x);
                    maxPassend_5989136901746980486=1-1-aantalLF_5989136901746980486;
-                   if attrLengte_5989136901746980486 > maxPassend_5989136901746980486
+                   if attrLengte_5989136901746980486 > max(maxPassend_5989136901746980486,1000)
                      then passend_5989136901746980486 = substr(Datum_ok,1,maxPassend_5989136901746980486);
                      else passend_5989136901746980486 = Datum_ok;
                    put passend_5989136901746980486 ~ @;
@@ -2594,7 +2594,7 @@ data _null_;
                    attrLengte_3878728069056016014=length(Digitaal_archiveren);
                    aantalLF_3878728069056016014 = countc(Digitaal_archiveren,'0A'x);
                    maxPassend_3878728069056016014=3-1-aantalLF_3878728069056016014;
-                   if attrLengte_3878728069056016014 > maxPassend_3878728069056016014
+                   if attrLengte_3878728069056016014 > max(maxPassend_3878728069056016014,1000)
                      then passend_3878728069056016014 = substr(Digitaal_archiveren,1,maxPassend_3878728069056016014);
                      else passend_3878728069056016014 = Digitaal_archiveren;
                    put passend_3878728069056016014 ~ @;
@@ -2605,7 +2605,7 @@ data _null_;
                    attrLengte_3553197755462333651=length(Doc_directory);
                    aantalLF_3553197755462333651 = countc(Doc_directory,'0A'x);
                    maxPassend_3553197755462333651=100-1-aantalLF_3553197755462333651;
-                   if attrLengte_3553197755462333651 > maxPassend_3553197755462333651
+                   if attrLengte_3553197755462333651 > max(maxPassend_3553197755462333651,1000)
                      then passend_3553197755462333651 = substr(Doc_directory,1,maxPassend_3553197755462333651);
                      else passend_3553197755462333651 = Doc_directory;
                    put passend_3553197755462333651 ~ @;
@@ -2616,7 +2616,7 @@ data _null_;
                    attrLengte_4570953002792249656=length(Doc_naam);
                    aantalLF_4570953002792249656 = countc(Doc_naam,'0A'x);
                    maxPassend_4570953002792249656=40-1-aantalLF_4570953002792249656;
-                   if attrLengte_4570953002792249656 > maxPassend_4570953002792249656
+                   if attrLengte_4570953002792249656 > max(maxPassend_4570953002792249656,1000)
                      then passend_4570953002792249656 = substr(Doc_naam,1,maxPassend_4570953002792249656);
                      else passend_4570953002792249656 = Doc_naam;
                    put passend_4570953002792249656 ~ @;
@@ -2633,7 +2633,7 @@ data _null_;
                    attrLengte_6412683484080074523=length(Email_JN);
                    aantalLF_6412683484080074523 = countc(Email_JN,'0A'x);
                    maxPassend_6412683484080074523=1-1-aantalLF_6412683484080074523;
-                   if attrLengte_6412683484080074523 > maxPassend_6412683484080074523
+                   if attrLengte_6412683484080074523 > max(maxPassend_6412683484080074523,1000)
                      then passend_6412683484080074523 = substr(Email_JN,1,maxPassend_6412683484080074523);
                      else passend_6412683484080074523 = Email_JN;
                    put passend_6412683484080074523 ~ @;
@@ -2644,7 +2644,7 @@ data _null_;
                    attrLengte_4728778185483655903=length(Genereer_JN);
                    aantalLF_4728778185483655903 = countc(Genereer_JN,'0A'x);
                    maxPassend_4728778185483655903=1-1-aantalLF_4728778185483655903;
-                   if attrLengte_4728778185483655903 > maxPassend_4728778185483655903
+                   if attrLengte_4728778185483655903 > max(maxPassend_4728778185483655903,1000)
                      then passend_4728778185483655903 = substr(Genereer_JN,1,maxPassend_4728778185483655903);
                      else passend_4728778185483655903 = Genereer_JN;
                    put passend_4728778185483655903 ~ @;
@@ -2655,7 +2655,7 @@ data _null_;
                    attrLengte_1275584113257327827=length(Html);
                    aantalLF_1275584113257327827 = countc(Html,'0A'x);
                    maxPassend_1275584113257327827=2048-1-aantalLF_1275584113257327827;
-                   if attrLengte_1275584113257327827 > maxPassend_1275584113257327827
+                   if attrLengte_1275584113257327827 > max(maxPassend_1275584113257327827,1000)
                      then passend_1275584113257327827 = substr(Html,1,maxPassend_1275584113257327827);
                      else passend_1275584113257327827 = Html;
                    put passend_1275584113257327827 ~ @;
@@ -2672,7 +2672,7 @@ data _null_;
                    attrLengte_4031150624851215876=length(Ingetrokken);
                    aantalLF_4031150624851215876 = countc(Ingetrokken,'0A'x);
                    maxPassend_4031150624851215876=1-1-aantalLF_4031150624851215876;
-                   if attrLengte_4031150624851215876 > maxPassend_4031150624851215876
+                   if attrLengte_4031150624851215876 > max(maxPassend_4031150624851215876,1000)
                      then passend_4031150624851215876 = substr(Ingetrokken,1,maxPassend_4031150624851215876);
                      else passend_4031150624851215876 = Ingetrokken;
                    put passend_4031150624851215876 ~ @;
@@ -2686,7 +2686,7 @@ data _null_;
                    attrLengte_8223794688263544128=length(Kenmerk);
                    aantalLF_8223794688263544128 = countc(Kenmerk,'0A'x);
                    maxPassend_8223794688263544128=40-1-aantalLF_8223794688263544128;
-                   if attrLengte_8223794688263544128 > maxPassend_8223794688263544128
+                   if attrLengte_8223794688263544128 > max(maxPassend_8223794688263544128,1000)
                      then passend_8223794688263544128 = substr(Kenmerk,1,maxPassend_8223794688263544128);
                      else passend_8223794688263544128 = Kenmerk;
                    put passend_8223794688263544128 ~ @;
@@ -2697,7 +2697,7 @@ data _null_;
                    attrLengte_8863527692231258218=length(Lijst_cd);
                    aantalLF_8863527692231258218 = countc(Lijst_cd,'0A'x);
                    maxPassend_8863527692231258218=20-1-aantalLF_8863527692231258218;
-                   if attrLengte_8863527692231258218 > maxPassend_8863527692231258218
+                   if attrLengte_8863527692231258218 > max(maxPassend_8863527692231258218,1000)
                      then passend_8863527692231258218 = substr(Lijst_cd,1,maxPassend_8863527692231258218);
                      else passend_8863527692231258218 = Lijst_cd;
                    put passend_8863527692231258218 ~ @;
@@ -2708,7 +2708,7 @@ data _null_;
                    attrLengte_3138629571656988592=length(Mandaat_rol_cd);
                    aantalLF_3138629571656988592 = countc(Mandaat_rol_cd,'0A'x);
                    maxPassend_3138629571656988592=3-1-aantalLF_3138629571656988592;
-                   if attrLengte_3138629571656988592 > maxPassend_3138629571656988592
+                   if attrLengte_3138629571656988592 > max(maxPassend_3138629571656988592,1000)
                      then passend_3138629571656988592 = substr(Mandaat_rol_cd,1,maxPassend_3138629571656988592);
                      else passend_3138629571656988592 = Mandaat_rol_cd;
                    put passend_3138629571656988592 ~ @;
@@ -2719,7 +2719,7 @@ data _null_;
                    attrLengte_2391706285967525377=length(Mdw_cd_email);
                    aantalLF_2391706285967525377 = countc(Mdw_cd_email,'0A'x);
                    maxPassend_2391706285967525377=30-1-aantalLF_2391706285967525377;
-                   if attrLengte_2391706285967525377 > maxPassend_2391706285967525377
+                   if attrLengte_2391706285967525377 > max(maxPassend_2391706285967525377,1000)
                      then passend_2391706285967525377 = substr(Mdw_cd_email,1,maxPassend_2391706285967525377);
                      else passend_2391706285967525377 = Mdw_cd_email;
                    put passend_2391706285967525377 ~ @;
@@ -2736,7 +2736,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -2747,7 +2747,7 @@ data _null_;
                    attrLengte_6801515960142252134=length(naam_organisatie);
                    aantalLF_6801515960142252134 = countc(naam_organisatie,'0A'x);
                    maxPassend_6801515960142252134=625-1-aantalLF_6801515960142252134;
-                   if attrLengte_6801515960142252134 > maxPassend_6801515960142252134
+                   if attrLengte_6801515960142252134 > max(maxPassend_6801515960142252134,1000)
                      then passend_6801515960142252134 = substr(naam_organisatie,1,maxPassend_6801515960142252134);
                      else passend_6801515960142252134 = naam_organisatie;
                    put passend_6801515960142252134 ~ @;
@@ -2758,7 +2758,7 @@ data _null_;
                    attrLengte_5224579374881671966=length(Ok_JN);
                    aantalLF_5224579374881671966 = countc(Ok_JN,'0A'x);
                    maxPassend_5224579374881671966=1-1-aantalLF_5224579374881671966;
-                   if attrLengte_5224579374881671966 > maxPassend_5224579374881671966
+                   if attrLengte_5224579374881671966 > max(maxPassend_5224579374881671966,1000)
                      then passend_5224579374881671966 = substr(Ok_JN,1,maxPassend_5224579374881671966);
                      else passend_5224579374881671966 = Ok_JN;
                    put passend_5224579374881671966 ~ @;
@@ -2769,7 +2769,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=2000-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -2780,7 +2780,7 @@ data _null_;
                    attrLengte_4104659127539397279=length(Open_brief);
                    aantalLF_4104659127539397279 = countc(Open_brief,'0A'x);
                    maxPassend_4104659127539397279=1-1-aantalLF_4104659127539397279;
-                   if attrLengte_4104659127539397279 > maxPassend_4104659127539397279
+                   if attrLengte_4104659127539397279 > max(maxPassend_4104659127539397279,1000)
                      then passend_4104659127539397279 = substr(Open_brief,1,maxPassend_4104659127539397279);
                      else passend_4104659127539397279 = Open_brief;
                    put passend_4104659127539397279 ~ @;
@@ -2809,7 +2809,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -2823,7 +2823,7 @@ data _null_;
                    attrLengte_6362935673041143414=length(Select_export);
                    aantalLF_6362935673041143414 = countc(Select_export,'0A'x);
                    maxPassend_6362935673041143414=1-1-aantalLF_6362935673041143414;
-                   if attrLengte_6362935673041143414 > maxPassend_6362935673041143414
+                   if attrLengte_6362935673041143414 > max(maxPassend_6362935673041143414,1000)
                      then passend_6362935673041143414 = substr(Select_export,1,maxPassend_6362935673041143414);
                      else passend_6362935673041143414 = Select_export;
                    put passend_6362935673041143414 ~ @;
@@ -2834,7 +2834,7 @@ data _null_;
                    attrLengte_3633693572838341517=length(Senterkenmerk);
                    aantalLF_3633693572838341517 = countc(Senterkenmerk,'0A'x);
                    maxPassend_3633693572838341517=40-1-aantalLF_3633693572838341517;
-                   if attrLengte_3633693572838341517 > maxPassend_3633693572838341517
+                   if attrLengte_3633693572838341517 > max(maxPassend_3633693572838341517,1000)
                      then passend_3633693572838341517 = substr(Senterkenmerk,1,maxPassend_3633693572838341517);
                      else passend_3633693572838341517 = Senterkenmerk;
                    put passend_3633693572838341517 ~ @;
@@ -2845,7 +2845,7 @@ data _null_;
                    attrLengte_5888333563165379968=length(Text_inhoud);
                    aantalLF_5888333563165379968 = countc(Text_inhoud,'0A'x);
                    maxPassend_5888333563165379968=2048-1-aantalLF_5888333563165379968;
-                   if attrLengte_5888333563165379968 > maxPassend_5888333563165379968
+                   if attrLengte_5888333563165379968 > max(maxPassend_5888333563165379968,1000)
                      then passend_5888333563165379968 = substr(Text_inhoud,1,maxPassend_5888333563165379968);
                      else passend_5888333563165379968 = Text_inhoud;
                    put passend_5888333563165379968 ~ @;
@@ -2856,7 +2856,7 @@ data _null_;
                    attrLengte_2852986966065042522=length(Vernieuw_paraaf);
                    aantalLF_2852986966065042522 = countc(Vernieuw_paraaf,'0A'x);
                    maxPassend_2852986966065042522=1-1-aantalLF_2852986966065042522;
-                   if attrLengte_2852986966065042522 > maxPassend_2852986966065042522
+                   if attrLengte_2852986966065042522 > max(maxPassend_2852986966065042522,1000)
                      then passend_2852986966065042522 = substr(Vernieuw_paraaf,1,maxPassend_2852986966065042522);
                      else passend_2852986966065042522 = Vernieuw_paraaf;
                    put passend_2852986966065042522 ~ @;
@@ -2870,7 +2870,7 @@ data _null_;
                    attrLengte_3700551394262597335=length(Verzonden_elektronisch_JN);
                    aantalLF_3700551394262597335 = countc(Verzonden_elektronisch_JN,'0A'x);
                    maxPassend_3700551394262597335=1-1-aantalLF_3700551394262597335;
-                   if attrLengte_3700551394262597335 > maxPassend_3700551394262597335
+                   if attrLengte_3700551394262597335 > max(maxPassend_3700551394262597335,1000)
                      then passend_3700551394262597335 = substr(Verzonden_elektronisch_JN,1,maxPassend_3700551394262597335);
                      else passend_3700551394262597335 = Verzonden_elektronisch_JN;
                    put passend_3700551394262597335 ~ @;
@@ -2881,7 +2881,7 @@ data _null_;
                    attrLengte_6459704284428918526=length(Verzonden_per_post_JN);
                    aantalLF_6459704284428918526 = countc(Verzonden_per_post_JN,'0A'x);
                    maxPassend_6459704284428918526=1-1-aantalLF_6459704284428918526;
-                   if attrLengte_6459704284428918526 > maxPassend_6459704284428918526
+                   if attrLengte_6459704284428918526 > max(maxPassend_6459704284428918526,1000)
                      then passend_6459704284428918526 = substr(Verzonden_per_post_JN,1,maxPassend_6459704284428918526);
                      else passend_6459704284428918526 = Verzonden_per_post_JN;
                    put passend_6459704284428918526 ~ @;
@@ -2895,7 +2895,7 @@ data _null_;
                    attrLengte_8755559954394913459=length(Wordbrief_akkoord);
                    aantalLF_8755559954394913459 = countc(Wordbrief_akkoord,'0A'x);
                    maxPassend_8755559954394913459=1-1-aantalLF_8755559954394913459;
-                   if attrLengte_8755559954394913459 > maxPassend_8755559954394913459
+                   if attrLengte_8755559954394913459 > max(maxPassend_8755559954394913459,1000)
                      then passend_8755559954394913459 = substr(Wordbrief_akkoord,1,maxPassend_8755559954394913459);
                      else passend_8755559954394913459 = Wordbrief_akkoord;
                    put passend_8755559954394913459 ~ @;
@@ -2906,7 +2906,7 @@ data _null_;
                    attrLengte_6831705858834695873=length(Xml_inhoud);
                    aantalLF_6831705858834695873 = countc(Xml_inhoud,'0A'x);
                    maxPassend_6831705858834695873=2048-1-aantalLF_6831705858834695873;
-                   if attrLengte_6831705858834695873 > maxPassend_6831705858834695873
+                   if attrLengte_6831705858834695873 > max(maxPassend_6831705858834695873,1000)
                      then passend_6831705858834695873 = substr(Xml_inhoud,1,maxPassend_6831705858834695873);
                      else passend_6831705858834695873 = Xml_inhoud;
                    put passend_6831705858834695873 ~ @;
@@ -2917,7 +2917,7 @@ data _null_;
                    attrLengte_7995265278286191744=length(Xsl);
                    aantalLF_7995265278286191744 = countc(Xsl,'0A'x);
                    maxPassend_7995265278286191744=2048-1-aantalLF_7995265278286191744;
-                   if attrLengte_7995265278286191744 > maxPassend_7995265278286191744
+                   if attrLengte_7995265278286191744 > max(maxPassend_7995265278286191744,1000)
                      then passend_7995265278286191744 = substr(Xsl,1,maxPassend_7995265278286191744);
                      else passend_7995265278286191744 = Xsl;
                    put passend_7995265278286191744 ~ @;
@@ -3003,7 +3003,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -3014,7 +3014,7 @@ data _null_;
                    attrLengte_8747335132947235925=length(Cst_cd_2);
                    aantalLF_8747335132947235925 = countc(Cst_cd_2,'0A'x);
                    maxPassend_8747335132947235925=8-1-aantalLF_8747335132947235925;
-                   if attrLengte_8747335132947235925 > maxPassend_8747335132947235925
+                   if attrLengte_8747335132947235925 > max(maxPassend_8747335132947235925,1000)
                      then passend_8747335132947235925 = substr(Cst_cd_2,1,maxPassend_8747335132947235925);
                      else passend_8747335132947235925 = Cst_cd_2;
                    put passend_8747335132947235925 ~ @;
@@ -3025,7 +3025,7 @@ data _null_;
                    attrLengte_6553125106103169607=length(Verzenddatum_jn);
                    aantalLF_6553125106103169607 = countc(Verzenddatum_jn,'0A'x);
                    maxPassend_6553125106103169607=1-1-aantalLF_6553125106103169607;
-                   if attrLengte_6553125106103169607 > maxPassend_6553125106103169607
+                   if attrLengte_6553125106103169607 > max(maxPassend_6553125106103169607,1000)
                      then passend_6553125106103169607 = substr(Verzenddatum_jn,1,maxPassend_6553125106103169607);
                      else passend_6553125106103169607 = Verzenddatum_jn;
                    put passend_6553125106103169607 ~ @;
@@ -3036,7 +3036,7 @@ data _null_;
                    attrLengte_8183018579889837264=length(Afgehandeld_jn);
                    aantalLF_8183018579889837264 = countc(Afgehandeld_jn,'0A'x);
                    maxPassend_8183018579889837264=1-1-aantalLF_8183018579889837264;
-                   if attrLengte_8183018579889837264 > maxPassend_8183018579889837264
+                   if attrLengte_8183018579889837264 > max(maxPassend_8183018579889837264,1000)
                      then passend_8183018579889837264 = substr(Afgehandeld_jn,1,maxPassend_8183018579889837264);
                      else passend_8183018579889837264 = Afgehandeld_jn;
                    put passend_8183018579889837264 ~ @;
@@ -3050,7 +3050,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -3064,7 +3064,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -3075,7 +3075,7 @@ data _null_;
                    attrLengte_4719770552968878943=length(Genereer_jn);
                    aantalLF_4719770552968878943 = countc(Genereer_jn,'0A'x);
                    maxPassend_4719770552968878943=1-1-aantalLF_4719770552968878943;
-                   if attrLengte_4719770552968878943 > maxPassend_4719770552968878943
+                   if attrLengte_4719770552968878943 > max(maxPassend_4719770552968878943,1000)
                      then passend_4719770552968878943 = substr(Genereer_jn,1,maxPassend_4719770552968878943);
                      else passend_4719770552968878943 = Genereer_jn;
                    put passend_4719770552968878943 ~ @;
@@ -3153,7 +3153,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -3164,7 +3164,7 @@ data _null_;
                    attrLengte_8346042569885215607=length(Type_paraaf);
                    aantalLF_8346042569885215607 = countc(Type_paraaf,'0A'x);
                    maxPassend_8346042569885215607=1-1-aantalLF_8346042569885215607;
-                   if attrLengte_8346042569885215607 > maxPassend_8346042569885215607
+                   if attrLengte_8346042569885215607 > max(maxPassend_8346042569885215607,1000)
                      then passend_8346042569885215607 = substr(Type_paraaf,1,maxPassend_8346042569885215607);
                      else passend_8346042569885215607 = Type_paraaf;
                    put passend_8346042569885215607 ~ @;
@@ -3175,7 +3175,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -3186,7 +3186,7 @@ data _null_;
                    attrLengte_2994945184948973925=length(Mdw_rol_niveau);
                    aantalLF_2994945184948973925 = countc(Mdw_rol_niveau,'0A'x);
                    maxPassend_2994945184948973925=3-1-aantalLF_2994945184948973925;
-                   if attrLengte_2994945184948973925 > maxPassend_2994945184948973925
+                   if attrLengte_2994945184948973925 > max(maxPassend_2994945184948973925,1000)
                      then passend_2994945184948973925 = substr(Mdw_rol_niveau,1,maxPassend_2994945184948973925);
                      else passend_2994945184948973925 = Mdw_rol_niveau;
                    put passend_2994945184948973925 ~ @;
@@ -3200,7 +3200,7 @@ data _null_;
                    attrLengte_4591517918162034415=length(Vaste_paraaf_jn);
                    aantalLF_4591517918162034415 = countc(Vaste_paraaf_jn,'0A'x);
                    maxPassend_4591517918162034415=1-1-aantalLF_4591517918162034415;
-                   if attrLengte_4591517918162034415 > maxPassend_4591517918162034415
+                   if attrLengte_4591517918162034415 > max(maxPassend_4591517918162034415,1000)
                      then passend_4591517918162034415 = substr(Vaste_paraaf_jn,1,maxPassend_4591517918162034415);
                      else passend_4591517918162034415 = Vaste_paraaf_jn;
                    put passend_4591517918162034415 ~ @;
@@ -3211,7 +3211,7 @@ data _null_;
                    attrLengte_8388230177475286743=length(Rol_volg_cd);
                    aantalLF_8388230177475286743 = countc(Rol_volg_cd,'0A'x);
                    maxPassend_8388230177475286743=1-1-aantalLF_8388230177475286743;
-                   if attrLengte_8388230177475286743 > maxPassend_8388230177475286743
+                   if attrLengte_8388230177475286743 > max(maxPassend_8388230177475286743,1000)
                      then passend_8388230177475286743 = substr(Rol_volg_cd,1,maxPassend_8388230177475286743);
                      else passend_8388230177475286743 = Rol_volg_cd;
                    put passend_8388230177475286743 ~ @;
@@ -3324,7 +3324,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -3335,7 +3335,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -3346,7 +3346,7 @@ data _null_;
                    attrLengte_1224618887063362992=length(Mdw_id);
                    aantalLF_1224618887063362992 = countc(Mdw_id,'0A'x);
                    maxPassend_1224618887063362992=12-1-aantalLF_1224618887063362992;
-                   if attrLengte_1224618887063362992 > maxPassend_1224618887063362992
+                   if attrLengte_1224618887063362992 > max(maxPassend_1224618887063362992,1000)
                      then passend_1224618887063362992 = substr(Mdw_id,1,maxPassend_1224618887063362992);
                      else passend_1224618887063362992 = Mdw_id;
                    put passend_1224618887063362992 ~ @;
@@ -3360,7 +3360,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -3371,7 +3371,7 @@ data _null_;
                    attrLengte_5642491828179289605=length(Per_cluster);
                    aantalLF_5642491828179289605 = countc(Per_cluster,'0A'x);
                    maxPassend_5642491828179289605=1-1-aantalLF_5642491828179289605;
-                   if attrLengte_5642491828179289605 > maxPassend_5642491828179289605
+                   if attrLengte_5642491828179289605 > max(maxPassend_5642491828179289605,1000)
                      then passend_5642491828179289605 = substr(Per_cluster,1,maxPassend_5642491828179289605);
                      else passend_5642491828179289605 = Per_cluster;
                    put passend_5642491828179289605 ~ @;
@@ -3388,7 +3388,7 @@ data _null_;
                    attrLengte_4412363972584569639=length(Reactie_cd);
                    aantalLF_4412363972584569639 = countc(Reactie_cd,'0A'x);
                    maxPassend_4412363972584569639=3-1-aantalLF_4412363972584569639;
-                   if attrLengte_4412363972584569639 > maxPassend_4412363972584569639
+                   if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
                    put passend_4412363972584569639 ~ @;
@@ -3402,7 +3402,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -3413,7 +3413,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -3542,7 +3542,7 @@ data _null_;
                    attrLengte_541933804402953707=length(Bos_bezorging);
                    aantalLF_541933804402953707 = countc(Bos_bezorging,'0A'x);
                    maxPassend_541933804402953707=1-1-aantalLF_541933804402953707;
-                   if attrLengte_541933804402953707 > maxPassend_541933804402953707
+                   if attrLengte_541933804402953707 > max(maxPassend_541933804402953707,1000)
                      then passend_541933804402953707 = substr(Bos_bezorging,1,maxPassend_541933804402953707);
                      else passend_541933804402953707 = Bos_bezorging;
                    put passend_541933804402953707 ~ @;
@@ -3553,7 +3553,7 @@ data _null_;
                    attrLengte_4878221775181652606=length(Crea_back);
                    aantalLF_4878221775181652606 = countc(Crea_back,'0A'x);
                    maxPassend_4878221775181652606=1-1-aantalLF_4878221775181652606;
-                   if attrLengte_4878221775181652606 > maxPassend_4878221775181652606
+                   if attrLengte_4878221775181652606 > max(maxPassend_4878221775181652606,1000)
                      then passend_4878221775181652606 = substr(Crea_back,1,maxPassend_4878221775181652606);
                      else passend_4878221775181652606 = Crea_back;
                    put passend_4878221775181652606 ~ @;
@@ -3564,7 +3564,7 @@ data _null_;
                    attrLengte_3017653041298238391=length(Create_merge_jn);
                    aantalLF_3017653041298238391 = countc(Create_merge_jn,'0A'x);
                    maxPassend_3017653041298238391=1-1-aantalLF_3017653041298238391;
-                   if attrLengte_3017653041298238391 > maxPassend_3017653041298238391
+                   if attrLengte_3017653041298238391 > max(maxPassend_3017653041298238391,1000)
                      then passend_3017653041298238391 = substr(Create_merge_jn,1,maxPassend_3017653041298238391);
                      else passend_3017653041298238391 = Create_merge_jn;
                    put passend_3017653041298238391 ~ @;
@@ -3575,7 +3575,7 @@ data _null_;
                    attrLengte_571955599341724873=length(Create_merge_single);
                    aantalLF_571955599341724873 = countc(Create_merge_single,'0A'x);
                    maxPassend_571955599341724873=1-1-aantalLF_571955599341724873;
-                   if attrLengte_571955599341724873 > maxPassend_571955599341724873
+                   if attrLengte_571955599341724873 > max(maxPassend_571955599341724873,1000)
                      then passend_571955599341724873 = substr(Create_merge_single,1,maxPassend_571955599341724873);
                      else passend_571955599341724873 = Create_merge_single;
                    put passend_571955599341724873 ~ @;
@@ -3589,7 +3589,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -3600,7 +3600,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -3611,7 +3611,7 @@ data _null_;
                    attrLengte_2954458111530422857=length(Doc_template);
                    aantalLF_2954458111530422857 = countc(Doc_template,'0A'x);
                    maxPassend_2954458111530422857=150-1-aantalLF_2954458111530422857;
-                   if attrLengte_2954458111530422857 > maxPassend_2954458111530422857
+                   if attrLengte_2954458111530422857 > max(maxPassend_2954458111530422857,1000)
                      then passend_2954458111530422857 = substr(Doc_template,1,maxPassend_2954458111530422857);
                      else passend_2954458111530422857 = Doc_template;
                    put passend_2954458111530422857 ~ @;
@@ -3622,7 +3622,7 @@ data _null_;
                    attrLengte_6290916302080128697=length(Externe_naam);
                    aantalLF_6290916302080128697 = countc(Externe_naam,'0A'x);
                    maxPassend_6290916302080128697=65-1-aantalLF_6290916302080128697;
-                   if attrLengte_6290916302080128697 > maxPassend_6290916302080128697
+                   if attrLengte_6290916302080128697 > max(maxPassend_6290916302080128697,1000)
                      then passend_6290916302080128697 = substr(Externe_naam,1,maxPassend_6290916302080128697);
                      else passend_6290916302080128697 = Externe_naam;
                    put passend_6290916302080128697 ~ @;
@@ -3633,7 +3633,7 @@ data _null_;
                    attrLengte_7719773628010563908=length(Geblokkeerd_jn);
                    aantalLF_7719773628010563908 = countc(Geblokkeerd_jn,'0A'x);
                    maxPassend_7719773628010563908=1-1-aantalLF_7719773628010563908;
-                   if attrLengte_7719773628010563908 > maxPassend_7719773628010563908
+                   if attrLengte_7719773628010563908 > max(maxPassend_7719773628010563908,1000)
                      then passend_7719773628010563908 = substr(Geblokkeerd_jn,1,maxPassend_7719773628010563908);
                      else passend_7719773628010563908 = Geblokkeerd_jn;
                    put passend_7719773628010563908 ~ @;
@@ -3644,7 +3644,7 @@ data _null_;
                    attrLengte_2714930422424334682=length(Ic_controle);
                    aantalLF_2714930422424334682 = countc(Ic_controle,'0A'x);
                    maxPassend_2714930422424334682=1-1-aantalLF_2714930422424334682;
-                   if attrLengte_2714930422424334682 > maxPassend_2714930422424334682
+                   if attrLengte_2714930422424334682 > max(maxPassend_2714930422424334682,1000)
                      then passend_2714930422424334682 = substr(Ic_controle,1,maxPassend_2714930422424334682);
                      else passend_2714930422424334682 = Ic_controle;
                    put passend_2714930422424334682 ~ @;
@@ -3655,7 +3655,7 @@ data _null_;
                    attrLengte_5693874621403232828=length(Job);
                    aantalLF_5693874621403232828 = countc(Job,'0A'x);
                    maxPassend_5693874621403232828=30-1-aantalLF_5693874621403232828;
-                   if attrLengte_5693874621403232828 > maxPassend_5693874621403232828
+                   if attrLengte_5693874621403232828 > max(maxPassend_5693874621403232828,1000)
                      then passend_5693874621403232828 = substr(Job,1,maxPassend_5693874621403232828);
                      else passend_5693874621403232828 = Job;
                    put passend_5693874621403232828 ~ @;
@@ -3666,7 +3666,7 @@ data _null_;
                    attrLengte_8863527692231258218=length(Lijst_cd);
                    aantalLF_8863527692231258218 = countc(Lijst_cd,'0A'x);
                    maxPassend_8863527692231258218=20-1-aantalLF_8863527692231258218;
-                   if attrLengte_8863527692231258218 > maxPassend_8863527692231258218
+                   if attrLengte_8863527692231258218 > max(maxPassend_8863527692231258218,1000)
                      then passend_8863527692231258218 = substr(Lijst_cd,1,maxPassend_8863527692231258218);
                      else passend_8863527692231258218 = Lijst_cd;
                    put passend_8863527692231258218 ~ @;
@@ -3680,7 +3680,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -3691,7 +3691,7 @@ data _null_;
                    attrLengte_9208144706229977192=length(Prf_cd);
                    aantalLF_9208144706229977192 = countc(Prf_cd,'0A'x);
                    maxPassend_9208144706229977192=8-1-aantalLF_9208144706229977192;
-                   if attrLengte_9208144706229977192 > maxPassend_9208144706229977192
+                   if attrLengte_9208144706229977192 > max(maxPassend_9208144706229977192,1000)
                      then passend_9208144706229977192 = substr(Prf_cd,1,maxPassend_9208144706229977192);
                      else passend_9208144706229977192 = Prf_cd;
                    put passend_9208144706229977192 ~ @;
@@ -3702,7 +3702,7 @@ data _null_;
                    attrLengte_7548870647325983284=length(Print_jn);
                    aantalLF_7548870647325983284 = countc(Print_jn,'0A'x);
                    maxPassend_7548870647325983284=1-1-aantalLF_7548870647325983284;
-                   if attrLengte_7548870647325983284 > maxPassend_7548870647325983284
+                   if attrLengte_7548870647325983284 > max(maxPassend_7548870647325983284,1000)
                      then passend_7548870647325983284 = substr(Print_jn,1,maxPassend_7548870647325983284);
                      else passend_7548870647325983284 = Print_jn;
                    put passend_7548870647325983284 ~ @;
@@ -3719,7 +3719,7 @@ data _null_;
                    attrLengte_2798672704799540187=length(Verzenddatum_vullen);
                    aantalLF_2798672704799540187 = countc(Verzenddatum_vullen,'0A'x);
                    maxPassend_2798672704799540187=1-1-aantalLF_2798672704799540187;
-                   if attrLengte_2798672704799540187 > maxPassend_2798672704799540187
+                   if attrLengte_2798672704799540187 > max(maxPassend_2798672704799540187,1000)
                      then passend_2798672704799540187 = substr(Verzenddatum_vullen,1,maxPassend_2798672704799540187);
                      else passend_2798672704799540187 = Verzenddatum_vullen;
                    put passend_2798672704799540187 ~ @;
@@ -3799,7 +3799,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -3813,7 +3813,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -3914,7 +3914,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -3934,7 +3934,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -3957,7 +3957,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -3968,7 +3968,7 @@ data _null_;
                    attrLengte_7341167645741356875=length(Rol_cd_van);
                    aantalLF_7341167645741356875 = countc(Rol_cd_van,'0A'x);
                    maxPassend_7341167645741356875=3-1-aantalLF_7341167645741356875;
-                   if attrLengte_7341167645741356875 > maxPassend_7341167645741356875
+                   if attrLengte_7341167645741356875 > max(maxPassend_7341167645741356875,1000)
                      then passend_7341167645741356875 = substr(Rol_cd_van,1,maxPassend_7341167645741356875);
                      else passend_7341167645741356875 = Rol_cd_van;
                    put passend_7341167645741356875 ~ @;
@@ -4069,7 +4069,7 @@ data _null_;
                    attrLengte_8812025576703905421=length(Correspondent);
                    aantalLF_8812025576703905421 = countc(Correspondent,'0A'x);
                    maxPassend_8812025576703905421=1-1-aantalLF_8812025576703905421;
-                   if attrLengte_8812025576703905421 > maxPassend_8812025576703905421
+                   if attrLengte_8812025576703905421 > max(maxPassend_8812025576703905421,1000)
                      then passend_8812025576703905421 = substr(Correspondent,1,maxPassend_8812025576703905421);
                      else passend_8812025576703905421 = Correspondent;
                    put passend_8812025576703905421 ~ @;
@@ -4083,7 +4083,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -4100,7 +4100,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -4114,7 +4114,7 @@ data _null_;
                    attrLengte_1601778141520934777=length(Rechten_id);
                    aantalLF_1601778141520934777 = countc(Rechten_id,'0A'x);
                    maxPassend_1601778141520934777=1-1-aantalLF_1601778141520934777;
-                   if attrLengte_1601778141520934777 > maxPassend_1601778141520934777
+                   if attrLengte_1601778141520934777 > max(maxPassend_1601778141520934777,1000)
                      then passend_1601778141520934777 = substr(Rechten_id,1,maxPassend_1601778141520934777);
                      else passend_1601778141520934777 = Rechten_id;
                    put passend_1601778141520934777 ~ @;
@@ -4128,7 +4128,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -4139,7 +4139,7 @@ data _null_;
                    attrLengte_7341167645741356875=length(Rol_cd_van);
                    aantalLF_7341167645741356875 = countc(Rol_cd_van,'0A'x);
                    maxPassend_7341167645741356875=3-1-aantalLF_7341167645741356875;
-                   if attrLengte_7341167645741356875 > maxPassend_7341167645741356875
+                   if attrLengte_7341167645741356875 > max(maxPassend_7341167645741356875,1000)
                      then passend_7341167645741356875 = substr(Rol_cd_van,1,maxPassend_7341167645741356875);
                      else passend_7341167645741356875 = Rol_cd_van;
                    put passend_7341167645741356875 ~ @;
@@ -4560,7 +4560,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -4577,7 +4577,7 @@ data _null_;
                    attrLengte_8581403938583871530=length(Herstel);
                    aantalLF_8581403938583871530 = countc(Herstel,'0A'x);
                    maxPassend_8581403938583871530=1-1-aantalLF_8581403938583871530;
-                   if attrLengte_8581403938583871530 > maxPassend_8581403938583871530
+                   if attrLengte_8581403938583871530 > max(maxPassend_8581403938583871530,1000)
                      then passend_8581403938583871530 = substr(Herstel,1,maxPassend_8581403938583871530);
                      else passend_8581403938583871530 = Herstel;
                    put passend_8581403938583871530 ~ @;
@@ -4642,7 +4642,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -4653,7 +4653,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=2048-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -4664,7 +4664,7 @@ data _null_;
                    attrLengte_1090420702256006426=length(Oorzaak);
                    aantalLF_1090420702256006426 = countc(Oorzaak,'0A'x);
                    maxPassend_1090420702256006426=2048-1-aantalLF_1090420702256006426;
-                   if attrLengte_1090420702256006426 > maxPassend_1090420702256006426
+                   if attrLengte_1090420702256006426 > max(maxPassend_1090420702256006426,1000)
                      then passend_1090420702256006426 = substr(Oorzaak,1,maxPassend_1090420702256006426);
                      else passend_1090420702256006426 = Oorzaak;
                    put passend_1090420702256006426 ~ @;
@@ -4705,7 +4705,7 @@ data _null_;
                    attrLengte_7781963126527233006=length(Overlastvergoeding);
                    aantalLF_7781963126527233006 = countc(Overlastvergoeding,'0A'x);
                    maxPassend_7781963126527233006=1-1-aantalLF_7781963126527233006;
-                   if attrLengte_7781963126527233006 > maxPassend_7781963126527233006
+                   if attrLengte_7781963126527233006 > max(maxPassend_7781963126527233006,1000)
                      then passend_7781963126527233006 = substr(Overlastvergoeding,1,maxPassend_7781963126527233006);
                      else passend_7781963126527233006 = Overlastvergoeding;
                    put passend_7781963126527233006 ~ @;
@@ -4722,7 +4722,7 @@ data _null_;
                    attrLengte_6677307492037356733=length(Overnachtenaantalpersonen);
                    aantalLF_6677307492037356733 = countc(Overnachtenaantalpersonen,'0A'x);
                    maxPassend_6677307492037356733=20-1-aantalLF_6677307492037356733;
-                   if attrLengte_6677307492037356733 > maxPassend_6677307492037356733
+                   if attrLengte_6677307492037356733 > max(maxPassend_6677307492037356733,1000)
                      then passend_6677307492037356733 = substr(Overnachtenaantalpersonen,1,maxPassend_6677307492037356733);
                      else passend_6677307492037356733 = Overnachtenaantalpersonen;
                    put passend_6677307492037356733 ~ @;
@@ -4778,7 +4778,7 @@ data _null_;
                    attrLengte_5154373665155301082=length(Schoonmaakvergoeding);
                    aantalLF_5154373665155301082 = countc(Schoonmaakvergoeding,'0A'x);
                    maxPassend_5154373665155301082=1-1-aantalLF_5154373665155301082;
-                   if attrLengte_5154373665155301082 > maxPassend_5154373665155301082
+                   if attrLengte_5154373665155301082 > max(maxPassend_5154373665155301082,1000)
                      then passend_5154373665155301082 = substr(Schoonmaakvergoeding,1,maxPassend_5154373665155301082);
                      else passend_5154373665155301082 = Schoonmaakvergoeding;
                    put passend_5154373665155301082 ~ @;
@@ -4804,7 +4804,7 @@ data _null_;
                    attrLengte_4398689792722007676=length(Thuisblijfherstelvergoeding);
                    aantalLF_4398689792722007676 = countc(Thuisblijfherstelvergoeding,'0A'x);
                    maxPassend_4398689792722007676=1-1-aantalLF_4398689792722007676;
-                   if attrLengte_4398689792722007676 > maxPassend_4398689792722007676
+                   if attrLengte_4398689792722007676 > max(maxPassend_4398689792722007676,1000)
                      then passend_4398689792722007676 = substr(Thuisblijfherstelvergoeding,1,maxPassend_4398689792722007676);
                      else passend_4398689792722007676 = Thuisblijfherstelvergoeding;
                    put passend_4398689792722007676 ~ @;
@@ -4827,7 +4827,7 @@ data _null_;
                    attrLengte_2700664876793728116=length(Thuisblijfopnamevergoeding);
                    aantalLF_2700664876793728116 = countc(Thuisblijfopnamevergoeding,'0A'x);
                    maxPassend_2700664876793728116=1-1-aantalLF_2700664876793728116;
-                   if attrLengte_2700664876793728116 > maxPassend_2700664876793728116
+                   if attrLengte_2700664876793728116 > max(maxPassend_2700664876793728116,1000)
                      then passend_2700664876793728116 = substr(Thuisblijfopnamevergoeding,1,maxPassend_2700664876793728116);
                      else passend_2700664876793728116 = Thuisblijfopnamevergoeding;
                    put passend_2700664876793728116 ~ @;
@@ -4958,7 +4958,7 @@ data _null_;
                    attrLengte_3177944828558768780=length(Adressoort);
                    aantalLF_3177944828558768780 = countc(Adressoort,'0A'x);
                    maxPassend_3177944828558768780=3-1-aantalLF_3177944828558768780;
-                   if attrLengte_3177944828558768780 > maxPassend_3177944828558768780
+                   if attrLengte_3177944828558768780 > max(maxPassend_3177944828558768780,1000)
                      then passend_3177944828558768780 = substr(Adressoort,1,maxPassend_3177944828558768780);
                      else passend_3177944828558768780 = Adressoort;
                    put passend_3177944828558768780 ~ @;
@@ -4972,7 +4972,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -4989,7 +4989,7 @@ data _null_;
                    attrLengte_2769375351547567359=length(Kkr_afwijkend);
                    aantalLF_2769375351547567359 = countc(Kkr_afwijkend,'0A'x);
                    maxPassend_2769375351547567359=1-1-aantalLF_2769375351547567359;
-                   if attrLengte_2769375351547567359 > maxPassend_2769375351547567359
+                   if attrLengte_2769375351547567359 > max(maxPassend_2769375351547567359,1000)
                      then passend_2769375351547567359 = substr(Kkr_afwijkend,1,maxPassend_2769375351547567359);
                      else passend_2769375351547567359 = Kkr_afwijkend;
                    put passend_2769375351547567359 ~ @;
@@ -5003,7 +5003,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -5023,7 +5023,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -5116,7 +5116,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -5136,7 +5136,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -5156,7 +5156,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -5362,7 +5362,7 @@ data _null_;
                    attrLengte_6069221198781782894=length(Afwijking_cd);
                    aantalLF_6069221198781782894 = countc(Afwijking_cd,'0A'x);
                    maxPassend_6069221198781782894=6-1-aantalLF_6069221198781782894;
-                   if attrLengte_6069221198781782894 > maxPassend_6069221198781782894
+                   if attrLengte_6069221198781782894 > max(maxPassend_6069221198781782894,1000)
                      then passend_6069221198781782894 = substr(Afwijking_cd,1,maxPassend_6069221198781782894);
                      else passend_6069221198781782894 = Afwijking_cd;
                    put passend_6069221198781782894 ~ @;
@@ -5373,7 +5373,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -5384,7 +5384,7 @@ data _null_;
                    attrLengte_8053974040012975446=length(Bic_cd);
                    aantalLF_8053974040012975446 = countc(Bic_cd,'0A'x);
                    maxPassend_8053974040012975446=8-1-aantalLF_8053974040012975446;
-                   if attrLengte_8053974040012975446 > maxPassend_8053974040012975446
+                   if attrLengte_8053974040012975446 > max(maxPassend_8053974040012975446,1000)
                      then passend_8053974040012975446 = substr(Bic_cd,1,maxPassend_8053974040012975446);
                      else passend_8053974040012975446 = Bic_cd;
                    put passend_8053974040012975446 ~ @;
@@ -5395,7 +5395,7 @@ data _null_;
                    attrLengte_1865355944021713687=length(Contract_cd);
                    aantalLF_1865355944021713687 = countc(Contract_cd,'0A'x);
                    maxPassend_1865355944021713687=30-1-aantalLF_1865355944021713687;
-                   if attrLengte_1865355944021713687 > maxPassend_1865355944021713687
+                   if attrLengte_1865355944021713687 > max(maxPassend_1865355944021713687,1000)
                      then passend_1865355944021713687 = substr(Contract_cd,1,maxPassend_1865355944021713687);
                      else passend_1865355944021713687 = Contract_cd;
                    put passend_1865355944021713687 ~ @;
@@ -5409,7 +5409,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -5420,7 +5420,7 @@ data _null_;
                    attrLengte_3170374373452541152=length(Dam_project_deelname);
                    aantalLF_3170374373452541152 = countc(Dam_project_deelname,'0A'x);
                    maxPassend_3170374373452541152=1-1-aantalLF_3170374373452541152;
-                   if attrLengte_3170374373452541152 > maxPassend_3170374373452541152
+                   if attrLengte_3170374373452541152 > max(maxPassend_3170374373452541152,1000)
                      then passend_3170374373452541152 = substr(Dam_project_deelname,1,maxPassend_3170374373452541152);
                      else passend_3170374373452541152 = Dam_project_deelname;
                    put passend_3170374373452541152 ~ @;
@@ -5431,7 +5431,7 @@ data _null_;
                    attrLengte_1994370041286876558=length(Deelnamenaam);
                    aantalLF_1994370041286876558 = countc(Deelnamenaam,'0A'x);
                    maxPassend_1994370041286876558=625-1-aantalLF_1994370041286876558;
-                   if attrLengte_1994370041286876558 > maxPassend_1994370041286876558
+                   if attrLengte_1994370041286876558 > max(maxPassend_1994370041286876558,1000)
                      then passend_1994370041286876558 = substr(Deelnamenaam,1,maxPassend_1994370041286876558);
                      else passend_1994370041286876558 = Deelnamenaam;
                    put passend_1994370041286876558 ~ @;
@@ -5454,7 +5454,7 @@ data _null_;
                    attrLengte_1182540143258376654=length(Elektronisch_corresponderen_JN);
                    aantalLF_1182540143258376654 = countc(Elektronisch_corresponderen_JN,'0A'x);
                    maxPassend_1182540143258376654=1-1-aantalLF_1182540143258376654;
-                   if attrLengte_1182540143258376654 > maxPassend_1182540143258376654
+                   if attrLengte_1182540143258376654 > max(maxPassend_1182540143258376654,1000)
                      then passend_1182540143258376654 = substr(Elektronisch_corresponderen_JN,1,maxPassend_1182540143258376654);
                      else passend_1182540143258376654 = Elektronisch_corresponderen_JN;
                    put passend_1182540143258376654 ~ @;
@@ -5465,7 +5465,7 @@ data _null_;
                    attrLengte_3415722162129386078=length(Fisc_eenheid);
                    aantalLF_3415722162129386078 = countc(Fisc_eenheid,'0A'x);
                    maxPassend_3415722162129386078=1-1-aantalLF_3415722162129386078;
-                   if attrLengte_3415722162129386078 > maxPassend_3415722162129386078
+                   if attrLengte_3415722162129386078 > max(maxPassend_3415722162129386078,1000)
                      then passend_3415722162129386078 = substr(Fisc_eenheid,1,maxPassend_3415722162129386078);
                      else passend_3415722162129386078 = Fisc_eenheid;
                    put passend_3415722162129386078 ~ @;
@@ -5500,7 +5500,7 @@ data _null_;
                    attrLengte_2465255549550354096=length(IBAN);
                    aantalLF_2465255549550354096 = countc(IBAN,'0A'x);
                    maxPassend_2465255549550354096=34-1-aantalLF_2465255549550354096;
-                   if attrLengte_2465255549550354096 > maxPassend_2465255549550354096
+                   if attrLengte_2465255549550354096 > max(maxPassend_2465255549550354096,1000)
                      then passend_2465255549550354096 = substr(IBAN,1,maxPassend_2465255549550354096);
                      else passend_2465255549550354096 = IBAN;
                    put passend_2465255549550354096 ~ @;
@@ -5517,7 +5517,7 @@ data _null_;
                    attrLengte_6505825157492958705=length(Kkr_statutair);
                    aantalLF_6505825157492958705 = countc(Kkr_statutair,'0A'x);
                    maxPassend_6505825157492958705=1-1-aantalLF_6505825157492958705;
-                   if attrLengte_6505825157492958705 > maxPassend_6505825157492958705
+                   if attrLengte_6505825157492958705 > max(maxPassend_6505825157492958705,1000)
                      then passend_6505825157492958705 = substr(Kkr_statutair,1,maxPassend_6505825157492958705);
                      else passend_6505825157492958705 = Kkr_statutair;
                    put passend_6505825157492958705 ~ @;
@@ -5531,7 +5531,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -5542,7 +5542,7 @@ data _null_;
                    attrLengte_3451523040384006255=length(Niet_sepa_betalen);
                    aantalLF_3451523040384006255 = countc(Niet_sepa_betalen,'0A'x);
                    maxPassend_3451523040384006255=1-1-aantalLF_3451523040384006255;
-                   if attrLengte_3451523040384006255 > maxPassend_3451523040384006255
+                   if attrLengte_3451523040384006255 > max(maxPassend_3451523040384006255,1000)
                      then passend_3451523040384006255 = substr(Niet_sepa_betalen,1,maxPassend_3451523040384006255);
                      else passend_3451523040384006255 = Niet_sepa_betalen;
                    put passend_3451523040384006255 ~ @;
@@ -5556,7 +5556,7 @@ data _null_;
                    attrLengte_2338667727953163128=length(Org_naam);
                    aantalLF_2338667727953163128 = countc(Org_naam,'0A'x);
                    maxPassend_2338667727953163128=625-1-aantalLF_2338667727953163128;
-                   if attrLengte_2338667727953163128 > maxPassend_2338667727953163128
+                   if attrLengte_2338667727953163128 > max(maxPassend_2338667727953163128,1000)
                      then passend_2338667727953163128 = substr(Org_naam,1,maxPassend_2338667727953163128);
                      else passend_2338667727953163128 = Org_naam;
                    put passend_2338667727953163128 ~ @;
@@ -5567,7 +5567,7 @@ data _null_;
                    attrLengte_3487759042954522650=length(Pom_ranking);
                    aantalLF_3487759042954522650 = countc(Pom_ranking,'0A'x);
                    maxPassend_3487759042954522650=1-1-aantalLF_3487759042954522650;
-                   if attrLengte_3487759042954522650 > maxPassend_3487759042954522650
+                   if attrLengte_3487759042954522650 > max(maxPassend_3487759042954522650,1000)
                      then passend_3487759042954522650 = substr(Pom_ranking,1,maxPassend_3487759042954522650);
                      else passend_3487759042954522650 = Pom_ranking;
                    put passend_3487759042954522650 ~ @;
@@ -5584,7 +5584,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -5604,7 +5604,7 @@ data _null_;
                    attrLengte_478921531652131463=length(Verklaring_gewenst_JN);
                    aantalLF_478921531652131463 = countc(Verklaring_gewenst_JN,'0A'x);
                    maxPassend_478921531652131463=1-1-aantalLF_478921531652131463;
-                   if attrLengte_478921531652131463 > maxPassend_478921531652131463
+                   if attrLengte_478921531652131463 > max(maxPassend_478921531652131463,1000)
                      then passend_478921531652131463 = substr(Verklaring_gewenst_JN,1,maxPassend_478921531652131463);
                      else passend_478921531652131463 = Verklaring_gewenst_JN;
                    put passend_478921531652131463 ~ @;
@@ -5787,7 +5787,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -5801,7 +5801,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -5848,7 +5848,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -5862,7 +5862,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -5900,7 +5900,7 @@ data _null_;
                    attrLengte_6398700462504815438=length(Rpt_nr_oud);
                    aantalLF_6398700462504815438 = countc(Rpt_nr_oud,'0A'x);
                    maxPassend_6398700462504815438=20-1-aantalLF_6398700462504815438;
-                   if attrLengte_6398700462504815438 > maxPassend_6398700462504815438
+                   if attrLengte_6398700462504815438 > max(maxPassend_6398700462504815438,1000)
                      then passend_6398700462504815438 = substr(Rpt_nr_oud,1,maxPassend_6398700462504815438);
                      else passend_6398700462504815438 = Rpt_nr_oud;
                    put passend_6398700462504815438 ~ @;
@@ -5911,7 +5911,7 @@ data _null_;
                    attrLengte_281267618279651540=length(Per_Deelnemer);
                    aantalLF_281267618279651540 = countc(Per_Deelnemer,'0A'x);
                    maxPassend_281267618279651540=1-1-aantalLF_281267618279651540;
-                   if attrLengte_281267618279651540 > maxPassend_281267618279651540
+                   if attrLengte_281267618279651540 > max(maxPassend_281267618279651540,1000)
                      then passend_281267618279651540 = substr(Per_Deelnemer,1,maxPassend_281267618279651540);
                      else passend_281267618279651540 = Per_Deelnemer;
                    put passend_281267618279651540 ~ @;
@@ -5985,7 +5985,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -6008,7 +6008,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -6095,7 +6095,7 @@ data _null_;
                    attrLengte_7804948874982929418=length(Afgehandeld);
                    aantalLF_7804948874982929418 = countc(Afgehandeld,'0A'x);
                    maxPassend_7804948874982929418=1-1-aantalLF_7804948874982929418;
-                   if attrLengte_7804948874982929418 > maxPassend_7804948874982929418
+                   if attrLengte_7804948874982929418 > max(maxPassend_7804948874982929418,1000)
                      then passend_7804948874982929418 = substr(Afgehandeld,1,maxPassend_7804948874982929418);
                      else passend_7804948874982929418 = Afgehandeld;
                    put passend_7804948874982929418 ~ @;
@@ -6115,7 +6115,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -6132,7 +6132,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -6143,7 +6143,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=2048-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -6154,7 +6154,7 @@ data _null_;
                    attrLengte_472120469883937888=length(Notitietype_naam);
                    aantalLF_472120469883937888 = countc(Notitietype_naam,'0A'x);
                    maxPassend_472120469883937888=50-1-aantalLF_472120469883937888;
-                   if attrLengte_472120469883937888 > maxPassend_472120469883937888
+                   if attrLengte_472120469883937888 > max(maxPassend_472120469883937888,1000)
                      then passend_472120469883937888 = substr(Notitietype_naam,1,maxPassend_472120469883937888);
                      else passend_472120469883937888 = Notitietype_naam;
                    put passend_472120469883937888 ~ @;
@@ -6888,7 +6888,7 @@ data _null_;
                    attrLengte_1808858472387685737=length(Aanvraagsoort);
                    aantalLF_1808858472387685737 = countc(Aanvraagsoort,'0A'x);
                    maxPassend_1808858472387685737=10-1-aantalLF_1808858472387685737;
-                   if attrLengte_1808858472387685737 > maxPassend_1808858472387685737
+                   if attrLengte_1808858472387685737 > max(maxPassend_1808858472387685737,1000)
                      then passend_1808858472387685737 = substr(Aanvraagsoort,1,maxPassend_1808858472387685737);
                      else passend_1808858472387685737 = Aanvraagsoort;
                    put passend_1808858472387685737 ~ @;
@@ -6899,7 +6899,7 @@ data _null_;
                    attrLengte_6394433184754446902=length(Acceptatie_sts);
                    aantalLF_6394433184754446902 = countc(Acceptatie_sts,'0A'x);
                    maxPassend_6394433184754446902=1-1-aantalLF_6394433184754446902;
-                   if attrLengte_6394433184754446902 > maxPassend_6394433184754446902
+                   if attrLengte_6394433184754446902 > max(maxPassend_6394433184754446902,1000)
                      then passend_6394433184754446902 = substr(Acceptatie_sts,1,maxPassend_6394433184754446902);
                      else passend_6394433184754446902 = Acceptatie_sts;
                    put passend_6394433184754446902 ~ @;
@@ -6910,7 +6910,7 @@ data _null_;
                    attrLengte_4671905258138635791=length(Afdrachtsvermindering);
                    aantalLF_4671905258138635791 = countc(Afdrachtsvermindering,'0A'x);
                    maxPassend_4671905258138635791=1-1-aantalLF_4671905258138635791;
-                   if attrLengte_4671905258138635791 > maxPassend_4671905258138635791
+                   if attrLengte_4671905258138635791 > max(maxPassend_4671905258138635791,1000)
                      then passend_4671905258138635791 = substr(Afdrachtsvermindering,1,maxPassend_4671905258138635791);
                      else passend_4671905258138635791 = Afdrachtsvermindering;
                    put passend_4671905258138635791 ~ @;
@@ -6924,7 +6924,7 @@ data _null_;
                    attrLengte_311625208554520659=length(Afhandelwijze);
                    aantalLF_311625208554520659 = countc(Afhandelwijze,'0A'x);
                    maxPassend_311625208554520659=512-1-aantalLF_311625208554520659;
-                   if attrLengte_311625208554520659 > maxPassend_311625208554520659
+                   if attrLengte_311625208554520659 > max(maxPassend_311625208554520659,1000)
                      then passend_311625208554520659 = substr(Afhandelwijze,1,maxPassend_311625208554520659);
                      else passend_311625208554520659 = Afhandelwijze;
                    put passend_311625208554520659 ~ @;
@@ -6938,7 +6938,7 @@ data _null_;
                    attrLengte_6168422449108145413=length(Akkoord_verlenen);
                    aantalLF_6168422449108145413 = countc(Akkoord_verlenen,'0A'x);
                    maxPassend_6168422449108145413=1-1-aantalLF_6168422449108145413;
-                   if attrLengte_6168422449108145413 > maxPassend_6168422449108145413
+                   if attrLengte_6168422449108145413 > max(maxPassend_6168422449108145413,1000)
                      then passend_6168422449108145413 = substr(Akkoord_verlenen,1,maxPassend_6168422449108145413);
                      else passend_6168422449108145413 = Akkoord_verlenen;
                    put passend_6168422449108145413 ~ @;
@@ -6949,7 +6949,7 @@ data _null_;
                    attrLengte_6631081386547525672=length(aut_verwerkt_imp);
                    aantalLF_6631081386547525672 = countc(aut_verwerkt_imp,'0A'x);
                    maxPassend_6631081386547525672=1-1-aantalLF_6631081386547525672;
-                   if attrLengte_6631081386547525672 > maxPassend_6631081386547525672
+                   if attrLengte_6631081386547525672 > max(maxPassend_6631081386547525672,1000)
                      then passend_6631081386547525672 = substr(aut_verwerkt_imp,1,maxPassend_6631081386547525672);
                      else passend_6631081386547525672 = aut_verwerkt_imp;
                    put passend_6631081386547525672 ~ @;
@@ -6969,7 +6969,7 @@ data _null_;
                    attrLengte_4281244775925214329=length(BAS_advies);
                    aantalLF_4281244775925214329 = countc(BAS_advies,'0A'x);
                    maxPassend_4281244775925214329=512-1-aantalLF_4281244775925214329;
-                   if attrLengte_4281244775925214329 > maxPassend_4281244775925214329
+                   if attrLengte_4281244775925214329 > max(maxPassend_4281244775925214329,1000)
                      then passend_4281244775925214329 = substr(BAS_advies,1,maxPassend_4281244775925214329);
                      else passend_4281244775925214329 = BAS_advies;
                    put passend_4281244775925214329 ~ @;
@@ -6980,7 +6980,7 @@ data _null_;
                    attrLengte_6810019192039434889=length(Batchstatuscert);
                    aantalLF_6810019192039434889 = countc(Batchstatuscert,'0A'x);
                    maxPassend_6810019192039434889=1-1-aantalLF_6810019192039434889;
-                   if attrLengte_6810019192039434889 > maxPassend_6810019192039434889
+                   if attrLengte_6810019192039434889 > max(maxPassend_6810019192039434889,1000)
                      then passend_6810019192039434889 = substr(Batchstatuscert,1,maxPassend_6810019192039434889);
                      else passend_6810019192039434889 = Batchstatuscert;
                    put passend_6810019192039434889 ~ @;
@@ -6991,7 +6991,7 @@ data _null_;
                    attrLengte_3025511164545417087=length(Batchstatusref);
                    aantalLF_3025511164545417087 = countc(Batchstatusref,'0A'x);
                    maxPassend_3025511164545417087=1-1-aantalLF_3025511164545417087;
-                   if attrLengte_3025511164545417087 > maxPassend_3025511164545417087
+                   if attrLengte_3025511164545417087 > max(maxPassend_3025511164545417087,1000)
                      then passend_3025511164545417087 = substr(Batchstatusref,1,maxPassend_3025511164545417087);
                      else passend_3025511164545417087 = Batchstatusref;
                    put passend_3025511164545417087 ~ @;
@@ -7002,7 +7002,7 @@ data _null_;
                    attrLengte_1601628535260930075=length(Batchstatusstat);
                    aantalLF_1601628535260930075 = countc(Batchstatusstat,'0A'x);
                    maxPassend_1601628535260930075=1-1-aantalLF_1601628535260930075;
-                   if attrLengte_1601628535260930075 > maxPassend_1601628535260930075
+                   if attrLengte_1601628535260930075 > max(maxPassend_1601628535260930075,1000)
                      then passend_1601628535260930075 = substr(Batchstatusstat,1,maxPassend_1601628535260930075);
                      else passend_1601628535260930075 = Batchstatusstat;
                    put passend_1601628535260930075 ~ @;
@@ -7016,7 +7016,7 @@ data _null_;
                    attrLengte_7377029703752497073=length(Beoordelingswijze);
                    aantalLF_7377029703752497073 = countc(Beoordelingswijze,'0A'x);
                    maxPassend_7377029703752497073=4-1-aantalLF_7377029703752497073;
-                   if attrLengte_7377029703752497073 > maxPassend_7377029703752497073
+                   if attrLengte_7377029703752497073 > max(maxPassend_7377029703752497073,1000)
                      then passend_7377029703752497073 = substr(Beoordelingswijze,1,maxPassend_7377029703752497073);
                      else passend_7377029703752497073 = Beoordelingswijze;
                    put passend_7377029703752497073 ~ @;
@@ -7030,7 +7030,7 @@ data _null_;
                    attrLengte_975931625280418200=length(Beslissing_cd);
                    aantalLF_975931625280418200 = countc(Beslissing_cd,'0A'x);
                    maxPassend_975931625280418200=2-1-aantalLF_975931625280418200;
-                   if attrLengte_975931625280418200 > maxPassend_975931625280418200
+                   if attrLengte_975931625280418200 > max(maxPassend_975931625280418200,1000)
                      then passend_975931625280418200 = substr(Beslissing_cd,1,maxPassend_975931625280418200);
                      else passend_975931625280418200 = Beslissing_cd;
                    put passend_975931625280418200 ~ @;
@@ -7044,7 +7044,7 @@ data _null_;
                    attrLengte_7479670163439694801=length(Classificatie);
                    aantalLF_7479670163439694801 = countc(Classificatie,'0A'x);
                    maxPassend_7479670163439694801=10-1-aantalLF_7479670163439694801;
-                   if attrLengte_7479670163439694801 > maxPassend_7479670163439694801
+                   if attrLengte_7479670163439694801 > max(maxPassend_7479670163439694801,1000)
                      then passend_7479670163439694801 = substr(Classificatie,1,maxPassend_7479670163439694801);
                      else passend_7479670163439694801 = Classificatie;
                    put passend_7479670163439694801 ~ @;
@@ -7058,7 +7058,7 @@ data _null_;
                    attrLengte_8659873274146383362=length(Controle_activiteit);
                    aantalLF_8659873274146383362 = countc(Controle_activiteit,'0A'x);
                    maxPassend_8659873274146383362=1-1-aantalLF_8659873274146383362;
-                   if attrLengte_8659873274146383362 > maxPassend_8659873274146383362
+                   if attrLengte_8659873274146383362 > max(maxPassend_8659873274146383362,1000)
                      then passend_8659873274146383362 = substr(Controle_activiteit,1,maxPassend_8659873274146383362);
                      else passend_8659873274146383362 = Controle_activiteit;
                    put passend_8659873274146383362 ~ @;
@@ -7069,7 +7069,7 @@ data _null_;
                    attrLengte_718663045679180725=length(Commercieel_perspectief);
                    aantalLF_718663045679180725 = countc(Commercieel_perspectief,'0A'x);
                    maxPassend_718663045679180725=1-1-aantalLF_718663045679180725;
-                   if attrLengte_718663045679180725 > maxPassend_718663045679180725
+                   if attrLengte_718663045679180725 > max(maxPassend_718663045679180725,1000)
                      then passend_718663045679180725 = substr(Commercieel_perspectief,1,maxPassend_718663045679180725);
                      else passend_718663045679180725 = Commercieel_perspectief;
                    put passend_718663045679180725 ~ @;
@@ -7083,7 +7083,7 @@ data _null_;
                    attrLengte_7366059556598200591=length(Conversiedossier);
                    aantalLF_7366059556598200591 = countc(Conversiedossier,'0A'x);
                    maxPassend_7366059556598200591=1-1-aantalLF_7366059556598200591;
-                   if attrLengte_7366059556598200591 > maxPassend_7366059556598200591
+                   if attrLengte_7366059556598200591 > max(maxPassend_7366059556598200591,1000)
                      then passend_7366059556598200591 = substr(Conversiedossier,1,maxPassend_7366059556598200591);
                      else passend_7366059556598200591 = Conversiedossier;
                    put passend_7366059556598200591 ~ @;
@@ -7094,7 +7094,7 @@ data _null_;
                    attrLengte_740551633015528077=length(Correspondentie_via_email);
                    aantalLF_740551633015528077 = countc(Correspondentie_via_email,'0A'x);
                    maxPassend_740551633015528077=1-1-aantalLF_740551633015528077;
-                   if attrLengte_740551633015528077 > maxPassend_740551633015528077
+                   if attrLengte_740551633015528077 > max(maxPassend_740551633015528077,1000)
                      then passend_740551633015528077 = substr(Correspondentie_via_email,1,maxPassend_740551633015528077);
                      else passend_740551633015528077 = Correspondentie_via_email;
                    put passend_740551633015528077 ~ @;
@@ -7108,7 +7108,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -7119,7 +7119,7 @@ data _null_;
                    attrLengte_3488531671085302561=length(Jaardossier_WBSO);
                    aantalLF_3488531671085302561 = countc(Jaardossier_WBSO,'0A'x);
                    maxPassend_3488531671085302561=1-1-aantalLF_3488531671085302561;
-                   if attrLengte_3488531671085302561 > maxPassend_3488531671085302561
+                   if attrLengte_3488531671085302561 > max(maxPassend_3488531671085302561,1000)
                      then passend_3488531671085302561 = substr(Jaardossier_WBSO,1,maxPassend_3488531671085302561);
                      else passend_3488531671085302561 = Jaardossier_WBSO;
                    put passend_3488531671085302561 ~ @;
@@ -7145,7 +7145,7 @@ data _null_;
                    attrLengte_673625142560997166=length(Dos_cd);
                    aantalLF_673625142560997166 = countc(Dos_cd,'0A'x);
                    maxPassend_673625142560997166=20-1-aantalLF_673625142560997166;
-                   if attrLengte_673625142560997166 > maxPassend_673625142560997166
+                   if attrLengte_673625142560997166 > max(maxPassend_673625142560997166,1000)
                      then passend_673625142560997166 = substr(Dos_cd,1,maxPassend_673625142560997166);
                      else passend_673625142560997166 = Dos_cd;
                    put passend_673625142560997166 ~ @;
@@ -7183,7 +7183,7 @@ data _null_;
                    attrLengte_2660979012630279402=length(Extrene_bron_cd);
                    aantalLF_2660979012630279402 = countc(Extrene_bron_cd,'0A'x);
                    maxPassend_2660979012630279402=10-1-aantalLF_2660979012630279402;
-                   if attrLengte_2660979012630279402 > maxPassend_2660979012630279402
+                   if attrLengte_2660979012630279402 > max(maxPassend_2660979012630279402,1000)
                      then passend_2660979012630279402 = substr(Extrene_bron_cd,1,maxPassend_2660979012630279402);
                      else passend_2660979012630279402 = Extrene_bron_cd;
                    put passend_2660979012630279402 ~ @;
@@ -7194,7 +7194,7 @@ data _null_;
                    attrLengte_5749729584749907027=length(Gecommitteerd_zegge);
                    aantalLF_5749729584749907027 = countc(Gecommitteerd_zegge,'0A'x);
                    maxPassend_5749729584749907027=100-1-aantalLF_5749729584749907027;
-                   if attrLengte_5749729584749907027 > maxPassend_5749729584749907027
+                   if attrLengte_5749729584749907027 > max(maxPassend_5749729584749907027,1000)
                      then passend_5749729584749907027 = substr(Gecommitteerd_zegge,1,maxPassend_5749729584749907027);
                      else passend_5749729584749907027 = Gecommitteerd_zegge;
                    put passend_5749729584749907027 ~ @;
@@ -7208,7 +7208,7 @@ data _null_;
                    attrLengte_8634466892657782931=length(Hand_bewerkt_imp);
                    aantalLF_8634466892657782931 = countc(Hand_bewerkt_imp,'0A'x);
                    maxPassend_8634466892657782931=1-1-aantalLF_8634466892657782931;
-                   if attrLengte_8634466892657782931 > maxPassend_8634466892657782931
+                   if attrLengte_8634466892657782931 > max(maxPassend_8634466892657782931,1000)
                      then passend_8634466892657782931 = substr(Hand_bewerkt_imp,1,maxPassend_8634466892657782931);
                      else passend_8634466892657782931 = Hand_bewerkt_imp;
                    put passend_8634466892657782931 ~ @;
@@ -7219,7 +7219,7 @@ data _null_;
                    attrLengte_2912998615907010652=length(Handtekening_ok);
                    aantalLF_2912998615907010652 = countc(Handtekening_ok,'0A'x);
                    maxPassend_2912998615907010652=1-1-aantalLF_2912998615907010652;
-                   if attrLengte_2912998615907010652 > maxPassend_2912998615907010652
+                   if attrLengte_2912998615907010652 > max(maxPassend_2912998615907010652,1000)
                      then passend_2912998615907010652 = substr(Handtekening_ok,1,maxPassend_2912998615907010652);
                      else passend_2912998615907010652 = Handtekening_ok;
                    put passend_2912998615907010652 ~ @;
@@ -7239,7 +7239,7 @@ data _null_;
                    attrLengte_1424136908970746724=length(Importlijst);
                    aantalLF_1424136908970746724 = countc(Importlijst,'0A'x);
                    maxPassend_1424136908970746724=240-1-aantalLF_1424136908970746724;
-                   if attrLengte_1424136908970746724 > maxPassend_1424136908970746724
+                   if attrLengte_1424136908970746724 > max(maxPassend_1424136908970746724,1000)
                      then passend_1424136908970746724 = substr(Importlijst,1,maxPassend_1424136908970746724);
                      else passend_1424136908970746724 = Importlijst;
                    put passend_1424136908970746724 ~ @;
@@ -7256,7 +7256,7 @@ data _null_;
                    attrLengte_5002420659340225241=length(Indienkanaal);
                    aantalLF_5002420659340225241 = countc(Indienkanaal,'0A'x);
                    maxPassend_5002420659340225241=1-1-aantalLF_5002420659340225241;
-                   if attrLengte_5002420659340225241 > maxPassend_5002420659340225241
+                   if attrLengte_5002420659340225241 > max(maxPassend_5002420659340225241,1000)
                      then passend_5002420659340225241 = substr(Indienkanaal,1,maxPassend_5002420659340225241);
                      else passend_5002420659340225241 = Indienkanaal;
                    put passend_5002420659340225241 ~ @;
@@ -7267,7 +7267,7 @@ data _null_;
                    attrLengte_1317667042141340245=length(Ingezien);
                    aantalLF_1317667042141340245 = countc(Ingezien,'0A'x);
                    maxPassend_1317667042141340245=1-1-aantalLF_1317667042141340245;
-                   if attrLengte_1317667042141340245 > maxPassend_1317667042141340245
+                   if attrLengte_1317667042141340245 > max(maxPassend_1317667042141340245,1000)
                      then passend_1317667042141340245 = substr(Ingezien,1,maxPassend_1317667042141340245);
                      else passend_1317667042141340245 = Ingezien;
                    put passend_1317667042141340245 ~ @;
@@ -7278,7 +7278,7 @@ data _null_;
                    attrLengte_9028171306283589824=length(Inkoopcat_cd);
                    aantalLF_9028171306283589824 = countc(Inkoopcat_cd,'0A'x);
                    maxPassend_9028171306283589824=6-1-aantalLF_9028171306283589824;
-                   if attrLengte_9028171306283589824 > maxPassend_9028171306283589824
+                   if attrLengte_9028171306283589824 > max(maxPassend_9028171306283589824,1000)
                      then passend_9028171306283589824 = substr(Inkoopcat_cd,1,maxPassend_9028171306283589824);
                      else passend_9028171306283589824 = Inkoopcat_cd;
                    put passend_9028171306283589824 ~ @;
@@ -7289,7 +7289,7 @@ data _null_;
                    attrLengte_3523818910407590404=length(Inleen_binnen_Fiscale_eenheid);
                    aantalLF_3523818910407590404 = countc(Inleen_binnen_Fiscale_eenheid,'0A'x);
                    maxPassend_3523818910407590404=1-1-aantalLF_3523818910407590404;
-                   if attrLengte_3523818910407590404 > maxPassend_3523818910407590404
+                   if attrLengte_3523818910407590404 > max(maxPassend_3523818910407590404,1000)
                      then passend_3523818910407590404 = substr(Inleen_binnen_Fiscale_eenheid,1,maxPassend_3523818910407590404);
                      else passend_3523818910407590404 = Inleen_binnen_Fiscale_eenheid;
                    put passend_3523818910407590404 ~ @;
@@ -7300,7 +7300,7 @@ data _null_;
                    attrLengte_9183881583082799158=length(Meldingnummer_IRWA);
                    aantalLF_9183881583082799158 = countc(Meldingnummer_IRWA,'0A'x);
                    maxPassend_9183881583082799158=30-1-aantalLF_9183881583082799158;
-                   if attrLengte_9183881583082799158 > maxPassend_9183881583082799158
+                   if attrLengte_9183881583082799158 > max(maxPassend_9183881583082799158,1000)
                      then passend_9183881583082799158 = substr(Meldingnummer_IRWA,1,maxPassend_9183881583082799158);
                      else passend_9183881583082799158 = Meldingnummer_IRWA;
                    put passend_9183881583082799158 ~ @;
@@ -7320,7 +7320,7 @@ data _null_;
                    attrLengte_4131743432680306277=length(Korte_titel);
                    aantalLF_4131743432680306277 = countc(Korte_titel,'0A'x);
                    maxPassend_4131743432680306277=25-1-aantalLF_4131743432680306277;
-                   if attrLengte_4131743432680306277 > maxPassend_4131743432680306277
+                   if attrLengte_4131743432680306277 > max(maxPassend_4131743432680306277,1000)
                      then passend_4131743432680306277 = substr(Korte_titel,1,maxPassend_4131743432680306277);
                      else passend_4131743432680306277 = Korte_titel;
                    put passend_4131743432680306277 ~ @;
@@ -7340,7 +7340,7 @@ data _null_;
                    attrLengte_83305570222129686=length(Landnaam);
                    aantalLF_83305570222129686 = countc(Landnaam,'0A'x);
                    maxPassend_83305570222129686=60-1-aantalLF_83305570222129686;
-                   if attrLengte_83305570222129686 > maxPassend_83305570222129686
+                   if attrLengte_83305570222129686 > max(maxPassend_83305570222129686,1000)
                      then passend_83305570222129686 = substr(Landnaam,1,maxPassend_83305570222129686);
                      else passend_83305570222129686 = Landnaam;
                    put passend_83305570222129686 ~ @;
@@ -7351,7 +7351,7 @@ data _null_;
                    attrLengte_2703764941200643404=length(LB_nummer_komt_overeen);
                    aantalLF_2703764941200643404 = countc(LB_nummer_komt_overeen,'0A'x);
                    maxPassend_2703764941200643404=1-1-aantalLF_2703764941200643404;
-                   if attrLengte_2703764941200643404 > maxPassend_2703764941200643404
+                   if attrLengte_2703764941200643404 > max(maxPassend_2703764941200643404,1000)
                      then passend_2703764941200643404 = substr(LB_nummer_komt_overeen,1,maxPassend_2703764941200643404);
                      else passend_2703764941200643404 = LB_nummer_komt_overeen;
                    put passend_2703764941200643404 ~ @;
@@ -7362,7 +7362,7 @@ data _null_;
                    attrLengte_1692682703785774829=length(Machtiging_JN);
                    aantalLF_1692682703785774829 = countc(Machtiging_JN,'0A'x);
                    maxPassend_1692682703785774829=1-1-aantalLF_1692682703785774829;
-                   if attrLengte_1692682703785774829 > maxPassend_1692682703785774829
+                   if attrLengte_1692682703785774829 > max(maxPassend_1692682703785774829,1000)
                      then passend_1692682703785774829 = substr(Machtiging_JN,1,maxPassend_1692682703785774829);
                      else passend_1692682703785774829 = Machtiging_JN;
                    put passend_1692682703785774829 ~ @;
@@ -7373,7 +7373,7 @@ data _null_;
                    attrLengte_1226307818193438914=length(Mdw_cd);
                    aantalLF_1226307818193438914 = countc(Mdw_cd,'0A'x);
                    maxPassend_1226307818193438914=30-1-aantalLF_1226307818193438914;
-                   if attrLengte_1226307818193438914 > maxPassend_1226307818193438914
+                   if attrLengte_1226307818193438914 > max(maxPassend_1226307818193438914,1000)
                      then passend_1226307818193438914 = substr(Mdw_cd,1,maxPassend_1226307818193438914);
                      else passend_1226307818193438914 = Mdw_cd;
                    put passend_1226307818193438914 ~ @;
@@ -7384,7 +7384,7 @@ data _null_;
                    attrLengte_3493612579047046991=length(Mentorterugkoppeling);
                    aantalLF_3493612579047046991 = countc(Mentorterugkoppeling,'0A'x);
                    maxPassend_3493612579047046991=1-1-aantalLF_3493612579047046991;
-                   if attrLengte_3493612579047046991 > maxPassend_3493612579047046991
+                   if attrLengte_3493612579047046991 > max(maxPassend_3493612579047046991,1000)
                      then passend_3493612579047046991 = substr(Mentorterugkoppeling,1,maxPassend_3493612579047046991);
                      else passend_3493612579047046991 = Mentorterugkoppeling;
                    put passend_3493612579047046991 ~ @;
@@ -7401,7 +7401,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -7412,7 +7412,7 @@ data _null_;
                    attrLengte_4762281330357685227=length(Mutatie_user_vst);
                    aantalLF_4762281330357685227 = countc(Mutatie_user_vst,'0A'x);
                    maxPassend_4762281330357685227=30-1-aantalLF_4762281330357685227;
-                   if attrLengte_4762281330357685227 > maxPassend_4762281330357685227
+                   if attrLengte_4762281330357685227 > max(maxPassend_4762281330357685227,1000)
                      then passend_4762281330357685227 = substr(Mutatie_user_vst,1,maxPassend_4762281330357685227);
                      else passend_4762281330357685227 = Mutatie_user_vst;
                    put passend_4762281330357685227 ~ @;
@@ -7429,7 +7429,7 @@ data _null_;
                    attrLengte_2449201397129185301=length(Notities);
                    aantalLF_2449201397129185301 = countc(Notities,'0A'x);
                    maxPassend_2449201397129185301=2048-1-aantalLF_2449201397129185301;
-                   if attrLengte_2449201397129185301 > maxPassend_2449201397129185301
+                   if attrLengte_2449201397129185301 > max(maxPassend_2449201397129185301,1000)
                      then passend_2449201397129185301 = substr(Notities,1,maxPassend_2449201397129185301);
                      else passend_2449201397129185301 = Notities;
                    put passend_2449201397129185301 ~ @;
@@ -7455,7 +7455,7 @@ data _null_;
                    attrLengte_7561575571707057934=length(Overige_subsidie);
                    aantalLF_7561575571707057934 = countc(Overige_subsidie,'0A'x);
                    maxPassend_7561575571707057934=1-1-aantalLF_7561575571707057934;
-                   if attrLengte_7561575571707057934 > maxPassend_7561575571707057934
+                   if attrLengte_7561575571707057934 > max(maxPassend_7561575571707057934,1000)
                      then passend_7561575571707057934 = substr(Overige_subsidie,1,maxPassend_7561575571707057934);
                      else passend_7561575571707057934 = Overige_subsidie;
                    put passend_7561575571707057934 ~ @;
@@ -7466,7 +7466,7 @@ data _null_;
                    attrLengte_8637308590533283956=length(Opdrachtvorm_cd);
                    aantalLF_8637308590533283956 = countc(Opdrachtvorm_cd,'0A'x);
                    maxPassend_8637308590533283956=3-1-aantalLF_8637308590533283956;
-                   if attrLengte_8637308590533283956 > maxPassend_8637308590533283956
+                   if attrLengte_8637308590533283956 > max(maxPassend_8637308590533283956,1000)
                      then passend_8637308590533283956 = substr(Opdrachtvorm_cd,1,maxPassend_8637308590533283956);
                      else passend_8637308590533283956 = Opdrachtvorm_cd;
                    put passend_8637308590533283956 ~ @;
@@ -7489,7 +7489,7 @@ data _null_;
                    attrLengte_8371357541136350691=length(Projectomschrijving);
                    aantalLF_8371357541136350691 = countc(Projectomschrijving,'0A'x);
                    maxPassend_8371357541136350691=2048-1-aantalLF_8371357541136350691;
-                   if attrLengte_8371357541136350691 > maxPassend_8371357541136350691
+                   if attrLengte_8371357541136350691 > max(maxPassend_8371357541136350691,1000)
                      then passend_8371357541136350691 = substr(Projectomschrijving,1,maxPassend_8371357541136350691);
                      else passend_8371357541136350691 = Projectomschrijving;
                    put passend_8371357541136350691 ~ @;
@@ -7503,7 +7503,7 @@ data _null_;
                    attrLengte_8385991183994979473=length(RDA_Afhandeling_forfaitair);
                    aantalLF_8385991183994979473 = countc(RDA_Afhandeling_forfaitair,'0A'x);
                    maxPassend_8385991183994979473=1-1-aantalLF_8385991183994979473;
-                   if attrLengte_8385991183994979473 > maxPassend_8385991183994979473
+                   if attrLengte_8385991183994979473 > max(maxPassend_8385991183994979473,1000)
                      then passend_8385991183994979473 = substr(RDA_Afhandeling_forfaitair,1,maxPassend_8385991183994979473);
                      else passend_8385991183994979473 = RDA_Afhandeling_forfaitair;
                    put passend_8385991183994979473 ~ @;
@@ -7514,7 +7514,7 @@ data _null_;
                    attrLengte_4999820424640454704=length(RDA_aangevraagd);
                    aantalLF_4999820424640454704 = countc(RDA_aangevraagd,'0A'x);
                    maxPassend_4999820424640454704=1-1-aantalLF_4999820424640454704;
-                   if attrLengte_4999820424640454704 > maxPassend_4999820424640454704
+                   if attrLengte_4999820424640454704 > max(maxPassend_4999820424640454704,1000)
                      then passend_4999820424640454704 = substr(RDA_aangevraagd,1,maxPassend_4999820424640454704);
                      else passend_4999820424640454704 = RDA_aangevraagd;
                    put passend_4999820424640454704 ~ @;
@@ -7525,7 +7525,7 @@ data _null_;
                    attrLengte_6085349322089225769=length(Referentie);
                    aantalLF_6085349322089225769 = countc(Referentie,'0A'x);
                    maxPassend_6085349322089225769=10-1-aantalLF_6085349322089225769;
-                   if attrLengte_6085349322089225769 > maxPassend_6085349322089225769
+                   if attrLengte_6085349322089225769 > max(maxPassend_6085349322089225769,1000)
                      then passend_6085349322089225769 = substr(Referentie,1,maxPassend_6085349322089225769);
                      else passend_6085349322089225769 = Referentie;
                    put passend_6085349322089225769 ~ @;
@@ -7548,7 +7548,7 @@ data _null_;
                    attrLengte_464951838875667826=length(Samenwerkingsverband1);
                    aantalLF_464951838875667826 = countc(Samenwerkingsverband1,'0A'x);
                    maxPassend_464951838875667826=1-1-aantalLF_464951838875667826;
-                   if attrLengte_464951838875667826 > maxPassend_464951838875667826
+                   if attrLengte_464951838875667826 > max(maxPassend_464951838875667826,1000)
                      then passend_464951838875667826 = substr(Samenwerkingsverband1,1,maxPassend_464951838875667826);
                      else passend_464951838875667826 = Samenwerkingsverband1;
                    put passend_464951838875667826 ~ @;
@@ -7559,7 +7559,7 @@ data _null_;
                    attrLengte_464951838892445423=length(Samenwerkingsverband2);
                    aantalLF_464951838892445423 = countc(Samenwerkingsverband2,'0A'x);
                    maxPassend_464951838892445423=1-1-aantalLF_464951838892445423;
-                   if attrLengte_464951838892445423 > maxPassend_464951838892445423
+                   if attrLengte_464951838892445423 > max(maxPassend_464951838892445423,1000)
                      then passend_464951838892445423 = substr(Samenwerkingsverband2,1,maxPassend_464951838892445423);
                      else passend_464951838892445423 = Samenwerkingsverband2;
                    put passend_464951838892445423 ~ @;
@@ -7582,7 +7582,7 @@ data _null_;
                    attrLengte_4224671235319231711=length(Statuscode);
                    aantalLF_4224671235319231711 = countc(Statuscode,'0A'x);
                    maxPassend_4224671235319231711=3-1-aantalLF_4224671235319231711;
-                   if attrLengte_4224671235319231711 > maxPassend_4224671235319231711
+                   if attrLengte_4224671235319231711 > max(maxPassend_4224671235319231711,1000)
                      then passend_4224671235319231711 = substr(Statuscode,1,maxPassend_4224671235319231711);
                      else passend_4224671235319231711 = Statuscode;
                    put passend_4224671235319231711 ~ @;
@@ -7593,7 +7593,7 @@ data _null_;
                    attrLengte_8962378222074036406=length(Status_cert);
                    aantalLF_8962378222074036406 = countc(Status_cert,'0A'x);
                    maxPassend_8962378222074036406=1-1-aantalLF_8962378222074036406;
-                   if attrLengte_8962378222074036406 > maxPassend_8962378222074036406
+                   if attrLengte_8962378222074036406 > max(maxPassend_8962378222074036406,1000)
                      then passend_8962378222074036406 = substr(Status_cert,1,maxPassend_8962378222074036406);
                      else passend_8962378222074036406 = Status_cert;
                    put passend_8962378222074036406 ~ @;
@@ -7604,7 +7604,7 @@ data _null_;
                    attrLengte_629741750285978823=length(Status_oud);
                    aantalLF_629741750285978823 = countc(Status_oud,'0A'x);
                    maxPassend_629741750285978823=1-1-aantalLF_629741750285978823;
-                   if attrLengte_629741750285978823 > maxPassend_629741750285978823
+                   if attrLengte_629741750285978823 > max(maxPassend_629741750285978823,1000)
                      then passend_629741750285978823 = substr(Status_oud,1,maxPassend_629741750285978823);
                      else passend_629741750285978823 = Status_oud;
                    put passend_629741750285978823 ~ @;
@@ -7615,7 +7615,7 @@ data _null_;
                    attrLengte_822751248562635347=length(status_SO_uurloon);
                    aantalLF_822751248562635347 = countc(status_SO_uurloon,'0A'x);
                    maxPassend_822751248562635347=1-1-aantalLF_822751248562635347;
-                   if attrLengte_822751248562635347 > maxPassend_822751248562635347
+                   if attrLengte_822751248562635347 > max(maxPassend_822751248562635347,1000)
                      then passend_822751248562635347 = substr(status_SO_uurloon,1,maxPassend_822751248562635347);
                      else passend_822751248562635347 = status_SO_uurloon;
                    put passend_822751248562635347 ~ @;
@@ -7626,7 +7626,7 @@ data _null_;
                    attrLengte_4353842848593816882=length(Status_TT);
                    aantalLF_4353842848593816882 = countc(Status_TT,'0A'x);
                    maxPassend_4353842848593816882=3-1-aantalLF_4353842848593816882;
-                   if attrLengte_4353842848593816882 > maxPassend_4353842848593816882
+                   if attrLengte_4353842848593816882 > max(maxPassend_4353842848593816882,1000)
                      then passend_4353842848593816882 = substr(Status_TT,1,maxPassend_4353842848593816882);
                      else passend_4353842848593816882 = Status_TT;
                    put passend_4353842848593816882 ~ @;
@@ -7637,7 +7637,7 @@ data _null_;
                    attrLengte_6104227251393262734=length(Statusgroep);
                    aantalLF_6104227251393262734 = countc(Statusgroep,'0A'x);
                    maxPassend_6104227251393262734=1-1-aantalLF_6104227251393262734;
-                   if attrLengte_6104227251393262734 > maxPassend_6104227251393262734
+                   if attrLengte_6104227251393262734 > max(maxPassend_6104227251393262734,1000)
                      then passend_6104227251393262734 = substr(Statusgroep,1,maxPassend_6104227251393262734);
                      else passend_6104227251393262734 = Statusgroep;
                    put passend_6104227251393262734 ~ @;
@@ -7651,7 +7651,7 @@ data _null_;
                    attrLengte_3643621599713209674=length(Status_E_Diensten);
                    aantalLF_3643621599713209674 = countc(Status_E_Diensten,'0A'x);
                    maxPassend_3643621599713209674=50-1-aantalLF_3643621599713209674;
-                   if attrLengte_3643621599713209674 > maxPassend_3643621599713209674
+                   if attrLengte_3643621599713209674 > max(maxPassend_3643621599713209674,1000)
                      then passend_3643621599713209674 = substr(Status_E_Diensten,1,maxPassend_3643621599713209674);
                      else passend_3643621599713209674 = Status_E_Diensten;
                    put passend_3643621599713209674 ~ @;
@@ -7662,7 +7662,7 @@ data _null_;
                    attrLengte_7139562934942460596=length(Status_E_Loket);
                    aantalLF_7139562934942460596 = countc(Status_E_Loket,'0A'x);
                    maxPassend_7139562934942460596=50-1-aantalLF_7139562934942460596;
-                   if attrLengte_7139562934942460596 > maxPassend_7139562934942460596
+                   if attrLengte_7139562934942460596 > max(maxPassend_7139562934942460596,1000)
                      then passend_7139562934942460596 = substr(Status_E_Loket,1,maxPassend_7139562934942460596);
                      else passend_7139562934942460596 = Status_E_Loket;
                    put passend_7139562934942460596 ~ @;
@@ -7679,7 +7679,7 @@ data _null_;
                    attrLengte_5382860804518864833=length(Titel);
                    aantalLF_5382860804518864833 = countc(Titel,'0A'x);
                    maxPassend_5382860804518864833=200-1-aantalLF_5382860804518864833;
-                   if attrLengte_5382860804518864833 > maxPassend_5382860804518864833
+                   if attrLengte_5382860804518864833 > max(maxPassend_5382860804518864833,1000)
                      then passend_5382860804518864833 = substr(Titel,1,maxPassend_5382860804518864833);
                      else passend_5382860804518864833 = Titel;
                    put passend_5382860804518864833 ~ @;
@@ -7717,7 +7717,7 @@ data _null_;
                    attrLengte_2245082838448298726=length(Zegge_Totaal_gecommitteerd);
                    aantalLF_2245082838448298726 = countc(Zegge_Totaal_gecommitteerd,'0A'x);
                    maxPassend_2245082838448298726=100-1-aantalLF_2245082838448298726;
-                   if attrLengte_2245082838448298726 > maxPassend_2245082838448298726
+                   if attrLengte_2245082838448298726 > max(maxPassend_2245082838448298726,1000)
                      then passend_2245082838448298726 = substr(Zegge_Totaal_gecommitteerd,1,maxPassend_2245082838448298726);
                      else passend_2245082838448298726 = Zegge_Totaal_gecommitteerd;
                    put passend_2245082838448298726 ~ @;
@@ -7770,7 +7770,7 @@ data _null_;
                    attrLengte_6926417215196739940=length(Uitlening_binnen_Fisc_eenheid);
                    aantalLF_6926417215196739940 = countc(Uitlening_binnen_Fisc_eenheid,'0A'x);
                    maxPassend_6926417215196739940=1-1-aantalLF_6926417215196739940;
-                   if attrLengte_6926417215196739940 > maxPassend_6926417215196739940
+                   if attrLengte_6926417215196739940 > max(maxPassend_6926417215196739940,1000)
                      then passend_6926417215196739940 = substr(Uitlening_binnen_Fisc_eenheid,1,maxPassend_6926417215196739940);
                      else passend_6926417215196739940 = Uitlening_binnen_Fisc_eenheid;
                    put passend_6926417215196739940 ~ @;
@@ -7784,7 +7784,7 @@ data _null_;
                    attrLengte_866165905967819389=length(Vaststellen_batch);
                    aantalLF_866165905967819389 = countc(Vaststellen_batch,'0A'x);
                    maxPassend_866165905967819389=1-1-aantalLF_866165905967819389;
-                   if attrLengte_866165905967819389 > maxPassend_866165905967819389
+                   if attrLengte_866165905967819389 > max(maxPassend_866165905967819389,1000)
                      then passend_866165905967819389 = substr(Vaststellen_batch,1,maxPassend_866165905967819389);
                      else passend_866165905967819389 = Vaststellen_batch;
                    put passend_866165905967819389 ~ @;
@@ -7813,7 +7813,7 @@ data _null_;
                    attrLengte_7036857090880684579=length(Vorig_aanvraagnummer);
                    aantalLF_7036857090880684579 = countc(Vorig_aanvraagnummer,'0A'x);
                    maxPassend_7036857090880684579=40-1-aantalLF_7036857090880684579;
-                   if attrLengte_7036857090880684579 > maxPassend_7036857090880684579
+                   if attrLengte_7036857090880684579 > max(maxPassend_7036857090880684579,1000)
                      then passend_7036857090880684579 = substr(Vorig_aanvraagnummer,1,maxPassend_7036857090880684579);
                      else passend_7036857090880684579 = Vorig_aanvraagnummer;
                    put passend_7036857090880684579 ~ @;
@@ -7830,7 +7830,7 @@ data _null_;
                    attrLengte_6645381449595001144=length(Vaststelling_conform_aanvraag);
                    aantalLF_6645381449595001144 = countc(Vaststelling_conform_aanvraag,'0A'x);
                    maxPassend_6645381449595001144=1-1-aantalLF_6645381449595001144;
-                   if attrLengte_6645381449595001144 > maxPassend_6645381449595001144
+                   if attrLengte_6645381449595001144 > max(maxPassend_6645381449595001144,1000)
                      then passend_6645381449595001144 = substr(Vaststelling_conform_aanvraag,1,maxPassend_6645381449595001144);
                      else passend_6645381449595001144 = Vaststelling_conform_aanvraag;
                    put passend_6645381449595001144 ~ @;
@@ -7841,7 +7841,7 @@ data _null_;
                    attrLengte_1884661362277667705=length(VV_Aanvraagnummer);
                    aantalLF_1884661362277667705 = countc(VV_Aanvraagnummer,'0A'x);
                    maxPassend_1884661362277667705=12-1-aantalLF_1884661362277667705;
-                   if attrLengte_1884661362277667705 > maxPassend_1884661362277667705
+                   if attrLengte_1884661362277667705 > max(maxPassend_1884661362277667705,1000)
                      then passend_1884661362277667705 = substr(VV_Aanvraagnummer,1,maxPassend_1884661362277667705);
                      else passend_1884661362277667705 = VV_Aanvraagnummer;
                    put passend_1884661362277667705 ~ @;
@@ -7852,7 +7852,7 @@ data _null_;
                    attrLengte_5408814446742826170=length(Wel_akkoord_niet_verlenen);
                    aantalLF_5408814446742826170 = countc(Wel_akkoord_niet_verlenen,'0A'x);
                    maxPassend_5408814446742826170=1-1-aantalLF_5408814446742826170;
-                   if attrLengte_5408814446742826170 > maxPassend_5408814446742826170
+                   if attrLengte_5408814446742826170 > max(maxPassend_5408814446742826170,1000)
                      then passend_5408814446742826170 = substr(Wel_akkoord_niet_verlenen,1,maxPassend_5408814446742826170);
                      else passend_5408814446742826170 = Wel_akkoord_niet_verlenen;
                    put passend_5408814446742826170 ~ @;
@@ -7863,7 +7863,7 @@ data _null_;
                    attrLengte_9196365527337984101=length(Aangeboden_aan_ZER);
                    aantalLF_9196365527337984101 = countc(Aangeboden_aan_ZER,'0A'x);
                    maxPassend_9196365527337984101=1-1-aantalLF_9196365527337984101;
-                   if attrLengte_9196365527337984101 > maxPassend_9196365527337984101
+                   if attrLengte_9196365527337984101 > max(maxPassend_9196365527337984101,1000)
                      then passend_9196365527337984101 = substr(Aangeboden_aan_ZER,1,maxPassend_9196365527337984101);
                      else passend_9196365527337984101 = Aangeboden_aan_ZER;
                    put passend_9196365527337984101 ~ @;
@@ -7944,7 +7944,7 @@ data _null_;
                    attrLengte_3121428435771779831=length(Naam);
                    aantalLF_3121428435771779831 = countc(Naam,'0A'x);
                    maxPassend_3121428435771779831=30-1-aantalLF_3121428435771779831;
-                   if attrLengte_3121428435771779831 > maxPassend_3121428435771779831
+                   if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
                    put passend_3121428435771779831 ~ @;
@@ -7955,7 +7955,7 @@ data _null_;
                    attrLengte_4385385912596099835=length(Toelichting);
                    aantalLF_4385385912596099835 = countc(Toelichting,'0A'x);
                    maxPassend_4385385912596099835=2048-1-aantalLF_4385385912596099835;
-                   if attrLengte_4385385912596099835 > maxPassend_4385385912596099835
+                   if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
                    put passend_4385385912596099835 ~ @;
@@ -7966,7 +7966,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -7980,7 +7980,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8061,7 +8061,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -8081,7 +8081,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8191,7 +8191,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -8208,7 +8208,7 @@ data _null_;
                    attrLengte_3572830677776901123=length(Behandelend);
                    aantalLF_3572830677776901123 = countc(Behandelend,'0A'x);
                    maxPassend_3572830677776901123=1-1-aantalLF_3572830677776901123;
-                   if attrLengte_3572830677776901123 > maxPassend_3572830677776901123
+                   if attrLengte_3572830677776901123 > max(maxPassend_3572830677776901123,1000)
                      then passend_3572830677776901123 = substr(Behandelend,1,maxPassend_3572830677776901123);
                      else passend_3572830677776901123 = Behandelend;
                    put passend_3572830677776901123 ~ @;
@@ -8219,7 +8219,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=2048-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -8236,7 +8236,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -8250,7 +8250,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8337,7 +8337,7 @@ data _null_;
                    attrLengte_3572830677776901123=length(Behandelend);
                    aantalLF_3572830677776901123 = countc(Behandelend,'0A'x);
                    maxPassend_3572830677776901123=1-1-aantalLF_3572830677776901123;
-                   if attrLengte_3572830677776901123 > maxPassend_3572830677776901123
+                   if attrLengte_3572830677776901123 > max(maxPassend_3572830677776901123,1000)
                      then passend_3572830677776901123 = substr(Behandelend,1,maxPassend_3572830677776901123);
                      else passend_3572830677776901123 = Behandelend;
                    put passend_3572830677776901123 ~ @;
@@ -8351,7 +8351,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -8374,7 +8374,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8385,7 +8385,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=2048-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -8399,7 +8399,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -8494,7 +8494,7 @@ data _null_;
                    attrLengte_4287257797458721857=length(Commentaar);
                    aantalLF_4287257797458721857 = countc(Commentaar,'0A'x);
                    maxPassend_4287257797458721857=2048-1-aantalLF_4287257797458721857;
-                   if attrLengte_4287257797458721857 > maxPassend_4287257797458721857
+                   if attrLengte_4287257797458721857 > max(maxPassend_4287257797458721857,1000)
                      then passend_4287257797458721857 = substr(Commentaar,1,maxPassend_4287257797458721857);
                      else passend_4287257797458721857 = Commentaar;
                    put passend_4287257797458721857 ~ @;
@@ -8514,7 +8514,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -8537,7 +8537,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8548,7 +8548,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -8559,7 +8559,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -8643,7 +8643,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -8660,7 +8660,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8674,7 +8674,7 @@ data _null_;
                    attrLengte_4385385912596099835=length(Toelichting);
                    aantalLF_4385385912596099835 = countc(Toelichting,'0A'x);
                    maxPassend_4385385912596099835=2048-1-aantalLF_4385385912596099835;
-                   if attrLengte_4385385912596099835 > maxPassend_4385385912596099835
+                   if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
                    put passend_4385385912596099835 ~ @;
@@ -8805,7 +8805,7 @@ data _null_;
                    attrLengte_8516838639269582457=length(Aanvullende_voorwaarden);
                    aantalLF_8516838639269582457 = countc(Aanvullende_voorwaarden,'0A'x);
                    maxPassend_8516838639269582457=1-1-aantalLF_8516838639269582457;
-                   if attrLengte_8516838639269582457 > maxPassend_8516838639269582457
+                   if attrLengte_8516838639269582457 > max(maxPassend_8516838639269582457,1000)
                      then passend_8516838639269582457 = substr(Aanvullende_voorwaarden,1,maxPassend_8516838639269582457);
                      else passend_8516838639269582457 = Aanvullende_voorwaarden;
                    put passend_8516838639269582457 ~ @;
@@ -8816,7 +8816,7 @@ data _null_;
                    attrLengte_2824924400165242775=length(Actie);
                    aantalLF_2824924400165242775 = countc(Actie,'0A'x);
                    maxPassend_2824924400165242775=2048-1-aantalLF_2824924400165242775;
-                   if attrLengte_2824924400165242775 > maxPassend_2824924400165242775
+                   if attrLengte_2824924400165242775 > max(maxPassend_2824924400165242775,1000)
                      then passend_2824924400165242775 = substr(Actie,1,maxPassend_2824924400165242775);
                      else passend_2824924400165242775 = Actie;
                    put passend_2824924400165242775 ~ @;
@@ -8839,7 +8839,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -8856,7 +8856,7 @@ data _null_;
                    attrLengte_1224618887063362992=length(Mdw_id);
                    aantalLF_1224618887063362992 = countc(Mdw_id,'0A'x);
                    maxPassend_1224618887063362992=12-1-aantalLF_1224618887063362992;
-                   if attrLengte_1224618887063362992 > maxPassend_1224618887063362992
+                   if attrLengte_1224618887063362992 > max(maxPassend_1224618887063362992,1000)
                      then passend_1224618887063362992 = substr(Mdw_id,1,maxPassend_1224618887063362992);
                      else passend_1224618887063362992 = Mdw_id;
                    put passend_1224618887063362992 ~ @;
@@ -8873,7 +8873,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -8884,7 +8884,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=2048-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -8898,7 +8898,7 @@ data _null_;
                    attrLengte_1225657355697171178=length(Opschortend_jn);
                    aantalLF_1225657355697171178 = countc(Opschortend_jn,'0A'x);
                    maxPassend_1225657355697171178=1-1-aantalLF_1225657355697171178;
-                   if attrLengte_1225657355697171178 > maxPassend_1225657355697171178
+                   if attrLengte_1225657355697171178 > max(maxPassend_1225657355697171178,1000)
                      then passend_1225657355697171178 = substr(Opschortend_jn,1,maxPassend_1225657355697171178);
                      else passend_1225657355697171178 = Opschortend_jn;
                    put passend_1225657355697171178 ~ @;
@@ -8912,7 +8912,7 @@ data _null_;
                    attrLengte_4412363972584569639=length(Reactie_cd);
                    aantalLF_4412363972584569639 = countc(Reactie_cd,'0A'x);
                    maxPassend_4412363972584569639=3-1-aantalLF_4412363972584569639;
-                   if attrLengte_4412363972584569639 > maxPassend_4412363972584569639
+                   if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
                    put passend_4412363972584569639 ~ @;
@@ -8923,7 +8923,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -9019,7 +9019,7 @@ data _null_;
                    attrLengte_4287257797458721857=length(Commentaar);
                    aantalLF_4287257797458721857 = countc(Commentaar,'0A'x);
                    maxPassend_4287257797458721857=2048-1-aantalLF_4287257797458721857;
-                   if attrLengte_4287257797458721857 > maxPassend_4287257797458721857
+                   if attrLengte_4287257797458721857 > max(maxPassend_4287257797458721857,1000)
                      then passend_4287257797458721857 = substr(Commentaar,1,maxPassend_4287257797458721857);
                      else passend_4287257797458721857 = Commentaar;
                    put passend_4287257797458721857 ~ @;
@@ -9039,7 +9039,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -9050,7 +9050,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -9064,7 +9064,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -9078,7 +9078,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -9242,7 +9242,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -9253,7 +9253,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -9291,7 +9291,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -9302,7 +9302,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -9319,7 +9319,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -9333,7 +9333,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -9353,7 +9353,7 @@ data _null_;
                    attrLengte_4433448625209033040=length(Gecorrigeerd_jn);
                    aantalLF_4433448625209033040 = countc(Gecorrigeerd_jn,'0A'x);
                    maxPassend_4433448625209033040=1-1-aantalLF_4433448625209033040;
-                   if attrLengte_4433448625209033040 > maxPassend_4433448625209033040
+                   if attrLengte_4433448625209033040 > max(maxPassend_4433448625209033040,1000)
                      then passend_4433448625209033040 = substr(Gecorrigeerd_jn,1,maxPassend_4433448625209033040);
                      else passend_4433448625209033040 = Gecorrigeerd_jn;
                    put passend_4433448625209033040 ~ @;
@@ -9364,7 +9364,7 @@ data _null_;
                    attrLengte_6398700462504815438=length(Rpt_nr_oud);
                    aantalLF_6398700462504815438 = countc(Rpt_nr_oud,'0A'x);
                    maxPassend_6398700462504815438=20-1-aantalLF_6398700462504815438;
-                   if attrLengte_6398700462504815438 > maxPassend_6398700462504815438
+                   if attrLengte_6398700462504815438 > max(maxPassend_6398700462504815438,1000)
                      then passend_6398700462504815438 = substr(Rpt_nr_oud,1,maxPassend_6398700462504815438);
                      else passend_6398700462504815438 = Rpt_nr_oud;
                    put passend_6398700462504815438 ~ @;
@@ -9375,7 +9375,7 @@ data _null_;
                    attrLengte_568356442792058170=length(Naar_oracle);
                    aantalLF_568356442792058170 = countc(Naar_oracle,'0A'x);
                    maxPassend_568356442792058170=1-1-aantalLF_568356442792058170;
-                   if attrLengte_568356442792058170 > maxPassend_568356442792058170
+                   if attrLengte_568356442792058170 > max(maxPassend_568356442792058170,1000)
                      then passend_568356442792058170 = substr(Naar_oracle,1,maxPassend_568356442792058170);
                      else passend_568356442792058170 = Naar_oracle;
                    put passend_568356442792058170 ~ @;
@@ -9386,7 +9386,7 @@ data _null_;
                    attrLengte_1952708952664785282=length(Boeking);
                    aantalLF_1952708952664785282 = countc(Boeking,'0A'x);
                    maxPassend_1952708952664785282=1-1-aantalLF_1952708952664785282;
-                   if attrLengte_1952708952664785282 > maxPassend_1952708952664785282
+                   if attrLengte_1952708952664785282 > max(maxPassend_1952708952664785282,1000)
                      then passend_1952708952664785282 = substr(Boeking,1,maxPassend_1952708952664785282);
                      else passend_1952708952664785282 = Boeking;
                    put passend_1952708952664785282 ~ @;
@@ -9397,7 +9397,7 @@ data _null_;
                    attrLengte_6245674353508173474=length(Imvb);
                    aantalLF_6245674353508173474 = countc(Imvb,'0A'x);
                    maxPassend_6245674353508173474=1-1-aantalLF_6245674353508173474;
-                   if attrLengte_6245674353508173474 > maxPassend_6245674353508173474
+                   if attrLengte_6245674353508173474 > max(maxPassend_6245674353508173474,1000)
                      then passend_6245674353508173474 = substr(Imvb,1,maxPassend_6245674353508173474);
                      else passend_6245674353508173474 = Imvb;
                    put passend_6245674353508173474 ~ @;
@@ -9687,7 +9687,7 @@ data _null_;
                    attrLengte_6253283794989270681=length(Tra_cd);
                    aantalLF_6253283794989270681 = countc(Tra_cd,'0A'x);
                    maxPassend_6253283794989270681=3-1-aantalLF_6253283794989270681;
-                   if attrLengte_6253283794989270681 > maxPassend_6253283794989270681
+                   if attrLengte_6253283794989270681 > max(maxPassend_6253283794989270681,1000)
                      then passend_6253283794989270681 = substr(Tra_cd,1,maxPassend_6253283794989270681);
                      else passend_6253283794989270681 = Tra_cd;
                    put passend_6253283794989270681 ~ @;
@@ -9698,7 +9698,7 @@ data _null_;
                    attrLengte_1098176494781784809=length(Reden);
                    aantalLF_1098176494781784809 = countc(Reden,'0A'x);
                    maxPassend_1098176494781784809=256-1-aantalLF_1098176494781784809;
-                   if attrLengte_1098176494781784809 > maxPassend_1098176494781784809
+                   if attrLengte_1098176494781784809 > max(maxPassend_1098176494781784809,1000)
                      then passend_1098176494781784809 = substr(Reden,1,maxPassend_1098176494781784809);
                      else passend_1098176494781784809 = Reden;
                    put passend_1098176494781784809 ~ @;
@@ -9721,7 +9721,7 @@ data _null_;
                    attrLengte_1212276818799146410=length(Fam_verplichting);
                    aantalLF_1212276818799146410 = countc(Fam_verplichting,'0A'x);
                    maxPassend_1212276818799146410=1-1-aantalLF_1212276818799146410;
-                   if attrLengte_1212276818799146410 > maxPassend_1212276818799146410
+                   if attrLengte_1212276818799146410 > max(maxPassend_1212276818799146410,1000)
                      then passend_1212276818799146410 = substr(Fam_verplichting,1,maxPassend_1212276818799146410);
                      else passend_1212276818799146410 = Fam_verplichting;
                    put passend_1212276818799146410 ~ @;
@@ -9732,7 +9732,7 @@ data _null_;
                    attrLengte_4153370524296179899=length(Fam_declaratie);
                    aantalLF_4153370524296179899 = countc(Fam_declaratie,'0A'x);
                    maxPassend_4153370524296179899=1-1-aantalLF_4153370524296179899;
-                   if attrLengte_4153370524296179899 > maxPassend_4153370524296179899
+                   if attrLengte_4153370524296179899 > max(maxPassend_4153370524296179899,1000)
                      then passend_4153370524296179899 = substr(Fam_declaratie,1,maxPassend_4153370524296179899);
                      else passend_4153370524296179899 = Fam_declaratie;
                    put passend_4153370524296179899 ~ @;
@@ -9743,7 +9743,7 @@ data _null_;
                    attrLengte_4443879735266284666=length(Fam_bij_rente);
                    aantalLF_4443879735266284666 = countc(Fam_bij_rente,'0A'x);
                    maxPassend_4443879735266284666=1-1-aantalLF_4443879735266284666;
-                   if attrLengte_4443879735266284666 > maxPassend_4443879735266284666
+                   if attrLengte_4443879735266284666 > max(maxPassend_4443879735266284666,1000)
                      then passend_4443879735266284666 = substr(Fam_bij_rente,1,maxPassend_4443879735266284666);
                      else passend_4443879735266284666 = Fam_bij_rente;
                    put passend_4443879735266284666 ~ @;
@@ -9754,7 +9754,7 @@ data _null_;
                    attrLengte_3567572823611571931=length(Fam_kwijtschelding);
                    aantalLF_3567572823611571931 = countc(Fam_kwijtschelding,'0A'x);
                    maxPassend_3567572823611571931=1-1-aantalLF_3567572823611571931;
-                   if attrLengte_3567572823611571931 > maxPassend_3567572823611571931
+                   if attrLengte_3567572823611571931 > max(maxPassend_3567572823611571931,1000)
                      then passend_3567572823611571931 = substr(Fam_kwijtschelding,1,maxPassend_3567572823611571931);
                      else passend_3567572823611571931 = Fam_kwijtschelding;
                    put passend_3567572823611571931 ~ @;
@@ -9765,7 +9765,7 @@ data _null_;
                    attrLengte_1702809178028524379=length(Fam_rest_voorschot);
                    aantalLF_1702809178028524379 = countc(Fam_rest_voorschot,'0A'x);
                    maxPassend_1702809178028524379=1-1-aantalLF_1702809178028524379;
-                   if attrLengte_1702809178028524379 > maxPassend_1702809178028524379
+                   if attrLengte_1702809178028524379 > max(maxPassend_1702809178028524379,1000)
                      then passend_1702809178028524379 = substr(Fam_rest_voorschot,1,maxPassend_1702809178028524379);
                      else passend_1702809178028524379 = Fam_rest_voorschot;
                    put passend_1702809178028524379 ~ @;
@@ -9776,7 +9776,7 @@ data _null_;
                    attrLengte_4845185038860361699=length(Fam_overboeking);
                    aantalLF_4845185038860361699 = countc(Fam_overboeking,'0A'x);
                    maxPassend_4845185038860361699=1-1-aantalLF_4845185038860361699;
-                   if attrLengte_4845185038860361699 > maxPassend_4845185038860361699
+                   if attrLengte_4845185038860361699 > max(maxPassend_4845185038860361699,1000)
                      then passend_4845185038860361699 = substr(Fam_overboeking,1,maxPassend_4845185038860361699);
                      else passend_4845185038860361699 = Fam_overboeking;
                    put passend_4845185038860361699 ~ @;
@@ -9787,7 +9787,7 @@ data _null_;
                    attrLengte_3391817755152401814=length(Fam_aflossing);
                    aantalLF_3391817755152401814 = countc(Fam_aflossing,'0A'x);
                    maxPassend_3391817755152401814=1-1-aantalLF_3391817755152401814;
-                   if attrLengte_3391817755152401814 > maxPassend_3391817755152401814
+                   if attrLengte_3391817755152401814 > max(maxPassend_3391817755152401814,1000)
                      then passend_3391817755152401814 = substr(Fam_aflossing,1,maxPassend_3391817755152401814);
                      else passend_3391817755152401814 = Fam_aflossing;
                    put passend_3391817755152401814 ~ @;
@@ -9798,7 +9798,7 @@ data _null_;
                    attrLengte_3285042740688401232=length(Fam_budgetmutatie);
                    aantalLF_3285042740688401232 = countc(Fam_budgetmutatie,'0A'x);
                    maxPassend_3285042740688401232=1-1-aantalLF_3285042740688401232;
-                   if attrLengte_3285042740688401232 > maxPassend_3285042740688401232
+                   if attrLengte_3285042740688401232 > max(maxPassend_3285042740688401232,1000)
                      then passend_3285042740688401232 = substr(Fam_budgetmutatie,1,maxPassend_3285042740688401232);
                      else passend_3285042740688401232 = Fam_budgetmutatie;
                    put passend_3285042740688401232 ~ @;
@@ -9809,7 +9809,7 @@ data _null_;
                    attrLengte_931749659403633718=length(Fam_rest_aflossing);
                    aantalLF_931749659403633718 = countc(Fam_rest_aflossing,'0A'x);
                    maxPassend_931749659403633718=1-1-aantalLF_931749659403633718;
-                   if attrLengte_931749659403633718 > maxPassend_931749659403633718
+                   if attrLengte_931749659403633718 > max(maxPassend_931749659403633718,1000)
                      then passend_931749659403633718 = substr(Fam_rest_aflossing,1,maxPassend_931749659403633718);
                      else passend_931749659403633718 = Fam_rest_aflossing;
                    put passend_931749659403633718 ~ @;
@@ -9820,7 +9820,7 @@ data _null_;
                    attrLengte_4931477478695952912=length(Fam_betaalritme);
                    aantalLF_4931477478695952912 = countc(Fam_betaalritme,'0A'x);
                    maxPassend_4931477478695952912=1-1-aantalLF_4931477478695952912;
-                   if attrLengte_4931477478695952912 > maxPassend_4931477478695952912
+                   if attrLengte_4931477478695952912 > max(maxPassend_4931477478695952912,1000)
                      then passend_4931477478695952912 = substr(Fam_betaalritme,1,maxPassend_4931477478695952912);
                      else passend_4931477478695952912 = Fam_betaalritme;
                    put passend_4931477478695952912 ~ @;
@@ -9831,7 +9831,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -9842,7 +9842,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -9853,7 +9853,7 @@ data _null_;
                    attrLengte_7673245136764010259=length(Correctie);
                    aantalLF_7673245136764010259 = countc(Correctie,'0A'x);
                    maxPassend_7673245136764010259=1-1-aantalLF_7673245136764010259;
-                   if attrLengte_7673245136764010259 > maxPassend_7673245136764010259
+                   if attrLengte_7673245136764010259 > max(maxPassend_7673245136764010259,1000)
                      then passend_7673245136764010259 = substr(Correctie,1,maxPassend_7673245136764010259);
                      else passend_7673245136764010259 = Correctie;
                    put passend_7673245136764010259 ~ @;
@@ -9876,7 +9876,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -9890,7 +9890,7 @@ data _null_;
                    attrLengte_6085349322089225769=length(Referentie);
                    aantalLF_6085349322089225769 = countc(Referentie,'0A'x);
                    maxPassend_6085349322089225769=10-1-aantalLF_6085349322089225769;
-                   if attrLengte_6085349322089225769 > maxPassend_6085349322089225769
+                   if attrLengte_6085349322089225769 > max(maxPassend_6085349322089225769,1000)
                      then passend_6085349322089225769 = substr(Referentie,1,maxPassend_6085349322089225769);
                      else passend_6085349322089225769 = Referentie;
                    put passend_6085349322089225769 ~ @;
@@ -9904,7 +9904,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -9918,7 +9918,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -9935,7 +9935,7 @@ data _null_;
                    attrLengte_422512166785287787=length(Duurzaam_jn);
                    aantalLF_422512166785287787 = countc(Duurzaam_jn,'0A'x);
                    maxPassend_422512166785287787=1-1-aantalLF_422512166785287787;
-                   if attrLengte_422512166785287787 > maxPassend_422512166785287787
+                   if attrLengte_422512166785287787 > max(maxPassend_422512166785287787,1000)
                      then passend_422512166785287787 = substr(Duurzaam_jn,1,maxPassend_422512166785287787);
                      else passend_422512166785287787 = Duurzaam_jn;
                    put passend_422512166785287787 ~ @;
@@ -9949,7 +9949,7 @@ data _null_;
                    attrLengte_6608173593154079080=length(Fam_vordering);
                    aantalLF_6608173593154079080 = countc(Fam_vordering,'0A'x);
                    maxPassend_6608173593154079080=1-1-aantalLF_6608173593154079080;
-                   if attrLengte_6608173593154079080 > maxPassend_6608173593154079080
+                   if attrLengte_6608173593154079080 > max(maxPassend_6608173593154079080,1000)
                      then passend_6608173593154079080 = substr(Fam_vordering,1,maxPassend_6608173593154079080);
                      else passend_6608173593154079080 = Fam_vordering;
                    put passend_6608173593154079080 ~ @;
@@ -9960,7 +9960,7 @@ data _null_;
                    attrLengte_5559502497052717358=length(Fam_vordering_afhandeling);
                    aantalLF_5559502497052717358 = countc(Fam_vordering_afhandeling,'0A'x);
                    maxPassend_5559502497052717358=1-1-aantalLF_5559502497052717358;
-                   if attrLengte_5559502497052717358 > maxPassend_5559502497052717358
+                   if attrLengte_5559502497052717358 > max(maxPassend_5559502497052717358,1000)
                      then passend_5559502497052717358 = substr(Fam_vordering_afhandeling,1,maxPassend_5559502497052717358);
                      else passend_5559502497052717358 = Fam_vordering_afhandeling;
                    put passend_5559502497052717358 ~ @;
@@ -9974,7 +9974,7 @@ data _null_;
                    attrLengte_3758669671063171765=length(Storneren);
                    aantalLF_3758669671063171765 = countc(Storneren,'0A'x);
                    maxPassend_3758669671063171765=1-1-aantalLF_3758669671063171765;
-                   if attrLengte_3758669671063171765 > maxPassend_3758669671063171765
+                   if attrLengte_3758669671063171765 > max(maxPassend_3758669671063171765,1000)
                      then passend_3758669671063171765 = substr(Storneren,1,maxPassend_3758669671063171765);
                      else passend_3758669671063171765 = Storneren;
                    put passend_3758669671063171765 ~ @;
@@ -10000,7 +10000,7 @@ data _null_;
                    attrLengte_2494011778403761468=length(Omhang_jn);
                    aantalLF_2494011778403761468 = countc(Omhang_jn,'0A'x);
                    maxPassend_2494011778403761468=1-1-aantalLF_2494011778403761468;
-                   if attrLengte_2494011778403761468 > maxPassend_2494011778403761468
+                   if attrLengte_2494011778403761468 > max(maxPassend_2494011778403761468,1000)
                      then passend_2494011778403761468 = substr(Omhang_jn,1,maxPassend_2494011778403761468);
                      else passend_2494011778403761468 = Omhang_jn;
                    put passend_2494011778403761468 ~ @;
@@ -10026,7 +10026,7 @@ data _null_;
                    attrLengte_4684164286917011191=length(Vordering_status);
                    aantalLF_4684164286917011191 = countc(Vordering_status,'0A'x);
                    maxPassend_4684164286917011191=3-1-aantalLF_4684164286917011191;
-                   if attrLengte_4684164286917011191 > maxPassend_4684164286917011191
+                   if attrLengte_4684164286917011191 > max(maxPassend_4684164286917011191,1000)
                      then passend_4684164286917011191 = substr(Vordering_status,1,maxPassend_4684164286917011191);
                      else passend_4684164286917011191 = Vordering_status;
                    put passend_4684164286917011191 ~ @;
@@ -10037,7 +10037,7 @@ data _null_;
                    attrLengte_6530276695478526136=length(On_hold);
                    aantalLF_6530276695478526136 = countc(On_hold,'0A'x);
                    maxPassend_6530276695478526136=255-1-aantalLF_6530276695478526136;
-                   if attrLengte_6530276695478526136 > maxPassend_6530276695478526136
+                   if attrLengte_6530276695478526136 > max(maxPassend_6530276695478526136,1000)
                      then passend_6530276695478526136 = substr(On_hold,1,maxPassend_6530276695478526136);
                      else passend_6530276695478526136 = On_hold;
                    put passend_6530276695478526136 ~ @;
@@ -10163,7 +10163,7 @@ data _null_;
                    attrLengte_6135999788213756481=length(Verplichtingssoort);
                    aantalLF_6135999788213756481 = countc(Verplichtingssoort,'0A'x);
                    maxPassend_6135999788213756481=1-1-aantalLF_6135999788213756481;
-                   if attrLengte_6135999788213756481 > maxPassend_6135999788213756481
+                   if attrLengte_6135999788213756481 > max(maxPassend_6135999788213756481,1000)
                      then passend_6135999788213756481 = substr(Verplichtingssoort,1,maxPassend_6135999788213756481);
                      else passend_6135999788213756481 = Verplichtingssoort;
                    put passend_6135999788213756481 ~ @;
@@ -10174,7 +10174,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=30-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -10209,7 +10209,7 @@ data _null_;
                    attrLengte_2756989652093128784=length(Ikb_naam);
                    aantalLF_2756989652093128784 = countc(Ikb_naam,'0A'x);
                    maxPassend_2756989652093128784=10-1-aantalLF_2756989652093128784;
-                   if attrLengte_2756989652093128784 > maxPassend_2756989652093128784
+                   if attrLengte_2756989652093128784 > max(maxPassend_2756989652093128784,1000)
                      then passend_2756989652093128784 = substr(Ikb_naam,1,maxPassend_2756989652093128784);
                      else passend_2756989652093128784 = Ikb_naam;
                    put passend_2756989652093128784 ~ @;
@@ -10220,7 +10220,7 @@ data _null_;
                    attrLengte_1618217091633064195=length(Inkoopbevinding);
                    aantalLF_1618217091633064195 = countc(Inkoopbevinding,'0A'x);
                    maxPassend_1618217091633064195=30-1-aantalLF_1618217091633064195;
-                   if attrLengte_1618217091633064195 > maxPassend_1618217091633064195
+                   if attrLengte_1618217091633064195 > max(maxPassend_1618217091633064195,1000)
                      then passend_1618217091633064195 = substr(Inkoopbevinding,1,maxPassend_1618217091633064195);
                      else passend_1618217091633064195 = Inkoopbevinding;
                    put passend_1618217091633064195 ~ @;
@@ -10231,7 +10231,7 @@ data _null_;
                    attrLengte_496588120254909598=length(Inkoopbevinding_user);
                    aantalLF_496588120254909598 = countc(Inkoopbevinding_user,'0A'x);
                    maxPassend_496588120254909598=30-1-aantalLF_496588120254909598;
-                   if attrLengte_496588120254909598 > maxPassend_496588120254909598
+                   if attrLengte_496588120254909598 > max(maxPassend_496588120254909598,1000)
                      then passend_496588120254909598 = substr(Inkoopbevinding_user,1,maxPassend_496588120254909598);
                      else passend_496588120254909598 = Inkoopbevinding_user;
                    put passend_496588120254909598 ~ @;
@@ -10242,7 +10242,7 @@ data _null_;
                    attrLengte_7008902060440754439=length(Betalingsverzoeknummer);
                    aantalLF_7008902060440754439 = countc(Betalingsverzoeknummer,'0A'x);
                    maxPassend_7008902060440754439=40-1-aantalLF_7008902060440754439;
-                   if attrLengte_7008902060440754439 > maxPassend_7008902060440754439
+                   if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
                      then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
                      else passend_7008902060440754439 = Betalingsverzoeknummer;
                    put passend_7008902060440754439 ~ @;
@@ -10312,7 +10312,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -10323,7 +10323,7 @@ data _null_;
                    attrLengte_5965997888822023319=length(Fun_cd);
                    aantalLF_5965997888822023319 = countc(Fun_cd,'0A'x);
                    maxPassend_5965997888822023319=7-1-aantalLF_5965997888822023319;
-                   if attrLengte_5965997888822023319 > maxPassend_5965997888822023319
+                   if attrLengte_5965997888822023319 > max(maxPassend_5965997888822023319,1000)
                      then passend_5965997888822023319 = substr(Fun_cd,1,maxPassend_5965997888822023319);
                      else passend_5965997888822023319 = Fun_cd;
                    put passend_5965997888822023319 ~ @;
@@ -10334,7 +10334,7 @@ data _null_;
                    attrLengte_2219022917313083260=length(Fun_oms);
                    aantalLF_2219022917313083260 = countc(Fun_oms,'0A'x);
                    maxPassend_2219022917313083260=50-1-aantalLF_2219022917313083260;
-                   if attrLengte_2219022917313083260 > maxPassend_2219022917313083260
+                   if attrLengte_2219022917313083260 > max(maxPassend_2219022917313083260,1000)
                      then passend_2219022917313083260 = substr(Fun_oms,1,maxPassend_2219022917313083260);
                      else passend_2219022917313083260 = Fun_oms;
                    put passend_2219022917313083260 ~ @;
@@ -10348,7 +10348,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -10419,7 +10419,7 @@ data _null_;
                    attrLengte_70411504366861046=length(Loc_cd);
                    aantalLF_70411504366861046 = countc(Loc_cd,'0A'x);
                    maxPassend_70411504366861046=2-1-aantalLF_70411504366861046;
-                   if attrLengte_70411504366861046 > maxPassend_70411504366861046
+                   if attrLengte_70411504366861046 > max(maxPassend_70411504366861046,1000)
                      then passend_70411504366861046 = substr(Loc_cd,1,maxPassend_70411504366861046);
                      else passend_70411504366861046 = Loc_cd;
                    put passend_70411504366861046 ~ @;
@@ -10430,7 +10430,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=34-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -10441,7 +10441,7 @@ data _null_;
                    attrLengte_9040032925271508250=length(Actief);
                    aantalLF_9040032925271508250 = countc(Actief,'0A'x);
                    maxPassend_9040032925271508250=1-1-aantalLF_9040032925271508250;
-                   if attrLengte_9040032925271508250 > maxPassend_9040032925271508250
+                   if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
                    put passend_9040032925271508250 ~ @;
@@ -10455,7 +10455,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -10469,7 +10469,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -10672,7 +10672,7 @@ data _null_;
                    attrLengte_5000095886126416684=length(Aanspreeknaam);
                    aantalLF_5000095886126416684 = countc(Aanspreeknaam,'0A'x);
                    maxPassend_5000095886126416684=50-1-aantalLF_5000095886126416684;
-                   if attrLengte_5000095886126416684 > maxPassend_5000095886126416684
+                   if attrLengte_5000095886126416684 > max(maxPassend_5000095886126416684,1000)
                      then passend_5000095886126416684 = substr(Aanspreeknaam,1,maxPassend_5000095886126416684);
                      else passend_5000095886126416684 = Aanspreeknaam;
                    put passend_5000095886126416684 ~ @;
@@ -10683,7 +10683,7 @@ data _null_;
                    attrLengte_403642515580817570=length(Achternaam);
                    aantalLF_403642515580817570 = countc(Achternaam,'0A'x);
                    maxPassend_403642515580817570=25-1-aantalLF_403642515580817570;
-                   if attrLengte_403642515580817570 > maxPassend_403642515580817570
+                   if attrLengte_403642515580817570 > max(maxPassend_403642515580817570,1000)
                      then passend_403642515580817570 = substr(Achternaam,1,maxPassend_403642515580817570);
                      else passend_403642515580817570 = Achternaam;
                    put passend_403642515580817570 ~ @;
@@ -10694,7 +10694,7 @@ data _null_;
                    attrLengte_9040032925271508250=length(Actief);
                    aantalLF_9040032925271508250 = countc(Actief,'0A'x);
                    maxPassend_9040032925271508250=1-1-aantalLF_9040032925271508250;
-                   if attrLengte_9040032925271508250 > maxPassend_9040032925271508250
+                   if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
                    put passend_9040032925271508250 ~ @;
@@ -10705,7 +10705,7 @@ data _null_;
                    attrLengte_9171161243242669933=length(Banknaam);
                    aantalLF_9171161243242669933 = countc(Banknaam,'0A'x);
                    maxPassend_9171161243242669933=50-1-aantalLF_9171161243242669933;
-                   if attrLengte_9171161243242669933 > maxPassend_9171161243242669933
+                   if attrLengte_9171161243242669933 > max(maxPassend_9171161243242669933,1000)
                      then passend_9171161243242669933 = substr(Banknaam,1,maxPassend_9171161243242669933);
                      else passend_9171161243242669933 = Banknaam;
                    put passend_9171161243242669933 ~ @;
@@ -10716,7 +10716,7 @@ data _null_;
                    attrLengte_568964889479556025=length(Beveiligingspas);
                    aantalLF_568964889479556025 = countc(Beveiligingspas,'0A'x);
                    maxPassend_568964889479556025=1-1-aantalLF_568964889479556025;
-                   if attrLengte_568964889479556025 > maxPassend_568964889479556025
+                   if attrLengte_568964889479556025 > max(maxPassend_568964889479556025,1000)
                      then passend_568964889479556025 = substr(Beveiligingspas,1,maxPassend_568964889479556025);
                      else passend_568964889479556025 = Beveiligingspas;
                    put passend_568964889479556025 ~ @;
@@ -10727,7 +10727,7 @@ data _null_;
                    attrLengte_4548269248070471921=length(Beveiligingspasnr);
                    aantalLF_4548269248070471921 = countc(Beveiligingspasnr,'0A'x);
                    maxPassend_4548269248070471921=6-1-aantalLF_4548269248070471921;
-                   if attrLengte_4548269248070471921 > maxPassend_4548269248070471921
+                   if attrLengte_4548269248070471921 > max(maxPassend_4548269248070471921,1000)
                      then passend_4548269248070471921 = substr(Beveiligingspasnr,1,maxPassend_4548269248070471921);
                      else passend_4548269248070471921 = Beveiligingspasnr;
                    put passend_4548269248070471921 ~ @;
@@ -10738,7 +10738,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -10752,7 +10752,7 @@ data _null_;
                    attrLengte_5407225052503955637=length(Certserienummer);
                    aantalLF_5407225052503955637 = countc(Certserienummer,'0A'x);
                    maxPassend_5407225052503955637=50-1-aantalLF_5407225052503955637;
-                   if attrLengte_5407225052503955637 > maxPassend_5407225052503955637
+                   if attrLengte_5407225052503955637 > max(maxPassend_5407225052503955637,1000)
                      then passend_5407225052503955637 = substr(Certserienummer,1,maxPassend_5407225052503955637);
                      else passend_5407225052503955637 = Certserienummer;
                    put passend_5407225052503955637 ~ @;
@@ -10766,7 +10766,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -10783,7 +10783,7 @@ data _null_;
                    attrLengte_3093319845566984286=length(Dienstverband);
                    aantalLF_3093319845566984286 = countc(Dienstverband,'0A'x);
                    maxPassend_3093319845566984286=1-1-aantalLF_3093319845566984286;
-                   if attrLengte_3093319845566984286 > maxPassend_3093319845566984286
+                   if attrLengte_3093319845566984286 > max(maxPassend_3093319845566984286,1000)
                      then passend_3093319845566984286 = substr(Dienstverband,1,maxPassend_3093319845566984286);
                      else passend_3093319845566984286 = Dienstverband;
                    put passend_3093319845566984286 ~ @;
@@ -10794,7 +10794,7 @@ data _null_;
                    attrLengte_8873931148360804801=length(Eigen_vervoer_jn);
                    aantalLF_8873931148360804801 = countc(Eigen_vervoer_jn,'0A'x);
                    maxPassend_8873931148360804801=1-1-aantalLF_8873931148360804801;
-                   if attrLengte_8873931148360804801 > maxPassend_8873931148360804801
+                   if attrLengte_8873931148360804801 > max(maxPassend_8873931148360804801,1000)
                      then passend_8873931148360804801 = substr(Eigen_vervoer_jn,1,maxPassend_8873931148360804801);
                      else passend_8873931148360804801 = Eigen_vervoer_jn;
                    put passend_8873931148360804801 ~ @;
@@ -10805,7 +10805,7 @@ data _null_;
                    attrLengte_5965997888822023319=length(Fun_cd);
                    aantalLF_5965997888822023319 = countc(Fun_cd,'0A'x);
                    maxPassend_5965997888822023319=7-1-aantalLF_5965997888822023319;
-                   if attrLengte_5965997888822023319 > maxPassend_5965997888822023319
+                   if attrLengte_5965997888822023319 > max(maxPassend_5965997888822023319,1000)
                      then passend_5965997888822023319 = substr(Fun_cd,1,maxPassend_5965997888822023319);
                      else passend_5965997888822023319 = Fun_cd;
                    put passend_5965997888822023319 ~ @;
@@ -10816,7 +10816,7 @@ data _null_;
                    attrLengte_731654219873503099=length(Geslacht);
                    aantalLF_731654219873503099 = countc(Geslacht,'0A'x);
                    maxPassend_731654219873503099=1-1-aantalLF_731654219873503099;
-                   if attrLengte_731654219873503099 > maxPassend_731654219873503099
+                   if attrLengte_731654219873503099 > max(maxPassend_731654219873503099,1000)
                      then passend_731654219873503099 = substr(Geslacht,1,maxPassend_731654219873503099);
                      else passend_731654219873503099 = Geslacht;
                    put passend_731654219873503099 ~ @;
@@ -10827,7 +10827,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -10838,7 +10838,7 @@ data _null_;
                    attrLengte_1425693773166182115=length(Inleen_jn);
                    aantalLF_1425693773166182115 = countc(Inleen_jn,'0A'x);
                    maxPassend_1425693773166182115=1-1-aantalLF_1425693773166182115;
-                   if attrLengte_1425693773166182115 > maxPassend_1425693773166182115
+                   if attrLengte_1425693773166182115 > max(maxPassend_1425693773166182115,1000)
                      then passend_1425693773166182115 = substr(Inleen_jn,1,maxPassend_1425693773166182115);
                      else passend_1425693773166182115 = Inleen_jn;
                    put passend_1425693773166182115 ~ @;
@@ -10849,7 +10849,7 @@ data _null_;
                    attrLengte_70411504366861046=length(Loc_cd);
                    aantalLF_70411504366861046 = countc(Loc_cd,'0A'x);
                    maxPassend_70411504366861046=2-1-aantalLF_70411504366861046;
-                   if attrLengte_70411504366861046 > maxPassend_70411504366861046
+                   if attrLengte_70411504366861046 > max(maxPassend_70411504366861046,1000)
                      then passend_70411504366861046 = substr(Loc_cd,1,maxPassend_70411504366861046);
                      else passend_70411504366861046 = Loc_cd;
                    put passend_70411504366861046 ~ @;
@@ -10860,7 +10860,7 @@ data _null_;
                    attrLengte_1226307818193438914=length(Mdw_cd);
                    aantalLF_1226307818193438914 = countc(Mdw_cd,'0A'x);
                    maxPassend_1226307818193438914=30-1-aantalLF_1226307818193438914;
-                   if attrLengte_1226307818193438914 > maxPassend_1226307818193438914
+                   if attrLengte_1226307818193438914 > max(maxPassend_1226307818193438914,1000)
                      then passend_1226307818193438914 = substr(Mdw_cd,1,maxPassend_1226307818193438914);
                      else passend_1226307818193438914 = Mdw_cd;
                    put passend_1226307818193438914 ~ @;
@@ -10871,7 +10871,7 @@ data _null_;
                    attrLengte_3550688932720166220=length(Mdw_emailadres);
                    aantalLF_3550688932720166220 = countc(Mdw_emailadres,'0A'x);
                    maxPassend_3550688932720166220=60-1-aantalLF_3550688932720166220;
-                   if attrLengte_3550688932720166220 > maxPassend_3550688932720166220
+                   if attrLengte_3550688932720166220 > max(maxPassend_3550688932720166220,1000)
                      then passend_3550688932720166220 = substr(Mdw_emailadres,1,maxPassend_3550688932720166220);
                      else passend_3550688932720166220 = Mdw_emailadres;
                    put passend_3550688932720166220 ~ @;
@@ -10882,7 +10882,7 @@ data _null_;
                    attrLengte_8870325337959155145=length(Mdw_handtekening);
                    aantalLF_8870325337959155145 = countc(Mdw_handtekening,'0A'x);
                    maxPassend_8870325337959155145=500-1-aantalLF_8870325337959155145;
-                   if attrLengte_8870325337959155145 > maxPassend_8870325337959155145
+                   if attrLengte_8870325337959155145 > max(maxPassend_8870325337959155145,1000)
                      then passend_8870325337959155145 = substr(Mdw_handtekening,1,maxPassend_8870325337959155145);
                      else passend_8870325337959155145 = Mdw_handtekening;
                    put passend_8870325337959155145 ~ @;
@@ -10893,7 +10893,7 @@ data _null_;
                    attrLengte_4406024425837339997=length(Mdw_handtekening_image);
                    aantalLF_4406024425837339997 = countc(Mdw_handtekening_image,'0A'x);
                    maxPassend_4406024425837339997=4096-1-aantalLF_4406024425837339997;
-                   if attrLengte_4406024425837339997 > maxPassend_4406024425837339997
+                   if attrLengte_4406024425837339997 > max(maxPassend_4406024425837339997,1000)
                      then passend_4406024425837339997 = substr(Mdw_handtekening_image,1,maxPassend_4406024425837339997);
                      else passend_4406024425837339997 = Mdw_handtekening_image;
                    put passend_4406024425837339997 ~ @;
@@ -10907,7 +10907,7 @@ data _null_;
                    attrLengte_469422463784359626=length(Mobiel);
                    aantalLF_469422463784359626 = countc(Mobiel,'0A'x);
                    maxPassend_469422463784359626=10-1-aantalLF_469422463784359626;
-                   if attrLengte_469422463784359626 > maxPassend_469422463784359626
+                   if attrLengte_469422463784359626 > max(maxPassend_469422463784359626,1000)
                      then passend_469422463784359626 = substr(Mobiel,1,maxPassend_469422463784359626);
                      else passend_469422463784359626 = Mobiel;
                    put passend_469422463784359626 ~ @;
@@ -10921,7 +10921,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -10932,7 +10932,7 @@ data _null_;
                    attrLengte_1297276606184209975=length(Parkeerkaart);
                    aantalLF_1297276606184209975 = countc(Parkeerkaart,'0A'x);
                    maxPassend_1297276606184209975=1-1-aantalLF_1297276606184209975;
-                   if attrLengte_1297276606184209975 > maxPassend_1297276606184209975
+                   if attrLengte_1297276606184209975 > max(maxPassend_1297276606184209975,1000)
                      then passend_1297276606184209975 = substr(Parkeerkaart,1,maxPassend_1297276606184209975);
                      else passend_1297276606184209975 = Parkeerkaart;
                    put passend_1297276606184209975 ~ @;
@@ -10943,7 +10943,7 @@ data _null_;
                    attrLengte_4214898722065367578=length(Plaatsnaam);
                    aantalLF_4214898722065367578 = countc(Plaatsnaam,'0A'x);
                    maxPassend_4214898722065367578=30-1-aantalLF_4214898722065367578;
-                   if attrLengte_4214898722065367578 > maxPassend_4214898722065367578
+                   if attrLengte_4214898722065367578 > max(maxPassend_4214898722065367578,1000)
                      then passend_4214898722065367578 = substr(Plaatsnaam,1,maxPassend_4214898722065367578);
                      else passend_4214898722065367578 = Plaatsnaam;
                    put passend_4214898722065367578 ~ @;
@@ -10954,7 +10954,7 @@ data _null_;
                    attrLengte_8614162211722129764=length(Standplaats);
                    aantalLF_8614162211722129764 = countc(Standplaats,'0A'x);
                    maxPassend_8614162211722129764=1-1-aantalLF_8614162211722129764;
-                   if attrLengte_8614162211722129764 > maxPassend_8614162211722129764
+                   if attrLengte_8614162211722129764 > max(maxPassend_8614162211722129764,1000)
                      then passend_8614162211722129764 = substr(Standplaats,1,maxPassend_8614162211722129764);
                      else passend_8614162211722129764 = Standplaats;
                    put passend_8614162211722129764 ~ @;
@@ -10965,7 +10965,7 @@ data _null_;
                    attrLengte_5105696030762504490=length(Telefoon);
                    aantalLF_5105696030762504490 = countc(Telefoon,'0A'x);
                    maxPassend_5105696030762504490=10-1-aantalLF_5105696030762504490;
-                   if attrLengte_5105696030762504490 > maxPassend_5105696030762504490
+                   if attrLengte_5105696030762504490 > max(maxPassend_5105696030762504490,1000)
                      then passend_5105696030762504490 = substr(Telefoon,1,maxPassend_5105696030762504490);
                      else passend_5105696030762504490 = Telefoon;
                    put passend_5105696030762504490 ~ @;
@@ -10976,7 +10976,7 @@ data _null_;
                    attrLengte_7837891438217984867=length(Titel_na_cd);
                    aantalLF_7837891438217984867 = countc(Titel_na_cd,'0A'x);
                    maxPassend_7837891438217984867=4-1-aantalLF_7837891438217984867;
-                   if attrLengte_7837891438217984867 > maxPassend_7837891438217984867
+                   if attrLengte_7837891438217984867 > max(maxPassend_7837891438217984867,1000)
                      then passend_7837891438217984867 = substr(Titel_na_cd,1,maxPassend_7837891438217984867);
                      else passend_7837891438217984867 = Titel_na_cd;
                    put passend_7837891438217984867 ~ @;
@@ -10987,7 +10987,7 @@ data _null_;
                    attrLengte_205177972285722878=length(Titel_voor_cd);
                    aantalLF_205177972285722878 = countc(Titel_voor_cd,'0A'x);
                    maxPassend_205177972285722878=4-1-aantalLF_205177972285722878;
-                   if attrLengte_205177972285722878 > maxPassend_205177972285722878
+                   if attrLengte_205177972285722878 > max(maxPassend_205177972285722878,1000)
                      then passend_205177972285722878 = substr(Titel_voor_cd,1,maxPassend_205177972285722878);
                      else passend_205177972285722878 = Titel_voor_cd;
                    put passend_205177972285722878 ~ @;
@@ -10998,7 +10998,7 @@ data _null_;
                    attrLengte_2044038105122318573=length(Toestel_dh);
                    aantalLF_2044038105122318573 = countc(Toestel_dh,'0A'x);
                    maxPassend_2044038105122318573=5-1-aantalLF_2044038105122318573;
-                   if attrLengte_2044038105122318573 > maxPassend_2044038105122318573
+                   if attrLengte_2044038105122318573 > max(maxPassend_2044038105122318573,1000)
                      then passend_2044038105122318573 = substr(Toestel_dh,1,maxPassend_2044038105122318573);
                      else passend_2044038105122318573 = Toestel_dh;
                    put passend_2044038105122318573 ~ @;
@@ -11009,7 +11009,7 @@ data _null_;
                    attrLengte_2040097266282988894=length(Toestel_zw);
                    aantalLF_2040097266282988894 = countc(Toestel_zw,'0A'x);
                    maxPassend_2040097266282988894=5-1-aantalLF_2040097266282988894;
-                   if attrLengte_2040097266282988894 > maxPassend_2040097266282988894
+                   if attrLengte_2040097266282988894 > max(maxPassend_2040097266282988894,1000)
                      then passend_2040097266282988894 = substr(Toestel_zw,1,maxPassend_2040097266282988894);
                      else passend_2040097266282988894 = Toestel_zw;
                    put passend_2040097266282988894 ~ @;
@@ -11020,7 +11020,7 @@ data _null_;
                    attrLengte_911718119053123258=length(Tvs_cd_oud);
                    aantalLF_911718119053123258 = countc(Tvs_cd_oud,'0A'x);
                    maxPassend_911718119053123258=30-1-aantalLF_911718119053123258;
-                   if attrLengte_911718119053123258 > maxPassend_911718119053123258
+                   if attrLengte_911718119053123258 > max(maxPassend_911718119053123258,1000)
                      then passend_911718119053123258 = substr(Tvs_cd_oud,1,maxPassend_911718119053123258);
                      else passend_911718119053123258 = Tvs_cd_oud;
                    put passend_911718119053123258 ~ @;
@@ -11031,7 +11031,7 @@ data _null_;
                    attrLengte_933604317395829620=length(Voorletters);
                    aantalLF_933604317395829620 = countc(Voorletters,'0A'x);
                    maxPassend_933604317395829620=10-1-aantalLF_933604317395829620;
-                   if attrLengte_933604317395829620 > maxPassend_933604317395829620
+                   if attrLengte_933604317395829620 > max(maxPassend_933604317395829620,1000)
                      then passend_933604317395829620 = substr(Voorletters,1,maxPassend_933604317395829620);
                      else passend_933604317395829620 = Voorletters;
                    put passend_933604317395829620 ~ @;
@@ -11042,7 +11042,7 @@ data _null_;
                    attrLengte_7272765945587119437=length(Voornaam);
                    aantalLF_7272765945587119437 = countc(Voornaam,'0A'x);
                    maxPassend_7272765945587119437=15-1-aantalLF_7272765945587119437;
-                   if attrLengte_7272765945587119437 > maxPassend_7272765945587119437
+                   if attrLengte_7272765945587119437 > max(maxPassend_7272765945587119437,1000)
                      then passend_7272765945587119437 = substr(Voornaam,1,maxPassend_7272765945587119437);
                      else passend_7272765945587119437 = Voornaam;
                    put passend_7272765945587119437 ~ @;
@@ -11053,7 +11053,7 @@ data _null_;
                    attrLengte_7678909970887993684=length(Voorvoegsel);
                    aantalLF_7678909970887993684 = countc(Voorvoegsel,'0A'x);
                    maxPassend_7678909970887993684=10-1-aantalLF_7678909970887993684;
-                   if attrLengte_7678909970887993684 > maxPassend_7678909970887993684
+                   if attrLengte_7678909970887993684 > max(maxPassend_7678909970887993684,1000)
                      then passend_7678909970887993684 = substr(Voorvoegsel,1,maxPassend_7678909970887993684);
                      else passend_7678909970887993684 = Voorvoegsel;
                    put passend_7678909970887993684 ~ @;
@@ -11127,7 +11127,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -11141,7 +11141,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -11152,7 +11152,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -11166,7 +11166,7 @@ data _null_;
                    attrLengte_9040032925271508250=length(Actief);
                    aantalLF_9040032925271508250 = countc(Actief,'0A'x);
                    maxPassend_9040032925271508250=1-1-aantalLF_9040032925271508250;
-                   if attrLengte_9040032925271508250 > maxPassend_9040032925271508250
+                   if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
                    put passend_9040032925271508250 ~ @;
@@ -11247,7 +11247,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -11258,7 +11258,7 @@ data _null_;
                    attrLengte_2715310130859233840=length(Eigenaar);
                    aantalLF_2715310130859233840 = countc(Eigenaar,'0A'x);
                    maxPassend_2715310130859233840=1-1-aantalLF_2715310130859233840;
-                   if attrLengte_2715310130859233840 > maxPassend_2715310130859233840
+                   if attrLengte_2715310130859233840 > max(maxPassend_2715310130859233840,1000)
                      then passend_2715310130859233840 = substr(Eigenaar,1,maxPassend_2715310130859233840);
                      else passend_2715310130859233840 = Eigenaar;
                    put passend_2715310130859233840 ~ @;
@@ -11269,7 +11269,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -11283,7 +11283,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -11371,7 +11371,7 @@ data _null_;
                    attrLengte_3217231980325004339=length(Zaaknummer);
                    aantalLF_3217231980325004339 = countc(Zaaknummer,'0A'x);
                    maxPassend_3217231980325004339=30-1-aantalLF_3217231980325004339;
-                   if attrLengte_3217231980325004339 > maxPassend_3217231980325004339
+                   if attrLengte_3217231980325004339 > max(maxPassend_3217231980325004339,1000)
                      then passend_3217231980325004339 = substr(Zaaknummer,1,maxPassend_3217231980325004339);
                      else passend_3217231980325004339 = Zaaknummer;
                    put passend_3217231980325004339 ~ @;
@@ -11385,7 +11385,7 @@ data _null_;
                    attrLengte_7079888756117315669=length(Uitspraak);
                    aantalLF_7079888756117315669 = countc(Uitspraak,'0A'x);
                    maxPassend_7079888756117315669=25-1-aantalLF_7079888756117315669;
-                   if attrLengte_7079888756117315669 > maxPassend_7079888756117315669
+                   if attrLengte_7079888756117315669 > max(maxPassend_7079888756117315669,1000)
                      then passend_7079888756117315669 = substr(Uitspraak,1,maxPassend_7079888756117315669);
                      else passend_7079888756117315669 = Uitspraak;
                    put passend_7079888756117315669 ~ @;
@@ -11555,7 +11555,7 @@ data _null_;
                    attrLengte_6020606438278307179=length(Belasting_cd);
                    aantalLF_6020606438278307179 = countc(Belasting_cd,'0A'x);
                    maxPassend_6020606438278307179=35-1-aantalLF_6020606438278307179;
-                   if attrLengte_6020606438278307179 > maxPassend_6020606438278307179
+                   if attrLengte_6020606438278307179 > max(maxPassend_6020606438278307179,1000)
                      then passend_6020606438278307179 = substr(Belasting_cd,1,maxPassend_6020606438278307179);
                      else passend_6020606438278307179 = Belasting_cd;
                    put passend_6020606438278307179 ~ @;
@@ -11584,7 +11584,7 @@ data _null_;
                    attrLengte_5414252817809941307=length(App_verschenen);
                    aantalLF_5414252817809941307 = countc(App_verschenen,'0A'x);
                    maxPassend_5414252817809941307=1-1-aantalLF_5414252817809941307;
-                   if attrLengte_5414252817809941307 > maxPassend_5414252817809941307
+                   if attrLengte_5414252817809941307 > max(maxPassend_5414252817809941307,1000)
                      then passend_5414252817809941307 = substr(App_verschenen,1,maxPassend_5414252817809941307);
                      else passend_5414252817809941307 = App_verschenen;
                    put passend_5414252817809941307 ~ @;
@@ -11625,7 +11625,7 @@ data _null_;
                    attrLengte_339486236946485008=length(Adviescommissie);
                    aantalLF_339486236946485008 = countc(Adviescommissie,'0A'x);
                    maxPassend_339486236946485008=1-1-aantalLF_339486236946485008;
-                   if attrLengte_339486236946485008 > maxPassend_339486236946485008
+                   if attrLengte_339486236946485008 > max(maxPassend_339486236946485008,1000)
                      then passend_339486236946485008 = substr(Adviescommissie,1,maxPassend_339486236946485008);
                      else passend_339486236946485008 = Adviescommissie;
                    put passend_339486236946485008 ~ @;
@@ -11765,7 +11765,7 @@ data _null_;
                    attrLengte_6111452580688960292=length(Jz_nr);
                    aantalLF_6111452580688960292 = countc(Jz_nr,'0A'x);
                    maxPassend_6111452580688960292=6-1-aantalLF_6111452580688960292;
-                   if attrLengte_6111452580688960292 > maxPassend_6111452580688960292
+                   if attrLengte_6111452580688960292 > max(maxPassend_6111452580688960292,1000)
                      then passend_6111452580688960292 = substr(Jz_nr,1,maxPassend_6111452580688960292);
                      else passend_6111452580688960292 = Jz_nr;
                    put passend_6111452580688960292 ~ @;
@@ -11779,7 +11779,7 @@ data _null_;
                    attrLengte_3099394465663039762=length(Wijziging_in);
                    aantalLF_3099394465663039762 = countc(Wijziging_in,'0A'x);
                    maxPassend_3099394465663039762=1-1-aantalLF_3099394465663039762;
-                   if attrLengte_3099394465663039762 > maxPassend_3099394465663039762
+                   if attrLengte_3099394465663039762 > max(maxPassend_3099394465663039762,1000)
                      then passend_3099394465663039762 = substr(Wijziging_in,1,maxPassend_3099394465663039762);
                      else passend_3099394465663039762 = Wijziging_in;
                    put passend_3099394465663039762 ~ @;
@@ -11790,7 +11790,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -11813,7 +11813,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -11827,7 +11827,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -11841,7 +11841,7 @@ data _null_;
                    attrLengte_339486236946485008=length(Adviescommissie);
                    aantalLF_339486236946485008 = countc(Adviescommissie,'0A'x);
                    maxPassend_339486236946485008=1-1-aantalLF_339486236946485008;
-                   if attrLengte_339486236946485008 > maxPassend_339486236946485008
+                   if attrLengte_339486236946485008 > max(maxPassend_339486236946485008,1000)
                      then passend_339486236946485008 = substr(Adviescommissie,1,maxPassend_339486236946485008);
                      else passend_339486236946485008 = Adviescommissie;
                    put passend_339486236946485008 ~ @;
@@ -12076,7 +12076,7 @@ data _null_;
                    attrLengte_1083598043257233095=length(Tra_cd_1);
                    aantalLF_1083598043257233095 = countc(Tra_cd_1,'0A'x);
                    maxPassend_1083598043257233095=3-1-aantalLF_1083598043257233095;
-                   if attrLengte_1083598043257233095 > maxPassend_1083598043257233095
+                   if attrLengte_1083598043257233095 > max(maxPassend_1083598043257233095,1000)
                      then passend_1083598043257233095 = substr(Tra_cd_1,1,maxPassend_1083598043257233095);
                      else passend_1083598043257233095 = Tra_cd_1;
                    put passend_1083598043257233095 ~ @;
@@ -12090,7 +12090,7 @@ data _null_;
                    attrLengte_1083598043307565968=length(Tra_cd_2);
                    aantalLF_1083598043307565968 = countc(Tra_cd_2,'0A'x);
                    maxPassend_1083598043307565968=3-1-aantalLF_1083598043307565968;
-                   if attrLengte_1083598043307565968 > maxPassend_1083598043307565968
+                   if attrLengte_1083598043307565968 > max(maxPassend_1083598043307565968,1000)
                      then passend_1083598043307565968 = substr(Tra_cd_2,1,maxPassend_1083598043307565968);
                      else passend_1083598043307565968 = Tra_cd_2;
                    put passend_1083598043307565968 ~ @;
@@ -12104,7 +12104,7 @@ data _null_;
                    attrLengte_1083598043290788349=length(Tra_cd_3);
                    aantalLF_1083598043290788349 = countc(Tra_cd_3,'0A'x);
                    maxPassend_1083598043290788349=3-1-aantalLF_1083598043290788349;
-                   if attrLengte_1083598043290788349 > maxPassend_1083598043290788349
+                   if attrLengte_1083598043290788349 > max(maxPassend_1083598043290788349,1000)
                      then passend_1083598043290788349 = substr(Tra_cd_3,1,maxPassend_1083598043290788349);
                      else passend_1083598043290788349 = Tra_cd_3;
                    put passend_1083598043290788349 ~ @;
@@ -12118,7 +12118,7 @@ data _null_;
                    attrLengte_5074290768225272146=length(Sts_cd_voor);
                    aantalLF_5074290768225272146 = countc(Sts_cd_voor,'0A'x);
                    maxPassend_5074290768225272146=3-1-aantalLF_5074290768225272146;
-                   if attrLengte_5074290768225272146 > maxPassend_5074290768225272146
+                   if attrLengte_5074290768225272146 > max(maxPassend_5074290768225272146,1000)
                      then passend_5074290768225272146 = substr(Sts_cd_voor,1,maxPassend_5074290768225272146);
                      else passend_5074290768225272146 = Sts_cd_voor;
                    put passend_5074290768225272146 ~ @;
@@ -12129,7 +12129,7 @@ data _null_;
                    attrLengte_3160638609811708247=length(Sts_cd_na);
                    aantalLF_3160638609811708247 = countc(Sts_cd_na,'0A'x);
                    maxPassend_3160638609811708247=3-1-aantalLF_3160638609811708247;
-                   if attrLengte_3160638609811708247 > maxPassend_3160638609811708247
+                   if attrLengte_3160638609811708247 > max(maxPassend_3160638609811708247,1000)
                      then passend_3160638609811708247 = substr(Sts_cd_na,1,maxPassend_3160638609811708247);
                      else passend_3160638609811708247 = Sts_cd_na;
                    put passend_3160638609811708247 ~ @;
@@ -12176,7 +12176,7 @@ data _null_;
                    attrLengte_2188678553434777312=length(Aanmaken_bob);
                    aantalLF_2188678553434777312 = countc(Aanmaken_bob,'0A'x);
                    maxPassend_2188678553434777312=1-1-aantalLF_2188678553434777312;
-                   if attrLengte_2188678553434777312 > maxPassend_2188678553434777312
+                   if attrLengte_2188678553434777312 > max(maxPassend_2188678553434777312,1000)
                      then passend_2188678553434777312 = substr(Aanmaken_bob,1,maxPassend_2188678553434777312);
                      else passend_2188678553434777312 = Aanmaken_bob;
                    put passend_2188678553434777312 ~ @;
@@ -12187,7 +12187,7 @@ data _null_;
                    attrLengte_8132748671281576414=length(Verwijder_trans);
                    aantalLF_8132748671281576414 = countc(Verwijder_trans,'0A'x);
                    maxPassend_8132748671281576414=1-1-aantalLF_8132748671281576414;
-                   if attrLengte_8132748671281576414 > maxPassend_8132748671281576414
+                   if attrLengte_8132748671281576414 > max(maxPassend_8132748671281576414,1000)
                      then passend_8132748671281576414 = substr(Verwijder_trans,1,maxPassend_8132748671281576414);
                      else passend_8132748671281576414 = Verwijder_trans;
                    put passend_8132748671281576414 ~ @;
@@ -12198,7 +12198,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -12209,7 +12209,7 @@ data _null_;
                    attrLengte_1618444314050332051=length(Cst_cd_beschikking);
                    aantalLF_1618444314050332051 = countc(Cst_cd_beschikking,'0A'x);
                    maxPassend_1618444314050332051=8-1-aantalLF_1618444314050332051;
-                   if attrLengte_1618444314050332051 > maxPassend_1618444314050332051
+                   if attrLengte_1618444314050332051 > max(maxPassend_1618444314050332051,1000)
                      then passend_1618444314050332051 = substr(Cst_cd_beschikking,1,maxPassend_1618444314050332051);
                      else passend_1618444314050332051 = Cst_cd_beschikking;
                    put passend_1618444314050332051 ~ @;
@@ -12226,7 +12226,7 @@ data _null_;
                    attrLengte_3284761973742663624=length(Tra_cd_beschikking_1);
                    aantalLF_3284761973742663624 = countc(Tra_cd_beschikking_1,'0A'x);
                    maxPassend_3284761973742663624=3-1-aantalLF_3284761973742663624;
-                   if attrLengte_3284761973742663624 > maxPassend_3284761973742663624
+                   if attrLengte_3284761973742663624 > max(maxPassend_3284761973742663624,1000)
                      then passend_3284761973742663624 = substr(Tra_cd_beschikking_1,1,maxPassend_3284761973742663624);
                      else passend_3284761973742663624 = Tra_cd_beschikking_1;
                    put passend_3284761973742663624 ~ @;
@@ -12243,7 +12243,7 @@ data _null_;
                    attrLengte_3284761973792996481=length(Tra_cd_beschikking_2);
                    aantalLF_3284761973792996481 = countc(Tra_cd_beschikking_2,'0A'x);
                    maxPassend_3284761973792996481=3-1-aantalLF_3284761973792996481;
-                   if attrLengte_3284761973792996481 > maxPassend_3284761973792996481
+                   if attrLengte_3284761973792996481 > max(maxPassend_3284761973792996481,1000)
                      then passend_3284761973792996481 = substr(Tra_cd_beschikking_2,1,maxPassend_3284761973792996481);
                      else passend_3284761973792996481 = Tra_cd_beschikking_2;
                    put passend_3284761973792996481 ~ @;
@@ -12269,7 +12269,7 @@ data _null_;
                    attrLengte_893891387222724231=length(Tra_cd_afd);
                    aantalLF_893891387222724231 = countc(Tra_cd_afd,'0A'x);
                    maxPassend_893891387222724231=3-1-aantalLF_893891387222724231;
-                   if attrLengte_893891387222724231 > maxPassend_893891387222724231
+                   if attrLengte_893891387222724231 > max(maxPassend_893891387222724231,1000)
                      then passend_893891387222724231 = substr(Tra_cd_afd,1,maxPassend_893891387222724231);
                      else passend_893891387222724231 = Tra_cd_afd;
                    put passend_893891387222724231 ~ @;
@@ -12286,7 +12286,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -12300,7 +12300,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -12367,7 +12367,7 @@ data _null_;
                    attrLengte_2858454071017162451=length(Fnc_cd);
                    aantalLF_2858454071017162451 = countc(Fnc_cd,'0A'x);
                    maxPassend_2858454071017162451=3-1-aantalLF_2858454071017162451;
-                   if attrLengte_2858454071017162451 > maxPassend_2858454071017162451
+                   if attrLengte_2858454071017162451 > max(maxPassend_2858454071017162451,1000)
                      then passend_2858454071017162451 = substr(Fnc_cd,1,maxPassend_2858454071017162451);
                      else passend_2858454071017162451 = Fnc_cd;
                    put passend_2858454071017162451 ~ @;
@@ -12378,7 +12378,7 @@ data _null_;
                    attrLengte_4632406013654397950=length(Oms);
                    aantalLF_4632406013654397950 = countc(Oms,'0A'x);
                    maxPassend_4632406013654397950=64-1-aantalLF_4632406013654397950;
-                   if attrLengte_4632406013654397950 > maxPassend_4632406013654397950
+                   if attrLengte_4632406013654397950 > max(maxPassend_4632406013654397950,1000)
                      then passend_4632406013654397950 = substr(Oms,1,maxPassend_4632406013654397950);
                      else passend_4632406013654397950 = Oms;
                    put passend_4632406013654397950 ~ @;
@@ -12392,7 +12392,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -12406,7 +12406,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -12473,7 +12473,7 @@ data _null_;
                    attrLengte_2858454071017162451=length(Fnc_cd);
                    aantalLF_2858454071017162451 = countc(Fnc_cd,'0A'x);
                    maxPassend_2858454071017162451=3-1-aantalLF_2858454071017162451;
-                   if attrLengte_2858454071017162451 > maxPassend_2858454071017162451
+                   if attrLengte_2858454071017162451 > max(maxPassend_2858454071017162451,1000)
                      then passend_2858454071017162451 = substr(Fnc_cd,1,maxPassend_2858454071017162451);
                      else passend_2858454071017162451 = Fnc_cd;
                    put passend_2858454071017162451 ~ @;
@@ -12484,7 +12484,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -12498,7 +12498,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -12512,7 +12512,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -12685,7 +12685,7 @@ data _null_;
                    attrLengte_6111452580688960292=length(Jz_nr);
                    aantalLF_6111452580688960292 = countc(Jz_nr,'0A'x);
                    maxPassend_6111452580688960292=6-1-aantalLF_6111452580688960292;
-                   if attrLengte_6111452580688960292 > maxPassend_6111452580688960292
+                   if attrLengte_6111452580688960292 > max(maxPassend_6111452580688960292,1000)
                      then passend_6111452580688960292 = substr(Jz_nr,1,maxPassend_6111452580688960292);
                      else passend_6111452580688960292 = Jz_nr;
                    put passend_6111452580688960292 ~ @;
@@ -12699,7 +12699,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -12710,7 +12710,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -12727,7 +12727,7 @@ data _null_;
                    attrLengte_8704665109529255687=length(Dos_sts_cd);
                    aantalLF_8704665109529255687 = countc(Dos_sts_cd,'0A'x);
                    maxPassend_8704665109529255687=3-1-aantalLF_8704665109529255687;
-                   if attrLengte_8704665109529255687 > maxPassend_8704665109529255687
+                   if attrLengte_8704665109529255687 > max(maxPassend_8704665109529255687,1000)
                      then passend_8704665109529255687 = substr(Dos_sts_cd,1,maxPassend_8704665109529255687);
                      else passend_8704665109529255687 = Dos_sts_cd;
                    put passend_8704665109529255687 ~ @;
@@ -12738,7 +12738,7 @@ data _null_;
                    attrLengte_3975328648468529066=length(Dos_ssg_cd);
                    aantalLF_3975328648468529066 = countc(Dos_ssg_cd,'0A'x);
                    maxPassend_3975328648468529066=1-1-aantalLF_3975328648468529066;
-                   if attrLengte_3975328648468529066 > maxPassend_3975328648468529066
+                   if attrLengte_3975328648468529066 > max(maxPassend_3975328648468529066,1000)
                      then passend_3975328648468529066 = substr(Dos_ssg_cd,1,maxPassend_3975328648468529066);
                      else passend_3975328648468529066 = Dos_ssg_cd;
                    put passend_3975328648468529066 ~ @;
@@ -12761,7 +12761,7 @@ data _null_;
                    attrLengte_2449201397129185301=length(Notities);
                    aantalLF_2449201397129185301 = countc(Notities,'0A'x);
                    maxPassend_2449201397129185301=256-1-aantalLF_2449201397129185301;
-                   if attrLengte_2449201397129185301 > maxPassend_2449201397129185301
+                   if attrLengte_2449201397129185301 > max(maxPassend_2449201397129185301,1000)
                      then passend_2449201397129185301 = substr(Notities,1,maxPassend_2449201397129185301);
                      else passend_2449201397129185301 = Notities;
                    put passend_2449201397129185301 ~ @;
@@ -12772,7 +12772,7 @@ data _null_;
                    attrLengte_1946813900853856696=length(Proc_type);
                    aantalLF_1946813900853856696 = countc(Proc_type,'0A'x);
                    maxPassend_1946813900853856696=3-1-aantalLF_1946813900853856696;
-                   if attrLengte_1946813900853856696 > maxPassend_1946813900853856696
+                   if attrLengte_1946813900853856696 > max(maxPassend_1946813900853856696,1000)
                      then passend_1946813900853856696 = substr(Proc_type,1,maxPassend_1946813900853856696);
                      else passend_1946813900853856696 = Proc_type;
                    put passend_1946813900853856696 ~ @;
@@ -12783,7 +12783,7 @@ data _null_;
                    attrLengte_6207017692359907203=length(Jzm_bezwaar);
                    aantalLF_6207017692359907203 = countc(Jzm_bezwaar,'0A'x);
                    maxPassend_6207017692359907203=1-1-aantalLF_6207017692359907203;
-                   if attrLengte_6207017692359907203 > maxPassend_6207017692359907203
+                   if attrLengte_6207017692359907203 > max(maxPassend_6207017692359907203,1000)
                      then passend_6207017692359907203 = substr(Jzm_bezwaar,1,maxPassend_6207017692359907203);
                      else passend_6207017692359907203 = Jzm_bezwaar;
                    put passend_6207017692359907203 ~ @;
@@ -12794,7 +12794,7 @@ data _null_;
                    attrLengte_2710170433705167747=length(Jzm_beroep);
                    aantalLF_2710170433705167747 = countc(Jzm_beroep,'0A'x);
                    maxPassend_2710170433705167747=1-1-aantalLF_2710170433705167747;
-                   if attrLengte_2710170433705167747 > maxPassend_2710170433705167747
+                   if attrLengte_2710170433705167747 > max(maxPassend_2710170433705167747,1000)
                      then passend_2710170433705167747 = substr(Jzm_beroep,1,maxPassend_2710170433705167747);
                      else passend_2710170433705167747 = Jzm_beroep;
                    put passend_2710170433705167747 ~ @;
@@ -12805,7 +12805,7 @@ data _null_;
                    attrLengte_6428897205158791533=length(Jzm_hoger_beroep);
                    aantalLF_6428897205158791533 = countc(Jzm_hoger_beroep,'0A'x);
                    maxPassend_6428897205158791533=1-1-aantalLF_6428897205158791533;
-                   if attrLengte_6428897205158791533 > maxPassend_6428897205158791533
+                   if attrLengte_6428897205158791533 > max(maxPassend_6428897205158791533,1000)
                      then passend_6428897205158791533 = substr(Jzm_hoger_beroep,1,maxPassend_6428897205158791533);
                      else passend_6428897205158791533 = Jzm_hoger_beroep;
                    put passend_6428897205158791533 ~ @;
@@ -12816,7 +12816,7 @@ data _null_;
                    attrLengte_5713014069952143271=length(Jzm_verz_schadeverg);
                    aantalLF_5713014069952143271 = countc(Jzm_verz_schadeverg,'0A'x);
                    maxPassend_5713014069952143271=1-1-aantalLF_5713014069952143271;
-                   if attrLengte_5713014069952143271 > maxPassend_5713014069952143271
+                   if attrLengte_5713014069952143271 > max(maxPassend_5713014069952143271,1000)
                      then passend_5713014069952143271 = substr(Jzm_verz_schadeverg,1,maxPassend_5713014069952143271);
                      else passend_5713014069952143271 = Jzm_verz_schadeverg;
                    put passend_5713014069952143271 ~ @;
@@ -12830,7 +12830,7 @@ data _null_;
                    attrLengte_5126695414912762741=length(Actuele_beh_rol_cd);
                    aantalLF_5126695414912762741 = countc(Actuele_beh_rol_cd,'0A'x);
                    maxPassend_5126695414912762741=3-1-aantalLF_5126695414912762741;
-                   if attrLengte_5126695414912762741 > maxPassend_5126695414912762741
+                   if attrLengte_5126695414912762741 > max(maxPassend_5126695414912762741,1000)
                      then passend_5126695414912762741 = substr(Actuele_beh_rol_cd,1,maxPassend_5126695414912762741);
                      else passend_5126695414912762741 = Actuele_beh_rol_cd;
                    put passend_5126695414912762741 ~ @;
@@ -12847,7 +12847,7 @@ data _null_;
                    attrLengte_1676697733324279600=length(Aard_bob);
                    aantalLF_1676697733324279600 = countc(Aard_bob,'0A'x);
                    maxPassend_1676697733324279600=1-1-aantalLF_1676697733324279600;
-                   if attrLengte_1676697733324279600 > maxPassend_1676697733324279600
+                   if attrLengte_1676697733324279600 > max(maxPassend_1676697733324279600,1000)
                      then passend_1676697733324279600 = substr(Aard_bob,1,maxPassend_1676697733324279600);
                      else passend_1676697733324279600 = Aard_bob;
                    put passend_1676697733324279600 ~ @;
@@ -12858,7 +12858,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -12872,7 +12872,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -12889,7 +12889,7 @@ data _null_;
                    attrLengte_1346401069541862097=length(Hoofdproces);
                    aantalLF_1346401069541862097 = countc(Hoofdproces,'0A'x);
                    maxPassend_1346401069541862097=10-1-aantalLF_1346401069541862097;
-                   if attrLengte_1346401069541862097 > maxPassend_1346401069541862097
+                   if attrLengte_1346401069541862097 > max(maxPassend_1346401069541862097,1000)
                      then passend_1346401069541862097 = substr(Hoofdproces,1,maxPassend_1346401069541862097);
                      else passend_1346401069541862097 = Hoofdproces;
                    put passend_1346401069541862097 ~ @;
@@ -12964,7 +12964,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -12975,7 +12975,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -12986,7 +12986,7 @@ data _null_;
                    attrLengte_4412363972584569639=length(Reactie_cd);
                    aantalLF_4412363972584569639 = countc(Reactie_cd,'0A'x);
                    maxPassend_4412363972584569639=3-1-aantalLF_4412363972584569639;
-                   if attrLengte_4412363972584569639 > maxPassend_4412363972584569639
+                   if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
                    put passend_4412363972584569639 ~ @;
@@ -13000,7 +13000,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -13014,7 +13014,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -13121,7 +13121,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -13132,7 +13132,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -13143,7 +13143,7 @@ data _null_;
                    attrLengte_4287257797458721857=length(Commentaar);
                    aantalLF_4287257797458721857 = countc(Commentaar,'0A'x);
                    maxPassend_4287257797458721857=2048-1-aantalLF_4287257797458721857;
-                   if attrLengte_4287257797458721857 > maxPassend_4287257797458721857
+                   if attrLengte_4287257797458721857 > max(maxPassend_4287257797458721857,1000)
                      then passend_4287257797458721857 = substr(Commentaar,1,maxPassend_4287257797458721857);
                      else passend_4287257797458721857 = Commentaar;
                    put passend_4287257797458721857 ~ @;
@@ -13154,7 +13154,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -13168,7 +13168,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -13243,7 +13243,7 @@ data _null_;
                    attrLengte_7079888756117315669=length(Uitspraak);
                    aantalLF_7079888756117315669 = countc(Uitspraak,'0A'x);
                    maxPassend_7079888756117315669=25-1-aantalLF_7079888756117315669;
-                   if attrLengte_7079888756117315669 > maxPassend_7079888756117315669
+                   if attrLengte_7079888756117315669 > max(maxPassend_7079888756117315669,1000)
                      then passend_7079888756117315669 = substr(Uitspraak,1,maxPassend_7079888756117315669);
                      else passend_7079888756117315669 = Uitspraak;
                    put passend_7079888756117315669 ~ @;
@@ -13254,7 +13254,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -13268,7 +13268,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -13390,7 +13390,7 @@ data _null_;
                    attrLengte_5799857564552390002=length(Bik_cd);
                    aantalLF_5799857564552390002 = countc(Bik_cd,'0A'x);
                    maxPassend_5799857564552390002=9-1-aantalLF_5799857564552390002;
-                   if attrLengte_5799857564552390002 > maxPassend_5799857564552390002
+                   if attrLengte_5799857564552390002 > max(maxPassend_5799857564552390002,1000)
                      then passend_5799857564552390002 = substr(Bik_cd,1,maxPassend_5799857564552390002);
                      else passend_5799857564552390002 = Bik_cd;
                    put passend_5799857564552390002 ~ @;
@@ -13401,7 +13401,7 @@ data _null_;
                    attrLengte_6668963671176742215=length(Bik_oms);
                    aantalLF_6668963671176742215 = countc(Bik_oms,'0A'x);
                    maxPassend_6668963671176742215=200-1-aantalLF_6668963671176742215;
-                   if attrLengte_6668963671176742215 > maxPassend_6668963671176742215
+                   if attrLengte_6668963671176742215 > max(maxPassend_6668963671176742215,1000)
                      then passend_6668963671176742215 = substr(Bik_oms,1,maxPassend_6668963671176742215);
                      else passend_6668963671176742215 = Bik_oms;
                    put passend_6668963671176742215 ~ @;
@@ -13412,7 +13412,7 @@ data _null_;
                    attrLengte_733089510000349211=length(Bouwtype);
                    aantalLF_733089510000349211 = countc(Bouwtype,'0A'x);
                    maxPassend_733089510000349211=1-1-aantalLF_733089510000349211;
-                   if attrLengte_733089510000349211 > maxPassend_733089510000349211
+                   if attrLengte_733089510000349211 > max(maxPassend_733089510000349211,1000)
                      then passend_733089510000349211 = substr(Bouwtype,1,maxPassend_733089510000349211);
                      else passend_733089510000349211 = Bouwtype;
                    put passend_733089510000349211 ~ @;
@@ -13426,7 +13426,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -13443,7 +13443,7 @@ data _null_;
                    attrLengte_8764637515045443581=length(Extra_gegevens);
                    aantalLF_8764637515045443581 = countc(Extra_gegevens,'0A'x);
                    maxPassend_8764637515045443581=255-1-aantalLF_8764637515045443581;
-                   if attrLengte_8764637515045443581 > maxPassend_8764637515045443581
+                   if attrLengte_8764637515045443581 > max(maxPassend_8764637515045443581,1000)
                      then passend_8764637515045443581 = substr(Extra_gegevens,1,maxPassend_8764637515045443581);
                      else passend_8764637515045443581 = Extra_gegevens;
                    put passend_8764637515045443581 ~ @;
@@ -13454,7 +13454,7 @@ data _null_;
                    attrLengte_8529368505635133627=length(Huisnr);
                    aantalLF_8529368505635133627 = countc(Huisnr,'0A'x);
                    maxPassend_8529368505635133627=30-1-aantalLF_8529368505635133627;
-                   if attrLengte_8529368505635133627 > maxPassend_8529368505635133627
+                   if attrLengte_8529368505635133627 > max(maxPassend_8529368505635133627,1000)
                      then passend_8529368505635133627 = substr(Huisnr,1,maxPassend_8529368505635133627);
                      else passend_8529368505635133627 = Huisnr;
                    put passend_8529368505635133627 ~ @;
@@ -13465,7 +13465,7 @@ data _null_;
                    attrLengte_5583129363718394252=length(Huisnr_toevoeging);
                    aantalLF_5583129363718394252 = countc(Huisnr_toevoeging,'0A'x);
                    maxPassend_5583129363718394252=12-1-aantalLF_5583129363718394252;
-                   if attrLengte_5583129363718394252 > maxPassend_5583129363718394252
+                   if attrLengte_5583129363718394252 > max(maxPassend_5583129363718394252,1000)
                      then passend_5583129363718394252 = substr(Huisnr_toevoeging,1,maxPassend_5583129363718394252);
                      else passend_5583129363718394252 = Huisnr_toevoeging;
                    put passend_5583129363718394252 ~ @;
@@ -13482,7 +13482,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -13493,7 +13493,7 @@ data _null_;
                    attrLengte_3121428435771779831=length(Naam);
                    aantalLF_3121428435771779831 = countc(Naam,'0A'x);
                    maxPassend_3121428435771779831=100-1-aantalLF_3121428435771779831;
-                   if attrLengte_3121428435771779831 > maxPassend_3121428435771779831
+                   if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
                    put passend_3121428435771779831 ~ @;
@@ -13504,7 +13504,7 @@ data _null_;
                    attrLengte_2948830150786152657=length(Plaats);
                    aantalLF_2948830150786152657 = countc(Plaats,'0A'x);
                    maxPassend_2948830150786152657=30-1-aantalLF_2948830150786152657;
-                   if attrLengte_2948830150786152657 > maxPassend_2948830150786152657
+                   if attrLengte_2948830150786152657 > max(maxPassend_2948830150786152657,1000)
                      then passend_2948830150786152657 = substr(Plaats,1,maxPassend_2948830150786152657);
                      else passend_2948830150786152657 = Plaats;
                    put passend_2948830150786152657 ~ @;
@@ -13515,7 +13515,7 @@ data _null_;
                    attrLengte_747405639420864755=length(Postcode);
                    aantalLF_747405639420864755 = countc(Postcode,'0A'x);
                    maxPassend_747405639420864755=6-1-aantalLF_747405639420864755;
-                   if attrLengte_747405639420864755 > maxPassend_747405639420864755
+                   if attrLengte_747405639420864755 > max(maxPassend_747405639420864755,1000)
                      then passend_747405639420864755 = substr(Postcode,1,maxPassend_747405639420864755);
                      else passend_747405639420864755 = Postcode;
                    put passend_747405639420864755 ~ @;
@@ -13529,7 +13529,7 @@ data _null_;
                    attrLengte_4343629645042543530=length(Provincie);
                    aantalLF_4343629645042543530 = countc(Provincie,'0A'x);
                    maxPassend_4343629645042543530=30-1-aantalLF_4343629645042543530;
-                   if attrLengte_4343629645042543530 > maxPassend_4343629645042543530
+                   if attrLengte_4343629645042543530 > max(maxPassend_4343629645042543530,1000)
                      then passend_4343629645042543530 = substr(Provincie,1,maxPassend_4343629645042543530);
                      else passend_4343629645042543530 = Provincie;
                    put passend_4343629645042543530 ~ @;
@@ -13540,7 +13540,7 @@ data _null_;
                    attrLengte_367421360090322077=length(Straat);
                    aantalLF_367421360090322077 = countc(Straat,'0A'x);
                    maxPassend_367421360090322077=60-1-aantalLF_367421360090322077;
-                   if attrLengte_367421360090322077 > maxPassend_367421360090322077
+                   if attrLengte_367421360090322077 > max(maxPassend_367421360090322077,1000)
                      then passend_367421360090322077 = substr(Straat,1,maxPassend_367421360090322077);
                      else passend_367421360090322077 = Straat;
                    put passend_367421360090322077 ~ @;
@@ -13719,7 +13719,7 @@ data _null_;
                    attrLengte_7250693880212314974=length(Mutatie_srt);
                    aantalLF_7250693880212314974 = countc(Mutatie_srt,'0A'x);
                    maxPassend_7250693880212314974=1-1-aantalLF_7250693880212314974;
-                   if attrLengte_7250693880212314974 > maxPassend_7250693880212314974
+                   if attrLengte_7250693880212314974 > max(maxPassend_7250693880212314974,1000)
                      then passend_7250693880212314974 = substr(Mutatie_srt,1,maxPassend_7250693880212314974);
                      else passend_7250693880212314974 = Mutatie_srt;
                    put passend_7250693880212314974 ~ @;
@@ -13730,7 +13730,7 @@ data _null_;
                    attrLengte_9147425939904536828=length(Mutatie_ind);
                    aantalLF_9147425939904536828 = countc(Mutatie_ind,'0A'x);
                    maxPassend_9147425939904536828=16-1-aantalLF_9147425939904536828;
-                   if attrLengte_9147425939904536828 > maxPassend_9147425939904536828
+                   if attrLengte_9147425939904536828 > max(maxPassend_9147425939904536828,1000)
                      then passend_9147425939904536828 = substr(Mutatie_ind,1,maxPassend_9147425939904536828);
                      else passend_9147425939904536828 = Mutatie_ind;
                    put passend_9147425939904536828 ~ @;
@@ -13741,7 +13741,7 @@ data _null_;
                    attrLengte_3173001277403718267=length(Old_cijfer);
                    aantalLF_3173001277403718267 = countc(Old_cijfer,'0A'x);
                    maxPassend_3173001277403718267=4-1-aantalLF_3173001277403718267;
-                   if attrLengte_3173001277403718267 > maxPassend_3173001277403718267
+                   if attrLengte_3173001277403718267 > max(maxPassend_3173001277403718267,1000)
                      then passend_3173001277403718267 = substr(Old_cijfer,1,maxPassend_3173001277403718267);
                      else passend_3173001277403718267 = Old_cijfer;
                    put passend_3173001277403718267 ~ @;
@@ -13752,7 +13752,7 @@ data _null_;
                    attrLengte_530137093424999580=length(Old_letter);
                    aantalLF_530137093424999580 = countc(Old_letter,'0A'x);
                    maxPassend_530137093424999580=2-1-aantalLF_530137093424999580;
-                   if attrLengte_530137093424999580 > maxPassend_530137093424999580
+                   if attrLengte_530137093424999580 > max(maxPassend_530137093424999580,1000)
                      then passend_530137093424999580 = substr(Old_letter,1,maxPassend_530137093424999580);
                      else passend_530137093424999580 = Old_letter;
                    put passend_530137093424999580 ~ @;
@@ -13763,7 +13763,7 @@ data _null_;
                    attrLengte_8129953195777226016=length(Old_reeksindicatie);
                    aantalLF_8129953195777226016 = countc(Old_reeksindicatie,'0A'x);
                    maxPassend_8129953195777226016=1-1-aantalLF_8129953195777226016;
-                   if attrLengte_8129953195777226016 > maxPassend_8129953195777226016
+                   if attrLengte_8129953195777226016 > max(maxPassend_8129953195777226016,1000)
                      then passend_8129953195777226016 = substr(Old_reeksindicatie,1,maxPassend_8129953195777226016);
                      else passend_8129953195777226016 = Old_reeksindicatie;
                    put passend_8129953195777226016 ~ @;
@@ -13774,7 +13774,7 @@ data _null_;
                    attrLengte_5138969292331377232=length(Old_codebreekpunt_van);
                    aantalLF_5138969292331377232 = countc(Old_codebreekpunt_van,'0A'x);
                    maxPassend_5138969292331377232=5-1-aantalLF_5138969292331377232;
-                   if attrLengte_5138969292331377232 > maxPassend_5138969292331377232
+                   if attrLengte_5138969292331377232 > max(maxPassend_5138969292331377232,1000)
                      then passend_5138969292331377232 = substr(Old_codebreekpunt_van,1,maxPassend_5138969292331377232);
                      else passend_5138969292331377232 = Old_codebreekpunt_van;
                    put passend_5138969292331377232 ~ @;
@@ -13785,7 +13785,7 @@ data _null_;
                    attrLengte_7922483400467009369=length(Old_codebreekpunt_tm);
                    aantalLF_7922483400467009369 = countc(Old_codebreekpunt_tm,'0A'x);
                    maxPassend_7922483400467009369=5-1-aantalLF_7922483400467009369;
-                   if attrLengte_7922483400467009369 > maxPassend_7922483400467009369
+                   if attrLengte_7922483400467009369 > max(maxPassend_7922483400467009369,1000)
                      then passend_7922483400467009369 = substr(Old_codebreekpunt_tm,1,maxPassend_7922483400467009369);
                      else passend_7922483400467009369 = Old_codebreekpunt_tm;
                    put passend_7922483400467009369 ~ @;
@@ -13796,7 +13796,7 @@ data _null_;
                    attrLengte_1540560090221989888=length(Old_woonplaatsnaam_ptt);
                    aantalLF_1540560090221989888 = countc(Old_woonplaatsnaam_ptt,'0A'x);
                    maxPassend_1540560090221989888=18-1-aantalLF_1540560090221989888;
-                   if attrLengte_1540560090221989888 > maxPassend_1540560090221989888
+                   if attrLengte_1540560090221989888 > max(maxPassend_1540560090221989888,1000)
                      then passend_1540560090221989888 = substr(Old_woonplaatsnaam_ptt,1,maxPassend_1540560090221989888);
                      else passend_1540560090221989888 = Old_woonplaatsnaam_ptt;
                    put passend_1540560090221989888 ~ @;
@@ -13807,7 +13807,7 @@ data _null_;
                    attrLengte_3523597521227454223=length(Old_woonplaatsnaam_nen);
                    aantalLF_3523597521227454223 = countc(Old_woonplaatsnaam_nen,'0A'x);
                    maxPassend_3523597521227454223=24-1-aantalLF_3523597521227454223;
-                   if attrLengte_3523597521227454223 > maxPassend_3523597521227454223
+                   if attrLengte_3523597521227454223 > max(maxPassend_3523597521227454223,1000)
                      then passend_3523597521227454223 = substr(Old_woonplaatsnaam_nen,1,maxPassend_3523597521227454223);
                      else passend_3523597521227454223 = Old_woonplaatsnaam_nen;
                    put passend_3523597521227454223 ~ @;
@@ -13818,7 +13818,7 @@ data _null_;
                    attrLengte_5102415678729774973=length(Old_straatnaam_ptt);
                    aantalLF_5102415678729774973 = countc(Old_straatnaam_ptt,'0A'x);
                    maxPassend_5102415678729774973=17-1-aantalLF_5102415678729774973;
-                   if attrLengte_5102415678729774973 > maxPassend_5102415678729774973
+                   if attrLengte_5102415678729774973 > max(maxPassend_5102415678729774973,1000)
                      then passend_5102415678729774973 = substr(Old_straatnaam_ptt,1,maxPassend_5102415678729774973);
                      else passend_5102415678729774973 = Old_straatnaam_ptt;
                    put passend_5102415678729774973 ~ @;
@@ -13829,7 +13829,7 @@ data _null_;
                    attrLengte_1661300520083600510=length(Old_straatnaam_nen);
                    aantalLF_1661300520083600510 = countc(Old_straatnaam_nen,'0A'x);
                    maxPassend_1661300520083600510=24-1-aantalLF_1661300520083600510;
-                   if attrLengte_1661300520083600510 > maxPassend_1661300520083600510
+                   if attrLengte_1661300520083600510 > max(maxPassend_1661300520083600510,1000)
                      then passend_1661300520083600510 = substr(Old_straatnaam_nen,1,maxPassend_1661300520083600510);
                      else passend_1661300520083600510 = Old_straatnaam_nen;
                    put passend_1661300520083600510 ~ @;
@@ -13840,7 +13840,7 @@ data _null_;
                    attrLengte_2054813268613832566=length(Old_straatnaam_off);
                    aantalLF_2054813268613832566 = countc(Old_straatnaam_off,'0A'x);
                    maxPassend_2054813268613832566=43-1-aantalLF_2054813268613832566;
-                   if attrLengte_2054813268613832566 > maxPassend_2054813268613832566
+                   if attrLengte_2054813268613832566 > max(maxPassend_2054813268613832566,1000)
                      then passend_2054813268613832566 = substr(Old_straatnaam_off,1,maxPassend_2054813268613832566);
                      else passend_2054813268613832566 = Old_straatnaam_off;
                    put passend_2054813268613832566 ~ @;
@@ -13851,7 +13851,7 @@ data _null_;
                    attrLengte_3247069511580703390=length(Old_extract_woonplaats);
                    aantalLF_3247069511580703390 = countc(Old_extract_woonplaats,'0A'x);
                    maxPassend_3247069511580703390=4-1-aantalLF_3247069511580703390;
-                   if attrLengte_3247069511580703390 > maxPassend_3247069511580703390
+                   if attrLengte_3247069511580703390 > max(maxPassend_3247069511580703390,1000)
                      then passend_3247069511580703390 = substr(Old_extract_woonplaats,1,maxPassend_3247069511580703390);
                      else passend_3247069511580703390 = Old_extract_woonplaats;
                    put passend_3247069511580703390 ~ @;
@@ -13862,7 +13862,7 @@ data _null_;
                    attrLengte_3278774028479216594=length(Old_extract_straatnaam);
                    aantalLF_3278774028479216594 = countc(Old_extract_straatnaam,'0A'x);
                    maxPassend_3278774028479216594=5-1-aantalLF_3278774028479216594;
-                   if attrLengte_3278774028479216594 > maxPassend_3278774028479216594
+                   if attrLengte_3278774028479216594 > max(maxPassend_3278774028479216594,1000)
                      then passend_3278774028479216594 = substr(Old_extract_straatnaam,1,maxPassend_3278774028479216594);
                      else passend_3278774028479216594 = Old_extract_straatnaam;
                    put passend_3278774028479216594 ~ @;
@@ -13873,7 +13873,7 @@ data _null_;
                    attrLengte_1917443286006337527=length(Old_gemeentecode);
                    aantalLF_1917443286006337527 = countc(Old_gemeentecode,'0A'x);
                    maxPassend_1917443286006337527=4-1-aantalLF_1917443286006337527;
-                   if attrLengte_1917443286006337527 > maxPassend_1917443286006337527
+                   if attrLengte_1917443286006337527 > max(maxPassend_1917443286006337527,1000)
                      then passend_1917443286006337527 = substr(Old_gemeentecode,1,maxPassend_1917443286006337527);
                      else passend_1917443286006337527 = Old_gemeentecode;
                    put passend_1917443286006337527 ~ @;
@@ -13884,7 +13884,7 @@ data _null_;
                    attrLengte_3365776602087829517=length(Old_gemeentenaam);
                    aantalLF_3365776602087829517 = countc(Old_gemeentenaam,'0A'x);
                    maxPassend_3365776602087829517=24-1-aantalLF_3365776602087829517;
-                   if attrLengte_3365776602087829517 > maxPassend_3365776602087829517
+                   if attrLengte_3365776602087829517 > max(maxPassend_3365776602087829517,1000)
                      then passend_3365776602087829517 = substr(Old_gemeentenaam,1,maxPassend_3365776602087829517);
                      else passend_3365776602087829517 = Old_gemeentenaam;
                    put passend_3365776602087829517 ~ @;
@@ -13895,7 +13895,7 @@ data _null_;
                    attrLengte_3669044964299775011=length(Old_provinciecode);
                    aantalLF_3669044964299775011 = countc(Old_provinciecode,'0A'x);
                    maxPassend_3669044964299775011=1-1-aantalLF_3669044964299775011;
-                   if attrLengte_3669044964299775011 > maxPassend_3669044964299775011
+                   if attrLengte_3669044964299775011 > max(maxPassend_3669044964299775011,1000)
                      then passend_3669044964299775011 = substr(Old_provinciecode,1,maxPassend_3669044964299775011);
                      else passend_3669044964299775011 = Old_provinciecode;
                    put passend_3669044964299775011 ~ @;
@@ -13906,7 +13906,7 @@ data _null_;
                    attrLengte_1372155496571826432=length(Old_cebuco_code);
                    aantalLF_1372155496571826432 = countc(Old_cebuco_code,'0A'x);
                    maxPassend_1372155496571826432=3-1-aantalLF_1372155496571826432;
-                   if attrLengte_1372155496571826432 > maxPassend_1372155496571826432
+                   if attrLengte_1372155496571826432 > max(maxPassend_1372155496571826432,1000)
                      then passend_1372155496571826432 = substr(Old_cebuco_code,1,maxPassend_1372155496571826432);
                      else passend_1372155496571826432 = Old_cebuco_code;
                    put passend_1372155496571826432 ~ @;
@@ -13917,7 +13917,7 @@ data _null_;
                    attrLengte_8077792040508706534=length(New_cijfer);
                    aantalLF_8077792040508706534 = countc(New_cijfer,'0A'x);
                    maxPassend_8077792040508706534=4-1-aantalLF_8077792040508706534;
-                   if attrLengte_8077792040508706534 > maxPassend_8077792040508706534
+                   if attrLengte_8077792040508706534 > max(maxPassend_8077792040508706534,1000)
                      then passend_8077792040508706534 = substr(New_cijfer,1,maxPassend_8077792040508706534);
                      else passend_8077792040508706534 = New_cijfer;
                    put passend_8077792040508706534 ~ @;
@@ -13928,7 +13928,7 @@ data _null_;
                    attrLengte_8213088235365646527=length(New_letter);
                    aantalLF_8213088235365646527 = countc(New_letter,'0A'x);
                    maxPassend_8213088235365646527=2-1-aantalLF_8213088235365646527;
-                   if attrLengte_8213088235365646527 > maxPassend_8213088235365646527
+                   if attrLengte_8213088235365646527 > max(maxPassend_8213088235365646527,1000)
                      then passend_8213088235365646527 = substr(New_letter,1,maxPassend_8213088235365646527);
                      else passend_8213088235365646527 = New_letter;
                    put passend_8213088235365646527 ~ @;
@@ -13939,7 +13939,7 @@ data _null_;
                    attrLengte_5223730194662017737=length(New_reeksindicatie);
                    aantalLF_5223730194662017737 = countc(New_reeksindicatie,'0A'x);
                    maxPassend_5223730194662017737=1-1-aantalLF_5223730194662017737;
-                   if attrLengte_5223730194662017737 > maxPassend_5223730194662017737
+                   if attrLengte_5223730194662017737 > max(maxPassend_5223730194662017737,1000)
                      then passend_5223730194662017737 = substr(New_reeksindicatie,1,maxPassend_5223730194662017737);
                      else passend_5223730194662017737 = New_reeksindicatie;
                    put passend_5223730194662017737 ~ @;
@@ -13950,7 +13950,7 @@ data _null_;
                    attrLengte_8051144216959963729=length(New_codebreekpunt_van);
                    aantalLF_8051144216959963729 = countc(New_codebreekpunt_van,'0A'x);
                    maxPassend_8051144216959963729=5-1-aantalLF_8051144216959963729;
-                   if attrLengte_8051144216959963729 > maxPassend_8051144216959963729
+                   if attrLengte_8051144216959963729 > max(maxPassend_8051144216959963729,1000)
                      then passend_8051144216959963729 = substr(New_codebreekpunt_van,1,maxPassend_8051144216959963729);
                      else passend_8051144216959963729 = New_codebreekpunt_van;
                    put passend_8051144216959963729 ~ @;
@@ -13961,7 +13961,7 @@ data _null_;
                    attrLengte_3767999090745901446=length(New_codebreekpunt_tm);
                    aantalLF_3767999090745901446 = countc(New_codebreekpunt_tm,'0A'x);
                    maxPassend_3767999090745901446=5-1-aantalLF_3767999090745901446;
-                   if attrLengte_3767999090745901446 > maxPassend_3767999090745901446
+                   if attrLengte_3767999090745901446 > max(maxPassend_3767999090745901446,1000)
                      then passend_3767999090745901446 = substr(New_codebreekpunt_tm,1,maxPassend_3767999090745901446);
                      else passend_3767999090745901446 = New_codebreekpunt_tm;
                    put passend_3767999090745901446 ~ @;
@@ -13972,7 +13972,7 @@ data _null_;
                    attrLengte_2786646432340601707=length(New_woonplaatsnaam_ptt);
                    aantalLF_2786646432340601707 = countc(New_woonplaatsnaam_ptt,'0A'x);
                    maxPassend_2786646432340601707=18-1-aantalLF_2786646432340601707;
-                   if attrLengte_2786646432340601707 > maxPassend_2786646432340601707
+                   if attrLengte_2786646432340601707 > max(maxPassend_2786646432340601707,1000)
                      then passend_2786646432340601707 = substr(New_woonplaatsnaam_ptt,1,maxPassend_2786646432340601707);
                      else passend_2786646432340601707 = New_woonplaatsnaam_ptt;
                    put passend_2786646432340601707 ~ @;
@@ -13983,7 +13983,7 @@ data _null_;
                    attrLengte_7388636093498186804=length(New_woonplaatsnaam_nen);
                    aantalLF_7388636093498186804 = countc(New_woonplaatsnaam_nen,'0A'x);
                    maxPassend_7388636093498186804=24-1-aantalLF_7388636093498186804;
-                   if attrLengte_7388636093498186804 > maxPassend_7388636093498186804
+                   if attrLengte_7388636093498186804 > max(maxPassend_7388636093498186804,1000)
                      then passend_7388636093498186804 = substr(New_woonplaatsnaam_nen,1,maxPassend_7388636093498186804);
                      else passend_7388636093498186804 = New_woonplaatsnaam_nen;
                    put passend_7388636093498186804 ~ @;
@@ -13994,7 +13994,7 @@ data _null_;
                    attrLengte_438267695295932282=length(New_straatnaam_ptt);
                    aantalLF_438267695295932282 = countc(New_straatnaam_ptt,'0A'x);
                    maxPassend_438267695295932282=17-1-aantalLF_438267695295932282;
-                   if attrLengte_438267695295932282 > maxPassend_438267695295932282
+                   if attrLengte_438267695295932282 > max(maxPassend_438267695295932282,1000)
                      then passend_438267695295932282 = substr(New_straatnaam_ptt,1,maxPassend_438267695295932282);
                      else passend_438267695295932282 = New_straatnaam_ptt;
                    put passend_438267695295932282 ~ @;
@@ -14005,7 +14005,7 @@ data _null_;
                    attrLengte_219554580145408837=length(New_straatnaam_nen);
                    aantalLF_219554580145408837 = countc(New_straatnaam_nen,'0A'x);
                    maxPassend_219554580145408837=24-1-aantalLF_219554580145408837;
-                   if attrLengte_219554580145408837 > maxPassend_219554580145408837
+                   if attrLengte_219554580145408837 > max(maxPassend_219554580145408837,1000)
                      then passend_219554580145408837 = substr(New_straatnaam_nen,1,maxPassend_219554580145408837);
                      else passend_219554580145408837 = New_straatnaam_nen;
                    put passend_219554580145408837 ~ @;
@@ -14016,7 +14016,7 @@ data _null_;
                    attrLengte_118786421849122903=length(New_straatnaam_off);
                    aantalLF_118786421849122903 = countc(New_straatnaam_off,'0A'x);
                    maxPassend_118786421849122903=43-1-aantalLF_118786421849122903;
-                   if attrLengte_118786421849122903 > maxPassend_118786421849122903
+                   if attrLengte_118786421849122903 > max(maxPassend_118786421849122903,1000)
                      then passend_118786421849122903 = substr(New_straatnaam_off,1,maxPassend_118786421849122903);
                      else passend_118786421849122903 = New_straatnaam_off;
                    put passend_118786421849122903 ~ @;
@@ -14027,7 +14027,7 @@ data _null_;
                    attrLengte_1763981602898539863=length(New_extract_woonplaats);
                    aantalLF_1763981602898539863 = countc(New_extract_woonplaats,'0A'x);
                    maxPassend_1763981602898539863=4-1-aantalLF_1763981602898539863;
-                   if attrLengte_1763981602898539863 > maxPassend_1763981602898539863
+                   if attrLengte_1763981602898539863 > max(maxPassend_1763981602898539863,1000)
                      then passend_1763981602898539863 = substr(New_extract_woonplaats,1,maxPassend_1763981602898539863);
                      else passend_1763981602898539863 = New_extract_woonplaats;
                    put passend_1763981602898539863 ~ @;
@@ -14038,7 +14038,7 @@ data _null_;
                    attrLengte_2346456890105101627=length(New_extract_straatnaam);
                    aantalLF_2346456890105101627 = countc(New_extract_straatnaam,'0A'x);
                    maxPassend_2346456890105101627=5-1-aantalLF_2346456890105101627;
-                   if attrLengte_2346456890105101627 > maxPassend_2346456890105101627
+                   if attrLengte_2346456890105101627 > max(maxPassend_2346456890105101627,1000)
                      then passend_2346456890105101627 = substr(New_extract_straatnaam,1,maxPassend_2346456890105101627);
                      else passend_2346456890105101627 = New_extract_straatnaam;
                    put passend_2346456890105101627 ~ @;
@@ -14049,7 +14049,7 @@ data _null_;
                    attrLengte_1281203927814949840=length(New_gemeentecode);
                    aantalLF_1281203927814949840 = countc(New_gemeentecode,'0A'x);
                    maxPassend_1281203927814949840=4-1-aantalLF_1281203927814949840;
-                   if attrLengte_1281203927814949840 > maxPassend_1281203927814949840
+                   if attrLengte_1281203927814949840 > max(maxPassend_1281203927814949840,1000)
                      then passend_1281203927814949840 = substr(New_gemeentecode,1,maxPassend_1281203927814949840);
                      else passend_1281203927814949840 = New_gemeentecode;
                    put passend_1281203927814949840 ~ @;
@@ -14060,7 +14060,7 @@ data _null_;
                    attrLengte_2566451087127917058=length(New_gemeentenaam);
                    aantalLF_2566451087127917058 = countc(New_gemeentenaam,'0A'x);
                    maxPassend_2566451087127917058=24-1-aantalLF_2566451087127917058;
-                   if attrLengte_2566451087127917058 > maxPassend_2566451087127917058
+                   if attrLengte_2566451087127917058 > max(maxPassend_2566451087127917058,1000)
                      then passend_2566451087127917058 = substr(New_gemeentenaam,1,maxPassend_2566451087127917058);
                      else passend_2566451087127917058 = New_gemeentenaam;
                    put passend_2566451087127917058 ~ @;
@@ -14071,7 +14071,7 @@ data _null_;
                    attrLengte_3954932300489292346=length(New_provinciecode);
                    aantalLF_3954932300489292346 = countc(New_provinciecode,'0A'x);
                    maxPassend_3954932300489292346=2-1-aantalLF_3954932300489292346;
-                   if attrLengte_3954932300489292346 > maxPassend_3954932300489292346
+                   if attrLengte_3954932300489292346 > max(maxPassend_3954932300489292346,1000)
                      then passend_3954932300489292346 = substr(New_provinciecode,1,maxPassend_3954932300489292346);
                      else passend_3954932300489292346 = New_provinciecode;
                    put passend_3954932300489292346 ~ @;
@@ -14082,7 +14082,7 @@ data _null_;
                    attrLengte_8171271901830781513=length(New_cebuco_code);
                    aantalLF_8171271901830781513 = countc(New_cebuco_code,'0A'x);
                    maxPassend_8171271901830781513=3-1-aantalLF_8171271901830781513;
-                   if attrLengte_8171271901830781513 > maxPassend_8171271901830781513
+                   if attrLengte_8171271901830781513 > max(maxPassend_8171271901830781513,1000)
                      then passend_8171271901830781513 = substr(New_cebuco_code,1,maxPassend_8171271901830781513);
                      else passend_8171271901830781513 = New_cebuco_code;
                    put passend_8171271901830781513 ~ @;
@@ -14189,7 +14189,7 @@ data _null_;
                    attrLengte_7658064378769085315=length(Cijfer);
                    aantalLF_7658064378769085315 = countc(Cijfer,'0A'x);
                    maxPassend_7658064378769085315=4-1-aantalLF_7658064378769085315;
-                   if attrLengte_7658064378769085315 > maxPassend_7658064378769085315
+                   if attrLengte_7658064378769085315 > max(maxPassend_7658064378769085315,1000)
                      then passend_7658064378769085315 = substr(Cijfer,1,maxPassend_7658064378769085315);
                      else passend_7658064378769085315 = Cijfer;
                    put passend_7658064378769085315 ~ @;
@@ -14200,7 +14200,7 @@ data _null_;
                    attrLengte_229837512413899150=length(Letter);
                    aantalLF_229837512413899150 = countc(Letter,'0A'x);
                    maxPassend_229837512413899150=2-1-aantalLF_229837512413899150;
-                   if attrLengte_229837512413899150 > maxPassend_229837512413899150
+                   if attrLengte_229837512413899150 > max(maxPassend_229837512413899150,1000)
                      then passend_229837512413899150 = substr(Letter,1,maxPassend_229837512413899150);
                      else passend_229837512413899150 = Letter;
                    put passend_229837512413899150 ~ @;
@@ -14211,7 +14211,7 @@ data _null_;
                    attrLengte_3757180471494144886=length(Reeksindicatie);
                    aantalLF_3757180471494144886 = countc(Reeksindicatie,'0A'x);
                    maxPassend_3757180471494144886=1-1-aantalLF_3757180471494144886;
-                   if attrLengte_3757180471494144886 > maxPassend_3757180471494144886
+                   if attrLengte_3757180471494144886 > max(maxPassend_3757180471494144886,1000)
                      then passend_3757180471494144886 = substr(Reeksindicatie,1,maxPassend_3757180471494144886);
                      else passend_3757180471494144886 = Reeksindicatie;
                    put passend_3757180471494144886 ~ @;
@@ -14222,7 +14222,7 @@ data _null_;
                    attrLengte_7194970507938686150=length(Codebreekpunt_van);
                    aantalLF_7194970507938686150 = countc(Codebreekpunt_van,'0A'x);
                    maxPassend_7194970507938686150=5-1-aantalLF_7194970507938686150;
-                   if attrLengte_7194970507938686150 > maxPassend_7194970507938686150
+                   if attrLengte_7194970507938686150 > max(maxPassend_7194970507938686150,1000)
                      then passend_7194970507938686150 = substr(Codebreekpunt_van,1,maxPassend_7194970507938686150);
                      else passend_7194970507938686150 = Codebreekpunt_van;
                    put passend_7194970507938686150 ~ @;
@@ -14233,7 +14233,7 @@ data _null_;
                    attrLengte_6591420947937743793=length(Codebreekpunt_tm);
                    aantalLF_6591420947937743793 = countc(Codebreekpunt_tm,'0A'x);
                    maxPassend_6591420947937743793=5-1-aantalLF_6591420947937743793;
-                   if attrLengte_6591420947937743793 > maxPassend_6591420947937743793
+                   if attrLengte_6591420947937743793 > max(maxPassend_6591420947937743793,1000)
                      then passend_6591420947937743793 = substr(Codebreekpunt_tm,1,maxPassend_6591420947937743793);
                      else passend_6591420947937743793 = Codebreekpunt_tm;
                    put passend_6591420947937743793 ~ @;
@@ -14244,7 +14244,7 @@ data _null_;
                    attrLengte_5025548497113877842=length(Woonplaatsnaam_ptt);
                    aantalLF_5025548497113877842 = countc(Woonplaatsnaam_ptt,'0A'x);
                    maxPassend_5025548497113877842=18-1-aantalLF_5025548497113877842;
-                   if attrLengte_5025548497113877842 > maxPassend_5025548497113877842
+                   if attrLengte_5025548497113877842 > max(maxPassend_5025548497113877842,1000)
                      then passend_5025548497113877842 = substr(Woonplaatsnaam_ptt,1,maxPassend_5025548497113877842);
                      else passend_5025548497113877842 = Woonplaatsnaam_ptt;
                    put passend_5025548497113877842 ~ @;
@@ -14255,7 +14255,7 @@ data _null_;
                    attrLengte_4559868662858897319=length(Woonplaatsnaam_nen);
                    aantalLF_4559868662858897319 = countc(Woonplaatsnaam_nen,'0A'x);
                    maxPassend_4559868662858897319=24-1-aantalLF_4559868662858897319;
-                   if attrLengte_4559868662858897319 > maxPassend_4559868662858897319
+                   if attrLengte_4559868662858897319 > max(maxPassend_4559868662858897319,1000)
                      then passend_4559868662858897319 = substr(Woonplaatsnaam_nen,1,maxPassend_4559868662858897319);
                      else passend_4559868662858897319 = Woonplaatsnaam_nen;
                    put passend_4559868662858897319 ~ @;
@@ -14266,7 +14266,7 @@ data _null_;
                    attrLengte_4555017436313506669=length(Straatnaam_ptt);
                    aantalLF_4555017436313506669 = countc(Straatnaam_ptt,'0A'x);
                    maxPassend_4555017436313506669=17-1-aantalLF_4555017436313506669;
-                   if attrLengte_4555017436313506669 > maxPassend_4555017436313506669
+                   if attrLengte_4555017436313506669 > max(maxPassend_4555017436313506669,1000)
                      then passend_4555017436313506669 = substr(Straatnaam_ptt,1,maxPassend_4555017436313506669);
                      else passend_4555017436313506669 = Straatnaam_ptt;
                    put passend_4555017436313506669 ~ @;
@@ -14277,7 +14277,7 @@ data _null_;
                    attrLengte_3644383055734111220=length(Straatnaam_nen);
                    aantalLF_3644383055734111220 = countc(Straatnaam_nen,'0A'x);
                    maxPassend_3644383055734111220=24-1-aantalLF_3644383055734111220;
-                   if attrLengte_3644383055734111220 > maxPassend_3644383055734111220
+                   if attrLengte_3644383055734111220 > max(maxPassend_3644383055734111220,1000)
                      then passend_3644383055734111220 = substr(Straatnaam_nen,1,maxPassend_3644383055734111220);
                      else passend_3644383055734111220 = Straatnaam_nen;
                    put passend_3644383055734111220 ~ @;
@@ -14288,7 +14288,7 @@ data _null_;
                    attrLengte_3964708792430647144=length(Straatnaam_off);
                    aantalLF_3964708792430647144 = countc(Straatnaam_off,'0A'x);
                    maxPassend_3964708792430647144=43-1-aantalLF_3964708792430647144;
-                   if attrLengte_3964708792430647144 > maxPassend_3964708792430647144
+                   if attrLengte_3964708792430647144 > max(maxPassend_3964708792430647144,1000)
                      then passend_3964708792430647144 = substr(Straatnaam_off,1,maxPassend_3964708792430647144);
                      else passend_3964708792430647144 = Straatnaam_off;
                    put passend_3964708792430647144 ~ @;
@@ -14299,7 +14299,7 @@ data _null_;
                    attrLengte_3722357102910039792=length(Extract_woonplaats);
                    aantalLF_3722357102910039792 = countc(Extract_woonplaats,'0A'x);
                    maxPassend_3722357102910039792=4-1-aantalLF_3722357102910039792;
-                   if attrLengte_3722357102910039792 > maxPassend_3722357102910039792
+                   if attrLengte_3722357102910039792 > max(maxPassend_3722357102910039792,1000)
                      then passend_3722357102910039792 = substr(Extract_woonplaats,1,maxPassend_3722357102910039792);
                      else passend_3722357102910039792 = Extract_woonplaats;
                    put passend_3722357102910039792 ~ @;
@@ -14310,7 +14310,7 @@ data _null_;
                    attrLengte_3775085152733664256=length(Extract_straatnaam);
                    aantalLF_3775085152733664256 = countc(Extract_straatnaam,'0A'x);
                    maxPassend_3775085152733664256=5-1-aantalLF_3775085152733664256;
-                   if attrLengte_3775085152733664256 > maxPassend_3775085152733664256
+                   if attrLengte_3775085152733664256 > max(maxPassend_3775085152733664256,1000)
                      then passend_3775085152733664256 = substr(Extract_straatnaam,1,maxPassend_3775085152733664256);
                      else passend_3775085152733664256 = Extract_straatnaam;
                    put passend_3775085152733664256 ~ @;
@@ -14321,7 +14321,7 @@ data _null_;
                    attrLengte_4677372027206810257=length(Gemeentecode);
                    aantalLF_4677372027206810257 = countc(Gemeentecode,'0A'x);
                    maxPassend_4677372027206810257=4-1-aantalLF_4677372027206810257;
-                   if attrLengte_4677372027206810257 > maxPassend_4677372027206810257
+                   if attrLengte_4677372027206810257 > max(maxPassend_4677372027206810257,1000)
                      then passend_4677372027206810257 = substr(Gemeentecode,1,maxPassend_4677372027206810257);
                      else passend_4677372027206810257 = Gemeentecode;
                    put passend_4677372027206810257 ~ @;
@@ -14332,7 +14332,7 @@ data _null_;
                    attrLengte_8271080290582904925=length(Gemeentenaam);
                    aantalLF_8271080290582904925 = countc(Gemeentenaam,'0A'x);
                    maxPassend_8271080290582904925=24-1-aantalLF_8271080290582904925;
-                   if attrLengte_8271080290582904925 > maxPassend_8271080290582904925
+                   if attrLengte_8271080290582904925 > max(maxPassend_8271080290582904925,1000)
                      then passend_8271080290582904925 = substr(Gemeentenaam,1,maxPassend_8271080290582904925);
                      else passend_8271080290582904925 = Gemeentenaam;
                    put passend_8271080290582904925 ~ @;
@@ -14343,7 +14343,7 @@ data _null_;
                    attrLengte_7107771537890015459=length(Provinciecode);
                    aantalLF_7107771537890015459 = countc(Provinciecode,'0A'x);
                    maxPassend_7107771537890015459=2-1-aantalLF_7107771537890015459;
-                   if attrLengte_7107771537890015459 > maxPassend_7107771537890015459
+                   if attrLengte_7107771537890015459 > max(maxPassend_7107771537890015459,1000)
                      then passend_7107771537890015459 = substr(Provinciecode,1,maxPassend_7107771537890015459);
                      else passend_7107771537890015459 = Provinciecode;
                    put passend_7107771537890015459 ~ @;
@@ -14354,7 +14354,7 @@ data _null_;
                    attrLengte_2946163507944036098=length(Cebuco_code);
                    aantalLF_2946163507944036098 = countc(Cebuco_code,'0A'x);
                    maxPassend_2946163507944036098=3-1-aantalLF_2946163507944036098;
-                   if attrLengte_2946163507944036098 > maxPassend_2946163507944036098
+                   if attrLengte_2946163507944036098 > max(maxPassend_2946163507944036098,1000)
                      then passend_2946163507944036098 = substr(Cebuco_code,1,maxPassend_2946163507944036098);
                      else passend_2946163507944036098 = Cebuco_code;
                    put passend_2946163507944036098 ~ @;
@@ -14437,7 +14437,7 @@ data _null_;
                    attrLengte_3177944828558768780=length(Adressoort);
                    aantalLF_3177944828558768780 = countc(Adressoort,'0A'x);
                    maxPassend_3177944828558768780=3-1-aantalLF_3177944828558768780;
-                   if attrLengte_3177944828558768780 > maxPassend_3177944828558768780
+                   if attrLengte_3177944828558768780 > max(maxPassend_3177944828558768780,1000)
                      then passend_3177944828558768780 = substr(Adressoort,1,maxPassend_3177944828558768780);
                      else passend_3177944828558768780 = Adressoort;
                    put passend_3177944828558768780 ~ @;
@@ -14451,7 +14451,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -14462,7 +14462,7 @@ data _null_;
                    attrLengte_4275823587113271514=length(Kkr_gevalideerd);
                    aantalLF_4275823587113271514 = countc(Kkr_gevalideerd,'0A'x);
                    maxPassend_4275823587113271514=1-1-aantalLF_4275823587113271514;
-                   if attrLengte_4275823587113271514 > maxPassend_4275823587113271514
+                   if attrLengte_4275823587113271514 > max(maxPassend_4275823587113271514,1000)
                      then passend_4275823587113271514 = substr(Kkr_gevalideerd,1,maxPassend_4275823587113271514);
                      else passend_4275823587113271514 = Kkr_gevalideerd;
                    put passend_4275823587113271514 ~ @;
@@ -14476,7 +14476,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -14595,7 +14595,7 @@ data _null_;
                    attrLengte_8665016732119473417=length(Barcode);
                    aantalLF_8665016732119473417 = countc(Barcode,'0A'x);
                    maxPassend_8665016732119473417=25-1-aantalLF_8665016732119473417;
-                   if attrLengte_8665016732119473417 > maxPassend_8665016732119473417
+                   if attrLengte_8665016732119473417 > max(maxPassend_8665016732119473417,1000)
                      then passend_8665016732119473417 = substr(Barcode,1,maxPassend_8665016732119473417);
                      else passend_8665016732119473417 = Barcode;
                    put passend_8665016732119473417 ~ @;
@@ -14609,7 +14609,7 @@ data _null_;
                    attrLengte_5059886387476131123=length(creatie_user);
                    aantalLF_5059886387476131123 = countc(creatie_user,'0A'x);
                    maxPassend_5059886387476131123=30-1-aantalLF_5059886387476131123;
-                   if attrLengte_5059886387476131123 > maxPassend_5059886387476131123
+                   if attrLengte_5059886387476131123 > max(maxPassend_5059886387476131123,1000)
                      then passend_5059886387476131123 = substr(creatie_user,1,maxPassend_5059886387476131123);
                      else passend_5059886387476131123 = creatie_user;
                    put passend_5059886387476131123 ~ @;
@@ -14623,7 +14623,7 @@ data _null_;
                    attrLengte_4667993457372067362=length(Huisnr_toe);
                    aantalLF_4667993457372067362 = countc(Huisnr_toe,'0A'x);
                    maxPassend_4667993457372067362=12-1-aantalLF_4667993457372067362;
-                   if attrLengte_4667993457372067362 > maxPassend_4667993457372067362
+                   if attrLengte_4667993457372067362 > max(maxPassend_4667993457372067362,1000)
                      then passend_4667993457372067362 = substr(Huisnr_toe,1,maxPassend_4667993457372067362);
                      else passend_4667993457372067362 = Huisnr_toe;
                    put passend_4667993457372067362 ~ @;
@@ -14637,7 +14637,7 @@ data _null_;
                    attrLengte_83305570222129686=length(Landnaam);
                    aantalLF_83305570222129686 = countc(Landnaam,'0A'x);
                    maxPassend_83305570222129686=60-1-aantalLF_83305570222129686;
-                   if attrLengte_83305570222129686 > maxPassend_83305570222129686
+                   if attrLengte_83305570222129686 > max(maxPassend_83305570222129686,1000)
                      then passend_83305570222129686 = substr(Landnaam,1,maxPassend_83305570222129686);
                      else passend_83305570222129686 = Landnaam;
                    put passend_83305570222129686 ~ @;
@@ -14648,7 +14648,7 @@ data _null_;
                    attrLengte_1299746612561995600=length(Locatie_oms);
                    aantalLF_1299746612561995600 = countc(Locatie_oms,'0A'x);
                    maxPassend_1299746612561995600=100-1-aantalLF_1299746612561995600;
-                   if attrLengte_1299746612561995600 > maxPassend_1299746612561995600
+                   if attrLengte_1299746612561995600 > max(maxPassend_1299746612561995600,1000)
                      then passend_1299746612561995600 = substr(Locatie_oms,1,maxPassend_1299746612561995600);
                      else passend_1299746612561995600 = Locatie_oms;
                    put passend_1299746612561995600 ~ @;
@@ -14662,7 +14662,7 @@ data _null_;
                    attrLengte_5480117132585686229=length(mutatie_user);
                    aantalLF_5480117132585686229 = countc(mutatie_user,'0A'x);
                    maxPassend_5480117132585686229=30-1-aantalLF_5480117132585686229;
-                   if attrLengte_5480117132585686229 > maxPassend_5480117132585686229
+                   if attrLengte_5480117132585686229 > max(maxPassend_5480117132585686229,1000)
                      then passend_5480117132585686229 = substr(mutatie_user,1,maxPassend_5480117132585686229);
                      else passend_5480117132585686229 = mutatie_user;
                    put passend_5480117132585686229 ~ @;
@@ -14673,7 +14673,7 @@ data _null_;
                    attrLengte_4214898722065367578=length(Plaatsnaam);
                    aantalLF_4214898722065367578 = countc(Plaatsnaam,'0A'x);
                    maxPassend_4214898722065367578=80-1-aantalLF_4214898722065367578;
-                   if attrLengte_4214898722065367578 > maxPassend_4214898722065367578
+                   if attrLengte_4214898722065367578 > max(maxPassend_4214898722065367578,1000)
                      then passend_4214898722065367578 = substr(Plaatsnaam,1,maxPassend_4214898722065367578);
                      else passend_4214898722065367578 = Plaatsnaam;
                    put passend_4214898722065367578 ~ @;
@@ -14684,7 +14684,7 @@ data _null_;
                    attrLengte_88556948018763879=length(Postcd);
                    aantalLF_88556948018763879 = countc(Postcd,'0A'x);
                    maxPassend_88556948018763879=12-1-aantalLF_88556948018763879;
-                   if attrLengte_88556948018763879 > maxPassend_88556948018763879
+                   if attrLengte_88556948018763879 > max(maxPassend_88556948018763879,1000)
                      then passend_88556948018763879 = substr(Postcd,1,maxPassend_88556948018763879);
                      else passend_88556948018763879 = Postcd;
                    put passend_88556948018763879 ~ @;
@@ -14695,7 +14695,7 @@ data _null_;
                    attrLengte_5951139656360336036=length(Prov_cd);
                    aantalLF_5951139656360336036 = countc(Prov_cd,'0A'x);
                    maxPassend_5951139656360336036=2-1-aantalLF_5951139656360336036;
-                   if attrLengte_5951139656360336036 > maxPassend_5951139656360336036
+                   if attrLengte_5951139656360336036 > max(maxPassend_5951139656360336036,1000)
                      then passend_5951139656360336036 = substr(Prov_cd,1,maxPassend_5951139656360336036);
                      else passend_5951139656360336036 = Prov_cd;
                    put passend_5951139656360336036 ~ @;
@@ -14709,7 +14709,7 @@ data _null_;
                    attrLengte_367421360090322077=length(Straat);
                    aantalLF_367421360090322077 = countc(Straat,'0A'x);
                    maxPassend_367421360090322077=60-1-aantalLF_367421360090322077;
-                   if attrLengte_367421360090322077 > maxPassend_367421360090322077
+                   if attrLengte_367421360090322077 > max(maxPassend_367421360090322077,1000)
                      then passend_367421360090322077 = substr(Straat,1,maxPassend_367421360090322077);
                      else passend_367421360090322077 = Straat;
                    put passend_367421360090322077 ~ @;
@@ -14720,7 +14720,7 @@ data _null_;
                    attrLengte_1422979793511950032=length(Validatie);
                    aantalLF_1422979793511950032 = countc(Validatie,'0A'x);
                    maxPassend_1422979793511950032=1-1-aantalLF_1422979793511950032;
-                   if attrLengte_1422979793511950032 > maxPassend_1422979793511950032
+                   if attrLengte_1422979793511950032 > max(maxPassend_1422979793511950032,1000)
                      then passend_1422979793511950032 = substr(Validatie,1,maxPassend_1422979793511950032);
                      else passend_1422979793511950032 = Validatie;
                    put passend_1422979793511950032 ~ @;
@@ -14798,7 +14798,7 @@ data _null_;
                    attrLengte_5059886387476131123=length(creatie_user);
                    aantalLF_5059886387476131123 = countc(creatie_user,'0A'x);
                    maxPassend_5059886387476131123=30-1-aantalLF_5059886387476131123;
-                   if attrLengte_5059886387476131123 > maxPassend_5059886387476131123
+                   if attrLengte_5059886387476131123 > max(maxPassend_5059886387476131123,1000)
                      then passend_5059886387476131123 = substr(creatie_user,1,maxPassend_5059886387476131123);
                      else passend_5059886387476131123 = creatie_user;
                    put passend_5059886387476131123 ~ @;
@@ -14812,7 +14812,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -14902,7 +14902,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -14916,7 +14916,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -15003,7 +15003,7 @@ data _null_;
                    attrLengte_386725703920968405=length(Com_Cd);
                    aantalLF_386725703920968405 = countc(Com_Cd,'0A'x);
                    maxPassend_386725703920968405=6-1-aantalLF_386725703920968405;
-                   if attrLengte_386725703920968405 > maxPassend_386725703920968405
+                   if attrLengte_386725703920968405 > max(maxPassend_386725703920968405,1000)
                      then passend_386725703920968405 = substr(Com_Cd,1,maxPassend_386725703920968405);
                      else passend_386725703920968405 = Com_Cd;
                    put passend_386725703920968405 ~ @;
@@ -15017,7 +15017,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -15031,7 +15031,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -15045,7 +15045,7 @@ data _null_;
                    attrLengte_2003120024500827225=length(Telnr_email);
                    aantalLF_2003120024500827225 = countc(Telnr_email,'0A'x);
                    maxPassend_2003120024500827225=60-1-aantalLF_2003120024500827225;
-                   if attrLengte_2003120024500827225 > maxPassend_2003120024500827225
+                   if attrLengte_2003120024500827225 > max(maxPassend_2003120024500827225,1000)
                      then passend_2003120024500827225 = substr(Telnr_email,1,maxPassend_2003120024500827225);
                      else passend_2003120024500827225 = Telnr_email;
                    put passend_2003120024500827225 ~ @;
@@ -15056,7 +15056,7 @@ data _null_;
                    attrLengte_6085349322089225769=length(Referentie);
                    aantalLF_6085349322089225769 = countc(Referentie,'0A'x);
                    maxPassend_6085349322089225769=10-1-aantalLF_6085349322089225769;
-                   if attrLengte_6085349322089225769 > maxPassend_6085349322089225769
+                   if attrLengte_6085349322089225769 > max(maxPassend_6085349322089225769,1000)
                      then passend_6085349322089225769 = substr(Referentie,1,maxPassend_6085349322089225769);
                      else passend_6085349322089225769 = Referentie;
                    put passend_6085349322089225769 ~ @;
@@ -15155,7 +15155,7 @@ data _null_;
                    attrLengte_3124176695719313596=length(Afdeling);
                    aantalLF_3124176695719313596 = countc(Afdeling,'0A'x);
                    maxPassend_3124176695719313596=60-1-aantalLF_3124176695719313596;
-                   if attrLengte_3124176695719313596 > maxPassend_3124176695719313596
+                   if attrLengte_3124176695719313596 > max(maxPassend_3124176695719313596,1000)
                      then passend_3124176695719313596 = substr(Afdeling,1,maxPassend_3124176695719313596);
                      else passend_3124176695719313596 = Afdeling;
                    put passend_3124176695719313596 ~ @;
@@ -15172,7 +15172,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -15183,7 +15183,7 @@ data _null_;
                    attrLengte_6473647470119252579=length(Functie);
                    aantalLF_6473647470119252579 = countc(Functie,'0A'x);
                    maxPassend_6473647470119252579=30-1-aantalLF_6473647470119252579;
-                   if attrLengte_6473647470119252579 > maxPassend_6473647470119252579
+                   if attrLengte_6473647470119252579 > max(maxPassend_6473647470119252579,1000)
                      then passend_6473647470119252579 = substr(Functie,1,maxPassend_6473647470119252579);
                      else passend_6473647470119252579 = Functie;
                    put passend_6473647470119252579 ~ @;
@@ -15194,7 +15194,7 @@ data _null_;
                    attrLengte_5909357663416120533=length(Kkr_relatie_id);
                    aantalLF_5909357663416120533 = countc(Kkr_relatie_id,'0A'x);
                    maxPassend_5909357663416120533=36-1-aantalLF_5909357663416120533;
-                   if attrLengte_5909357663416120533 > maxPassend_5909357663416120533
+                   if attrLengte_5909357663416120533 > max(maxPassend_5909357663416120533,1000)
                      then passend_5909357663416120533 = substr(Kkr_relatie_id,1,maxPassend_5909357663416120533);
                      else passend_5909357663416120533 = Kkr_relatie_id;
                    put passend_5909357663416120533 ~ @;
@@ -15208,7 +15208,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -15219,7 +15219,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=256-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -15236,7 +15236,7 @@ data _null_;
                    attrLengte_4695035597672197297=length(Ref_kkr_relatie_id);
                    aantalLF_4695035597672197297 = countc(Ref_kkr_relatie_id,'0A'x);
                    maxPassend_4695035597672197297=36-1-aantalLF_4695035597672197297;
-                   if attrLengte_4695035597672197297 > maxPassend_4695035597672197297
+                   if attrLengte_4695035597672197297 > max(maxPassend_4695035597672197297,1000)
                      then passend_4695035597672197297 = substr(Ref_kkr_relatie_id,1,maxPassend_4695035597672197297);
                      else passend_4695035597672197297 = Ref_kkr_relatie_id;
                    put passend_4695035597672197297 ~ @;
@@ -15247,7 +15247,7 @@ data _null_;
                    attrLengte_8411830533441906202=length(Status_contactpersoon);
                    aantalLF_8411830533441906202 = countc(Status_contactpersoon,'0A'x);
                    maxPassend_8411830533441906202=1-1-aantalLF_8411830533441906202;
-                   if attrLengte_8411830533441906202 > maxPassend_8411830533441906202
+                   if attrLengte_8411830533441906202 > max(maxPassend_8411830533441906202,1000)
                      then passend_8411830533441906202 = substr(Status_contactpersoon,1,maxPassend_8411830533441906202);
                      else passend_8411830533441906202 = Status_contactpersoon;
                    put passend_8411830533441906202 ~ @;
@@ -15258,7 +15258,7 @@ data _null_;
                    attrLengte_1422979793511950032=length(Validatie);
                    aantalLF_1422979793511950032 = countc(Validatie,'0A'x);
                    maxPassend_1422979793511950032=1-1-aantalLF_1422979793511950032;
-                   if attrLengte_1422979793511950032 > maxPassend_1422979793511950032
+                   if attrLengte_1422979793511950032 > max(maxPassend_1422979793511950032,1000)
                      then passend_1422979793511950032 = substr(Validatie,1,maxPassend_1422979793511950032);
                      else passend_1422979793511950032 = Validatie;
                    put passend_1422979793511950032 ~ @;
@@ -15393,7 +15393,7 @@ data _null_;
                    attrLengte_3451443017000934866=length(Bsi_cd);
                    aantalLF_3451443017000934866 = countc(Bsi_cd,'0A'x);
                    maxPassend_3451443017000934866=7-1-aantalLF_3451443017000934866;
-                   if attrLengte_3451443017000934866 > maxPassend_3451443017000934866
+                   if attrLengte_3451443017000934866 > max(maxPassend_3451443017000934866,1000)
                      then passend_3451443017000934866 = substr(Bsi_cd,1,maxPassend_3451443017000934866);
                      else passend_3451443017000934866 = Bsi_cd;
                    put passend_3451443017000934866 ~ @;
@@ -15413,7 +15413,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -15427,7 +15427,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -15537,7 +15537,7 @@ data _null_;
                    attrLengte_2829235122869398783=length(Kvk_nr);
                    aantalLF_2829235122869398783 = countc(Kvk_nr,'0A'x);
                    maxPassend_2829235122869398783=12-1-aantalLF_2829235122869398783;
-                   if attrLengte_2829235122869398783 > maxPassend_2829235122869398783
+                   if attrLengte_2829235122869398783 > max(maxPassend_2829235122869398783,1000)
                      then passend_2829235122869398783 = substr(Kvk_nr,1,maxPassend_2829235122869398783);
                      else passend_2829235122869398783 = Kvk_nr;
                    put passend_2829235122869398783 ~ @;
@@ -15560,7 +15560,7 @@ data _null_;
                    attrLengte_3121428435771779831=length(Naam);
                    aantalLF_3121428435771779831 = countc(Naam,'0A'x);
                    maxPassend_3121428435771779831=132-1-aantalLF_3121428435771779831;
-                   if attrLengte_3121428435771779831 > maxPassend_3121428435771779831
+                   if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
                    put passend_3121428435771779831 ~ @;
@@ -15571,7 +15571,7 @@ data _null_;
                    attrLengte_2653416409674665897=length(Handelsnaam);
                    aantalLF_2653416409674665897 = countc(Handelsnaam,'0A'x);
                    maxPassend_2653416409674665897=132-1-aantalLF_2653416409674665897;
-                   if attrLengte_2653416409674665897 > maxPassend_2653416409674665897
+                   if attrLengte_2653416409674665897 > max(maxPassend_2653416409674665897,1000)
                      then passend_2653416409674665897 = substr(Handelsnaam,1,maxPassend_2653416409674665897);
                      else passend_2653416409674665897 = Handelsnaam;
                    put passend_2653416409674665897 ~ @;
@@ -15582,7 +15582,7 @@ data _null_;
                    attrLengte_6041848927483652671=length(Straatnaam_postbus);
                    aantalLF_6041848927483652671 = countc(Straatnaam_postbus,'0A'x);
                    maxPassend_6041848927483652671=50-1-aantalLF_6041848927483652671;
-                   if attrLengte_6041848927483652671 > maxPassend_6041848927483652671
+                   if attrLengte_6041848927483652671 > max(maxPassend_6041848927483652671,1000)
                      then passend_6041848927483652671 = substr(Straatnaam_postbus,1,maxPassend_6041848927483652671);
                      else passend_6041848927483652671 = Straatnaam_postbus;
                    put passend_6041848927483652671 ~ @;
@@ -15596,7 +15596,7 @@ data _null_;
                    attrLengte_5583129363718394252=length(Huisnr_toevoeging);
                    aantalLF_5583129363718394252 = countc(Huisnr_toevoeging,'0A'x);
                    maxPassend_5583129363718394252=12-1-aantalLF_5583129363718394252;
-                   if attrLengte_5583129363718394252 > maxPassend_5583129363718394252
+                   if attrLengte_5583129363718394252 > max(maxPassend_5583129363718394252,1000)
                      then passend_5583129363718394252 = substr(Huisnr_toevoeging,1,maxPassend_5583129363718394252);
                      else passend_5583129363718394252 = Huisnr_toevoeging;
                    put passend_5583129363718394252 ~ @;
@@ -15607,7 +15607,7 @@ data _null_;
                    attrLengte_747405639420864755=length(Postcode);
                    aantalLF_747405639420864755 = countc(Postcode,'0A'x);
                    maxPassend_747405639420864755=12-1-aantalLF_747405639420864755;
-                   if attrLengte_747405639420864755 > maxPassend_747405639420864755
+                   if attrLengte_747405639420864755 > max(maxPassend_747405639420864755,1000)
                      then passend_747405639420864755 = substr(Postcode,1,maxPassend_747405639420864755);
                      else passend_747405639420864755 = Postcode;
                    put passend_747405639420864755 ~ @;
@@ -15618,7 +15618,7 @@ data _null_;
                    attrLengte_3253374325083369186=length(Woonplaats);
                    aantalLF_3253374325083369186 = countc(Woonplaats,'0A'x);
                    maxPassend_3253374325083369186=30-1-aantalLF_3253374325083369186;
-                   if attrLengte_3253374325083369186 > maxPassend_3253374325083369186
+                   if attrLengte_3253374325083369186 > max(maxPassend_3253374325083369186,1000)
                      then passend_3253374325083369186 = substr(Woonplaats,1,maxPassend_3253374325083369186);
                      else passend_3253374325083369186 = Woonplaats;
                    put passend_3253374325083369186 ~ @;
@@ -15629,7 +15629,7 @@ data _null_;
                    attrLengte_7146313527747546915=length(Land);
                    aantalLF_7146313527747546915 = countc(Land,'0A'x);
                    maxPassend_7146313527747546915=30-1-aantalLF_7146313527747546915;
-                   if attrLengte_7146313527747546915 > maxPassend_7146313527747546915
+                   if attrLengte_7146313527747546915 > max(maxPassend_7146313527747546915,1000)
                      then passend_7146313527747546915 = substr(Land,1,maxPassend_7146313527747546915);
                      else passend_7146313527747546915 = Land;
                    put passend_7146313527747546915 ~ @;
@@ -15640,7 +15640,7 @@ data _null_;
                    attrLengte_7805567768348124374=length(Actuele_faillisement_cd);
                    aantalLF_7805567768348124374 = countc(Actuele_faillisement_cd,'0A'x);
                    maxPassend_7805567768348124374=4-1-aantalLF_7805567768348124374;
-                   if attrLengte_7805567768348124374 > maxPassend_7805567768348124374
+                   if attrLengte_7805567768348124374 > max(maxPassend_7805567768348124374,1000)
                      then passend_7805567768348124374 = substr(Actuele_faillisement_cd,1,maxPassend_7805567768348124374);
                      else passend_7805567768348124374 = Actuele_faillisement_cd;
                    put passend_7805567768348124374 ~ @;
@@ -15651,7 +15651,7 @@ data _null_;
                    attrLengte_2419729412943516166=length(Actuele_status);
                    aantalLF_2419729412943516166 = countc(Actuele_status,'0A'x);
                    maxPassend_2419729412943516166=10-1-aantalLF_2419729412943516166;
-                   if attrLengte_2419729412943516166 > maxPassend_2419729412943516166
+                   if attrLengte_2419729412943516166 > max(maxPassend_2419729412943516166,1000)
                      then passend_2419729412943516166 = substr(Actuele_status,1,maxPassend_2419729412943516166);
                      else passend_2419729412943516166 = Actuele_status;
                    put passend_2419729412943516166 ~ @;
@@ -15662,7 +15662,7 @@ data _null_;
                    attrLengte_4421556128264339154=length(Actuele_opheffings_cd);
                    aantalLF_4421556128264339154 = countc(Actuele_opheffings_cd,'0A'x);
                    maxPassend_4421556128264339154=2-1-aantalLF_4421556128264339154;
-                   if attrLengte_4421556128264339154 > maxPassend_4421556128264339154
+                   if attrLengte_4421556128264339154 > max(maxPassend_4421556128264339154,1000)
                      then passend_4421556128264339154 = substr(Actuele_opheffings_cd,1,maxPassend_4421556128264339154);
                      else passend_4421556128264339154 = Actuele_opheffings_cd;
                    put passend_4421556128264339154 ~ @;
@@ -15786,7 +15786,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -15800,7 +15800,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -15832,7 +15832,7 @@ data _null_;
                    attrLengte_431232146876537749=length(Bron);
                    aantalLF_431232146876537749 = countc(Bron,'0A'x);
                    maxPassend_431232146876537749=12-1-aantalLF_431232146876537749;
-                   if attrLengte_431232146876537749 > maxPassend_431232146876537749
+                   if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
                    put passend_431232146876537749 ~ @;
@@ -15843,7 +15843,7 @@ data _null_;
                    attrLengte_7878041596262878077=length(Senterniveau_jn);
                    aantalLF_7878041596262878077 = countc(Senterniveau_jn,'0A'x);
                    maxPassend_7878041596262878077=1-1-aantalLF_7878041596262878077;
-                   if attrLengte_7878041596262878077 > maxPassend_7878041596262878077
+                   if attrLengte_7878041596262878077 > max(maxPassend_7878041596262878077,1000)
                      then passend_7878041596262878077 = substr(Senterniveau_jn,1,maxPassend_7878041596262878077);
                      else passend_7878041596262878077 = Senterniveau_jn;
                    put passend_7878041596262878077 ~ @;
@@ -15934,7 +15934,7 @@ data _null_;
                    attrLengte_2338667727953163128=length(Org_naam);
                    aantalLF_2338667727953163128 = countc(Org_naam,'0A'x);
                    maxPassend_2338667727953163128=625-1-aantalLF_2338667727953163128;
-                   if attrLengte_2338667727953163128 > maxPassend_2338667727953163128
+                   if attrLengte_2338667727953163128 > max(maxPassend_2338667727953163128,1000)
                      then passend_2338667727953163128 = substr(Org_naam,1,maxPassend_2338667727953163128);
                      else passend_2338667727953163128 = Org_naam;
                    put passend_2338667727953163128 ~ @;
@@ -15945,7 +15945,7 @@ data _null_;
                    attrLengte_2453821822167783416=length(Org_naam_type);
                    aantalLF_2453821822167783416 = countc(Org_naam_type,'0A'x);
                    maxPassend_2453821822167783416=1-1-aantalLF_2453821822167783416;
-                   if attrLengte_2453821822167783416 > maxPassend_2453821822167783416
+                   if attrLengte_2453821822167783416 > max(maxPassend_2453821822167783416,1000)
                      then passend_2453821822167783416 = substr(Org_naam_type,1,maxPassend_2453821822167783416);
                      else passend_2453821822167783416 = Org_naam_type;
                    put passend_2453821822167783416 ~ @;
@@ -15956,7 +15956,7 @@ data _null_;
                    attrLengte_8715378855826488452=length(Sushi_foutmelding);
                    aantalLF_8715378855826488452 = countc(Sushi_foutmelding,'0A'x);
                    maxPassend_8715378855826488452=200-1-aantalLF_8715378855826488452;
-                   if attrLengte_8715378855826488452 > maxPassend_8715378855826488452
+                   if attrLengte_8715378855826488452 > max(maxPassend_8715378855826488452,1000)
                      then passend_8715378855826488452 = substr(Sushi_foutmelding,1,maxPassend_8715378855826488452);
                      else passend_8715378855826488452 = Sushi_foutmelding;
                    put passend_8715378855826488452 ~ @;
@@ -15970,7 +15970,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -15984,7 +15984,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -15995,7 +15995,7 @@ data _null_;
                    attrLengte_4275823587113271514=length(Kkr_gevalideerd);
                    aantalLF_4275823587113271514 = countc(Kkr_gevalideerd,'0A'x);
                    maxPassend_4275823587113271514=1-1-aantalLF_4275823587113271514;
-                   if attrLengte_4275823587113271514 > maxPassend_4275823587113271514
+                   if attrLengte_4275823587113271514 > max(maxPassend_4275823587113271514,1000)
                      then passend_4275823587113271514 = substr(Kkr_gevalideerd,1,maxPassend_4275823587113271514);
                      else passend_4275823587113271514 = Kkr_gevalideerd;
                    put passend_4275823587113271514 ~ @;
@@ -16106,7 +16106,7 @@ data _null_;
                    attrLengte_5808865197604050770=length(Bik_Cd);
                    aantalLF_5808865197604050770 = countc(Bik_Cd,'0A'x);
                    maxPassend_5808865197604050770=9-1-aantalLF_5808865197604050770;
-                   if attrLengte_5808865197604050770 > maxPassend_5808865197604050770
+                   if attrLengte_5808865197604050770 > max(maxPassend_5808865197604050770,1000)
                      then passend_5808865197604050770 = substr(Bik_Cd,1,maxPassend_5808865197604050770);
                      else passend_5808865197604050770 = Bik_Cd;
                    put passend_5808865197604050770 ~ @;
@@ -16117,7 +16117,7 @@ data _null_;
                    attrLengte_3616680467157131089=length(Bron_jr);
                    aantalLF_3616680467157131089 = countc(Bron_jr,'0A'x);
                    maxPassend_3616680467157131089=1-1-aantalLF_3616680467157131089;
-                   if attrLengte_3616680467157131089 > maxPassend_3616680467157131089
+                   if attrLengte_3616680467157131089 > max(maxPassend_3616680467157131089,1000)
                      then passend_3616680467157131089 = substr(Bron_jr,1,maxPassend_3616680467157131089);
                      else passend_3616680467157131089 = Bron_jr;
                    put passend_3616680467157131089 ~ @;
@@ -16128,7 +16128,7 @@ data _null_;
                    attrLengte_1419653207553123678=length(BTW_nummer);
                    aantalLF_1419653207553123678 = countc(BTW_nummer,'0A'x);
                    maxPassend_1419653207553123678=30-1-aantalLF_1419653207553123678;
-                   if attrLengte_1419653207553123678 > maxPassend_1419653207553123678
+                   if attrLengte_1419653207553123678 > max(maxPassend_1419653207553123678,1000)
                      then passend_1419653207553123678 = substr(BTW_nummer,1,maxPassend_1419653207553123678);
                      else passend_1419653207553123678 = BTW_nummer;
                    put passend_1419653207553123678 ~ @;
@@ -16139,7 +16139,7 @@ data _null_;
                    attrLengte_4656813487846060936=length(BTW_plichtig);
                    aantalLF_4656813487846060936 = countc(BTW_plichtig,'0A'x);
                    maxPassend_4656813487846060936=3-1-aantalLF_4656813487846060936;
-                   if attrLengte_4656813487846060936 > maxPassend_4656813487846060936
+                   if attrLengte_4656813487846060936 > max(maxPassend_4656813487846060936,1000)
                      then passend_4656813487846060936 = substr(BTW_plichtig,1,maxPassend_4656813487846060936);
                      else passend_4656813487846060936 = BTW_plichtig;
                    put passend_4656813487846060936 ~ @;
@@ -16156,7 +16156,7 @@ data _null_;
                    attrLengte_7273408646488677377=length(Kkr_RSIN_afwijkend);
                    aantalLF_7273408646488677377 = countc(Kkr_RSIN_afwijkend,'0A'x);
                    maxPassend_7273408646488677377=1-1-aantalLF_7273408646488677377;
-                   if attrLengte_7273408646488677377 > maxPassend_7273408646488677377
+                   if attrLengte_7273408646488677377 > max(maxPassend_7273408646488677377,1000)
                      then passend_7273408646488677377 = substr(Kkr_RSIN_afwijkend,1,maxPassend_7273408646488677377);
                      else passend_7273408646488677377 = Kkr_RSIN_afwijkend;
                    put passend_7273408646488677377 ~ @;
@@ -16167,7 +16167,7 @@ data _null_;
                    attrLengte_7076068879927054975=length(KVK_nr);
                    aantalLF_7076068879927054975 = countc(KVK_nr,'0A'x);
                    maxPassend_7076068879927054975=12-1-aantalLF_7076068879927054975;
-                   if attrLengte_7076068879927054975 > maxPassend_7076068879927054975
+                   if attrLengte_7076068879927054975 > max(maxPassend_7076068879927054975,1000)
                      then passend_7076068879927054975 = substr(KVK_nr,1,maxPassend_7076068879927054975);
                      else passend_7076068879927054975 = KVK_nr;
                    put passend_7076068879927054975 ~ @;
@@ -16178,7 +16178,7 @@ data _null_;
                    attrLengte_3121428435771779831=length(Naam);
                    aantalLF_3121428435771779831 = countc(Naam,'0A'x);
                    maxPassend_3121428435771779831=625-1-aantalLF_3121428435771779831;
-                   if attrLengte_3121428435771779831 > maxPassend_3121428435771779831
+                   if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
                    put passend_3121428435771779831 ~ @;
@@ -16189,7 +16189,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=256-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -16203,7 +16203,7 @@ data _null_;
                    attrLengte_7355574004673159091=length(Rvm_cd);
                    aantalLF_7355574004673159091 = countc(Rvm_cd,'0A'x);
                    maxPassend_7355574004673159091=5-1-aantalLF_7355574004673159091;
-                   if attrLengte_7355574004673159091 > maxPassend_7355574004673159091
+                   if attrLengte_7355574004673159091 > max(maxPassend_7355574004673159091,1000)
                      then passend_7355574004673159091 = substr(Rvm_cd,1,maxPassend_7355574004673159091);
                      else passend_7355574004673159091 = Rvm_cd;
                    put passend_7355574004673159091 ~ @;
@@ -16214,7 +16214,7 @@ data _null_;
                    attrLengte_631149193839514637=length(Status_org);
                    aantalLF_631149193839514637 = countc(Status_org,'0A'x);
                    maxPassend_631149193839514637=1-1-aantalLF_631149193839514637;
-                   if attrLengte_631149193839514637 > maxPassend_631149193839514637
+                   if attrLengte_631149193839514637 > max(maxPassend_631149193839514637,1000)
                      then passend_631149193839514637 = substr(Status_org,1,maxPassend_631149193839514637);
                      else passend_631149193839514637 = Status_org;
                    put passend_631149193839514637 ~ @;
@@ -16228,7 +16228,7 @@ data _null_;
                    attrLengte_2740448696528104762=length(Voortzetting_van_rel_id);
                    aantalLF_2740448696528104762 = countc(Voortzetting_van_rel_id,'0A'x);
                    maxPassend_2740448696528104762=12-1-aantalLF_2740448696528104762;
-                   if attrLengte_2740448696528104762 > maxPassend_2740448696528104762
+                   if attrLengte_2740448696528104762 > max(maxPassend_2740448696528104762,1000)
                      then passend_2740448696528104762 = substr(Voortzetting_van_rel_id,1,maxPassend_2740448696528104762);
                      else passend_2740448696528104762 = Voortzetting_van_rel_id;
                    put passend_2740448696528104762 ~ @;
@@ -16239,7 +16239,7 @@ data _null_;
                    attrLengte_8610416695830085742=length(VPB_IB_nummer);
                    aantalLF_8610416695830085742 = countc(VPB_IB_nummer,'0A'x);
                    maxPassend_8610416695830085742=35-1-aantalLF_8610416695830085742;
-                   if attrLengte_8610416695830085742 > maxPassend_8610416695830085742
+                   if attrLengte_8610416695830085742 > max(maxPassend_8610416695830085742,1000)
                      then passend_8610416695830085742 = substr(VPB_IB_nummer,1,maxPassend_8610416695830085742);
                      else passend_8610416695830085742 = VPB_IB_nummer;
                    put passend_8610416695830085742 ~ @;
@@ -16250,7 +16250,7 @@ data _null_;
                    attrLengte_3636946875933051938=length(IB_VPB_Plichtig);
                    aantalLF_3636946875933051938 = countc(IB_VPB_Plichtig,'0A'x);
                    maxPassend_3636946875933051938=1-1-aantalLF_3636946875933051938;
-                   if attrLengte_3636946875933051938 > maxPassend_3636946875933051938
+                   if attrLengte_3636946875933051938 > max(maxPassend_3636946875933051938,1000)
                      then passend_3636946875933051938 = substr(IB_VPB_Plichtig,1,maxPassend_3636946875933051938);
                      else passend_3636946875933051938 = IB_VPB_Plichtig;
                    put passend_3636946875933051938 ~ @;
@@ -16381,7 +16381,7 @@ data _null_;
                    attrLengte_6510866943421080183=length(Aanhef);
                    aantalLF_6510866943421080183 = countc(Aanhef,'0A'x);
                    maxPassend_6510866943421080183=10-1-aantalLF_6510866943421080183;
-                   if attrLengte_6510866943421080183 > maxPassend_6510866943421080183
+                   if attrLengte_6510866943421080183 > max(maxPassend_6510866943421080183,1000)
                      then passend_6510866943421080183 = substr(Aanhef,1,maxPassend_6510866943421080183);
                      else passend_6510866943421080183 = Aanhef;
                    put passend_6510866943421080183 ~ @;
@@ -16392,7 +16392,7 @@ data _null_;
                    attrLengte_6196602520980259541=length(Aanlevernaam);
                    aantalLF_6196602520980259541 = countc(Aanlevernaam,'0A'x);
                    maxPassend_6196602520980259541=625-1-aantalLF_6196602520980259541;
-                   if attrLengte_6196602520980259541 > maxPassend_6196602520980259541
+                   if attrLengte_6196602520980259541 > max(maxPassend_6196602520980259541,1000)
                      then passend_6196602520980259541 = substr(Aanlevernaam,1,maxPassend_6196602520980259541);
                      else passend_6196602520980259541 = Aanlevernaam;
                    put passend_6196602520980259541 ~ @;
@@ -16403,7 +16403,7 @@ data _null_;
                    attrLengte_5000095886126416684=length(Aanspreeknaam);
                    aantalLF_5000095886126416684 = countc(Aanspreeknaam,'0A'x);
                    maxPassend_5000095886126416684=625-1-aantalLF_5000095886126416684;
-                   if attrLengte_5000095886126416684 > maxPassend_5000095886126416684
+                   if attrLengte_5000095886126416684 > max(maxPassend_5000095886126416684,1000)
                      then passend_5000095886126416684 = substr(Aanspreeknaam,1,maxPassend_5000095886126416684);
                      else passend_5000095886126416684 = Aanspreeknaam;
                    put passend_5000095886126416684 ~ @;
@@ -16414,7 +16414,7 @@ data _null_;
                    attrLengte_403642515580817570=length(Achternaam);
                    aantalLF_403642515580817570 = countc(Achternaam,'0A'x);
                    maxPassend_403642515580817570=414-1-aantalLF_403642515580817570;
-                   if attrLengte_403642515580817570 > maxPassend_403642515580817570
+                   if attrLengte_403642515580817570 > max(maxPassend_403642515580817570,1000)
                      then passend_403642515580817570 = substr(Achternaam,1,maxPassend_403642515580817570);
                      else passend_403642515580817570 = Achternaam;
                    put passend_403642515580817570 ~ @;
@@ -16425,7 +16425,7 @@ data _null_;
                    attrLengte_5736683297058446811=length(Foutmelding);
                    aantalLF_5736683297058446811 = countc(Foutmelding,'0A'x);
                    maxPassend_5736683297058446811=100-1-aantalLF_5736683297058446811;
-                   if attrLengte_5736683297058446811 > maxPassend_5736683297058446811
+                   if attrLengte_5736683297058446811 > max(maxPassend_5736683297058446811,1000)
                      then passend_5736683297058446811 = substr(Foutmelding,1,maxPassend_5736683297058446811);
                      else passend_5736683297058446811 = Foutmelding;
                    put passend_5736683297058446811 ~ @;
@@ -16439,7 +16439,7 @@ data _null_;
                    attrLengte_731654219873503099=length(Geslacht);
                    aantalLF_731654219873503099 = countc(Geslacht,'0A'x);
                    maxPassend_731654219873503099=1-1-aantalLF_731654219873503099;
-                   if attrLengte_731654219873503099 > maxPassend_731654219873503099
+                   if attrLengte_731654219873503099 > max(maxPassend_731654219873503099,1000)
                      then passend_731654219873503099 = substr(Geslacht,1,maxPassend_731654219873503099);
                      else passend_731654219873503099 = Geslacht;
                    put passend_731654219873503099 ~ @;
@@ -16453,7 +16453,7 @@ data _null_;
                    attrLengte_1560041029703835131=length(Notitie);
                    aantalLF_1560041029703835131 = countc(Notitie,'0A'x);
                    maxPassend_1560041029703835131=256-1-aantalLF_1560041029703835131;
-                   if attrLengte_1560041029703835131 > maxPassend_1560041029703835131
+                   if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
                    put passend_1560041029703835131 ~ @;
@@ -16464,7 +16464,7 @@ data _null_;
                    attrLengte_8412905630617268252=length(Rbm_persoon_contact);
                    aantalLF_8412905630617268252 = countc(Rbm_persoon_contact,'0A'x);
                    maxPassend_8412905630617268252=1-1-aantalLF_8412905630617268252;
-                   if attrLengte_8412905630617268252 > maxPassend_8412905630617268252
+                   if attrLengte_8412905630617268252 > max(maxPassend_8412905630617268252,1000)
                      then passend_8412905630617268252 = substr(Rbm_persoon_contact,1,maxPassend_8412905630617268252);
                      else passend_8412905630617268252 = Rbm_persoon_contact;
                    put passend_8412905630617268252 ~ @;
@@ -16475,7 +16475,7 @@ data _null_;
                    attrLengte_2139125467959230976=length(Rbm_persoon_particulier);
                    aantalLF_2139125467959230976 = countc(Rbm_persoon_particulier,'0A'x);
                    maxPassend_2139125467959230976=1-1-aantalLF_2139125467959230976;
-                   if attrLengte_2139125467959230976 > maxPassend_2139125467959230976
+                   if attrLengte_2139125467959230976 > max(maxPassend_2139125467959230976,1000)
                      then passend_2139125467959230976 = substr(Rbm_persoon_particulier,1,maxPassend_2139125467959230976);
                      else passend_2139125467959230976 = Rbm_persoon_particulier;
                    put passend_2139125467959230976 ~ @;
@@ -16489,7 +16489,7 @@ data _null_;
                    attrLengte_8431208606378813157=length(Status_persoon);
                    aantalLF_8431208606378813157 = countc(Status_persoon,'0A'x);
                    maxPassend_8431208606378813157=1-1-aantalLF_8431208606378813157;
-                   if attrLengte_8431208606378813157 > maxPassend_8431208606378813157
+                   if attrLengte_8431208606378813157 > max(maxPassend_8431208606378813157,1000)
                      then passend_8431208606378813157 = substr(Status_persoon,1,maxPassend_8431208606378813157);
                      else passend_8431208606378813157 = Status_persoon;
                    put passend_8431208606378813157 ~ @;
@@ -16500,7 +16500,7 @@ data _null_;
                    attrLengte_8715378855826488452=length(Sushi_foutmelding);
                    aantalLF_8715378855826488452 = countc(Sushi_foutmelding,'0A'x);
                    maxPassend_8715378855826488452=200-1-aantalLF_8715378855826488452;
-                   if attrLengte_8715378855826488452 > maxPassend_8715378855826488452
+                   if attrLengte_8715378855826488452 > max(maxPassend_8715378855826488452,1000)
                      then passend_8715378855826488452 = substr(Sushi_foutmelding,1,maxPassend_8715378855826488452);
                      else passend_8715378855826488452 = Sushi_foutmelding;
                    put passend_8715378855826488452 ~ @;
@@ -16511,7 +16511,7 @@ data _null_;
                    attrLengte_2092764852980830674=length(Taal);
                    aantalLF_2092764852980830674 = countc(Taal,'0A'x);
                    maxPassend_2092764852980830674=2-1-aantalLF_2092764852980830674;
-                   if attrLengte_2092764852980830674 > maxPassend_2092764852980830674
+                   if attrLengte_2092764852980830674 > max(maxPassend_2092764852980830674,1000)
                      then passend_2092764852980830674 = substr(Taal,1,maxPassend_2092764852980830674);
                      else passend_2092764852980830674 = Taal;
                    put passend_2092764852980830674 ~ @;
@@ -16522,7 +16522,7 @@ data _null_;
                    attrLengte_2493966725399468662=length(Titels_na);
                    aantalLF_2493966725399468662 = countc(Titels_na,'0A'x);
                    maxPassend_2493966725399468662=50-1-aantalLF_2493966725399468662;
-                   if attrLengte_2493966725399468662 > maxPassend_2493966725399468662
+                   if attrLengte_2493966725399468662 > max(maxPassend_2493966725399468662,1000)
                      then passend_2493966725399468662 = substr(Titels_na,1,maxPassend_2493966725399468662);
                      else passend_2493966725399468662 = Titels_na;
                    put passend_2493966725399468662 ~ @;
@@ -16533,7 +16533,7 @@ data _null_;
                    attrLengte_4195529622826795265=length(Titels_voor);
                    aantalLF_4195529622826795265 = countc(Titels_voor,'0A'x);
                    maxPassend_4195529622826795265=50-1-aantalLF_4195529622826795265;
-                   if attrLengte_4195529622826795265 > maxPassend_4195529622826795265
+                   if attrLengte_4195529622826795265 > max(maxPassend_4195529622826795265,1000)
                      then passend_4195529622826795265 = substr(Titels_voor,1,maxPassend_4195529622826795265);
                      else passend_4195529622826795265 = Titels_voor;
                    put passend_4195529622826795265 ~ @;
@@ -16544,7 +16544,7 @@ data _null_;
                    attrLengte_5106043141375307758=length(Tussenvoegsels);
                    aantalLF_5106043141375307758 = countc(Tussenvoegsels,'0A'x);
                    maxPassend_5106043141375307758=10-1-aantalLF_5106043141375307758;
-                   if attrLengte_5106043141375307758 > maxPassend_5106043141375307758
+                   if attrLengte_5106043141375307758 > max(maxPassend_5106043141375307758,1000)
                      then passend_5106043141375307758 = substr(Tussenvoegsels,1,maxPassend_5106043141375307758);
                      else passend_5106043141375307758 = Tussenvoegsels;
                    put passend_5106043141375307758 ~ @;
@@ -16555,7 +16555,7 @@ data _null_;
                    attrLengte_1422979793511950032=length(Validatie);
                    aantalLF_1422979793511950032 = countc(Validatie,'0A'x);
                    maxPassend_1422979793511950032=1-1-aantalLF_1422979793511950032;
-                   if attrLengte_1422979793511950032 > maxPassend_1422979793511950032
+                   if attrLengte_1422979793511950032 > max(maxPassend_1422979793511950032,1000)
                      then passend_1422979793511950032 = substr(Validatie,1,maxPassend_1422979793511950032);
                      else passend_1422979793511950032 = Validatie;
                    put passend_1422979793511950032 ~ @;
@@ -16566,7 +16566,7 @@ data _null_;
                    attrLengte_933604317395829620=length(Voorletters);
                    aantalLF_933604317395829620 = countc(Voorletters,'0A'x);
                    maxPassend_933604317395829620=6-1-aantalLF_933604317395829620;
-                   if attrLengte_933604317395829620 > maxPassend_933604317395829620
+                   if attrLengte_933604317395829620 > max(maxPassend_933604317395829620,1000)
                      then passend_933604317395829620 = substr(Voorletters,1,maxPassend_933604317395829620);
                      else passend_933604317395829620 = Voorletters;
                    put passend_933604317395829620 ~ @;
@@ -16577,7 +16577,7 @@ data _null_;
                    attrLengte_7272765945587119437=length(Voornaam);
                    aantalLF_7272765945587119437 = countc(Voornaam,'0A'x);
                    maxPassend_7272765945587119437=200-1-aantalLF_7272765945587119437;
-                   if attrLengte_7272765945587119437 > maxPassend_7272765945587119437
+                   if attrLengte_7272765945587119437 > max(maxPassend_7272765945587119437,1000)
                      then passend_7272765945587119437 = substr(Voornaam,1,maxPassend_7272765945587119437);
                      else passend_7272765945587119437 = Voornaam;
                    put passend_7272765945587119437 ~ @;
@@ -16588,7 +16588,7 @@ data _null_;
                    attrLengte_2872510320193282717=length(XML_String);
                    aantalLF_2872510320193282717 = countc(XML_String,'0A'x);
                    maxPassend_2872510320193282717=2048-1-aantalLF_2872510320193282717;
-                   if attrLengte_2872510320193282717 > maxPassend_2872510320193282717
+                   if attrLengte_2872510320193282717 > max(maxPassend_2872510320193282717,1000)
                      then passend_2872510320193282717 = substr(XML_String,1,maxPassend_2872510320193282717);
                      else passend_2872510320193282717 = XML_String;
                    put passend_2872510320193282717 ~ @;
@@ -16675,7 +16675,7 @@ data _null_;
                    attrLengte_9171161243242669933=length(Banknaam);
                    aantalLF_9171161243242669933 = countc(Banknaam,'0A'x);
                    maxPassend_9171161243242669933=50-1-aantalLF_9171161243242669933;
-                   if attrLengte_9171161243242669933 > maxPassend_9171161243242669933
+                   if attrLengte_9171161243242669933 > max(maxPassend_9171161243242669933,1000)
                      then passend_9171161243242669933 = substr(Banknaam,1,maxPassend_9171161243242669933);
                      else passend_9171161243242669933 = Banknaam;
                    put passend_9171161243242669933 ~ @;
@@ -16686,7 +16686,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -16700,7 +16700,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -16711,7 +16711,7 @@ data _null_;
                    attrLengte_2067704043811996344=length(Externe_bron_cd);
                    aantalLF_2067704043811996344 = countc(Externe_bron_cd,'0A'x);
                    maxPassend_2067704043811996344=10-1-aantalLF_2067704043811996344;
-                   if attrLengte_2067704043811996344 > maxPassend_2067704043811996344
+                   if attrLengte_2067704043811996344 > max(maxPassend_2067704043811996344,1000)
                      then passend_2067704043811996344 = substr(Externe_bron_cd,1,maxPassend_2067704043811996344);
                      else passend_2067704043811996344 = Externe_bron_cd;
                    put passend_2067704043811996344 ~ @;
@@ -16722,7 +16722,7 @@ data _null_;
                    attrLengte_8202167600123421072=length(Goedkeuring_sts);
                    aantalLF_8202167600123421072 = countc(Goedkeuring_sts,'0A'x);
                    maxPassend_8202167600123421072=1-1-aantalLF_8202167600123421072;
-                   if attrLengte_8202167600123421072 > maxPassend_8202167600123421072
+                   if attrLengte_8202167600123421072 > max(maxPassend_8202167600123421072,1000)
                      then passend_8202167600123421072 = substr(Goedkeuring_sts,1,maxPassend_8202167600123421072);
                      else passend_8202167600123421072 = Goedkeuring_sts;
                    put passend_8202167600123421072 ~ @;
@@ -16733,7 +16733,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -16747,7 +16747,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -16761,7 +16761,7 @@ data _null_;
                    attrLengte_2845735713589279779=length(User_akkoord);
                    aantalLF_2845735713589279779 = countc(User_akkoord,'0A'x);
                    maxPassend_2845735713589279779=30-1-aantalLF_2845735713589279779;
-                   if attrLengte_2845735713589279779 > maxPassend_2845735713589279779
+                   if attrLengte_2845735713589279779 > max(maxPassend_2845735713589279779,1000)
                      then passend_2845735713589279779 = substr(User_akkoord,1,maxPassend_2845735713589279779);
                      else passend_2845735713589279779 = User_akkoord;
                    put passend_2845735713589279779 ~ @;
@@ -16878,7 +16878,7 @@ data _null_;
                    attrLengte_3514290540041762326=length(Org_banknaam);
                    aantalLF_3514290540041762326 = countc(Org_banknaam,'0A'x);
                    maxPassend_3514290540041762326=30-1-aantalLF_3514290540041762326;
-                   if attrLengte_3514290540041762326 > maxPassend_3514290540041762326
+                   if attrLengte_3514290540041762326 > max(maxPassend_3514290540041762326,1000)
                      then passend_3514290540041762326 = substr(Org_banknaam,1,maxPassend_3514290540041762326);
                      else passend_3514290540041762326 = Org_banknaam;
                    put passend_3514290540041762326 ~ @;
@@ -16889,7 +16889,7 @@ data _null_;
                    attrLengte_1294984602765791056=length(Org_bankgironr);
                    aantalLF_1294984602765791056 = countc(Org_bankgironr,'0A'x);
                    maxPassend_1294984602765791056=11-1-aantalLF_1294984602765791056;
-                   if attrLengte_1294984602765791056 > maxPassend_1294984602765791056
+                   if attrLengte_1294984602765791056 > max(maxPassend_1294984602765791056,1000)
                      then passend_1294984602765791056 = substr(Org_bankgironr,1,maxPassend_1294984602765791056);
                      else passend_1294984602765791056 = Org_bankgironr;
                    put passend_1294984602765791056 ~ @;
@@ -16900,7 +16900,7 @@ data _null_;
                    attrLengte_4845854068159114062=length(New_banknaam);
                    aantalLF_4845854068159114062 = countc(New_banknaam,'0A'x);
                    maxPassend_4845854068159114062=30-1-aantalLF_4845854068159114062;
-                   if attrLengte_4845854068159114062 > maxPassend_4845854068159114062
+                   if attrLengte_4845854068159114062 > max(maxPassend_4845854068159114062,1000)
                      then passend_4845854068159114062 = substr(New_banknaam,1,maxPassend_4845854068159114062);
                      else passend_4845854068159114062 = New_banknaam;
                    put passend_4845854068159114062 ~ @;
@@ -16911,7 +16911,7 @@ data _null_;
                    attrLengte_524207556529136008=length(New_bankgironr);
                    aantalLF_524207556529136008 = countc(New_bankgironr,'0A'x);
                    maxPassend_524207556529136008=11-1-aantalLF_524207556529136008;
-                   if attrLengte_524207556529136008 > maxPassend_524207556529136008
+                   if attrLengte_524207556529136008 > max(maxPassend_524207556529136008,1000)
                      then passend_524207556529136008 = substr(New_bankgironr,1,maxPassend_524207556529136008);
                      else passend_524207556529136008 = New_bankgironr;
                    put passend_524207556529136008 ~ @;
@@ -16922,7 +16922,7 @@ data _null_;
                    attrLengte_91115205626301303=length(Gebruiker);
                    aantalLF_91115205626301303 = countc(Gebruiker,'0A'x);
                    maxPassend_91115205626301303=30-1-aantalLF_91115205626301303;
-                   if attrLengte_91115205626301303 > maxPassend_91115205626301303
+                   if attrLengte_91115205626301303 > max(maxPassend_91115205626301303,1000)
                      then passend_91115205626301303 = substr(Gebruiker,1,maxPassend_91115205626301303);
                      else passend_91115205626301303 = Gebruiker;
                    put passend_91115205626301303 ~ @;
@@ -16936,7 +16936,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -16947,7 +16947,7 @@ data _null_;
                    attrLengte_7358645892020539425=length(New_iban);
                    aantalLF_7358645892020539425 = countc(New_iban,'0A'x);
                    maxPassend_7358645892020539425=34-1-aantalLF_7358645892020539425;
-                   if attrLengte_7358645892020539425 > maxPassend_7358645892020539425
+                   if attrLengte_7358645892020539425 > max(maxPassend_7358645892020539425,1000)
                      then passend_7358645892020539425 = substr(New_iban,1,maxPassend_7358645892020539425);
                      else passend_7358645892020539425 = New_iban;
                    put passend_7358645892020539425 ~ @;
@@ -16958,7 +16958,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -16969,7 +16969,7 @@ data _null_;
                    attrLengte_4715588582746621148=length(New_bic);
                    aantalLF_4715588582746621148 = countc(New_bic,'0A'x);
                    maxPassend_4715588582746621148=11-1-aantalLF_4715588582746621148;
-                   if attrLengte_4715588582746621148 > maxPassend_4715588582746621148
+                   if attrLengte_4715588582746621148 > max(maxPassend_4715588582746621148,1000)
                      then passend_4715588582746621148 = substr(New_bic,1,maxPassend_4715588582746621148);
                      else passend_4715588582746621148 = New_bic;
                    put passend_4715588582746621148 ~ @;
@@ -16980,7 +16980,7 @@ data _null_;
                    attrLengte_2879824750918571874=length(Org_user_akkoord);
                    aantalLF_2879824750918571874 = countc(Org_user_akkoord,'0A'x);
                    maxPassend_2879824750918571874=30-1-aantalLF_2879824750918571874;
-                   if attrLengte_2879824750918571874 > maxPassend_2879824750918571874
+                   if attrLengte_2879824750918571874 > max(maxPassend_2879824750918571874,1000)
                      then passend_2879824750918571874 = substr(Org_user_akkoord,1,maxPassend_2879824750918571874);
                      else passend_2879824750918571874 = Org_user_akkoord;
                    put passend_2879824750918571874 ~ @;
@@ -16991,7 +16991,7 @@ data _null_;
                    attrLengte_4157760871581770618=length(New_user_akkoord);
                    aantalLF_4157760871581770618 = countc(New_user_akkoord,'0A'x);
                    maxPassend_4157760871581770618=30-1-aantalLF_4157760871581770618;
-                   if attrLengte_4157760871581770618 > maxPassend_4157760871581770618
+                   if attrLengte_4157760871581770618 > max(maxPassend_4157760871581770618,1000)
                      then passend_4157760871581770618 = substr(New_user_akkoord,1,maxPassend_4157760871581770618);
                      else passend_4157760871581770618 = New_user_akkoord;
                    put passend_4157760871581770618 ~ @;
@@ -17002,7 +17002,7 @@ data _null_;
                    attrLengte_5613745345172824607=length(Org_goedkeuring_sts);
                    aantalLF_5613745345172824607 = countc(Org_goedkeuring_sts,'0A'x);
                    maxPassend_5613745345172824607=1-1-aantalLF_5613745345172824607;
-                   if attrLengte_5613745345172824607 > maxPassend_5613745345172824607
+                   if attrLengte_5613745345172824607 > max(maxPassend_5613745345172824607,1000)
                      then passend_5613745345172824607 = substr(Org_goedkeuring_sts,1,maxPassend_5613745345172824607);
                      else passend_5613745345172824607 = Org_goedkeuring_sts;
                    put passend_5613745345172824607 ~ @;
@@ -17013,7 +17013,7 @@ data _null_;
                    attrLengte_5350490799438944457=length(New_goedkeuring_sts);
                    aantalLF_5350490799438944457 = countc(New_goedkeuring_sts,'0A'x);
                    maxPassend_5350490799438944457=1-1-aantalLF_5350490799438944457;
-                   if attrLengte_5350490799438944457 > maxPassend_5350490799438944457
+                   if attrLengte_5350490799438944457 > max(maxPassend_5350490799438944457,1000)
                      then passend_5350490799438944457 = substr(New_goedkeuring_sts,1,maxPassend_5350490799438944457);
                      else passend_5350490799438944457 = New_goedkeuring_sts;
                    put passend_5350490799438944457 ~ @;
@@ -17024,7 +17024,7 @@ data _null_;
                    attrLengte_2067704043811996344=length(Externe_bron_cd);
                    aantalLF_2067704043811996344 = countc(Externe_bron_cd,'0A'x);
                    maxPassend_2067704043811996344=10-1-aantalLF_2067704043811996344;
-                   if attrLengte_2067704043811996344 > maxPassend_2067704043811996344
+                   if attrLengte_2067704043811996344 > max(maxPassend_2067704043811996344,1000)
                      then passend_2067704043811996344 = substr(Externe_bron_cd,1,maxPassend_2067704043811996344);
                      else passend_2067704043811996344 = Externe_bron_cd;
                    put passend_2067704043811996344 ~ @;
@@ -17135,7 +17135,7 @@ data _null_;
                    attrLengte_9040032925271508250=length(Actief);
                    aantalLF_9040032925271508250 = countc(Actief,'0A'x);
                    maxPassend_9040032925271508250=1-1-aantalLF_9040032925271508250;
-                   if attrLengte_9040032925271508250 > maxPassend_9040032925271508250
+                   if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
                    put passend_9040032925271508250 ~ @;
@@ -17155,7 +17155,7 @@ data _null_;
                    attrLengte_5059886387476131123=length(creatie_user);
                    aantalLF_5059886387476131123 = countc(creatie_user,'0A'x);
                    maxPassend_5059886387476131123=30-1-aantalLF_5059886387476131123;
-                   if attrLengte_5059886387476131123 > maxPassend_5059886387476131123
+                   if attrLengte_5059886387476131123 > max(maxPassend_5059886387476131123,1000)
                      then passend_5059886387476131123 = substr(creatie_user,1,maxPassend_5059886387476131123);
                      else passend_5059886387476131123 = creatie_user;
                    put passend_5059886387476131123 ~ @;
@@ -17166,7 +17166,7 @@ data _null_;
                    attrLengte_5810707595799730434=length(Fiscaalnr);
                    aantalLF_5810707595799730434 = countc(Fiscaalnr,'0A'x);
                    maxPassend_5810707595799730434=10-1-aantalLF_5810707595799730434;
-                   if attrLengte_5810707595799730434 > maxPassend_5810707595799730434
+                   if attrLengte_5810707595799730434 > max(maxPassend_5810707595799730434,1000)
                      then passend_5810707595799730434 = substr(Fiscaalnr,1,maxPassend_5810707595799730434);
                      else passend_5810707595799730434 = Fiscaalnr;
                    put passend_5810707595799730434 ~ @;
@@ -17183,7 +17183,7 @@ data _null_;
                    attrLengte_2024144945627468982=length(KR_Gevalideerd);
                    aantalLF_2024144945627468982 = countc(KR_Gevalideerd,'0A'x);
                    maxPassend_2024144945627468982=1-1-aantalLF_2024144945627468982;
-                   if attrLengte_2024144945627468982 > maxPassend_2024144945627468982
+                   if attrLengte_2024144945627468982 > max(maxPassend_2024144945627468982,1000)
                      then passend_2024144945627468982 = substr(KR_Gevalideerd,1,maxPassend_2024144945627468982);
                      else passend_2024144945627468982 = KR_Gevalideerd;
                    put passend_2024144945627468982 ~ @;
@@ -17194,7 +17194,7 @@ data _null_;
                    attrLengte_4018094934927046027=length(Kkr_Relatie_id);
                    aantalLF_4018094934927046027 = countc(Kkr_Relatie_id,'0A'x);
                    maxPassend_4018094934927046027=10-1-aantalLF_4018094934927046027;
-                   if attrLengte_4018094934927046027 > maxPassend_4018094934927046027
+                   if attrLengte_4018094934927046027 > max(maxPassend_4018094934927046027,1000)
                      then passend_4018094934927046027 = substr(Kkr_Relatie_id,1,maxPassend_4018094934927046027);
                      else passend_4018094934927046027 = Kkr_Relatie_id;
                    put passend_4018094934927046027 ~ @;
@@ -17208,7 +17208,7 @@ data _null_;
                    attrLengte_5480117132585686229=length(mutatie_user);
                    aantalLF_5480117132585686229 = countc(mutatie_user,'0A'x);
                    maxPassend_5480117132585686229=30-1-aantalLF_5480117132585686229;
-                   if attrLengte_5480117132585686229 > maxPassend_5480117132585686229
+                   if attrLengte_5480117132585686229 > max(maxPassend_5480117132585686229,1000)
                      then passend_5480117132585686229 = substr(mutatie_user,1,maxPassend_5480117132585686229);
                      else passend_5480117132585686229 = mutatie_user;
                    put passend_5480117132585686229 ~ @;
@@ -17219,7 +17219,7 @@ data _null_;
                    attrLengte_6138613567655976457=length(Rbm_org);
                    aantalLF_6138613567655976457 = countc(Rbm_org,'0A'x);
                    maxPassend_6138613567655976457=1-1-aantalLF_6138613567655976457;
-                   if attrLengte_6138613567655976457 > maxPassend_6138613567655976457
+                   if attrLengte_6138613567655976457 > max(maxPassend_6138613567655976457,1000)
                      then passend_6138613567655976457 = substr(Rbm_org,1,maxPassend_6138613567655976457);
                      else passend_6138613567655976457 = Rbm_org;
                    put passend_6138613567655976457 ~ @;
@@ -17230,7 +17230,7 @@ data _null_;
                    attrLengte_6424765951754053919=length(Rbm_persoon);
                    aantalLF_6424765951754053919 = countc(Rbm_persoon,'0A'x);
                    maxPassend_6424765951754053919=1-1-aantalLF_6424765951754053919;
-                   if attrLengte_6424765951754053919 > maxPassend_6424765951754053919
+                   if attrLengte_6424765951754053919 > max(maxPassend_6424765951754053919,1000)
                      then passend_6424765951754053919 = substr(Rbm_persoon,1,maxPassend_6424765951754053919);
                      else passend_6424765951754053919 = Rbm_persoon;
                    put passend_6424765951754053919 ~ @;
@@ -17241,7 +17241,7 @@ data _null_;
                    attrLengte_4695035597672197297=length(Ref_kkr_relatie_id);
                    aantalLF_4695035597672197297 = countc(Ref_kkr_relatie_id,'0A'x);
                    maxPassend_4695035597672197297=10-1-aantalLF_4695035597672197297;
-                   if attrLengte_4695035597672197297 > maxPassend_4695035597672197297
+                   if attrLengte_4695035597672197297 > max(maxPassend_4695035597672197297,1000)
                      then passend_4695035597672197297 = substr(Ref_kkr_relatie_id,1,maxPassend_4695035597672197297);
                      else passend_4695035597672197297 = Ref_kkr_relatie_id;
                    put passend_4695035597672197297 ~ @;
@@ -17255,7 +17255,7 @@ data _null_;
                    attrLengte_4792766152801411253=length(Relatietype);
                    aantalLF_4792766152801411253 = countc(Relatietype,'0A'x);
                    maxPassend_4792766152801411253=1-1-aantalLF_4792766152801411253;
-                   if attrLengte_4792766152801411253 > maxPassend_4792766152801411253
+                   if attrLengte_4792766152801411253 > max(maxPassend_4792766152801411253,1000)
                      then passend_4792766152801411253 = substr(Relatietype,1,maxPassend_4792766152801411253);
                      else passend_4792766152801411253 = Relatietype;
                    put passend_4792766152801411253 ~ @;
@@ -17329,7 +17329,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -17340,7 +17340,7 @@ data _null_;
                    attrLengte_4211185628616237269=length(Hoofdactiviteit);
                    aantalLF_4211185628616237269 = countc(Hoofdactiviteit,'0A'x);
                    maxPassend_4211185628616237269=1-1-aantalLF_4211185628616237269;
-                   if attrLengte_4211185628616237269 > maxPassend_4211185628616237269
+                   if attrLengte_4211185628616237269 > max(maxPassend_4211185628616237269,1000)
                      then passend_4211185628616237269 = substr(Hoofdactiviteit,1,maxPassend_4211185628616237269);
                      else passend_4211185628616237269 = Hoofdactiviteit;
                    put passend_4211185628616237269 ~ @;
@@ -17354,7 +17354,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -17479,7 +17479,7 @@ data _null_;
                    attrLengte_9040032925271508250=length(Actief);
                    aantalLF_9040032925271508250 = countc(Actief,'0A'x);
                    maxPassend_9040032925271508250=1-1-aantalLF_9040032925271508250;
-                   if attrLengte_9040032925271508250 > maxPassend_9040032925271508250
+                   if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
                    put passend_9040032925271508250 ~ @;
@@ -17493,7 +17493,7 @@ data _null_;
                    attrLengte_5799857564552390002=length(Bik_cd);
                    aantalLF_5799857564552390002 = countc(Bik_cd,'0A'x);
                    maxPassend_5799857564552390002=9-1-aantalLF_5799857564552390002;
-                   if attrLengte_5799857564552390002 > maxPassend_5799857564552390002
+                   if attrLengte_5799857564552390002 > max(maxPassend_5799857564552390002,1000)
                      then passend_5799857564552390002 = substr(Bik_cd,1,maxPassend_5799857564552390002);
                      else passend_5799857564552390002 = Bik_cd;
                    put passend_5799857564552390002 ~ @;
@@ -17507,7 +17507,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -17518,7 +17518,7 @@ data _null_;
                    attrLengte_2098055832942848170=length(Hoofd_neven);
                    aantalLF_2098055832942848170 = countc(Hoofd_neven,'0A'x);
                    maxPassend_2098055832942848170=1-1-aantalLF_2098055832942848170;
-                   if attrLengte_2098055832942848170 > maxPassend_2098055832942848170
+                   if attrLengte_2098055832942848170 > max(maxPassend_2098055832942848170,1000)
                      then passend_2098055832942848170 = substr(Hoofd_neven,1,maxPassend_2098055832942848170);
                      else passend_2098055832942848170 = Hoofd_neven;
                    put passend_2098055832942848170 ~ @;
@@ -17529,7 +17529,7 @@ data _null_;
                    attrLengte_4966042720380832294=length(Kkr_conversie);
                    aantalLF_4966042720380832294 = countc(Kkr_conversie,'0A'x);
                    maxPassend_4966042720380832294=1-1-aantalLF_4966042720380832294;
-                   if attrLengte_4966042720380832294 > maxPassend_4966042720380832294
+                   if attrLengte_4966042720380832294 > max(maxPassend_4966042720380832294,1000)
                      then passend_4966042720380832294 = substr(Kkr_conversie,1,maxPassend_4966042720380832294);
                      else passend_4966042720380832294 = Kkr_conversie;
                    put passend_4966042720380832294 ~ @;
@@ -17540,7 +17540,7 @@ data _null_;
                    attrLengte_4275823587113271514=length(Kkr_gevalideerd);
                    aantalLF_4275823587113271514 = countc(Kkr_gevalideerd,'0A'x);
                    maxPassend_4275823587113271514=1-1-aantalLF_4275823587113271514;
-                   if attrLengte_4275823587113271514 > maxPassend_4275823587113271514
+                   if attrLengte_4275823587113271514 > max(maxPassend_4275823587113271514,1000)
                      then passend_4275823587113271514 = substr(Kkr_gevalideerd,1,maxPassend_4275823587113271514);
                      else passend_4275823587113271514 = Kkr_gevalideerd;
                    put passend_4275823587113271514 ~ @;
@@ -17551,7 +17551,7 @@ data _null_;
                    attrLengte_4735801167311526277=length(Kkr_gevonden);
                    aantalLF_4735801167311526277 = countc(Kkr_gevonden,'0A'x);
                    maxPassend_4735801167311526277=1-1-aantalLF_4735801167311526277;
-                   if attrLengte_4735801167311526277 > maxPassend_4735801167311526277
+                   if attrLengte_4735801167311526277 > max(maxPassend_4735801167311526277,1000)
                      then passend_4735801167311526277 = substr(Kkr_gevonden,1,maxPassend_4735801167311526277);
                      else passend_4735801167311526277 = Kkr_gevonden;
                    put passend_4735801167311526277 ~ @;
@@ -17562,7 +17562,7 @@ data _null_;
                    attrLengte_5909357663416120533=length(Kkr_relatie_id);
                    aantalLF_5909357663416120533 = countc(Kkr_relatie_id,'0A'x);
                    maxPassend_5909357663416120533=36-1-aantalLF_5909357663416120533;
-                   if attrLengte_5909357663416120533 > maxPassend_5909357663416120533
+                   if attrLengte_5909357663416120533 > max(maxPassend_5909357663416120533,1000)
                      then passend_5909357663416120533 = substr(Kkr_relatie_id,1,maxPassend_5909357663416120533);
                      else passend_5909357663416120533 = Kkr_relatie_id;
                    put passend_5909357663416120533 ~ @;
@@ -17576,7 +17576,7 @@ data _null_;
                    attrLengte_6725546751009021785=length(KvK_volgnr);
                    aantalLF_6725546751009021785 = countc(KvK_volgnr,'0A'x);
                    maxPassend_6725546751009021785=4-1-aantalLF_6725546751009021785;
-                   if attrLengte_6725546751009021785 > maxPassend_6725546751009021785
+                   if attrLengte_6725546751009021785 > max(maxPassend_6725546751009021785,1000)
                      then passend_6725546751009021785 = substr(KvK_volgnr,1,maxPassend_6725546751009021785);
                      else passend_6725546751009021785 = KvK_volgnr;
                    put passend_6725546751009021785 ~ @;
@@ -17590,7 +17590,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -17601,7 +17601,7 @@ data _null_;
                    attrLengte_5930909227385726767=length(Ref_Kkr_relatie_id);
                    aantalLF_5930909227385726767 = countc(Ref_Kkr_relatie_id,'0A'x);
                    maxPassend_5930909227385726767=36-1-aantalLF_5930909227385726767;
-                   if attrLengte_5930909227385726767 > maxPassend_5930909227385726767
+                   if attrLengte_5930909227385726767 > max(maxPassend_5930909227385726767,1000)
                      then passend_5930909227385726767 = substr(Ref_Kkr_relatie_id,1,maxPassend_5930909227385726767);
                      else passend_5930909227385726767 = Ref_Kkr_relatie_id;
                    put passend_5930909227385726767 ~ @;
@@ -17615,7 +17615,7 @@ data _null_;
                    attrLengte_153734467788040877=length(Vest_naam);
                    aantalLF_153734467788040877 = countc(Vest_naam,'0A'x);
                    maxPassend_153734467788040877=625-1-aantalLF_153734467788040877;
-                   if attrLengte_153734467788040877 > maxPassend_153734467788040877
+                   if attrLengte_153734467788040877 > max(maxPassend_153734467788040877,1000)
                      then passend_153734467788040877 = substr(Vest_naam,1,maxPassend_153734467788040877);
                      else passend_153734467788040877 = Vest_naam;
                    put passend_153734467788040877 ~ @;
@@ -17626,7 +17626,7 @@ data _null_;
                    attrLengte_8533057996254239991=length(Vestigings_nummer);
                    aantalLF_8533057996254239991 = countc(Vestigings_nummer,'0A'x);
                    maxPassend_8533057996254239991=12-1-aantalLF_8533057996254239991;
-                   if attrLengte_8533057996254239991 > maxPassend_8533057996254239991
+                   if attrLengte_8533057996254239991 > max(maxPassend_8533057996254239991,1000)
                      then passend_8533057996254239991 = substr(Vestigings_nummer,1,maxPassend_8533057996254239991);
                      else passend_8533057996254239991 = Vestigings_nummer;
                    put passend_8533057996254239991 ~ @;
@@ -17736,7 +17736,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -17759,7 +17759,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -17773,7 +17773,7 @@ data _null_;
                    attrLengte_8010221947609816734=length(Koppelen_jn);
                    aantalLF_8010221947609816734 = countc(Koppelen_jn,'0A'x);
                    maxPassend_8010221947609816734=1-1-aantalLF_8010221947609816734;
-                   if attrLengte_8010221947609816734 > maxPassend_8010221947609816734
+                   if attrLengte_8010221947609816734 > max(maxPassend_8010221947609816734,1000)
                      then passend_8010221947609816734 = substr(Koppelen_jn,1,maxPassend_8010221947609816734);
                      else passend_8010221947609816734 = Koppelen_jn;
                    put passend_8010221947609816734 ~ @;
@@ -17787,7 +17787,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -17798,7 +17798,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -17887,7 +17887,7 @@ data _null_;
                    attrLengte_3670722283148550818=length(Class_cd);
                    aantalLF_3670722283148550818 = countc(Class_cd,'0A'x);
                    maxPassend_3670722283148550818=10-1-aantalLF_3670722283148550818;
-                   if attrLengte_3670722283148550818 > maxPassend_3670722283148550818
+                   if attrLengte_3670722283148550818 > max(maxPassend_3670722283148550818,1000)
                      then passend_3670722283148550818 = substr(Class_cd,1,maxPassend_3670722283148550818);
                      else passend_3670722283148550818 = Class_cd;
                    put passend_3670722283148550818 ~ @;
@@ -17898,7 +17898,7 @@ data _null_;
                    attrLengte_8096349315438384613=length(Class_oms);
                    aantalLF_8096349315438384613 = countc(Class_oms,'0A'x);
                    maxPassend_8096349315438384613=100-1-aantalLF_8096349315438384613;
-                   if attrLengte_8096349315438384613 > maxPassend_8096349315438384613
+                   if attrLengte_8096349315438384613 > max(maxPassend_8096349315438384613,1000)
                      then passend_8096349315438384613 = substr(Class_oms,1,maxPassend_8096349315438384613);
                      else passend_8096349315438384613 = Class_oms;
                    put passend_8096349315438384613 ~ @;
@@ -17909,7 +17909,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -17923,7 +17923,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -18033,7 +18033,7 @@ data _null_;
                    attrLengte_8640113711822652606=length(Afgesloten);
                    aantalLF_8640113711822652606 = countc(Afgesloten,'0A'x);
                    maxPassend_8640113711822652606=1-1-aantalLF_8640113711822652606;
-                   if attrLengte_8640113711822652606 > maxPassend_8640113711822652606
+                   if attrLengte_8640113711822652606 > max(maxPassend_8640113711822652606,1000)
                      then passend_8640113711822652606 = substr(Afgesloten,1,maxPassend_8640113711822652606);
                      else passend_8640113711822652606 = Afgesloten;
                    put passend_8640113711822652606 ~ @;
@@ -18044,7 +18044,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -18064,7 +18064,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -18084,7 +18084,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -18095,7 +18095,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -18115,7 +18115,7 @@ data _null_;
                    attrLengte_5019175436802110303=length(Verdeeld_jn);
                    aantalLF_5019175436802110303 = countc(Verdeeld_jn,'0A'x);
                    maxPassend_5019175436802110303=1-1-aantalLF_5019175436802110303;
-                   if attrLengte_5019175436802110303 > maxPassend_5019175436802110303
+                   if attrLengte_5019175436802110303 > max(maxPassend_5019175436802110303,1000)
                      then passend_5019175436802110303 = substr(Verdeeld_jn,1,maxPassend_5019175436802110303);
                      else passend_5019175436802110303 = Verdeeld_jn;
                    put passend_5019175436802110303 ~ @;
@@ -18216,7 +18216,7 @@ data _null_;
                    attrLengte_8082276134056304352=length(Middelen_type);
                    aantalLF_8082276134056304352 = countc(Middelen_type,'0A'x);
                    maxPassend_8082276134056304352=2-1-aantalLF_8082276134056304352;
-                   if attrLengte_8082276134056304352 > maxPassend_8082276134056304352
+                   if attrLengte_8082276134056304352 > max(maxPassend_8082276134056304352,1000)
                      then passend_8082276134056304352 = substr(Middelen_type,1,maxPassend_8082276134056304352);
                      else passend_8082276134056304352 = Middelen_type;
                    put passend_8082276134056304352 ~ @;
@@ -18227,7 +18227,7 @@ data _null_;
                    attrLengte_45581615089552039=length(Mandaat_srt);
                    aantalLF_45581615089552039 = countc(Mandaat_srt,'0A'x);
                    maxPassend_45581615089552039=2-1-aantalLF_45581615089552039;
-                   if attrLengte_45581615089552039 > maxPassend_45581615089552039
+                   if attrLengte_45581615089552039 > max(maxPassend_45581615089552039,1000)
                      then passend_45581615089552039 = substr(Mandaat_srt,1,maxPassend_45581615089552039);
                      else passend_45581615089552039 = Mandaat_srt;
                    put passend_45581615089552039 ~ @;
@@ -18241,7 +18241,7 @@ data _null_;
                    attrLengte_6267154196586753525=length(Rdm_mandaat_rol);
                    aantalLF_6267154196586753525 = countc(Rdm_mandaat_rol,'0A'x);
                    maxPassend_6267154196586753525=1-1-aantalLF_6267154196586753525;
-                   if attrLengte_6267154196586753525 > maxPassend_6267154196586753525
+                   if attrLengte_6267154196586753525 > max(maxPassend_6267154196586753525,1000)
                      then passend_6267154196586753525 = substr(Rdm_mandaat_rol,1,maxPassend_6267154196586753525);
                      else passend_6267154196586753525 = Rdm_mandaat_rol;
                    put passend_6267154196586753525 ~ @;
@@ -18252,7 +18252,7 @@ data _null_;
                    attrLengte_3884692758649452826=length(Rdm_mandaat_mdw);
                    aantalLF_3884692758649452826 = countc(Rdm_mandaat_mdw,'0A'x);
                    maxPassend_3884692758649452826=1-1-aantalLF_3884692758649452826;
-                   if attrLengte_3884692758649452826 > maxPassend_3884692758649452826
+                   if attrLengte_3884692758649452826 > max(maxPassend_3884692758649452826,1000)
                      then passend_3884692758649452826 = substr(Rdm_mandaat_mdw,1,maxPassend_3884692758649452826);
                      else passend_3884692758649452826 = Rdm_mandaat_mdw;
                    put passend_3884692758649452826 ~ @;
@@ -18263,7 +18263,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -18277,7 +18277,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -18297,7 +18297,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -18376,7 +18376,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -18387,7 +18387,7 @@ data _null_;
                    attrLengte_4570953002792249656=length(Doc_naam);
                    aantalLF_4570953002792249656 = countc(Doc_naam,'0A'x);
                    maxPassend_4570953002792249656=255-1-aantalLF_4570953002792249656;
-                   if attrLengte_4570953002792249656 > maxPassend_4570953002792249656
+                   if attrLengte_4570953002792249656 > max(maxPassend_4570953002792249656,1000)
                      then passend_4570953002792249656 = substr(Doc_naam,1,maxPassend_4570953002792249656);
                      else passend_4570953002792249656 = Doc_naam;
                    put passend_4570953002792249656 ~ @;
@@ -18398,7 +18398,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -18412,7 +18412,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -18426,7 +18426,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -18587,7 +18587,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -18601,7 +18601,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -18618,7 +18618,7 @@ data _null_;
                    attrLengte_3124754035359486199=length(Kopieer_periode);
                    aantalLF_3124754035359486199 = countc(Kopieer_periode,'0A'x);
                    maxPassend_3124754035359486199=1-1-aantalLF_3124754035359486199;
-                   if attrLengte_3124754035359486199 > maxPassend_3124754035359486199
+                   if attrLengte_3124754035359486199 > max(maxPassend_3124754035359486199,1000)
                      then passend_3124754035359486199 = substr(Kopieer_periode,1,maxPassend_3124754035359486199);
                      else passend_3124754035359486199 = Kopieer_periode;
                    put passend_3124754035359486199 ~ @;
@@ -18629,7 +18629,7 @@ data _null_;
                    attrLengte_3802303003931793618=length(Auto_sap_jn);
                    aantalLF_3802303003931793618 = countc(Auto_sap_jn,'0A'x);
                    maxPassend_3802303003931793618=1-1-aantalLF_3802303003931793618;
-                   if attrLengte_3802303003931793618 > maxPassend_3802303003931793618
+                   if attrLengte_3802303003931793618 > max(maxPassend_3802303003931793618,1000)
                      then passend_3802303003931793618 = substr(Auto_sap_jn,1,maxPassend_3802303003931793618);
                      else passend_3802303003931793618 = Auto_sap_jn;
                    put passend_3802303003931793618 ~ @;
@@ -18652,7 +18652,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=60-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -18663,7 +18663,7 @@ data _null_;
                    attrLengte_9026548999479988017=length(Prg_cd);
                    aantalLF_9026548999479988017 = countc(Prg_cd,'0A'x);
                    maxPassend_9026548999479988017=12-1-aantalLF_9026548999479988017;
-                   if attrLengte_9026548999479988017 > maxPassend_9026548999479988017
+                   if attrLengte_9026548999479988017 > max(maxPassend_9026548999479988017,1000)
                      then passend_9026548999479988017 = substr(Prg_cd,1,maxPassend_9026548999479988017);
                      else passend_9026548999479988017 = Prg_cd;
                    put passend_9026548999479988017 ~ @;
@@ -18674,7 +18674,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -18688,7 +18688,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -18702,7 +18702,7 @@ data _null_;
                    attrLengte_3785071286235317929=length(Bdg_verdelen_100_pct_dp);
                    aantalLF_3785071286235317929 = countc(Bdg_verdelen_100_pct_dp,'0A'x);
                    maxPassend_3785071286235317929=1-1-aantalLF_3785071286235317929;
-                   if attrLengte_3785071286235317929 > maxPassend_3785071286235317929
+                   if attrLengte_3785071286235317929 > max(maxPassend_3785071286235317929,1000)
                      then passend_3785071286235317929 = substr(Bdg_verdelen_100_pct_dp,1,maxPassend_3785071286235317929);
                      else passend_3785071286235317929 = Bdg_verdelen_100_pct_dp;
                    put passend_3785071286235317929 ~ @;
@@ -18713,7 +18713,7 @@ data _null_;
                    attrLengte_3780567471454359953=length(Bdg_verdelen_100_pct_th);
                    aantalLF_3780567471454359953 = countc(Bdg_verdelen_100_pct_th,'0A'x);
                    maxPassend_3780567471454359953=1-1-aantalLF_3780567471454359953;
-                   if attrLengte_3780567471454359953 > maxPassend_3780567471454359953
+                   if attrLengte_3780567471454359953 > max(maxPassend_3780567471454359953,1000)
                      then passend_3780567471454359953 = substr(Bdg_verdelen_100_pct_th,1,maxPassend_3780567471454359953);
                      else passend_3780567471454359953 = Bdg_verdelen_100_pct_th;
                    put passend_3780567471454359953 ~ @;
@@ -18724,7 +18724,7 @@ data _null_;
                    attrLengte_8433717562044549680=length(Iban);
                    aantalLF_8433717562044549680 = countc(Iban,'0A'x);
                    maxPassend_8433717562044549680=34-1-aantalLF_8433717562044549680;
-                   if attrLengte_8433717562044549680 > maxPassend_8433717562044549680
+                   if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
                    put passend_8433717562044549680 ~ @;
@@ -18735,7 +18735,7 @@ data _null_;
                    attrLengte_8393283933206478573=length(Bic);
                    aantalLF_8393283933206478573 = countc(Bic,'0A'x);
                    maxPassend_8393283933206478573=11-1-aantalLF_8393283933206478573;
-                   if attrLengte_8393283933206478573 > maxPassend_8393283933206478573
+                   if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
                    put passend_8393283933206478573 ~ @;
@@ -18749,7 +18749,7 @@ data _null_;
                    attrLengte_8136469209690216678=length(Correctie_code);
                    aantalLF_8136469209690216678 = countc(Correctie_code,'0A'x);
                    maxPassend_8136469209690216678=5-1-aantalLF_8136469209690216678;
-                   if attrLengte_8136469209690216678 > maxPassend_8136469209690216678
+                   if attrLengte_8136469209690216678 > max(maxPassend_8136469209690216678,1000)
                      then passend_8136469209690216678 = substr(Correctie_code,1,maxPassend_8136469209690216678);
                      else passend_8136469209690216678 = Correctie_code;
                    put passend_8136469209690216678 ~ @;
@@ -18760,7 +18760,7 @@ data _null_;
                    attrLengte_2821618412975311163=length(Auto_oracle);
                    aantalLF_2821618412975311163 = countc(Auto_oracle,'0A'x);
                    maxPassend_2821618412975311163=1-1-aantalLF_2821618412975311163;
-                   if attrLengte_2821618412975311163 > maxPassend_2821618412975311163
+                   if attrLengte_2821618412975311163 > max(maxPassend_2821618412975311163,1000)
                      then passend_2821618412975311163 = substr(Auto_oracle,1,maxPassend_2821618412975311163);
                      else passend_2821618412975311163 = Auto_oracle;
                    put passend_2821618412975311163 ~ @;
@@ -18771,7 +18771,7 @@ data _null_;
                    attrLengte_1952708952664785282=length(Boeking);
                    aantalLF_1952708952664785282 = countc(Boeking,'0A'x);
                    maxPassend_1952708952664785282=1-1-aantalLF_1952708952664785282;
-                   if attrLengte_1952708952664785282 > maxPassend_1952708952664785282
+                   if attrLengte_1952708952664785282 > max(maxPassend_1952708952664785282,1000)
                      then passend_1952708952664785282 = substr(Boeking,1,maxPassend_1952708952664785282);
                      else passend_1952708952664785282 = Boeking;
                    put passend_1952708952664785282 ~ @;
@@ -18782,7 +18782,7 @@ data _null_;
                    attrLengte_4097127069211440246=length(Fin_soort);
                    aantalLF_4097127069211440246 = countc(Fin_soort,'0A'x);
                    maxPassend_4097127069211440246=1-1-aantalLF_4097127069211440246;
-                   if attrLengte_4097127069211440246 > maxPassend_4097127069211440246
+                   if attrLengte_4097127069211440246 > max(maxPassend_4097127069211440246,1000)
                      then passend_4097127069211440246 = substr(Fin_soort,1,maxPassend_4097127069211440246);
                      else passend_4097127069211440246 = Fin_soort;
                    put passend_4097127069211440246 ~ @;
@@ -18793,7 +18793,7 @@ data _null_;
                    attrLengte_4927202612135555295=length(Kenmerk_lijn);
                    aantalLF_4927202612135555295 = countc(Kenmerk_lijn,'0A'x);
                    maxPassend_4927202612135555295=20-1-aantalLF_4927202612135555295;
-                   if attrLengte_4927202612135555295 > maxPassend_4927202612135555295
+                   if attrLengte_4927202612135555295 > max(maxPassend_4927202612135555295,1000)
                      then passend_4927202612135555295 = substr(Kenmerk_lijn,1,maxPassend_4927202612135555295);
                      else passend_4927202612135555295 = Kenmerk_lijn;
                    put passend_4927202612135555295 ~ @;
@@ -18906,7 +18906,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -18923,7 +18923,7 @@ data _null_;
                    attrLengte_4250420340675441405=length(Inhoud);
                    aantalLF_4250420340675441405 = countc(Inhoud,'0A'x);
                    maxPassend_4250420340675441405=2048-1-aantalLF_4250420340675441405;
-                   if attrLengte_4250420340675441405 > maxPassend_4250420340675441405
+                   if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;
                    put passend_4250420340675441405 ~ @;
@@ -18934,7 +18934,7 @@ data _null_;
                    attrLengte_5988018406811650736=length(Status);
                    aantalLF_5988018406811650736 = countc(Status,'0A'x);
                    maxPassend_5988018406811650736=1-1-aantalLF_5988018406811650736;
-                   if attrLengte_5988018406811650736 > maxPassend_5988018406811650736
+                   if attrLengte_5988018406811650736 > max(maxPassend_5988018406811650736,1000)
                      then passend_5988018406811650736 = substr(Status,1,maxPassend_5988018406811650736);
                      else passend_5988018406811650736 = Status;
                    put passend_5988018406811650736 ~ @;
@@ -18951,7 +18951,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -18965,7 +18965,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -18979,7 +18979,7 @@ data _null_;
                    attrLengte_837135120333362348=length(Mjp_jn);
                    aantalLF_837135120333362348 = countc(Mjp_jn,'0A'x);
                    maxPassend_837135120333362348=1-1-aantalLF_837135120333362348;
-                   if attrLengte_837135120333362348 > maxPassend_837135120333362348
+                   if attrLengte_837135120333362348 > max(maxPassend_837135120333362348,1000)
                      then passend_837135120333362348 = substr(Mjp_jn,1,maxPassend_837135120333362348);
                      else passend_837135120333362348 = Mjp_jn;
                    put passend_837135120333362348 ~ @;
@@ -18990,7 +18990,7 @@ data _null_;
                    attrLengte_3560946579088680324=length(Ovk_budget_controle);
                    aantalLF_3560946579088680324 = countc(Ovk_budget_controle,'0A'x);
                    maxPassend_3560946579088680324=1-1-aantalLF_3560946579088680324;
-                   if attrLengte_3560946579088680324 > maxPassend_3560946579088680324
+                   if attrLengte_3560946579088680324 > max(maxPassend_3560946579088680324,1000)
                      then passend_3560946579088680324 = substr(Ovk_budget_controle,1,maxPassend_3560946579088680324);
                      else passend_3560946579088680324 = Ovk_budget_controle;
                    put passend_3560946579088680324 ~ @;
@@ -19113,7 +19113,7 @@ data _null_;
                    attrLengte_5387589372927854328=length(Auth_mdw_cd);
                    aantalLF_5387589372927854328 = countc(Auth_mdw_cd,'0A'x);
                    maxPassend_5387589372927854328=30-1-aantalLF_5387589372927854328;
-                   if attrLengte_5387589372927854328 > maxPassend_5387589372927854328
+                   if attrLengte_5387589372927854328 > max(maxPassend_5387589372927854328,1000)
                      then passend_5387589372927854328 = substr(Auth_mdw_cd,1,maxPassend_5387589372927854328);
                      else passend_5387589372927854328 = Auth_mdw_cd;
                    put passend_5387589372927854328 ~ @;
@@ -19124,7 +19124,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -19135,7 +19135,7 @@ data _null_;
                    attrLengte_9040032925271508250=length(Actief);
                    aantalLF_9040032925271508250 = countc(Actief,'0A'x);
                    maxPassend_9040032925271508250=1-1-aantalLF_9040032925271508250;
-                   if attrLengte_9040032925271508250 > maxPassend_9040032925271508250
+                   if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
                    put passend_9040032925271508250 ~ @;
@@ -19146,7 +19146,7 @@ data _null_;
                    attrLengte_1343037086106328577=length(Opmerking);
                    aantalLF_1343037086106328577 = countc(Opmerking,'0A'x);
                    maxPassend_1343037086106328577=255-1-aantalLF_1343037086106328577;
-                   if attrLengte_1343037086106328577 > maxPassend_1343037086106328577
+                   if attrLengte_1343037086106328577 > max(maxPassend_1343037086106328577,1000)
                      then passend_1343037086106328577 = substr(Opmerking,1,maxPassend_1343037086106328577);
                      else passend_1343037086106328577 = Opmerking;
                    put passend_1343037086106328577 ~ @;
@@ -19157,7 +19157,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -19171,7 +19171,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -19185,7 +19185,7 @@ data _null_;
                    attrLengte_1708104729569954294=length(Senioriteit);
                    aantalLF_1708104729569954294 = countc(Senioriteit,'0A'x);
                    maxPassend_1708104729569954294=30-1-aantalLF_1708104729569954294;
-                   if attrLengte_1708104729569954294 > maxPassend_1708104729569954294
+                   if attrLengte_1708104729569954294 > max(maxPassend_1708104729569954294,1000)
                      then passend_1708104729569954294 = substr(Senioriteit,1,maxPassend_1708104729569954294);
                      else passend_1708104729569954294 = Senioriteit;
                    put passend_1708104729569954294 ~ @;
@@ -19202,7 +19202,7 @@ data _null_;
                    attrLengte_229469790558856446=length(Vervang_rol);
                    aantalLF_229469790558856446 = countc(Vervang_rol,'0A'x);
                    maxPassend_229469790558856446=3-1-aantalLF_229469790558856446;
-                   if attrLengte_229469790558856446 > maxPassend_229469790558856446
+                   if attrLengte_229469790558856446 > max(maxPassend_229469790558856446,1000)
                      then passend_229469790558856446 = substr(Vervang_rol,1,maxPassend_229469790558856446);
                      else passend_229469790558856446 = Vervang_rol;
                    put passend_229469790558856446 ~ @;
@@ -19219,7 +19219,7 @@ data _null_;
                    attrLengte_1142361471725319962=length(Mentor_rol_cd);
                    aantalLF_1142361471725319962 = countc(Mentor_rol_cd,'0A'x);
                    maxPassend_1142361471725319962=3-1-aantalLF_1142361471725319962;
-                   if attrLengte_1142361471725319962 > maxPassend_1142361471725319962
+                   if attrLengte_1142361471725319962 > max(maxPassend_1142361471725319962,1000)
                      then passend_1142361471725319962 = substr(Mentor_rol_cd,1,maxPassend_1142361471725319962);
                      else passend_1142361471725319962 = Mentor_rol_cd;
                    put passend_1142361471725319962 ~ @;
@@ -19409,7 +19409,7 @@ data _null_;
                    attrLengte_8089610682312470086=length(Reg_cd);
                    aantalLF_8089610682312470086 = countc(Reg_cd,'0A'x);
                    maxPassend_8089610682312470086=20-1-aantalLF_8089610682312470086;
-                   if attrLengte_8089610682312470086 > maxPassend_8089610682312470086
+                   if attrLengte_8089610682312470086 > max(maxPassend_8089610682312470086,1000)
                      then passend_8089610682312470086 = substr(Reg_cd,1,maxPassend_8089610682312470086);
                      else passend_8089610682312470086 = Reg_cd;
                    put passend_8089610682312470086 ~ @;
@@ -19420,7 +19420,7 @@ data _null_;
                    attrLengte_8048633119966655007=length(Reg_oms);
                    aantalLF_8048633119966655007 = countc(Reg_oms,'0A'x);
                    maxPassend_8048633119966655007=120-1-aantalLF_8048633119966655007;
-                   if attrLengte_8048633119966655007 > maxPassend_8048633119966655007
+                   if attrLengte_8048633119966655007 > max(maxPassend_8048633119966655007,1000)
                      then passend_8048633119966655007 = substr(Reg_oms,1,maxPassend_8048633119966655007);
                      else passend_8048633119966655007 = Reg_oms;
                    put passend_8048633119966655007 ~ @;
@@ -19434,7 +19434,7 @@ data _null_;
                    attrLengte_4904519751506790512=length(Thema);
                    aantalLF_4904519751506790512 = countc(Thema,'0A'x);
                    maxPassend_4904519751506790512=1-1-aantalLF_4904519751506790512;
-                   if attrLengte_4904519751506790512 > maxPassend_4904519751506790512
+                   if attrLengte_4904519751506790512 > max(maxPassend_4904519751506790512,1000)
                      then passend_4904519751506790512 = substr(Thema,1,maxPassend_4904519751506790512);
                      else passend_4904519751506790512 = Thema;
                    put passend_4904519751506790512 ~ @;
@@ -19457,7 +19457,7 @@ data _null_;
                    attrLengte_7383118781553457770=length(Reg_document);
                    aantalLF_7383118781553457770 = countc(Reg_document,'0A'x);
                    maxPassend_7383118781553457770=50-1-aantalLF_7383118781553457770;
-                   if attrLengte_7383118781553457770 > maxPassend_7383118781553457770
+                   if attrLengte_7383118781553457770 > max(maxPassend_7383118781553457770,1000)
                      then passend_7383118781553457770 = substr(Reg_document,1,maxPassend_7383118781553457770);
                      else passend_7383118781553457770 = Reg_document;
                    put passend_7383118781553457770 ~ @;
@@ -19468,7 +19468,7 @@ data _null_;
                    attrLengte_3526882150107883917=length(Betaalmodule);
                    aantalLF_3526882150107883917 = countc(Betaalmodule,'0A'x);
                    maxPassend_3526882150107883917=1-1-aantalLF_3526882150107883917;
-                   if attrLengte_3526882150107883917 > maxPassend_3526882150107883917
+                   if attrLengte_3526882150107883917 > max(maxPassend_3526882150107883917,1000)
                      then passend_3526882150107883917 = substr(Betaalmodule,1,maxPassend_3526882150107883917);
                      else passend_3526882150107883917 = Betaalmodule;
                    put passend_3526882150107883917 ~ @;
@@ -19479,7 +19479,7 @@ data _null_;
                    attrLengte_4877794543932319083=length(Regelingscontrole);
                    aantalLF_4877794543932319083 = countc(Regelingscontrole,'0A'x);
                    maxPassend_4877794543932319083=1-1-aantalLF_4877794543932319083;
-                   if attrLengte_4877794543932319083 > maxPassend_4877794543932319083
+                   if attrLengte_4877794543932319083 > max(maxPassend_4877794543932319083,1000)
                      then passend_4877794543932319083 = substr(Regelingscontrole,1,maxPassend_4877794543932319083);
                      else passend_4877794543932319083 = Regelingscontrole;
                    put passend_4877794543932319083 ~ @;
@@ -19490,7 +19490,7 @@ data _null_;
                    attrLengte_7347360163492415997=length(Ic_helptekst);
                    aantalLF_7347360163492415997 = countc(Ic_helptekst,'0A'x);
                    maxPassend_7347360163492415997=2048-1-aantalLF_7347360163492415997;
-                   if attrLengte_7347360163492415997 > maxPassend_7347360163492415997
+                   if attrLengte_7347360163492415997 > max(maxPassend_7347360163492415997,1000)
                      then passend_7347360163492415997 = substr(Ic_helptekst,1,maxPassend_7347360163492415997);
                      else passend_7347360163492415997 = Ic_helptekst;
                    put passend_7347360163492415997 ~ @;
@@ -19501,7 +19501,7 @@ data _null_;
                    attrLengte_7719773628010563908=length(Geblokkeerd_jn);
                    aantalLF_7719773628010563908 = countc(Geblokkeerd_jn,'0A'x);
                    maxPassend_7719773628010563908=1-1-aantalLF_7719773628010563908;
-                   if attrLengte_7719773628010563908 > maxPassend_7719773628010563908
+                   if attrLengte_7719773628010563908 > max(maxPassend_7719773628010563908,1000)
                      then passend_7719773628010563908 = substr(Geblokkeerd_jn,1,maxPassend_7719773628010563908);
                      else passend_7719773628010563908 = Geblokkeerd_jn;
                    put passend_7719773628010563908 ~ @;
@@ -19515,7 +19515,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -19529,7 +19529,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -19543,7 +19543,7 @@ data _null_;
                    attrLengte_4465592721297386989=length(Reg_prefix);
                    aantalLF_4465592721297386989 = countc(Reg_prefix,'0A'x);
                    maxPassend_4465592721297386989=6-1-aantalLF_4465592721297386989;
-                   if attrLengte_4465592721297386989 > maxPassend_4465592721297386989
+                   if attrLengte_4465592721297386989 > max(maxPassend_4465592721297386989,1000)
                      then passend_4465592721297386989 = substr(Reg_prefix,1,maxPassend_4465592721297386989);
                      else passend_4465592721297386989 = Reg_prefix;
                    put passend_4465592721297386989 ~ @;
@@ -19557,7 +19557,7 @@ data _null_;
                    attrLengte_6263883538153590736=length(Mail_bericht_parafering);
                    aantalLF_6263883538153590736 = countc(Mail_bericht_parafering,'0A'x);
                    maxPassend_6263883538153590736=1-1-aantalLF_6263883538153590736;
-                   if attrLengte_6263883538153590736 > maxPassend_6263883538153590736
+                   if attrLengte_6263883538153590736 > max(maxPassend_6263883538153590736,1000)
                      then passend_6263883538153590736 = substr(Mail_bericht_parafering,1,maxPassend_6263883538153590736);
                      else passend_6263883538153590736 = Mail_bericht_parafering;
                    put passend_6263883538153590736 ~ @;
@@ -19568,7 +19568,7 @@ data _null_;
                    attrLengte_5971966142831170572=length(Reg_mail_adres);
                    aantalLF_5971966142831170572 = countc(Reg_mail_adres,'0A'x);
                    maxPassend_5971966142831170572=60-1-aantalLF_5971966142831170572;
-                   if attrLengte_5971966142831170572 > maxPassend_5971966142831170572
+                   if attrLengte_5971966142831170572 > max(maxPassend_5971966142831170572,1000)
                      then passend_5971966142831170572 = substr(Reg_mail_adres,1,maxPassend_5971966142831170572);
                      else passend_5971966142831170572 = Reg_mail_adres;
                    put passend_5971966142831170572 ~ @;
@@ -19579,7 +19579,7 @@ data _null_;
                    attrLengte_1292753338332248782=length(Reg_geen_dig_parafering);
                    aantalLF_1292753338332248782 = countc(Reg_geen_dig_parafering,'0A'x);
                    maxPassend_1292753338332248782=1-1-aantalLF_1292753338332248782;
-                   if attrLengte_1292753338332248782 > maxPassend_1292753338332248782
+                   if attrLengte_1292753338332248782 > max(maxPassend_1292753338332248782,1000)
                      then passend_1292753338332248782 = substr(Reg_geen_dig_parafering,1,maxPassend_1292753338332248782);
                      else passend_1292753338332248782 = Reg_geen_dig_parafering;
                    put passend_1292753338332248782 ~ @;
@@ -19590,7 +19590,7 @@ data _null_;
                    attrLengte_911904525501931183=length(Fin_schermen);
                    aantalLF_911904525501931183 = countc(Fin_schermen,'0A'x);
                    maxPassend_911904525501931183=1-1-aantalLF_911904525501931183;
-                   if attrLengte_911904525501931183 > maxPassend_911904525501931183
+                   if attrLengte_911904525501931183 > max(maxPassend_911904525501931183,1000)
                      then passend_911904525501931183 = substr(Fin_schermen,1,maxPassend_911904525501931183);
                      else passend_911904525501931183 = Fin_schermen;
                    put passend_911904525501931183 ~ @;
@@ -19604,7 +19604,7 @@ data _null_;
                    attrLengte_2651479358715290174=length(Budgetbewaking_hard);
                    aantalLF_2651479358715290174 = countc(Budgetbewaking_hard,'0A'x);
                    maxPassend_2651479358715290174=1-1-aantalLF_2651479358715290174;
-                   if attrLengte_2651479358715290174 > maxPassend_2651479358715290174
+                   if attrLengte_2651479358715290174 > max(maxPassend_2651479358715290174,1000)
                      then passend_2651479358715290174 = substr(Budgetbewaking_hard,1,maxPassend_2651479358715290174);
                      else passend_2651479358715290174 = Budgetbewaking_hard;
                    put passend_2651479358715290174 ~ @;
@@ -19615,7 +19615,7 @@ data _null_;
                    attrLengte_7869809262385558754=length(Dig_parf_mand);
                    aantalLF_7869809262385558754 = countc(Dig_parf_mand,'0A'x);
                    maxPassend_7869809262385558754=1-1-aantalLF_7869809262385558754;
-                   if attrLengte_7869809262385558754 > maxPassend_7869809262385558754
+                   if attrLengte_7869809262385558754 > max(maxPassend_7869809262385558754,1000)
                      then passend_7869809262385558754 = substr(Dig_parf_mand,1,maxPassend_7869809262385558754);
                      else passend_7869809262385558754 = Dig_parf_mand;
                    put passend_7869809262385558754 ~ @;
@@ -19626,7 +19626,7 @@ data _null_;
                    attrLengte_8058619802847207325=length(Cst_set_cd);
                    aantalLF_8058619802847207325 = countc(Cst_set_cd,'0A'x);
                    maxPassend_8058619802847207325=10-1-aantalLF_8058619802847207325;
-                   if attrLengte_8058619802847207325 > maxPassend_8058619802847207325
+                   if attrLengte_8058619802847207325 > max(maxPassend_8058619802847207325,1000)
                      then passend_8058619802847207325 = substr(Cst_set_cd,1,maxPassend_8058619802847207325);
                      else passend_8058619802847207325 = Cst_set_cd;
                    put passend_8058619802847207325 ~ @;
@@ -19637,7 +19637,7 @@ data _null_;
                    attrLengte_2110398600305530271=length(Auto_samenvoeg_jn);
                    aantalLF_2110398600305530271 = countc(Auto_samenvoeg_jn,'0A'x);
                    maxPassend_2110398600305530271=1-1-aantalLF_2110398600305530271;
-                   if attrLengte_2110398600305530271 > maxPassend_2110398600305530271
+                   if attrLengte_2110398600305530271 > max(maxPassend_2110398600305530271,1000)
                      then passend_2110398600305530271 = substr(Auto_samenvoeg_jn,1,maxPassend_2110398600305530271);
                      else passend_2110398600305530271 = Auto_samenvoeg_jn;
                    put passend_2110398600305530271 ~ @;
@@ -19648,7 +19648,7 @@ data _null_;
                    attrLengte_5842689462633185036=length(Fpc_status);
                    aantalLF_5842689462633185036 = countc(Fpc_status,'0A'x);
                    maxPassend_5842689462633185036=1-1-aantalLF_5842689462633185036;
-                   if attrLengte_5842689462633185036 > maxPassend_5842689462633185036
+                   if attrLengte_5842689462633185036 > max(maxPassend_5842689462633185036,1000)
                      then passend_5842689462633185036 = substr(Fpc_status,1,maxPassend_5842689462633185036);
                      else passend_5842689462633185036 = Fpc_status;
                    put passend_5842689462633185036 ~ @;
@@ -19659,7 +19659,7 @@ data _null_;
                    attrLengte_5749236548403605141=length(Dcp_automatisch_jn);
                    aantalLF_5749236548403605141 = countc(Dcp_automatisch_jn,'0A'x);
                    maxPassend_5749236548403605141=1-1-aantalLF_5749236548403605141;
-                   if attrLengte_5749236548403605141 > maxPassend_5749236548403605141
+                   if attrLengte_5749236548403605141 > max(maxPassend_5749236548403605141,1000)
                      then passend_5749236548403605141 = substr(Dcp_automatisch_jn,1,maxPassend_5749236548403605141);
                      else passend_5749236548403605141 = Dcp_automatisch_jn;
                    put passend_5749236548403605141 ~ @;
@@ -19670,7 +19670,7 @@ data _null_;
                    attrLengte_2135051168692226800=length(Paraf_mandat_pr_rol_jn);
                    aantalLF_2135051168692226800 = countc(Paraf_mandat_pr_rol_jn,'0A'x);
                    maxPassend_2135051168692226800=1-1-aantalLF_2135051168692226800;
-                   if attrLengte_2135051168692226800 > maxPassend_2135051168692226800
+                   if attrLengte_2135051168692226800 > max(maxPassend_2135051168692226800,1000)
                      then passend_2135051168692226800 = substr(Paraf_mandat_pr_rol_jn,1,maxPassend_2135051168692226800);
                      else passend_2135051168692226800 = Paraf_mandat_pr_rol_jn;
                    put passend_2135051168692226800 ~ @;
@@ -19681,7 +19681,7 @@ data _null_;
                    attrLengte_7729616129515536002=length(Dos_referentie_jaar);
                    aantalLF_7729616129515536002 = countc(Dos_referentie_jaar,'0A'x);
                    maxPassend_7729616129515536002=4-1-aantalLF_7729616129515536002;
-                   if attrLengte_7729616129515536002 > maxPassend_7729616129515536002
+                   if attrLengte_7729616129515536002 > max(maxPassend_7729616129515536002,1000)
                      then passend_7729616129515536002 = substr(Dos_referentie_jaar,1,maxPassend_7729616129515536002);
                      else passend_7729616129515536002 = Dos_referentie_jaar;
                    put passend_7729616129515536002 ~ @;
@@ -19692,7 +19692,7 @@ data _null_;
                    attrLengte_1121401602846738077=length(Auto_insert_sde_jn);
                    aantalLF_1121401602846738077 = countc(Auto_insert_sde_jn,'0A'x);
                    maxPassend_1121401602846738077=1-1-aantalLF_1121401602846738077;
-                   if attrLengte_1121401602846738077 > maxPassend_1121401602846738077
+                   if attrLengte_1121401602846738077 > max(maxPassend_1121401602846738077,1000)
                      then passend_1121401602846738077 = substr(Auto_insert_sde_jn,1,maxPassend_1121401602846738077);
                      else passend_1121401602846738077 = Auto_insert_sde_jn;
                    put passend_1121401602846738077 ~ @;
@@ -19806,7 +19806,7 @@ data _null_;
                    attrLengte_7575938694744162813=length(Ovk_nr);
                    aantalLF_7575938694744162813 = countc(Ovk_nr,'0A'x);
                    maxPassend_7575938694744162813=20-1-aantalLF_7575938694744162813;
-                   if attrLengte_7575938694744162813 > maxPassend_7575938694744162813
+                   if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
                    put passend_7575938694744162813 ~ @;
@@ -19820,7 +19820,7 @@ data _null_;
                    attrLengte_7370879967810917187=length(Bgt_cd);
                    aantalLF_7370879967810917187 = countc(Bgt_cd,'0A'x);
                    maxPassend_7370879967810917187=1-1-aantalLF_7370879967810917187;
-                   if attrLengte_7370879967810917187 > maxPassend_7370879967810917187
+                   if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
                    put passend_7370879967810917187 ~ @;
@@ -19849,7 +19849,7 @@ data _null_;
                    attrLengte_8010221947609816734=length(Koppelen_jn);
                    aantalLF_8010221947609816734 = countc(Koppelen_jn,'0A'x);
                    maxPassend_8010221947609816734=1-1-aantalLF_8010221947609816734;
-                   if attrLengte_8010221947609816734 > maxPassend_8010221947609816734
+                   if attrLengte_8010221947609816734 > max(maxPassend_8010221947609816734,1000)
                      then passend_8010221947609816734 = substr(Koppelen_jn,1,maxPassend_8010221947609816734);
                      else passend_8010221947609816734 = Koppelen_jn;
                    put passend_8010221947609816734 ~ @;
@@ -19863,7 +19863,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -19877,7 +19877,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -19894,7 +19894,7 @@ data _null_;
                    attrLengte_6398700462504815438=length(Rpt_nr_oud);
                    aantalLF_6398700462504815438 = countc(Rpt_nr_oud,'0A'x);
                    maxPassend_6398700462504815438=20-1-aantalLF_6398700462504815438;
-                   if attrLengte_6398700462504815438 > maxPassend_6398700462504815438
+                   if attrLengte_6398700462504815438 > max(maxPassend_6398700462504815438,1000)
                      then passend_6398700462504815438 = substr(Rpt_nr_oud,1,maxPassend_6398700462504815438);
                      else passend_6398700462504815438 = Rpt_nr_oud;
                    put passend_6398700462504815438 ~ @;
@@ -19980,7 +19980,7 @@ data _null_;
                    attrLengte_9079540650060306462=length(Status_van);
                    aantalLF_9079540650060306462 = countc(Status_van,'0A'x);
                    maxPassend_9079540650060306462=3-1-aantalLF_9079540650060306462;
-                   if attrLengte_9079540650060306462 > maxPassend_9079540650060306462
+                   if attrLengte_9079540650060306462 > max(maxPassend_9079540650060306462,1000)
                      then passend_9079540650060306462 = substr(Status_van,1,maxPassend_9079540650060306462);
                      else passend_9079540650060306462 = Status_van;
                    put passend_9079540650060306462 ~ @;
@@ -19991,7 +19991,7 @@ data _null_;
                    attrLengte_6104227251393262734=length(Statusgroep);
                    aantalLF_6104227251393262734 = countc(Statusgroep,'0A'x);
                    maxPassend_6104227251393262734=1-1-aantalLF_6104227251393262734;
-                   if attrLengte_6104227251393262734 > maxPassend_6104227251393262734
+                   if attrLengte_6104227251393262734 > max(maxPassend_6104227251393262734,1000)
                      then passend_6104227251393262734 = substr(Statusgroep,1,maxPassend_6104227251393262734);
                      else passend_6104227251393262734 = Statusgroep;
                    put passend_6104227251393262734 ~ @;
@@ -20002,7 +20002,7 @@ data _null_;
                    attrLengte_2859492518089918434=length(Status_naar);
                    aantalLF_2859492518089918434 = countc(Status_naar,'0A'x);
                    maxPassend_2859492518089918434=3-1-aantalLF_2859492518089918434;
-                   if attrLengte_2859492518089918434 > maxPassend_2859492518089918434
+                   if attrLengte_2859492518089918434 > max(maxPassend_2859492518089918434,1000)
                      then passend_2859492518089918434 = substr(Status_naar,1,maxPassend_2859492518089918434);
                      else passend_2859492518089918434 = Status_naar;
                    put passend_2859492518089918434 ~ @;
@@ -20013,7 +20013,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -20024,7 +20024,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20038,7 +20038,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20052,7 +20052,7 @@ data _null_;
                    attrLengte_2736054697416343873=length(Xps_cd);
                    aantalLF_2736054697416343873 = countc(Xps_cd,'0A'x);
                    maxPassend_2736054697416343873=10-1-aantalLF_2736054697416343873;
-                   if attrLengte_2736054697416343873 > maxPassend_2736054697416343873
+                   if attrLengte_2736054697416343873 > max(maxPassend_2736054697416343873,1000)
                      then passend_2736054697416343873 = substr(Xps_cd,1,maxPassend_2736054697416343873);
                      else passend_2736054697416343873 = Xps_cd;
                    put passend_2736054697416343873 ~ @;
@@ -20138,7 +20138,7 @@ data _null_;
                    attrLengte_7956994429245100397=length(Code);
                    aantalLF_7956994429245100397 = countc(Code,'0A'x);
                    maxPassend_7956994429245100397=50-1-aantalLF_7956994429245100397;
-                   if attrLengte_7956994429245100397 > maxPassend_7956994429245100397
+                   if attrLengte_7956994429245100397 > max(maxPassend_7956994429245100397,1000)
                      then passend_7956994429245100397 = substr(Code,1,maxPassend_7956994429245100397);
                      else passend_7956994429245100397 = Code;
                    put passend_7956994429245100397 ~ @;
@@ -20152,7 +20152,7 @@ data _null_;
                    attrLengte_4250420340675441405=length(Inhoud);
                    aantalLF_4250420340675441405 = countc(Inhoud,'0A'x);
                    maxPassend_4250420340675441405=255-1-aantalLF_4250420340675441405;
-                   if attrLengte_4250420340675441405 > maxPassend_4250420340675441405
+                   if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;
                    put passend_4250420340675441405 ~ @;
@@ -20163,7 +20163,7 @@ data _null_;
                    attrLengte_4385385912596099835=length(Toelichting);
                    aantalLF_4385385912596099835 = countc(Toelichting,'0A'x);
                    maxPassend_4385385912596099835=2048-1-aantalLF_4385385912596099835;
-                   if attrLengte_4385385912596099835 > maxPassend_4385385912596099835
+                   if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
                    put passend_4385385912596099835 ~ @;
@@ -20180,7 +20180,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20194,7 +20194,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20275,7 +20275,7 @@ data _null_;
                    attrLengte_3451443017000934866=length(Bsi_cd);
                    aantalLF_3451443017000934866 = countc(Bsi_cd,'0A'x);
                    maxPassend_3451443017000934866=7-1-aantalLF_3451443017000934866;
-                   if attrLengte_3451443017000934866 > maxPassend_3451443017000934866
+                   if attrLengte_3451443017000934866 > max(maxPassend_3451443017000934866,1000)
                      then passend_3451443017000934866 = substr(Bsi_cd,1,maxPassend_3451443017000934866);
                      else passend_3451443017000934866 = Bsi_cd;
                    put passend_3451443017000934866 ~ @;
@@ -20286,7 +20286,7 @@ data _null_;
                    attrLengte_8559432772166713383=length(Bsi_oms);
                    aantalLF_8559432772166713383 = countc(Bsi_oms,'0A'x);
                    maxPassend_8559432772166713383=100-1-aantalLF_8559432772166713383;
-                   if attrLengte_8559432772166713383 > maxPassend_8559432772166713383
+                   if attrLengte_8559432772166713383 > max(maxPassend_8559432772166713383,1000)
                      then passend_8559432772166713383 = substr(Bsi_oms,1,maxPassend_8559432772166713383);
                      else passend_8559432772166713383 = Bsi_oms;
                    put passend_8559432772166713383 ~ @;
@@ -20297,7 +20297,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20311,7 +20311,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20381,7 +20381,7 @@ data _null_;
                    attrLengte_4412363972584569639=length(Reactie_cd);
                    aantalLF_4412363972584569639 = countc(Reactie_cd,'0A'x);
                    maxPassend_4412363972584569639=3-1-aantalLF_4412363972584569639;
-                   if attrLengte_4412363972584569639 > maxPassend_4412363972584569639
+                   if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
                    put passend_4412363972584569639 ~ @;
@@ -20392,7 +20392,7 @@ data _null_;
                    attrLengte_392247235326241948=length(Reactie_oms);
                    aantalLF_392247235326241948 = countc(Reactie_oms,'0A'x);
                    maxPassend_392247235326241948=60-1-aantalLF_392247235326241948;
-                   if attrLengte_392247235326241948 > maxPassend_392247235326241948
+                   if attrLengte_392247235326241948 > max(maxPassend_392247235326241948,1000)
                      then passend_392247235326241948 = substr(Reactie_oms,1,maxPassend_392247235326241948);
                      else passend_392247235326241948 = Reactie_oms;
                    put passend_392247235326241948 ~ @;
@@ -20403,7 +20403,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20417,7 +20417,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20515,7 +20515,7 @@ data _null_;
                    attrLengte_3864349925788261245=length(Rol_cd);
                    aantalLF_3864349925788261245 = countc(Rol_cd,'0A'x);
                    maxPassend_3864349925788261245=3-1-aantalLF_3864349925788261245;
-                   if attrLengte_3864349925788261245 > maxPassend_3864349925788261245
+                   if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
                    put passend_3864349925788261245 ~ @;
@@ -20526,7 +20526,7 @@ data _null_;
                    attrLengte_292343333598675216=length(Rol_oms);
                    aantalLF_292343333598675216 = countc(Rol_oms,'0A'x);
                    maxPassend_292343333598675216=50-1-aantalLF_292343333598675216;
-                   if attrLengte_292343333598675216 > maxPassend_292343333598675216
+                   if attrLengte_292343333598675216 > max(maxPassend_292343333598675216,1000)
                      then passend_292343333598675216 = substr(Rol_oms,1,maxPassend_292343333598675216);
                      else passend_292343333598675216 = Rol_oms;
                    put passend_292343333598675216 ~ @;
@@ -20537,7 +20537,7 @@ data _null_;
                    attrLengte_8075008499931704538=length(Interne_rol);
                    aantalLF_8075008499931704538 = countc(Interne_rol,'0A'x);
                    maxPassend_8075008499931704538=1-1-aantalLF_8075008499931704538;
-                   if attrLengte_8075008499931704538 > maxPassend_8075008499931704538
+                   if attrLengte_8075008499931704538 > max(maxPassend_8075008499931704538,1000)
                      then passend_8075008499931704538 = substr(Interne_rol,1,maxPassend_8075008499931704538);
                      else passend_8075008499931704538 = Interne_rol;
                    put passend_8075008499931704538 ~ @;
@@ -20548,7 +20548,7 @@ data _null_;
                    attrLengte_5855131029356933992=length(Externe_rol);
                    aantalLF_5855131029356933992 = countc(Externe_rol,'0A'x);
                    maxPassend_5855131029356933992=1-1-aantalLF_5855131029356933992;
-                   if attrLengte_5855131029356933992 > maxPassend_5855131029356933992
+                   if attrLengte_5855131029356933992 > max(maxPassend_5855131029356933992,1000)
                      then passend_5855131029356933992 = substr(Externe_rol,1,maxPassend_5855131029356933992);
                      else passend_5855131029356933992 = Externe_rol;
                    put passend_5855131029356933992 ~ @;
@@ -20559,7 +20559,7 @@ data _null_;
                    attrLengte_752592000902709611=length(Organisatie_rol);
                    aantalLF_752592000902709611 = countc(Organisatie_rol,'0A'x);
                    maxPassend_752592000902709611=1-1-aantalLF_752592000902709611;
-                   if attrLengte_752592000902709611 > maxPassend_752592000902709611
+                   if attrLengte_752592000902709611 > max(maxPassend_752592000902709611,1000)
                      then passend_752592000902709611 = substr(Organisatie_rol,1,maxPassend_752592000902709611);
                      else passend_752592000902709611 = Organisatie_rol;
                    put passend_752592000902709611 ~ @;
@@ -20570,7 +20570,7 @@ data _null_;
                    attrLengte_1802135007604418486=length(Controller);
                    aantalLF_1802135007604418486 = countc(Controller,'0A'x);
                    maxPassend_1802135007604418486=1-1-aantalLF_1802135007604418486;
-                   if attrLengte_1802135007604418486 > maxPassend_1802135007604418486
+                   if attrLengte_1802135007604418486 > max(maxPassend_1802135007604418486,1000)
                      then passend_1802135007604418486 = substr(Controller,1,maxPassend_1802135007604418486);
                      else passend_1802135007604418486 = Controller;
                    put passend_1802135007604418486 ~ @;
@@ -20581,7 +20581,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20595,7 +20595,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20609,7 +20609,7 @@ data _null_;
                    attrLengte_6785800588360122194=length(Type_rol);
                    aantalLF_6785800588360122194 = countc(Type_rol,'0A'x);
                    maxPassend_6785800588360122194=30-1-aantalLF_6785800588360122194;
-                   if attrLengte_6785800588360122194 > maxPassend_6785800588360122194
+                   if attrLengte_6785800588360122194 > max(maxPassend_6785800588360122194,1000)
                      then passend_6785800588360122194 = substr(Type_rol,1,maxPassend_6785800588360122194);
                      else passend_6785800588360122194 = Type_rol;
                    put passend_6785800588360122194 ~ @;
@@ -20623,7 +20623,7 @@ data _null_;
                    attrLengte_1807973709382915987=length(Ed_rol_oms);
                    aantalLF_1807973709382915987 = countc(Ed_rol_oms,'0A'x);
                    maxPassend_1807973709382915987=50-1-aantalLF_1807973709382915987;
-                   if attrLengte_1807973709382915987 > maxPassend_1807973709382915987
+                   if attrLengte_1807973709382915987 > max(maxPassend_1807973709382915987,1000)
                      then passend_1807973709382915987 = substr(Ed_rol_oms,1,maxPassend_1807973709382915987);
                      else passend_1807973709382915987 = Ed_rol_oms;
                    put passend_1807973709382915987 ~ @;
@@ -20693,7 +20693,7 @@ data _null_;
                    attrLengte_3943580785683993491=length(Sbi_oms);
                    aantalLF_3943580785683993491 = countc(Sbi_oms,'0A'x);
                    maxPassend_3943580785683993491=500-1-aantalLF_3943580785683993491;
-                   if attrLengte_3943580785683993491 > maxPassend_3943580785683993491
+                   if attrLengte_3943580785683993491 > max(maxPassend_3943580785683993491,1000)
                      then passend_3943580785683993491 = substr(Sbi_oms,1,maxPassend_3943580785683993491);
                      else passend_3943580785683993491 = Sbi_oms;
                    put passend_3943580785683993491 ~ @;
@@ -20707,7 +20707,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20721,7 +20721,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20804,7 +20804,7 @@ data _null_;
                    attrLengte_1792820026946084444=length(Sts_cd);
                    aantalLF_1792820026946084444 = countc(Sts_cd,'0A'x);
                    maxPassend_1792820026946084444=3-1-aantalLF_1792820026946084444;
-                   if attrLengte_1792820026946084444 > maxPassend_1792820026946084444
+                   if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
                    put passend_1792820026946084444 ~ @;
@@ -20815,7 +20815,7 @@ data _null_;
                    attrLengte_7514770531092261719=length(Sts_oms);
                    aantalLF_7514770531092261719 = countc(Sts_oms,'0A'x);
                    maxPassend_7514770531092261719=50-1-aantalLF_7514770531092261719;
-                   if attrLengte_7514770531092261719 > maxPassend_7514770531092261719
+                   if attrLengte_7514770531092261719 > max(maxPassend_7514770531092261719,1000)
                      then passend_7514770531092261719 = substr(Sts_oms,1,maxPassend_7514770531092261719);
                      else passend_7514770531092261719 = Sts_oms;
                    put passend_7514770531092261719 ~ @;
@@ -20826,7 +20826,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -20837,7 +20837,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -20851,7 +20851,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -20865,7 +20865,7 @@ data _null_;
                    attrLengte_3738995019246665905=length(Sts_e_indienen);
                    aantalLF_3738995019246665905 = countc(Sts_e_indienen,'0A'x);
                    maxPassend_3738995019246665905=50-1-aantalLF_3738995019246665905;
-                   if attrLengte_3738995019246665905 > maxPassend_3738995019246665905
+                   if attrLengte_3738995019246665905 > max(maxPassend_3738995019246665905,1000)
                      then passend_3738995019246665905 = substr(Sts_e_indienen,1,maxPassend_3738995019246665905);
                      else passend_3738995019246665905 = Sts_e_indienen;
                    put passend_3738995019246665905 ~ @;
@@ -20876,7 +20876,7 @@ data _null_;
                    attrLengte_6709342567121400716=length(Eindstatus);
                    aantalLF_6709342567121400716 = countc(Eindstatus,'0A'x);
                    maxPassend_6709342567121400716=1-1-aantalLF_6709342567121400716;
-                   if attrLengte_6709342567121400716 > maxPassend_6709342567121400716
+                   if attrLengte_6709342567121400716 > max(maxPassend_6709342567121400716,1000)
                      then passend_6709342567121400716 = substr(Eindstatus,1,maxPassend_6709342567121400716);
                      else passend_6709342567121400716 = Eindstatus;
                    put passend_6709342567121400716 ~ @;
@@ -20887,7 +20887,7 @@ data _null_;
                    attrLengte_1680578028301391311=length(Sts_e_loket);
                    aantalLF_1680578028301391311 = countc(Sts_e_loket,'0A'x);
                    maxPassend_1680578028301391311=50-1-aantalLF_1680578028301391311;
-                   if attrLengte_1680578028301391311 > maxPassend_1680578028301391311
+                   if attrLengte_1680578028301391311 > max(maxPassend_1680578028301391311,1000)
                      then passend_1680578028301391311 = substr(Sts_e_loket,1,maxPassend_1680578028301391311);
                      else passend_1680578028301391311 = Sts_e_loket;
                    put passend_1680578028301391311 ~ @;
@@ -20962,7 +20962,7 @@ data _null_;
                    attrLengte_6930841630683810202=length(Van_status);
                    aantalLF_6930841630683810202 = countc(Van_status,'0A'x);
                    maxPassend_6930841630683810202=3-1-aantalLF_6930841630683810202;
-                   if attrLengte_6930841630683810202 > maxPassend_6930841630683810202
+                   if attrLengte_6930841630683810202 > max(maxPassend_6930841630683810202,1000)
                      then passend_6930841630683810202 = substr(Van_status,1,maxPassend_6930841630683810202);
                      else passend_6930841630683810202 = Van_status;
                    put passend_6930841630683810202 ~ @;
@@ -20973,7 +20973,7 @@ data _null_;
                    attrLengte_5154444358389234818=length(Naar_status);
                    aantalLF_5154444358389234818 = countc(Naar_status,'0A'x);
                    maxPassend_5154444358389234818=3-1-aantalLF_5154444358389234818;
-                   if attrLengte_5154444358389234818 > maxPassend_5154444358389234818
+                   if attrLengte_5154444358389234818 > max(maxPassend_5154444358389234818,1000)
                      then passend_5154444358389234818 = substr(Naar_status,1,maxPassend_5154444358389234818);
                      else passend_5154444358389234818 = Naar_status;
                    put passend_5154444358389234818 ~ @;
@@ -20984,7 +20984,7 @@ data _null_;
                    attrLengte_1782260468804165719=length(Ssg_cd);
                    aantalLF_1782260468804165719 = countc(Ssg_cd,'0A'x);
                    maxPassend_1782260468804165719=1-1-aantalLF_1782260468804165719;
-                   if attrLengte_1782260468804165719 > maxPassend_1782260468804165719
+                   if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
                    put passend_1782260468804165719 ~ @;
@@ -20995,7 +20995,7 @@ data _null_;
                    attrLengte_6311705118691231734=length(Cst_cd);
                    aantalLF_6311705118691231734 = countc(Cst_cd,'0A'x);
                    maxPassend_6311705118691231734=8-1-aantalLF_6311705118691231734;
-                   if attrLengte_6311705118691231734 > maxPassend_6311705118691231734
+                   if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
                    put passend_6311705118691231734 ~ @;
@@ -21006,7 +21006,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -21020,7 +21020,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -21085,7 +21085,7 @@ data _null_;
                    attrLengte_8215966990912033166=length(Fysieke_naam);
                    aantalLF_8215966990912033166 = countc(Fysieke_naam,'0A'x);
                    maxPassend_8215966990912033166=30-1-aantalLF_8215966990912033166;
-                   if attrLengte_8215966990912033166 > maxPassend_8215966990912033166
+                   if attrLengte_8215966990912033166 > max(maxPassend_8215966990912033166,1000)
                      then passend_8215966990912033166 = substr(Fysieke_naam,1,maxPassend_8215966990912033166);
                      else passend_8215966990912033166 = Fysieke_naam;
                    put passend_8215966990912033166 ~ @;
@@ -21096,7 +21096,7 @@ data _null_;
                    attrLengte_1568641964639052694=length(Waarde);
                    aantalLF_1568641964639052694 = countc(Waarde,'0A'x);
                    maxPassend_1568641964639052694=60-1-aantalLF_1568641964639052694;
-                   if attrLengte_1568641964639052694 > maxPassend_1568641964639052694
+                   if attrLengte_1568641964639052694 > max(maxPassend_1568641964639052694,1000)
                      then passend_1568641964639052694 = substr(Waarde,1,maxPassend_1568641964639052694);
                      else passend_1568641964639052694 = Waarde;
                    put passend_1568641964639052694 ~ @;
@@ -21189,7 +21189,7 @@ data _null_;
                    attrLengte_8215966990912033166=length(Fysieke_naam);
                    aantalLF_8215966990912033166 = countc(Fysieke_naam,'0A'x);
                    maxPassend_8215966990912033166=30-1-aantalLF_8215966990912033166;
-                   if attrLengte_8215966990912033166 > maxPassend_8215966990912033166
+                   if attrLengte_8215966990912033166 > max(maxPassend_8215966990912033166,1000)
                      then passend_8215966990912033166 = substr(Fysieke_naam,1,maxPassend_8215966990912033166);
                      else passend_8215966990912033166 = Fysieke_naam;
                    put passend_8215966990912033166 ~ @;
@@ -21209,7 +21209,7 @@ data _null_;
                    attrLengte_1020401250997552318=length(Verplicht_jn);
                    aantalLF_1020401250997552318 = countc(Verplicht_jn,'0A'x);
                    maxPassend_1020401250997552318=1-1-aantalLF_1020401250997552318;
-                   if attrLengte_1020401250997552318 > maxPassend_1020401250997552318
+                   if attrLengte_1020401250997552318 > max(maxPassend_1020401250997552318,1000)
                      then passend_1020401250997552318 = substr(Verplicht_jn,1,maxPassend_1020401250997552318);
                      else passend_1020401250997552318 = Verplicht_jn;
                    put passend_1020401250997552318 ~ @;
@@ -21220,7 +21220,7 @@ data _null_;
                    attrLengte_2040212189845707876=length(Prompt);
                    aantalLF_2040212189845707876 = countc(Prompt,'0A'x);
                    maxPassend_2040212189845707876=40-1-aantalLF_2040212189845707876;
-                   if attrLengte_2040212189845707876 > maxPassend_2040212189845707876
+                   if attrLengte_2040212189845707876 > max(maxPassend_2040212189845707876,1000)
                      then passend_2040212189845707876 = substr(Prompt,1,maxPassend_2040212189845707876);
                      else passend_2040212189845707876 = Prompt;
                    put passend_2040212189845707876 ~ @;
@@ -21237,7 +21237,7 @@ data _null_;
                    attrLengte_8662422097031864624=length(Default_waarde);
                    aantalLF_8662422097031864624 = countc(Default_waarde,'0A'x);
                    maxPassend_8662422097031864624=40-1-aantalLF_8662422097031864624;
-                   if attrLengte_8662422097031864624 > maxPassend_8662422097031864624
+                   if attrLengte_8662422097031864624 > max(maxPassend_8662422097031864624,1000)
                      then passend_8662422097031864624 = substr(Default_waarde,1,maxPassend_8662422097031864624);
                      else passend_8662422097031864624 = Default_waarde;
                    put passend_8662422097031864624 ~ @;
@@ -21248,7 +21248,7 @@ data _null_;
                    attrLengte_5028727268169430923=length(Helptekst);
                    aantalLF_5028727268169430923 = countc(Helptekst,'0A'x);
                    maxPassend_5028727268169430923=72-1-aantalLF_5028727268169430923;
-                   if attrLengte_5028727268169430923 > maxPassend_5028727268169430923
+                   if attrLengte_5028727268169430923 > max(maxPassend_5028727268169430923,1000)
                      then passend_5028727268169430923 = substr(Helptekst,1,maxPassend_5028727268169430923);
                      else passend_5028727268169430923 = Helptekst;
                    put passend_5028727268169430923 ~ @;
@@ -22734,7 +22734,7 @@ data _null_;
                    attrLengte_4354760923739228973=length(Creatie_user);
                    aantalLF_4354760923739228973 = countc(Creatie_user,'0A'x);
                    maxPassend_4354760923739228973=30-1-aantalLF_4354760923739228973;
-                   if attrLengte_4354760923739228973 > maxPassend_4354760923739228973
+                   if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
                    put passend_4354760923739228973 ~ @;
@@ -22808,7 +22808,7 @@ data _null_;
                    attrLengte_2333448560148118178=length(DROPDOWNLIST_01);
                    aantalLF_2333448560148118178 = countc(DROPDOWNLIST_01,'0A'x);
                    maxPassend_2333448560148118178=60-1-aantalLF_2333448560148118178;
-                   if attrLengte_2333448560148118178 > maxPassend_2333448560148118178
+                   if attrLengte_2333448560148118178 > max(maxPassend_2333448560148118178,1000)
                      then passend_2333448560148118178 = substr(DROPDOWNLIST_01,1,maxPassend_2333448560148118178);
                      else passend_2333448560148118178 = DROPDOWNLIST_01;
                    put passend_2333448560148118178 ~ @;
@@ -22819,7 +22819,7 @@ data _null_;
                    attrLengte_2333448560198451049=length(DROPDOWNLIST_02);
                    aantalLF_2333448560198451049 = countc(DROPDOWNLIST_02,'0A'x);
                    maxPassend_2333448560198451049=60-1-aantalLF_2333448560198451049;
-                   if attrLengte_2333448560198451049 > maxPassend_2333448560198451049
+                   if attrLengte_2333448560198451049 > max(maxPassend_2333448560198451049,1000)
                      then passend_2333448560198451049 = substr(DROPDOWNLIST_02,1,maxPassend_2333448560198451049);
                      else passend_2333448560198451049 = DROPDOWNLIST_02;
                    put passend_2333448560198451049 ~ @;
@@ -22830,7 +22830,7 @@ data _null_;
                    attrLengte_2333448560181673436=length(DROPDOWNLIST_03);
                    aantalLF_2333448560181673436 = countc(DROPDOWNLIST_03,'0A'x);
                    maxPassend_2333448560181673436=60-1-aantalLF_2333448560181673436;
-                   if attrLengte_2333448560181673436 > maxPassend_2333448560181673436
+                   if attrLengte_2333448560181673436 > max(maxPassend_2333448560181673436,1000)
                      then passend_2333448560181673436 = substr(DROPDOWNLIST_03,1,maxPassend_2333448560181673436);
                      else passend_2333448560181673436 = DROPDOWNLIST_03;
                    put passend_2333448560181673436 ~ @;
@@ -22841,7 +22841,7 @@ data _null_;
                    attrLengte_2333448560097785339=length(DROPDOWNLIST_04);
                    aantalLF_2333448560097785339 = countc(DROPDOWNLIST_04,'0A'x);
                    maxPassend_2333448560097785339=60-1-aantalLF_2333448560097785339;
-                   if attrLengte_2333448560097785339 > maxPassend_2333448560097785339
+                   if attrLengte_2333448560097785339 > max(maxPassend_2333448560097785339,1000)
                      then passend_2333448560097785339 = substr(DROPDOWNLIST_04,1,maxPassend_2333448560097785339);
                      else passend_2333448560097785339 = DROPDOWNLIST_04;
                    put passend_2333448560097785339 ~ @;
@@ -22852,7 +22852,7 @@ data _null_;
                    attrLengte_2333448560081007726=length(DROPDOWNLIST_05);
                    aantalLF_2333448560081007726 = countc(DROPDOWNLIST_05,'0A'x);
                    maxPassend_2333448560081007726=60-1-aantalLF_2333448560081007726;
-                   if attrLengte_2333448560081007726 > maxPassend_2333448560081007726
+                   if attrLengte_2333448560081007726 > max(maxPassend_2333448560081007726,1000)
                      then passend_2333448560081007726 = substr(DROPDOWNLIST_05,1,maxPassend_2333448560081007726);
                      else passend_2333448560081007726 = DROPDOWNLIST_05;
                    put passend_2333448560081007726 ~ @;
@@ -22863,7 +22863,7 @@ data _null_;
                    attrLengte_2333448560131340565=length(DROPDOWNLIST_06);
                    aantalLF_2333448560131340565 = countc(DROPDOWNLIST_06,'0A'x);
                    maxPassend_2333448560131340565=60-1-aantalLF_2333448560131340565;
-                   if attrLengte_2333448560131340565 > maxPassend_2333448560131340565
+                   if attrLengte_2333448560131340565 > max(maxPassend_2333448560131340565,1000)
                      then passend_2333448560131340565 = substr(DROPDOWNLIST_06,1,maxPassend_2333448560131340565);
                      else passend_2333448560131340565 = DROPDOWNLIST_06;
                    put passend_2333448560131340565 ~ @;
@@ -22874,7 +22874,7 @@ data _null_;
                    attrLengte_2333448560114562952=length(DROPDOWNLIST_07);
                    aantalLF_2333448560114562952 = countc(DROPDOWNLIST_07,'0A'x);
                    maxPassend_2333448560114562952=60-1-aantalLF_2333448560114562952;
-                   if attrLengte_2333448560114562952 > maxPassend_2333448560114562952
+                   if attrLengte_2333448560114562952 > max(maxPassend_2333448560114562952,1000)
                      then passend_2333448560114562952 = substr(DROPDOWNLIST_07,1,maxPassend_2333448560114562952);
                      else passend_2333448560114562952 = DROPDOWNLIST_07;
                    put passend_2333448560114562952 ~ @;
@@ -22885,7 +22885,7 @@ data _null_;
                    attrLengte_2333448560299116759=length(DROPDOWNLIST_08);
                    aantalLF_2333448560299116759 = countc(DROPDOWNLIST_08,'0A'x);
                    maxPassend_2333448560299116759=60-1-aantalLF_2333448560299116759;
-                   if attrLengte_2333448560299116759 > maxPassend_2333448560299116759
+                   if attrLengte_2333448560299116759 > max(maxPassend_2333448560299116759,1000)
                      then passend_2333448560299116759 = substr(DROPDOWNLIST_08,1,maxPassend_2333448560299116759);
                      else passend_2333448560299116759 = DROPDOWNLIST_08;
                    put passend_2333448560299116759 ~ @;
@@ -22896,7 +22896,7 @@ data _null_;
                    attrLengte_2333448560282339146=length(DROPDOWNLIST_09);
                    aantalLF_2333448560282339146 = countc(DROPDOWNLIST_09,'0A'x);
                    maxPassend_2333448560282339146=60-1-aantalLF_2333448560282339146;
-                   if attrLengte_2333448560282339146 > maxPassend_2333448560282339146
+                   if attrLengte_2333448560282339146 > max(maxPassend_2333448560282339146,1000)
                      then passend_2333448560282339146 = substr(DROPDOWNLIST_09,1,maxPassend_2333448560282339146);
                      else passend_2333448560282339146 = DROPDOWNLIST_09;
                    put passend_2333448560282339146 ~ @;
@@ -22907,7 +22907,7 @@ data _null_;
                    attrLengte_2333167070054935224=length(DROPDOWNLIST_10);
                    aantalLF_2333167070054935224 = countc(DROPDOWNLIST_10,'0A'x);
                    maxPassend_2333167070054935224=60-1-aantalLF_2333167070054935224;
-                   if attrLengte_2333167070054935224 > maxPassend_2333167070054935224
+                   if attrLengte_2333167070054935224 > max(maxPassend_2333167070054935224,1000)
                      then passend_2333167070054935224 = substr(DROPDOWNLIST_10,1,maxPassend_2333167070054935224);
                      else passend_2333167070054935224 = DROPDOWNLIST_10;
                    put passend_2333167070054935224 ~ @;
@@ -22918,7 +22918,7 @@ data _null_;
                    attrLengte_2333167070071712837=length(DROPDOWNLIST_11);
                    aantalLF_2333167070071712837 = countc(DROPDOWNLIST_11,'0A'x);
                    maxPassend_2333167070071712837=60-1-aantalLF_2333167070071712837;
-                   if attrLengte_2333167070071712837 > maxPassend_2333167070071712837
+                   if attrLengte_2333167070071712837 > max(maxPassend_2333167070071712837,1000)
                      then passend_2333167070071712837 = substr(DROPDOWNLIST_11,1,maxPassend_2333167070071712837);
                      else passend_2333167070071712837 = DROPDOWNLIST_11;
                    put passend_2333167070071712837 ~ @;
@@ -22929,7 +22929,7 @@ data _null_;
                    attrLengte_2333167070021379998=length(DROPDOWNLIST_12);
                    aantalLF_2333167070021379998 = countc(DROPDOWNLIST_12,'0A'x);
                    maxPassend_2333167070021379998=60-1-aantalLF_2333167070021379998;
-                   if attrLengte_2333167070021379998 > maxPassend_2333167070021379998
+                   if attrLengte_2333167070021379998 > max(maxPassend_2333167070021379998,1000)
                      then passend_2333167070021379998 = substr(DROPDOWNLIST_12,1,maxPassend_2333167070021379998);
                      else passend_2333167070021379998 = DROPDOWNLIST_12;
                    put passend_2333167070021379998 ~ @;
@@ -22940,7 +22940,7 @@ data _null_;
                    attrLengte_2333167070038157611=length(DROPDOWNLIST_13);
                    aantalLF_2333167070038157611 = countc(DROPDOWNLIST_13,'0A'x);
                    maxPassend_2333167070038157611=60-1-aantalLF_2333167070038157611;
-                   if attrLengte_2333167070038157611 > maxPassend_2333167070038157611
+                   if attrLengte_2333167070038157611 > max(maxPassend_2333167070038157611,1000)
                      then passend_2333167070038157611 = substr(DROPDOWNLIST_13,1,maxPassend_2333167070038157611);
                      else passend_2333167070038157611 = DROPDOWNLIST_13;
                    put passend_2333167070038157611 ~ @;
@@ -22951,7 +22951,7 @@ data _null_;
                    attrLengte_2333167070122045708=length(DROPDOWNLIST_14);
                    aantalLF_2333167070122045708 = countc(DROPDOWNLIST_14,'0A'x);
                    maxPassend_2333167070122045708=60-1-aantalLF_2333167070122045708;
-                   if attrLengte_2333167070122045708 > maxPassend_2333167070122045708
+                   if attrLengte_2333167070122045708 > max(maxPassend_2333167070122045708,1000)
                      then passend_2333167070122045708 = substr(DROPDOWNLIST_14,1,maxPassend_2333167070122045708);
                      else passend_2333167070122045708 = DROPDOWNLIST_14;
                    put passend_2333167070122045708 ~ @;
@@ -22962,7 +22962,7 @@ data _null_;
                    attrLengte_2333167070138823321=length(DROPDOWNLIST_15);
                    aantalLF_2333167070138823321 = countc(DROPDOWNLIST_15,'0A'x);
                    maxPassend_2333167070138823321=60-1-aantalLF_2333167070138823321;
-                   if attrLengte_2333167070138823321 > maxPassend_2333167070138823321
+                   if attrLengte_2333167070138823321 > max(maxPassend_2333167070138823321,1000)
                      then passend_2333167070138823321 = substr(DROPDOWNLIST_15,1,maxPassend_2333167070138823321);
                      else passend_2333167070138823321 = DROPDOWNLIST_15;
                    put passend_2333167070138823321 ~ @;
@@ -22973,7 +22973,7 @@ data _null_;
                    attrLengte_2333167070088490450=length(DROPDOWNLIST_16);
                    aantalLF_2333167070088490450 = countc(DROPDOWNLIST_16,'0A'x);
                    maxPassend_2333167070088490450=60-1-aantalLF_2333167070088490450;
-                   if attrLengte_2333167070088490450 > maxPassend_2333167070088490450
+                   if attrLengte_2333167070088490450 > max(maxPassend_2333167070088490450,1000)
                      then passend_2333167070088490450 = substr(DROPDOWNLIST_16,1,maxPassend_2333167070088490450);
                      else passend_2333167070088490450 = DROPDOWNLIST_16;
                    put passend_2333167070088490450 ~ @;
@@ -22984,7 +22984,7 @@ data _null_;
                    attrLengte_2333167070105268095=length(DROPDOWNLIST_17);
                    aantalLF_2333167070105268095 = countc(DROPDOWNLIST_17,'0A'x);
                    maxPassend_2333167070105268095=60-1-aantalLF_2333167070105268095;
-                   if attrLengte_2333167070105268095 > maxPassend_2333167070105268095
+                   if attrLengte_2333167070105268095 > max(maxPassend_2333167070105268095,1000)
                      then passend_2333167070105268095 = substr(DROPDOWNLIST_17,1,maxPassend_2333167070105268095);
                      else passend_2333167070105268095 = DROPDOWNLIST_17;
                    put passend_2333167070105268095 ~ @;
@@ -22995,7 +22995,7 @@ data _null_;
                    attrLengte_2333167070189156192=length(DROPDOWNLIST_18);
                    aantalLF_2333167070189156192 = countc(DROPDOWNLIST_18,'0A'x);
                    maxPassend_2333167070189156192=60-1-aantalLF_2333167070189156192;
-                   if attrLengte_2333167070189156192 > maxPassend_2333167070189156192
+                   if attrLengte_2333167070189156192 > max(maxPassend_2333167070189156192,1000)
                      then passend_2333167070189156192 = substr(DROPDOWNLIST_18,1,maxPassend_2333167070189156192);
                      else passend_2333167070189156192 = DROPDOWNLIST_18;
                    put passend_2333167070189156192 ~ @;
@@ -23006,7 +23006,7 @@ data _null_;
                    attrLengte_2333167070205933805=length(DROPDOWNLIST_19);
                    aantalLF_2333167070205933805 = countc(DROPDOWNLIST_19,'0A'x);
                    maxPassend_2333167070205933805=60-1-aantalLF_2333167070205933805;
-                   if attrLengte_2333167070205933805 > maxPassend_2333167070205933805
+                   if attrLengte_2333167070205933805 > max(maxPassend_2333167070205933805,1000)
                      then passend_2333167070205933805 = substr(DROPDOWNLIST_19,1,maxPassend_2333167070205933805);
                      else passend_2333167070205933805 = DROPDOWNLIST_19;
                    put passend_2333167070205933805 ~ @;
@@ -23017,7 +23017,7 @@ data _null_;
                    attrLengte_2334011536089746525=length(DROPDOWNLIST_20);
                    aantalLF_2334011536089746525 = countc(DROPDOWNLIST_20,'0A'x);
                    maxPassend_2334011536089746525=60-1-aantalLF_2334011536089746525;
-                   if attrLengte_2334011536089746525 > maxPassend_2334011536089746525
+                   if attrLengte_2334011536089746525 > max(maxPassend_2334011536089746525,1000)
                      then passend_2334011536089746525 = substr(DROPDOWNLIST_20,1,maxPassend_2334011536089746525);
                      else passend_2334011536089746525 = DROPDOWNLIST_20;
                    put passend_2334011536089746525 ~ @;
@@ -23028,7 +23028,7 @@ data _null_;
                    attrLengte_2334011536072968912=length(DROPDOWNLIST_21);
                    aantalLF_2334011536072968912 = countc(DROPDOWNLIST_21,'0A'x);
                    maxPassend_2334011536072968912=60-1-aantalLF_2334011536072968912;
-                   if attrLengte_2334011536072968912 > maxPassend_2334011536072968912
+                   if attrLengte_2334011536072968912 > max(maxPassend_2334011536072968912,1000)
                      then passend_2334011536072968912 = substr(DROPDOWNLIST_21,1,maxPassend_2334011536072968912);
                      else passend_2334011536072968912 = DROPDOWNLIST_21;
                    put passend_2334011536072968912 ~ @;
@@ -23039,7 +23039,7 @@ data _null_;
                    attrLengte_2334011536056191267=length(DROPDOWNLIST_22);
                    aantalLF_2334011536056191267 = countc(DROPDOWNLIST_22,'0A'x);
                    maxPassend_2334011536056191267=60-1-aantalLF_2334011536056191267;
-                   if attrLengte_2334011536056191267 > maxPassend_2334011536056191267
+                   if attrLengte_2334011536056191267 > max(maxPassend_2334011536056191267,1000)
                      then passend_2334011536056191267 = substr(DROPDOWNLIST_22,1,maxPassend_2334011536056191267);
                      else passend_2334011536056191267 = DROPDOWNLIST_22;
                    put passend_2334011536056191267 ~ @;
@@ -23050,7 +23050,7 @@ data _null_;
                    attrLengte_2334011536039413654=length(DROPDOWNLIST_23);
                    aantalLF_2334011536039413654 = countc(DROPDOWNLIST_23,'0A'x);
                    maxPassend_2334011536039413654=60-1-aantalLF_2334011536039413654;
-                   if attrLengte_2334011536039413654 > maxPassend_2334011536039413654
+                   if attrLengte_2334011536039413654 > max(maxPassend_2334011536039413654,1000)
                      then passend_2334011536039413654 = substr(DROPDOWNLIST_23,1,maxPassend_2334011536039413654);
                      else passend_2334011536039413654 = DROPDOWNLIST_23;
                    put passend_2334011536039413654 ~ @;
@@ -23061,7 +23061,7 @@ data _null_;
                    attrLengte_2334011536156856977=length(DROPDOWNLIST_24);
                    aantalLF_2334011536156856977 = countc(DROPDOWNLIST_24,'0A'x);
                    maxPassend_2334011536156856977=60-1-aantalLF_2334011536156856977;
-                   if attrLengte_2334011536156856977 > maxPassend_2334011536156856977
+                   if attrLengte_2334011536156856977 > max(maxPassend_2334011536156856977,1000)
                      then passend_2334011536156856977 = substr(DROPDOWNLIST_24,1,maxPassend_2334011536156856977);
                      else passend_2334011536156856977 = DROPDOWNLIST_24;
                    put passend_2334011536156856977 ~ @;
@@ -23072,7 +23072,7 @@ data _null_;
                    attrLengte_2334011536140079364=length(DROPDOWNLIST_25);
                    aantalLF_2334011536140079364 = countc(DROPDOWNLIST_25,'0A'x);
                    maxPassend_2334011536140079364=60-1-aantalLF_2334011536140079364;
-                   if attrLengte_2334011536140079364 > maxPassend_2334011536140079364
+                   if attrLengte_2334011536140079364 > max(maxPassend_2334011536140079364,1000)
                      then passend_2334011536140079364 = substr(DROPDOWNLIST_25,1,maxPassend_2334011536140079364);
                      else passend_2334011536140079364 = DROPDOWNLIST_25;
                    put passend_2334011536140079364 ~ @;
@@ -23083,7 +23083,7 @@ data _null_;
                    attrLengte_2334011536123301751=length(DROPDOWNLIST_26);
                    aantalLF_2334011536123301751 = countc(DROPDOWNLIST_26,'0A'x);
                    maxPassend_2334011536123301751=60-1-aantalLF_2334011536123301751;
-                   if attrLengte_2334011536123301751 > maxPassend_2334011536123301751
+                   if attrLengte_2334011536123301751 > max(maxPassend_2334011536123301751,1000)
                      then passend_2334011536123301751 = substr(DROPDOWNLIST_26,1,maxPassend_2334011536123301751);
                      else passend_2334011536123301751 = DROPDOWNLIST_26;
                    put passend_2334011536123301751 ~ @;
@@ -23094,7 +23094,7 @@ data _null_;
                    attrLengte_2334011536106524138=length(DROPDOWNLIST_27);
                    aantalLF_2334011536106524138 = countc(DROPDOWNLIST_27,'0A'x);
                    maxPassend_2334011536106524138=60-1-aantalLF_2334011536106524138;
-                   if attrLengte_2334011536106524138 > maxPassend_2334011536106524138
+                   if attrLengte_2334011536106524138 > max(maxPassend_2334011536106524138,1000)
                      then passend_2334011536106524138 = substr(DROPDOWNLIST_27,1,maxPassend_2334011536106524138);
                      else passend_2334011536106524138 = DROPDOWNLIST_27;
                    put passend_2334011536106524138 ~ @;
@@ -23105,7 +23105,7 @@ data _null_;
                    attrLengte_2334011535955525557=length(DROPDOWNLIST_28);
                    aantalLF_2334011535955525557 = countc(DROPDOWNLIST_28,'0A'x);
                    maxPassend_2334011535955525557=60-1-aantalLF_2334011535955525557;
-                   if attrLengte_2334011535955525557 > maxPassend_2334011535955525557
+                   if attrLengte_2334011535955525557 > max(maxPassend_2334011535955525557,1000)
                      then passend_2334011535955525557 = substr(DROPDOWNLIST_28,1,maxPassend_2334011535955525557);
                      else passend_2334011535955525557 = DROPDOWNLIST_28;
                    put passend_2334011535955525557 ~ @;
@@ -23116,7 +23116,7 @@ data _null_;
                    attrLengte_2334011535938747944=length(DROPDOWNLIST_29);
                    aantalLF_2334011535938747944 = countc(DROPDOWNLIST_29,'0A'x);
                    maxPassend_2334011535938747944=60-1-aantalLF_2334011535938747944;
-                   if attrLengte_2334011535938747944 > maxPassend_2334011535938747944
+                   if attrLengte_2334011535938747944 > max(maxPassend_2334011535938747944,1000)
                      then passend_2334011535938747944 = substr(DROPDOWNLIST_29,1,maxPassend_2334011535938747944);
                      else passend_2334011535938747944 = DROPDOWNLIST_29;
                    put passend_2334011535938747944 ~ @;
@@ -23127,7 +23127,7 @@ data _null_;
                    attrLengte_2333730048127321158=length(DROPDOWNLIST_30);
                    aantalLF_2333730048127321158 = countc(DROPDOWNLIST_30,'0A'x);
                    maxPassend_2333730048127321158=60-1-aantalLF_2333730048127321158;
-                   if attrLengte_2333730048127321158 > maxPassend_2333730048127321158
+                   if attrLengte_2333730048127321158 > max(maxPassend_2333730048127321158,1000)
                      then passend_2333730048127321158 = substr(DROPDOWNLIST_30,1,maxPassend_2333730048127321158);
                      else passend_2333730048127321158 = DROPDOWNLIST_30;
                    put passend_2333730048127321158 ~ @;
@@ -23138,7 +23138,7 @@ data _null_;
                    attrLengte_2333730048144098771=length(DROPDOWNLIST_31);
                    aantalLF_2333730048144098771 = countc(DROPDOWNLIST_31,'0A'x);
                    maxPassend_2333730048144098771=60-1-aantalLF_2333730048144098771;
-                   if attrLengte_2333730048144098771 > maxPassend_2333730048144098771
+                   if attrLengte_2333730048144098771 > max(maxPassend_2333730048144098771,1000)
                      then passend_2333730048144098771 = substr(DROPDOWNLIST_31,1,maxPassend_2333730048144098771);
                      else passend_2333730048144098771 = DROPDOWNLIST_31;
                    put passend_2333730048144098771 ~ @;
@@ -23149,7 +23149,7 @@ data _null_;
                    attrLengte_2333730048160876416=length(DROPDOWNLIST_32);
                    aantalLF_2333730048160876416 = countc(DROPDOWNLIST_32,'0A'x);
                    maxPassend_2333730048160876416=60-1-aantalLF_2333730048160876416;
-                   if attrLengte_2333730048160876416 > maxPassend_2333730048160876416
+                   if attrLengte_2333730048160876416 > max(maxPassend_2333730048160876416,1000)
                      then passend_2333730048160876416 = substr(DROPDOWNLIST_32,1,maxPassend_2333730048160876416);
                      else passend_2333730048160876416 = DROPDOWNLIST_32;
                    put passend_2333730048160876416 ~ @;
@@ -23160,7 +23160,7 @@ data _null_;
                    attrLengte_2333730048177654029=length(DROPDOWNLIST_33);
                    aantalLF_2333730048177654029 = countc(DROPDOWNLIST_33,'0A'x);
                    maxPassend_2333730048177654029=60-1-aantalLF_2333730048177654029;
-                   if attrLengte_2333730048177654029 > maxPassend_2333730048177654029
+                   if attrLengte_2333730048177654029 > max(maxPassend_2333730048177654029,1000)
                      then passend_2333730048177654029 = substr(DROPDOWNLIST_33,1,maxPassend_2333730048177654029);
                      else passend_2333730048177654029 = DROPDOWNLIST_33;
                    put passend_2333730048177654029 ~ @;
@@ -23171,7 +23171,7 @@ data _null_;
                    attrLengte_2333730048194431642=length(DROPDOWNLIST_34);
                    aantalLF_2333730048194431642 = countc(DROPDOWNLIST_34,'0A'x);
                    maxPassend_2333730048194431642=60-1-aantalLF_2333730048194431642;
-                   if attrLengte_2333730048194431642 > maxPassend_2333730048194431642
+                   if attrLengte_2333730048194431642 > max(maxPassend_2333730048194431642,1000)
                      then passend_2333730048194431642 = substr(DROPDOWNLIST_34,1,maxPassend_2333730048194431642);
                      else passend_2333730048194431642 = DROPDOWNLIST_34;
                    put passend_2333730048194431642 ~ @;
@@ -23182,7 +23182,7 @@ data _null_;
                    attrLengte_2333730048211209255=length(DROPDOWNLIST_35);
                    aantalLF_2333730048211209255 = countc(DROPDOWNLIST_35,'0A'x);
                    maxPassend_2333730048211209255=60-1-aantalLF_2333730048211209255;
-                   if attrLengte_2333730048211209255 > maxPassend_2333730048211209255
+                   if attrLengte_2333730048211209255 > max(maxPassend_2333730048211209255,1000)
                      then passend_2333730048211209255 = substr(DROPDOWNLIST_35,1,maxPassend_2333730048211209255);
                      else passend_2333730048211209255 = DROPDOWNLIST_35;
                    put passend_2333730048211209255 ~ @;
@@ -23193,7 +23193,7 @@ data _null_;
                    attrLengte_2333730048227986868=length(DROPDOWNLIST_36);
                    aantalLF_2333730048227986868 = countc(DROPDOWNLIST_36,'0A'x);
                    maxPassend_2333730048227986868=60-1-aantalLF_2333730048227986868;
-                   if attrLengte_2333730048227986868 > maxPassend_2333730048227986868
+                   if attrLengte_2333730048227986868 > max(maxPassend_2333730048227986868,1000)
                      then passend_2333730048227986868 = substr(DROPDOWNLIST_36,1,maxPassend_2333730048227986868);
                      else passend_2333730048227986868 = DROPDOWNLIST_36;
                    put passend_2333730048227986868 ~ @;
@@ -23204,7 +23204,7 @@ data _null_;
                    attrLengte_2333730048244764481=length(DROPDOWNLIST_37);
                    aantalLF_2333730048244764481 = countc(DROPDOWNLIST_37,'0A'x);
                    maxPassend_2333730048244764481=60-1-aantalLF_2333730048244764481;
-                   if attrLengte_2333730048244764481 > maxPassend_2333730048244764481
+                   if attrLengte_2333730048244764481 > max(maxPassend_2333730048244764481,1000)
                      then passend_2333730048244764481 = substr(DROPDOWNLIST_37,1,maxPassend_2333730048244764481);
                      else passend_2333730048244764481 = DROPDOWNLIST_37;
                    put passend_2333730048244764481 ~ @;
@@ -23215,7 +23215,7 @@ data _null_;
                    attrLengte_2333730047993100222=length(DROPDOWNLIST_38);
                    aantalLF_2333730047993100222 = countc(DROPDOWNLIST_38,'0A'x);
                    maxPassend_2333730047993100222=60-1-aantalLF_2333730047993100222;
-                   if attrLengte_2333730047993100222 > maxPassend_2333730047993100222
+                   if attrLengte_2333730047993100222 > max(maxPassend_2333730047993100222,1000)
                      then passend_2333730047993100222 = substr(DROPDOWNLIST_38,1,maxPassend_2333730047993100222);
                      else passend_2333730047993100222 = DROPDOWNLIST_38;
                    put passend_2333730047993100222 ~ @;
@@ -23226,7 +23226,7 @@ data _null_;
                    attrLengte_2333730048009877835=length(DROPDOWNLIST_39);
                    aantalLF_2333730048009877835 = countc(DROPDOWNLIST_39,'0A'x);
                    maxPassend_2333730048009877835=60-1-aantalLF_2333730048009877835;
-                   if attrLengte_2333730048009877835 > maxPassend_2333730048009877835
+                   if attrLengte_2333730048009877835 > max(maxPassend_2333730048009877835,1000)
                      then passend_2333730048009877835 = substr(DROPDOWNLIST_39,1,maxPassend_2333730048009877835);
                      else passend_2333730048009877835 = DROPDOWNLIST_39;
                    put passend_2333730048009877835 ~ @;
@@ -23237,7 +23237,7 @@ data _null_;
                    attrLengte_2334574513625248651=length(DROPDOWNLIST_40);
                    aantalLF_2334574513625248651 = countc(DROPDOWNLIST_40,'0A'x);
                    maxPassend_2334574513625248651=60-1-aantalLF_2334574513625248651;
-                   if attrLengte_2334574513625248651 > maxPassend_2334574513625248651
+                   if attrLengte_2334574513625248651 > max(maxPassend_2334574513625248651,1000)
                      then passend_2334574513625248651 = substr(DROPDOWNLIST_40,1,maxPassend_2334574513625248651);
                      else passend_2334574513625248651 = DROPDOWNLIST_40;
                    put passend_2334574513625248651 ~ @;
@@ -23368,7 +23368,7 @@ data _null_;
                    attrLengte_4198460558916153339=length(JA_NEE_01);
                    aantalLF_4198460558916153339 = countc(JA_NEE_01,'0A'x);
                    maxPassend_4198460558916153339=1-1-aantalLF_4198460558916153339;
-                   if attrLengte_4198460558916153339 > maxPassend_4198460558916153339
+                   if attrLengte_4198460558916153339 > max(maxPassend_4198460558916153339,1000)
                      then passend_4198460558916153339 = substr(JA_NEE_01,1,maxPassend_4198460558916153339);
                      else passend_4198460558916153339 = JA_NEE_01;
                    put passend_4198460558916153339 ~ @;
@@ -23379,7 +23379,7 @@ data _null_;
                    attrLengte_4198460558865820468=length(JA_NEE_02);
                    aantalLF_4198460558865820468 = countc(JA_NEE_02,'0A'x);
                    maxPassend_4198460558865820468=1-1-aantalLF_4198460558865820468;
-                   if attrLengte_4198460558865820468 > maxPassend_4198460558865820468
+                   if attrLengte_4198460558865820468 > max(maxPassend_4198460558865820468,1000)
                      then passend_4198460558865820468 = substr(JA_NEE_02,1,maxPassend_4198460558865820468);
                      else passend_4198460558865820468 = JA_NEE_02;
                    put passend_4198460558865820468 ~ @;
@@ -23390,7 +23390,7 @@ data _null_;
                    attrLengte_4198460558882598085=length(JA_NEE_03);
                    aantalLF_4198460558882598085 = countc(JA_NEE_03,'0A'x);
                    maxPassend_4198460558882598085=1-1-aantalLF_4198460558882598085;
-                   if attrLengte_4198460558882598085 > maxPassend_4198460558882598085
+                   if attrLengte_4198460558882598085 > max(maxPassend_4198460558882598085,1000)
                      then passend_4198460558882598085 = substr(JA_NEE_03,1,maxPassend_4198460558882598085);
                      else passend_4198460558882598085 = JA_NEE_03;
                    put passend_4198460558882598085 ~ @;
@@ -23401,7 +23401,7 @@ data _null_;
                    attrLengte_4198460558966486182=length(JA_NEE_04);
                    aantalLF_4198460558966486182 = countc(JA_NEE_04,'0A'x);
                    maxPassend_4198460558966486182=1-1-aantalLF_4198460558966486182;
-                   if attrLengte_4198460558966486182 > maxPassend_4198460558966486182
+                   if attrLengte_4198460558966486182 > max(maxPassend_4198460558966486182,1000)
                      then passend_4198460558966486182 = substr(JA_NEE_04,1,maxPassend_4198460558966486182);
                      else passend_4198460558966486182 = JA_NEE_04;
                    put passend_4198460558966486182 ~ @;
@@ -23412,7 +23412,7 @@ data _null_;
                    attrLengte_4198460558983263799=length(JA_NEE_05);
                    aantalLF_4198460558983263799 = countc(JA_NEE_05,'0A'x);
                    maxPassend_4198460558983263799=1-1-aantalLF_4198460558983263799;
-                   if attrLengte_4198460558983263799 > maxPassend_4198460558983263799
+                   if attrLengte_4198460558983263799 > max(maxPassend_4198460558983263799,1000)
                      then passend_4198460558983263799 = substr(JA_NEE_05,1,maxPassend_4198460558983263799);
                      else passend_4198460558983263799 = JA_NEE_05;
                    put passend_4198460558983263799 ~ @;
@@ -23423,7 +23423,7 @@ data _null_;
                    attrLengte_4198460558932930960=length(JA_NEE_06);
                    aantalLF_4198460558932930960 = countc(JA_NEE_06,'0A'x);
                    maxPassend_4198460558932930960=1-1-aantalLF_4198460558932930960;
-                   if attrLengte_4198460558932930960 > maxPassend_4198460558932930960
+                   if attrLengte_4198460558932930960 > max(maxPassend_4198460558932930960,1000)
                      then passend_4198460558932930960 = substr(JA_NEE_06,1,maxPassend_4198460558932930960);
                      else passend_4198460558932930960 = JA_NEE_06;
                    put passend_4198460558932930960 ~ @;
@@ -23434,7 +23434,7 @@ data _null_;
                    attrLengte_4198460558949708561=length(JA_NEE_07);
                    aantalLF_4198460558949708561 = countc(JA_NEE_07,'0A'x);
                    maxPassend_4198460558949708561=1-1-aantalLF_4198460558949708561;
-                   if attrLengte_4198460558949708561 > maxPassend_4198460558949708561
+                   if attrLengte_4198460558949708561 > max(maxPassend_4198460558949708561,1000)
                      then passend_4198460558949708561 = substr(JA_NEE_07,1,maxPassend_4198460558949708561);
                      else passend_4198460558949708561 = JA_NEE_07;
                    put passend_4198460558949708561 ~ @;
@@ -23445,7 +23445,7 @@ data _null_;
                    attrLengte_4198460558765154754=length(JA_NEE_08);
                    aantalLF_4198460558765154754 = countc(JA_NEE_08,'0A'x);
                    maxPassend_4198460558765154754=1-1-aantalLF_4198460558765154754;
-                   if attrLengte_4198460558765154754 > maxPassend_4198460558765154754
+                   if attrLengte_4198460558765154754 > max(maxPassend_4198460558765154754,1000)
                      then passend_4198460558765154754 = substr(JA_NEE_08,1,maxPassend_4198460558765154754);
                      else passend_4198460558765154754 = JA_NEE_08;
                    put passend_4198460558765154754 ~ @;
@@ -23456,7 +23456,7 @@ data _null_;
                    attrLengte_4198460558781932371=length(JA_NEE_09);
                    aantalLF_4198460558781932371 = countc(JA_NEE_09,'0A'x);
                    maxPassend_4198460558781932371=1-1-aantalLF_4198460558781932371;
-                   if attrLengte_4198460558781932371 > maxPassend_4198460558781932371
+                   if attrLengte_4198460558781932371 > max(maxPassend_4198460558781932371,1000)
                      then passend_4198460558781932371 = substr(JA_NEE_09,1,maxPassend_4198460558781932371);
                      else passend_4198460558781932371 = JA_NEE_09;
                    put passend_4198460558781932371 ~ @;
@@ -23467,7 +23467,7 @@ data _null_;
                    attrLengte_4198742046861801057=length(JA_NEE_10);
                    aantalLF_4198742046861801057 = countc(JA_NEE_10,'0A'x);
                    maxPassend_4198742046861801057=1-1-aantalLF_4198742046861801057;
-                   if attrLengte_4198742046861801057 > maxPassend_4198742046861801057
+                   if attrLengte_4198742046861801057 > max(maxPassend_4198742046861801057,1000)
                      then passend_4198742046861801057 = substr(JA_NEE_10,1,maxPassend_4198742046861801057);
                      else passend_4198742046861801057 = JA_NEE_10;
                    put passend_4198742046861801057 ~ @;
@@ -23478,7 +23478,7 @@ data _null_;
                    attrLengte_4198742046845023456=length(JA_NEE_11);
                    aantalLF_4198742046845023456 = countc(JA_NEE_11,'0A'x);
                    maxPassend_4198742046845023456=1-1-aantalLF_4198742046845023456;
-                   if attrLengte_4198742046845023456 > maxPassend_4198742046845023456
+                   if attrLengte_4198742046845023456 > max(maxPassend_4198742046845023456,1000)
                      then passend_4198742046845023456 = substr(JA_NEE_11,1,maxPassend_4198742046845023456);
                      else passend_4198742046845023456 = JA_NEE_11;
                    put passend_4198742046845023456 ~ @;
@@ -23489,7 +23489,7 @@ data _null_;
                    attrLengte_4198742046895356295=length(JA_NEE_12);
                    aantalLF_4198742046895356295 = countc(JA_NEE_12,'0A'x);
                    maxPassend_4198742046895356295=1-1-aantalLF_4198742046895356295;
-                   if attrLengte_4198742046895356295 > maxPassend_4198742046895356295
+                   if attrLengte_4198742046895356295 > max(maxPassend_4198742046895356295,1000)
                      then passend_4198742046895356295 = substr(JA_NEE_12,1,maxPassend_4198742046895356295);
                      else passend_4198742046895356295 = JA_NEE_12;
                    put passend_4198742046895356295 ~ @;
@@ -23500,7 +23500,7 @@ data _null_;
                    attrLengte_4198742046878578678=length(JA_NEE_13);
                    aantalLF_4198742046878578678 = countc(JA_NEE_13,'0A'x);
                    maxPassend_4198742046878578678=1-1-aantalLF_4198742046878578678;
-                   if attrLengte_4198742046878578678 > maxPassend_4198742046878578678
+                   if attrLengte_4198742046878578678 > max(maxPassend_4198742046878578678,1000)
                      then passend_4198742046878578678 = substr(JA_NEE_13,1,maxPassend_4198742046878578678);
                      else passend_4198742046878578678 = JA_NEE_13;
                    put passend_4198742046878578678 ~ @;
@@ -23511,7 +23511,7 @@ data _null_;
                    attrLengte_4198742046794690581=length(JA_NEE_14);
                    aantalLF_4198742046794690581 = countc(JA_NEE_14,'0A'x);
                    maxPassend_4198742046794690581=1-1-aantalLF_4198742046794690581;
-                   if attrLengte_4198742046794690581 > maxPassend_4198742046794690581
+                   if attrLengte_4198742046794690581 > max(maxPassend_4198742046794690581,1000)
                      then passend_4198742046794690581 = substr(JA_NEE_14,1,maxPassend_4198742046794690581);
                      else passend_4198742046794690581 = JA_NEE_14;
                    put passend_4198742046794690581 ~ @;
@@ -23522,7 +23522,7 @@ data _null_;
                    attrLengte_4198742046777912964=length(JA_NEE_15);
                    aantalLF_4198742046777912964 = countc(JA_NEE_15,'0A'x);
                    maxPassend_4198742046777912964=1-1-aantalLF_4198742046777912964;
-                   if attrLengte_4198742046777912964 > maxPassend_4198742046777912964
+                   if attrLengte_4198742046777912964 > max(maxPassend_4198742046777912964,1000)
                      then passend_4198742046777912964 = substr(JA_NEE_15,1,maxPassend_4198742046777912964);
                      else passend_4198742046777912964 = JA_NEE_15;
                    put passend_4198742046777912964 ~ @;
@@ -23533,7 +23533,7 @@ data _null_;
                    attrLengte_4198742046828245835=length(JA_NEE_16);
                    aantalLF_4198742046828245835 = countc(JA_NEE_16,'0A'x);
                    maxPassend_4198742046828245835=1-1-aantalLF_4198742046828245835;
-                   if attrLengte_4198742046828245835 > maxPassend_4198742046828245835
+                   if attrLengte_4198742046828245835 > max(maxPassend_4198742046828245835,1000)
                      then passend_4198742046828245835 = substr(JA_NEE_16,1,maxPassend_4198742046828245835);
                      else passend_4198742046828245835 = JA_NEE_16;
                    put passend_4198742046828245835 ~ @;
@@ -23544,7 +23544,7 @@ data _null_;
                    attrLengte_4198742046811468218=length(JA_NEE_17);
                    aantalLF_4198742046811468218 = countc(JA_NEE_17,'0A'x);
                    maxPassend_4198742046811468218=1-1-aantalLF_4198742046811468218;
-                   if attrLengte_4198742046811468218 > maxPassend_4198742046811468218
+                   if attrLengte_4198742046811468218 > max(maxPassend_4198742046811468218,1000)
                      then passend_4198742046811468218 = substr(JA_NEE_17,1,maxPassend_4198742046811468218);
                      else passend_4198742046811468218 = JA_NEE_17;
                    put passend_4198742046811468218 ~ @;
@@ -23555,7 +23555,7 @@ data _null_;
                    attrLengte_4198742046727580121=length(JA_NEE_18);
                    aantalLF_4198742046727580121 = countc(JA_NEE_18,'0A'x);
                    maxPassend_4198742046727580121=1-1-aantalLF_4198742046727580121;
-                   if attrLengte_4198742046727580121 > maxPassend_4198742046727580121
+                   if attrLengte_4198742046727580121 > max(maxPassend_4198742046727580121,1000)
                      then passend_4198742046727580121 = substr(JA_NEE_18,1,maxPassend_4198742046727580121);
                      else passend_4198742046727580121 = JA_NEE_18;
                    put passend_4198742046727580121 ~ @;
@@ -23566,7 +23566,7 @@ data _null_;
                    attrLengte_4198742046710802488=length(JA_NEE_19);
                    aantalLF_4198742046710802488 = countc(JA_NEE_19,'0A'x);
                    maxPassend_4198742046710802488=1-1-aantalLF_4198742046710802488;
-                   if attrLengte_4198742046710802488 > maxPassend_4198742046710802488
+                   if attrLengte_4198742046710802488 > max(maxPassend_4198742046710802488,1000)
                      then passend_4198742046710802488 = substr(JA_NEE_19,1,maxPassend_4198742046710802488);
                      else passend_4198742046710802488 = JA_NEE_19;
                    put passend_4198742046710802488 ~ @;
@@ -23577,7 +23577,7 @@ data _null_;
                    attrLengte_4199023534287342620=length(JA_NEE_20);
                    aantalLF_4199023534287342620 = countc(JA_NEE_20,'0A'x);
                    maxPassend_4199023534287342620=1-1-aantalLF_4199023534287342620;
-                   if attrLengte_4199023534287342620 > maxPassend_4199023534287342620
+                   if attrLengte_4199023534287342620 > max(maxPassend_4199023534287342620,1000)
                      then passend_4199023534287342620 = substr(JA_NEE_20,1,maxPassend_4199023534287342620);
                      else passend_4199023534287342620 = JA_NEE_20;
                    put passend_4199023534287342620 ~ @;
@@ -23588,7 +23588,7 @@ data _null_;
                    attrLengte_4199023534304120237=length(JA_NEE_21);
                    aantalLF_4199023534304120237 = countc(JA_NEE_21,'0A'x);
                    maxPassend_4199023534304120237=1-1-aantalLF_4199023534304120237;
-                   if attrLengte_4199023534304120237 > maxPassend_4199023534304120237
+                   if attrLengte_4199023534304120237 > max(maxPassend_4199023534304120237,1000)
                      then passend_4199023534304120237 = substr(JA_NEE_21,1,maxPassend_4199023534304120237);
                      else passend_4199023534304120237 = JA_NEE_21;
                    put passend_4199023534304120237 ~ @;
@@ -23599,7 +23599,7 @@ data _null_;
                    attrLengte_4199023534320897842=length(JA_NEE_22);
                    aantalLF_4199023534320897842 = countc(JA_NEE_22,'0A'x);
                    maxPassend_4199023534320897842=1-1-aantalLF_4199023534320897842;
-                   if attrLengte_4199023534320897842 > maxPassend_4199023534320897842
+                   if attrLengte_4199023534320897842 > max(maxPassend_4199023534320897842,1000)
                      then passend_4199023534320897842 = substr(JA_NEE_22,1,maxPassend_4199023534320897842);
                      else passend_4199023534320897842 = JA_NEE_22;
                    put passend_4199023534320897842 ~ @;
@@ -23610,7 +23610,7 @@ data _null_;
                    attrLengte_4199023534337675459=length(JA_NEE_23);
                    aantalLF_4199023534337675459 = countc(JA_NEE_23,'0A'x);
                    maxPassend_4199023534337675459=1-1-aantalLF_4199023534337675459;
-                   if attrLengte_4199023534337675459 > maxPassend_4199023534337675459
+                   if attrLengte_4199023534337675459 > max(maxPassend_4199023534337675459,1000)
                      then passend_4199023534337675459 = substr(JA_NEE_23,1,maxPassend_4199023534337675459);
                      else passend_4199023534337675459 = JA_NEE_23;
                    put passend_4199023534337675459 ~ @;
@@ -23621,7 +23621,7 @@ data _null_;
                    attrLengte_4199023534354453080=length(JA_NEE_24);
                    aantalLF_4199023534354453080 = countc(JA_NEE_24,'0A'x);
                    maxPassend_4199023534354453080=1-1-aantalLF_4199023534354453080;
-                   if attrLengte_4199023534354453080 > maxPassend_4199023534354453080
+                   if attrLengte_4199023534354453080 > max(maxPassend_4199023534354453080,1000)
                      then passend_4199023534354453080 = substr(JA_NEE_24,1,maxPassend_4199023534354453080);
                      else passend_4199023534354453080 = JA_NEE_24;
                    put passend_4199023534354453080 ~ @;
@@ -23632,7 +23632,7 @@ data _null_;
                    attrLengte_4199023534371230713=length(JA_NEE_25);
                    aantalLF_4199023534371230713 = countc(JA_NEE_25,'0A'x);
                    maxPassend_4199023534371230713=1-1-aantalLF_4199023534371230713;
-                   if attrLengte_4199023534371230713 > maxPassend_4199023534371230713
+                   if attrLengte_4199023534371230713 > max(maxPassend_4199023534371230713,1000)
                      then passend_4199023534371230713 = substr(JA_NEE_25,1,maxPassend_4199023534371230713);
                      else passend_4199023534371230713 = JA_NEE_25;
                    put passend_4199023534371230713 ~ @;
@@ -23643,7 +23643,7 @@ data _null_;
                    attrLengte_4199023534388008334=length(JA_NEE_26);
                    aantalLF_4199023534388008334 = countc(JA_NEE_26,'0A'x);
                    maxPassend_4199023534388008334=1-1-aantalLF_4199023534388008334;
-                   if attrLengte_4199023534388008334 > maxPassend_4199023534388008334
+                   if attrLengte_4199023534388008334 > max(maxPassend_4199023534388008334,1000)
                      then passend_4199023534388008334 = substr(JA_NEE_26,1,maxPassend_4199023534388008334);
                      else passend_4199023534388008334 = JA_NEE_26;
                    put passend_4199023534388008334 ~ @;
@@ -23654,7 +23654,7 @@ data _null_;
                    attrLengte_4199023534404785951=length(JA_NEE_27);
                    aantalLF_4199023534404785951 = countc(JA_NEE_27,'0A'x);
                    maxPassend_4199023534404785951=1-1-aantalLF_4199023534404785951;
-                   if attrLengte_4199023534404785951 > maxPassend_4199023534404785951
+                   if attrLengte_4199023534404785951 > max(maxPassend_4199023534404785951,1000)
                      then passend_4199023534404785951 = substr(JA_NEE_27,1,maxPassend_4199023534404785951);
                      else passend_4199023534404785951 = JA_NEE_27;
                    put passend_4199023534404785951 ~ @;
@@ -23665,7 +23665,7 @@ data _null_;
                    attrLengte_4199023534421563556=length(JA_NEE_28);
                    aantalLF_4199023534421563556 = countc(JA_NEE_28,'0A'x);
                    maxPassend_4199023534421563556=1-1-aantalLF_4199023534421563556;
-                   if attrLengte_4199023534421563556 > maxPassend_4199023534421563556
+                   if attrLengte_4199023534421563556 > max(maxPassend_4199023534421563556,1000)
                      then passend_4199023534421563556 = substr(JA_NEE_28,1,maxPassend_4199023534421563556);
                      else passend_4199023534421563556 = JA_NEE_28;
                    put passend_4199023534421563556 ~ @;
@@ -23676,7 +23676,7 @@ data _null_;
                    attrLengte_4199023534438341173=length(JA_NEE_29);
                    aantalLF_4199023534438341173 = countc(JA_NEE_29,'0A'x);
                    maxPassend_4199023534438341173=1-1-aantalLF_4199023534438341173;
-                   if attrLengte_4199023534438341173 > maxPassend_4199023534438341173
+                   if attrLengte_4199023534438341173 > max(maxPassend_4199023534438341173,1000)
                      then passend_4199023534438341173 = substr(JA_NEE_29,1,maxPassend_4199023534438341173);
                      else passend_4199023534438341173 = JA_NEE_29;
                    put passend_4199023534438341173 ~ @;
@@ -23687,7 +23687,7 @@ data _null_;
                    attrLengte_4199305024397303187=length(JA_NEE_30);
                    aantalLF_4199305024397303187 = countc(JA_NEE_30,'0A'x);
                    maxPassend_4199305024397303187=1-1-aantalLF_4199305024397303187;
-                   if attrLengte_4199305024397303187 > maxPassend_4199305024397303187
+                   if attrLengte_4199305024397303187 > max(maxPassend_4199305024397303187,1000)
                      then passend_4199305024397303187 = substr(JA_NEE_30,1,maxPassend_4199305024397303187);
                      else passend_4199305024397303187 = JA_NEE_30;
                    put passend_4199305024397303187 ~ @;
@@ -23698,7 +23698,7 @@ data _null_;
                    attrLengte_7667791472180487256=length(JA_NEE_NVT_01);
                    aantalLF_7667791472180487256 = countc(JA_NEE_NVT_01,'0A'x);
                    maxPassend_7667791472180487256=1-1-aantalLF_7667791472180487256;
-                   if attrLengte_7667791472180487256 > maxPassend_7667791472180487256
+                   if attrLengte_7667791472180487256 > max(maxPassend_7667791472180487256,1000)
                      then passend_7667791472180487256 = substr(JA_NEE_NVT_01,1,maxPassend_7667791472180487256);
                      else passend_7667791472180487256 = JA_NEE_NVT_01;
                    put passend_7667791472180487256 ~ @;
@@ -23709,7 +23709,7 @@ data _null_;
                    attrLengte_7667791472230820127=length(JA_NEE_NVT_02);
                    aantalLF_7667791472230820127 = countc(JA_NEE_NVT_02,'0A'x);
                    maxPassend_7667791472230820127=1-1-aantalLF_7667791472230820127;
-                   if attrLengte_7667791472230820127 > maxPassend_7667791472230820127
+                   if attrLengte_7667791472230820127 > max(maxPassend_7667791472230820127,1000)
                      then passend_7667791472230820127 = substr(JA_NEE_NVT_02,1,maxPassend_7667791472230820127);
                      else passend_7667791472230820127 = JA_NEE_NVT_02;
                    put passend_7667791472230820127 ~ @;
@@ -23720,7 +23720,7 @@ data _null_;
                    attrLengte_7667791472214042510=length(JA_NEE_NVT_03);
                    aantalLF_7667791472214042510 = countc(JA_NEE_NVT_03,'0A'x);
                    maxPassend_7667791472214042510=1-1-aantalLF_7667791472214042510;
-                   if attrLengte_7667791472214042510 > maxPassend_7667791472214042510
+                   if attrLengte_7667791472214042510 > max(maxPassend_7667791472214042510,1000)
                      then passend_7667791472214042510 = substr(JA_NEE_NVT_03,1,maxPassend_7667791472214042510);
                      else passend_7667791472214042510 = JA_NEE_NVT_03;
                    put passend_7667791472214042510 ~ @;
@@ -23731,7 +23731,7 @@ data _null_;
                    attrLengte_7667791472264375349=length(JA_NEE_NVT_04);
                    aantalLF_7667791472264375349 = countc(JA_NEE_NVT_04,'0A'x);
                    maxPassend_7667791472264375349=1-1-aantalLF_7667791472264375349;
-                   if attrLengte_7667791472264375349 > maxPassend_7667791472264375349
+                   if attrLengte_7667791472264375349 > max(maxPassend_7667791472264375349,1000)
                      then passend_7667791472264375349 = substr(JA_NEE_NVT_04,1,maxPassend_7667791472264375349);
                      else passend_7667791472264375349 = JA_NEE_NVT_04;
                    put passend_7667791472264375349 ~ @;
@@ -23742,7 +23742,7 @@ data _null_;
                    attrLengte_7667791472247597740=length(JA_NEE_NVT_05);
                    aantalLF_7667791472247597740 = countc(JA_NEE_NVT_05,'0A'x);
                    maxPassend_7667791472247597740=1-1-aantalLF_7667791472247597740;
-                   if attrLengte_7667791472247597740 > maxPassend_7667791472247597740
+                   if attrLengte_7667791472247597740 > max(maxPassend_7667791472247597740,1000)
                      then passend_7667791472247597740 = substr(JA_NEE_NVT_05,1,maxPassend_7667791472247597740);
                      else passend_7667791472247597740 = JA_NEE_NVT_05;
                    put passend_7667791472247597740 ~ @;
@@ -23753,7 +23753,7 @@ data _null_;
                    attrLengte_7667791472297930579=length(JA_NEE_NVT_06);
                    aantalLF_7667791472297930579 = countc(JA_NEE_NVT_06,'0A'x);
                    maxPassend_7667791472297930579=1-1-aantalLF_7667791472297930579;
-                   if attrLengte_7667791472297930579 > maxPassend_7667791472297930579
+                   if attrLengte_7667791472297930579 > max(maxPassend_7667791472297930579,1000)
                      then passend_7667791472297930579 = substr(JA_NEE_NVT_06,1,maxPassend_7667791472297930579);
                      else passend_7667791472297930579 = JA_NEE_NVT_06;
                    put passend_7667791472297930579 ~ @;
@@ -23764,7 +23764,7 @@ data _null_;
                    attrLengte_7667791472281152962=length(JA_NEE_NVT_07);
                    aantalLF_7667791472281152962 = countc(JA_NEE_NVT_07,'0A'x);
                    maxPassend_7667791472281152962=1-1-aantalLF_7667791472281152962;
-                   if attrLengte_7667791472281152962 > maxPassend_7667791472281152962
+                   if attrLengte_7667791472281152962 > max(maxPassend_7667791472281152962,1000)
                      then passend_7667791472281152962 = substr(JA_NEE_NVT_07,1,maxPassend_7667791472281152962);
                      else passend_7667791472281152962 = JA_NEE_NVT_07;
                    put passend_7667791472281152962 ~ @;
@@ -23775,7 +23775,7 @@ data _null_;
                    attrLengte_7667791472063043929=length(JA_NEE_NVT_08);
                    aantalLF_7667791472063043929 = countc(JA_NEE_NVT_08,'0A'x);
                    maxPassend_7667791472063043929=1-1-aantalLF_7667791472063043929;
-                   if attrLengte_7667791472063043929 > maxPassend_7667791472063043929
+                   if attrLengte_7667791472063043929 > max(maxPassend_7667791472063043929,1000)
                      then passend_7667791472063043929 = substr(JA_NEE_NVT_08,1,maxPassend_7667791472063043929);
                      else passend_7667791472063043929 = JA_NEE_NVT_08;
                    put passend_7667791472063043929 ~ @;
@@ -23786,7 +23786,7 @@ data _null_;
                    attrLengte_7667791472046266320=length(JA_NEE_NVT_09);
                    aantalLF_7667791472046266320 = countc(JA_NEE_NVT_09,'0A'x);
                    maxPassend_7667791472046266320=1-1-aantalLF_7667791472046266320;
-                   if attrLengte_7667791472046266320 > maxPassend_7667791472046266320
+                   if attrLengte_7667791472046266320 > max(maxPassend_7667791472046266320,1000)
                      then passend_7667791472046266320 = substr(JA_NEE_NVT_09,1,maxPassend_7667791472046266320);
                      else passend_7667791472046266320 = JA_NEE_NVT_09;
                    put passend_7667791472046266320 ~ @;
@@ -23797,7 +23797,7 @@ data _null_;
                    attrLengte_7667509984234839530=length(JA_NEE_NVT_10);
                    aantalLF_7667509984234839530 = countc(JA_NEE_NVT_10,'0A'x);
                    maxPassend_7667509984234839530=1-1-aantalLF_7667509984234839530;
-                   if attrLengte_7667509984234839530 > maxPassend_7667509984234839530
+                   if attrLengte_7667509984234839530 > max(maxPassend_7667509984234839530,1000)
                      then passend_7667509984234839530 = substr(JA_NEE_NVT_10,1,maxPassend_7667509984234839530);
                      else passend_7667509984234839530 = JA_NEE_NVT_10;
                    put passend_7667509984234839530 ~ @;
@@ -23808,7 +23808,7 @@ data _null_;
                    attrLengte_7667509984251617147=length(JA_NEE_NVT_11);
                    aantalLF_7667509984251617147 = countc(JA_NEE_NVT_11,'0A'x);
                    maxPassend_7667509984251617147=1-1-aantalLF_7667509984251617147;
-                   if attrLengte_7667509984251617147 > maxPassend_7667509984251617147
+                   if attrLengte_7667509984251617147 > max(maxPassend_7667509984251617147,1000)
                      then passend_7667509984251617147 = substr(JA_NEE_NVT_11,1,maxPassend_7667509984251617147);
                      else passend_7667509984251617147 = JA_NEE_NVT_11;
                    put passend_7667509984251617147 ~ @;
@@ -23819,7 +23819,7 @@ data _null_;
                    attrLengte_7667509984201284276=length(JA_NEE_NVT_12);
                    aantalLF_7667509984201284276 = countc(JA_NEE_NVT_12,'0A'x);
                    maxPassend_7667509984201284276=1-1-aantalLF_7667509984201284276;
-                   if attrLengte_7667509984201284276 > maxPassend_7667509984201284276
+                   if attrLengte_7667509984201284276 > max(maxPassend_7667509984201284276,1000)
                      then passend_7667509984201284276 = substr(JA_NEE_NVT_12,1,maxPassend_7667509984201284276);
                      else passend_7667509984201284276 = JA_NEE_NVT_12;
                    put passend_7667509984201284276 ~ @;
@@ -23830,7 +23830,7 @@ data _null_;
                    attrLengte_7667509984218061917=length(JA_NEE_NVT_13);
                    aantalLF_7667509984218061917 = countc(JA_NEE_NVT_13,'0A'x);
                    maxPassend_7667509984218061917=1-1-aantalLF_7667509984218061917;
-                   if attrLengte_7667509984218061917 > maxPassend_7667509984218061917
+                   if attrLengte_7667509984218061917 > max(maxPassend_7667509984218061917,1000)
                      then passend_7667509984218061917 = substr(JA_NEE_NVT_13,1,maxPassend_7667509984218061917);
                      else passend_7667509984218061917 = JA_NEE_NVT_13;
                    put passend_7667509984218061917 ~ @;
@@ -23841,7 +23841,7 @@ data _null_;
                    attrLengte_7667509984167729046=length(JA_NEE_NVT_14);
                    aantalLF_7667509984167729046 = countc(JA_NEE_NVT_14,'0A'x);
                    maxPassend_7667509984167729046=1-1-aantalLF_7667509984167729046;
-                   if attrLengte_7667509984167729046 > maxPassend_7667509984167729046
+                   if attrLengte_7667509984167729046 > max(maxPassend_7667509984167729046,1000)
                      then passend_7667509984167729046 = substr(JA_NEE_NVT_14,1,maxPassend_7667509984167729046);
                      else passend_7667509984167729046 = JA_NEE_NVT_14;
                    put passend_7667509984167729046 ~ @;
@@ -23852,7 +23852,7 @@ data _null_;
                    attrLengte_7667509984184506663=length(JA_NEE_NVT_15);
                    aantalLF_7667509984184506663 = countc(JA_NEE_NVT_15,'0A'x);
                    maxPassend_7667509984184506663=1-1-aantalLF_7667509984184506663;
-                   if attrLengte_7667509984184506663 > maxPassend_7667509984184506663
+                   if attrLengte_7667509984184506663 > max(maxPassend_7667509984184506663,1000)
                      then passend_7667509984184506663 = substr(JA_NEE_NVT_15,1,maxPassend_7667509984184506663);
                      else passend_7667509984184506663 = JA_NEE_NVT_15;
                    put passend_7667509984184506663 ~ @;
@@ -23863,7 +23863,7 @@ data _null_;
                    attrLengte_7667509984134173824=length(JA_NEE_NVT_16);
                    aantalLF_7667509984134173824 = countc(JA_NEE_NVT_16,'0A'x);
                    maxPassend_7667509984134173824=1-1-aantalLF_7667509984134173824;
-                   if attrLengte_7667509984134173824 > maxPassend_7667509984134173824
+                   if attrLengte_7667509984134173824 > max(maxPassend_7667509984134173824,1000)
                      then passend_7667509984134173824 = substr(JA_NEE_NVT_16,1,maxPassend_7667509984134173824);
                      else passend_7667509984134173824 = JA_NEE_NVT_16;
                    put passend_7667509984134173824 ~ @;
@@ -23874,7 +23874,7 @@ data _null_;
                    attrLengte_7667509984150951433=length(JA_NEE_NVT_17);
                    aantalLF_7667509984150951433 = countc(JA_NEE_NVT_17,'0A'x);
                    maxPassend_7667509984150951433=1-1-aantalLF_7667509984150951433;
-                   if attrLengte_7667509984150951433 > maxPassend_7667509984150951433
+                   if attrLengte_7667509984150951433 > max(maxPassend_7667509984150951433,1000)
                      then passend_7667509984150951433 = substr(JA_NEE_NVT_17,1,maxPassend_7667509984150951433);
                      else passend_7667509984150951433 = JA_NEE_NVT_17;
                    put passend_7667509984150951433 ~ @;
@@ -23885,7 +23885,7 @@ data _null_;
                    attrLengte_7667509984369060466=length(JA_NEE_NVT_18);
                    aantalLF_7667509984369060466 = countc(JA_NEE_NVT_18,'0A'x);
                    maxPassend_7667509984369060466=1-1-aantalLF_7667509984369060466;
-                   if attrLengte_7667509984369060466 > maxPassend_7667509984369060466
+                   if attrLengte_7667509984369060466 > max(maxPassend_7667509984369060466,1000)
                      then passend_7667509984369060466 = substr(JA_NEE_NVT_18,1,maxPassend_7667509984369060466);
                      else passend_7667509984369060466 = JA_NEE_NVT_18;
                    put passend_7667509984369060466 ~ @;
@@ -23896,7 +23896,7 @@ data _null_;
                    attrLengte_7667509984385838083=length(JA_NEE_NVT_19);
                    aantalLF_7667509984385838083 = countc(JA_NEE_NVT_19,'0A'x);
                    maxPassend_7667509984385838083=1-1-aantalLF_7667509984385838083;
-                   if attrLengte_7667509984385838083 > maxPassend_7667509984385838083
+                   if attrLengte_7667509984385838083 > max(maxPassend_7667509984385838083,1000)
                      then passend_7667509984385838083 = substr(JA_NEE_NVT_19,1,maxPassend_7667509984385838083);
                      else passend_7667509984385838083 = JA_NEE_NVT_19;
                    put passend_7667509984385838083 ~ @;
@@ -23907,7 +23907,7 @@ data _null_;
                    attrLengte_7668354450269650803=length(JA_NEE_NVT_20);
                    aantalLF_7668354450269650803 = countc(JA_NEE_NVT_20,'0A'x);
                    maxPassend_7668354450269650803=1-1-aantalLF_7668354450269650803;
-                   if attrLengte_7668354450269650803 > maxPassend_7668354450269650803
+                   if attrLengte_7668354450269650803 > max(maxPassend_7668354450269650803,1000)
                      then passend_7668354450269650803 = substr(JA_NEE_NVT_20,1,maxPassend_7668354450269650803);
                      else passend_7668354450269650803 = JA_NEE_NVT_20;
                    put passend_7668354450269650803 ~ @;
@@ -23918,7 +23918,7 @@ data _null_;
                    attrLengte_320424162687033679=length(JA_NEE_ONB_01);
                    aantalLF_320424162687033679 = countc(JA_NEE_ONB_01,'0A'x);
                    maxPassend_320424162687033679=1-1-aantalLF_320424162687033679;
-                   if attrLengte_320424162687033679 > maxPassend_320424162687033679
+                   if attrLengte_320424162687033679 > max(maxPassend_320424162687033679,1000)
                      then passend_320424162687033679 = substr(JA_NEE_ONB_01,1,maxPassend_320424162687033679);
                      else passend_320424162687033679 = JA_NEE_ONB_01;
                    put passend_320424162687033679 ~ @;
@@ -23929,7 +23929,7 @@ data _null_;
                    attrLengte_320424162670256034=length(JA_NEE_ONB_02);
                    aantalLF_320424162670256034 = countc(JA_NEE_ONB_02,'0A'x);
                    maxPassend_320424162670256034=1-1-aantalLF_320424162670256034;
-                   if attrLengte_320424162670256034 > maxPassend_320424162670256034
+                   if attrLengte_320424162670256034 > max(maxPassend_320424162670256034,1000)
                      then passend_320424162670256034 = substr(JA_NEE_ONB_02,1,maxPassend_320424162670256034);
                      else passend_320424162670256034 = JA_NEE_ONB_02;
                    put passend_320424162670256034 ~ @;
@@ -23940,7 +23940,7 @@ data _null_;
                    attrLengte_320424162653478417=length(JA_NEE_ONB_03);
                    aantalLF_320424162653478417 = countc(JA_NEE_ONB_03,'0A'x);
                    maxPassend_320424162653478417=1-1-aantalLF_320424162653478417;
-                   if attrLengte_320424162653478417 > maxPassend_320424162653478417
+                   if attrLengte_320424162653478417 > max(maxPassend_320424162653478417,1000)
                      then passend_320424162653478417 = substr(JA_NEE_ONB_03,1,maxPassend_320424162653478417);
                      else passend_320424162653478417 = JA_NEE_ONB_03;
                    put passend_320424162653478417 ~ @;
@@ -23951,7 +23951,7 @@ data _null_;
                    attrLengte_320424162636700804=length(JA_NEE_ONB_04);
                    aantalLF_320424162636700804 = countc(JA_NEE_ONB_04,'0A'x);
                    maxPassend_320424162636700804=1-1-aantalLF_320424162636700804;
-                   if attrLengte_320424162636700804 > maxPassend_320424162636700804
+                   if attrLengte_320424162636700804 > max(maxPassend_320424162636700804,1000)
                      then passend_320424162636700804 = substr(JA_NEE_ONB_04,1,maxPassend_320424162636700804);
                      else passend_320424162636700804 = JA_NEE_ONB_04;
                    put passend_320424162636700804 ~ @;
@@ -23962,7 +23962,7 @@ data _null_;
                    attrLengte_320424162619923195=length(JA_NEE_ONB_05);
                    aantalLF_320424162619923195 = countc(JA_NEE_ONB_05,'0A'x);
                    maxPassend_320424162619923195=1-1-aantalLF_320424162619923195;
-                   if attrLengte_320424162619923195 > maxPassend_320424162619923195
+                   if attrLengte_320424162619923195 > max(maxPassend_320424162619923195,1000)
                      then passend_320424162619923195 = substr(JA_NEE_ONB_05,1,maxPassend_320424162619923195);
                      else passend_320424162619923195 = JA_NEE_ONB_05;
                    put passend_320424162619923195 ~ @;
@@ -23973,7 +23973,7 @@ data _null_;
                    attrLengte_320424162603145582=length(JA_NEE_ONB_06);
                    aantalLF_320424162603145582 = countc(JA_NEE_ONB_06,'0A'x);
                    maxPassend_320424162603145582=1-1-aantalLF_320424162603145582;
-                   if attrLengte_320424162603145582 > maxPassend_320424162603145582
+                   if attrLengte_320424162603145582 > max(maxPassend_320424162603145582,1000)
                      then passend_320424162603145582 = substr(JA_NEE_ONB_06,1,maxPassend_320424162603145582);
                      else passend_320424162603145582 = JA_NEE_ONB_06;
                    put passend_320424162603145582 ~ @;
@@ -23984,7 +23984,7 @@ data _null_;
                    attrLengte_320424162586367965=length(JA_NEE_ONB_07);
                    aantalLF_320424162586367965 = countc(JA_NEE_ONB_07,'0A'x);
                    maxPassend_320424162586367965=1-1-aantalLF_320424162586367965;
-                   if attrLengte_320424162586367965 > maxPassend_320424162586367965
+                   if attrLengte_320424162586367965 > max(maxPassend_320424162586367965,1000)
                      then passend_320424162586367965 = substr(JA_NEE_ONB_07,1,maxPassend_320424162586367965);
                      else passend_320424162586367965 = JA_NEE_ONB_07;
                    put passend_320424162586367965 ~ @;
@@ -23995,7 +23995,7 @@ data _null_;
                    attrLengte_320424162838032224=length(JA_NEE_ONB_08);
                    aantalLF_320424162838032224 = countc(JA_NEE_ONB_08,'0A'x);
                    maxPassend_320424162838032224=1-1-aantalLF_320424162838032224;
-                   if attrLengte_320424162838032224 > maxPassend_320424162838032224
+                   if attrLengte_320424162838032224 > max(maxPassend_320424162838032224,1000)
                      then passend_320424162838032224 = substr(JA_NEE_ONB_08,1,maxPassend_320424162838032224);
                      else passend_320424162838032224 = JA_NEE_ONB_08;
                    put passend_320424162838032224 ~ @;
@@ -24006,7 +24006,7 @@ data _null_;
                    attrLengte_320424162821254615=length(JA_NEE_ONB_09);
                    aantalLF_320424162821254615 = countc(JA_NEE_ONB_09,'0A'x);
                    maxPassend_320424162821254615=1-1-aantalLF_320424162821254615;
-                   if attrLengte_320424162821254615 > maxPassend_320424162821254615
+                   if attrLengte_320424162821254615 > max(maxPassend_320424162821254615,1000)
                      then passend_320424162821254615 = substr(JA_NEE_ONB_09,1,maxPassend_320424162821254615);
                      else passend_320424162821254615 = JA_NEE_ONB_09;
                    put passend_320424162821254615 ~ @;
@@ -24017,7 +24017,7 @@ data _null_;
                    attrLengte_320142672593850689=length(JA_NEE_ONB_10);
                    aantalLF_320142672593850689 = countc(JA_NEE_ONB_10,'0A'x);
                    maxPassend_320142672593850689=1-1-aantalLF_320142672593850689;
-                   if attrLengte_320142672593850689 > maxPassend_320142672593850689
+                   if attrLengte_320142672593850689 > max(maxPassend_320142672593850689,1000)
                      then passend_320142672593850689 = substr(JA_NEE_ONB_10,1,maxPassend_320142672593850689);
                      else passend_320142672593850689 = JA_NEE_ONB_10;
                    put passend_320142672593850689 ~ @;
@@ -24028,7 +24028,7 @@ data _null_;
                    attrLengte_320142672610628306=length(JA_NEE_ONB_11);
                    aantalLF_320142672610628306 = countc(JA_NEE_ONB_11,'0A'x);
                    maxPassend_320142672610628306=1-1-aantalLF_320142672610628306;
-                   if attrLengte_320142672610628306 > maxPassend_320142672610628306
+                   if attrLengte_320142672610628306 > max(maxPassend_320142672610628306,1000)
                      then passend_320142672610628306 = substr(JA_NEE_ONB_11,1,maxPassend_320142672610628306);
                      else passend_320142672610628306 = JA_NEE_ONB_11;
                    put passend_320142672610628306 ~ @;
@@ -24039,7 +24039,7 @@ data _null_;
                    attrLengte_320142672627405951=length(JA_NEE_ONB_12);
                    aantalLF_320142672627405951 = countc(JA_NEE_ONB_12,'0A'x);
                    maxPassend_320142672627405951=1-1-aantalLF_320142672627405951;
-                   if attrLengte_320142672627405951 > maxPassend_320142672627405951
+                   if attrLengte_320142672627405951 > max(maxPassend_320142672627405951,1000)
                      then passend_320142672627405951 = substr(JA_NEE_ONB_12,1,maxPassend_320142672627405951);
                      else passend_320142672627405951 = JA_NEE_ONB_12;
                    put passend_320142672627405951 ~ @;
@@ -24050,7 +24050,7 @@ data _null_;
                    attrLengte_320142672644183560=length(JA_NEE_ONB_13);
                    aantalLF_320142672644183560 = countc(JA_NEE_ONB_13,'0A'x);
                    maxPassend_320142672644183560=1-1-aantalLF_320142672644183560;
-                   if attrLengte_320142672644183560 > maxPassend_320142672644183560
+                   if attrLengte_320142672644183560 > max(maxPassend_320142672644183560,1000)
                      then passend_320142672644183560 = substr(JA_NEE_ONB_13,1,maxPassend_320142672644183560);
                      else passend_320142672644183560 = JA_NEE_ONB_13;
                    put passend_320142672644183560 ~ @;
@@ -24061,7 +24061,7 @@ data _null_;
                    attrLengte_320142672526740237=length(JA_NEE_ONB_14);
                    aantalLF_320142672526740237 = countc(JA_NEE_ONB_14,'0A'x);
                    maxPassend_320142672526740237=1-1-aantalLF_320142672526740237;
-                   if attrLengte_320142672526740237 > maxPassend_320142672526740237
+                   if attrLengte_320142672526740237 > max(maxPassend_320142672526740237,1000)
                      then passend_320142672526740237 = substr(JA_NEE_ONB_14,1,maxPassend_320142672526740237);
                      else passend_320142672526740237 = JA_NEE_ONB_14;
                    put passend_320142672526740237 ~ @;
@@ -24072,7 +24072,7 @@ data _null_;
                    attrLengte_320142672543517854=length(JA_NEE_ONB_15);
                    aantalLF_320142672543517854 = countc(JA_NEE_ONB_15,'0A'x);
                    maxPassend_320142672543517854=1-1-aantalLF_320142672543517854;
-                   if attrLengte_320142672543517854 > maxPassend_320142672543517854
+                   if attrLengte_320142672543517854 > max(maxPassend_320142672543517854,1000)
                      then passend_320142672543517854 = substr(JA_NEE_ONB_15,1,maxPassend_320142672543517854);
                      else passend_320142672543517854 = JA_NEE_ONB_15;
                    put passend_320142672543517854 ~ @;
@@ -24083,7 +24083,7 @@ data _null_;
                    attrLengte_320142672560295467=length(JA_NEE_ONB_16);
                    aantalLF_320142672560295467 = countc(JA_NEE_ONB_16,'0A'x);
                    maxPassend_320142672560295467=1-1-aantalLF_320142672560295467;
-                   if attrLengte_320142672560295467 > maxPassend_320142672560295467
+                   if attrLengte_320142672560295467 > max(maxPassend_320142672560295467,1000)
                      then passend_320142672560295467 = substr(JA_NEE_ONB_16,1,maxPassend_320142672560295467);
                      else passend_320142672560295467 = JA_NEE_ONB_16;
                    put passend_320142672560295467 ~ @;
@@ -24094,7 +24094,7 @@ data _null_;
                    attrLengte_320142672577073076=length(JA_NEE_ONB_17);
                    aantalLF_320142672577073076 = countc(JA_NEE_ONB_17,'0A'x);
                    maxPassend_320142672577073076=1-1-aantalLF_320142672577073076;
-                   if attrLengte_320142672577073076 > maxPassend_320142672577073076
+                   if attrLengte_320142672577073076 > max(maxPassend_320142672577073076,1000)
                      then passend_320142672577073076 = substr(JA_NEE_ONB_17,1,maxPassend_320142672577073076);
                      else passend_320142672577073076 = JA_NEE_ONB_17;
                    put passend_320142672577073076 ~ @;
@@ -24105,7 +24105,7 @@ data _null_;
                    attrLengte_320142672728071657=length(JA_NEE_ONB_18);
                    aantalLF_320142672728071657 = countc(JA_NEE_ONB_18,'0A'x);
                    maxPassend_320142672728071657=1-1-aantalLF_320142672728071657;
-                   if attrLengte_320142672728071657 > maxPassend_320142672728071657
+                   if attrLengte_320142672728071657 > max(maxPassend_320142672728071657,1000)
                      then passend_320142672728071657 = substr(JA_NEE_ONB_18,1,maxPassend_320142672728071657);
                      else passend_320142672728071657 = JA_NEE_ONB_18;
                    put passend_320142672728071657 ~ @;
@@ -24116,7 +24116,7 @@ data _null_;
                    attrLengte_320142672744849274=length(JA_NEE_ONB_19);
                    aantalLF_320142672744849274 = countc(JA_NEE_ONB_19,'0A'x);
                    maxPassend_320142672744849274=1-1-aantalLF_320142672744849274;
-                   if attrLengte_320142672744849274 > maxPassend_320142672744849274
+                   if attrLengte_320142672744849274 > max(maxPassend_320142672744849274,1000)
                      then passend_320142672744849274 = substr(JA_NEE_ONB_19,1,maxPassend_320142672744849274);
                      else passend_320142672744849274 = JA_NEE_ONB_19;
                    put passend_320142672744849274 ~ @;
@@ -24127,7 +24127,7 @@ data _null_;
                    attrLengte_320987138628661994=length(JA_NEE_ONB_20);
                    aantalLF_320987138628661994 = countc(JA_NEE_ONB_20,'0A'x);
                    maxPassend_320987138628661994=1-1-aantalLF_320987138628661994;
-                   if attrLengte_320987138628661994 > maxPassend_320987138628661994
+                   if attrLengte_320987138628661994 > max(maxPassend_320987138628661994,1000)
                      then passend_320987138628661994 = substr(JA_NEE_ONB_20,1,maxPassend_320987138628661994);
                      else passend_320987138628661994 = JA_NEE_ONB_20;
                    put passend_320987138628661994 ~ @;
@@ -24141,7 +24141,7 @@ data _null_;
                    attrLengte_7832584208908286581=length(Mutatie_user);
                    aantalLF_7832584208908286581 = countc(Mutatie_user,'0A'x);
                    maxPassend_7832584208908286581=30-1-aantalLF_7832584208908286581;
-                   if attrLengte_7832584208908286581 > maxPassend_7832584208908286581
+                   if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
                    put passend_7832584208908286581 ~ @;
@@ -24272,7 +24272,7 @@ data _null_;
                    attrLengte_2317130619227152338=length(OPTIONBUTTON_01);
                    aantalLF_2317130619227152338 = countc(OPTIONBUTTON_01,'0A'x);
                    maxPassend_2317130619227152338=60-1-aantalLF_2317130619227152338;
-                   if attrLengte_2317130619227152338 > maxPassend_2317130619227152338
+                   if attrLengte_2317130619227152338 > max(maxPassend_2317130619227152338,1000)
                      then passend_2317130619227152338 = substr(OPTIONBUTTON_01,1,maxPassend_2317130619227152338);
                      else passend_2317130619227152338 = OPTIONBUTTON_01;
                    put passend_2317130619227152338 ~ @;
@@ -24283,7 +24283,7 @@ data _null_;
                    attrLengte_2317130619176819499=length(OPTIONBUTTON_02);
                    aantalLF_2317130619176819499 = countc(OPTIONBUTTON_02,'0A'x);
                    maxPassend_2317130619176819499=60-1-aantalLF_2317130619176819499;
-                   if attrLengte_2317130619176819499 > maxPassend_2317130619176819499
+                   if attrLengte_2317130619176819499 > max(maxPassend_2317130619176819499,1000)
                      then passend_2317130619176819499 = substr(OPTIONBUTTON_02,1,maxPassend_2317130619176819499);
                      else passend_2317130619176819499 = OPTIONBUTTON_02;
                    put passend_2317130619176819499 ~ @;
@@ -24294,7 +24294,7 @@ data _null_;
                    attrLengte_2317130619193597112=length(OPTIONBUTTON_03);
                    aantalLF_2317130619193597112 = countc(OPTIONBUTTON_03,'0A'x);
                    maxPassend_2317130619193597112=60-1-aantalLF_2317130619193597112;
-                   if attrLengte_2317130619193597112 > maxPassend_2317130619193597112
+                   if attrLengte_2317130619193597112 > max(maxPassend_2317130619193597112,1000)
                      then passend_2317130619193597112 = substr(OPTIONBUTTON_03,1,maxPassend_2317130619193597112);
                      else passend_2317130619193597112 = OPTIONBUTTON_03;
                    put passend_2317130619193597112 ~ @;
@@ -24305,7 +24305,7 @@ data _null_;
                    attrLengte_2317130619143264241=length(OPTIONBUTTON_04);
                    aantalLF_2317130619143264241 = countc(OPTIONBUTTON_04,'0A'x);
                    maxPassend_2317130619143264241=60-1-aantalLF_2317130619143264241;
-                   if attrLengte_2317130619143264241 > maxPassend_2317130619143264241
+                   if attrLengte_2317130619143264241 > max(maxPassend_2317130619143264241,1000)
                      then passend_2317130619143264241 = substr(OPTIONBUTTON_04,1,maxPassend_2317130619143264241);
                      else passend_2317130619143264241 = OPTIONBUTTON_04;
                    put passend_2317130619143264241 ~ @;
@@ -24316,7 +24316,7 @@ data _null_;
                    attrLengte_2317130619160041886=length(OPTIONBUTTON_05);
                    aantalLF_2317130619160041886 = countc(OPTIONBUTTON_05,'0A'x);
                    maxPassend_2317130619160041886=60-1-aantalLF_2317130619160041886;
-                   if attrLengte_2317130619160041886 > maxPassend_2317130619160041886
+                   if attrLengte_2317130619160041886 > max(maxPassend_2317130619160041886,1000)
                      then passend_2317130619160041886 = substr(OPTIONBUTTON_05,1,maxPassend_2317130619160041886);
                      else passend_2317130619160041886 = OPTIONBUTTON_05;
                    put passend_2317130619160041886 ~ @;
@@ -24327,7 +24327,7 @@ data _null_;
                    attrLengte_2317130619109709015=length(OPTIONBUTTON_06);
                    aantalLF_2317130619109709015 = countc(OPTIONBUTTON_06,'0A'x);
                    maxPassend_2317130619109709015=60-1-aantalLF_2317130619109709015;
-                   if attrLengte_2317130619109709015 > maxPassend_2317130619109709015
+                   if attrLengte_2317130619109709015 > max(maxPassend_2317130619109709015,1000)
                      then passend_2317130619109709015 = substr(OPTIONBUTTON_06,1,maxPassend_2317130619109709015);
                      else passend_2317130619109709015 = OPTIONBUTTON_06;
                    put passend_2317130619109709015 ~ @;
@@ -24338,7 +24338,7 @@ data _null_;
                    attrLengte_2317130619126486628=length(OPTIONBUTTON_07);
                    aantalLF_2317130619126486628 = countc(OPTIONBUTTON_07,'0A'x);
                    maxPassend_2317130619126486628=60-1-aantalLF_2317130619126486628;
-                   if attrLengte_2317130619126486628 > maxPassend_2317130619126486628
+                   if attrLengte_2317130619126486628 > max(maxPassend_2317130619126486628,1000)
                      then passend_2317130619126486628 = substr(OPTIONBUTTON_07,1,maxPassend_2317130619126486628);
                      else passend_2317130619126486628 = OPTIONBUTTON_07;
                    put passend_2317130619126486628 ~ @;
@@ -24349,7 +24349,7 @@ data _null_;
                    attrLengte_2317130619076153789=length(OPTIONBUTTON_08);
                    aantalLF_2317130619076153789 = countc(OPTIONBUTTON_08,'0A'x);
                    maxPassend_2317130619076153789=60-1-aantalLF_2317130619076153789;
-                   if attrLengte_2317130619076153789 > maxPassend_2317130619076153789
+                   if attrLengte_2317130619076153789 > max(maxPassend_2317130619076153789,1000)
                      then passend_2317130619076153789 = substr(OPTIONBUTTON_08,1,maxPassend_2317130619076153789);
                      else passend_2317130619076153789 = OPTIONBUTTON_08;
                    put passend_2317130619076153789 ~ @;
@@ -24360,7 +24360,7 @@ data _null_;
                    attrLengte_2317130619092931402=length(OPTIONBUTTON_09);
                    aantalLF_2317130619092931402 = countc(OPTIONBUTTON_09,'0A'x);
                    maxPassend_2317130619092931402=60-1-aantalLF_2317130619092931402;
-                   if attrLengte_2317130619092931402 > maxPassend_2317130619092931402
+                   if attrLengte_2317130619092931402 > max(maxPassend_2317130619092931402,1000)
                      then passend_2317130619092931402 = substr(OPTIONBUTTON_09,1,maxPassend_2317130619092931402);
                      else passend_2317130619092931402 = OPTIONBUTTON_09;
                    put passend_2317130619092931402 ~ @;
@@ -24371,7 +24371,7 @@ data _null_;
                    attrLengte_2317412108783451516=length(OPTIONBUTTON_10);
                    aantalLF_2317412108783451516 = countc(OPTIONBUTTON_10,'0A'x);
                    maxPassend_2317412108783451516=60-1-aantalLF_2317412108783451516;
-                   if attrLengte_2317412108783451516 > maxPassend_2317412108783451516
+                   if attrLengte_2317412108783451516 > max(maxPassend_2317412108783451516,1000)
                      then passend_2317412108783451516 = substr(OPTIONBUTTON_10,1,maxPassend_2317412108783451516);
                      else passend_2317412108783451516 = OPTIONBUTTON_10;
                    put passend_2317412108783451516 ~ @;
@@ -24382,7 +24382,7 @@ data _null_;
                    attrLengte_2317412108766673903=length(OPTIONBUTTON_11);
                    aantalLF_2317412108766673903 = countc(OPTIONBUTTON_11,'0A'x);
                    maxPassend_2317412108766673903=60-1-aantalLF_2317412108766673903;
-                   if attrLengte_2317412108766673903 > maxPassend_2317412108766673903
+                   if attrLengte_2317412108766673903 > max(maxPassend_2317412108766673903,1000)
                      then passend_2317412108766673903 = substr(OPTIONBUTTON_11,1,maxPassend_2317412108766673903);
                      else passend_2317412108766673903 = OPTIONBUTTON_11;
                    put passend_2317412108766673903 ~ @;
@@ -24393,7 +24393,7 @@ data _null_;
                    attrLengte_2317412108817006742=length(OPTIONBUTTON_12);
                    aantalLF_2317412108817006742 = countc(OPTIONBUTTON_12,'0A'x);
                    maxPassend_2317412108817006742=60-1-aantalLF_2317412108817006742;
-                   if attrLengte_2317412108817006742 > maxPassend_2317412108817006742
+                   if attrLengte_2317412108817006742 > max(maxPassend_2317412108817006742,1000)
                      then passend_2317412108817006742 = substr(OPTIONBUTTON_12,1,maxPassend_2317412108817006742);
                      else passend_2317412108817006742 = OPTIONBUTTON_12;
                    put passend_2317412108817006742 ~ @;
@@ -24404,7 +24404,7 @@ data _null_;
                    attrLengte_2317412108800229129=length(OPTIONBUTTON_13);
                    aantalLF_2317412108800229129 = countc(OPTIONBUTTON_13,'0A'x);
                    maxPassend_2317412108800229129=60-1-aantalLF_2317412108800229129;
-                   if attrLengte_2317412108800229129 > maxPassend_2317412108800229129
+                   if attrLengte_2317412108800229129 > max(maxPassend_2317412108800229129,1000)
                      then passend_2317412108800229129 = substr(OPTIONBUTTON_13,1,maxPassend_2317412108800229129);
                      else passend_2317412108800229129 = OPTIONBUTTON_13;
                    put passend_2317412108800229129 ~ @;
@@ -24415,7 +24415,7 @@ data _null_;
                    attrLengte_2317412108850561968=length(OPTIONBUTTON_14);
                    aantalLF_2317412108850561968 = countc(OPTIONBUTTON_14,'0A'x);
                    maxPassend_2317412108850561968=60-1-aantalLF_2317412108850561968;
-                   if attrLengte_2317412108850561968 > maxPassend_2317412108850561968
+                   if attrLengte_2317412108850561968 > max(maxPassend_2317412108850561968,1000)
                      then passend_2317412108850561968 = substr(OPTIONBUTTON_14,1,maxPassend_2317412108850561968);
                      else passend_2317412108850561968 = OPTIONBUTTON_14;
                    put passend_2317412108850561968 ~ @;
@@ -24426,7 +24426,7 @@ data _null_;
                    attrLengte_2317412108833784355=length(OPTIONBUTTON_15);
                    aantalLF_2317412108833784355 = countc(OPTIONBUTTON_15,'0A'x);
                    maxPassend_2317412108833784355=60-1-aantalLF_2317412108833784355;
-                   if attrLengte_2317412108833784355 > maxPassend_2317412108833784355
+                   if attrLengte_2317412108833784355 > max(maxPassend_2317412108833784355,1000)
                      then passend_2317412108833784355 = substr(OPTIONBUTTON_15,1,maxPassend_2317412108833784355);
                      else passend_2317412108833784355 = OPTIONBUTTON_15;
                    put passend_2317412108833784355 ~ @;
@@ -24437,7 +24437,7 @@ data _null_;
                    attrLengte_2317412108884117226=length(OPTIONBUTTON_16);
                    aantalLF_2317412108884117226 = countc(OPTIONBUTTON_16,'0A'x);
                    maxPassend_2317412108884117226=60-1-aantalLF_2317412108884117226;
-                   if attrLengte_2317412108884117226 > maxPassend_2317412108884117226
+                   if attrLengte_2317412108884117226 > max(maxPassend_2317412108884117226,1000)
                      then passend_2317412108884117226 = substr(OPTIONBUTTON_16,1,maxPassend_2317412108884117226);
                      else passend_2317412108884117226 = OPTIONBUTTON_16;
                    put passend_2317412108884117226 ~ @;
@@ -24448,7 +24448,7 @@ data _null_;
                    attrLengte_2317412108867339613=length(OPTIONBUTTON_17);
                    aantalLF_2317412108867339613 = countc(OPTIONBUTTON_17,'0A'x);
                    maxPassend_2317412108867339613=60-1-aantalLF_2317412108867339613;
-                   if attrLengte_2317412108867339613 > maxPassend_2317412108867339613
+                   if attrLengte_2317412108867339613 > max(maxPassend_2317412108867339613,1000)
                      then passend_2317412108867339613 = substr(OPTIONBUTTON_17,1,maxPassend_2317412108867339613);
                      else passend_2317412108867339613 = OPTIONBUTTON_17;
                    put passend_2317412108867339613 ~ @;
@@ -24459,7 +24459,7 @@ data _null_;
                    attrLengte_2317412108917672452=length(OPTIONBUTTON_18);
                    aantalLF_2317412108917672452 = countc(OPTIONBUTTON_18,'0A'x);
                    maxPassend_2317412108917672452=60-1-aantalLF_2317412108917672452;
-                   if attrLengte_2317412108917672452 > maxPassend_2317412108917672452
+                   if attrLengte_2317412108917672452 > max(maxPassend_2317412108917672452,1000)
                      then passend_2317412108917672452 = substr(OPTIONBUTTON_18,1,maxPassend_2317412108917672452);
                      else passend_2317412108917672452 = OPTIONBUTTON_18;
                    put passend_2317412108917672452 ~ @;
@@ -24470,7 +24470,7 @@ data _null_;
                    attrLengte_2317412108900894839=length(OPTIONBUTTON_19);
                    aantalLF_2317412108900894839 = countc(OPTIONBUTTON_19,'0A'x);
                    maxPassend_2317412108900894839=60-1-aantalLF_2317412108900894839;
-                   if attrLengte_2317412108900894839 > maxPassend_2317412108900894839
+                   if attrLengte_2317412108900894839 > max(maxPassend_2317412108900894839,1000)
                      then passend_2317412108900894839 = substr(OPTIONBUTTON_19,1,maxPassend_2317412108900894839);
                      else passend_2317412108900894839 = OPTIONBUTTON_19;
                    put passend_2317412108900894839 ~ @;
@@ -24481,7 +24481,7 @@ data _null_;
                    attrLengte_2316567643285524023=length(OPTIONBUTTON_20);
                    aantalLF_2316567643285524023 = countc(OPTIONBUTTON_20,'0A'x);
                    maxPassend_2316567643285524023=60-1-aantalLF_2316567643285524023;
-                   if attrLengte_2316567643285524023 > maxPassend_2316567643285524023
+                   if attrLengte_2316567643285524023 > max(maxPassend_2316567643285524023,1000)
                      then passend_2316567643285524023 = substr(OPTIONBUTTON_20,1,maxPassend_2316567643285524023);
                      else passend_2316567643285524023 = OPTIONBUTTON_20;
                    put passend_2316567643285524023 ~ @;
@@ -24492,7 +24492,7 @@ data _null_;
                    attrLengte_3028293016467408665=length(TEKSTBLOK_01);
                    aantalLF_3028293016467408665 = countc(TEKSTBLOK_01,'0A'x);
                    maxPassend_3028293016467408665=2048-1-aantalLF_3028293016467408665;
-                   if attrLengte_3028293016467408665 > maxPassend_3028293016467408665
+                   if attrLengte_3028293016467408665 > max(maxPassend_3028293016467408665,1000)
                      then passend_3028293016467408665 = substr(TEKSTBLOK_01,1,maxPassend_3028293016467408665);
                      else passend_3028293016467408665 = TEKSTBLOK_01;
                    put passend_3028293016467408665 ~ @;
@@ -24503,7 +24503,7 @@ data _null_;
                    attrLengte_3028293016450631054=length(TEKSTBLOK_02);
                    aantalLF_3028293016450631054 = countc(TEKSTBLOK_02,'0A'x);
                    maxPassend_3028293016450631054=2048-1-aantalLF_3028293016450631054;
-                   if attrLengte_3028293016450631054 > maxPassend_3028293016450631054
+                   if attrLengte_3028293016450631054 > max(maxPassend_3028293016450631054,1000)
                      then passend_3028293016450631054 = substr(TEKSTBLOK_02,1,maxPassend_3028293016450631054);
                      else passend_3028293016450631054 = TEKSTBLOK_02;
                    put passend_3028293016450631054 ~ @;
@@ -24514,7 +24514,7 @@ data _null_;
                    attrLengte_3028293016433853411=length(TEKSTBLOK_03);
                    aantalLF_3028293016433853411 = countc(TEKSTBLOK_03,'0A'x);
                    maxPassend_3028293016433853411=2048-1-aantalLF_3028293016433853411;
-                   if attrLengte_3028293016433853411 > maxPassend_3028293016433853411
+                   if attrLengte_3028293016433853411 > max(maxPassend_3028293016433853411,1000)
                      then passend_3028293016433853411 = substr(TEKSTBLOK_03,1,maxPassend_3028293016433853411);
                      else passend_3028293016433853411 = TEKSTBLOK_03;
                    put passend_3028293016433853411 ~ @;
@@ -24525,7 +24525,7 @@ data _null_;
                    attrLengte_3028293016417075800=length(TEKSTBLOK_04);
                    aantalLF_3028293016417075800 = countc(TEKSTBLOK_04,'0A'x);
                    maxPassend_3028293016417075800=2048-1-aantalLF_3028293016417075800;
-                   if attrLengte_3028293016417075800 > maxPassend_3028293016417075800
+                   if attrLengte_3028293016417075800 > max(maxPassend_3028293016417075800,1000)
                      then passend_3028293016417075800 = substr(TEKSTBLOK_04,1,maxPassend_3028293016417075800);
                      else passend_3028293016417075800 = TEKSTBLOK_04;
                    put passend_3028293016417075800 ~ @;
@@ -24536,7 +24536,7 @@ data _null_;
                    attrLengte_3028293016400298181=length(TEKSTBLOK_05);
                    aantalLF_3028293016400298181 = countc(TEKSTBLOK_05,'0A'x);
                    maxPassend_3028293016400298181=2048-1-aantalLF_3028293016400298181;
-                   if attrLengte_3028293016400298181 > maxPassend_3028293016400298181
+                   if attrLengte_3028293016400298181 > max(maxPassend_3028293016400298181,1000)
                      then passend_3028293016400298181 = substr(TEKSTBLOK_05,1,maxPassend_3028293016400298181);
                      else passend_3028293016400298181 = TEKSTBLOK_05;
                    put passend_3028293016400298181 ~ @;
@@ -24547,7 +24547,7 @@ data _null_;
                    attrLengte_3028293016383520570=length(TEKSTBLOK_06);
                    aantalLF_3028293016383520570 = countc(TEKSTBLOK_06,'0A'x);
                    maxPassend_3028293016383520570=2048-1-aantalLF_3028293016383520570;
-                   if attrLengte_3028293016383520570 > maxPassend_3028293016383520570
+                   if attrLengte_3028293016383520570 > max(maxPassend_3028293016383520570,1000)
                      then passend_3028293016383520570 = substr(TEKSTBLOK_06,1,maxPassend_3028293016383520570);
                      else passend_3028293016383520570 = TEKSTBLOK_06;
                    put passend_3028293016383520570 ~ @;
@@ -24558,7 +24558,7 @@ data _null_;
                    attrLengte_3028293016366742959=length(TEKSTBLOK_07);
                    aantalLF_3028293016366742959 = countc(TEKSTBLOK_07,'0A'x);
                    maxPassend_3028293016366742959=2048-1-aantalLF_3028293016366742959;
-                   if attrLengte_3028293016366742959 > maxPassend_3028293016366742959
+                   if attrLengte_3028293016366742959 > max(maxPassend_3028293016366742959,1000)
                      then passend_3028293016366742959 = substr(TEKSTBLOK_07,1,maxPassend_3028293016366742959);
                      else passend_3028293016366742959 = TEKSTBLOK_07;
                    put passend_3028293016366742959 ~ @;
@@ -24569,7 +24569,7 @@ data _null_;
                    attrLengte_3028293016618407220=length(TEKSTBLOK_08);
                    aantalLF_3028293016618407220 = countc(TEKSTBLOK_08,'0A'x);
                    maxPassend_3028293016618407220=2048-1-aantalLF_3028293016618407220;
-                   if attrLengte_3028293016618407220 > maxPassend_3028293016618407220
+                   if attrLengte_3028293016618407220 > max(maxPassend_3028293016618407220,1000)
                      then passend_3028293016618407220 = substr(TEKSTBLOK_08,1,maxPassend_3028293016618407220);
                      else passend_3028293016618407220 = TEKSTBLOK_08;
                    put passend_3028293016618407220 ~ @;
@@ -24580,7 +24580,7 @@ data _null_;
                    attrLengte_3028293016601629601=length(TEKSTBLOK_09);
                    aantalLF_3028293016601629601 = countc(TEKSTBLOK_09,'0A'x);
                    maxPassend_3028293016601629601=2048-1-aantalLF_3028293016601629601;
-                   if attrLengte_3028293016601629601 > maxPassend_3028293016601629601
+                   if attrLengte_3028293016601629601 > max(maxPassend_3028293016601629601,1000)
                      then passend_3028293016601629601 = substr(TEKSTBLOK_09,1,maxPassend_3028293016601629601);
                      else passend_3028293016601629601 = TEKSTBLOK_09;
                    put passend_3028293016601629601 ~ @;
@@ -24591,7 +24591,7 @@ data _null_;
                    attrLengte_3028011526374225683=length(TEKSTBLOK_10);
                    aantalLF_3028011526374225683 = countc(TEKSTBLOK_10,'0A'x);
                    maxPassend_3028011526374225683=2048-1-aantalLF_3028011526374225683;
-                   if attrLengte_3028011526374225683 > maxPassend_3028011526374225683
+                   if attrLengte_3028011526374225683 > max(maxPassend_3028011526374225683,1000)
                      then passend_3028011526374225683 = substr(TEKSTBLOK_10,1,maxPassend_3028011526374225683);
                      else passend_3028011526374225683 = TEKSTBLOK_10;
                    put passend_3028011526374225683 ~ @;
@@ -24602,7 +24602,7 @@ data _null_;
                    attrLengte_2777269963343329415=length(VARCHAR_60_01);
                    aantalLF_2777269963343329415 = countc(VARCHAR_60_01,'0A'x);
                    maxPassend_2777269963343329415=60-1-aantalLF_2777269963343329415;
-                   if attrLengte_2777269963343329415 > maxPassend_2777269963343329415
+                   if attrLengte_2777269963343329415 > max(maxPassend_2777269963343329415,1000)
                      then passend_2777269963343329415 = substr(VARCHAR_60_01,1,maxPassend_2777269963343329415);
                      else passend_2777269963343329415 = VARCHAR_60_01;
                    put passend_2777269963343329415 ~ @;
@@ -24613,7 +24613,7 @@ data _null_;
                    attrLengte_2777269963326551802=length(VARCHAR_60_02);
                    aantalLF_2777269963326551802 = countc(VARCHAR_60_02,'0A'x);
                    maxPassend_2777269963326551802=60-1-aantalLF_2777269963326551802;
-                   if attrLengte_2777269963326551802 > maxPassend_2777269963326551802
+                   if attrLengte_2777269963326551802 > max(maxPassend_2777269963326551802,1000)
                      then passend_2777269963326551802 = substr(VARCHAR_60_02,1,maxPassend_2777269963326551802);
                      else passend_2777269963326551802 = VARCHAR_60_02;
                    put passend_2777269963326551802 ~ @;
@@ -24624,7 +24624,7 @@ data _null_;
                    attrLengte_2777269963309774185=length(VARCHAR_60_03);
                    aantalLF_2777269963309774185 = countc(VARCHAR_60_03,'0A'x);
                    maxPassend_2777269963309774185=60-1-aantalLF_2777269963309774185;
-                   if attrLengte_2777269963309774185 > maxPassend_2777269963309774185
+                   if attrLengte_2777269963309774185 > max(maxPassend_2777269963309774185,1000)
                      then passend_2777269963309774185 = substr(VARCHAR_60_03,1,maxPassend_2777269963309774185);
                      else passend_2777269963309774185 = VARCHAR_60_03;
                    put passend_2777269963309774185 ~ @;
@@ -24635,7 +24635,7 @@ data _null_;
                    attrLengte_2777269963292996572=length(VARCHAR_60_04);
                    aantalLF_2777269963292996572 = countc(VARCHAR_60_04,'0A'x);
                    maxPassend_2777269963292996572=60-1-aantalLF_2777269963292996572;
-                   if attrLengte_2777269963292996572 > maxPassend_2777269963292996572
+                   if attrLengte_2777269963292996572 > max(maxPassend_2777269963292996572,1000)
                      then passend_2777269963292996572 = substr(VARCHAR_60_04,1,maxPassend_2777269963292996572);
                      else passend_2777269963292996572 = VARCHAR_60_04;
                    put passend_2777269963292996572 ~ @;
@@ -24646,7 +24646,7 @@ data _null_;
                    attrLengte_2777269963276218931=length(VARCHAR_60_05);
                    aantalLF_2777269963276218931 = countc(VARCHAR_60_05,'0A'x);
                    maxPassend_2777269963276218931=60-1-aantalLF_2777269963276218931;
-                   if attrLengte_2777269963276218931 > maxPassend_2777269963276218931
+                   if attrLengte_2777269963276218931 > max(maxPassend_2777269963276218931,1000)
                      then passend_2777269963276218931 = substr(VARCHAR_60_05,1,maxPassend_2777269963276218931);
                      else passend_2777269963276218931 = VARCHAR_60_05;
                    put passend_2777269963276218931 ~ @;
@@ -24657,7 +24657,7 @@ data _null_;
                    attrLengte_2777269963259441318=length(VARCHAR_60_06);
                    aantalLF_2777269963259441318 = countc(VARCHAR_60_06,'0A'x);
                    maxPassend_2777269963259441318=60-1-aantalLF_2777269963259441318;
-                   if attrLengte_2777269963259441318 > maxPassend_2777269963259441318
+                   if attrLengte_2777269963259441318 > max(maxPassend_2777269963259441318,1000)
                      then passend_2777269963259441318 = substr(VARCHAR_60_06,1,maxPassend_2777269963259441318);
                      else passend_2777269963259441318 = VARCHAR_60_06;
                    put passend_2777269963259441318 ~ @;
@@ -24668,7 +24668,7 @@ data _null_;
                    attrLengte_2777269963242663701=length(VARCHAR_60_07);
                    aantalLF_2777269963242663701 = countc(VARCHAR_60_07,'0A'x);
                    maxPassend_2777269963242663701=60-1-aantalLF_2777269963242663701;
-                   if attrLengte_2777269963242663701 > maxPassend_2777269963242663701
+                   if attrLengte_2777269963242663701 > max(maxPassend_2777269963242663701,1000)
                      then passend_2777269963242663701 = substr(VARCHAR_60_07,1,maxPassend_2777269963242663701);
                      else passend_2777269963242663701 = VARCHAR_60_07;
                    put passend_2777269963242663701 ~ @;
@@ -24679,7 +24679,7 @@ data _null_;
                    attrLengte_2777269963225886088=length(VARCHAR_60_08);
                    aantalLF_2777269963225886088 = countc(VARCHAR_60_08,'0A'x);
                    maxPassend_2777269963225886088=60-1-aantalLF_2777269963225886088;
-                   if attrLengte_2777269963225886088 > maxPassend_2777269963225886088
+                   if attrLengte_2777269963225886088 > max(maxPassend_2777269963225886088,1000)
                      then passend_2777269963225886088 = substr(VARCHAR_60_08,1,maxPassend_2777269963225886088);
                      else passend_2777269963225886088 = VARCHAR_60_08;
                    put passend_2777269963225886088 ~ @;
@@ -24690,7 +24690,7 @@ data _null_;
                    attrLengte_2777269963209108479=length(VARCHAR_60_09);
                    aantalLF_2777269963209108479 = countc(VARCHAR_60_09,'0A'x);
                    maxPassend_2777269963209108479=60-1-aantalLF_2777269963209108479;
-                   if attrLengte_2777269963209108479 > maxPassend_2777269963209108479
+                   if attrLengte_2777269963209108479 > max(maxPassend_2777269963209108479,1000)
                      then passend_2777269963209108479 = substr(VARCHAR_60_09,1,maxPassend_2777269963209108479);
                      else passend_2777269963209108479 = VARCHAR_60_09;
                    put passend_2777269963209108479 ~ @;
@@ -24701,7 +24701,7 @@ data _null_;
                    attrLengte_2776988475397681689=length(VARCHAR_60_10);
                    aantalLF_2776988475397681689 = countc(VARCHAR_60_10,'0A'x);
                    maxPassend_2776988475397681689=60-1-aantalLF_2776988475397681689;
-                   if attrLengte_2776988475397681689 > maxPassend_2776988475397681689
+                   if attrLengte_2776988475397681689 > max(maxPassend_2776988475397681689,1000)
                      then passend_2776988475397681689 = substr(VARCHAR_60_10,1,maxPassend_2776988475397681689);
                      else passend_2776988475397681689 = VARCHAR_60_10;
                    put passend_2776988475397681689 ~ @;
@@ -24712,7 +24712,7 @@ data _null_;
                    attrLengte_2776988475414459306=length(VARCHAR_60_11);
                    aantalLF_2776988475414459306 = countc(VARCHAR_60_11,'0A'x);
                    maxPassend_2776988475414459306=60-1-aantalLF_2776988475414459306;
-                   if attrLengte_2776988475414459306 > maxPassend_2776988475414459306
+                   if attrLengte_2776988475414459306 > max(maxPassend_2776988475414459306,1000)
                      then passend_2776988475414459306 = substr(VARCHAR_60_11,1,maxPassend_2776988475414459306);
                      else passend_2776988475414459306 = VARCHAR_60_11;
                    put passend_2776988475414459306 ~ @;
@@ -24723,7 +24723,7 @@ data _null_;
                    attrLengte_2776988475431236919=length(VARCHAR_60_12);
                    aantalLF_2776988475431236919 = countc(VARCHAR_60_12,'0A'x);
                    maxPassend_2776988475431236919=60-1-aantalLF_2776988475431236919;
-                   if attrLengte_2776988475431236919 > maxPassend_2776988475431236919
+                   if attrLengte_2776988475431236919 > max(maxPassend_2776988475431236919,1000)
                      then passend_2776988475431236919 = substr(VARCHAR_60_12,1,maxPassend_2776988475431236919);
                      else passend_2776988475431236919 = VARCHAR_60_12;
                    put passend_2776988475431236919 ~ @;
@@ -24734,7 +24734,7 @@ data _null_;
                    attrLengte_2776988475448014528=length(VARCHAR_60_13);
                    aantalLF_2776988475448014528 = countc(VARCHAR_60_13,'0A'x);
                    maxPassend_2776988475448014528=60-1-aantalLF_2776988475448014528;
-                   if attrLengte_2776988475448014528 > maxPassend_2776988475448014528
+                   if attrLengte_2776988475448014528 > max(maxPassend_2776988475448014528,1000)
                      then passend_2776988475448014528 = substr(VARCHAR_60_13,1,maxPassend_2776988475448014528);
                      else passend_2776988475448014528 = VARCHAR_60_13;
                    put passend_2776988475448014528 ~ @;
@@ -24745,7 +24745,7 @@ data _null_;
                    attrLengte_2776988475330571205=length(VARCHAR_60_14);
                    aantalLF_2776988475330571205 = countc(VARCHAR_60_14,'0A'x);
                    maxPassend_2776988475330571205=60-1-aantalLF_2776988475330571205;
-                   if attrLengte_2776988475330571205 > maxPassend_2776988475330571205
+                   if attrLengte_2776988475330571205 > max(maxPassend_2776988475330571205,1000)
                      then passend_2776988475330571205 = substr(VARCHAR_60_14,1,maxPassend_2776988475330571205);
                      else passend_2776988475330571205 = VARCHAR_60_14;
                    put passend_2776988475330571205 ~ @;
@@ -24756,7 +24756,7 @@ data _null_;
                    attrLengte_2776988475347348822=length(VARCHAR_60_15);
                    aantalLF_2776988475347348822 = countc(VARCHAR_60_15,'0A'x);
                    maxPassend_2776988475347348822=60-1-aantalLF_2776988475347348822;
-                   if attrLengte_2776988475347348822 > maxPassend_2776988475347348822
+                   if attrLengte_2776988475347348822 > max(maxPassend_2776988475347348822,1000)
                      then passend_2776988475347348822 = substr(VARCHAR_60_15,1,maxPassend_2776988475347348822);
                      else passend_2776988475347348822 = VARCHAR_60_15;
                    put passend_2776988475347348822 ~ @;
@@ -24767,7 +24767,7 @@ data _null_;
                    attrLengte_2776988475364126435=length(VARCHAR_60_16);
                    aantalLF_2776988475364126435 = countc(VARCHAR_60_16,'0A'x);
                    maxPassend_2776988475364126435=60-1-aantalLF_2776988475364126435;
-                   if attrLengte_2776988475364126435 > maxPassend_2776988475364126435
+                   if attrLengte_2776988475364126435 > max(maxPassend_2776988475364126435,1000)
                      then passend_2776988475364126435 = substr(VARCHAR_60_16,1,maxPassend_2776988475364126435);
                      else passend_2776988475364126435 = VARCHAR_60_16;
                    put passend_2776988475364126435 ~ @;
@@ -24778,7 +24778,7 @@ data _null_;
                    attrLengte_2776988475380904076=length(VARCHAR_60_17);
                    aantalLF_2776988475380904076 = countc(VARCHAR_60_17,'0A'x);
                    maxPassend_2776988475380904076=60-1-aantalLF_2776988475380904076;
-                   if attrLengte_2776988475380904076 > maxPassend_2776988475380904076
+                   if attrLengte_2776988475380904076 > max(maxPassend_2776988475380904076,1000)
                      then passend_2776988475380904076 = substr(VARCHAR_60_17,1,maxPassend_2776988475380904076);
                      else passend_2776988475380904076 = VARCHAR_60_17;
                    put passend_2776988475380904076 ~ @;
@@ -24789,7 +24789,7 @@ data _null_;
                    attrLengte_2776988475263460721=length(VARCHAR_60_18);
                    aantalLF_2776988475263460721 = countc(VARCHAR_60_18,'0A'x);
                    maxPassend_2776988475263460721=60-1-aantalLF_2776988475263460721;
-                   if attrLengte_2776988475263460721 > maxPassend_2776988475263460721
+                   if attrLengte_2776988475263460721 > max(maxPassend_2776988475263460721,1000)
                      then passend_2776988475263460721 = substr(VARCHAR_60_18,1,maxPassend_2776988475263460721);
                      else passend_2776988475263460721 = VARCHAR_60_18;
                    put passend_2776988475263460721 ~ @;
@@ -24800,7 +24800,7 @@ data _null_;
                    attrLengte_2776988475280238338=length(VARCHAR_60_19);
                    aantalLF_2776988475280238338 = countc(VARCHAR_60_19,'0A'x);
                    maxPassend_2776988475280238338=60-1-aantalLF_2776988475280238338;
-                   if attrLengte_2776988475280238338 > maxPassend_2776988475280238338
+                   if attrLengte_2776988475280238338 > max(maxPassend_2776988475280238338,1000)
                      then passend_2776988475280238338 = substr(VARCHAR_60_19,1,maxPassend_2776988475280238338);
                      else passend_2776988475280238338 = VARCHAR_60_19;
                    put passend_2776988475280238338 ~ @;
@@ -24811,7 +24811,7 @@ data _null_;
                    attrLengte_2777832940895609154=length(VARCHAR_60_20);
                    aantalLF_2777832940895609154 = countc(VARCHAR_60_20,'0A'x);
                    maxPassend_2777832940895609154=60-1-aantalLF_2777832940895609154;
-                   if attrLengte_2777832940895609154 > maxPassend_2777832940895609154
+                   if attrLengte_2777832940895609154 > max(maxPassend_2777832940895609154,1000)
                      then passend_2777832940895609154 = substr(VARCHAR_60_20,1,maxPassend_2777832940895609154);
                      else passend_2777832940895609154 = VARCHAR_60_20;
                    put passend_2777832940895609154 ~ @;
@@ -24822,7 +24822,7 @@ data _null_;
                    attrLengte_2777832940878831537=length(VARCHAR_60_21);
                    aantalLF_2777832940878831537 = countc(VARCHAR_60_21,'0A'x);
                    maxPassend_2777832940878831537=60-1-aantalLF_2777832940878831537;
-                   if attrLengte_2777832940878831537 > maxPassend_2777832940878831537
+                   if attrLengte_2777832940878831537 > max(maxPassend_2777832940878831537,1000)
                      then passend_2777832940878831537 = substr(VARCHAR_60_21,1,maxPassend_2777832940878831537);
                      else passend_2777832940878831537 = VARCHAR_60_21;
                    put passend_2777832940878831537 ~ @;
@@ -24833,7 +24833,7 @@ data _null_;
                    attrLengte_2777832940929164408=length(VARCHAR_60_22);
                    aantalLF_2777832940929164408 = countc(VARCHAR_60_22,'0A'x);
                    maxPassend_2777832940929164408=60-1-aantalLF_2777832940929164408;
-                   if attrLengte_2777832940929164408 > maxPassend_2777832940929164408
+                   if attrLengte_2777832940929164408 > max(maxPassend_2777832940929164408,1000)
                      then passend_2777832940929164408 = substr(VARCHAR_60_22,1,maxPassend_2777832940929164408);
                      else passend_2777832940929164408 = VARCHAR_60_22;
                    put passend_2777832940929164408 ~ @;
@@ -24844,7 +24844,7 @@ data _null_;
                    attrLengte_2777832940912386799=length(VARCHAR_60_23);
                    aantalLF_2777832940912386799 = countc(VARCHAR_60_23,'0A'x);
                    maxPassend_2777832940912386799=60-1-aantalLF_2777832940912386799;
-                   if attrLengte_2777832940912386799 > maxPassend_2777832940912386799
+                   if attrLengte_2777832940912386799 > max(maxPassend_2777832940912386799,1000)
                      then passend_2777832940912386799 = substr(VARCHAR_60_23,1,maxPassend_2777832940912386799);
                      else passend_2777832940912386799 = VARCHAR_60_23;
                    put passend_2777832940912386799 ~ @;
@@ -24855,7 +24855,7 @@ data _null_;
                    attrLengte_2777832940828498702=length(VARCHAR_60_24);
                    aantalLF_2777832940828498702 = countc(VARCHAR_60_24,'0A'x);
                    maxPassend_2777832940828498702=60-1-aantalLF_2777832940828498702;
-                   if attrLengte_2777832940828498702 > maxPassend_2777832940828498702
+                   if attrLengte_2777832940828498702 > max(maxPassend_2777832940828498702,1000)
                      then passend_2777832940828498702 = substr(VARCHAR_60_24,1,maxPassend_2777832940828498702);
                      else passend_2777832940828498702 = VARCHAR_60_24;
                    put passend_2777832940828498702 ~ @;
@@ -24866,7 +24866,7 @@ data _null_;
                    attrLengte_2777832940811721085=length(VARCHAR_60_25);
                    aantalLF_2777832940811721085 = countc(VARCHAR_60_25,'0A'x);
                    maxPassend_2777832940811721085=60-1-aantalLF_2777832940811721085;
-                   if attrLengte_2777832940811721085 > maxPassend_2777832940811721085
+                   if attrLengte_2777832940811721085 > max(maxPassend_2777832940811721085,1000)
                      then passend_2777832940811721085 = substr(VARCHAR_60_25,1,maxPassend_2777832940811721085);
                      else passend_2777832940811721085 = VARCHAR_60_25;
                    put passend_2777832940811721085 ~ @;
@@ -24877,7 +24877,7 @@ data _null_;
                    attrLengte_2777832940862053924=length(VARCHAR_60_26);
                    aantalLF_2777832940862053924 = countc(VARCHAR_60_26,'0A'x);
                    maxPassend_2777832940862053924=60-1-aantalLF_2777832940862053924;
-                   if attrLengte_2777832940862053924 > maxPassend_2777832940862053924
+                   if attrLengte_2777832940862053924 > max(maxPassend_2777832940862053924,1000)
                      then passend_2777832940862053924 = substr(VARCHAR_60_26,1,maxPassend_2777832940862053924);
                      else passend_2777832940862053924 = VARCHAR_60_26;
                    put passend_2777832940862053924 ~ @;
@@ -24888,7 +24888,7 @@ data _null_;
                    attrLengte_2777832940845276315=length(VARCHAR_60_27);
                    aantalLF_2777832940845276315 = countc(VARCHAR_60_27,'0A'x);
                    maxPassend_2777832940845276315=60-1-aantalLF_2777832940845276315;
-                   if attrLengte_2777832940845276315 > maxPassend_2777832940845276315
+                   if attrLengte_2777832940845276315 > max(maxPassend_2777832940845276315,1000)
                      then passend_2777832940845276315 = substr(VARCHAR_60_27,1,maxPassend_2777832940845276315);
                      else passend_2777832940845276315 = VARCHAR_60_27;
                    put passend_2777832940845276315 ~ @;
@@ -24899,7 +24899,7 @@ data _null_;
                    attrLengte_2777832941029830122=length(VARCHAR_60_28);
                    aantalLF_2777832941029830122 = countc(VARCHAR_60_28,'0A'x);
                    maxPassend_2777832941029830122=60-1-aantalLF_2777832941029830122;
-                   if attrLengte_2777832941029830122 > maxPassend_2777832941029830122
+                   if attrLengte_2777832941029830122 > max(maxPassend_2777832941029830122,1000)
                      then passend_2777832941029830122 = substr(VARCHAR_60_28,1,maxPassend_2777832941029830122);
                      else passend_2777832941029830122 = VARCHAR_60_28;
                    put passend_2777832941029830122 ~ @;
@@ -24910,7 +24910,7 @@ data _null_;
                    attrLengte_2777832941013052505=length(VARCHAR_60_29);
                    aantalLF_2777832941013052505 = countc(VARCHAR_60_29,'0A'x);
                    maxPassend_2777832941013052505=60-1-aantalLF_2777832941013052505;
-                   if attrLengte_2777832941013052505 > maxPassend_2777832941013052505
+                   if attrLengte_2777832941013052505 > max(maxPassend_2777832941013052505,1000)
                      then passend_2777832941013052505 = substr(VARCHAR_60_29,1,maxPassend_2777832941013052505);
                      else passend_2777832941013052505 = VARCHAR_60_29;
                    put passend_2777832941013052505 ~ @;
@@ -24921,7 +24921,7 @@ data _null_;
                    attrLengte_2777551452933183819=length(VARCHAR_60_30);
                    aantalLF_2777551452933183819 = countc(VARCHAR_60_30,'0A'x);
                    maxPassend_2777551452933183819=60-1-aantalLF_2777551452933183819;
-                   if attrLengte_2777551452933183819 > maxPassend_2777551452933183819
+                   if attrLengte_2777551452933183819 > max(maxPassend_2777551452933183819,1000)
                      then passend_2777551452933183819 = substr(VARCHAR_60_30,1,maxPassend_2777551452933183819);
                      else passend_2777551452933183819 = VARCHAR_60_30;
                    put passend_2777551452933183819 ~ @;
@@ -24932,7 +24932,7 @@ data _null_;
                    attrLengte_2777551452949961428=length(VARCHAR_60_31);
                    aantalLF_2777551452949961428 = countc(VARCHAR_60_31,'0A'x);
                    maxPassend_2777551452949961428=60-1-aantalLF_2777551452949961428;
-                   if attrLengte_2777551452949961428 > maxPassend_2777551452949961428
+                   if attrLengte_2777551452949961428 > max(maxPassend_2777551452949961428,1000)
                      then passend_2777551452949961428 = substr(VARCHAR_60_31,1,maxPassend_2777551452949961428);
                      else passend_2777551452949961428 = VARCHAR_60_31;
                    put passend_2777551452949961428 ~ @;
@@ -24943,7 +24943,7 @@ data _null_;
                    attrLengte_2777551452899628589=length(VARCHAR_60_32);
                    aantalLF_2777551452899628589 = countc(VARCHAR_60_32,'0A'x);
                    maxPassend_2777551452899628589=60-1-aantalLF_2777551452899628589;
-                   if attrLengte_2777551452899628589 > maxPassend_2777551452899628589
+                   if attrLengte_2777551452899628589 > max(maxPassend_2777551452899628589,1000)
                      then passend_2777551452899628589 = substr(VARCHAR_60_32,1,maxPassend_2777551452899628589);
                      else passend_2777551452899628589 = VARCHAR_60_32;
                    put passend_2777551452899628589 ~ @;
@@ -24954,7 +24954,7 @@ data _null_;
                    attrLengte_2777551452916406206=length(VARCHAR_60_33);
                    aantalLF_2777551452916406206 = countc(VARCHAR_60_33,'0A'x);
                    maxPassend_2777551452916406206=60-1-aantalLF_2777551452916406206;
-                   if attrLengte_2777551452916406206 > maxPassend_2777551452916406206
+                   if attrLengte_2777551452916406206 > max(maxPassend_2777551452916406206,1000)
                      then passend_2777551452916406206 = substr(VARCHAR_60_33,1,maxPassend_2777551452916406206);
                      else passend_2777551452916406206 = VARCHAR_60_33;
                    put passend_2777551452916406206 ~ @;
@@ -24965,7 +24965,7 @@ data _null_;
                    attrLengte_2777551453000294303=length(VARCHAR_60_34);
                    aantalLF_2777551453000294303 = countc(VARCHAR_60_34,'0A'x);
                    maxPassend_2777551453000294303=60-1-aantalLF_2777551453000294303;
-                   if attrLengte_2777551453000294303 > maxPassend_2777551453000294303
+                   if attrLengte_2777551453000294303 > max(maxPassend_2777551453000294303,1000)
                      then passend_2777551453000294303 = substr(VARCHAR_60_34,1,maxPassend_2777551453000294303);
                      else passend_2777551453000294303 = VARCHAR_60_34;
                    put passend_2777551453000294303 ~ @;
@@ -24976,7 +24976,7 @@ data _null_;
                    attrLengte_2777551453017071912=length(VARCHAR_60_35);
                    aantalLF_2777551453017071912 = countc(VARCHAR_60_35,'0A'x);
                    maxPassend_2777551453017071912=60-1-aantalLF_2777551453017071912;
-                   if attrLengte_2777551453017071912 > maxPassend_2777551453017071912
+                   if attrLengte_2777551453017071912 > max(maxPassend_2777551453017071912,1000)
                      then passend_2777551453017071912 = substr(VARCHAR_60_35,1,maxPassend_2777551453017071912);
                      else passend_2777551453017071912 = VARCHAR_60_35;
                    put passend_2777551453017071912 ~ @;
@@ -24987,7 +24987,7 @@ data _null_;
                    attrLengte_2777551452966739041=length(VARCHAR_60_36);
                    aantalLF_2777551452966739041 = countc(VARCHAR_60_36,'0A'x);
                    maxPassend_2777551452966739041=60-1-aantalLF_2777551452966739041;
-                   if attrLengte_2777551452966739041 > maxPassend_2777551452966739041
+                   if attrLengte_2777551452966739041 > max(maxPassend_2777551452966739041,1000)
                      then passend_2777551452966739041 = substr(VARCHAR_60_36,1,maxPassend_2777551452966739041);
                      else passend_2777551452966739041 = VARCHAR_60_36;
                    put passend_2777551452966739041 ~ @;
@@ -24998,7 +24998,7 @@ data _null_;
                    attrLengte_2777551452983516658=length(VARCHAR_60_37);
                    aantalLF_2777551452983516658 = countc(VARCHAR_60_37,'0A'x);
                    maxPassend_2777551452983516658=60-1-aantalLF_2777551452983516658;
-                   if attrLengte_2777551452983516658 > maxPassend_2777551452983516658
+                   if attrLengte_2777551452983516658 > max(maxPassend_2777551452983516658,1000)
                      then passend_2777551452983516658 = substr(VARCHAR_60_37,1,maxPassend_2777551452983516658);
                      else passend_2777551452983516658 = VARCHAR_60_37;
                    put passend_2777551452983516658 ~ @;
@@ -25009,7 +25009,7 @@ data _null_;
                    attrLengte_2777551453067404755=length(VARCHAR_60_38);
                    aantalLF_2777551453067404755 = countc(VARCHAR_60_38,'0A'x);
                    maxPassend_2777551453067404755=60-1-aantalLF_2777551453067404755;
-                   if attrLengte_2777551453067404755 > maxPassend_2777551453067404755
+                   if attrLengte_2777551453067404755 > max(maxPassend_2777551453067404755,1000)
                      then passend_2777551453067404755 = substr(VARCHAR_60_38,1,maxPassend_2777551453067404755);
                      else passend_2777551453067404755 = VARCHAR_60_38;
                    put passend_2777551453067404755 ~ @;
@@ -25020,7 +25020,7 @@ data _null_;
                    attrLengte_2777551453084182396=length(VARCHAR_60_39);
                    aantalLF_2777551453084182396 = countc(VARCHAR_60_39,'0A'x);
                    maxPassend_2777551453084182396=60-1-aantalLF_2777551453084182396;
-                   if attrLengte_2777551453084182396 > maxPassend_2777551453084182396
+                   if attrLengte_2777551453084182396 > max(maxPassend_2777551453084182396,1000)
                      then passend_2777551453084182396 = substr(VARCHAR_60_39,1,maxPassend_2777551453084182396);
                      else passend_2777551453084182396 = VARCHAR_60_39;
                    put passend_2777551453084182396 ~ @;
@@ -25031,7 +25031,7 @@ data _null_;
                    attrLengte_2776144009362870388=length(VARCHAR_60_40);
                    aantalLF_2776144009362870388 = countc(VARCHAR_60_40,'0A'x);
                    maxPassend_2776144009362870388=60-1-aantalLF_2776144009362870388;
-                   if attrLengte_2776144009362870388 > maxPassend_2776144009362870388
+                   if attrLengte_2776144009362870388 > max(maxPassend_2776144009362870388,1000)
                      then passend_2776144009362870388 = substr(VARCHAR_60_40,1,maxPassend_2776144009362870388);
                      else passend_2776144009362870388 = VARCHAR_60_40;
                    put passend_2776144009362870388 ~ @;
@@ -25045,7 +25045,7 @@ data _null_;
                    attrLengte_4356781747989407008=length(VVG_VKM_VAR_GEGEVENS_DOS);
                    aantalLF_4356781747989407008 = countc(VVG_VKM_VAR_GEGEVENS_DOS,'0A'x);
                    maxPassend_4356781747989407008=1-1-aantalLF_4356781747989407008;
-                   if attrLengte_4356781747989407008 > maxPassend_4356781747989407008
+                   if attrLengte_4356781747989407008 > max(maxPassend_4356781747989407008,1000)
                      then passend_4356781747989407008 = substr(VVG_VKM_VAR_GEGEVENS_DOS,1,maxPassend_4356781747989407008);
                      else passend_4356781747989407008 = VVG_VKM_VAR_GEGEVENS_DOS;
                    put passend_4356781747989407008 ~ @;
@@ -25056,7 +25056,7 @@ data _null_;
                    attrLengte_8482460586457766179=length(VVG_VKM_VAR_GEGEVENS_PRG);
                    aantalLF_8482460586457766179 = countc(VVG_VKM_VAR_GEGEVENS_PRG,'0A'x);
                    maxPassend_8482460586457766179=1-1-aantalLF_8482460586457766179;
-                   if attrLengte_8482460586457766179 > maxPassend_8482460586457766179
+                   if attrLengte_8482460586457766179 > max(maxPassend_8482460586457766179,1000)
                      then passend_8482460586457766179 = substr(VVG_VKM_VAR_GEGEVENS_PRG,1,maxPassend_8482460586457766179);
                      else passend_8482460586457766179 = VVG_VKM_VAR_GEGEVENS_PRG;
                    put passend_8482460586457766179 ~ @;
@@ -25172,7 +25172,7 @@ data _null_;
                    attrLengte_3164922725850686505=length(Kaart_naam);
                    aantalLF_3164922725850686505 = countc(Kaart_naam,'0A'x);
                    maxPassend_3164922725850686505=30-1-aantalLF_3164922725850686505;
-                   if attrLengte_3164922725850686505 > maxPassend_3164922725850686505
+                   if attrLengte_3164922725850686505 > max(maxPassend_3164922725850686505,1000)
                      then passend_3164922725850686505 = substr(Kaart_naam,1,maxPassend_3164922725850686505);
                      else passend_3164922725850686505 = Kaart_naam;
                    put passend_3164922725850686505 ~ @;
@@ -25189,7 +25189,7 @@ data _null_;
                    attrLengte_2792940614022500175=length(Omschrijving);
                    aantalLF_2792940614022500175 = countc(Omschrijving,'0A'x);
                    maxPassend_2792940614022500175=2000-1-aantalLF_2792940614022500175;
-                   if attrLengte_2792940614022500175 > maxPassend_2792940614022500175
+                   if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
                    put passend_2792940614022500175 ~ @;
@@ -25200,7 +25200,7 @@ data _null_;
                    attrLengte_381542781898920778=length(Vkm_var_kaart_dos);
                    aantalLF_381542781898920778 = countc(Vkm_var_kaart_dos,'0A'x);
                    maxPassend_381542781898920778=1-1-aantalLF_381542781898920778;
-                   if attrLengte_381542781898920778 > maxPassend_381542781898920778
+                   if attrLengte_381542781898920778 > max(maxPassend_381542781898920778,1000)
                      then passend_381542781898920778 = substr(Vkm_var_kaart_dos,1,maxPassend_381542781898920778);
                      else passend_381542781898920778 = Vkm_var_kaart_dos;
                    put passend_381542781898920778 ~ @;
@@ -25211,7 +25211,7 @@ data _null_;
                    attrLengte_7193119486904882669=length(Vkm_var_kaart_prg);
                    aantalLF_7193119486904882669 = countc(Vkm_var_kaart_prg,'0A'x);
                    maxPassend_7193119486904882669=1-1-aantalLF_7193119486904882669;
-                   if attrLengte_7193119486904882669 > maxPassend_7193119486904882669
+                   if attrLengte_7193119486904882669 > max(maxPassend_7193119486904882669,1000)
                      then passend_7193119486904882669 = substr(Vkm_var_kaart_prg,1,maxPassend_7193119486904882669);
                      else passend_7193119486904882669 = Vkm_var_kaart_prg;
                    put passend_7193119486904882669 ~ @;
@@ -25234,7 +25234,7 @@ data _null_;
                    attrLengte_3584536051482242786=length(Vkm_var_kaart_dos_prg);
                    aantalLF_3584536051482242786 = countc(Vkm_var_kaart_dos_prg,'0A'x);
                    maxPassend_3584536051482242786=1-1-aantalLF_3584536051482242786;
-                   if attrLengte_3584536051482242786 > maxPassend_3584536051482242786
+                   if attrLengte_3584536051482242786 > max(maxPassend_3584536051482242786,1000)
                      then passend_3584536051482242786 = substr(Vkm_var_kaart_dos_prg,1,maxPassend_3584536051482242786);
                      else passend_3584536051482242786 = Vkm_var_kaart_dos_prg;
                    put passend_3584536051482242786 ~ @;
@@ -25245,7 +25245,7 @@ data _null_;
                    attrLengte_2927839731313237353=length(Vkm_var_kaart_dos_reg);
                    aantalLF_2927839731313237353 = countc(Vkm_var_kaart_dos_reg,'0A'x);
                    maxPassend_2927839731313237353=1-1-aantalLF_2927839731313237353;
-                   if attrLengte_2927839731313237353 > maxPassend_2927839731313237353
+                   if attrLengte_2927839731313237353 > max(maxPassend_2927839731313237353,1000)
                      then passend_2927839731313237353 = substr(Vkm_var_kaart_dos_reg,1,maxPassend_2927839731313237353);
                      else passend_2927839731313237353 = Vkm_var_kaart_dos_reg;
                    put passend_2927839731313237353 ~ @;
@@ -25256,7 +25256,7 @@ data _null_;
                    attrLengte_5423184669609009757=length(Vkm_var_kaart_dos_regpar);
                    aantalLF_5423184669609009757 = countc(Vkm_var_kaart_dos_regpar,'0A'x);
                    maxPassend_5423184669609009757=1-1-aantalLF_5423184669609009757;
-                   if attrLengte_5423184669609009757 > maxPassend_5423184669609009757
+                   if attrLengte_5423184669609009757 > max(maxPassend_5423184669609009757,1000)
                      then passend_5423184669609009757 = substr(Vkm_var_kaart_dos_regpar,1,maxPassend_5423184669609009757);
                      else passend_5423184669609009757 = Vkm_var_kaart_dos_regpar;
                    put passend_5423184669609009757 ~ @;
@@ -25267,7 +25267,7 @@ data _null_;
                    attrLengte_5364441580193008346=length(Geblokkeerd);
                    aantalLF_5364441580193008346 = countc(Geblokkeerd,'0A'x);
                    maxPassend_5364441580193008346=1-1-aantalLF_5364441580193008346;
-                   if attrLengte_5364441580193008346 > maxPassend_5364441580193008346
+                   if attrLengte_5364441580193008346 > max(maxPassend_5364441580193008346,1000)
                      then passend_5364441580193008346 = substr(Geblokkeerd,1,maxPassend_5364441580193008346);
                      else passend_5364441580193008346 = Geblokkeerd;
                    put passend_5364441580193008346 ~ @;
@@ -25278,7 +25278,7 @@ data _null_;
                    attrLengte_8530042717172599085=length(Copy_jn);
                    aantalLF_8530042717172599085 = countc(Copy_jn,'0A'x);
                    maxPassend_8530042717172599085=1-1-aantalLF_8530042717172599085;
-                   if attrLengte_8530042717172599085 > maxPassend_8530042717172599085
+                   if attrLengte_8530042717172599085 > max(maxPassend_8530042717172599085,1000)
                      then passend_8530042717172599085 = substr(Copy_jn,1,maxPassend_8530042717172599085);
                      else passend_8530042717172599085 = Copy_jn;
                    put passend_8530042717172599085 ~ @;
