@@ -31,14 +31,14 @@ modifiedNames = concatMap modNames
 createStatement :: Table -> [Text]
 createStatement t = 
       [ "PROC SQL;"
-      , "   CREATE TABLE WORK."<>tempTableName<>" AS"
+      , "   CREATE TABLE MIGRATIE."<>tempTableName<>" AS"
       ]
    <> T.lines cols 
    <> [ "     FROM DATAQASG."<> T.pack (tableNameOrg t)<>" t1;"
       , "QUIT;"
       , ""
-      , "data WORK."<>tempTableName<>";"
-      , "  set WORK."<>tempTableName<>";"
+      , "data MIGRATIE."<>tempTableName<>";"
+      , "  set MIGRATIE."<>tempTableName<>";"
       , "  techId=_n_;"
       , "run;"
       , ""
@@ -73,7 +73,7 @@ createStatement t =
                 <> headerRow
                 <>[ "       ; "
                   , "     end; "
-                  , "   set  WORK."<>tempTableName<>"   end=EFIEOD; "
+                  , "   set  MIGRATIE."<>tempTableName<>"   end=EFIEOD; "
                   ]
                 <> formatSegments   
                 <>[ "     do; "

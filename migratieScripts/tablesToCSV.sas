@@ -1,5 +1,5 @@
 PROC SQL;
-   CREATE TABLE WORK.BAS_AOM_ACTIE AS
+   CREATE TABLE MIGRATIE.BAS_AOM_ACTIE AS
    SELECT t1.Actie_cd,
           t1.Actie_oms,
           t1.Creatie_user,
@@ -9,8 +9,8 @@ PROC SQL;
      FROM DATAQASG.AOM_ACTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_AOM_ACTIE;
-  set WORK.BAS_AOM_ACTIE;
+data MIGRATIE.BAS_AOM_ACTIE;
+  set MIGRATIE.BAS_AOM_ACTIE;
   techId=_n_;
 run;
 
@@ -37,7 +37,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_AOM_ACTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_AOM_ACTIE   end=EFIEOD; 
        format Actie_cd  ;
        format Actie_oms  ;
        format Creatie_user  ;
@@ -109,7 +109,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_AOM_TRA_ACTIE AS
+   CREATE TABLE MIGRATIE.BAS_AOM_TRA_ACTIE AS
    SELECT t1.Actie_cd,
           t1.Bgt_cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -120,8 +120,8 @@ PROC SQL;
      FROM DATAQASG.AOM_TRA_ACTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_AOM_TRA_ACTIE;
-  set WORK.BAS_AOM_TRA_ACTIE;
+data MIGRATIE.BAS_AOM_TRA_ACTIE;
+  set MIGRATIE.BAS_AOM_TRA_ACTIE;
   techId=_n_;
 run;
 
@@ -150,7 +150,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_AOM_TRA_ACTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_AOM_TRA_ACTIE   end=EFIEOD; 
        format Actie_cd  ;
        format Bgt_cd  ;
        format Creatie_dat B8601DT19. ;
@@ -235,7 +235,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_AOM_TRANSACTIETYPE AS
+   CREATE TABLE MIGRATIE.BAS_AOM_TRANSACTIETYPE AS
    SELECT t1.Beleidsadministratie_jn,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -249,8 +249,8 @@ PROC SQL;
      FROM DATAQASG.AOM_TRANSACTIETYPE_TCMG t1;
 QUIT;
 
-data WORK.BAS_AOM_TRANSACTIETYPE;
-  set WORK.BAS_AOM_TRANSACTIETYPE;
+data MIGRATIE.BAS_AOM_TRANSACTIETYPE;
+  set MIGRATIE.BAS_AOM_TRANSACTIETYPE;
   techId=_n_;
 run;
 
@@ -285,7 +285,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_AOM_TRANSACTIETYPE   end=EFIEOD; 
+   set  MIGRATIE.BAS_AOM_TRANSACTIETYPE   end=EFIEOD; 
        format Beleidsadministratie_jn  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -409,7 +409,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_BTM_BETALING AS
+   CREATE TABLE MIGRATIE.BAS_BTM_BETALING AS
    SELECT t1.Rel_id,
           t1.Tra_id,
           t1.Reg_cd,
@@ -444,8 +444,8 @@ PROC SQL;
      FROM DATAQASG.BTM_BETALING_TCMG t1;
 QUIT;
 
-data WORK.BAS_BTM_BETALING;
-  set WORK.BAS_BTM_BETALING;
+data MIGRATIE.BAS_BTM_BETALING;
+  set MIGRATIE.BAS_BTM_BETALING;
   techId=_n_;
 run;
 
@@ -522,7 +522,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_BTM_BETALING   end=EFIEOD; 
+   set  MIGRATIE.BAS_BTM_BETALING   end=EFIEOD; 
        format Rel_id best12. ;
        format Tra_id best12. ;
        format Reg_cd  ;
@@ -820,7 +820,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_BTM_HIST_BETALING AS
+   CREATE TABLE MIGRATIE.BAS_BTM_HIST_BETALING AS
    SELECT t1.Rel_id,
           t1.Tra_id,
           t1.Reg_cd,
@@ -853,8 +853,8 @@ PROC SQL;
      FROM DATAQASG.BTM_HIST_BETALING_TCMG t1;
 QUIT;
 
-data WORK.BAS_BTM_HIST_BETALING;
-  set WORK.BAS_BTM_HIST_BETALING;
+data MIGRATIE.BAS_BTM_HIST_BETALING;
+  set MIGRATIE.BAS_BTM_HIST_BETALING;
   techId=_n_;
 run;
 
@@ -927,7 +927,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_BTM_HIST_BETALING   end=EFIEOD; 
+   set  MIGRATIE.BAS_BTM_HIST_BETALING   end=EFIEOD; 
        format Rel_id best12. ;
        format Tra_id best12. ;
        format Reg_cd  ;
@@ -1190,7 +1190,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_BERICHT AS
+   CREATE TABLE MIGRATIE.BAS_COR_BERICHT AS
    SELECT t1.Cor_id,
           t1.Ed_bericht_id,
           t1.Afzender_id,
@@ -1212,8 +1212,8 @@ PROC SQL;
      FROM DATAQASG.COR_BERICHT_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_BERICHT;
-  set WORK.BAS_COR_BERICHT;
+data MIGRATIE.BAS_COR_BERICHT;
+  set MIGRATIE.BAS_COR_BERICHT;
   techId=_n_;
 run;
 
@@ -1264,7 +1264,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_BERICHT   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_BERICHT   end=EFIEOD; 
        format Cor_id best12. ;
        format Ed_bericht_id best12. ;
        format Afzender_id best12. ;
@@ -1429,7 +1429,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_COR_PARAAF AS
+   CREATE TABLE MIGRATIE.BAS_COR_COR_PARAAF AS
    SELECT t1.Acc_id,
           t1.Acc_rol_cd,
           t1.Acc_vaste_paraaf_jn,
@@ -1460,8 +1460,8 @@ PROC SQL;
      FROM DATAQASG.COR_COR_PARAAF_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_COR_PARAAF;
-  set WORK.BAS_COR_COR_PARAAF;
+data MIGRATIE.BAS_COR_COR_PARAAF;
+  set MIGRATIE.BAS_COR_COR_PARAAF;
   techId=_n_;
 run;
 
@@ -1530,7 +1530,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_COR_PARAAF   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_COR_PARAAF   end=EFIEOD; 
        format Acc_id best12. ;
        format Acc_rol_cd  ;
        format Acc_vaste_paraaf_jn  ;
@@ -1794,7 +1794,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_COR_SRT AS
+   CREATE TABLE MIGRATIE.BAS_COR_COR_SRT AS
    SELECT t1.Cst_cd,
           t1.Cst_oms,
           t1.Cst_template,
@@ -1820,8 +1820,8 @@ PROC SQL;
      FROM DATAQASG.COR_COR_SRT_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_COR_SRT;
-  set WORK.BAS_COR_COR_SRT;
+data MIGRATIE.BAS_COR_COR_SRT;
+  set MIGRATIE.BAS_COR_COR_SRT;
   techId=_n_;
 run;
 
@@ -1880,7 +1880,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_COR_SRT   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_COR_SRT   end=EFIEOD; 
        format Cst_cd  ;
        format Cst_oms  ;
        format Cst_template  ;
@@ -2160,7 +2160,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_CORRESPONDENTIE_HIST AS
+   CREATE TABLE MIGRATIE.BAS_COR_CORRESPONDENTIE_HIST AS
    SELECT t1.Cor_id,
           t1.Volg_nr,
           t1.Correctie_code,
@@ -2172,8 +2172,8 @@ PROC SQL;
      FROM DATAQASG.COR_CORRESPONDENTIE_HIST_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_CORRESPONDENTIE_HIST;
-  set WORK.BAS_COR_CORRESPONDENTIE_HIST;
+data MIGRATIE.BAS_COR_CORRESPONDENTIE_HIST;
+  set MIGRATIE.BAS_COR_CORRESPONDENTIE_HIST;
   techId=_n_;
 run;
 
@@ -2204,7 +2204,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_CORRESPONDENTIE_HIST   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_CORRESPONDENTIE_HIST   end=EFIEOD; 
        format Cor_id best12. ;
        format Volg_nr best12. ;
        format Correctie_code  ;
@@ -2275,7 +2275,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_CORRESPONDENTIE AS
+   CREATE TABLE MIGRATIE.BAS_COR_CORRESPONDENTIE AS
    SELECT t1.Actie_datum FORMAT=B8601DT19. AS Actie_datum,
           t1.Afgedrukt_JN,
           t1.Afgehandeld,
@@ -2342,8 +2342,8 @@ PROC SQL;
      FROM DATAQASG.COR_CORRESPONDENTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_CORRESPONDENTIE;
-  set WORK.BAS_COR_CORRESPONDENTIE;
+data MIGRATIE.BAS_COR_CORRESPONDENTIE;
+  set MIGRATIE.BAS_COR_CORRESPONDENTIE;
   techId=_n_;
 run;
 
@@ -2484,7 +2484,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_CORRESPONDENTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_CORRESPONDENTIE   end=EFIEOD; 
        format Actie_datum B8601DT19. ;
        format Afgedrukt_JN  ;
        format Afgehandeld  ;
@@ -3063,7 +3063,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_CST_SET_CST AS
+   CREATE TABLE MIGRATIE.BAS_COR_CST_SET_CST AS
    SELECT t1.Reg_id,
           t1.Cst_cd,
           t1.Cst_cd_2,
@@ -3077,8 +3077,8 @@ PROC SQL;
      FROM DATAQASG.COR_CST_SET_CST_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_CST_SET_CST;
-  set WORK.BAS_COR_CST_SET_CST;
+data MIGRATIE.BAS_COR_CST_SET_CST;
+  set MIGRATIE.BAS_COR_CST_SET_CST;
   techId=_n_;
 run;
 
@@ -3113,7 +3113,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_CST_SET_CST   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_CST_SET_CST   end=EFIEOD; 
        format Reg_id best12. ;
        format Cst_cd  ;
        format Cst_cd_2  ;
@@ -3228,7 +3228,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_PARAAF AS
+   CREATE TABLE MIGRATIE.BAS_COR_PARAAF AS
    SELECT t1.Reg_id,
           t1.Cst_cd,
           t1.Type_paraaf,
@@ -3240,8 +3240,8 @@ PROC SQL;
      FROM DATAQASG.COR_PARAAF_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_PARAAF;
-  set WORK.BAS_COR_PARAAF;
+data MIGRATIE.BAS_COR_PARAAF;
+  set MIGRATIE.BAS_COR_PARAAF;
   techId=_n_;
 run;
 
@@ -3272,7 +3272,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_PARAAF   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_PARAAF   end=EFIEOD; 
        format Reg_id best12. ;
        format Cst_cd  ;
        format Type_paraaf  ;
@@ -3370,7 +3370,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_REACTIE_BIJ_COR_SRT AS
+   CREATE TABLE MIGRATIE.BAS_COR_REACTIE_BIJ_COR_SRT AS
    SELECT t1.Cluster_nr,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -3390,8 +3390,8 @@ PROC SQL;
      FROM DATAQASG.COR_REACTIE_BIJ_COR_SRT_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_REACTIE_BIJ_COR_SRT;
-  set WORK.BAS_COR_REACTIE_BIJ_COR_SRT;
+data MIGRATIE.BAS_COR_REACTIE_BIJ_COR_SRT;
+  set MIGRATIE.BAS_COR_REACTIE_BIJ_COR_SRT;
   techId=_n_;
 run;
 
@@ -3438,7 +3438,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_REACTIE_BIJ_COR_SRT   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_REACTIE_BIJ_COR_SRT   end=EFIEOD; 
        format Cluster_nr best12. ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -3586,7 +3586,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_REGLSPEC_COR AS
+   CREATE TABLE MIGRATIE.BAS_COR_REGLSPEC_COR AS
    SELECT t1.Bos_bezorging,
           t1.Crea_back,
           t1.Create_merge_jn,
@@ -3610,8 +3610,8 @@ PROC SQL;
      FROM DATAQASG.COR_REGLSPEC_COR_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_REGLSPEC_COR;
-  set WORK.BAS_COR_REGLSPEC_COR;
+data MIGRATIE.BAS_COR_REGLSPEC_COR;
+  set MIGRATIE.BAS_COR_REGLSPEC_COR;
   techId=_n_;
 run;
 
@@ -3666,7 +3666,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_REGLSPEC_COR   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_REGLSPEC_COR   end=EFIEOD; 
        format Bos_bezorging  ;
        format Crea_back  ;
        format Create_merge_jn  ;
@@ -3902,7 +3902,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF AS
+   CREATE TABLE MIGRATIE.BAS_COR_TRANSACTIEGROEP_BIJ_BRF AS
    SELECT t1.Cor_id,
           t1.Tra_id,
           t1.Dos_id,
@@ -3913,8 +3913,8 @@ PROC SQL;
      FROM DATAQASG.COR_TRANSACTIEGROEP_BIJ_BRF_TCMG t1;
 QUIT;
 
-data WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
-  set WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
+data MIGRATIE.BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
+  set MIGRATIE.BAS_COR_TRANSACTIEGROEP_BIJ_BRF;
   techId=_n_;
 run;
 
@@ -3943,7 +3943,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_COR_TRANSACTIEGROEP_BIJ_BRF   end=EFIEOD; 
+   set  MIGRATIE.BAS_COR_TRANSACTIEGROEP_BIJ_BRF   end=EFIEOD; 
        format Cor_id best12. ;
        format Tra_id best12. ;
        format Dos_id best12. ;
@@ -4001,7 +4001,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR AS
+   CREATE TABLE MIGRATIE.BAS_DAM_CONT_BIJ_DLN_COM_ADR AS
    SELECT t1.creatie_dat FORMAT=B8601DT19. AS creatie_dat,
           t1.Creatie_user,
           t1.Dcs_id,
@@ -4018,8 +4018,8 @@ PROC SQL;
      FROM DATAQASG.DAM_CONT_BIJ_DLN_COM_ADR_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR;
-  set WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR;
+data MIGRATIE.BAS_DAM_CONT_BIJ_DLN_COM_ADR;
+  set MIGRATIE.BAS_DAM_CONT_BIJ_DLN_COM_ADR;
   techId=_n_;
 run;
 
@@ -4060,7 +4060,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_CONT_BIJ_DLN_COM_ADR   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_CONT_BIJ_DLN_COM_ADR   end=EFIEOD; 
        format creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Dcs_id best12. ;
@@ -4160,7 +4160,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_CONTACT_BIJ_DEELNAME AS
+   CREATE TABLE MIGRATIE.BAS_DAM_CONTACT_BIJ_DEELNAME AS
    SELECT t1.Certhoud_id,
           t1.Correspondent,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -4177,8 +4177,8 @@ PROC SQL;
      FROM DATAQASG.DAM_CONTACT_BIJ_DEELNAME_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_CONTACT_BIJ_DEELNAME;
-  set WORK.BAS_DAM_CONTACT_BIJ_DEELNAME;
+data MIGRATIE.BAS_DAM_CONTACT_BIJ_DEELNAME;
+  set MIGRATIE.BAS_DAM_CONTACT_BIJ_DEELNAME;
   techId=_n_;
 run;
 
@@ -4219,7 +4219,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_CONTACT_BIJ_DEELNAME   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_CONTACT_BIJ_DEELNAME   end=EFIEOD; 
        format Certhoud_id best12. ;
        format Correspondent  ;
        format Creatie_dat B8601DT19. ;
@@ -4337,7 +4337,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DECLARATIE AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DECLARATIE AS
    SELECT t1.Adviesaangevraagd,
           t1.Adviesaantaluren,
           t1.Advieshandtoegekend,
@@ -4428,8 +4428,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DECLARATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DECLARATIE;
-  set WORK.BAS_DAM_DECLARATIE;
+data MIGRATIE.BAS_DAM_DECLARATIE;
+  set MIGRATIE.BAS_DAM_DECLARATIE;
   techId=_n_;
 run;
 
@@ -4618,7 +4618,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DECLARATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DECLARATIE   end=EFIEOD; 
        format Adviesaangevraagd best12. ;
        format Adviesaantaluren best12. ;
        format Advieshandtoegekend best12. ;
@@ -5068,7 +5068,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DEELNAME_ADRES AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DEELNAME_ADRES AS
    SELECT t1.Adressoort,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -5085,8 +5085,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DEELNAME_ADRES_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DEELNAME_ADRES;
-  set WORK.BAS_DAM_DEELNAME_ADRES;
+data MIGRATIE.BAS_DAM_DEELNAME_ADRES;
+  set MIGRATIE.BAS_DAM_DEELNAME_ADRES;
   techId=_n_;
 run;
 
@@ -5127,7 +5127,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DEELNAME_ADRES   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DEELNAME_ADRES   end=EFIEOD; 
        format Adressoort  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -5236,7 +5236,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DEELNAME_COM_ADRES AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DEELNAME_COM_ADRES AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dda_id,
@@ -5251,8 +5251,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DEELNAME_COM_ADRES_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DEELNAME_COM_ADRES;
-  set WORK.BAS_DAM_DEELNAME_COM_ADRES;
+data MIGRATIE.BAS_DAM_DEELNAME_COM_ADRES;
+  set MIGRATIE.BAS_DAM_DEELNAME_COM_ADRES;
   techId=_n_;
 run;
 
@@ -5289,7 +5289,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DEELNAME_COM_ADRES   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DEELNAME_COM_ADRES   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Dda_id best12. ;
@@ -5372,7 +5372,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DEELNAME AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DEELNAME AS
    SELECT t1.Afwijking_cd,
           t1.Bic,
           t1.Bic_cd,
@@ -5416,8 +5416,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DEELNAME_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DEELNAME;
-  set WORK.BAS_DAM_DEELNAME;
+data MIGRATIE.BAS_DAM_DEELNAME;
+  set MIGRATIE.BAS_DAM_DEELNAME;
   techId=_n_;
 run;
 
@@ -5512,7 +5512,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DEELNAME   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DEELNAME   end=EFIEOD; 
        format Afwijking_cd  ;
        format Bic  ;
        format Bic_cd  ;
@@ -5837,7 +5837,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DOS_BUDGETREGEL AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DOS_BUDGETREGEL AS
    SELECT t1.Dos_id,
           t1.Tra_id,
           t1.Volgnummer,
@@ -5873,8 +5873,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DOS_BUDGETREGEL_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DOS_BUDGETREGEL;
-  set WORK.BAS_DAM_DOS_BUDGETREGEL;
+data MIGRATIE.BAS_DAM_DOS_BUDGETREGEL;
+  set MIGRATIE.BAS_DAM_DOS_BUDGETREGEL;
   techId=_n_;
 run;
 
@@ -5953,7 +5953,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DOS_BUDGETREGEL   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DOS_BUDGETREGEL   end=EFIEOD; 
        format Dos_id best12. ;
        format Tra_id best12. ;
        format Volgnummer best12. ;
@@ -6147,7 +6147,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DOSSIER_IN_GROEP AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DOSSIER_IN_GROEP AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Ddg_id,
@@ -6158,8 +6158,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DOSSIER_IN_GROEP_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DOSSIER_IN_GROEP;
-  set WORK.BAS_DAM_DOSSIER_IN_GROEP;
+data MIGRATIE.BAS_DAM_DOSSIER_IN_GROEP;
+  set MIGRATIE.BAS_DAM_DOSSIER_IN_GROEP;
   techId=_n_;
 run;
 
@@ -6188,7 +6188,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DOSSIER_IN_GROEP   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DOSSIER_IN_GROEP   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Ddg_id best12. ;
@@ -6246,7 +6246,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DOSSIER_NOTITIE AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DOSSIER_NOTITIE AS
    SELECT t1.Afgehandeld,
           t1.Bezoeknr,
           t1.Cor_id_no,
@@ -6261,8 +6261,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DOSSIER_NOTITIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DOSSIER_NOTITIE;
-  set WORK.BAS_DAM_DOSSIER_NOTITIE;
+data MIGRATIE.BAS_DAM_DOSSIER_NOTITIE;
+  set MIGRATIE.BAS_DAM_DOSSIER_NOTITIE;
   techId=_n_;
 run;
 
@@ -6299,7 +6299,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DOSSIER_NOTITIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DOSSIER_NOTITIE   end=EFIEOD; 
        format Afgehandeld  ;
        format Bezoeknr best12. ;
        format Cor_id_no best12. ;
@@ -6400,7 +6400,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DOSSIER AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DOSSIER AS
    SELECT t1.Aangevraagd_bedrag,
           t1.Aantal_dagenopschorting,
           t1.Aantal_ICT_projecten,
@@ -6570,8 +6570,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DOSSIER_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DOSSIER;
-  set WORK.BAS_DAM_DOSSIER;
+data MIGRATIE.BAS_DAM_DOSSIER;
+  set MIGRATIE.BAS_DAM_DOSSIER;
   techId=_n_;
 run;
 
@@ -6918,7 +6918,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DOSSIER   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DOSSIER   end=EFIEOD; 
        format Aangevraagd_bedrag best12. ;
        format Aantal_dagenopschorting best12. ;
        format Aantal_ICT_projecten best12. ;
@@ -8170,7 +8170,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_DOSSIERGROEP AS
+   CREATE TABLE MIGRATIE.BAS_DAM_DOSSIERGROEP AS
    SELECT t1.Ddg_id,
           t1.Age_id,
           t1.Naam,
@@ -8182,8 +8182,8 @@ PROC SQL;
      FROM DATAQASG.DAM_DOSSIERGROEP_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_DOSSIERGROEP;
-  set WORK.BAS_DAM_DOSSIERGROEP;
+data MIGRATIE.BAS_DAM_DOSSIERGROEP;
+  set MIGRATIE.BAS_DAM_DOSSIERGROEP;
   techId=_n_;
 run;
 
@@ -8214,7 +8214,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_DOSSIERGROEP   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_DOSSIERGROEP   end=EFIEOD; 
        format Ddg_id best12. ;
        format Age_id best12. ;
        format Naam  ;
@@ -8294,7 +8294,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_LOKATIEADRES AS
+   CREATE TABLE MIGRATIE.BAS_DAM_LOKATIEADRES AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.DLS_id,
@@ -8306,8 +8306,8 @@ PROC SQL;
      FROM DATAQASG.DAM_LOKATIEADRES_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_LOKATIEADRES;
-  set WORK.BAS_DAM_LOKATIEADRES;
+data MIGRATIE.BAS_DAM_LOKATIEADRES;
+  set MIGRATIE.BAS_DAM_LOKATIEADRES;
   techId=_n_;
 run;
 
@@ -8338,7 +8338,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_LOKATIEADRES   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_LOKATIEADRES   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format DLS_id best12. ;
@@ -8400,7 +8400,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_MDW_INTERN_HIST AS
+   CREATE TABLE MIGRATIE.BAS_DAM_MDW_INTERN_HIST AS
    SELECT t1.Dos_id,
           t1.Prg_id,
           t1.Mdw_id,
@@ -8417,8 +8417,8 @@ PROC SQL;
      FROM DATAQASG.DAM_MDW_INTERN_HIST_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_MDW_INTERN_HIST;
-  set WORK.BAS_DAM_MDW_INTERN_HIST;
+data MIGRATIE.BAS_DAM_MDW_INTERN_HIST;
+  set MIGRATIE.BAS_DAM_MDW_INTERN_HIST;
   techId=_n_;
 run;
 
@@ -8459,7 +8459,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_MDW_INTERN_HIST   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_MDW_INTERN_HIST   end=EFIEOD; 
        format Dos_id best12. ;
        format Prg_id best12. ;
        format Mdw_id best12. ;
@@ -8568,7 +8568,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_MDW_INTERN AS
+   CREATE TABLE MIGRATIE.BAS_DAM_MDW_INTERN AS
    SELECT t1.Behandelend,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -8583,8 +8583,8 @@ PROC SQL;
      FROM DATAQASG.DAM_MDW_INTERN_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_MDW_INTERN;
-  set WORK.BAS_DAM_MDW_INTERN;
+data MIGRATIE.BAS_DAM_MDW_INTERN;
+  set MIGRATIE.BAS_DAM_MDW_INTERN;
   techId=_n_;
 run;
 
@@ -8621,7 +8621,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_MDW_INTERN   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_MDW_INTERN   end=EFIEOD; 
        format Behandelend  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -8722,7 +8722,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_STATUSHISTORIE AS
+   CREATE TABLE MIGRATIE.BAS_DAM_STATUSHISTORIE AS
    SELECT t1.Commentaar,
           t1.Cor_id_tot,
           t1.Cor_id_van,
@@ -8739,8 +8739,8 @@ PROC SQL;
      FROM DATAQASG.DAM_STATUSHISTORIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_STATUSHISTORIE;
-  set WORK.BAS_DAM_STATUSHISTORIE;
+data MIGRATIE.BAS_DAM_STATUSHISTORIE;
+  set MIGRATIE.BAS_DAM_STATUSHISTORIE;
   techId=_n_;
 run;
 
@@ -8781,7 +8781,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_STATUSHISTORIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_STATUSHISTORIE   end=EFIEOD; 
        format Commentaar  ;
        format Cor_id_tot best12. ;
        format Cor_id_van best12. ;
@@ -8890,7 +8890,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE AS
+   CREATE TABLE MIGRATIE.BAS_DAM_TERMIJN_PARAAF_NOTITIE AS
    SELECT t1.Cor_id,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -8902,8 +8902,8 @@ PROC SQL;
      FROM DATAQASG.DAM_TERMIJN_PARAAF_NOTITIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE;
-  set WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE;
+data MIGRATIE.BAS_DAM_TERMIJN_PARAAF_NOTITIE;
+  set MIGRATIE.BAS_DAM_TERMIJN_PARAAF_NOTITIE;
   techId=_n_;
 run;
 
@@ -8934,7 +8934,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_TERMIJN_PARAAF_NOTITIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_TERMIJN_PARAAF_NOTITIE   end=EFIEOD; 
        format Cor_id best12. ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -9005,7 +9005,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_DAM_TERMIJN AS
+   CREATE TABLE MIGRATIE.BAS_DAM_TERMIJN AS
    SELECT t1.Aanvullende_voorwaarden,
           t1.Actie,
           t1.Actie_dat FORMAT=B8601DT19. AS Actie_dat,
@@ -9031,8 +9031,8 @@ PROC SQL;
      FROM DATAQASG.DAM_TERMIJN_TCMG t1;
 QUIT;
 
-data WORK.BAS_DAM_TERMIJN;
-  set WORK.BAS_DAM_TERMIJN;
+data MIGRATIE.BAS_DAM_TERMIJN;
+  set MIGRATIE.BAS_DAM_TERMIJN;
   techId=_n_;
 run;
 
@@ -9091,7 +9091,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_DAM_TERMIJN   end=EFIEOD; 
+   set  MIGRATIE.BAS_DAM_TERMIJN   end=EFIEOD; 
        format Aanvullende_voorwaarden  ;
        format Actie  ;
        format Actie_dat B8601DT19. ;
@@ -9272,7 +9272,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_FAM_STATUSHISTORIE AS
+   CREATE TABLE MIGRATIE.BAS_FAM_STATUSHISTORIE AS
    SELECT t1.Commentaar,
           t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
           t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
@@ -9287,8 +9287,8 @@ PROC SQL;
      FROM DATAQASG.FAM_STATUSHISTORIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_FAM_STATUSHISTORIE;
-  set WORK.BAS_FAM_STATUSHISTORIE;
+data MIGRATIE.BAS_FAM_STATUSHISTORIE;
+  set MIGRATIE.BAS_FAM_STATUSHISTORIE;
   techId=_n_;
 run;
 
@@ -9325,7 +9325,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_FAM_STATUSHISTORIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_FAM_STATUSHISTORIE   end=EFIEOD; 
        format Commentaar  ;
        format Datum_van B8601DT19. ;
        format Datum_tot B8601DT19. ;
@@ -9426,7 +9426,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_FAM_TRANSACTIE_REGEL AS
+   CREATE TABLE MIGRATIE.BAS_FAM_TRANSACTIE_REGEL AS
    SELECT t1.Tra_id,
           t1.Rpt_nr,
           t1.Ovk_nr,
@@ -9458,8 +9458,8 @@ PROC SQL;
      FROM DATAQASG.FAM_TRANSACTIE_REGEL_TCMG t1;
 QUIT;
 
-data WORK.BAS_FAM_TRANSACTIE_REGEL;
-  set WORK.BAS_FAM_TRANSACTIE_REGEL;
+data MIGRATIE.BAS_FAM_TRANSACTIE_REGEL;
+  set MIGRATIE.BAS_FAM_TRANSACTIE_REGEL;
   techId=_n_;
 run;
 
@@ -9530,7 +9530,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_FAM_TRANSACTIE_REGEL   end=EFIEOD; 
+   set  MIGRATIE.BAS_FAM_TRANSACTIE_REGEL   end=EFIEOD; 
        format Tra_id best12. ;
        format Rpt_nr best12. ;
        format Ovk_nr  ;
@@ -9753,7 +9753,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_FAM_TRANSACTIE AS
+   CREATE TABLE MIGRATIE.BAS_FAM_TRANSACTIE AS
    SELECT t1.Volgnummer,
           t1.Tra_id,
           t1.Prg_id,
@@ -9815,8 +9815,8 @@ PROC SQL;
      FROM DATAQASG.FAM_TRANSACTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_FAM_TRANSACTIE;
-  set WORK.BAS_FAM_TRANSACTIE;
+data MIGRATIE.BAS_FAM_TRANSACTIE;
+  set MIGRATIE.BAS_FAM_TRANSACTIE;
   techId=_n_;
 run;
 
@@ -9947,7 +9947,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_FAM_TRANSACTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_FAM_TRANSACTIE   end=EFIEOD; 
        format Volgnummer best12. ;
        format Tra_id best12. ;
        format Prg_id best12. ;
@@ -10425,7 +10425,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_FAM_VERPLICHTING AS
+   CREATE TABLE MIGRATIE.BAS_FAM_VERPLICHTING AS
    SELECT t1.Tra_id,
           t1.Reg_id,
           t1.Reg_nr,
@@ -10446,8 +10446,8 @@ PROC SQL;
      FROM DATAQASG.FAM_VERPLICHTING_TCMG t1;
 QUIT;
 
-data WORK.BAS_FAM_VERPLICHTING;
-  set WORK.BAS_FAM_VERPLICHTING;
+data MIGRATIE.BAS_FAM_VERPLICHTING;
+  set MIGRATIE.BAS_FAM_VERPLICHTING;
   techId=_n_;
 run;
 
@@ -10496,7 +10496,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_FAM_VERPLICHTING   end=EFIEOD; 
+   set  MIGRATIE.BAS_FAM_VERPLICHTING   end=EFIEOD; 
        format Tra_id best12. ;
        format Reg_id best12. ;
        format Reg_nr best12. ;
@@ -10630,7 +10630,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_IOM_FUNCTIE AS
+   CREATE TABLE MIGRATIE.BAS_IOM_FUNCTIE AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Fun_cd,
@@ -10640,8 +10640,8 @@ PROC SQL;
      FROM DATAQASG.IOM_FUNCTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_IOM_FUNCTIE;
-  set WORK.BAS_IOM_FUNCTIE;
+data MIGRATIE.BAS_IOM_FUNCTIE;
+  set MIGRATIE.BAS_IOM_FUNCTIE;
   techId=_n_;
 run;
 
@@ -10668,7 +10668,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_IOM_FUNCTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_IOM_FUNCTIE   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Fun_cd  ;
@@ -10740,7 +10740,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_IOM_LOCATIE AS
+   CREATE TABLE MIGRATIE.BAS_IOM_LOCATIE AS
    SELECT t1.Loc_cd,
           t1.Omschrijving,
           t1.Actief,
@@ -10751,8 +10751,8 @@ PROC SQL;
      FROM DATAQASG.IOM_LOCATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_IOM_LOCATIE;
-  set WORK.BAS_IOM_LOCATIE;
+data MIGRATIE.BAS_IOM_LOCATIE;
+  set MIGRATIE.BAS_IOM_LOCATIE;
   techId=_n_;
 run;
 
@@ -10781,7 +10781,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_IOM_LOCATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_IOM_LOCATIE   end=EFIEOD; 
        format Loc_cd  ;
        format Omschrijving  ;
        format Actief  ;
@@ -10866,7 +10866,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_IOM_MEDEWERKER AS
+   CREATE TABLE MIGRATIE.BAS_IOM_MEDEWERKER AS
    SELECT t1.Aanspreeknaam,
           t1.Achternaam,
           t1.Actief,
@@ -10910,8 +10910,8 @@ PROC SQL;
      FROM DATAQASG.IOM_MEDEWERKER_TCMG t1;
 QUIT;
 
-data WORK.BAS_IOM_MEDEWERKER;
-  set WORK.BAS_IOM_MEDEWERKER;
+data MIGRATIE.BAS_IOM_MEDEWERKER;
+  set MIGRATIE.BAS_IOM_MEDEWERKER;
   techId=_n_;
 run;
 
@@ -11006,7 +11006,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_IOM_MEDEWERKER   end=EFIEOD; 
+   set  MIGRATIE.BAS_IOM_MEDEWERKER   end=EFIEOD; 
        format Aanspreeknaam  ;
        format Achternaam  ;
        format Actief  ;
@@ -11484,7 +11484,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_IOM_MEDEWERKERROL AS
+   CREATE TABLE MIGRATIE.BAS_IOM_MEDEWERKERROL AS
    SELECT t1.Mdw_id,
           t1.Rol_cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -11495,8 +11495,8 @@ PROC SQL;
      FROM DATAQASG.IOM_MEDEWERKERROL_TCMG t1;
 QUIT;
 
-data WORK.BAS_IOM_MEDEWERKERROL;
-  set WORK.BAS_IOM_MEDEWERKERROL;
+data MIGRATIE.BAS_IOM_MEDEWERKERROL;
+  set MIGRATIE.BAS_IOM_MEDEWERKERROL;
   techId=_n_;
 run;
 
@@ -11525,7 +11525,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_IOM_MEDEWERKERROL   end=EFIEOD; 
+   set  MIGRATIE.BAS_IOM_MEDEWERKERROL   end=EFIEOD; 
        format Mdw_id best12. ;
        format Rol_cd  ;
        format Creatie_dat B8601DT19. ;
@@ -11601,7 +11601,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_BEHANDELAAR AS
+   CREATE TABLE MIGRATIE.BAS_JZM_BEHANDELAAR AS
    SELECT t1.Mdw_id,
           t1.Jz_id,
           t1.Rol_cd,
@@ -11613,8 +11613,8 @@ PROC SQL;
      FROM DATAQASG.JZM_BEHANDELAAR_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_BEHANDELAAR;
-  set WORK.BAS_JZM_BEHANDELAAR;
+data MIGRATIE.BAS_JZM_BEHANDELAAR;
+  set MIGRATIE.BAS_JZM_BEHANDELAAR;
   techId=_n_;
 run;
 
@@ -11645,7 +11645,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_BEHANDELAAR   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_BEHANDELAAR   end=EFIEOD; 
        format Mdw_id best12. ;
        format Jz_id best12. ;
        format Rol_cd  ;
@@ -11725,7 +11725,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_BEROEP AS
+   CREATE TABLE MIGRATIE.BAS_JZM_BEROEP AS
    SELECT t1.Jz_id,
           t1.Bzr_id,
           t1.Zaaknummer,
@@ -11738,8 +11738,8 @@ PROC SQL;
      FROM DATAQASG.JZM_BEROEP_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_BEROEP;
-  set WORK.BAS_JZM_BEROEP;
+data MIGRATIE.BAS_JZM_BEROEP;
+  set MIGRATIE.BAS_JZM_BEROEP;
   techId=_n_;
 run;
 
@@ -11772,7 +11772,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_BEROEP   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_BEROEP   end=EFIEOD; 
        format Jz_id best12. ;
        format Bzr_id best12. ;
        format Zaaknummer  ;
@@ -11838,7 +11838,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_BEZWAAR AS
+   CREATE TABLE MIGRATIE.BAS_JZM_BEZWAAR AS
    SELECT t1.Jz_id,
           t1.Belasting_cd,
           t1.Datum_compleet FORMAT=B8601DT19. AS Datum_compleet,
@@ -11870,8 +11870,8 @@ PROC SQL;
      FROM DATAQASG.JZM_BEZWAAR_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_BEZWAAR;
-  set WORK.BAS_JZM_BEZWAAR;
+data MIGRATIE.BAS_JZM_BEZWAAR;
+  set MIGRATIE.BAS_JZM_BEZWAAR;
   techId=_n_;
 run;
 
@@ -11942,7 +11942,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_BEZWAAR   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_BEZWAAR   end=EFIEOD; 
        format Jz_id best12. ;
        format Belasting_cd  ;
        format Datum_compleet B8601DT19. ;
@@ -12093,7 +12093,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST AS
+   CREATE TABLE MIGRATIE.BAS_JZM_BEZWAAR_TERMIJN_HIST AS
    SELECT t1.Jz_id,
           t1.Vanaf_datum FORMAT=B8601DT19. AS Vanaf_datum,
           t1.Volg_nr,
@@ -12113,8 +12113,8 @@ PROC SQL;
      FROM DATAQASG.JZM_BEZWAAR_TERMIJN_HIST_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST;
-  set WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST;
+data MIGRATIE.BAS_JZM_BEZWAAR_TERMIJN_HIST;
+  set MIGRATIE.BAS_JZM_BEZWAAR_TERMIJN_HIST;
   techId=_n_;
 run;
 
@@ -12161,7 +12161,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_BEZWAAR_TERMIJN_HIST   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_BEZWAAR_TERMIJN_HIST   end=EFIEOD; 
        format Jz_id best12. ;
        format Vanaf_datum B8601DT19. ;
        format Volg_nr best12. ;
@@ -12291,7 +12291,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_BOB_WIZARD AS
+   CREATE TABLE MIGRATIE.BAS_JZM_BOB_WIZARD AS
    SELECT t1.Jz_id,
           t1.Verleen_bedrag,
           t1.Betaal_bedrag,
@@ -12340,8 +12340,8 @@ PROC SQL;
      FROM DATAQASG.JZM_BOB_WIZARD_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_BOB_WIZARD;
-  set WORK.BAS_JZM_BOB_WIZARD;
+data MIGRATIE.BAS_JZM_BOB_WIZARD;
+  set MIGRATIE.BAS_JZM_BOB_WIZARD;
   techId=_n_;
 run;
 
@@ -12446,7 +12446,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_BOB_WIZARD   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_BOB_WIZARD   end=EFIEOD; 
        format Jz_id best12. ;
        format Verleen_bedrag best12. ;
        format Betaal_bedrag best12. ;
@@ -12764,7 +12764,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_BRIEF_FUNCTIE AS
+   CREATE TABLE MIGRATIE.BAS_JZM_BRIEF_FUNCTIE AS
    SELECT t1.Fnc_cd,
           t1.Oms,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -12774,8 +12774,8 @@ PROC SQL;
      FROM DATAQASG.JZM_BRIEF_FUNCTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_BRIEF_FUNCTIE;
-  set WORK.BAS_JZM_BRIEF_FUNCTIE;
+data MIGRATIE.BAS_JZM_BRIEF_FUNCTIE;
+  set MIGRATIE.BAS_JZM_BRIEF_FUNCTIE;
   techId=_n_;
 run;
 
@@ -12802,7 +12802,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_BRIEF_FUNCTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_BRIEF_FUNCTIE   end=EFIEOD; 
        format Fnc_cd  ;
        format Oms  ;
        format Creatie_dat B8601DT19. ;
@@ -12874,7 +12874,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_FUNCTIE_VAN_BRIEF AS
+   CREATE TABLE MIGRATIE.BAS_JZM_FUNCTIE_VAN_BRIEF AS
    SELECT t1.Fnc_cd,
           t1.Cst_cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -12884,8 +12884,8 @@ PROC SQL;
      FROM DATAQASG.JZM_FUNCTIE_VAN_BRIEF_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_FUNCTIE_VAN_BRIEF;
-  set WORK.BAS_JZM_FUNCTIE_VAN_BRIEF;
+data MIGRATIE.BAS_JZM_FUNCTIE_VAN_BRIEF;
+  set MIGRATIE.BAS_JZM_FUNCTIE_VAN_BRIEF;
   techId=_n_;
 run;
 
@@ -12912,7 +12912,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_FUNCTIE_VAN_BRIEF   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_FUNCTIE_VAN_BRIEF   end=EFIEOD; 
        format Fnc_cd  ;
        format Cst_cd  ;
        format Creatie_dat B8601DT19. ;
@@ -12984,7 +12984,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_PROCEDURE AS
+   CREATE TABLE MIGRATIE.BAS_JZM_PROCEDURE AS
    SELECT t1.Jaar,
           t1.Volgnr,
           t1.Jz_nr,
@@ -13019,8 +13019,8 @@ PROC SQL;
      FROM DATAQASG.JZM_PROCEDURE_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_PROCEDURE;
-  set WORK.BAS_JZM_PROCEDURE;
+data MIGRATIE.BAS_JZM_PROCEDURE;
+  set MIGRATIE.BAS_JZM_PROCEDURE;
   techId=_n_;
 run;
 
@@ -13097,7 +13097,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_PROCEDURE   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_PROCEDURE   end=EFIEOD; 
        format Jaar best12. ;
        format Volgnr best12. ;
        format Jz_nr  ;
@@ -13377,7 +13377,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_REACTIE_TERMIJN AS
+   CREATE TABLE MIGRATIE.BAS_JZM_REACTIE_TERMIJN AS
    SELECT t1.Rol_cd,
           t1.Cst_cd,
           t1.Reactie_cd,
@@ -13389,8 +13389,8 @@ PROC SQL;
      FROM DATAQASG.JZM_REACTIE_TERMIJN_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_REACTIE_TERMIJN;
-  set WORK.BAS_JZM_REACTIE_TERMIJN;
+data MIGRATIE.BAS_JZM_REACTIE_TERMIJN;
+  set MIGRATIE.BAS_JZM_REACTIE_TERMIJN;
   techId=_n_;
 run;
 
@@ -13421,7 +13421,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_REACTIE_TERMIJN   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_REACTIE_TERMIJN   end=EFIEOD; 
        format Rol_cd  ;
        format Cst_cd  ;
        format Reactie_cd  ;
@@ -13510,7 +13510,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_STATUSREGEL AS
+   CREATE TABLE MIGRATIE.BAS_JZM_STATUSREGEL AS
    SELECT t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
           t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
           t1.Jz_id,
@@ -13527,8 +13527,8 @@ PROC SQL;
      FROM DATAQASG.JZM_STATUSREGEL_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_STATUSREGEL;
-  set WORK.BAS_JZM_STATUSREGEL;
+data MIGRATIE.BAS_JZM_STATUSREGEL;
+  set MIGRATIE.BAS_JZM_STATUSREGEL;
   techId=_n_;
 run;
 
@@ -13569,7 +13569,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_STATUSREGEL   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_STATUSREGEL   end=EFIEOD; 
        format Datum_van B8601DT19. ;
        format Datum_tot B8601DT19. ;
        format Jz_id best12. ;
@@ -13678,7 +13678,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_JZM_UITSPRAAK AS
+   CREATE TABLE MIGRATIE.BAS_JZM_UITSPRAAK AS
    SELECT t1.Uitspraak,
           t1.Creatie_user,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -13687,8 +13687,8 @@ PROC SQL;
      FROM DATAQASG.JZM_UITSPRAAK_TCMG t1;
 QUIT;
 
-data WORK.BAS_JZM_UITSPRAAK;
-  set WORK.BAS_JZM_UITSPRAAK;
+data MIGRATIE.BAS_JZM_UITSPRAAK;
+  set MIGRATIE.BAS_JZM_UITSPRAAK;
   techId=_n_;
 run;
 
@@ -13713,7 +13713,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_JZM_UITSPRAAK   end=EFIEOD; 
+   set  MIGRATIE.BAS_JZM_UITSPRAAK   end=EFIEOD; 
        format Uitspraak  ;
        format Creatie_user  ;
        format Creatie_dat B8601DT19. ;
@@ -13772,7 +13772,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_OBJ_LOKATIE AS
+   CREATE TABLE MIGRATIE.BAS_OBJ_LOKATIE AS
    SELECT t1.Bik_cd,
           t1.Bik_oms,
           t1.Bouwtype,
@@ -13795,8 +13795,8 @@ PROC SQL;
      FROM DATAQASG.OBJ_LOKATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_OBJ_LOKATIE;
-  set WORK.BAS_OBJ_LOKATIE;
+data MIGRATIE.BAS_OBJ_LOKATIE;
+  set MIGRATIE.BAS_OBJ_LOKATIE;
   techId=_n_;
 run;
 
@@ -13849,7 +13849,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_OBJ_LOKATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_OBJ_LOKATIE   end=EFIEOD; 
        format Bik_cd  ;
        format Bik_oms  ;
        format Bouwtype  ;
@@ -14054,7 +14054,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_PCT_MUT AS
+   CREATE TABLE MIGRATIE.BAS_PCT_MUT AS
    SELECT t1.Mutatie_srt,
           t1.Mutatie_ind,
           t1.Old_cijfer,
@@ -14092,8 +14092,8 @@ PROC SQL;
      FROM DATAQASG.PCT_MUT_TCMG t1;
 QUIT;
 
-data WORK.BAS_PCT_MUT;
-  set WORK.BAS_PCT_MUT;
+data MIGRATIE.BAS_PCT_MUT;
+  set MIGRATIE.BAS_PCT_MUT;
   techId=_n_;
 run;
 
@@ -14176,7 +14176,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_PCT_MUT   end=EFIEOD; 
+   set  MIGRATIE.BAS_PCT_MUT   end=EFIEOD; 
        format Mutatie_srt  ;
        format Mutatie_ind  ;
        format Old_cijfer  ;
@@ -14630,7 +14630,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_PCT AS
+   CREATE TABLE MIGRATIE.BAS_PCT AS
    SELECT t1.Cijfer,
           t1.Letter,
           t1.Reeksindicatie,
@@ -14650,8 +14650,8 @@ PROC SQL;
      FROM DATAQASG.PCT_TCMG t1;
 QUIT;
 
-data WORK.BAS_PCT;
-  set WORK.BAS_PCT;
+data MIGRATIE.BAS_PCT;
+  set MIGRATIE.BAS_PCT;
   techId=_n_;
 run;
 
@@ -14698,7 +14698,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_PCT   end=EFIEOD; 
+   set  MIGRATIE.BAS_PCT   end=EFIEOD; 
        format Cijfer  ;
        format Letter  ;
        format Reeksindicatie  ;
@@ -14918,7 +14918,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ADRES_RELATIE AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ADRES_RELATIE AS
    SELECT t1.Adressoort,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -14932,8 +14932,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ADRES_RELATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ADRES_RELATIE;
-  set WORK.BAS_RBM_ADRES_RELATIE;
+data MIGRATIE.BAS_RBM_ADRES_RELATIE;
+  set MIGRATIE.BAS_RBM_ADRES_RELATIE;
   techId=_n_;
 run;
 
@@ -14968,7 +14968,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ADRES_RELATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ADRES_RELATIE   end=EFIEOD; 
        format Adressoort  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -15056,7 +15056,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ADRES AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ADRES AS
    SELECT t1.Barcode,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.creatie_user,
@@ -15076,8 +15076,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ADRES_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ADRES;
-  set WORK.BAS_RBM_ADRES;
+data MIGRATIE.BAS_RBM_ADRES;
+  set MIGRATIE.BAS_RBM_ADRES;
   techId=_n_;
 run;
 
@@ -15124,7 +15124,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ADRES   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ADRES   end=EFIEOD; 
        format Barcode  ;
        format Creatie_dat B8601DT19. ;
        format creatie_user  ;
@@ -15299,7 +15299,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_COM_ADRES_CP AS
+   CREATE TABLE MIGRATIE.BAS_RBM_COM_ADRES_CP AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
@@ -15311,8 +15311,8 @@ PROC SQL;
      FROM DATAQASG.RBM_COM_ADRES_CP_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_COM_ADRES_CP;
-  set WORK.BAS_RBM_COM_ADRES_CP;
+data MIGRATIE.BAS_RBM_COM_ADRES_CP;
+  set MIGRATIE.BAS_RBM_COM_ADRES_CP;
   techId=_n_;
 run;
 
@@ -15343,7 +15343,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_COM_ADRES_CP   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_COM_ADRES_CP   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format creatie_user  ;
        format Mutatie_dat B8601DT19. ;
@@ -15405,7 +15405,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_COM_ADRES_RELATIE AS
+   CREATE TABLE MIGRATIE.BAS_RBM_COM_ADRES_RELATIE AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
@@ -15417,8 +15417,8 @@ PROC SQL;
      FROM DATAQASG.RBM_COM_ADRES_RELATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_COM_ADRES_RELATIE;
-  set WORK.BAS_RBM_COM_ADRES_RELATIE;
+data MIGRATIE.BAS_RBM_COM_ADRES_RELATIE;
+  set MIGRATIE.BAS_RBM_COM_ADRES_RELATIE;
   techId=_n_;
 run;
 
@@ -15449,7 +15449,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_COM_ADRES_RELATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_COM_ADRES_RELATIE   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Mutatie_dat B8601DT19. ;
@@ -15511,7 +15511,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_COM_ADRES AS
+   CREATE TABLE MIGRATIE.BAS_RBM_COM_ADRES AS
    SELECT t1.Com_Cd,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
@@ -15523,8 +15523,8 @@ PROC SQL;
      FROM DATAQASG.RBM_COM_ADRES_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_COM_ADRES;
-  set WORK.BAS_RBM_COM_ADRES;
+data MIGRATIE.BAS_RBM_COM_ADRES;
+  set MIGRATIE.BAS_RBM_COM_ADRES;
   techId=_n_;
 run;
 
@@ -15555,7 +15555,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_COM_ADRES   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_COM_ADRES   end=EFIEOD; 
        format Com_Cd  ;
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
@@ -15644,7 +15644,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_CONTACTPERSOON AS
+   CREATE TABLE MIGRATIE.BAS_RBM_CONTACTPERSOON AS
    SELECT t1.Afdeling,
           t1.Certhoud_id,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -15662,8 +15662,8 @@ PROC SQL;
      FROM DATAQASG.RBM_CONTACTPERSOON_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_CONTACTPERSOON;
-  set WORK.BAS_RBM_CONTACTPERSOON;
+data MIGRATIE.BAS_RBM_CONTACTPERSOON;
+  set MIGRATIE.BAS_RBM_CONTACTPERSOON;
   techId=_n_;
 run;
 
@@ -15706,7 +15706,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_CONTACTPERSOON   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_CONTACTPERSOON   end=EFIEOD; 
        format Afdeling  ;
        format Certhoud_id best12. ;
        format Creatie_dat B8601DT19. ;
@@ -15855,15 +15855,15 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_CP_VESTIGING AS
+   CREATE TABLE MIGRATIE.BAS_RBM_CP_VESTIGING AS
    SELECT t1.Org_id,
           t1.Per_id,
           t1.Vst_volgnr
      FROM DATAQASG.RBM_CP_VESTIGING_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_CP_VESTIGING;
-  set WORK.BAS_RBM_CP_VESTIGING;
+data MIGRATIE.BAS_RBM_CP_VESTIGING;
+  set MIGRATIE.BAS_RBM_CP_VESTIGING;
   techId=_n_;
 run;
 
@@ -15884,7 +15884,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_CP_VESTIGING   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_CP_VESTIGING   end=EFIEOD; 
        format Org_id best12. ;
        format Per_id best12. ;
        format Vst_volgnr best12. ;
@@ -15908,7 +15908,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ORG_BSI AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ORG_BSI AS
    SELECT t1.Rel_id,
           t1.Bsi_cd,
           t1.Volg_nr,
@@ -15921,8 +15921,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ORG_BSI_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ORG_BSI;
-  set WORK.BAS_RBM_ORG_BSI;
+data MIGRATIE.BAS_RBM_ORG_BSI;
+  set MIGRATIE.BAS_RBM_ORG_BSI;
   techId=_n_;
 run;
 
@@ -15955,7 +15955,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ORG_BSI   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ORG_BSI   end=EFIEOD; 
        format Rel_id best12. ;
        format Bsi_cd  ;
        format Volg_nr best12. ;
@@ -16030,7 +16030,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ORG_FAILLIET AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ORG_FAILLIET AS
    SELECT t1.Kvk_nr,
           t1.Graydon_bedrijfsnr,
           t1.Kvk_dossiernr,
@@ -16050,8 +16050,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ORG_FAILLIET_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ORG_FAILLIET;
-  set WORK.BAS_RBM_ORG_FAILLIET;
+data MIGRATIE.BAS_RBM_ORG_FAILLIET;
+  set MIGRATIE.BAS_RBM_ORG_FAILLIET;
   techId=_n_;
 run;
 
@@ -16098,7 +16098,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ORG_FAILLIET   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ORG_FAILLIET   end=EFIEOD; 
        format Kvk_nr  ;
        format Graydon_bedrijfsnr best12. ;
        format Kvk_dossiernr best12. ;
@@ -16273,7 +16273,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ORG_JAAR AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ORG_JAAR AS
    SELECT t1.Rel_id,
           t1.Jaar,
           t1.Aantal_werknemers,
@@ -16295,8 +16295,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ORG_JAAR_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ORG_JAAR;
-  set WORK.BAS_RBM_ORG_JAAR;
+data MIGRATIE.BAS_RBM_ORG_JAAR;
+  set MIGRATIE.BAS_RBM_ORG_JAAR;
   techId=_n_;
 run;
 
@@ -16347,7 +16347,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ORG_JAAR   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ORG_JAAR   end=EFIEOD; 
        format Rel_id best12. ;
        format Jaar best12. ;
        format Aantal_werknemers best12. ;
@@ -16467,7 +16467,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ORG_NAAM AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ORG_NAAM AS
    SELECT t1.Org_id,
           t1.Org_naam,
           t1.Org_naam_type,
@@ -16480,8 +16480,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ORG_NAAM_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ORG_NAAM;
-  set WORK.BAS_RBM_ORG_NAAM;
+data MIGRATIE.BAS_RBM_ORG_NAAM;
+  set MIGRATIE.BAS_RBM_ORG_NAAM;
   techId=_n_;
 run;
 
@@ -16514,7 +16514,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ORG_NAAM   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ORG_NAAM   end=EFIEOD; 
        format Org_id best12. ;
        format Org_naam  ;
        format Org_naam_type  ;
@@ -16616,7 +16616,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_ORG AS
+   CREATE TABLE MIGRATIE.BAS_RBM_ORG AS
    SELECT t1.Bik_Cd,
           t1.Bron_jr,
           t1.BTW_nummer,
@@ -16637,8 +16637,8 @@ PROC SQL;
      FROM DATAQASG.RBM_ORG_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_ORG;
-  set WORK.BAS_RBM_ORG;
+data MIGRATIE.BAS_RBM_ORG;
+  set MIGRATIE.BAS_RBM_ORG;
   techId=_n_;
 run;
 
@@ -16687,7 +16687,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_ORG   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_ORG   end=EFIEOD; 
        format Bik_Cd  ;
        format Bron_jr  ;
        format BTW_nummer  ;
@@ -16884,7 +16884,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_PERSOON AS
+   CREATE TABLE MIGRATIE.BAS_RBM_PERSOON AS
    SELECT t1.Aanhef,
           t1.Aanlevernaam,
           t1.Aanspreeknaam,
@@ -16910,8 +16910,8 @@ PROC SQL;
      FROM DATAQASG.RBM_PERSOON_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_PERSOON;
-  set WORK.BAS_RBM_PERSOON;
+data MIGRATIE.BAS_RBM_PERSOON;
+  set MIGRATIE.BAS_RBM_PERSOON;
   techId=_n_;
 run;
 
@@ -16970,7 +16970,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_PERSOON   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_PERSOON   end=EFIEOD; 
        format Aanhef  ;
        format Aanlevernaam  ;
        format Aanspreeknaam  ;
@@ -17241,7 +17241,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_REKENINGNRS AS
+   CREATE TABLE MIGRATIE.BAS_RBM_REKENINGNRS AS
    SELECT t1.Banknaam,
           t1.Bic,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -17256,8 +17256,8 @@ PROC SQL;
      FROM DATAQASG.RBM_REKENINGNRS_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_REKENINGNRS;
-  set WORK.BAS_RBM_REKENINGNRS;
+data MIGRATIE.BAS_RBM_REKENINGNRS;
+  set MIGRATIE.BAS_RBM_REKENINGNRS;
   techId=_n_;
 run;
 
@@ -17294,7 +17294,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_REKENINGNRS   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_REKENINGNRS   end=EFIEOD; 
        format Banknaam  ;
        format Bic  ;
        format Creatie_dat B8601DT19. ;
@@ -17422,7 +17422,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_REKNR_MUT AS
+   CREATE TABLE MIGRATIE.BAS_RBM_REKNR_MUT AS
    SELECT t1.Rel_id,
           t1.Volgnummer,
           t1.Org_banknaam,
@@ -17443,8 +17443,8 @@ PROC SQL;
      FROM DATAQASG.RBM_REKNR_MUT_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_REKNR_MUT;
-  set WORK.BAS_RBM_REKNR_MUT;
+data MIGRATIE.BAS_RBM_REKNR_MUT;
+  set MIGRATIE.BAS_RBM_REKNR_MUT;
   techId=_n_;
 run;
 
@@ -17493,7 +17493,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_REKNR_MUT   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_REKNR_MUT   end=EFIEOD; 
        format Rel_id best12. ;
        format Volgnummer best12. ;
        format Org_banknaam  ;
@@ -17699,7 +17699,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_RELATIE AS
+   CREATE TABLE MIGRATIE.BAS_RBM_RELATIE AS
    SELECT t1.Actief,
           t1.Auth_id,
           t1.Belastingeenheid,
@@ -17720,8 +17720,8 @@ PROC SQL;
      FROM DATAQASG.RBM_RELATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_RELATIE;
-  set WORK.BAS_RBM_RELATIE;
+data MIGRATIE.BAS_RBM_RELATIE;
+  set MIGRATIE.BAS_RBM_RELATIE;
   techId=_n_;
 run;
 
@@ -17770,7 +17770,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_RELATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_RELATIE   end=EFIEOD; 
        format Actief  ;
        format Auth_id best12. ;
        format Belastingeenheid best12. ;
@@ -17940,7 +17940,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_SBI_ORG AS
+   CREATE TABLE MIGRATIE.BAS_RBM_SBI_ORG AS
    SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Hoofdactiviteit,
@@ -17951,8 +17951,8 @@ PROC SQL;
      FROM DATAQASG.RBM_SBI_ORG_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_SBI_ORG;
-  set WORK.BAS_RBM_SBI_ORG;
+data MIGRATIE.BAS_RBM_SBI_ORG;
+  set MIGRATIE.BAS_RBM_SBI_ORG;
   techId=_n_;
 run;
 
@@ -17981,7 +17981,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_SBI_ORG   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_SBI_ORG   end=EFIEOD; 
        format Creatie_dat B8601DT19. ;
        format Creatie_user  ;
        format Hoofdactiviteit  ;
@@ -18048,7 +18048,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RBM_VESTIGING AS
+   CREATE TABLE MIGRATIE.BAS_RBM_VESTIGING AS
    SELECT t1.Actief,
           t1.Auth_id,
           t1.Bik_cd,
@@ -18071,8 +18071,8 @@ PROC SQL;
      FROM DATAQASG.RBM_VESTIGING_TCMG t1;
 QUIT;
 
-data WORK.BAS_RBM_VESTIGING;
-  set WORK.BAS_RBM_VESTIGING;
+data MIGRATIE.BAS_RBM_VESTIGING;
+  set MIGRATIE.BAS_RBM_VESTIGING;
   techId=_n_;
 run;
 
@@ -18125,7 +18125,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RBM_VESTIGING   end=EFIEOD; 
+   set  MIGRATIE.BAS_RBM_VESTIGING   end=EFIEOD; 
        format Actief  ;
        format Auth_id best12. ;
        format Bik_cd  ;
@@ -18330,7 +18330,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_BUDGETONDERVERDELING AS
+   CREATE TABLE MIGRATIE.BAS_RDM_BUDGETONDERVERDELING AS
    SELECT t1.Bgt_cd,
           t1.Budget,
           t1.Budget_uitputting,
@@ -18350,8 +18350,8 @@ PROC SQL;
      FROM DATAQASG.RDM_BUDGETONDERVERDELING_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_BUDGETONDERVERDELING;
-  set WORK.BAS_RDM_BUDGETONDERVERDELING;
+data MIGRATIE.BAS_RDM_BUDGETONDERVERDELING;
+  set MIGRATIE.BAS_RDM_BUDGETONDERVERDELING;
   techId=_n_;
 run;
 
@@ -18398,7 +18398,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_BUDGETONDERVERDELING   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_BUDGETONDERVERDELING   end=EFIEOD; 
        format Bgt_cd  ;
        format Budget best12. ;
        format Budget_uitputting best12. ;
@@ -18519,7 +18519,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_CLASSIFICATIE AS
+   CREATE TABLE MIGRATIE.BAS_RDM_CLASSIFICATIE AS
    SELECT t1.Prg_id,
           t1.Class_cd,
           t1.Class_oms,
@@ -18530,8 +18530,8 @@ PROC SQL;
      FROM DATAQASG.RDM_CLASSIFICATIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_CLASSIFICATIE;
-  set WORK.BAS_RDM_CLASSIFICATIE;
+data MIGRATIE.BAS_RDM_CLASSIFICATIE;
+  set MIGRATIE.BAS_RDM_CLASSIFICATIE;
   techId=_n_;
 run;
 
@@ -18560,7 +18560,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_CLASSIFICATIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_CLASSIFICATIE   end=EFIEOD; 
        format Prg_id best12. ;
        format Class_cd  ;
        format Class_oms  ;
@@ -18636,7 +18636,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_JAARBUDGET AS
+   CREATE TABLE MIGRATIE.BAS_RDM_JAARBUDGET AS
    SELECT t1.Afgesloten,
           t1.Bgt_cd,
           t1.Budget_uitputting,
@@ -18656,8 +18656,8 @@ PROC SQL;
      FROM DATAQASG.RDM_JAARBUDGET_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_JAARBUDGET;
-  set WORK.BAS_RDM_JAARBUDGET;
+data MIGRATIE.BAS_RDM_JAARBUDGET;
+  set MIGRATIE.BAS_RDM_JAARBUDGET;
   techId=_n_;
 run;
 
@@ -18704,7 +18704,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_JAARBUDGET   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_JAARBUDGET   end=EFIEOD; 
        format Afgesloten  ;
        format Bgt_cd  ;
        format Budget_uitputting best12. ;
@@ -18834,7 +18834,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_MANDAAT AS
+   CREATE TABLE MIGRATIE.BAS_RDM_MANDAAT AS
    SELECT t1.Mdt_id,
           t1.Middelen_type,
           t1.Mandaat_srt,
@@ -18851,8 +18851,8 @@ PROC SQL;
      FROM DATAQASG.RDM_MANDAAT_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_MANDAAT;
-  set WORK.BAS_RDM_MANDAAT;
+data MIGRATIE.BAS_RDM_MANDAAT;
+  set MIGRATIE.BAS_RDM_MANDAAT;
   techId=_n_;
 run;
 
@@ -18893,7 +18893,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_MANDAAT   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_MANDAAT   end=EFIEOD; 
        format Mdt_id best12. ;
        format Middelen_type  ;
        format Mandaat_srt  ;
@@ -19020,7 +19020,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_OVEREENKOMST_DOCUMENT AS
+   CREATE TABLE MIGRATIE.BAS_RDM_OVEREENKOMST_DOCUMENT AS
    SELECT t1.Ovk_nr,
           t1.Doc_naam,
           t1.Creatie_user,
@@ -19033,8 +19033,8 @@ PROC SQL;
      FROM DATAQASG.RDM_OVEREENKOMST_DOCUMENT_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_OVEREENKOMST_DOCUMENT;
-  set WORK.BAS_RDM_OVEREENKOMST_DOCUMENT;
+data MIGRATIE.BAS_RDM_OVEREENKOMST_DOCUMENT;
+  set MIGRATIE.BAS_RDM_OVEREENKOMST_DOCUMENT;
   techId=_n_;
 run;
 
@@ -19067,7 +19067,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_OVEREENKOMST_DOCUMENT   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_OVEREENKOMST_DOCUMENT   end=EFIEOD; 
        format Ovk_nr  ;
        format Doc_naam  ;
        format Creatie_user  ;
@@ -19160,7 +19160,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_PERIODE AS
+   CREATE TABLE MIGRATIE.BAS_RDM_PERIODE AS
    SELECT t1.Ovk_nr,
           t1.Rpt_nr,
           t1.Bgt_cd,
@@ -19192,8 +19192,8 @@ PROC SQL;
      FROM DATAQASG.RDM_PERIODE_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_PERIODE;
-  set WORK.BAS_RDM_PERIODE;
+data MIGRATIE.BAS_RDM_PERIODE;
+  set MIGRATIE.BAS_RDM_PERIODE;
   techId=_n_;
 run;
 
@@ -19264,7 +19264,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_PERIODE   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_PERIODE   end=EFIEOD; 
        format Ovk_nr  ;
        format Rpt_nr best12. ;
        format Bgt_cd  ;
@@ -19541,7 +19541,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_PRG_OVEREENKOMST AS
+   CREATE TABLE MIGRATIE.BAS_RDM_PRG_OVEREENKOMST AS
    SELECT t1.Prg_id,
           t1.Ovk_nr,
           t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
@@ -19561,8 +19561,8 @@ PROC SQL;
      FROM DATAQASG.RDM_PRG_OVEREENKOMST_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_PRG_OVEREENKOMST;
-  set WORK.BAS_RDM_PRG_OVEREENKOMST;
+data MIGRATIE.BAS_RDM_PRG_OVEREENKOMST;
+  set MIGRATIE.BAS_RDM_PRG_OVEREENKOMST;
   techId=_n_;
 run;
 
@@ -19609,7 +19609,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_PRG_OVEREENKOMST   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_PRG_OVEREENKOMST   end=EFIEOD; 
        format Prg_id best12. ;
        format Ovk_nr  ;
        format Datum_van B8601DT19. ;
@@ -19748,7 +19748,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL AS
+   CREATE TABLE MIGRATIE.BAS_RDM_PROGRAMMAMEDEWERKERROL AS
    SELECT t1.Prg_id,
           t1.Mdw_id,
           t1.Auth_mdw_cd,
@@ -19769,8 +19769,8 @@ PROC SQL;
      FROM DATAQASG.RDM_PROGRAMMAMEDEWERKERROL_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL;
-  set WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL;
+data MIGRATIE.BAS_RDM_PROGRAMMAMEDEWERKERROL;
+  set MIGRATIE.BAS_RDM_PROGRAMMAMEDEWERKERROL;
   techId=_n_;
 run;
 
@@ -19819,7 +19819,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_PROGRAMMAMEDEWERKERROL   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_PROGRAMMAMEDEWERKERROL   end=EFIEOD; 
        format Prg_id best12. ;
        format Mdw_id best12. ;
        format Auth_mdw_cd  ;
@@ -19980,7 +19980,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_REGELING AS
+   CREATE TABLE MIGRATIE.BAS_RDM_REGELING AS
    SELECT t1.Reg_id,
           t1.Reg_cd,
           t1.Reg_oms,
@@ -20020,8 +20020,8 @@ PROC SQL;
      FROM DATAQASG.RDM_REGELING_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_REGELING;
-  set WORK.BAS_RDM_REGELING;
+data MIGRATIE.BAS_RDM_REGELING;
+  set MIGRATIE.BAS_RDM_REGELING;
   techId=_n_;
 run;
 
@@ -20108,7 +20108,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_REGELING   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_REGELING   end=EFIEOD; 
        format Reg_id best12. ;
        format Reg_cd  ;
        format Reg_oms  ;
@@ -20480,7 +20480,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_REGPAR_BUDGONDVERD AS
+   CREATE TABLE MIGRATIE.BAS_RDM_REGPAR_BUDGONDVERD AS
    SELECT t1.Ovk_nr,
           t1.Rpt_nr,
           t1.Bgt_cd,
@@ -20501,8 +20501,8 @@ PROC SQL;
      FROM DATAQASG.RDM_REGPAR_BUDGONDVERD_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_REGPAR_BUDGONDVERD;
-  set WORK.BAS_RDM_REGPAR_BUDGONDVERD;
+data MIGRATIE.BAS_RDM_REGPAR_BUDGONDVERD;
+  set MIGRATIE.BAS_RDM_REGPAR_BUDGONDVERD;
   techId=_n_;
 run;
 
@@ -20551,7 +20551,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_REGPAR_BUDGONDVERD   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_REGPAR_BUDGONDVERD   end=EFIEOD; 
        format Ovk_nr  ;
        format Rpt_nr best12. ;
        format Bgt_cd  ;
@@ -20685,7 +20685,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF AS
+   CREATE TABLE MIGRATIE.BAS_RDM_STATUSOVERG_BIJ_BRIEF AS
    SELECT t1.Reg_id,
           t1.Status_van,
           t1.Statusgroep,
@@ -20699,8 +20699,8 @@ PROC SQL;
      FROM DATAQASG.RDM_STATUSOVERG_BIJ_BRIEF_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF;
-  set WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF;
+data MIGRATIE.BAS_RDM_STATUSOVERG_BIJ_BRIEF;
+  set MIGRATIE.BAS_RDM_STATUSOVERG_BIJ_BRIEF;
   techId=_n_;
 run;
 
@@ -20735,7 +20735,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
        format Reg_id best12. ;
        format Status_van  ;
        format Statusgroep  ;
@@ -20850,7 +20850,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_RDM_VARIABELE AS
+   CREATE TABLE MIGRATIE.BAS_RDM_VARIABELE AS
    SELECT t1.Reg_id,
           t1.Code,
           t1.Begindatum FORMAT=B8601DT19. AS Begindatum,
@@ -20864,8 +20864,8 @@ PROC SQL;
      FROM DATAQASG.RDM_VARIABELE_TCMG t1;
 QUIT;
 
-data WORK.BAS_RDM_VARIABELE;
-  set WORK.BAS_RDM_VARIABELE;
+data MIGRATIE.BAS_RDM_VARIABELE;
+  set MIGRATIE.BAS_RDM_VARIABELE;
   techId=_n_;
 run;
 
@@ -20900,7 +20900,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_RDM_VARIABELE   end=EFIEOD; 
+   set  MIGRATIE.BAS_RDM_VARIABELE   end=EFIEOD; 
        format Reg_id best12. ;
        format Code  ;
        format Begindatum B8601DT19. ;
@@ -20997,7 +20997,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_STM_BSI AS
+   CREATE TABLE MIGRATIE.BAS_STM_BSI AS
    SELECT t1.Startdatum FORMAT=B8601DT19. AS Startdatum,
           t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
           t1.Bsi_cd,
@@ -21009,8 +21009,8 @@ PROC SQL;
      FROM DATAQASG.STM_BSI_TCMG t1;
 QUIT;
 
-data WORK.BAS_STM_BSI;
-  set WORK.BAS_STM_BSI;
+data MIGRATIE.BAS_STM_BSI;
+  set MIGRATIE.BAS_STM_BSI;
   techId=_n_;
 run;
 
@@ -21041,7 +21041,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_STM_BSI   end=EFIEOD; 
+   set  MIGRATIE.BAS_STM_BSI   end=EFIEOD; 
        format Startdatum B8601DT19. ;
        format Einddatum B8601DT19. ;
        format Bsi_cd  ;
@@ -21121,7 +21121,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_STM_REACTIE AS
+   CREATE TABLE MIGRATIE.BAS_STM_REACTIE AS
    SELECT t1.Reactie_cd,
           t1.Reactie_oms,
           t1.Creatie_user,
@@ -21131,8 +21131,8 @@ PROC SQL;
      FROM DATAQASG.STM_REACTIE_TCMG t1;
 QUIT;
 
-data WORK.BAS_STM_REACTIE;
-  set WORK.BAS_STM_REACTIE;
+data MIGRATIE.BAS_STM_REACTIE;
+  set MIGRATIE.BAS_STM_REACTIE;
   techId=_n_;
 run;
 
@@ -21159,7 +21159,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_STM_REACTIE   end=EFIEOD; 
+   set  MIGRATIE.BAS_STM_REACTIE   end=EFIEOD; 
        format Reactie_cd  ;
        format Reactie_oms  ;
        format Creatie_user  ;
@@ -21231,7 +21231,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_STM_ROL AS
+   CREATE TABLE MIGRATIE.BAS_STM_ROL AS
    SELECT t1.Rol_cd,
           t1.Rol_oms,
           t1.Interne_rol,
@@ -21248,8 +21248,8 @@ PROC SQL;
      FROM DATAQASG.STM_ROL_TCMG t1;
 QUIT;
 
-data WORK.BAS_STM_ROL;
-  set WORK.BAS_STM_ROL;
+data MIGRATIE.BAS_STM_ROL;
+  set MIGRATIE.BAS_STM_ROL;
   techId=_n_;
 run;
 
@@ -21290,7 +21290,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_STM_ROL   end=EFIEOD; 
+   set  MIGRATIE.BAS_STM_ROL   end=EFIEOD; 
        format Rol_cd  ;
        format Rol_oms  ;
        format Interne_rol  ;
@@ -21444,7 +21444,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_STM_SBI AS
+   CREATE TABLE MIGRATIE.BAS_STM_SBI AS
    SELECT t1.Sbi_cd,
           t1.Sbi_oms,
           t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
@@ -21454,8 +21454,8 @@ PROC SQL;
      FROM DATAQASG.STM_SBI_TCMG t1;
 QUIT;
 
-data WORK.BAS_STM_SBI;
-  set WORK.BAS_STM_SBI;
+data MIGRATIE.BAS_STM_SBI;
+  set MIGRATIE.BAS_STM_SBI;
   techId=_n_;
 run;
 
@@ -21482,7 +21482,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_STM_SBI   end=EFIEOD; 
+   set  MIGRATIE.BAS_STM_SBI   end=EFIEOD; 
        format Sbi_cd best12. ;
        format Sbi_oms  ;
        format Creatie_dat B8601DT19. ;
@@ -21545,7 +21545,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_STM_STATUS AS
+   CREATE TABLE MIGRATIE.BAS_STM_STATUS AS
    SELECT t1.Sts_cd,
           t1.Sts_oms,
           t1.Ssg_cd,
@@ -21559,8 +21559,8 @@ PROC SQL;
      FROM DATAQASG.STM_STATUS_TCMG t1;
 QUIT;
 
-data WORK.BAS_STM_STATUS;
-  set WORK.BAS_STM_STATUS;
+data MIGRATIE.BAS_STM_STATUS;
+  set MIGRATIE.BAS_STM_STATUS;
   techId=_n_;
 run;
 
@@ -21595,7 +21595,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_STM_STATUS   end=EFIEOD; 
+   set  MIGRATIE.BAS_STM_STATUS   end=EFIEOD; 
        format Sts_cd  ;
        format Sts_oms  ;
        format Ssg_cd  ;
@@ -21719,7 +21719,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF AS
+   CREATE TABLE MIGRATIE.BAS_STM_STATUSOVERG_BIJ_BRIEF AS
    SELECT t1.Van_status,
           t1.Naar_status,
           t1.Ssg_cd,
@@ -21731,8 +21731,8 @@ PROC SQL;
      FROM DATAQASG.STM_STATUSOVERG_BIJ_BRIEF_TCMG t1;
 QUIT;
 
-data WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF;
-  set WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF;
+data MIGRATIE.BAS_STM_STATUSOVERG_BIJ_BRIEF;
+  set MIGRATIE.BAS_STM_STATUSOVERG_BIJ_BRIEF;
   techId=_n_;
 run;
 
@@ -21763,7 +21763,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_STM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
+   set  MIGRATIE.BAS_STM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
        format Van_status  ;
        format Naar_status  ;
        format Ssg_cd  ;
@@ -21861,7 +21861,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE AS
+   CREATE TABLE MIGRATIE.BAS_VKM_TOEGEV_VAR_VELD_WAARDE AS
    SELECT t1.Vkt_id,
           t1.Fysieke_naam,
           t1.Waarde,
@@ -21869,8 +21869,8 @@ PROC SQL;
      FROM DATAQASG.VKM_TOEGEV_VAR_VELD_WAARDE_TCMG t1;
 QUIT;
 
-data WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
-  set WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
+data MIGRATIE.BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
+  set MIGRATIE.BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
   techId=_n_;
 run;
 
@@ -21893,7 +21893,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_VKM_TOEGEV_VAR_VELD_WAARDE   end=EFIEOD; 
+   set  MIGRATIE.BAS_VKM_TOEGEV_VAR_VELD_WAARDE   end=EFIEOD; 
        format Vkt_id best12. ;
        format Fysieke_naam  ;
        format Waarde  ;
@@ -21939,7 +21939,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD AS
+   CREATE TABLE MIGRATIE.BAS_VKM_TOEGEVOEGD_VAR_VELD AS
    SELECT t1.Vkt_id,
           t1.Fysieke_naam,
           t1.Datum_start FORMAT=B8601DT19. AS Datum_start,
@@ -21954,8 +21954,8 @@ PROC SQL;
      FROM DATAQASG.VKM_TOEGEVOEGD_VAR_VELD_TCMG t1;
 QUIT;
 
-data WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD;
-  set WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD;
+data MIGRATIE.BAS_VKM_TOEGEVOEGD_VAR_VELD;
+  set MIGRATIE.BAS_VKM_TOEGEVOEGD_VAR_VELD;
   techId=_n_;
 run;
 
@@ -21992,7 +21992,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_VKM_TOEGEVOEGD_VAR_VELD   end=EFIEOD; 
+   set  MIGRATIE.BAS_VKM_TOEGEVOEGD_VAR_VELD   end=EFIEOD; 
        format Vkt_id best12. ;
        format Fysieke_naam  ;
        format Datum_start B8601DT19. ;
@@ -22093,7 +22093,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_VKM_VAR_GEGEVENS AS
+   CREATE TABLE MIGRATIE.BAS_VKM_VAR_GEGEVENS AS
    SELECT t1.BEDRAG_01,
           t1.BEDRAG_02,
           t1.BEDRAG_03,
@@ -22427,8 +22427,8 @@ PROC SQL;
      FROM DATAQASG.VKM_VAR_GEGEVENS_TCMG t1;
 QUIT;
 
-data WORK.BAS_VKM_VAR_GEGEVENS;
-  set WORK.BAS_VKM_VAR_GEGEVENS;
+data MIGRATIE.BAS_VKM_VAR_GEGEVENS;
+  set MIGRATIE.BAS_VKM_VAR_GEGEVENS;
   techId=_n_;
 run;
 
@@ -23103,7 +23103,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_VKM_VAR_GEGEVENS   end=EFIEOD; 
+   set  MIGRATIE.BAS_VKM_VAR_GEGEVENS   end=EFIEOD; 
        format BEDRAG_01 best12. ;
        format BEDRAG_02 best12. ;
        format BEDRAG_03 best12. ;
@@ -26091,7 +26091,7 @@ data _null_;
     run; 
 
 PROC SQL;
-   CREATE TABLE WORK.BAS_VKM_VAR_KAART AS
+   CREATE TABLE MIGRATIE.BAS_VKM_VAR_KAART AS
    SELECT t1.Vkt_id,
           t1.Kaart_naam,
           t1.Datum_start FORMAT=B8601DT19. AS Datum_start,
@@ -26111,8 +26111,8 @@ PROC SQL;
      FROM DATAQASG.VKM_VAR_KAART_TCMG t1;
 QUIT;
 
-data WORK.BAS_VKM_VAR_KAART;
-  set WORK.BAS_VKM_VAR_KAART;
+data MIGRATIE.BAS_VKM_VAR_KAART;
+  set MIGRATIE.BAS_VKM_VAR_KAART;
   techId=_n_;
 run;
 
@@ -26159,7 +26159,7 @@ data _null_;
           "techId" 
        ; 
      end; 
-   set  WORK.BAS_VKM_VAR_KAART   end=EFIEOD; 
+   set  MIGRATIE.BAS_VKM_VAR_KAART   end=EFIEOD; 
        format Vkt_id best12. ;
        format Kaart_naam  ;
        format Datum_start B8601DT19. ;
