@@ -128,6 +128,7 @@ createStatement t =
                         , "                   if "<>attrLengte<>" > max("<>maxPassend<>",1000)"
                         , "                     then "<>passend<>" = substr("<>(T.pack $ attNameNew att)<>",1,"<>maxPassend<>");"
                         , "                     else "<>passend<>" = "<>(T.pack $ attNameNew att)<>";"
+                        , "                   "<>passend<>" = tranwrd("<>passend<>",'9D'x,'D0'x);"
                         , "                   put "<>passend<>" ~ @;" -- Het ~ forceert het gebruik van dubbele quotes. 
                         , "              end;"
                         ]
