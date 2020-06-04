@@ -56,6 +56,7 @@ data _null_;
                    if attrLengte_3709574036420749824 > max(maxPassend_3709574036420749824,1000)
                      then passend_3709574036420749824 = substr(Actie_cd,1,maxPassend_3709574036420749824);
                      else passend_3709574036420749824 = Actie_cd;
+                   passend_3709574036420749824 = tranwrd(passend_3709574036420749824,'9D'x,'D0'x);
                    put passend_3709574036420749824 ~ @;
               end;
        if missing(Actie_oms)
@@ -67,6 +68,7 @@ data _null_;
                    if attrLengte_896475843107592045 > max(maxPassend_896475843107592045,1000)
                      then passend_896475843107592045 = substr(Actie_oms,1,maxPassend_896475843107592045);
                      else passend_896475843107592045 = Actie_oms;
+                   passend_896475843107592045 = tranwrd(passend_896475843107592045,'9D'x,'D0'x);
                    put passend_896475843107592045 ~ @;
               end;
        if missing(Creatie_user)
@@ -78,6 +80,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -92,6 +95,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -166,6 +170,7 @@ data _null_;
                    if attrLengte_3709574036420749824 > max(maxPassend_3709574036420749824,1000)
                      then passend_3709574036420749824 = substr(Actie_cd,1,maxPassend_3709574036420749824);
                      else passend_3709574036420749824 = Actie_cd;
+                   passend_3709574036420749824 = tranwrd(passend_3709574036420749824,'9D'x,'D0'x);
                    put passend_3709574036420749824 ~ @;
               end;
        if missing(Bgt_cd)
@@ -177,6 +182,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Creatie_dat)
@@ -191,6 +197,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -205,6 +212,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Tra_cd)
@@ -216,6 +224,7 @@ data _null_;
                    if attrLengte_6253283794989270681 > max(maxPassend_6253283794989270681,1000)
                      then passend_6253283794989270681 = substr(Tra_cd,1,maxPassend_6253283794989270681);
                      else passend_6253283794989270681 = Tra_cd;
+                   passend_6253283794989270681 = tranwrd(passend_6253283794989270681,'9D'x,'D0'x);
                    put passend_6253283794989270681 ~ @;
               end;
        put techId best12. ; 
@@ -299,6 +308,7 @@ data _null_;
                    if attrLengte_5831362457227599872 > max(maxPassend_5831362457227599872,1000)
                      then passend_5831362457227599872 = substr(Beleidsadministratie_jn,1,maxPassend_5831362457227599872);
                      else passend_5831362457227599872 = Beleidsadministratie_jn;
+                   passend_5831362457227599872 = tranwrd(passend_5831362457227599872,'9D'x,'D0'x);
                    put passend_5831362457227599872 ~ @;
               end;
        if missing(Creatie_dat)
@@ -313,6 +323,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Geldstroom_jn)
@@ -324,6 +335,7 @@ data _null_;
                    if attrLengte_117035809429087224 > max(maxPassend_117035809429087224,1000)
                      then passend_117035809429087224 = substr(Geldstroom_jn,1,maxPassend_117035809429087224);
                      else passend_117035809429087224 = Geldstroom_jn;
+                   passend_117035809429087224 = tranwrd(passend_117035809429087224,'9D'x,'D0'x);
                    put passend_117035809429087224 ~ @;
               end;
        if missing(Mdw_mandaat_jn)
@@ -335,6 +347,7 @@ data _null_;
                    if attrLengte_4062840293532491438 > max(maxPassend_4062840293532491438,1000)
                      then passend_4062840293532491438 = substr(Mdw_mandaat_jn,1,maxPassend_4062840293532491438);
                      else passend_4062840293532491438 = Mdw_mandaat_jn;
+                   passend_4062840293532491438 = tranwrd(passend_4062840293532491438,'9D'x,'D0'x);
                    put passend_4062840293532491438 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -349,6 +362,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Tra_cd)
@@ -360,6 +374,7 @@ data _null_;
                    if attrLengte_6253283794989270681 > max(maxPassend_6253283794989270681,1000)
                      then passend_6253283794989270681 = substr(Tra_cd,1,maxPassend_6253283794989270681);
                      else passend_6253283794989270681 = Tra_cd;
+                   passend_6253283794989270681 = tranwrd(passend_6253283794989270681,'9D'x,'D0'x);
                    put passend_6253283794989270681 ~ @;
               end;
        if missing(Tra_oms)
@@ -371,6 +386,7 @@ data _null_;
                    if attrLengte_349044137099503532 > max(maxPassend_349044137099503532,1000)
                      then passend_349044137099503532 = substr(Tra_oms,1,maxPassend_349044137099503532);
                      else passend_349044137099503532 = Tra_oms;
+                   passend_349044137099503532 = tranwrd(passend_349044137099503532,'9D'x,'D0'x);
                    put passend_349044137099503532 ~ @;
               end;
        if missing(Tra_stop)
@@ -382,6 +398,7 @@ data _null_;
                    if attrLengte_9100607069926000314 > max(maxPassend_9100607069926000314,1000)
                      then passend_9100607069926000314 = substr(Tra_stop,1,maxPassend_9100607069926000314);
                      else passend_9100607069926000314 = Tra_stop;
+                   passend_9100607069926000314 = tranwrd(passend_9100607069926000314,'9D'x,'D0'x);
                    put passend_9100607069926000314 ~ @;
               end;
        put techId best12. ; 
@@ -555,6 +572,7 @@ data _null_;
                    if attrLengte_8089610682312470086 > max(maxPassend_8089610682312470086,1000)
                      then passend_8089610682312470086 = substr(Reg_cd,1,maxPassend_8089610682312470086);
                      else passend_8089610682312470086 = Reg_cd;
+                   passend_8089610682312470086 = tranwrd(passend_8089610682312470086,'9D'x,'D0'x);
                    put passend_8089610682312470086 ~ @;
               end;
        if missing(Dos_cd)
@@ -566,6 +584,7 @@ data _null_;
                    if attrLengte_673625142560997166 > max(maxPassend_673625142560997166,1000)
                      then passend_673625142560997166 = substr(Dos_cd,1,maxPassend_673625142560997166);
                      else passend_673625142560997166 = Dos_cd;
+                   passend_673625142560997166 = tranwrd(passend_673625142560997166,'9D'x,'D0'x);
                    put passend_673625142560997166 ~ @;
               end;
        if missing(Bedrag)
@@ -583,6 +602,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Naam_begunstigde)
@@ -594,6 +614,7 @@ data _null_;
                    if attrLengte_2297573122993302389 > max(maxPassend_2297573122993302389,1000)
                      then passend_2297573122993302389 = substr(Naam_begunstigde,1,maxPassend_2297573122993302389);
                      else passend_2297573122993302389 = Naam_begunstigde;
+                   passend_2297573122993302389 = tranwrd(passend_2297573122993302389,'9D'x,'D0'x);
                    put passend_2297573122993302389 ~ @;
               end;
        if missing(Betalingskenmerk)
@@ -605,6 +626,7 @@ data _null_;
                    if attrLengte_8016713407944005678 > max(maxPassend_8016713407944005678,1000)
                      then passend_8016713407944005678 = substr(Betalingskenmerk,1,maxPassend_8016713407944005678);
                      else passend_8016713407944005678 = Betalingskenmerk;
+                   passend_8016713407944005678 = tranwrd(passend_8016713407944005678,'9D'x,'D0'x);
                    put passend_8016713407944005678 ~ @;
               end;
        if missing(Plaats)
@@ -616,6 +638,7 @@ data _null_;
                    if attrLengte_2948830150786152657 > max(maxPassend_2948830150786152657,1000)
                      then passend_2948830150786152657 = substr(Plaats,1,maxPassend_2948830150786152657);
                      else passend_2948830150786152657 = Plaats;
+                   passend_2948830150786152657 = tranwrd(passend_2948830150786152657,'9D'x,'D0'x);
                    put passend_2948830150786152657 ~ @;
               end;
        if missing(Aanleverdatum)
@@ -630,6 +653,7 @@ data _null_;
                    if attrLengte_5988018406811650736 > max(maxPassend_5988018406811650736,1000)
                      then passend_5988018406811650736 = substr(Status,1,maxPassend_5988018406811650736);
                      else passend_5988018406811650736 = Status;
+                   passend_5988018406811650736 = tranwrd(passend_5988018406811650736,'9D'x,'D0'x);
                    put passend_5988018406811650736 ~ @;
               end;
        if missing(Betaalrun_id)
@@ -644,6 +668,7 @@ data _null_;
                    if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
+                   passend_431232146876537749 = tranwrd(passend_431232146876537749,'9D'x,'D0'x);
                    put passend_431232146876537749 ~ @;
               end;
        if missing(Invoerdatum)
@@ -667,6 +692,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -681,6 +707,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Iban)
@@ -692,6 +719,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(Bic)
@@ -703,6 +731,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Beg_bic)
@@ -714,6 +743,7 @@ data _null_;
                    if attrLengte_106646185054892784 > max(maxPassend_106646185054892784,1000)
                      then passend_106646185054892784 = substr(Beg_bic,1,maxPassend_106646185054892784);
                      else passend_106646185054892784 = Beg_bic;
+                   passend_106646185054892784 = tranwrd(passend_106646185054892784,'9D'x,'D0'x);
                    put passend_106646185054892784 ~ @;
               end;
        if missing(Beg_iban)
@@ -725,6 +755,7 @@ data _null_;
                    if attrLengte_6065333816954667525 > max(maxPassend_6065333816954667525,1000)
                      then passend_6065333816954667525 = substr(Beg_iban,1,maxPassend_6065333816954667525);
                      else passend_6065333816954667525 = Beg_iban;
+                   passend_6065333816954667525 = tranwrd(passend_6065333816954667525,'9D'x,'D0'x);
                    put passend_6065333816954667525 ~ @;
               end;
        if missing(Sepa_betaling_indicatie)
@@ -736,6 +767,7 @@ data _null_;
                    if attrLengte_6326571350773995732 > max(maxPassend_6326571350773995732,1000)
                      then passend_6326571350773995732 = substr(Sepa_betaling_indicatie,1,maxPassend_6326571350773995732);
                      else passend_6326571350773995732 = Sepa_betaling_indicatie;
+                   passend_6326571350773995732 = tranwrd(passend_6326571350773995732,'9D'x,'D0'x);
                    put passend_6326571350773995732 ~ @;
               end;
        if missing(Parkeer_valutadatum)
@@ -750,6 +782,7 @@ data _null_;
                    if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
                      then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
                      else passend_7008902060440754439 = Betalingsverzoeknummer;
+                   passend_7008902060440754439 = tranwrd(passend_7008902060440754439,'9D'x,'D0'x);
                    put passend_7008902060440754439 ~ @;
               end;
        if missing(Betaal_datum)
@@ -764,6 +797,7 @@ data _null_;
                    if attrLengte_5900692461372151366 > max(maxPassend_5900692461372151366,1000)
                      then passend_5900692461372151366 = substr(On_hold_jn,1,maxPassend_5900692461372151366);
                      else passend_5900692461372151366 = On_hold_jn;
+                   passend_5900692461372151366 = tranwrd(passend_5900692461372151366,'9D'x,'D0'x);
                    put passend_5900692461372151366 ~ @;
               end;
        if missing(Sepa_xsd_bevinding)
@@ -775,6 +809,7 @@ data _null_;
                    if attrLengte_5950732349416649908 > max(maxPassend_5950732349416649908,1000)
                      then passend_5950732349416649908 = substr(Sepa_xsd_bevinding,1,maxPassend_5950732349416649908);
                      else passend_5950732349416649908 = Sepa_xsd_bevinding;
+                   passend_5950732349416649908 = tranwrd(passend_5950732349416649908,'9D'x,'D0'x);
                    put passend_5950732349416649908 ~ @;
               end;
        put techId best12. ; 
@@ -940,6 +975,7 @@ data _null_;
                    if attrLengte_8089610682312470086 > max(maxPassend_8089610682312470086,1000)
                      then passend_8089610682312470086 = substr(Reg_cd,1,maxPassend_8089610682312470086);
                      else passend_8089610682312470086 = Reg_cd;
+                   passend_8089610682312470086 = tranwrd(passend_8089610682312470086,'9D'x,'D0'x);
                    put passend_8089610682312470086 ~ @;
               end;
        if missing(Dos_cd)
@@ -951,6 +987,7 @@ data _null_;
                    if attrLengte_673625142560997166 > max(maxPassend_673625142560997166,1000)
                      then passend_673625142560997166 = substr(Dos_cd,1,maxPassend_673625142560997166);
                      else passend_673625142560997166 = Dos_cd;
+                   passend_673625142560997166 = tranwrd(passend_673625142560997166,'9D'x,'D0'x);
                    put passend_673625142560997166 ~ @;
               end;
        if missing(Bedrag)
@@ -968,6 +1005,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Naam_begunstigde)
@@ -979,6 +1017,7 @@ data _null_;
                    if attrLengte_2297573122993302389 > max(maxPassend_2297573122993302389,1000)
                      then passend_2297573122993302389 = substr(Naam_begunstigde,1,maxPassend_2297573122993302389);
                      else passend_2297573122993302389 = Naam_begunstigde;
+                   passend_2297573122993302389 = tranwrd(passend_2297573122993302389,'9D'x,'D0'x);
                    put passend_2297573122993302389 ~ @;
               end;
        if missing(Plaats)
@@ -990,6 +1029,7 @@ data _null_;
                    if attrLengte_2948830150786152657 > max(maxPassend_2948830150786152657,1000)
                      then passend_2948830150786152657 = substr(Plaats,1,maxPassend_2948830150786152657);
                      else passend_2948830150786152657 = Plaats;
+                   passend_2948830150786152657 = tranwrd(passend_2948830150786152657,'9D'x,'D0'x);
                    put passend_2948830150786152657 ~ @;
               end;
        if missing(Rekeningnummer)
@@ -1013,6 +1053,7 @@ data _null_;
                    if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
+                   passend_431232146876537749 = tranwrd(passend_431232146876537749,'9D'x,'D0'x);
                    put passend_431232146876537749 ~ @;
               end;
        if missing(Valutadatum)
@@ -1030,6 +1071,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -1044,6 +1086,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -1061,6 +1104,7 @@ data _null_;
                    if attrLengte_8016713407944005678 > max(maxPassend_8016713407944005678,1000)
                      then passend_8016713407944005678 = substr(Betalingskenmerk,1,maxPassend_8016713407944005678);
                      else passend_8016713407944005678 = Betalingskenmerk;
+                   passend_8016713407944005678 = tranwrd(passend_8016713407944005678,'9D'x,'D0'x);
                    put passend_8016713407944005678 ~ @;
               end;
        if missing(Iban)
@@ -1072,6 +1116,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(Bic)
@@ -1083,6 +1128,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Beg_bic)
@@ -1094,6 +1140,7 @@ data _null_;
                    if attrLengte_106646185054892784 > max(maxPassend_106646185054892784,1000)
                      then passend_106646185054892784 = substr(Beg_bic,1,maxPassend_106646185054892784);
                      else passend_106646185054892784 = Beg_bic;
+                   passend_106646185054892784 = tranwrd(passend_106646185054892784,'9D'x,'D0'x);
                    put passend_106646185054892784 ~ @;
               end;
        if missing(Beg_iban)
@@ -1105,6 +1152,7 @@ data _null_;
                    if attrLengte_6065333816954667525 > max(maxPassend_6065333816954667525,1000)
                      then passend_6065333816954667525 = substr(Beg_iban,1,maxPassend_6065333816954667525);
                      else passend_6065333816954667525 = Beg_iban;
+                   passend_6065333816954667525 = tranwrd(passend_6065333816954667525,'9D'x,'D0'x);
                    put passend_6065333816954667525 ~ @;
               end;
        if missing(Sepa_betaling_indicatie)
@@ -1116,6 +1164,7 @@ data _null_;
                    if attrLengte_6326571350773995732 > max(maxPassend_6326571350773995732,1000)
                      then passend_6326571350773995732 = substr(Sepa_betaling_indicatie,1,maxPassend_6326571350773995732);
                      else passend_6326571350773995732 = Sepa_betaling_indicatie;
+                   passend_6326571350773995732 = tranwrd(passend_6326571350773995732,'9D'x,'D0'x);
                    put passend_6326571350773995732 ~ @;
               end;
        if missing(Parkeer_valutadatum)
@@ -1130,6 +1179,7 @@ data _null_;
                    if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
                      then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
                      else passend_7008902060440754439 = Betalingsverzoeknummer;
+                   passend_7008902060440754439 = tranwrd(passend_7008902060440754439,'9D'x,'D0'x);
                    put passend_7008902060440754439 ~ @;
               end;
        put techId best12. ; 
@@ -1257,6 +1307,7 @@ data _null_;
                    if attrLengte_5282571717016298821 > max(maxPassend_5282571717016298821,1000)
                      then passend_5282571717016298821 = substr(Inkomend,1,maxPassend_5282571717016298821);
                      else passend_5282571717016298821 = Inkomend;
+                   passend_5282571717016298821 = tranwrd(passend_5282571717016298821,'9D'x,'D0'x);
                    put passend_5282571717016298821 ~ @;
               end;
        if missing(Handtekening_ok)
@@ -1268,6 +1319,7 @@ data _null_;
                    if attrLengte_2912998615907010652 > max(maxPassend_2912998615907010652,1000)
                      then passend_2912998615907010652 = substr(Handtekening_ok,1,maxPassend_2912998615907010652);
                      else passend_2912998615907010652 = Handtekening_ok;
+                   passend_2912998615907010652 = tranwrd(passend_2912998615907010652,'9D'x,'D0'x);
                    put passend_2912998615907010652 ~ @;
               end;
        if missing(Ondertekenaar_id)
@@ -1282,6 +1334,7 @@ data _null_;
                    if attrLengte_2629230589794466549 > max(maxPassend_2629230589794466549,1000)
                      then passend_2629230589794466549 = substr(Onderwerp,1,maxPassend_2629230589794466549);
                      else passend_2629230589794466549 = Onderwerp;
+                   passend_2629230589794466549 = tranwrd(passend_2629230589794466549,'9D'x,'D0'x);
                    put passend_2629230589794466549 ~ @;
               end;
        if missing(Inhoud)
@@ -1293,6 +1346,7 @@ data _null_;
                    if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;
+                   passend_4250420340675441405 = tranwrd(passend_4250420340675441405,'9D'x,'D0'x);
                    put passend_4250420340675441405 ~ @;
               end;
        if missing(Certserienummer)
@@ -1304,6 +1358,7 @@ data _null_;
                    if attrLengte_5407225052503955637 > max(maxPassend_5407225052503955637,1000)
                      then passend_5407225052503955637 = substr(Certserienummer,1,maxPassend_5407225052503955637);
                      else passend_5407225052503955637 = Certserienummer;
+                   passend_5407225052503955637 = tranwrd(passend_5407225052503955637,'9D'x,'D0'x);
                    put passend_5407225052503955637 ~ @;
               end;
        if missing(Batch_status)
@@ -1321,6 +1376,7 @@ data _null_;
                    if attrLengte_1317667042141340245 > max(maxPassend_1317667042141340245,1000)
                      then passend_1317667042141340245 = substr(Ingezien,1,maxPassend_1317667042141340245);
                      else passend_1317667042141340245 = Ingezien;
+                   passend_1317667042141340245 = tranwrd(passend_1317667042141340245,'9D'x,'D0'x);
                    put passend_1317667042141340245 ~ @;
               end;
        if missing(Plattetekst)
@@ -1332,6 +1388,7 @@ data _null_;
                    if attrLengte_8175108294013713534 > max(maxPassend_8175108294013713534,1000)
                      then passend_8175108294013713534 = substr(Plattetekst,1,maxPassend_8175108294013713534);
                      else passend_8175108294013713534 = Plattetekst;
+                   passend_8175108294013713534 = tranwrd(passend_8175108294013713534,'9D'x,'D0'x);
                    put passend_8175108294013713534 ~ @;
               end;
        if missing(Status_verzending)
@@ -1343,6 +1400,7 @@ data _null_;
                    if attrLengte_2254035059619672552 > max(maxPassend_2254035059619672552,1000)
                      then passend_2254035059619672552 = substr(Status_verzending,1,maxPassend_2254035059619672552);
                      else passend_2254035059619672552 = Status_verzending;
+                   passend_2254035059619672552 = tranwrd(passend_2254035059619672552,'9D'x,'D0'x);
                    put passend_2254035059619672552 ~ @;
               end;
        if missing(Archief_cor_id)
@@ -1357,6 +1415,7 @@ data _null_;
                    if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
+                   passend_431232146876537749 = tranwrd(passend_431232146876537749,'9D'x,'D0'x);
                    put passend_431232146876537749 ~ @;
               end;
        if missing(Org_cor_id)
@@ -1514,6 +1573,7 @@ data _null_;
                    if attrLengte_3254373303073869725 > max(maxPassend_3254373303073869725,1000)
                      then passend_3254373303073869725 = substr(Acc_rol_cd,1,maxPassend_3254373303073869725);
                      else passend_3254373303073869725 = Acc_rol_cd;
+                   passend_3254373303073869725 = tranwrd(passend_3254373303073869725,'9D'x,'D0'x);
                    put passend_3254373303073869725 ~ @;
               end;
        if missing(Acc_vaste_paraaf_jn)
@@ -1525,6 +1585,7 @@ data _null_;
                    if attrLengte_3697483008035648365 > max(maxPassend_3697483008035648365,1000)
                      then passend_3697483008035648365 = substr(Acc_vaste_paraaf_jn,1,maxPassend_3697483008035648365);
                      else passend_3697483008035648365 = Acc_vaste_paraaf_jn;
+                   passend_3697483008035648365 = tranwrd(passend_3697483008035648365,'9D'x,'D0'x);
                    put passend_3697483008035648365 ~ @;
               end;
        if missing(Afgehandeld_JN)
@@ -1536,6 +1597,7 @@ data _null_;
                    if attrLengte_8174010947375060304 > max(maxPassend_8174010947375060304,1000)
                      then passend_8174010947375060304 = substr(Afgehandeld_JN,1,maxPassend_8174010947375060304);
                      else passend_8174010947375060304 = Afgehandeld_JN;
+                   passend_8174010947375060304 = tranwrd(passend_8174010947375060304,'9D'x,'D0'x);
                    put passend_8174010947375060304 ~ @;
               end;
        if missing(Akkoord)
@@ -1547,6 +1609,7 @@ data _null_;
                    if attrLengte_2314859752596432566 > max(maxPassend_2314859752596432566,1000)
                      then passend_2314859752596432566 = substr(Akkoord,1,maxPassend_2314859752596432566);
                      else passend_2314859752596432566 = Akkoord;
+                   passend_2314859752596432566 = tranwrd(passend_2314859752596432566,'9D'x,'D0'x);
                    put passend_2314859752596432566 ~ @;
               end;
        if missing(Cor_bedrag)
@@ -1567,6 +1630,7 @@ data _null_;
                    if attrLengte_5935686088021903046 > max(maxPassend_5935686088021903046,1000)
                      then passend_5935686088021903046 = substr(Creatie_ok_JN,1,maxPassend_5935686088021903046);
                      else passend_5935686088021903046 = Creatie_ok_JN;
+                   passend_5935686088021903046 = tranwrd(passend_5935686088021903046,'9D'x,'D0'x);
                    put passend_5935686088021903046 ~ @;
               end;
        if missing(Creatie_user)
@@ -1578,6 +1642,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Datum_Akkoord)
@@ -1592,6 +1657,7 @@ data _null_;
                    if attrLengte_6412683484080074523 > max(maxPassend_6412683484080074523,1000)
                      then passend_6412683484080074523 = substr(Email_JN,1,maxPassend_6412683484080074523);
                      else passend_6412683484080074523 = Email_JN;
+                   passend_6412683484080074523 = tranwrd(passend_6412683484080074523,'9D'x,'D0'x);
                    put passend_6412683484080074523 ~ @;
               end;
        if missing(Mandaat_ok_JN)
@@ -1603,6 +1669,7 @@ data _null_;
                    if attrLengte_106515610534061913 > max(maxPassend_106515610534061913,1000)
                      then passend_106515610534061913 = substr(Mandaat_ok_JN,1,maxPassend_106515610534061913);
                      else passend_106515610534061913 = Mandaat_ok_JN;
+                   passend_106515610534061913 = tranwrd(passend_106515610534061913,'9D'x,'D0'x);
                    put passend_106515610534061913 ~ @;
               end;
        if missing(Max_bedrag)
@@ -1626,6 +1693,7 @@ data _null_;
                    if attrLengte_4071847926047268398 > max(maxPassend_4071847926047268398,1000)
                      then passend_4071847926047268398 = substr(Mdw_mandaat_JN,1,maxPassend_4071847926047268398);
                      else passend_4071847926047268398 = Mdw_mandaat_JN;
+                   passend_4071847926047268398 = tranwrd(passend_4071847926047268398,'9D'x,'D0'x);
                    put passend_4071847926047268398 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -1640,6 +1708,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rol_cd)
@@ -1651,6 +1720,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Rol_ok_JN)
@@ -1662,6 +1732,7 @@ data _null_;
                    if attrLengte_5817162024855271556 > max(maxPassend_5817162024855271556,1000)
                      then passend_5817162024855271556 = substr(Rol_ok_JN,1,maxPassend_5817162024855271556);
                      else passend_5817162024855271556 = Rol_ok_JN;
+                   passend_5817162024855271556 = tranwrd(passend_5817162024855271556,'9D'x,'D0'x);
                    put passend_5817162024855271556 ~ @;
               end;
        if missing(Rol_volg_cd)
@@ -1673,6 +1744,7 @@ data _null_;
                    if attrLengte_8388230177475286743 > max(maxPassend_8388230177475286743,1000)
                      then passend_8388230177475286743 = substr(Rol_volg_cd,1,maxPassend_8388230177475286743);
                      else passend_8388230177475286743 = Rol_volg_cd;
+                   passend_8388230177475286743 = tranwrd(passend_8388230177475286743,'9D'x,'D0'x);
                    put passend_8388230177475286743 ~ @;
               end;
        if missing(Toelichting)
@@ -1684,6 +1756,7 @@ data _null_;
                    if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
+                   passend_4385385912596099835 = tranwrd(passend_4385385912596099835,'9D'x,'D0'x);
                    put passend_4385385912596099835 ~ @;
               end;
        if missing(Type_paraaf)
@@ -1695,6 +1768,7 @@ data _null_;
                    if attrLengte_8346042569885215607 > max(maxPassend_8346042569885215607,1000)
                      then passend_8346042569885215607 = substr(Type_paraaf,1,maxPassend_8346042569885215607);
                      else passend_8346042569885215607 = Type_paraaf;
+                   passend_8346042569885215607 = tranwrd(passend_8346042569885215607,'9D'x,'D0'x);
                    put passend_8346042569885215607 ~ @;
               end;
        if missing(Vaste_paraaf)
@@ -1706,6 +1780,7 @@ data _null_;
                    if attrLengte_3312341310812503389 > max(maxPassend_3312341310812503389,1000)
                      then passend_3312341310812503389 = substr(Vaste_paraaf,1,maxPassend_3312341310812503389);
                      else passend_3312341310812503389 = Vaste_paraaf;
+                   passend_3312341310812503389 = tranwrd(passend_3312341310812503389,'9D'x,'D0'x);
                    put passend_3312341310812503389 ~ @;
               end;
        if missing(Volgorde)
@@ -1840,6 +1915,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Cst_oms)
@@ -1851,6 +1927,7 @@ data _null_;
                    if attrLengte_595247200272468379 > max(maxPassend_595247200272468379,1000)
                      then passend_595247200272468379 = substr(Cst_oms,1,maxPassend_595247200272468379);
                      else passend_595247200272468379 = Cst_oms;
+                   passend_595247200272468379 = tranwrd(passend_595247200272468379,'9D'x,'D0'x);
                    put passend_595247200272468379 ~ @;
               end;
        if missing(Cst_template)
@@ -1862,6 +1939,7 @@ data _null_;
                    if attrLengte_4791577805552596401 > max(maxPassend_4791577805552596401,1000)
                      then passend_4791577805552596401 = substr(Cst_template,1,maxPassend_4791577805552596401);
                      else passend_4791577805552596401 = Cst_template;
+                   passend_4791577805552596401 = tranwrd(passend_4791577805552596401,'9D'x,'D0'x);
                    put passend_4791577805552596401 ~ @;
               end;
        if missing(Regeling)
@@ -1873,6 +1951,7 @@ data _null_;
                    if attrLengte_3492344684937610391 > max(maxPassend_3492344684937610391,1000)
                      then passend_3492344684937610391 = substr(Regeling,1,maxPassend_3492344684937610391);
                      else passend_3492344684937610391 = Regeling;
+                   passend_3492344684937610391 = tranwrd(passend_3492344684937610391,'9D'x,'D0'x);
                    put passend_3492344684937610391 ~ @;
               end;
        if missing(Thema)
@@ -1884,6 +1963,7 @@ data _null_;
                    if attrLengte_4904519751506790512 > max(maxPassend_4904519751506790512,1000)
                      then passend_4904519751506790512 = substr(Thema,1,maxPassend_4904519751506790512);
                      else passend_4904519751506790512 = Thema;
+                   passend_4904519751506790512 = tranwrd(passend_4904519751506790512,'9D'x,'D0'x);
                    put passend_4904519751506790512 ~ @;
               end;
        if missing(Dossier)
@@ -1895,6 +1975,7 @@ data _null_;
                    if attrLengte_8919092385214382786 > max(maxPassend_8919092385214382786,1000)
                      then passend_8919092385214382786 = substr(Dossier,1,maxPassend_8919092385214382786);
                      else passend_8919092385214382786 = Dossier;
+                   passend_8919092385214382786 = tranwrd(passend_8919092385214382786,'9D'x,'D0'x);
                    put passend_8919092385214382786 ~ @;
               end;
        if missing(Project)
@@ -1906,6 +1987,7 @@ data _null_;
                    if attrLengte_5535917770018830202 > max(maxPassend_5535917770018830202,1000)
                      then passend_5535917770018830202 = substr(Project,1,maxPassend_5535917770018830202);
                      else passend_5535917770018830202 = Project;
+                   passend_5535917770018830202 = tranwrd(passend_5535917770018830202,'9D'x,'D0'x);
                    put passend_5535917770018830202 ~ @;
               end;
        if missing(Organisatie)
@@ -1917,6 +1999,7 @@ data _null_;
                    if attrLengte_2037302649681328841 > max(maxPassend_2037302649681328841,1000)
                      then passend_2037302649681328841 = substr(Organisatie,1,maxPassend_2037302649681328841);
                      else passend_2037302649681328841 = Organisatie;
+                   passend_2037302649681328841 = tranwrd(passend_2037302649681328841,'9D'x,'D0'x);
                    put passend_2037302649681328841 ~ @;
               end;
        if missing(Bezoek)
@@ -1928,6 +2011,7 @@ data _null_;
                    if attrLengte_2419639035702251160 > max(maxPassend_2419639035702251160,1000)
                      then passend_2419639035702251160 = substr(Bezoek,1,maxPassend_2419639035702251160);
                      else passend_2419639035702251160 = Bezoek;
+                   passend_2419639035702251160 = tranwrd(passend_2419639035702251160,'9D'x,'D0'x);
                    put passend_2419639035702251160 ~ @;
               end;
        if missing(Transactie)
@@ -1939,6 +2023,7 @@ data _null_;
                    if attrLengte_7995705138229212290 > max(maxPassend_7995705138229212290,1000)
                      then passend_7995705138229212290 = substr(Transactie,1,maxPassend_7995705138229212290);
                      else passend_7995705138229212290 = Transactie;
+                   passend_7995705138229212290 = tranwrd(passend_7995705138229212290,'9D'x,'D0'x);
                    put passend_7995705138229212290 ~ @;
               end;
        if missing(Uitgaand_inkomend)
@@ -1950,6 +2035,7 @@ data _null_;
                    if attrLengte_6586222269152653008 > max(maxPassend_6586222269152653008,1000)
                      then passend_6586222269152653008 = substr(Uitgaand_inkomend,1,maxPassend_6586222269152653008);
                      else passend_6586222269152653008 = Uitgaand_inkomend;
+                   passend_6586222269152653008 = tranwrd(passend_6586222269152653008,'9D'x,'D0'x);
                    put passend_6586222269152653008 ~ @;
               end;
        if missing(Juridisch)
@@ -1961,6 +2047,7 @@ data _null_;
                    if attrLengte_7451151554839174622 > max(maxPassend_7451151554839174622,1000)
                      then passend_7451151554839174622 = substr(Juridisch,1,maxPassend_7451151554839174622);
                      else passend_7451151554839174622 = Juridisch;
+                   passend_7451151554839174622 = tranwrd(passend_7451151554839174622,'9D'x,'D0'x);
                    put passend_7451151554839174622 ~ @;
               end;
        if missing(Stempel_sj)
@@ -1972,6 +2059,7 @@ data _null_;
                    if attrLengte_3944169568955711548 > max(maxPassend_3944169568955711548,1000)
                      then passend_3944169568955711548 = substr(Stempel_sj,1,maxPassend_3944169568955711548);
                      else passend_3944169568955711548 = Stempel_sj;
+                   passend_3944169568955711548 = tranwrd(passend_3944169568955711548,'9D'x,'D0'x);
                    put passend_3944169568955711548 ~ @;
               end;
        if missing(Bob_brief)
@@ -1983,6 +2071,7 @@ data _null_;
                    if attrLengte_5045286369681625287 > max(maxPassend_5045286369681625287,1000)
                      then passend_5045286369681625287 = substr(Bob_brief,1,maxPassend_5045286369681625287);
                      else passend_5045286369681625287 = Bob_brief;
+                   passend_5045286369681625287 = tranwrd(passend_5045286369681625287,'9D'x,'D0'x);
                    put passend_5045286369681625287 ~ @;
               end;
        if missing(Creatie_dat)
@@ -1997,6 +2086,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -2011,6 +2101,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Vorderingbeheer)
@@ -2022,6 +2113,7 @@ data _null_;
                    if attrLengte_8266925566993179280 > max(maxPassend_8266925566993179280,1000)
                      then passend_8266925566993179280 = substr(Vorderingbeheer,1,maxPassend_8266925566993179280);
                      else passend_8266925566993179280 = Vorderingbeheer;
+                   passend_8266925566993179280 = tranwrd(passend_8266925566993179280,'9D'x,'D0'x);
                    put passend_8266925566993179280 ~ @;
               end;
        if missing(Externe_naam)
@@ -2033,6 +2125,7 @@ data _null_;
                    if attrLengte_6290916302080128697 > max(maxPassend_6290916302080128697,1000)
                      then passend_6290916302080128697 = substr(Externe_naam,1,maxPassend_6290916302080128697);
                      else passend_6290916302080128697 = Externe_naam;
+                   passend_6290916302080128697 = tranwrd(passend_6290916302080128697,'9D'x,'D0'x);
                    put passend_6290916302080128697 ~ @;
               end;
        if missing(Correctie_jn)
@@ -2044,6 +2137,7 @@ data _null_;
                    if attrLengte_7084844533107672031 > max(maxPassend_7084844533107672031,1000)
                      then passend_7084844533107672031 = substr(Correctie_jn,1,maxPassend_7084844533107672031);
                      else passend_7084844533107672031 = Correctie_jn;
+                   passend_7084844533107672031 = tranwrd(passend_7084844533107672031,'9D'x,'D0'x);
                    put passend_7084844533107672031 ~ @;
               end;
        if missing(Intern_jn)
@@ -2055,6 +2149,7 @@ data _null_;
                    if attrLengte_6616792436424895680 > max(maxPassend_6616792436424895680,1000)
                      then passend_6616792436424895680 = substr(Intern_jn,1,maxPassend_6616792436424895680);
                      else passend_6616792436424895680 = Intern_jn;
+                   passend_6616792436424895680 = tranwrd(passend_6616792436424895680,'9D'x,'D0'x);
                    put passend_6616792436424895680 ~ @;
               end;
        put techId best12. ; 
@@ -2136,6 +2231,7 @@ data _null_;
                    if attrLengte_8136469209690216678 > max(maxPassend_8136469209690216678,1000)
                      then passend_8136469209690216678 = substr(Correctie_code,1,maxPassend_8136469209690216678);
                      else passend_8136469209690216678 = Correctie_code;
+                   passend_8136469209690216678 = tranwrd(passend_8136469209690216678,'9D'x,'D0'x);
                    put passend_8136469209690216678 ~ @;
               end;
        if missing(Oude_verzenddatum)
@@ -2153,6 +2249,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -2167,6 +2264,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -2465,6 +2563,7 @@ data _null_;
                    if attrLengte_4300803410724717524 > max(maxPassend_4300803410724717524,1000)
                      then passend_4300803410724717524 = substr(Afgedrukt_JN,1,maxPassend_4300803410724717524);
                      else passend_4300803410724717524 = Afgedrukt_JN;
+                   passend_4300803410724717524 = tranwrd(passend_4300803410724717524,'9D'x,'D0'x);
                    put passend_4300803410724717524 ~ @;
               end;
        if missing(Afgehandeld)
@@ -2476,6 +2575,7 @@ data _null_;
                    if attrLengte_7804948874982929418 > max(maxPassend_7804948874982929418,1000)
                      then passend_7804948874982929418 = substr(Afgehandeld,1,maxPassend_7804948874982929418);
                      else passend_7804948874982929418 = Afgehandeld;
+                   passend_7804948874982929418 = tranwrd(passend_7804948874982929418,'9D'x,'D0'x);
                    put passend_7804948874982929418 ~ @;
               end;
        if missing(Archiveren)
@@ -2487,6 +2587,7 @@ data _null_;
                    if attrLengte_1833190793819299497 > max(maxPassend_1833190793819299497,1000)
                      then passend_1833190793819299497 = substr(Archiveren,1,maxPassend_1833190793819299497);
                      else passend_1833190793819299497 = Archiveren;
+                   passend_1833190793819299497 = tranwrd(passend_1833190793819299497,'9D'x,'D0'x);
                    put passend_1833190793819299497 ~ @;
               end;
        if missing(Bas_da_melding)
@@ -2498,6 +2599,7 @@ data _null_;
                    if attrLengte_1059307689160233507 > max(maxPassend_1059307689160233507,1000)
                      then passend_1059307689160233507 = substr(Bas_da_melding,1,maxPassend_1059307689160233507);
                      else passend_1059307689160233507 = Bas_da_melding;
+                   passend_1059307689160233507 = tranwrd(passend_1059307689160233507,'9D'x,'D0'x);
                    put passend_1059307689160233507 ~ @;
               end;
        if missing(Behandelingsronde)
@@ -2515,6 +2617,7 @@ data _null_;
                    if attrLengte_1120661312267482359 > max(maxPassend_1120661312267482359,1000)
                      then passend_1120661312267482359 = substr(Bos_status,1,maxPassend_1120661312267482359);
                      else passend_1120661312267482359 = Bos_status;
+                   passend_1120661312267482359 = tranwrd(passend_1120661312267482359,'9D'x,'D0'x);
                    put passend_1120661312267482359 ~ @;
               end;
        if missing(Cbi_id)
@@ -2532,6 +2635,7 @@ data _null_;
                    if attrLengte_9126614030551897497 > max(maxPassend_9126614030551897497,1000)
                      then passend_9126614030551897497 = substr(Cor_bericht,1,maxPassend_9126614030551897497);
                      else passend_9126614030551897497 = Cor_bericht;
+                   passend_9126614030551897497 = tranwrd(passend_9126614030551897497,'9D'x,'D0'x);
                    put passend_9126614030551897497 ~ @;
               end;
        if missing(Cor_id)
@@ -2558,6 +2662,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Cst_cd)
@@ -2569,6 +2674,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Datum)
@@ -2583,6 +2689,7 @@ data _null_;
                    if attrLengte_5989136901746980486 > max(maxPassend_5989136901746980486,1000)
                      then passend_5989136901746980486 = substr(Datum_ok,1,maxPassend_5989136901746980486);
                      else passend_5989136901746980486 = Datum_ok;
+                   passend_5989136901746980486 = tranwrd(passend_5989136901746980486,'9D'x,'D0'x);
                    put passend_5989136901746980486 ~ @;
               end;
        if missing(Datum_stempel_sj)
@@ -2597,6 +2704,7 @@ data _null_;
                    if attrLengte_3878728069056016014 > max(maxPassend_3878728069056016014,1000)
                      then passend_3878728069056016014 = substr(Digitaal_archiveren,1,maxPassend_3878728069056016014);
                      else passend_3878728069056016014 = Digitaal_archiveren;
+                   passend_3878728069056016014 = tranwrd(passend_3878728069056016014,'9D'x,'D0'x);
                    put passend_3878728069056016014 ~ @;
               end;
        if missing(Doc_directory)
@@ -2608,6 +2716,7 @@ data _null_;
                    if attrLengte_3553197755462333651 > max(maxPassend_3553197755462333651,1000)
                      then passend_3553197755462333651 = substr(Doc_directory,1,maxPassend_3553197755462333651);
                      else passend_3553197755462333651 = Doc_directory;
+                   passend_3553197755462333651 = tranwrd(passend_3553197755462333651,'9D'x,'D0'x);
                    put passend_3553197755462333651 ~ @;
               end;
        if missing(Doc_naam)
@@ -2619,6 +2728,7 @@ data _null_;
                    if attrLengte_4570953002792249656 > max(maxPassend_4570953002792249656,1000)
                      then passend_4570953002792249656 = substr(Doc_naam,1,maxPassend_4570953002792249656);
                      else passend_4570953002792249656 = Doc_naam;
+                   passend_4570953002792249656 = tranwrd(passend_4570953002792249656,'9D'x,'D0'x);
                    put passend_4570953002792249656 ~ @;
               end;
        if missing(Dos_id)
@@ -2636,6 +2746,7 @@ data _null_;
                    if attrLengte_6412683484080074523 > max(maxPassend_6412683484080074523,1000)
                      then passend_6412683484080074523 = substr(Email_JN,1,maxPassend_6412683484080074523);
                      else passend_6412683484080074523 = Email_JN;
+                   passend_6412683484080074523 = tranwrd(passend_6412683484080074523,'9D'x,'D0'x);
                    put passend_6412683484080074523 ~ @;
               end;
        if missing(Genereer_JN)
@@ -2647,6 +2758,7 @@ data _null_;
                    if attrLengte_4728778185483655903 > max(maxPassend_4728778185483655903,1000)
                      then passend_4728778185483655903 = substr(Genereer_JN,1,maxPassend_4728778185483655903);
                      else passend_4728778185483655903 = Genereer_JN;
+                   passend_4728778185483655903 = tranwrd(passend_4728778185483655903,'9D'x,'D0'x);
                    put passend_4728778185483655903 ~ @;
               end;
        if missing(Html)
@@ -2658,6 +2770,7 @@ data _null_;
                    if attrLengte_1275584113257327827 > max(maxPassend_1275584113257327827,1000)
                      then passend_1275584113257327827 = substr(Html,1,maxPassend_1275584113257327827);
                      else passend_1275584113257327827 = Html;
+                   passend_1275584113257327827 = tranwrd(passend_1275584113257327827,'9D'x,'D0'x);
                    put passend_1275584113257327827 ~ @;
               end;
        if missing(Ids_id)
@@ -2675,6 +2788,7 @@ data _null_;
                    if attrLengte_4031150624851215876 > max(maxPassend_4031150624851215876,1000)
                      then passend_4031150624851215876 = substr(Ingetrokken,1,maxPassend_4031150624851215876);
                      else passend_4031150624851215876 = Ingetrokken;
+                   passend_4031150624851215876 = tranwrd(passend_4031150624851215876,'9D'x,'D0'x);
                    put passend_4031150624851215876 ~ @;
               end;
        if missing(Jz_id)
@@ -2689,6 +2803,7 @@ data _null_;
                    if attrLengte_8223794688263544128 > max(maxPassend_8223794688263544128,1000)
                      then passend_8223794688263544128 = substr(Kenmerk,1,maxPassend_8223794688263544128);
                      else passend_8223794688263544128 = Kenmerk;
+                   passend_8223794688263544128 = tranwrd(passend_8223794688263544128,'9D'x,'D0'x);
                    put passend_8223794688263544128 ~ @;
               end;
        if missing(Lijst_cd)
@@ -2700,6 +2815,7 @@ data _null_;
                    if attrLengte_8863527692231258218 > max(maxPassend_8863527692231258218,1000)
                      then passend_8863527692231258218 = substr(Lijst_cd,1,maxPassend_8863527692231258218);
                      else passend_8863527692231258218 = Lijst_cd;
+                   passend_8863527692231258218 = tranwrd(passend_8863527692231258218,'9D'x,'D0'x);
                    put passend_8863527692231258218 ~ @;
               end;
        if missing(Mandaat_rol_cd)
@@ -2711,6 +2827,7 @@ data _null_;
                    if attrLengte_3138629571656988592 > max(maxPassend_3138629571656988592,1000)
                      then passend_3138629571656988592 = substr(Mandaat_rol_cd,1,maxPassend_3138629571656988592);
                      else passend_3138629571656988592 = Mandaat_rol_cd;
+                   passend_3138629571656988592 = tranwrd(passend_3138629571656988592,'9D'x,'D0'x);
                    put passend_3138629571656988592 ~ @;
               end;
        if missing(Mdw_cd_email)
@@ -2722,6 +2839,7 @@ data _null_;
                    if attrLengte_2391706285967525377 > max(maxPassend_2391706285967525377,1000)
                      then passend_2391706285967525377 = substr(Mdw_cd_email,1,maxPassend_2391706285967525377);
                      else passend_2391706285967525377 = Mdw_cd_email;
+                   passend_2391706285967525377 = tranwrd(passend_2391706285967525377,'9D'x,'D0'x);
                    put passend_2391706285967525377 ~ @;
               end;
        if missing(Mdw_id_contpers_intern)
@@ -2739,6 +2857,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(naam_organisatie)
@@ -2750,6 +2869,7 @@ data _null_;
                    if attrLengte_6801515960142252134 > max(maxPassend_6801515960142252134,1000)
                      then passend_6801515960142252134 = substr(naam_organisatie,1,maxPassend_6801515960142252134);
                      else passend_6801515960142252134 = naam_organisatie;
+                   passend_6801515960142252134 = tranwrd(passend_6801515960142252134,'9D'x,'D0'x);
                    put passend_6801515960142252134 ~ @;
               end;
        if missing(Ok_JN)
@@ -2761,6 +2881,7 @@ data _null_;
                    if attrLengte_5224579374881671966 > max(maxPassend_5224579374881671966,1000)
                      then passend_5224579374881671966 = substr(Ok_JN,1,maxPassend_5224579374881671966);
                      else passend_5224579374881671966 = Ok_JN;
+                   passend_5224579374881671966 = tranwrd(passend_5224579374881671966,'9D'x,'D0'x);
                    put passend_5224579374881671966 ~ @;
               end;
        if missing(Omschrijving)
@@ -2772,6 +2893,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Open_brief)
@@ -2783,6 +2905,7 @@ data _null_;
                    if attrLengte_4104659127539397279 > max(maxPassend_4104659127539397279,1000)
                      then passend_4104659127539397279 = substr(Open_brief,1,maxPassend_4104659127539397279);
                      else passend_4104659127539397279 = Open_brief;
+                   passend_4104659127539397279 = tranwrd(passend_4104659127539397279,'9D'x,'D0'x);
                    put passend_4104659127539397279 ~ @;
               end;
        if missing(Org_id)
@@ -2812,6 +2935,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Run_id)
@@ -2826,6 +2950,7 @@ data _null_;
                    if attrLengte_6362935673041143414 > max(maxPassend_6362935673041143414,1000)
                      then passend_6362935673041143414 = substr(Select_export,1,maxPassend_6362935673041143414);
                      else passend_6362935673041143414 = Select_export;
+                   passend_6362935673041143414 = tranwrd(passend_6362935673041143414,'9D'x,'D0'x);
                    put passend_6362935673041143414 ~ @;
               end;
        if missing(Senterkenmerk)
@@ -2837,6 +2962,7 @@ data _null_;
                    if attrLengte_3633693572838341517 > max(maxPassend_3633693572838341517,1000)
                      then passend_3633693572838341517 = substr(Senterkenmerk,1,maxPassend_3633693572838341517);
                      else passend_3633693572838341517 = Senterkenmerk;
+                   passend_3633693572838341517 = tranwrd(passend_3633693572838341517,'9D'x,'D0'x);
                    put passend_3633693572838341517 ~ @;
               end;
        if missing(Text_inhoud)
@@ -2848,6 +2974,7 @@ data _null_;
                    if attrLengte_5888333563165379968 > max(maxPassend_5888333563165379968,1000)
                      then passend_5888333563165379968 = substr(Text_inhoud,1,maxPassend_5888333563165379968);
                      else passend_5888333563165379968 = Text_inhoud;
+                   passend_5888333563165379968 = tranwrd(passend_5888333563165379968,'9D'x,'D0'x);
                    put passend_5888333563165379968 ~ @;
               end;
        if missing(Vernieuw_paraaf)
@@ -2859,6 +2986,7 @@ data _null_;
                    if attrLengte_2852986966065042522 > max(maxPassend_2852986966065042522,1000)
                      then passend_2852986966065042522 = substr(Vernieuw_paraaf,1,maxPassend_2852986966065042522);
                      else passend_2852986966065042522 = Vernieuw_paraaf;
+                   passend_2852986966065042522 = tranwrd(passend_2852986966065042522,'9D'x,'D0'x);
                    put passend_2852986966065042522 ~ @;
               end;
        if missing(Verzenddatum)
@@ -2873,6 +3001,7 @@ data _null_;
                    if attrLengte_3700551394262597335 > max(maxPassend_3700551394262597335,1000)
                      then passend_3700551394262597335 = substr(Verzonden_elektronisch_JN,1,maxPassend_3700551394262597335);
                      else passend_3700551394262597335 = Verzonden_elektronisch_JN;
+                   passend_3700551394262597335 = tranwrd(passend_3700551394262597335,'9D'x,'D0'x);
                    put passend_3700551394262597335 ~ @;
               end;
        if missing(Verzonden_per_post_JN)
@@ -2884,6 +3013,7 @@ data _null_;
                    if attrLengte_6459704284428918526 > max(maxPassend_6459704284428918526,1000)
                      then passend_6459704284428918526 = substr(Verzonden_per_post_JN,1,maxPassend_6459704284428918526);
                      else passend_6459704284428918526 = Verzonden_per_post_JN;
+                   passend_6459704284428918526 = tranwrd(passend_6459704284428918526,'9D'x,'D0'x);
                    put passend_6459704284428918526 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -2898,6 +3028,7 @@ data _null_;
                    if attrLengte_8755559954394913459 > max(maxPassend_8755559954394913459,1000)
                      then passend_8755559954394913459 = substr(Wordbrief_akkoord,1,maxPassend_8755559954394913459);
                      else passend_8755559954394913459 = Wordbrief_akkoord;
+                   passend_8755559954394913459 = tranwrd(passend_8755559954394913459,'9D'x,'D0'x);
                    put passend_8755559954394913459 ~ @;
               end;
        if missing(Xml_inhoud)
@@ -2909,6 +3040,7 @@ data _null_;
                    if attrLengte_6831705858834695873 > max(maxPassend_6831705858834695873,1000)
                      then passend_6831705858834695873 = substr(Xml_inhoud,1,maxPassend_6831705858834695873);
                      else passend_6831705858834695873 = Xml_inhoud;
+                   passend_6831705858834695873 = tranwrd(passend_6831705858834695873,'9D'x,'D0'x);
                    put passend_6831705858834695873 ~ @;
               end;
        if missing(Xsl)
@@ -2920,6 +3052,7 @@ data _null_;
                    if attrLengte_7995265278286191744 > max(maxPassend_7995265278286191744,1000)
                      then passend_7995265278286191744 = substr(Xsl,1,maxPassend_7995265278286191744);
                      else passend_7995265278286191744 = Xsl;
+                   passend_7995265278286191744 = tranwrd(passend_7995265278286191744,'9D'x,'D0'x);
                    put passend_7995265278286191744 ~ @;
               end;
        put techId best12. ; 
@@ -3006,6 +3139,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Cst_cd_2)
@@ -3017,6 +3151,7 @@ data _null_;
                    if attrLengte_8747335132947235925 > max(maxPassend_8747335132947235925,1000)
                      then passend_8747335132947235925 = substr(Cst_cd_2,1,maxPassend_8747335132947235925);
                      else passend_8747335132947235925 = Cst_cd_2;
+                   passend_8747335132947235925 = tranwrd(passend_8747335132947235925,'9D'x,'D0'x);
                    put passend_8747335132947235925 ~ @;
               end;
        if missing(Verzenddatum_jn)
@@ -3028,6 +3163,7 @@ data _null_;
                    if attrLengte_6553125106103169607 > max(maxPassend_6553125106103169607,1000)
                      then passend_6553125106103169607 = substr(Verzenddatum_jn,1,maxPassend_6553125106103169607);
                      else passend_6553125106103169607 = Verzenddatum_jn;
+                   passend_6553125106103169607 = tranwrd(passend_6553125106103169607,'9D'x,'D0'x);
                    put passend_6553125106103169607 ~ @;
               end;
        if missing(Afgehandeld_jn)
@@ -3039,6 +3175,7 @@ data _null_;
                    if attrLengte_8183018579889837264 > max(maxPassend_8183018579889837264,1000)
                      then passend_8183018579889837264 = substr(Afgehandeld_jn,1,maxPassend_8183018579889837264);
                      else passend_8183018579889837264 = Afgehandeld_jn;
+                   passend_8183018579889837264 = tranwrd(passend_8183018579889837264,'9D'x,'D0'x);
                    put passend_8183018579889837264 ~ @;
               end;
        if missing(Creatie_dat)
@@ -3053,6 +3190,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -3067,6 +3205,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Genereer_jn)
@@ -3078,6 +3217,7 @@ data _null_;
                    if attrLengte_4719770552968878943 > max(maxPassend_4719770552968878943,1000)
                      then passend_4719770552968878943 = substr(Genereer_jn,1,maxPassend_4719770552968878943);
                      else passend_4719770552968878943 = Genereer_jn;
+                   passend_4719770552968878943 = tranwrd(passend_4719770552968878943,'9D'x,'D0'x);
                    put passend_4719770552968878943 ~ @;
               end;
        put techId best12. ; 
@@ -3156,6 +3296,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Type_paraaf)
@@ -3167,6 +3308,7 @@ data _null_;
                    if attrLengte_8346042569885215607 > max(maxPassend_8346042569885215607,1000)
                      then passend_8346042569885215607 = substr(Type_paraaf,1,maxPassend_8346042569885215607);
                      else passend_8346042569885215607 = Type_paraaf;
+                   passend_8346042569885215607 = tranwrd(passend_8346042569885215607,'9D'x,'D0'x);
                    put passend_8346042569885215607 ~ @;
               end;
        if missing(Rol_cd)
@@ -3178,6 +3320,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Mdw_rol_niveau)
@@ -3189,6 +3332,7 @@ data _null_;
                    if attrLengte_2994945184948973925 > max(maxPassend_2994945184948973925,1000)
                      then passend_2994945184948973925 = substr(Mdw_rol_niveau,1,maxPassend_2994945184948973925);
                      else passend_2994945184948973925 = Mdw_rol_niveau;
+                   passend_2994945184948973925 = tranwrd(passend_2994945184948973925,'9D'x,'D0'x);
                    put passend_2994945184948973925 ~ @;
               end;
        if missing(Volgorde)
@@ -3203,6 +3347,7 @@ data _null_;
                    if attrLengte_4591517918162034415 > max(maxPassend_4591517918162034415,1000)
                      then passend_4591517918162034415 = substr(Vaste_paraaf_jn,1,maxPassend_4591517918162034415);
                      else passend_4591517918162034415 = Vaste_paraaf_jn;
+                   passend_4591517918162034415 = tranwrd(passend_4591517918162034415,'9D'x,'D0'x);
                    put passend_4591517918162034415 ~ @;
               end;
        if missing(Rol_volg_cd)
@@ -3214,6 +3359,7 @@ data _null_;
                    if attrLengte_8388230177475286743 > max(maxPassend_8388230177475286743,1000)
                      then passend_8388230177475286743 = substr(Rol_volg_cd,1,maxPassend_8388230177475286743);
                      else passend_8388230177475286743 = Rol_volg_cd;
+                   passend_8388230177475286743 = tranwrd(passend_8388230177475286743,'9D'x,'D0'x);
                    put passend_8388230177475286743 ~ @;
               end;
        put techId best12. ; 
@@ -3327,6 +3473,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Cst_cd)
@@ -3338,6 +3485,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Mdw_id)
@@ -3349,6 +3497,7 @@ data _null_;
                    if attrLengte_1224618887063362992 > max(maxPassend_1224618887063362992,1000)
                      then passend_1224618887063362992 = substr(Mdw_id,1,maxPassend_1224618887063362992);
                      else passend_1224618887063362992 = Mdw_id;
+                   passend_1224618887063362992 = tranwrd(passend_1224618887063362992,'9D'x,'D0'x);
                    put passend_1224618887063362992 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -3363,6 +3512,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Per_cluster)
@@ -3374,6 +3524,7 @@ data _null_;
                    if attrLengte_5642491828179289605 > max(maxPassend_5642491828179289605,1000)
                      then passend_5642491828179289605 = substr(Per_cluster,1,maxPassend_5642491828179289605);
                      else passend_5642491828179289605 = Per_cluster;
+                   passend_5642491828179289605 = tranwrd(passend_5642491828179289605,'9D'x,'D0'x);
                    put passend_5642491828179289605 ~ @;
               end;
        if missing(Prg_id)
@@ -3391,6 +3542,7 @@ data _null_;
                    if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
+                   passend_4412363972584569639 = tranwrd(passend_4412363972584569639,'9D'x,'D0'x);
                    put passend_4412363972584569639 ~ @;
               end;
        if missing(Reg_id)
@@ -3405,6 +3557,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Sts_cd)
@@ -3416,6 +3569,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Termijn)
@@ -3545,6 +3699,7 @@ data _null_;
                    if attrLengte_541933804402953707 > max(maxPassend_541933804402953707,1000)
                      then passend_541933804402953707 = substr(Bos_bezorging,1,maxPassend_541933804402953707);
                      else passend_541933804402953707 = Bos_bezorging;
+                   passend_541933804402953707 = tranwrd(passend_541933804402953707,'9D'x,'D0'x);
                    put passend_541933804402953707 ~ @;
               end;
        if missing(Crea_back)
@@ -3556,6 +3711,7 @@ data _null_;
                    if attrLengte_4878221775181652606 > max(maxPassend_4878221775181652606,1000)
                      then passend_4878221775181652606 = substr(Crea_back,1,maxPassend_4878221775181652606);
                      else passend_4878221775181652606 = Crea_back;
+                   passend_4878221775181652606 = tranwrd(passend_4878221775181652606,'9D'x,'D0'x);
                    put passend_4878221775181652606 ~ @;
               end;
        if missing(Create_merge_jn)
@@ -3567,6 +3723,7 @@ data _null_;
                    if attrLengte_3017653041298238391 > max(maxPassend_3017653041298238391,1000)
                      then passend_3017653041298238391 = substr(Create_merge_jn,1,maxPassend_3017653041298238391);
                      else passend_3017653041298238391 = Create_merge_jn;
+                   passend_3017653041298238391 = tranwrd(passend_3017653041298238391,'9D'x,'D0'x);
                    put passend_3017653041298238391 ~ @;
               end;
        if missing(Create_merge_single)
@@ -3578,6 +3735,7 @@ data _null_;
                    if attrLengte_571955599341724873 > max(maxPassend_571955599341724873,1000)
                      then passend_571955599341724873 = substr(Create_merge_single,1,maxPassend_571955599341724873);
                      else passend_571955599341724873 = Create_merge_single;
+                   passend_571955599341724873 = tranwrd(passend_571955599341724873,'9D'x,'D0'x);
                    put passend_571955599341724873 ~ @;
               end;
        if missing(Creatie_dat)
@@ -3592,6 +3750,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Cst_cd)
@@ -3603,6 +3762,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Doc_template)
@@ -3614,6 +3774,7 @@ data _null_;
                    if attrLengte_2954458111530422857 > max(maxPassend_2954458111530422857,1000)
                      then passend_2954458111530422857 = substr(Doc_template,1,maxPassend_2954458111530422857);
                      else passend_2954458111530422857 = Doc_template;
+                   passend_2954458111530422857 = tranwrd(passend_2954458111530422857,'9D'x,'D0'x);
                    put passend_2954458111530422857 ~ @;
               end;
        if missing(Externe_naam)
@@ -3625,6 +3786,7 @@ data _null_;
                    if attrLengte_6290916302080128697 > max(maxPassend_6290916302080128697,1000)
                      then passend_6290916302080128697 = substr(Externe_naam,1,maxPassend_6290916302080128697);
                      else passend_6290916302080128697 = Externe_naam;
+                   passend_6290916302080128697 = tranwrd(passend_6290916302080128697,'9D'x,'D0'x);
                    put passend_6290916302080128697 ~ @;
               end;
        if missing(Geblokkeerd_jn)
@@ -3636,6 +3798,7 @@ data _null_;
                    if attrLengte_7719773628010563908 > max(maxPassend_7719773628010563908,1000)
                      then passend_7719773628010563908 = substr(Geblokkeerd_jn,1,maxPassend_7719773628010563908);
                      else passend_7719773628010563908 = Geblokkeerd_jn;
+                   passend_7719773628010563908 = tranwrd(passend_7719773628010563908,'9D'x,'D0'x);
                    put passend_7719773628010563908 ~ @;
               end;
        if missing(Ic_controle)
@@ -3647,6 +3810,7 @@ data _null_;
                    if attrLengte_2714930422424334682 > max(maxPassend_2714930422424334682,1000)
                      then passend_2714930422424334682 = substr(Ic_controle,1,maxPassend_2714930422424334682);
                      else passend_2714930422424334682 = Ic_controle;
+                   passend_2714930422424334682 = tranwrd(passend_2714930422424334682,'9D'x,'D0'x);
                    put passend_2714930422424334682 ~ @;
               end;
        if missing(Job)
@@ -3658,6 +3822,7 @@ data _null_;
                    if attrLengte_5693874621403232828 > max(maxPassend_5693874621403232828,1000)
                      then passend_5693874621403232828 = substr(Job,1,maxPassend_5693874621403232828);
                      else passend_5693874621403232828 = Job;
+                   passend_5693874621403232828 = tranwrd(passend_5693874621403232828,'9D'x,'D0'x);
                    put passend_5693874621403232828 ~ @;
               end;
        if missing(Lijst_cd)
@@ -3669,6 +3834,7 @@ data _null_;
                    if attrLengte_8863527692231258218 > max(maxPassend_8863527692231258218,1000)
                      then passend_8863527692231258218 = substr(Lijst_cd,1,maxPassend_8863527692231258218);
                      else passend_8863527692231258218 = Lijst_cd;
+                   passend_8863527692231258218 = tranwrd(passend_8863527692231258218,'9D'x,'D0'x);
                    put passend_8863527692231258218 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -3683,6 +3849,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Prf_cd)
@@ -3694,6 +3861,7 @@ data _null_;
                    if attrLengte_9208144706229977192 > max(maxPassend_9208144706229977192,1000)
                      then passend_9208144706229977192 = substr(Prf_cd,1,maxPassend_9208144706229977192);
                      else passend_9208144706229977192 = Prf_cd;
+                   passend_9208144706229977192 = tranwrd(passend_9208144706229977192,'9D'x,'D0'x);
                    put passend_9208144706229977192 ~ @;
               end;
        if missing(Print_jn)
@@ -3705,6 +3873,7 @@ data _null_;
                    if attrLengte_7548870647325983284 > max(maxPassend_7548870647325983284,1000)
                      then passend_7548870647325983284 = substr(Print_jn,1,maxPassend_7548870647325983284);
                      else passend_7548870647325983284 = Print_jn;
+                   passend_7548870647325983284 = tranwrd(passend_7548870647325983284,'9D'x,'D0'x);
                    put passend_7548870647325983284 ~ @;
               end;
        if missing(Prioriteit)
@@ -3722,6 +3891,7 @@ data _null_;
                    if attrLengte_2798672704799540187 > max(maxPassend_2798672704799540187,1000)
                      then passend_2798672704799540187 = substr(Verzenddatum_vullen,1,maxPassend_2798672704799540187);
                      else passend_2798672704799540187 = Verzenddatum_vullen;
+                   passend_2798672704799540187 = tranwrd(passend_2798672704799540187,'9D'x,'D0'x);
                    put passend_2798672704799540187 ~ @;
               end;
        put techId best12. ; 
@@ -3802,6 +3972,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -3816,6 +3987,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -3917,6 +4089,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dcs_id)
@@ -3937,6 +4110,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Per_id)
@@ -3960,6 +4134,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Rol_cd_van)
@@ -3971,6 +4146,7 @@ data _null_;
                    if attrLengte_7341167645741356875 > max(maxPassend_7341167645741356875,1000)
                      then passend_7341167645741356875 = substr(Rol_cd_van,1,maxPassend_7341167645741356875);
                      else passend_7341167645741356875 = Rol_cd_van;
+                   passend_7341167645741356875 = tranwrd(passend_7341167645741356875,'9D'x,'D0'x);
                    put passend_7341167645741356875 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -4072,6 +4248,7 @@ data _null_;
                    if attrLengte_8812025576703905421 > max(maxPassend_8812025576703905421,1000)
                      then passend_8812025576703905421 = substr(Correspondent,1,maxPassend_8812025576703905421);
                      else passend_8812025576703905421 = Correspondent;
+                   passend_8812025576703905421 = tranwrd(passend_8812025576703905421,'9D'x,'D0'x);
                    put passend_8812025576703905421 ~ @;
               end;
        if missing(Creatie_dat)
@@ -4086,6 +4263,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dos_id)
@@ -4103,6 +4281,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Per_id)
@@ -4117,6 +4296,7 @@ data _null_;
                    if attrLengte_1601778141520934777 > max(maxPassend_1601778141520934777,1000)
                      then passend_1601778141520934777 = substr(Rechten_id,1,maxPassend_1601778141520934777);
                      else passend_1601778141520934777 = Rechten_id;
+                   passend_1601778141520934777 = tranwrd(passend_1601778141520934777,'9D'x,'D0'x);
                    put passend_1601778141520934777 ~ @;
               end;
        if missing(Rel_id)
@@ -4131,6 +4311,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Rol_cd_van)
@@ -4142,6 +4323,7 @@ data _null_;
                    if attrLengte_7341167645741356875 > max(maxPassend_7341167645741356875,1000)
                      then passend_7341167645741356875 = substr(Rol_cd_van,1,maxPassend_7341167645741356875);
                      else passend_7341167645741356875 = Rol_cd_van;
+                   passend_7341167645741356875 = tranwrd(passend_7341167645741356875,'9D'x,'D0'x);
                    put passend_7341167645741356875 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -4563,6 +4745,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Datumberekening)
@@ -4580,6 +4763,7 @@ data _null_;
                    if attrLengte_8581403938583871530 > max(maxPassend_8581403938583871530,1000)
                      then passend_8581403938583871530 = substr(Herstel,1,maxPassend_8581403938583871530);
                      else passend_8581403938583871530 = Herstel;
+                   passend_8581403938583871530 = tranwrd(passend_8581403938583871530,'9D'x,'D0'x);
                    put passend_8581403938583871530 ~ @;
               end;
        if missing(Inboedeltuinaangevraagd)
@@ -4645,6 +4829,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Notitie)
@@ -4656,6 +4841,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Oorzaak)
@@ -4667,6 +4853,7 @@ data _null_;
                    if attrLengte_1090420702256006426 > max(maxPassend_1090420702256006426,1000)
                      then passend_1090420702256006426 = substr(Oorzaak,1,maxPassend_1090420702256006426);
                      else passend_1090420702256006426 = Oorzaak;
+                   passend_1090420702256006426 = tranwrd(passend_1090420702256006426,'9D'x,'D0'x);
                    put passend_1090420702256006426 ~ @;
               end;
        if missing(Opslagaangevraagd)
@@ -4708,6 +4895,7 @@ data _null_;
                    if attrLengte_7781963126527233006 > max(maxPassend_7781963126527233006,1000)
                      then passend_7781963126527233006 = substr(Overlastvergoeding,1,maxPassend_7781963126527233006);
                      else passend_7781963126527233006 = Overlastvergoeding;
+                   passend_7781963126527233006 = tranwrd(passend_7781963126527233006,'9D'x,'D0'x);
                    put passend_7781963126527233006 ~ @;
               end;
        if missing(Overnachtenaangevraagd)
@@ -4725,6 +4913,7 @@ data _null_;
                    if attrLengte_6677307492037356733 > max(maxPassend_6677307492037356733,1000)
                      then passend_6677307492037356733 = substr(Overnachtenaantalpersonen,1,maxPassend_6677307492037356733);
                      else passend_6677307492037356733 = Overnachtenaantalpersonen;
+                   passend_6677307492037356733 = tranwrd(passend_6677307492037356733,'9D'x,'D0'x);
                    put passend_6677307492037356733 ~ @;
               end;
        if missing(Overnachtenhandtoegekend)
@@ -4781,6 +4970,7 @@ data _null_;
                    if attrLengte_5154373665155301082 > max(maxPassend_5154373665155301082,1000)
                      then passend_5154373665155301082 = substr(Schoonmaakvergoeding,1,maxPassend_5154373665155301082);
                      else passend_5154373665155301082 = Schoonmaakvergoeding;
+                   passend_5154373665155301082 = tranwrd(passend_5154373665155301082,'9D'x,'D0'x);
                    put passend_5154373665155301082 ~ @;
               end;
        if missing(Thuisblijfherstelaangevraagd)
@@ -4807,6 +4997,7 @@ data _null_;
                    if attrLengte_4398689792722007676 > max(maxPassend_4398689792722007676,1000)
                      then passend_4398689792722007676 = substr(Thuisblijfherstelvergoeding,1,maxPassend_4398689792722007676);
                      else passend_4398689792722007676 = Thuisblijfherstelvergoeding;
+                   passend_4398689792722007676 = tranwrd(passend_4398689792722007676,'9D'x,'D0'x);
                    put passend_4398689792722007676 ~ @;
               end;
        if missing(Thuisblijfopnameaangevraagd)
@@ -4830,6 +5021,7 @@ data _null_;
                    if attrLengte_2700664876793728116 > max(maxPassend_2700664876793728116,1000)
                      then passend_2700664876793728116 = substr(Thuisblijfopnamevergoeding,1,maxPassend_2700664876793728116);
                      else passend_2700664876793728116 = Thuisblijfopnamevergoeding;
+                   passend_2700664876793728116 = tranwrd(passend_2700664876793728116,'9D'x,'D0'x);
                    put passend_2700664876793728116 ~ @;
               end;
        if missing(Totaalrente)
@@ -4961,6 +5153,7 @@ data _null_;
                    if attrLengte_3177944828558768780 > max(maxPassend_3177944828558768780,1000)
                      then passend_3177944828558768780 = substr(Adressoort,1,maxPassend_3177944828558768780);
                      else passend_3177944828558768780 = Adressoort;
+                   passend_3177944828558768780 = tranwrd(passend_3177944828558768780,'9D'x,'D0'x);
                    put passend_3177944828558768780 ~ @;
               end;
        if missing(Creatie_dat)
@@ -4975,6 +5168,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dda_id)
@@ -4992,6 +5186,7 @@ data _null_;
                    if attrLengte_2769375351547567359 > max(maxPassend_2769375351547567359,1000)
                      then passend_2769375351547567359 = substr(Kkr_afwijkend,1,maxPassend_2769375351547567359);
                      else passend_2769375351547567359 = Kkr_afwijkend;
+                   passend_2769375351547567359 = tranwrd(passend_2769375351547567359,'9D'x,'D0'x);
                    put passend_2769375351547567359 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -5006,6 +5201,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rae_id)
@@ -5026,6 +5222,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -5119,6 +5316,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dda_id)
@@ -5139,6 +5337,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rae_id)
@@ -5159,6 +5358,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -5365,6 +5565,7 @@ data _null_;
                    if attrLengte_6069221198781782894 > max(maxPassend_6069221198781782894,1000)
                      then passend_6069221198781782894 = substr(Afwijking_cd,1,maxPassend_6069221198781782894);
                      else passend_6069221198781782894 = Afwijking_cd;
+                   passend_6069221198781782894 = tranwrd(passend_6069221198781782894,'9D'x,'D0'x);
                    put passend_6069221198781782894 ~ @;
               end;
        if missing(Bic)
@@ -5376,6 +5577,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Bic_cd)
@@ -5387,6 +5589,7 @@ data _null_;
                    if attrLengte_8053974040012975446 > max(maxPassend_8053974040012975446,1000)
                      then passend_8053974040012975446 = substr(Bic_cd,1,maxPassend_8053974040012975446);
                      else passend_8053974040012975446 = Bic_cd;
+                   passend_8053974040012975446 = tranwrd(passend_8053974040012975446,'9D'x,'D0'x);
                    put passend_8053974040012975446 ~ @;
               end;
        if missing(Contract_cd)
@@ -5398,6 +5601,7 @@ data _null_;
                    if attrLengte_1865355944021713687 > max(maxPassend_1865355944021713687,1000)
                      then passend_1865355944021713687 = substr(Contract_cd,1,maxPassend_1865355944021713687);
                      else passend_1865355944021713687 = Contract_cd;
+                   passend_1865355944021713687 = tranwrd(passend_1865355944021713687,'9D'x,'D0'x);
                    put passend_1865355944021713687 ~ @;
               end;
        if missing(Creatie_dat)
@@ -5412,6 +5616,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dam_project_deelname)
@@ -5423,6 +5628,7 @@ data _null_;
                    if attrLengte_3170374373452541152 > max(maxPassend_3170374373452541152,1000)
                      then passend_3170374373452541152 = substr(Dam_project_deelname,1,maxPassend_3170374373452541152);
                      else passend_3170374373452541152 = Dam_project_deelname;
+                   passend_3170374373452541152 = tranwrd(passend_3170374373452541152,'9D'x,'D0'x);
                    put passend_3170374373452541152 ~ @;
               end;
        if missing(Deelnamenaam)
@@ -5434,6 +5640,7 @@ data _null_;
                    if attrLengte_1994370041286876558 > max(maxPassend_1994370041286876558,1000)
                      then passend_1994370041286876558 = substr(Deelnamenaam,1,maxPassend_1994370041286876558);
                      else passend_1994370041286876558 = Deelnamenaam;
+                   passend_1994370041286876558 = tranwrd(passend_1994370041286876558,'9D'x,'D0'x);
                    put passend_1994370041286876558 ~ @;
               end;
        if missing(Dos_id)
@@ -5457,6 +5664,7 @@ data _null_;
                    if attrLengte_1182540143258376654 > max(maxPassend_1182540143258376654,1000)
                      then passend_1182540143258376654 = substr(Elektronisch_corresponderen_JN,1,maxPassend_1182540143258376654);
                      else passend_1182540143258376654 = Elektronisch_corresponderen_JN;
+                   passend_1182540143258376654 = tranwrd(passend_1182540143258376654,'9D'x,'D0'x);
                    put passend_1182540143258376654 ~ @;
               end;
        if missing(Fisc_eenheid)
@@ -5468,6 +5676,7 @@ data _null_;
                    if attrLengte_3415722162129386078 > max(maxPassend_3415722162129386078,1000)
                      then passend_3415722162129386078 = substr(Fisc_eenheid,1,maxPassend_3415722162129386078);
                      else passend_3415722162129386078 = Fisc_eenheid;
+                   passend_3415722162129386078 = tranwrd(passend_3415722162129386078,'9D'x,'D0'x);
                    put passend_3415722162129386078 ~ @;
               end;
        if missing(Geclaimd)
@@ -5503,6 +5712,7 @@ data _null_;
                    if attrLengte_2465255549550354096 > max(maxPassend_2465255549550354096,1000)
                      then passend_2465255549550354096 = substr(IBAN,1,maxPassend_2465255549550354096);
                      else passend_2465255549550354096 = IBAN;
+                   passend_2465255549550354096 = tranwrd(passend_2465255549550354096,'9D'x,'D0'x);
                    put passend_2465255549550354096 ~ @;
               end;
        if missing(Ingediend)
@@ -5520,6 +5730,7 @@ data _null_;
                    if attrLengte_6505825157492958705 > max(maxPassend_6505825157492958705,1000)
                      then passend_6505825157492958705 = substr(Kkr_statutair,1,maxPassend_6505825157492958705);
                      else passend_6505825157492958705 = Kkr_statutair;
+                   passend_6505825157492958705 = tranwrd(passend_6505825157492958705,'9D'x,'D0'x);
                    put passend_6505825157492958705 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -5534,6 +5745,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Niet_sepa_betalen)
@@ -5545,6 +5757,7 @@ data _null_;
                    if attrLengte_3451523040384006255 > max(maxPassend_3451523040384006255,1000)
                      then passend_3451523040384006255 = substr(Niet_sepa_betalen,1,maxPassend_3451523040384006255);
                      else passend_3451523040384006255 = Niet_sepa_betalen;
+                   passend_3451523040384006255 = tranwrd(passend_3451523040384006255,'9D'x,'D0'x);
                    put passend_3451523040384006255 ~ @;
               end;
        if missing(Org_id)
@@ -5559,6 +5772,7 @@ data _null_;
                    if attrLengte_2338667727953163128 > max(maxPassend_2338667727953163128,1000)
                      then passend_2338667727953163128 = substr(Org_naam,1,maxPassend_2338667727953163128);
                      else passend_2338667727953163128 = Org_naam;
+                   passend_2338667727953163128 = tranwrd(passend_2338667727953163128,'9D'x,'D0'x);
                    put passend_2338667727953163128 ~ @;
               end;
        if missing(Pom_ranking)
@@ -5570,6 +5784,7 @@ data _null_;
                    if attrLengte_3487759042954522650 > max(maxPassend_3487759042954522650,1000)
                      then passend_3487759042954522650 = substr(Pom_ranking,1,maxPassend_3487759042954522650);
                      else passend_3487759042954522650 = Pom_ranking;
+                   passend_3487759042954522650 = tranwrd(passend_3487759042954522650,'9D'x,'D0'x);
                    put passend_3487759042954522650 ~ @;
               end;
        if missing(Rel_id)
@@ -5587,6 +5802,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Startdatum)
@@ -5607,6 +5823,7 @@ data _null_;
                    if attrLengte_478921531652131463 > max(maxPassend_478921531652131463,1000)
                      then passend_478921531652131463 = substr(Verklaring_gewenst_JN,1,maxPassend_478921531652131463);
                      else passend_478921531652131463 = Verklaring_gewenst_JN;
+                   passend_478921531652131463 = tranwrd(passend_478921531652131463,'9D'x,'D0'x);
                    put passend_478921531652131463 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -5790,6 +6007,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Rpt_nr)
@@ -5804,6 +6022,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Verleend)
@@ -5851,6 +6070,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -5865,6 +6085,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rpe_datum_van)
@@ -5903,6 +6124,7 @@ data _null_;
                    if attrLengte_6398700462504815438 > max(maxPassend_6398700462504815438,1000)
                      then passend_6398700462504815438 = substr(Rpt_nr_oud,1,maxPassend_6398700462504815438);
                      else passend_6398700462504815438 = Rpt_nr_oud;
+                   passend_6398700462504815438 = tranwrd(passend_6398700462504815438,'9D'x,'D0'x);
                    put passend_6398700462504815438 ~ @;
               end;
        if missing(Per_Deelnemer)
@@ -5914,6 +6136,7 @@ data _null_;
                    if attrLengte_281267618279651540 > max(maxPassend_281267618279651540,1000)
                      then passend_281267618279651540 = substr(Per_Deelnemer,1,maxPassend_281267618279651540);
                      else passend_281267618279651540 = Per_Deelnemer;
+                   passend_281267618279651540 = tranwrd(passend_281267618279651540,'9D'x,'D0'x);
                    put passend_281267618279651540 ~ @;
               end;
        put techId best12. ; 
@@ -5988,6 +6211,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Ddg_id)
@@ -6011,6 +6235,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -6098,6 +6323,7 @@ data _null_;
                    if attrLengte_7804948874982929418 > max(maxPassend_7804948874982929418,1000)
                      then passend_7804948874982929418 = substr(Afgehandeld,1,maxPassend_7804948874982929418);
                      else passend_7804948874982929418 = Afgehandeld;
+                   passend_7804948874982929418 = tranwrd(passend_7804948874982929418,'9D'x,'D0'x);
                    put passend_7804948874982929418 ~ @;
               end;
        if missing(Bezoeknr)
@@ -6118,6 +6344,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dos_id)
@@ -6135,6 +6362,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Notitie)
@@ -6146,6 +6374,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Notitietype_naam)
@@ -6157,6 +6386,7 @@ data _null_;
                    if attrLengte_472120469883937888 > max(maxPassend_472120469883937888,1000)
                      then passend_472120469883937888 = substr(Notitietype_naam,1,maxPassend_472120469883937888);
                      else passend_472120469883937888 = Notitietype_naam;
+                   passend_472120469883937888 = tranwrd(passend_472120469883937888,'9D'x,'D0'x);
                    put passend_472120469883937888 ~ @;
               end;
        if missing(Rel_id)
@@ -6891,6 +7121,7 @@ data _null_;
                    if attrLengte_1808858472387685737 > max(maxPassend_1808858472387685737,1000)
                      then passend_1808858472387685737 = substr(Aanvraagsoort,1,maxPassend_1808858472387685737);
                      else passend_1808858472387685737 = Aanvraagsoort;
+                   passend_1808858472387685737 = tranwrd(passend_1808858472387685737,'9D'x,'D0'x);
                    put passend_1808858472387685737 ~ @;
               end;
        if missing(Acceptatie_sts)
@@ -6902,6 +7133,7 @@ data _null_;
                    if attrLengte_6394433184754446902 > max(maxPassend_6394433184754446902,1000)
                      then passend_6394433184754446902 = substr(Acceptatie_sts,1,maxPassend_6394433184754446902);
                      else passend_6394433184754446902 = Acceptatie_sts;
+                   passend_6394433184754446902 = tranwrd(passend_6394433184754446902,'9D'x,'D0'x);
                    put passend_6394433184754446902 ~ @;
               end;
        if missing(Afdrachtsvermindering)
@@ -6913,6 +7145,7 @@ data _null_;
                    if attrLengte_4671905258138635791 > max(maxPassend_4671905258138635791,1000)
                      then passend_4671905258138635791 = substr(Afdrachtsvermindering,1,maxPassend_4671905258138635791);
                      else passend_4671905258138635791 = Afdrachtsvermindering;
+                   passend_4671905258138635791 = tranwrd(passend_4671905258138635791,'9D'x,'D0'x);
                    put passend_4671905258138635791 ~ @;
               end;
        if missing(Afhandeldatum)
@@ -6927,6 +7160,7 @@ data _null_;
                    if attrLengte_311625208554520659 > max(maxPassend_311625208554520659,1000)
                      then passend_311625208554520659 = substr(Afhandelwijze,1,maxPassend_311625208554520659);
                      else passend_311625208554520659 = Afhandelwijze;
+                   passend_311625208554520659 = tranwrd(passend_311625208554520659,'9D'x,'D0'x);
                    put passend_311625208554520659 ~ @;
               end;
        if missing(Afl_neg_einddeclaratie)
@@ -6941,6 +7175,7 @@ data _null_;
                    if attrLengte_6168422449108145413 > max(maxPassend_6168422449108145413,1000)
                      then passend_6168422449108145413 = substr(Akkoord_verlenen,1,maxPassend_6168422449108145413);
                      else passend_6168422449108145413 = Akkoord_verlenen;
+                   passend_6168422449108145413 = tranwrd(passend_6168422449108145413,'9D'x,'D0'x);
                    put passend_6168422449108145413 ~ @;
               end;
        if missing(aut_verwerkt_imp)
@@ -6952,6 +7187,7 @@ data _null_;
                    if attrLengte_6631081386547525672 > max(maxPassend_6631081386547525672,1000)
                      then passend_6631081386547525672 = substr(aut_verwerkt_imp,1,maxPassend_6631081386547525672);
                      else passend_6631081386547525672 = aut_verwerkt_imp;
+                   passend_6631081386547525672 = tranwrd(passend_6631081386547525672,'9D'x,'D0'x);
                    put passend_6631081386547525672 ~ @;
               end;
        if missing(Auth_id_indiener)
@@ -6972,6 +7208,7 @@ data _null_;
                    if attrLengte_4281244775925214329 > max(maxPassend_4281244775925214329,1000)
                      then passend_4281244775925214329 = substr(BAS_advies,1,maxPassend_4281244775925214329);
                      else passend_4281244775925214329 = BAS_advies;
+                   passend_4281244775925214329 = tranwrd(passend_4281244775925214329,'9D'x,'D0'x);
                    put passend_4281244775925214329 ~ @;
               end;
        if missing(Batchstatuscert)
@@ -6983,6 +7220,7 @@ data _null_;
                    if attrLengte_6810019192039434889 > max(maxPassend_6810019192039434889,1000)
                      then passend_6810019192039434889 = substr(Batchstatuscert,1,maxPassend_6810019192039434889);
                      else passend_6810019192039434889 = Batchstatuscert;
+                   passend_6810019192039434889 = tranwrd(passend_6810019192039434889,'9D'x,'D0'x);
                    put passend_6810019192039434889 ~ @;
               end;
        if missing(Batchstatusref)
@@ -6994,6 +7232,7 @@ data _null_;
                    if attrLengte_3025511164545417087 > max(maxPassend_3025511164545417087,1000)
                      then passend_3025511164545417087 = substr(Batchstatusref,1,maxPassend_3025511164545417087);
                      else passend_3025511164545417087 = Batchstatusref;
+                   passend_3025511164545417087 = tranwrd(passend_3025511164545417087,'9D'x,'D0'x);
                    put passend_3025511164545417087 ~ @;
               end;
        if missing(Batchstatusstat)
@@ -7005,6 +7244,7 @@ data _null_;
                    if attrLengte_1601628535260930075 > max(maxPassend_1601628535260930075,1000)
                      then passend_1601628535260930075 = substr(Batchstatusstat,1,maxPassend_1601628535260930075);
                      else passend_1601628535260930075 = Batchstatusstat;
+                   passend_1601628535260930075 = tranwrd(passend_1601628535260930075,'9D'x,'D0'x);
                    put passend_1601628535260930075 ~ @;
               end;
        if missing(Behandelingsronde)
@@ -7019,6 +7259,7 @@ data _null_;
                    if attrLengte_7377029703752497073 > max(maxPassend_7377029703752497073,1000)
                      then passend_7377029703752497073 = substr(Beoordelingswijze,1,maxPassend_7377029703752497073);
                      else passend_7377029703752497073 = Beoordelingswijze;
+                   passend_7377029703752497073 = tranwrd(passend_7377029703752497073,'9D'x,'D0'x);
                    put passend_7377029703752497073 ~ @;
               end;
        if missing(Berekende_rente)
@@ -7033,6 +7274,7 @@ data _null_;
                    if attrLengte_975931625280418200 > max(maxPassend_975931625280418200,1000)
                      then passend_975931625280418200 = substr(Beslissing_cd,1,maxPassend_975931625280418200);
                      else passend_975931625280418200 = Beslissing_cd;
+                   passend_975931625280418200 = tranwrd(passend_975931625280418200,'9D'x,'D0'x);
                    put passend_975931625280418200 ~ @;
               end;
        if missing(Checksum)
@@ -7047,6 +7289,7 @@ data _null_;
                    if attrLengte_7479670163439694801 > max(maxPassend_7479670163439694801,1000)
                      then passend_7479670163439694801 = substr(Classificatie,1,maxPassend_7479670163439694801);
                      else passend_7479670163439694801 = Classificatie;
+                   passend_7479670163439694801 = tranwrd(passend_7479670163439694801,'9D'x,'D0'x);
                    put passend_7479670163439694801 ~ @;
               end;
        if missing(Cluster_nr)
@@ -7061,6 +7304,7 @@ data _null_;
                    if attrLengte_8659873274146383362 > max(maxPassend_8659873274146383362,1000)
                      then passend_8659873274146383362 = substr(Controle_activiteit,1,maxPassend_8659873274146383362);
                      else passend_8659873274146383362 = Controle_activiteit;
+                   passend_8659873274146383362 = tranwrd(passend_8659873274146383362,'9D'x,'D0'x);
                    put passend_8659873274146383362 ~ @;
               end;
        if missing(Commercieel_perspectief)
@@ -7072,6 +7316,7 @@ data _null_;
                    if attrLengte_718663045679180725 > max(maxPassend_718663045679180725,1000)
                      then passend_718663045679180725 = substr(Commercieel_perspectief,1,maxPassend_718663045679180725);
                      else passend_718663045679180725 = Commercieel_perspectief;
+                   passend_718663045679180725 = tranwrd(passend_718663045679180725,'9D'x,'D0'x);
                    put passend_718663045679180725 ~ @;
               end;
        if missing(Contractjaar)
@@ -7086,6 +7331,7 @@ data _null_;
                    if attrLengte_7366059556598200591 > max(maxPassend_7366059556598200591,1000)
                      then passend_7366059556598200591 = substr(Conversiedossier,1,maxPassend_7366059556598200591);
                      else passend_7366059556598200591 = Conversiedossier;
+                   passend_7366059556598200591 = tranwrd(passend_7366059556598200591,'9D'x,'D0'x);
                    put passend_7366059556598200591 ~ @;
               end;
        if missing(Correspondentie_via_email)
@@ -7097,6 +7343,7 @@ data _null_;
                    if attrLengte_740551633015528077 > max(maxPassend_740551633015528077,1000)
                      then passend_740551633015528077 = substr(Correspondentie_via_email,1,maxPassend_740551633015528077);
                      else passend_740551633015528077 = Correspondentie_via_email;
+                   passend_740551633015528077 = tranwrd(passend_740551633015528077,'9D'x,'D0'x);
                    put passend_740551633015528077 ~ @;
               end;
        if missing(Creatie_dat)
@@ -7111,6 +7358,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Jaardossier_WBSO)
@@ -7122,6 +7370,7 @@ data _null_;
                    if attrLengte_3488531671085302561 > max(maxPassend_3488531671085302561,1000)
                      then passend_3488531671085302561 = substr(Jaardossier_WBSO,1,maxPassend_3488531671085302561);
                      else passend_3488531671085302561 = Jaardossier_WBSO;
+                   passend_3488531671085302561 = tranwrd(passend_3488531671085302561,'9D'x,'D0'x);
                    put passend_3488531671085302561 ~ @;
               end;
        if missing(Datum_in)
@@ -7148,6 +7397,7 @@ data _null_;
                    if attrLengte_673625142560997166 > max(maxPassend_673625142560997166,1000)
                      then passend_673625142560997166 = substr(Dos_cd,1,maxPassend_673625142560997166);
                      else passend_673625142560997166 = Dos_cd;
+                   passend_673625142560997166 = tranwrd(passend_673625142560997166,'9D'x,'D0'x);
                    put passend_673625142560997166 ~ @;
               end;
        if missing(Dos_id)
@@ -7186,6 +7436,7 @@ data _null_;
                    if attrLengte_2660979012630279402 > max(maxPassend_2660979012630279402,1000)
                      then passend_2660979012630279402 = substr(Extrene_bron_cd,1,maxPassend_2660979012630279402);
                      else passend_2660979012630279402 = Extrene_bron_cd;
+                   passend_2660979012630279402 = tranwrd(passend_2660979012630279402,'9D'x,'D0'x);
                    put passend_2660979012630279402 ~ @;
               end;
        if missing(Gecommitteerd_zegge)
@@ -7197,6 +7448,7 @@ data _null_;
                    if attrLengte_5749729584749907027 > max(maxPassend_5749729584749907027,1000)
                      then passend_5749729584749907027 = substr(Gecommitteerd_zegge,1,maxPassend_5749729584749907027);
                      else passend_5749729584749907027 = Gecommitteerd_zegge;
+                   passend_5749729584749907027 = tranwrd(passend_5749729584749907027,'9D'x,'D0'x);
                    put passend_5749729584749907027 ~ @;
               end;
        if missing(Gem_uurloon)
@@ -7211,6 +7463,7 @@ data _null_;
                    if attrLengte_8634466892657782931 > max(maxPassend_8634466892657782931,1000)
                      then passend_8634466892657782931 = substr(Hand_bewerkt_imp,1,maxPassend_8634466892657782931);
                      else passend_8634466892657782931 = Hand_bewerkt_imp;
+                   passend_8634466892657782931 = tranwrd(passend_8634466892657782931,'9D'x,'D0'x);
                    put passend_8634466892657782931 ~ @;
               end;
        if missing(Handtekening_ok)
@@ -7222,6 +7475,7 @@ data _null_;
                    if attrLengte_2912998615907010652 > max(maxPassend_2912998615907010652,1000)
                      then passend_2912998615907010652 = substr(Handtekening_ok,1,maxPassend_2912998615907010652);
                      else passend_2912998615907010652 = Handtekening_ok;
+                   passend_2912998615907010652 = tranwrd(passend_2912998615907010652,'9D'x,'D0'x);
                    put passend_2912998615907010652 ~ @;
               end;
        if missing(Hoofd_dos_id)
@@ -7242,6 +7496,7 @@ data _null_;
                    if attrLengte_1424136908970746724 > max(maxPassend_1424136908970746724,1000)
                      then passend_1424136908970746724 = substr(Importlijst,1,maxPassend_1424136908970746724);
                      else passend_1424136908970746724 = Importlijst;
+                   passend_1424136908970746724 = tranwrd(passend_1424136908970746724,'9D'x,'D0'x);
                    put passend_1424136908970746724 ~ @;
               end;
        if missing(Indienings_dat)
@@ -7259,6 +7514,7 @@ data _null_;
                    if attrLengte_5002420659340225241 > max(maxPassend_5002420659340225241,1000)
                      then passend_5002420659340225241 = substr(Indienkanaal,1,maxPassend_5002420659340225241);
                      else passend_5002420659340225241 = Indienkanaal;
+                   passend_5002420659340225241 = tranwrd(passend_5002420659340225241,'9D'x,'D0'x);
                    put passend_5002420659340225241 ~ @;
               end;
        if missing(Ingezien)
@@ -7270,6 +7526,7 @@ data _null_;
                    if attrLengte_1317667042141340245 > max(maxPassend_1317667042141340245,1000)
                      then passend_1317667042141340245 = substr(Ingezien,1,maxPassend_1317667042141340245);
                      else passend_1317667042141340245 = Ingezien;
+                   passend_1317667042141340245 = tranwrd(passend_1317667042141340245,'9D'x,'D0'x);
                    put passend_1317667042141340245 ~ @;
               end;
        if missing(Inkoopcat_cd)
@@ -7281,6 +7538,7 @@ data _null_;
                    if attrLengte_9028171306283589824 > max(maxPassend_9028171306283589824,1000)
                      then passend_9028171306283589824 = substr(Inkoopcat_cd,1,maxPassend_9028171306283589824);
                      else passend_9028171306283589824 = Inkoopcat_cd;
+                   passend_9028171306283589824 = tranwrd(passend_9028171306283589824,'9D'x,'D0'x);
                    put passend_9028171306283589824 ~ @;
               end;
        if missing(Inleen_binnen_Fiscale_eenheid)
@@ -7292,6 +7550,7 @@ data _null_;
                    if attrLengte_3523818910407590404 > max(maxPassend_3523818910407590404,1000)
                      then passend_3523818910407590404 = substr(Inleen_binnen_Fiscale_eenheid,1,maxPassend_3523818910407590404);
                      else passend_3523818910407590404 = Inleen_binnen_Fiscale_eenheid;
+                   passend_3523818910407590404 = tranwrd(passend_3523818910407590404,'9D'x,'D0'x);
                    put passend_3523818910407590404 ~ @;
               end;
        if missing(Meldingnummer_IRWA)
@@ -7303,6 +7562,7 @@ data _null_;
                    if attrLengte_9183881583082799158 > max(maxPassend_9183881583082799158,1000)
                      then passend_9183881583082799158 = substr(Meldingnummer_IRWA,1,maxPassend_9183881583082799158);
                      else passend_9183881583082799158 = Meldingnummer_IRWA;
+                   passend_9183881583082799158 = tranwrd(passend_9183881583082799158,'9D'x,'D0'x);
                    put passend_9183881583082799158 ~ @;
               end;
        if missing(Jaar)
@@ -7323,6 +7583,7 @@ data _null_;
                    if attrLengte_4131743432680306277 > max(maxPassend_4131743432680306277,1000)
                      then passend_4131743432680306277 = substr(Korte_titel,1,maxPassend_4131743432680306277);
                      else passend_4131743432680306277 = Korte_titel;
+                   passend_4131743432680306277 = tranwrd(passend_4131743432680306277,'9D'x,'D0'x);
                    put passend_4131743432680306277 ~ @;
               end;
        if missing(Krat_nr)
@@ -7343,6 +7604,7 @@ data _null_;
                    if attrLengte_83305570222129686 > max(maxPassend_83305570222129686,1000)
                      then passend_83305570222129686 = substr(Landnaam,1,maxPassend_83305570222129686);
                      else passend_83305570222129686 = Landnaam;
+                   passend_83305570222129686 = tranwrd(passend_83305570222129686,'9D'x,'D0'x);
                    put passend_83305570222129686 ~ @;
               end;
        if missing(LB_nummer_komt_overeen)
@@ -7354,6 +7616,7 @@ data _null_;
                    if attrLengte_2703764941200643404 > max(maxPassend_2703764941200643404,1000)
                      then passend_2703764941200643404 = substr(LB_nummer_komt_overeen,1,maxPassend_2703764941200643404);
                      else passend_2703764941200643404 = LB_nummer_komt_overeen;
+                   passend_2703764941200643404 = tranwrd(passend_2703764941200643404,'9D'x,'D0'x);
                    put passend_2703764941200643404 ~ @;
               end;
        if missing(Machtiging_JN)
@@ -7365,6 +7628,7 @@ data _null_;
                    if attrLengte_1692682703785774829 > max(maxPassend_1692682703785774829,1000)
                      then passend_1692682703785774829 = substr(Machtiging_JN,1,maxPassend_1692682703785774829);
                      else passend_1692682703785774829 = Machtiging_JN;
+                   passend_1692682703785774829 = tranwrd(passend_1692682703785774829,'9D'x,'D0'x);
                    put passend_1692682703785774829 ~ @;
               end;
        if missing(Mdw_cd)
@@ -7376,6 +7640,7 @@ data _null_;
                    if attrLengte_1226307818193438914 > max(maxPassend_1226307818193438914,1000)
                      then passend_1226307818193438914 = substr(Mdw_cd,1,maxPassend_1226307818193438914);
                      else passend_1226307818193438914 = Mdw_cd;
+                   passend_1226307818193438914 = tranwrd(passend_1226307818193438914,'9D'x,'D0'x);
                    put passend_1226307818193438914 ~ @;
               end;
        if missing(Mentorterugkoppeling)
@@ -7387,6 +7652,7 @@ data _null_;
                    if attrLengte_3493612579047046991 > max(maxPassend_3493612579047046991,1000)
                      then passend_3493612579047046991 = substr(Mentorterugkoppeling,1,maxPassend_3493612579047046991);
                      else passend_3493612579047046991 = Mentorterugkoppeling;
+                   passend_3493612579047046991 = tranwrd(passend_3493612579047046991,'9D'x,'D0'x);
                    put passend_3493612579047046991 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -7404,6 +7670,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_user_vst)
@@ -7415,6 +7682,7 @@ data _null_;
                    if attrLengte_4762281330357685227 > max(maxPassend_4762281330357685227,1000)
                      then passend_4762281330357685227 = substr(Mutatie_user_vst,1,maxPassend_4762281330357685227);
                      else passend_4762281330357685227 = Mutatie_user_vst;
+                   passend_4762281330357685227 = tranwrd(passend_4762281330357685227,'9D'x,'D0'x);
                    put passend_4762281330357685227 ~ @;
               end;
        if missing(Naar_batchrun)
@@ -7432,6 +7700,7 @@ data _null_;
                    if attrLengte_2449201397129185301 > max(maxPassend_2449201397129185301,1000)
                      then passend_2449201397129185301 = substr(Notities,1,maxPassend_2449201397129185301);
                      else passend_2449201397129185301 = Notities;
+                   passend_2449201397129185301 = tranwrd(passend_2449201397129185301,'9D'x,'D0'x);
                    put passend_2449201397129185301 ~ @;
               end;
        if missing(Octrooien)
@@ -7458,6 +7727,7 @@ data _null_;
                    if attrLengte_7561575571707057934 > max(maxPassend_7561575571707057934,1000)
                      then passend_7561575571707057934 = substr(Overige_subsidie,1,maxPassend_7561575571707057934);
                      else passend_7561575571707057934 = Overige_subsidie;
+                   passend_7561575571707057934 = tranwrd(passend_7561575571707057934,'9D'x,'D0'x);
                    put passend_7561575571707057934 ~ @;
               end;
        if missing(Opdrachtvorm_cd)
@@ -7469,6 +7739,7 @@ data _null_;
                    if attrLengte_8637308590533283956 > max(maxPassend_8637308590533283956,1000)
                      then passend_8637308590533283956 = substr(Opdrachtvorm_cd,1,maxPassend_8637308590533283956);
                      else passend_8637308590533283956 = Opdrachtvorm_cd;
+                   passend_8637308590533283956 = tranwrd(passend_8637308590533283956,'9D'x,'D0'x);
                    put passend_8637308590533283956 ~ @;
               end;
        if missing(Perc_verrekenen)
@@ -7492,6 +7763,7 @@ data _null_;
                    if attrLengte_8371357541136350691 > max(maxPassend_8371357541136350691,1000)
                      then passend_8371357541136350691 = substr(Projectomschrijving,1,maxPassend_8371357541136350691);
                      else passend_8371357541136350691 = Projectomschrijving;
+                   passend_8371357541136350691 = tranwrd(passend_8371357541136350691,'9D'x,'D0'x);
                    put passend_8371357541136350691 ~ @;
               end;
        if missing(Ranking)
@@ -7506,6 +7778,7 @@ data _null_;
                    if attrLengte_8385991183994979473 > max(maxPassend_8385991183994979473,1000)
                      then passend_8385991183994979473 = substr(RDA_Afhandeling_forfaitair,1,maxPassend_8385991183994979473);
                      else passend_8385991183994979473 = RDA_Afhandeling_forfaitair;
+                   passend_8385991183994979473 = tranwrd(passend_8385991183994979473,'9D'x,'D0'x);
                    put passend_8385991183994979473 ~ @;
               end;
        if missing(RDA_aangevraagd)
@@ -7517,6 +7790,7 @@ data _null_;
                    if attrLengte_4999820424640454704 > max(maxPassend_4999820424640454704,1000)
                      then passend_4999820424640454704 = substr(RDA_aangevraagd,1,maxPassend_4999820424640454704);
                      else passend_4999820424640454704 = RDA_aangevraagd;
+                   passend_4999820424640454704 = tranwrd(passend_4999820424640454704,'9D'x,'D0'x);
                    put passend_4999820424640454704 ~ @;
               end;
        if missing(Referentie)
@@ -7528,6 +7802,7 @@ data _null_;
                    if attrLengte_6085349322089225769 > max(maxPassend_6085349322089225769,1000)
                      then passend_6085349322089225769 = substr(Referentie,1,maxPassend_6085349322089225769);
                      else passend_6085349322089225769 = Referentie;
+                   passend_6085349322089225769 = tranwrd(passend_6085349322089225769,'9D'x,'D0'x);
                    put passend_6085349322089225769 ~ @;
               end;
        if missing(Reg_id)
@@ -7551,6 +7826,7 @@ data _null_;
                    if attrLengte_464951838875667826 > max(maxPassend_464951838875667826,1000)
                      then passend_464951838875667826 = substr(Samenwerkingsverband1,1,maxPassend_464951838875667826);
                      else passend_464951838875667826 = Samenwerkingsverband1;
+                   passend_464951838875667826 = tranwrd(passend_464951838875667826,'9D'x,'D0'x);
                    put passend_464951838875667826 ~ @;
               end;
        if missing(Samenwerkingsverband2)
@@ -7562,6 +7838,7 @@ data _null_;
                    if attrLengte_464951838892445423 > max(maxPassend_464951838892445423,1000)
                      then passend_464951838892445423 = substr(Samenwerkingsverband2,1,maxPassend_464951838892445423);
                      else passend_464951838892445423 = Samenwerkingsverband2;
+                   passend_464951838892445423 = tranwrd(passend_464951838892445423,'9D'x,'D0'x);
                    put passend_464951838892445423 ~ @;
               end;
        if missing(SO_loon)
@@ -7585,6 +7862,7 @@ data _null_;
                    if attrLengte_4224671235319231711 > max(maxPassend_4224671235319231711,1000)
                      then passend_4224671235319231711 = substr(Statuscode,1,maxPassend_4224671235319231711);
                      else passend_4224671235319231711 = Statuscode;
+                   passend_4224671235319231711 = tranwrd(passend_4224671235319231711,'9D'x,'D0'x);
                    put passend_4224671235319231711 ~ @;
               end;
        if missing(Status_cert)
@@ -7596,6 +7874,7 @@ data _null_;
                    if attrLengte_8962378222074036406 > max(maxPassend_8962378222074036406,1000)
                      then passend_8962378222074036406 = substr(Status_cert,1,maxPassend_8962378222074036406);
                      else passend_8962378222074036406 = Status_cert;
+                   passend_8962378222074036406 = tranwrd(passend_8962378222074036406,'9D'x,'D0'x);
                    put passend_8962378222074036406 ~ @;
               end;
        if missing(Status_oud)
@@ -7607,6 +7886,7 @@ data _null_;
                    if attrLengte_629741750285978823 > max(maxPassend_629741750285978823,1000)
                      then passend_629741750285978823 = substr(Status_oud,1,maxPassend_629741750285978823);
                      else passend_629741750285978823 = Status_oud;
+                   passend_629741750285978823 = tranwrd(passend_629741750285978823,'9D'x,'D0'x);
                    put passend_629741750285978823 ~ @;
               end;
        if missing(status_SO_uurloon)
@@ -7618,6 +7898,7 @@ data _null_;
                    if attrLengte_822751248562635347 > max(maxPassend_822751248562635347,1000)
                      then passend_822751248562635347 = substr(status_SO_uurloon,1,maxPassend_822751248562635347);
                      else passend_822751248562635347 = status_SO_uurloon;
+                   passend_822751248562635347 = tranwrd(passend_822751248562635347,'9D'x,'D0'x);
                    put passend_822751248562635347 ~ @;
               end;
        if missing(Status_TT)
@@ -7629,6 +7910,7 @@ data _null_;
                    if attrLengte_4353842848593816882 > max(maxPassend_4353842848593816882,1000)
                      then passend_4353842848593816882 = substr(Status_TT,1,maxPassend_4353842848593816882);
                      else passend_4353842848593816882 = Status_TT;
+                   passend_4353842848593816882 = tranwrd(passend_4353842848593816882,'9D'x,'D0'x);
                    put passend_4353842848593816882 ~ @;
               end;
        if missing(Statusgroep)
@@ -7640,6 +7922,7 @@ data _null_;
                    if attrLengte_6104227251393262734 > max(maxPassend_6104227251393262734,1000)
                      then passend_6104227251393262734 = substr(Statusgroep,1,maxPassend_6104227251393262734);
                      else passend_6104227251393262734 = Statusgroep;
+                   passend_6104227251393262734 = tranwrd(passend_6104227251393262734,'9D'x,'D0'x);
                    put passend_6104227251393262734 ~ @;
               end;
        if missing(Statustermijn)
@@ -7654,6 +7937,7 @@ data _null_;
                    if attrLengte_3643621599713209674 > max(maxPassend_3643621599713209674,1000)
                      then passend_3643621599713209674 = substr(Status_E_Diensten,1,maxPassend_3643621599713209674);
                      else passend_3643621599713209674 = Status_E_Diensten;
+                   passend_3643621599713209674 = tranwrd(passend_3643621599713209674,'9D'x,'D0'x);
                    put passend_3643621599713209674 ~ @;
               end;
        if missing(Status_E_Loket)
@@ -7665,6 +7949,7 @@ data _null_;
                    if attrLengte_7139562934942460596 > max(maxPassend_7139562934942460596,1000)
                      then passend_7139562934942460596 = substr(Status_E_Loket,1,maxPassend_7139562934942460596);
                      else passend_7139562934942460596 = Status_E_Loket;
+                   passend_7139562934942460596 = tranwrd(passend_7139562934942460596,'9D'x,'D0'x);
                    put passend_7139562934942460596 ~ @;
               end;
        if missing(Technisch_succes)
@@ -7682,6 +7967,7 @@ data _null_;
                    if attrLengte_5382860804518864833 > max(maxPassend_5382860804518864833,1000)
                      then passend_5382860804518864833 = substr(Titel,1,maxPassend_5382860804518864833);
                      else passend_5382860804518864833 = Titel;
+                   passend_5382860804518864833 = tranwrd(passend_5382860804518864833,'9D'x,'D0'x);
                    put passend_5382860804518864833 ~ @;
               end;
        if missing(Afgelost_op_onvoorw_hoofdsom)
@@ -7720,6 +8006,7 @@ data _null_;
                    if attrLengte_2245082838448298726 > max(maxPassend_2245082838448298726,1000)
                      then passend_2245082838448298726 = substr(Zegge_Totaal_gecommitteerd,1,maxPassend_2245082838448298726);
                      else passend_2245082838448298726 = Zegge_Totaal_gecommitteerd;
+                   passend_2245082838448298726 = tranwrd(passend_2245082838448298726,'9D'x,'D0'x);
                    put passend_2245082838448298726 ~ @;
               end;
        if missing(Totaal_gedeclareerd_bedrag)
@@ -7773,6 +8060,7 @@ data _null_;
                    if attrLengte_6926417215196739940 > max(maxPassend_6926417215196739940,1000)
                      then passend_6926417215196739940 = substr(Uitlening_binnen_Fisc_eenheid,1,maxPassend_6926417215196739940);
                      else passend_6926417215196739940 = Uitlening_binnen_Fisc_eenheid;
+                   passend_6926417215196739940 = tranwrd(passend_6926417215196739940,'9D'x,'D0'x);
                    put passend_6926417215196739940 ~ @;
               end;
        if missing(Uurloon_jaar)
@@ -7787,6 +8075,7 @@ data _null_;
                    if attrLengte_866165905967819389 > max(maxPassend_866165905967819389,1000)
                      then passend_866165905967819389 = substr(Vaststellen_batch,1,maxPassend_866165905967819389);
                      else passend_866165905967819389 = Vaststellen_batch;
+                   passend_866165905967819389 = tranwrd(passend_866165905967819389,'9D'x,'D0'x);
                    put passend_866165905967819389 ~ @;
               end;
        if missing(Vergoedingsperc)
@@ -7816,6 +8105,7 @@ data _null_;
                    if attrLengte_7036857090880684579 > max(maxPassend_7036857090880684579,1000)
                      then passend_7036857090880684579 = substr(Vorig_aanvraagnummer,1,maxPassend_7036857090880684579);
                      else passend_7036857090880684579 = Vorig_aanvraagnummer;
+                   passend_7036857090880684579 = tranwrd(passend_7036857090880684579,'9D'x,'D0'x);
                    put passend_7036857090880684579 ~ @;
               end;
        if missing(Vorie_aanvraagperiode)
@@ -7833,6 +8123,7 @@ data _null_;
                    if attrLengte_6645381449595001144 > max(maxPassend_6645381449595001144,1000)
                      then passend_6645381449595001144 = substr(Vaststelling_conform_aanvraag,1,maxPassend_6645381449595001144);
                      else passend_6645381449595001144 = Vaststelling_conform_aanvraag;
+                   passend_6645381449595001144 = tranwrd(passend_6645381449595001144,'9D'x,'D0'x);
                    put passend_6645381449595001144 ~ @;
               end;
        if missing(VV_Aanvraagnummer)
@@ -7844,6 +8135,7 @@ data _null_;
                    if attrLengte_1884661362277667705 > max(maxPassend_1884661362277667705,1000)
                      then passend_1884661362277667705 = substr(VV_Aanvraagnummer,1,maxPassend_1884661362277667705);
                      else passend_1884661362277667705 = VV_Aanvraagnummer;
+                   passend_1884661362277667705 = tranwrd(passend_1884661362277667705,'9D'x,'D0'x);
                    put passend_1884661362277667705 ~ @;
               end;
        if missing(Wel_akkoord_niet_verlenen)
@@ -7855,6 +8147,7 @@ data _null_;
                    if attrLengte_5408814446742826170 > max(maxPassend_5408814446742826170,1000)
                      then passend_5408814446742826170 = substr(Wel_akkoord_niet_verlenen,1,maxPassend_5408814446742826170);
                      else passend_5408814446742826170 = Wel_akkoord_niet_verlenen;
+                   passend_5408814446742826170 = tranwrd(passend_5408814446742826170,'9D'x,'D0'x);
                    put passend_5408814446742826170 ~ @;
               end;
        if missing(Aangeboden_aan_ZER)
@@ -7866,6 +8159,7 @@ data _null_;
                    if attrLengte_9196365527337984101 > max(maxPassend_9196365527337984101,1000)
                      then passend_9196365527337984101 = substr(Aangeboden_aan_ZER,1,maxPassend_9196365527337984101);
                      else passend_9196365527337984101 = Aangeboden_aan_ZER;
+                   passend_9196365527337984101 = tranwrd(passend_9196365527337984101,'9D'x,'D0'x);
                    put passend_9196365527337984101 ~ @;
               end;
        put techId best12. ; 
@@ -7947,6 +8241,7 @@ data _null_;
                    if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
+                   passend_3121428435771779831 = tranwrd(passend_3121428435771779831,'9D'x,'D0'x);
                    put passend_3121428435771779831 ~ @;
               end;
        if missing(Toelichting)
@@ -7958,6 +8253,7 @@ data _null_;
                    if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
+                   passend_4385385912596099835 = tranwrd(passend_4385385912596099835,'9D'x,'D0'x);
                    put passend_4385385912596099835 ~ @;
               end;
        if missing(Creatie_user)
@@ -7969,6 +8265,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -7983,6 +8280,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -8064,6 +8362,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(DLS_id)
@@ -8084,6 +8383,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(RAE_id)
@@ -8194,6 +8494,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Datum_van)
@@ -8211,6 +8512,7 @@ data _null_;
                    if attrLengte_3572830677776901123 > max(maxPassend_3572830677776901123,1000)
                      then passend_3572830677776901123 = substr(Behandelend,1,maxPassend_3572830677776901123);
                      else passend_3572830677776901123 = Behandelend;
+                   passend_3572830677776901123 = tranwrd(passend_3572830677776901123,'9D'x,'D0'x);
                    put passend_3572830677776901123 ~ @;
               end;
        if missing(Notitie)
@@ -8222,6 +8524,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Mdw_id_voorheen)
@@ -8239,6 +8542,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -8253,6 +8557,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -8340,6 +8645,7 @@ data _null_;
                    if attrLengte_3572830677776901123 > max(maxPassend_3572830677776901123,1000)
                      then passend_3572830677776901123 = substr(Behandelend,1,maxPassend_3572830677776901123);
                      else passend_3572830677776901123 = Behandelend;
+                   passend_3572830677776901123 = tranwrd(passend_3572830677776901123,'9D'x,'D0'x);
                    put passend_3572830677776901123 ~ @;
               end;
        if missing(Creatie_dat)
@@ -8354,6 +8660,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dos_id)
@@ -8377,6 +8684,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Notitie)
@@ -8388,6 +8696,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Prg_id)
@@ -8402,6 +8711,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        put techId best12. ; 
@@ -8497,6 +8807,7 @@ data _null_;
                    if attrLengte_4287257797458721857 > max(maxPassend_4287257797458721857,1000)
                      then passend_4287257797458721857 = substr(Commentaar,1,maxPassend_4287257797458721857);
                      else passend_4287257797458721857 = Commentaar;
+                   passend_4287257797458721857 = tranwrd(passend_4287257797458721857,'9D'x,'D0'x);
                    put passend_4287257797458721857 ~ @;
               end;
        if missing(Cor_id_tot)
@@ -8517,6 +8828,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Datum_tot)
@@ -8540,6 +8852,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Ssg_cd)
@@ -8551,6 +8864,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Sts_cd)
@@ -8562,6 +8876,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Volg_nr)
@@ -8646,6 +8961,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dos_id)
@@ -8663,6 +8979,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Ter_id)
@@ -8677,6 +8994,7 @@ data _null_;
                    if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
+                   passend_4385385912596099835 = tranwrd(passend_4385385912596099835,'9D'x,'D0'x);
                    put passend_4385385912596099835 ~ @;
               end;
        put techId best12. ; 
@@ -8808,6 +9126,7 @@ data _null_;
                    if attrLengte_8516838639269582457 > max(maxPassend_8516838639269582457,1000)
                      then passend_8516838639269582457 = substr(Aanvullende_voorwaarden,1,maxPassend_8516838639269582457);
                      else passend_8516838639269582457 = Aanvullende_voorwaarden;
+                   passend_8516838639269582457 = tranwrd(passend_8516838639269582457,'9D'x,'D0'x);
                    put passend_8516838639269582457 ~ @;
               end;
        if missing(Actie)
@@ -8819,6 +9138,7 @@ data _null_;
                    if attrLengte_2824924400165242775 > max(maxPassend_2824924400165242775,1000)
                      then passend_2824924400165242775 = substr(Actie,1,maxPassend_2824924400165242775);
                      else passend_2824924400165242775 = Actie;
+                   passend_2824924400165242775 = tranwrd(passend_2824924400165242775,'9D'x,'D0'x);
                    put passend_2824924400165242775 ~ @;
               end;
        if missing(Actie_dat)
@@ -8842,6 +9162,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dos_id)
@@ -8859,6 +9180,7 @@ data _null_;
                    if attrLengte_1224618887063362992 > max(maxPassend_1224618887063362992,1000)
                      then passend_1224618887063362992 = substr(Mdw_id,1,maxPassend_1224618887063362992);
                      else passend_1224618887063362992 = Mdw_id;
+                   passend_1224618887063362992 = tranwrd(passend_1224618887063362992,'9D'x,'D0'x);
                    put passend_1224618887063362992 ~ @;
               end;
        if missing(Mdw_id_afgemeld)
@@ -8876,6 +9198,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Notitie)
@@ -8887,6 +9210,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Opgevoerd_dat)
@@ -8901,6 +9225,7 @@ data _null_;
                    if attrLengte_1225657355697171178 > max(maxPassend_1225657355697171178,1000)
                      then passend_1225657355697171178 = substr(Opschortend_jn,1,maxPassend_1225657355697171178);
                      else passend_1225657355697171178 = Opschortend_jn;
+                   passend_1225657355697171178 = tranwrd(passend_1225657355697171178,'9D'x,'D0'x);
                    put passend_1225657355697171178 ~ @;
               end;
        if missing(Prg_id)
@@ -8915,6 +9240,7 @@ data _null_;
                    if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
+                   passend_4412363972584569639 = tranwrd(passend_4412363972584569639,'9D'x,'D0'x);
                    put passend_4412363972584569639 ~ @;
               end;
        if missing(Rol_cd)
@@ -8926,6 +9252,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Ter_id)
@@ -9022,6 +9349,7 @@ data _null_;
                    if attrLengte_4287257797458721857 > max(maxPassend_4287257797458721857,1000)
                      then passend_4287257797458721857 = substr(Commentaar,1,maxPassend_4287257797458721857);
                      else passend_4287257797458721857 = Commentaar;
+                   passend_4287257797458721857 = tranwrd(passend_4287257797458721857,'9D'x,'D0'x);
                    put passend_4287257797458721857 ~ @;
               end;
        if missing(Datum_van)
@@ -9042,6 +9370,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Sts_cd)
@@ -9053,6 +9382,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Tra_id)
@@ -9067,6 +9397,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -9081,6 +9412,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -9245,6 +9577,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Bgt_cd)
@@ -9256,6 +9589,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Rpe_datum_van)
@@ -9294,6 +9628,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(Bic)
@@ -9305,6 +9640,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Omhang_jaar)
@@ -9322,6 +9658,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -9336,6 +9673,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Cvk_id_geselecteerd)
@@ -9356,6 +9694,7 @@ data _null_;
                    if attrLengte_4433448625209033040 > max(maxPassend_4433448625209033040,1000)
                      then passend_4433448625209033040 = substr(Gecorrigeerd_jn,1,maxPassend_4433448625209033040);
                      else passend_4433448625209033040 = Gecorrigeerd_jn;
+                   passend_4433448625209033040 = tranwrd(passend_4433448625209033040,'9D'x,'D0'x);
                    put passend_4433448625209033040 ~ @;
               end;
        if missing(Rpt_nr_oud)
@@ -9367,6 +9706,7 @@ data _null_;
                    if attrLengte_6398700462504815438 > max(maxPassend_6398700462504815438,1000)
                      then passend_6398700462504815438 = substr(Rpt_nr_oud,1,maxPassend_6398700462504815438);
                      else passend_6398700462504815438 = Rpt_nr_oud;
+                   passend_6398700462504815438 = tranwrd(passend_6398700462504815438,'9D'x,'D0'x);
                    put passend_6398700462504815438 ~ @;
               end;
        if missing(Naar_oracle)
@@ -9378,6 +9718,7 @@ data _null_;
                    if attrLengte_568356442792058170 > max(maxPassend_568356442792058170,1000)
                      then passend_568356442792058170 = substr(Naar_oracle,1,maxPassend_568356442792058170);
                      else passend_568356442792058170 = Naar_oracle;
+                   passend_568356442792058170 = tranwrd(passend_568356442792058170,'9D'x,'D0'x);
                    put passend_568356442792058170 ~ @;
               end;
        if missing(Boeking)
@@ -9389,6 +9730,7 @@ data _null_;
                    if attrLengte_1952708952664785282 > max(maxPassend_1952708952664785282,1000)
                      then passend_1952708952664785282 = substr(Boeking,1,maxPassend_1952708952664785282);
                      else passend_1952708952664785282 = Boeking;
+                   passend_1952708952664785282 = tranwrd(passend_1952708952664785282,'9D'x,'D0'x);
                    put passend_1952708952664785282 ~ @;
               end;
        if missing(Imvb)
@@ -9400,6 +9742,7 @@ data _null_;
                    if attrLengte_6245674353508173474 > max(maxPassend_6245674353508173474,1000)
                      then passend_6245674353508173474 = substr(Imvb,1,maxPassend_6245674353508173474);
                      else passend_6245674353508173474 = Imvb;
+                   passend_6245674353508173474 = tranwrd(passend_6245674353508173474,'9D'x,'D0'x);
                    put passend_6245674353508173474 ~ @;
               end;
        put techId best12. ; 
@@ -9690,6 +10033,7 @@ data _null_;
                    if attrLengte_6253283794989270681 > max(maxPassend_6253283794989270681,1000)
                      then passend_6253283794989270681 = substr(Tra_cd,1,maxPassend_6253283794989270681);
                      else passend_6253283794989270681 = Tra_cd;
+                   passend_6253283794989270681 = tranwrd(passend_6253283794989270681,'9D'x,'D0'x);
                    put passend_6253283794989270681 ~ @;
               end;
        if missing(Reden)
@@ -9701,6 +10045,7 @@ data _null_;
                    if attrLengte_1098176494781784809 > max(maxPassend_1098176494781784809,1000)
                      then passend_1098176494781784809 = substr(Reden,1,maxPassend_1098176494781784809);
                      else passend_1098176494781784809 = Reden;
+                   passend_1098176494781784809 = tranwrd(passend_1098176494781784809,'9D'x,'D0'x);
                    put passend_1098176494781784809 ~ @;
               end;
        if missing(bedrag)
@@ -9724,6 +10069,7 @@ data _null_;
                    if attrLengte_1212276818799146410 > max(maxPassend_1212276818799146410,1000)
                      then passend_1212276818799146410 = substr(Fam_verplichting,1,maxPassend_1212276818799146410);
                      else passend_1212276818799146410 = Fam_verplichting;
+                   passend_1212276818799146410 = tranwrd(passend_1212276818799146410,'9D'x,'D0'x);
                    put passend_1212276818799146410 ~ @;
               end;
        if missing(Fam_declaratie)
@@ -9735,6 +10081,7 @@ data _null_;
                    if attrLengte_4153370524296179899 > max(maxPassend_4153370524296179899,1000)
                      then passend_4153370524296179899 = substr(Fam_declaratie,1,maxPassend_4153370524296179899);
                      else passend_4153370524296179899 = Fam_declaratie;
+                   passend_4153370524296179899 = tranwrd(passend_4153370524296179899,'9D'x,'D0'x);
                    put passend_4153370524296179899 ~ @;
               end;
        if missing(Fam_bij_rente)
@@ -9746,6 +10093,7 @@ data _null_;
                    if attrLengte_4443879735266284666 > max(maxPassend_4443879735266284666,1000)
                      then passend_4443879735266284666 = substr(Fam_bij_rente,1,maxPassend_4443879735266284666);
                      else passend_4443879735266284666 = Fam_bij_rente;
+                   passend_4443879735266284666 = tranwrd(passend_4443879735266284666,'9D'x,'D0'x);
                    put passend_4443879735266284666 ~ @;
               end;
        if missing(Fam_kwijtschelding)
@@ -9757,6 +10105,7 @@ data _null_;
                    if attrLengte_3567572823611571931 > max(maxPassend_3567572823611571931,1000)
                      then passend_3567572823611571931 = substr(Fam_kwijtschelding,1,maxPassend_3567572823611571931);
                      else passend_3567572823611571931 = Fam_kwijtschelding;
+                   passend_3567572823611571931 = tranwrd(passend_3567572823611571931,'9D'x,'D0'x);
                    put passend_3567572823611571931 ~ @;
               end;
        if missing(Fam_rest_voorschot)
@@ -9768,6 +10117,7 @@ data _null_;
                    if attrLengte_1702809178028524379 > max(maxPassend_1702809178028524379,1000)
                      then passend_1702809178028524379 = substr(Fam_rest_voorschot,1,maxPassend_1702809178028524379);
                      else passend_1702809178028524379 = Fam_rest_voorschot;
+                   passend_1702809178028524379 = tranwrd(passend_1702809178028524379,'9D'x,'D0'x);
                    put passend_1702809178028524379 ~ @;
               end;
        if missing(Fam_overboeking)
@@ -9779,6 +10129,7 @@ data _null_;
                    if attrLengte_4845185038860361699 > max(maxPassend_4845185038860361699,1000)
                      then passend_4845185038860361699 = substr(Fam_overboeking,1,maxPassend_4845185038860361699);
                      else passend_4845185038860361699 = Fam_overboeking;
+                   passend_4845185038860361699 = tranwrd(passend_4845185038860361699,'9D'x,'D0'x);
                    put passend_4845185038860361699 ~ @;
               end;
        if missing(Fam_aflossing)
@@ -9790,6 +10141,7 @@ data _null_;
                    if attrLengte_3391817755152401814 > max(maxPassend_3391817755152401814,1000)
                      then passend_3391817755152401814 = substr(Fam_aflossing,1,maxPassend_3391817755152401814);
                      else passend_3391817755152401814 = Fam_aflossing;
+                   passend_3391817755152401814 = tranwrd(passend_3391817755152401814,'9D'x,'D0'x);
                    put passend_3391817755152401814 ~ @;
               end;
        if missing(Fam_budgetmutatie)
@@ -9801,6 +10153,7 @@ data _null_;
                    if attrLengte_3285042740688401232 > max(maxPassend_3285042740688401232,1000)
                      then passend_3285042740688401232 = substr(Fam_budgetmutatie,1,maxPassend_3285042740688401232);
                      else passend_3285042740688401232 = Fam_budgetmutatie;
+                   passend_3285042740688401232 = tranwrd(passend_3285042740688401232,'9D'x,'D0'x);
                    put passend_3285042740688401232 ~ @;
               end;
        if missing(Fam_rest_aflossing)
@@ -9812,6 +10165,7 @@ data _null_;
                    if attrLengte_931749659403633718 > max(maxPassend_931749659403633718,1000)
                      then passend_931749659403633718 = substr(Fam_rest_aflossing,1,maxPassend_931749659403633718);
                      else passend_931749659403633718 = Fam_rest_aflossing;
+                   passend_931749659403633718 = tranwrd(passend_931749659403633718,'9D'x,'D0'x);
                    put passend_931749659403633718 ~ @;
               end;
        if missing(Fam_betaalritme)
@@ -9823,6 +10177,7 @@ data _null_;
                    if attrLengte_4931477478695952912 > max(maxPassend_4931477478695952912,1000)
                      then passend_4931477478695952912 = substr(Fam_betaalritme,1,maxPassend_4931477478695952912);
                      else passend_4931477478695952912 = Fam_betaalritme;
+                   passend_4931477478695952912 = tranwrd(passend_4931477478695952912,'9D'x,'D0'x);
                    put passend_4931477478695952912 ~ @;
               end;
        if missing(Sts_cd)
@@ -9834,6 +10189,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Ssg_cd)
@@ -9845,6 +10201,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Correctie)
@@ -9856,6 +10213,7 @@ data _null_;
                    if attrLengte_7673245136764010259 > max(maxPassend_7673245136764010259,1000)
                      then passend_7673245136764010259 = substr(Correctie,1,maxPassend_7673245136764010259);
                      else passend_7673245136764010259 = Correctie;
+                   passend_7673245136764010259 = tranwrd(passend_7673245136764010259,'9D'x,'D0'x);
                    put passend_7673245136764010259 ~ @;
               end;
        if missing(Correctie_volgnr)
@@ -9879,6 +10237,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Datum_acc_afd)
@@ -9893,6 +10252,7 @@ data _null_;
                    if attrLengte_6085349322089225769 > max(maxPassend_6085349322089225769,1000)
                      then passend_6085349322089225769 = substr(Referentie,1,maxPassend_6085349322089225769);
                      else passend_6085349322089225769 = Referentie;
+                   passend_6085349322089225769 = tranwrd(passend_6085349322089225769,'9D'x,'D0'x);
                    put passend_6085349322089225769 ~ @;
               end;
        if missing(Creatie_dat)
@@ -9907,6 +10267,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -9921,6 +10282,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Bedrag_ex_btw)
@@ -9938,6 +10300,7 @@ data _null_;
                    if attrLengte_422512166785287787 > max(maxPassend_422512166785287787,1000)
                      then passend_422512166785287787 = substr(Duurzaam_jn,1,maxPassend_422512166785287787);
                      else passend_422512166785287787 = Duurzaam_jn;
+                   passend_422512166785287787 = tranwrd(passend_422512166785287787,'9D'x,'D0'x);
                    put passend_422512166785287787 ~ @;
               end;
        if missing(Run_id)
@@ -9952,6 +10315,7 @@ data _null_;
                    if attrLengte_6608173593154079080 > max(maxPassend_6608173593154079080,1000)
                      then passend_6608173593154079080 = substr(Fam_vordering,1,maxPassend_6608173593154079080);
                      else passend_6608173593154079080 = Fam_vordering;
+                   passend_6608173593154079080 = tranwrd(passend_6608173593154079080,'9D'x,'D0'x);
                    put passend_6608173593154079080 ~ @;
               end;
        if missing(Fam_vordering_afhandeling)
@@ -9963,6 +10327,7 @@ data _null_;
                    if attrLengte_5559502497052717358 > max(maxPassend_5559502497052717358,1000)
                      then passend_5559502497052717358 = substr(Fam_vordering_afhandeling,1,maxPassend_5559502497052717358);
                      else passend_5559502497052717358 = Fam_vordering_afhandeling;
+                   passend_5559502497052717358 = tranwrd(passend_5559502497052717358,'9D'x,'D0'x);
                    put passend_5559502497052717358 ~ @;
               end;
        if missing(Vordering_tra_id)
@@ -9977,6 +10342,7 @@ data _null_;
                    if attrLengte_3758669671063171765 > max(maxPassend_3758669671063171765,1000)
                      then passend_3758669671063171765 = substr(Storneren,1,maxPassend_3758669671063171765);
                      else passend_3758669671063171765 = Storneren;
+                   passend_3758669671063171765 = tranwrd(passend_3758669671063171765,'9D'x,'D0'x);
                    put passend_3758669671063171765 ~ @;
               end;
        if missing(Vordering_bedrag)
@@ -10003,6 +10369,7 @@ data _null_;
                    if attrLengte_2494011778403761468 > max(maxPassend_2494011778403761468,1000)
                      then passend_2494011778403761468 = substr(Omhang_jn,1,maxPassend_2494011778403761468);
                      else passend_2494011778403761468 = Omhang_jn;
+                   passend_2494011778403761468 = tranwrd(passend_2494011778403761468,'9D'x,'D0'x);
                    put passend_2494011778403761468 ~ @;
               end;
        if missing(Tra_id_rv)
@@ -10029,6 +10396,7 @@ data _null_;
                    if attrLengte_4684164286917011191 > max(maxPassend_4684164286917011191,1000)
                      then passend_4684164286917011191 = substr(Vordering_status,1,maxPassend_4684164286917011191);
                      else passend_4684164286917011191 = Vordering_status;
+                   passend_4684164286917011191 = tranwrd(passend_4684164286917011191,'9D'x,'D0'x);
                    put passend_4684164286917011191 ~ @;
               end;
        if missing(On_hold)
@@ -10040,6 +10408,7 @@ data _null_;
                    if attrLengte_6530276695478526136 > max(maxPassend_6530276695478526136,1000)
                      then passend_6530276695478526136 = substr(On_hold,1,maxPassend_6530276695478526136);
                      else passend_6530276695478526136 = On_hold;
+                   passend_6530276695478526136 = tranwrd(passend_6530276695478526136,'9D'x,'D0'x);
                    put passend_6530276695478526136 ~ @;
               end;
        if missing(Termijn_uitstel)
@@ -10166,6 +10535,7 @@ data _null_;
                    if attrLengte_6135999788213756481 > max(maxPassend_6135999788213756481,1000)
                      then passend_6135999788213756481 = substr(Verplichtingssoort,1,maxPassend_6135999788213756481);
                      else passend_6135999788213756481 = Verplichtingssoort;
+                   passend_6135999788213756481 = tranwrd(passend_6135999788213756481,'9D'x,'D0'x);
                    put passend_6135999788213756481 ~ @;
               end;
        if missing(Omschrijving)
@@ -10177,6 +10547,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Totaal_ingediend)
@@ -10212,6 +10583,7 @@ data _null_;
                    if attrLengte_2756989652093128784 > max(maxPassend_2756989652093128784,1000)
                      then passend_2756989652093128784 = substr(Ikb_naam,1,maxPassend_2756989652093128784);
                      else passend_2756989652093128784 = Ikb_naam;
+                   passend_2756989652093128784 = tranwrd(passend_2756989652093128784,'9D'x,'D0'x);
                    put passend_2756989652093128784 ~ @;
               end;
        if missing(Inkoopbevinding)
@@ -10223,6 +10595,7 @@ data _null_;
                    if attrLengte_1618217091633064195 > max(maxPassend_1618217091633064195,1000)
                      then passend_1618217091633064195 = substr(Inkoopbevinding,1,maxPassend_1618217091633064195);
                      else passend_1618217091633064195 = Inkoopbevinding;
+                   passend_1618217091633064195 = tranwrd(passend_1618217091633064195,'9D'x,'D0'x);
                    put passend_1618217091633064195 ~ @;
               end;
        if missing(Inkoopbevinding_user)
@@ -10234,6 +10607,7 @@ data _null_;
                    if attrLengte_496588120254909598 > max(maxPassend_496588120254909598,1000)
                      then passend_496588120254909598 = substr(Inkoopbevinding_user,1,maxPassend_496588120254909598);
                      else passend_496588120254909598 = Inkoopbevinding_user;
+                   passend_496588120254909598 = tranwrd(passend_496588120254909598,'9D'x,'D0'x);
                    put passend_496588120254909598 ~ @;
               end;
        if missing(Betalingsverzoeknummer)
@@ -10245,6 +10619,7 @@ data _null_;
                    if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
                      then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
                      else passend_7008902060440754439 = Betalingsverzoeknummer;
+                   passend_7008902060440754439 = tranwrd(passend_7008902060440754439,'9D'x,'D0'x);
                    put passend_7008902060440754439 ~ @;
               end;
        put techId best12. ; 
@@ -10315,6 +10690,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Fun_cd)
@@ -10326,6 +10702,7 @@ data _null_;
                    if attrLengte_5965997888822023319 > max(maxPassend_5965997888822023319,1000)
                      then passend_5965997888822023319 = substr(Fun_cd,1,maxPassend_5965997888822023319);
                      else passend_5965997888822023319 = Fun_cd;
+                   passend_5965997888822023319 = tranwrd(passend_5965997888822023319,'9D'x,'D0'x);
                    put passend_5965997888822023319 ~ @;
               end;
        if missing(Fun_oms)
@@ -10337,6 +10714,7 @@ data _null_;
                    if attrLengte_2219022917313083260 > max(maxPassend_2219022917313083260,1000)
                      then passend_2219022917313083260 = substr(Fun_oms,1,maxPassend_2219022917313083260);
                      else passend_2219022917313083260 = Fun_oms;
+                   passend_2219022917313083260 = tranwrd(passend_2219022917313083260,'9D'x,'D0'x);
                    put passend_2219022917313083260 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -10351,6 +10729,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -10422,6 +10801,7 @@ data _null_;
                    if attrLengte_70411504366861046 > max(maxPassend_70411504366861046,1000)
                      then passend_70411504366861046 = substr(Loc_cd,1,maxPassend_70411504366861046);
                      else passend_70411504366861046 = Loc_cd;
+                   passend_70411504366861046 = tranwrd(passend_70411504366861046,'9D'x,'D0'x);
                    put passend_70411504366861046 ~ @;
               end;
        if missing(Omschrijving)
@@ -10433,6 +10813,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Actief)
@@ -10444,6 +10825,7 @@ data _null_;
                    if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
+                   passend_9040032925271508250 = tranwrd(passend_9040032925271508250,'9D'x,'D0'x);
                    put passend_9040032925271508250 ~ @;
               end;
        if missing(Creatie_dat)
@@ -10458,6 +10840,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -10472,6 +10855,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -10675,6 +11059,7 @@ data _null_;
                    if attrLengte_5000095886126416684 > max(maxPassend_5000095886126416684,1000)
                      then passend_5000095886126416684 = substr(Aanspreeknaam,1,maxPassend_5000095886126416684);
                      else passend_5000095886126416684 = Aanspreeknaam;
+                   passend_5000095886126416684 = tranwrd(passend_5000095886126416684,'9D'x,'D0'x);
                    put passend_5000095886126416684 ~ @;
               end;
        if missing(Achternaam)
@@ -10686,6 +11071,7 @@ data _null_;
                    if attrLengte_403642515580817570 > max(maxPassend_403642515580817570,1000)
                      then passend_403642515580817570 = substr(Achternaam,1,maxPassend_403642515580817570);
                      else passend_403642515580817570 = Achternaam;
+                   passend_403642515580817570 = tranwrd(passend_403642515580817570,'9D'x,'D0'x);
                    put passend_403642515580817570 ~ @;
               end;
        if missing(Actief)
@@ -10697,6 +11083,7 @@ data _null_;
                    if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
+                   passend_9040032925271508250 = tranwrd(passend_9040032925271508250,'9D'x,'D0'x);
                    put passend_9040032925271508250 ~ @;
               end;
        if missing(Banknaam)
@@ -10708,6 +11095,7 @@ data _null_;
                    if attrLengte_9171161243242669933 > max(maxPassend_9171161243242669933,1000)
                      then passend_9171161243242669933 = substr(Banknaam,1,maxPassend_9171161243242669933);
                      else passend_9171161243242669933 = Banknaam;
+                   passend_9171161243242669933 = tranwrd(passend_9171161243242669933,'9D'x,'D0'x);
                    put passend_9171161243242669933 ~ @;
               end;
        if missing(Beveiligingspas)
@@ -10719,6 +11107,7 @@ data _null_;
                    if attrLengte_568964889479556025 > max(maxPassend_568964889479556025,1000)
                      then passend_568964889479556025 = substr(Beveiligingspas,1,maxPassend_568964889479556025);
                      else passend_568964889479556025 = Beveiligingspas;
+                   passend_568964889479556025 = tranwrd(passend_568964889479556025,'9D'x,'D0'x);
                    put passend_568964889479556025 ~ @;
               end;
        if missing(Beveiligingspasnr)
@@ -10730,6 +11119,7 @@ data _null_;
                    if attrLengte_4548269248070471921 > max(maxPassend_4548269248070471921,1000)
                      then passend_4548269248070471921 = substr(Beveiligingspasnr,1,maxPassend_4548269248070471921);
                      else passend_4548269248070471921 = Beveiligingspasnr;
+                   passend_4548269248070471921 = tranwrd(passend_4548269248070471921,'9D'x,'D0'x);
                    put passend_4548269248070471921 ~ @;
               end;
        if missing(Bic)
@@ -10741,6 +11131,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Certhoud_id)
@@ -10755,6 +11146,7 @@ data _null_;
                    if attrLengte_5407225052503955637 > max(maxPassend_5407225052503955637,1000)
                      then passend_5407225052503955637 = substr(Certserienummer,1,maxPassend_5407225052503955637);
                      else passend_5407225052503955637 = Certserienummer;
+                   passend_5407225052503955637 = tranwrd(passend_5407225052503955637,'9D'x,'D0'x);
                    put passend_5407225052503955637 ~ @;
               end;
        if missing(Creatie_dat)
@@ -10769,6 +11161,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Datum_inlog)
@@ -10786,6 +11179,7 @@ data _null_;
                    if attrLengte_3093319845566984286 > max(maxPassend_3093319845566984286,1000)
                      then passend_3093319845566984286 = substr(Dienstverband,1,maxPassend_3093319845566984286);
                      else passend_3093319845566984286 = Dienstverband;
+                   passend_3093319845566984286 = tranwrd(passend_3093319845566984286,'9D'x,'D0'x);
                    put passend_3093319845566984286 ~ @;
               end;
        if missing(Eigen_vervoer_jn)
@@ -10797,6 +11191,7 @@ data _null_;
                    if attrLengte_8873931148360804801 > max(maxPassend_8873931148360804801,1000)
                      then passend_8873931148360804801 = substr(Eigen_vervoer_jn,1,maxPassend_8873931148360804801);
                      else passend_8873931148360804801 = Eigen_vervoer_jn;
+                   passend_8873931148360804801 = tranwrd(passend_8873931148360804801,'9D'x,'D0'x);
                    put passend_8873931148360804801 ~ @;
               end;
        if missing(Fun_cd)
@@ -10808,6 +11203,7 @@ data _null_;
                    if attrLengte_5965997888822023319 > max(maxPassend_5965997888822023319,1000)
                      then passend_5965997888822023319 = substr(Fun_cd,1,maxPassend_5965997888822023319);
                      else passend_5965997888822023319 = Fun_cd;
+                   passend_5965997888822023319 = tranwrd(passend_5965997888822023319,'9D'x,'D0'x);
                    put passend_5965997888822023319 ~ @;
               end;
        if missing(Geslacht)
@@ -10819,6 +11215,7 @@ data _null_;
                    if attrLengte_731654219873503099 > max(maxPassend_731654219873503099,1000)
                      then passend_731654219873503099 = substr(Geslacht,1,maxPassend_731654219873503099);
                      else passend_731654219873503099 = Geslacht;
+                   passend_731654219873503099 = tranwrd(passend_731654219873503099,'9D'x,'D0'x);
                    put passend_731654219873503099 ~ @;
               end;
        if missing(Iban)
@@ -10830,6 +11227,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(Inleen_jn)
@@ -10841,6 +11239,7 @@ data _null_;
                    if attrLengte_1425693773166182115 > max(maxPassend_1425693773166182115,1000)
                      then passend_1425693773166182115 = substr(Inleen_jn,1,maxPassend_1425693773166182115);
                      else passend_1425693773166182115 = Inleen_jn;
+                   passend_1425693773166182115 = tranwrd(passend_1425693773166182115,'9D'x,'D0'x);
                    put passend_1425693773166182115 ~ @;
               end;
        if missing(Loc_cd)
@@ -10852,6 +11251,7 @@ data _null_;
                    if attrLengte_70411504366861046 > max(maxPassend_70411504366861046,1000)
                      then passend_70411504366861046 = substr(Loc_cd,1,maxPassend_70411504366861046);
                      else passend_70411504366861046 = Loc_cd;
+                   passend_70411504366861046 = tranwrd(passend_70411504366861046,'9D'x,'D0'x);
                    put passend_70411504366861046 ~ @;
               end;
        if missing(Mdw_cd)
@@ -10863,6 +11263,7 @@ data _null_;
                    if attrLengte_1226307818193438914 > max(maxPassend_1226307818193438914,1000)
                      then passend_1226307818193438914 = substr(Mdw_cd,1,maxPassend_1226307818193438914);
                      else passend_1226307818193438914 = Mdw_cd;
+                   passend_1226307818193438914 = tranwrd(passend_1226307818193438914,'9D'x,'D0'x);
                    put passend_1226307818193438914 ~ @;
               end;
        if missing(Mdw_emailadres)
@@ -10874,6 +11275,7 @@ data _null_;
                    if attrLengte_3550688932720166220 > max(maxPassend_3550688932720166220,1000)
                      then passend_3550688932720166220 = substr(Mdw_emailadres,1,maxPassend_3550688932720166220);
                      else passend_3550688932720166220 = Mdw_emailadres;
+                   passend_3550688932720166220 = tranwrd(passend_3550688932720166220,'9D'x,'D0'x);
                    put passend_3550688932720166220 ~ @;
               end;
        if missing(Mdw_handtekening)
@@ -10885,6 +11287,7 @@ data _null_;
                    if attrLengte_8870325337959155145 > max(maxPassend_8870325337959155145,1000)
                      then passend_8870325337959155145 = substr(Mdw_handtekening,1,maxPassend_8870325337959155145);
                      else passend_8870325337959155145 = Mdw_handtekening;
+                   passend_8870325337959155145 = tranwrd(passend_8870325337959155145,'9D'x,'D0'x);
                    put passend_8870325337959155145 ~ @;
               end;
        if missing(Mdw_handtekening_image)
@@ -10896,6 +11299,7 @@ data _null_;
                    if attrLengte_4406024425837339997 > max(maxPassend_4406024425837339997,1000)
                      then passend_4406024425837339997 = substr(Mdw_handtekening_image,1,maxPassend_4406024425837339997);
                      else passend_4406024425837339997 = Mdw_handtekening_image;
+                   passend_4406024425837339997 = tranwrd(passend_4406024425837339997,'9D'x,'D0'x);
                    put passend_4406024425837339997 ~ @;
               end;
        if missing(Mdw_id)
@@ -10910,6 +11314,7 @@ data _null_;
                    if attrLengte_469422463784359626 > max(maxPassend_469422463784359626,1000)
                      then passend_469422463784359626 = substr(Mobiel,1,maxPassend_469422463784359626);
                      else passend_469422463784359626 = Mobiel;
+                   passend_469422463784359626 = tranwrd(passend_469422463784359626,'9D'x,'D0'x);
                    put passend_469422463784359626 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -10924,6 +11329,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Parkeerkaart)
@@ -10935,6 +11341,7 @@ data _null_;
                    if attrLengte_1297276606184209975 > max(maxPassend_1297276606184209975,1000)
                      then passend_1297276606184209975 = substr(Parkeerkaart,1,maxPassend_1297276606184209975);
                      else passend_1297276606184209975 = Parkeerkaart;
+                   passend_1297276606184209975 = tranwrd(passend_1297276606184209975,'9D'x,'D0'x);
                    put passend_1297276606184209975 ~ @;
               end;
        if missing(Plaatsnaam)
@@ -10946,6 +11353,7 @@ data _null_;
                    if attrLengte_4214898722065367578 > max(maxPassend_4214898722065367578,1000)
                      then passend_4214898722065367578 = substr(Plaatsnaam,1,maxPassend_4214898722065367578);
                      else passend_4214898722065367578 = Plaatsnaam;
+                   passend_4214898722065367578 = tranwrd(passend_4214898722065367578,'9D'x,'D0'x);
                    put passend_4214898722065367578 ~ @;
               end;
        if missing(Standplaats)
@@ -10957,6 +11365,7 @@ data _null_;
                    if attrLengte_8614162211722129764 > max(maxPassend_8614162211722129764,1000)
                      then passend_8614162211722129764 = substr(Standplaats,1,maxPassend_8614162211722129764);
                      else passend_8614162211722129764 = Standplaats;
+                   passend_8614162211722129764 = tranwrd(passend_8614162211722129764,'9D'x,'D0'x);
                    put passend_8614162211722129764 ~ @;
               end;
        if missing(Telefoon)
@@ -10968,6 +11377,7 @@ data _null_;
                    if attrLengte_5105696030762504490 > max(maxPassend_5105696030762504490,1000)
                      then passend_5105696030762504490 = substr(Telefoon,1,maxPassend_5105696030762504490);
                      else passend_5105696030762504490 = Telefoon;
+                   passend_5105696030762504490 = tranwrd(passend_5105696030762504490,'9D'x,'D0'x);
                    put passend_5105696030762504490 ~ @;
               end;
        if missing(Titel_na_cd)
@@ -10979,6 +11389,7 @@ data _null_;
                    if attrLengte_7837891438217984867 > max(maxPassend_7837891438217984867,1000)
                      then passend_7837891438217984867 = substr(Titel_na_cd,1,maxPassend_7837891438217984867);
                      else passend_7837891438217984867 = Titel_na_cd;
+                   passend_7837891438217984867 = tranwrd(passend_7837891438217984867,'9D'x,'D0'x);
                    put passend_7837891438217984867 ~ @;
               end;
        if missing(Titel_voor_cd)
@@ -10990,6 +11401,7 @@ data _null_;
                    if attrLengte_205177972285722878 > max(maxPassend_205177972285722878,1000)
                      then passend_205177972285722878 = substr(Titel_voor_cd,1,maxPassend_205177972285722878);
                      else passend_205177972285722878 = Titel_voor_cd;
+                   passend_205177972285722878 = tranwrd(passend_205177972285722878,'9D'x,'D0'x);
                    put passend_205177972285722878 ~ @;
               end;
        if missing(Toestel_dh)
@@ -11001,6 +11413,7 @@ data _null_;
                    if attrLengte_2044038105122318573 > max(maxPassend_2044038105122318573,1000)
                      then passend_2044038105122318573 = substr(Toestel_dh,1,maxPassend_2044038105122318573);
                      else passend_2044038105122318573 = Toestel_dh;
+                   passend_2044038105122318573 = tranwrd(passend_2044038105122318573,'9D'x,'D0'x);
                    put passend_2044038105122318573 ~ @;
               end;
        if missing(Toestel_zw)
@@ -11012,6 +11425,7 @@ data _null_;
                    if attrLengte_2040097266282988894 > max(maxPassend_2040097266282988894,1000)
                      then passend_2040097266282988894 = substr(Toestel_zw,1,maxPassend_2040097266282988894);
                      else passend_2040097266282988894 = Toestel_zw;
+                   passend_2040097266282988894 = tranwrd(passend_2040097266282988894,'9D'x,'D0'x);
                    put passend_2040097266282988894 ~ @;
               end;
        if missing(Tvs_cd_oud)
@@ -11023,6 +11437,7 @@ data _null_;
                    if attrLengte_911718119053123258 > max(maxPassend_911718119053123258,1000)
                      then passend_911718119053123258 = substr(Tvs_cd_oud,1,maxPassend_911718119053123258);
                      else passend_911718119053123258 = Tvs_cd_oud;
+                   passend_911718119053123258 = tranwrd(passend_911718119053123258,'9D'x,'D0'x);
                    put passend_911718119053123258 ~ @;
               end;
        if missing(Voorletters)
@@ -11034,6 +11449,7 @@ data _null_;
                    if attrLengte_933604317395829620 > max(maxPassend_933604317395829620,1000)
                      then passend_933604317395829620 = substr(Voorletters,1,maxPassend_933604317395829620);
                      else passend_933604317395829620 = Voorletters;
+                   passend_933604317395829620 = tranwrd(passend_933604317395829620,'9D'x,'D0'x);
                    put passend_933604317395829620 ~ @;
               end;
        if missing(Voornaam)
@@ -11045,6 +11461,7 @@ data _null_;
                    if attrLengte_7272765945587119437 > max(maxPassend_7272765945587119437,1000)
                      then passend_7272765945587119437 = substr(Voornaam,1,maxPassend_7272765945587119437);
                      else passend_7272765945587119437 = Voornaam;
+                   passend_7272765945587119437 = tranwrd(passend_7272765945587119437,'9D'x,'D0'x);
                    put passend_7272765945587119437 ~ @;
               end;
        if missing(Voorvoegsel)
@@ -11056,6 +11473,7 @@ data _null_;
                    if attrLengte_7678909970887993684 > max(maxPassend_7678909970887993684,1000)
                      then passend_7678909970887993684 = substr(Voorvoegsel,1,maxPassend_7678909970887993684);
                      else passend_7678909970887993684 = Voorvoegsel;
+                   passend_7678909970887993684 = tranwrd(passend_7678909970887993684,'9D'x,'D0'x);
                    put passend_7678909970887993684 ~ @;
               end;
        put techId best12. ; 
@@ -11130,6 +11548,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Creatie_dat)
@@ -11144,6 +11563,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_user)
@@ -11155,6 +11575,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -11169,6 +11590,7 @@ data _null_;
                    if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
+                   passend_9040032925271508250 = tranwrd(passend_9040032925271508250,'9D'x,'D0'x);
                    put passend_9040032925271508250 ~ @;
               end;
        put techId best12. ; 
@@ -11250,6 +11672,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Eigenaar)
@@ -11261,6 +11684,7 @@ data _null_;
                    if attrLengte_2715310130859233840 > max(maxPassend_2715310130859233840,1000)
                      then passend_2715310130859233840 = substr(Eigenaar,1,maxPassend_2715310130859233840);
                      else passend_2715310130859233840 = Eigenaar;
+                   passend_2715310130859233840 = tranwrd(passend_2715310130859233840,'9D'x,'D0'x);
                    put passend_2715310130859233840 ~ @;
               end;
        if missing(Creatie_user)
@@ -11272,6 +11696,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -11286,6 +11711,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -11374,6 +11800,7 @@ data _null_;
                    if attrLengte_3217231980325004339 > max(maxPassend_3217231980325004339,1000)
                      then passend_3217231980325004339 = substr(Zaaknummer,1,maxPassend_3217231980325004339);
                      else passend_3217231980325004339 = Zaaknummer;
+                   passend_3217231980325004339 = tranwrd(passend_3217231980325004339,'9D'x,'D0'x);
                    put passend_3217231980325004339 ~ @;
               end;
        if missing(Datum_zitting)
@@ -11388,6 +11815,7 @@ data _null_;
                    if attrLengte_7079888756117315669 > max(maxPassend_7079888756117315669,1000)
                      then passend_7079888756117315669 = substr(Uitspraak,1,maxPassend_7079888756117315669);
                      else passend_7079888756117315669 = Uitspraak;
+                   passend_7079888756117315669 = tranwrd(passend_7079888756117315669,'9D'x,'D0'x);
                    put passend_7079888756117315669 ~ @;
               end;
        if missing(Datum_uitspr)
@@ -11558,6 +11986,7 @@ data _null_;
                    if attrLengte_6020606438278307179 > max(maxPassend_6020606438278307179,1000)
                      then passend_6020606438278307179 = substr(Belasting_cd,1,maxPassend_6020606438278307179);
                      else passend_6020606438278307179 = Belasting_cd;
+                   passend_6020606438278307179 = tranwrd(passend_6020606438278307179,'9D'x,'D0'x);
                    put passend_6020606438278307179 ~ @;
               end;
        if missing(Datum_compleet)
@@ -11587,6 +12016,7 @@ data _null_;
                    if attrLengte_5414252817809941307 > max(maxPassend_5414252817809941307,1000)
                      then passend_5414252817809941307 = substr(App_verschenen,1,maxPassend_5414252817809941307);
                      else passend_5414252817809941307 = App_verschenen;
+                   passend_5414252817809941307 = tranwrd(passend_5414252817809941307,'9D'x,'D0'x);
                    put passend_5414252817809941307 ~ @;
               end;
        if missing(Datum_ontvangst)
@@ -11628,6 +12058,7 @@ data _null_;
                    if attrLengte_339486236946485008 > max(maxPassend_339486236946485008,1000)
                      then passend_339486236946485008 = substr(Adviescommissie,1,maxPassend_339486236946485008);
                      else passend_339486236946485008 = Adviescommissie;
+                   passend_339486236946485008 = tranwrd(passend_339486236946485008,'9D'x,'D0'x);
                    put passend_339486236946485008 ~ @;
               end;
        if missing(Datum_1e_heropname_schade)
@@ -11768,6 +12199,7 @@ data _null_;
                    if attrLengte_6111452580688960292 > max(maxPassend_6111452580688960292,1000)
                      then passend_6111452580688960292 = substr(Jz_nr,1,maxPassend_6111452580688960292);
                      else passend_6111452580688960292 = Jz_nr;
+                   passend_6111452580688960292 = tranwrd(passend_6111452580688960292,'9D'x,'D0'x);
                    put passend_6111452580688960292 ~ @;
               end;
        if missing(Cor_id)
@@ -11782,6 +12214,7 @@ data _null_;
                    if attrLengte_3099394465663039762 > max(maxPassend_3099394465663039762,1000)
                      then passend_3099394465663039762 = substr(Wijziging_in,1,maxPassend_3099394465663039762);
                      else passend_3099394465663039762 = Wijziging_in;
+                   passend_3099394465663039762 = tranwrd(passend_3099394465663039762,'9D'x,'D0'x);
                    put passend_3099394465663039762 ~ @;
               end;
        if missing(Sts_cd)
@@ -11793,6 +12226,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Wett_termijn_7_1)
@@ -11816,6 +12250,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -11830,6 +12265,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -11844,6 +12280,7 @@ data _null_;
                    if attrLengte_339486236946485008 > max(maxPassend_339486236946485008,1000)
                      then passend_339486236946485008 = substr(Adviescommissie,1,maxPassend_339486236946485008);
                      else passend_339486236946485008 = Adviescommissie;
+                   passend_339486236946485008 = tranwrd(passend_339486236946485008,'9D'x,'D0'x);
                    put passend_339486236946485008 ~ @;
               end;
        put techId best12. ; 
@@ -12079,6 +12516,7 @@ data _null_;
                    if attrLengte_1083598043257233095 > max(maxPassend_1083598043257233095,1000)
                      then passend_1083598043257233095 = substr(Tra_cd_1,1,maxPassend_1083598043257233095);
                      else passend_1083598043257233095 = Tra_cd_1;
+                   passend_1083598043257233095 = tranwrd(passend_1083598043257233095,'9D'x,'D0'x);
                    put passend_1083598043257233095 ~ @;
               end;
        if missing(Bedrag_tra_cd_1)
@@ -12093,6 +12531,7 @@ data _null_;
                    if attrLengte_1083598043307565968 > max(maxPassend_1083598043307565968,1000)
                      then passend_1083598043307565968 = substr(Tra_cd_2,1,maxPassend_1083598043307565968);
                      else passend_1083598043307565968 = Tra_cd_2;
+                   passend_1083598043307565968 = tranwrd(passend_1083598043307565968,'9D'x,'D0'x);
                    put passend_1083598043307565968 ~ @;
               end;
        if missing(Bedrag_tra_cd_2)
@@ -12107,6 +12546,7 @@ data _null_;
                    if attrLengte_1083598043290788349 > max(maxPassend_1083598043290788349,1000)
                      then passend_1083598043290788349 = substr(Tra_cd_3,1,maxPassend_1083598043290788349);
                      else passend_1083598043290788349 = Tra_cd_3;
+                   passend_1083598043290788349 = tranwrd(passend_1083598043290788349,'9D'x,'D0'x);
                    put passend_1083598043290788349 ~ @;
               end;
        if missing(Bedrag_tra_cd_3)
@@ -12121,6 +12561,7 @@ data _null_;
                    if attrLengte_5074290768225272146 > max(maxPassend_5074290768225272146,1000)
                      then passend_5074290768225272146 = substr(Sts_cd_voor,1,maxPassend_5074290768225272146);
                      else passend_5074290768225272146 = Sts_cd_voor;
+                   passend_5074290768225272146 = tranwrd(passend_5074290768225272146,'9D'x,'D0'x);
                    put passend_5074290768225272146 ~ @;
               end;
        if missing(Sts_cd_na)
@@ -12132,6 +12573,7 @@ data _null_;
                    if attrLengte_3160638609811708247 > max(maxPassend_3160638609811708247,1000)
                      then passend_3160638609811708247 = substr(Sts_cd_na,1,maxPassend_3160638609811708247);
                      else passend_3160638609811708247 = Sts_cd_na;
+                   passend_3160638609811708247 = tranwrd(passend_3160638609811708247,'9D'x,'D0'x);
                    put passend_3160638609811708247 ~ @;
               end;
        if missing(Verleend_voor)
@@ -12179,6 +12621,7 @@ data _null_;
                    if attrLengte_2188678553434777312 > max(maxPassend_2188678553434777312,1000)
                      then passend_2188678553434777312 = substr(Aanmaken_bob,1,maxPassend_2188678553434777312);
                      else passend_2188678553434777312 = Aanmaken_bob;
+                   passend_2188678553434777312 = tranwrd(passend_2188678553434777312,'9D'x,'D0'x);
                    put passend_2188678553434777312 ~ @;
               end;
        if missing(Verwijder_trans)
@@ -12190,6 +12633,7 @@ data _null_;
                    if attrLengte_8132748671281576414 > max(maxPassend_8132748671281576414,1000)
                      then passend_8132748671281576414 = substr(Verwijder_trans,1,maxPassend_8132748671281576414);
                      else passend_8132748671281576414 = Verwijder_trans;
+                   passend_8132748671281576414 = tranwrd(passend_8132748671281576414,'9D'x,'D0'x);
                    put passend_8132748671281576414 ~ @;
               end;
        if missing(Cst_cd)
@@ -12201,6 +12645,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Cst_cd_beschikking)
@@ -12212,6 +12657,7 @@ data _null_;
                    if attrLengte_1618444314050332051 > max(maxPassend_1618444314050332051,1000)
                      then passend_1618444314050332051 = substr(Cst_cd_beschikking,1,maxPassend_1618444314050332051);
                      else passend_1618444314050332051 = Cst_cd_beschikking;
+                   passend_1618444314050332051 = tranwrd(passend_1618444314050332051,'9D'x,'D0'x);
                    put passend_1618444314050332051 ~ @;
               end;
        if missing(Cor_id_beschikking)
@@ -12229,6 +12675,7 @@ data _null_;
                    if attrLengte_3284761973742663624 > max(maxPassend_3284761973742663624,1000)
                      then passend_3284761973742663624 = substr(Tra_cd_beschikking_1,1,maxPassend_3284761973742663624);
                      else passend_3284761973742663624 = Tra_cd_beschikking_1;
+                   passend_3284761973742663624 = tranwrd(passend_3284761973742663624,'9D'x,'D0'x);
                    put passend_3284761973742663624 ~ @;
               end;
        if missing(Tra_bedrag_beschikking_1)
@@ -12246,6 +12693,7 @@ data _null_;
                    if attrLengte_3284761973792996481 > max(maxPassend_3284761973792996481,1000)
                      then passend_3284761973792996481 = substr(Tra_cd_beschikking_2,1,maxPassend_3284761973792996481);
                      else passend_3284761973792996481 = Tra_cd_beschikking_2;
+                   passend_3284761973792996481 = tranwrd(passend_3284761973792996481,'9D'x,'D0'x);
                    put passend_3284761973792996481 ~ @;
               end;
        if missing(Tra_bedrag_beschikking_2)
@@ -12272,6 +12720,7 @@ data _null_;
                    if attrLengte_893891387222724231 > max(maxPassend_893891387222724231,1000)
                      then passend_893891387222724231 = substr(Tra_cd_afd,1,maxPassend_893891387222724231);
                      else passend_893891387222724231 = Tra_cd_afd;
+                   passend_893891387222724231 = tranwrd(passend_893891387222724231,'9D'x,'D0'x);
                    put passend_893891387222724231 ~ @;
               end;
        if missing(Vordering_tra_id_afd)
@@ -12289,6 +12738,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Creatie_dat)
@@ -12303,6 +12753,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        put techId best12. ; 
@@ -12370,6 +12821,7 @@ data _null_;
                    if attrLengte_2858454071017162451 > max(maxPassend_2858454071017162451,1000)
                      then passend_2858454071017162451 = substr(Fnc_cd,1,maxPassend_2858454071017162451);
                      else passend_2858454071017162451 = Fnc_cd;
+                   passend_2858454071017162451 = tranwrd(passend_2858454071017162451,'9D'x,'D0'x);
                    put passend_2858454071017162451 ~ @;
               end;
        if missing(Oms)
@@ -12381,6 +12833,7 @@ data _null_;
                    if attrLengte_4632406013654397950 > max(maxPassend_4632406013654397950,1000)
                      then passend_4632406013654397950 = substr(Oms,1,maxPassend_4632406013654397950);
                      else passend_4632406013654397950 = Oms;
+                   passend_4632406013654397950 = tranwrd(passend_4632406013654397950,'9D'x,'D0'x);
                    put passend_4632406013654397950 ~ @;
               end;
        if missing(Creatie_dat)
@@ -12395,6 +12848,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -12409,6 +12863,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -12476,6 +12931,7 @@ data _null_;
                    if attrLengte_2858454071017162451 > max(maxPassend_2858454071017162451,1000)
                      then passend_2858454071017162451 = substr(Fnc_cd,1,maxPassend_2858454071017162451);
                      else passend_2858454071017162451 = Fnc_cd;
+                   passend_2858454071017162451 = tranwrd(passend_2858454071017162451,'9D'x,'D0'x);
                    put passend_2858454071017162451 ~ @;
               end;
        if missing(Cst_cd)
@@ -12487,6 +12943,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Creatie_dat)
@@ -12501,6 +12958,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -12515,6 +12973,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -12688,6 +13147,7 @@ data _null_;
                    if attrLengte_6111452580688960292 > max(maxPassend_6111452580688960292,1000)
                      then passend_6111452580688960292 = substr(Jz_nr,1,maxPassend_6111452580688960292);
                      else passend_6111452580688960292 = Jz_nr;
+                   passend_6111452580688960292 = tranwrd(passend_6111452580688960292,'9D'x,'D0'x);
                    put passend_6111452580688960292 ~ @;
               end;
        if missing(Jz_id)
@@ -12702,6 +13162,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Ssg_cd)
@@ -12713,6 +13174,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Dos_id)
@@ -12730,6 +13192,7 @@ data _null_;
                    if attrLengte_8704665109529255687 > max(maxPassend_8704665109529255687,1000)
                      then passend_8704665109529255687 = substr(Dos_sts_cd,1,maxPassend_8704665109529255687);
                      else passend_8704665109529255687 = Dos_sts_cd;
+                   passend_8704665109529255687 = tranwrd(passend_8704665109529255687,'9D'x,'D0'x);
                    put passend_8704665109529255687 ~ @;
               end;
        if missing(Dos_ssg_cd)
@@ -12741,6 +13204,7 @@ data _null_;
                    if attrLengte_3975328648468529066 > max(maxPassend_3975328648468529066,1000)
                      then passend_3975328648468529066 = substr(Dos_ssg_cd,1,maxPassend_3975328648468529066);
                      else passend_3975328648468529066 = Dos_ssg_cd;
+                   passend_3975328648468529066 = tranwrd(passend_3975328648468529066,'9D'x,'D0'x);
                    put passend_3975328648468529066 ~ @;
               end;
        if missing(Indieningsdatum)
@@ -12764,6 +13228,7 @@ data _null_;
                    if attrLengte_2449201397129185301 > max(maxPassend_2449201397129185301,1000)
                      then passend_2449201397129185301 = substr(Notities,1,maxPassend_2449201397129185301);
                      else passend_2449201397129185301 = Notities;
+                   passend_2449201397129185301 = tranwrd(passend_2449201397129185301,'9D'x,'D0'x);
                    put passend_2449201397129185301 ~ @;
               end;
        if missing(Proc_type)
@@ -12775,6 +13240,7 @@ data _null_;
                    if attrLengte_1946813900853856696 > max(maxPassend_1946813900853856696,1000)
                      then passend_1946813900853856696 = substr(Proc_type,1,maxPassend_1946813900853856696);
                      else passend_1946813900853856696 = Proc_type;
+                   passend_1946813900853856696 = tranwrd(passend_1946813900853856696,'9D'x,'D0'x);
                    put passend_1946813900853856696 ~ @;
               end;
        if missing(Jzm_bezwaar)
@@ -12786,6 +13252,7 @@ data _null_;
                    if attrLengte_6207017692359907203 > max(maxPassend_6207017692359907203,1000)
                      then passend_6207017692359907203 = substr(Jzm_bezwaar,1,maxPassend_6207017692359907203);
                      else passend_6207017692359907203 = Jzm_bezwaar;
+                   passend_6207017692359907203 = tranwrd(passend_6207017692359907203,'9D'x,'D0'x);
                    put passend_6207017692359907203 ~ @;
               end;
        if missing(Jzm_beroep)
@@ -12797,6 +13264,7 @@ data _null_;
                    if attrLengte_2710170433705167747 > max(maxPassend_2710170433705167747,1000)
                      then passend_2710170433705167747 = substr(Jzm_beroep,1,maxPassend_2710170433705167747);
                      else passend_2710170433705167747 = Jzm_beroep;
+                   passend_2710170433705167747 = tranwrd(passend_2710170433705167747,'9D'x,'D0'x);
                    put passend_2710170433705167747 ~ @;
               end;
        if missing(Jzm_hoger_beroep)
@@ -12808,6 +13276,7 @@ data _null_;
                    if attrLengte_6428897205158791533 > max(maxPassend_6428897205158791533,1000)
                      then passend_6428897205158791533 = substr(Jzm_hoger_beroep,1,maxPassend_6428897205158791533);
                      else passend_6428897205158791533 = Jzm_hoger_beroep;
+                   passend_6428897205158791533 = tranwrd(passend_6428897205158791533,'9D'x,'D0'x);
                    put passend_6428897205158791533 ~ @;
               end;
        if missing(Jzm_verz_schadeverg)
@@ -12819,6 +13288,7 @@ data _null_;
                    if attrLengte_5713014069952143271 > max(maxPassend_5713014069952143271,1000)
                      then passend_5713014069952143271 = substr(Jzm_verz_schadeverg,1,maxPassend_5713014069952143271);
                      else passend_5713014069952143271 = Jzm_verz_schadeverg;
+                   passend_5713014069952143271 = tranwrd(passend_5713014069952143271,'9D'x,'D0'x);
                    put passend_5713014069952143271 ~ @;
               end;
        if missing(Actuele_beh_mdw_id)
@@ -12833,6 +13303,7 @@ data _null_;
                    if attrLengte_5126695414912762741 > max(maxPassend_5126695414912762741,1000)
                      then passend_5126695414912762741 = substr(Actuele_beh_rol_cd,1,maxPassend_5126695414912762741);
                      else passend_5126695414912762741 = Actuele_beh_rol_cd;
+                   passend_5126695414912762741 = tranwrd(passend_5126695414912762741,'9D'x,'D0'x);
                    put passend_5126695414912762741 ~ @;
               end;
        if missing(Problematiekcode)
@@ -12850,6 +13321,7 @@ data _null_;
                    if attrLengte_1676697733324279600 > max(maxPassend_1676697733324279600,1000)
                      then passend_1676697733324279600 = substr(Aard_bob,1,maxPassend_1676697733324279600);
                      else passend_1676697733324279600 = Aard_bob;
+                   passend_1676697733324279600 = tranwrd(passend_1676697733324279600,'9D'x,'D0'x);
                    put passend_1676697733324279600 ~ @;
               end;
        if missing(Creatie_user)
@@ -12861,6 +13333,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -12875,6 +13348,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -12892,6 +13366,7 @@ data _null_;
                    if attrLengte_1346401069541862097 > max(maxPassend_1346401069541862097,1000)
                      then passend_1346401069541862097 = substr(Hoofdproces,1,maxPassend_1346401069541862097);
                      else passend_1346401069541862097 = Hoofdproces;
+                   passend_1346401069541862097 = tranwrd(passend_1346401069541862097,'9D'x,'D0'x);
                    put passend_1346401069541862097 ~ @;
               end;
        put techId best12. ; 
@@ -12967,6 +13442,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Cst_cd)
@@ -12978,6 +13454,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Reactie_cd)
@@ -12989,6 +13466,7 @@ data _null_;
                    if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
+                   passend_4412363972584569639 = tranwrd(passend_4412363972584569639,'9D'x,'D0'x);
                    put passend_4412363972584569639 ~ @;
               end;
        if missing(Termijn)
@@ -13003,6 +13481,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -13017,6 +13496,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -13124,6 +13604,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Ssg_cd)
@@ -13135,6 +13616,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Commentaar)
@@ -13146,6 +13628,7 @@ data _null_;
                    if attrLengte_4287257797458721857 > max(maxPassend_4287257797458721857,1000)
                      then passend_4287257797458721857 = substr(Commentaar,1,maxPassend_4287257797458721857);
                      else passend_4287257797458721857 = Commentaar;
+                   passend_4287257797458721857 = tranwrd(passend_4287257797458721857,'9D'x,'D0'x);
                    put passend_4287257797458721857 ~ @;
               end;
        if missing(Creatie_user)
@@ -13157,6 +13640,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -13171,6 +13655,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -13246,6 +13731,7 @@ data _null_;
                    if attrLengte_7079888756117315669 > max(maxPassend_7079888756117315669,1000)
                      then passend_7079888756117315669 = substr(Uitspraak,1,maxPassend_7079888756117315669);
                      else passend_7079888756117315669 = Uitspraak;
+                   passend_7079888756117315669 = tranwrd(passend_7079888756117315669,'9D'x,'D0'x);
                    put passend_7079888756117315669 ~ @;
               end;
        if missing(Creatie_user)
@@ -13257,6 +13743,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -13271,6 +13758,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -13393,6 +13881,7 @@ data _null_;
                    if attrLengte_5799857564552390002 > max(maxPassend_5799857564552390002,1000)
                      then passend_5799857564552390002 = substr(Bik_cd,1,maxPassend_5799857564552390002);
                      else passend_5799857564552390002 = Bik_cd;
+                   passend_5799857564552390002 = tranwrd(passend_5799857564552390002,'9D'x,'D0'x);
                    put passend_5799857564552390002 ~ @;
               end;
        if missing(Bik_oms)
@@ -13404,6 +13893,7 @@ data _null_;
                    if attrLengte_6668963671176742215 > max(maxPassend_6668963671176742215,1000)
                      then passend_6668963671176742215 = substr(Bik_oms,1,maxPassend_6668963671176742215);
                      else passend_6668963671176742215 = Bik_oms;
+                   passend_6668963671176742215 = tranwrd(passend_6668963671176742215,'9D'x,'D0'x);
                    put passend_6668963671176742215 ~ @;
               end;
        if missing(Bouwtype)
@@ -13415,6 +13905,7 @@ data _null_;
                    if attrLengte_733089510000349211 > max(maxPassend_733089510000349211,1000)
                      then passend_733089510000349211 = substr(Bouwtype,1,maxPassend_733089510000349211);
                      else passend_733089510000349211 = Bouwtype;
+                   passend_733089510000349211 = tranwrd(passend_733089510000349211,'9D'x,'D0'x);
                    put passend_733089510000349211 ~ @;
               end;
        if missing(Creatie_dat)
@@ -13429,6 +13920,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Dos_id)
@@ -13446,6 +13938,7 @@ data _null_;
                    if attrLengte_8764637515045443581 > max(maxPassend_8764637515045443581,1000)
                      then passend_8764637515045443581 = substr(Extra_gegevens,1,maxPassend_8764637515045443581);
                      else passend_8764637515045443581 = Extra_gegevens;
+                   passend_8764637515045443581 = tranwrd(passend_8764637515045443581,'9D'x,'D0'x);
                    put passend_8764637515045443581 ~ @;
               end;
        if missing(Huisnr)
@@ -13457,6 +13950,7 @@ data _null_;
                    if attrLengte_8529368505635133627 > max(maxPassend_8529368505635133627,1000)
                      then passend_8529368505635133627 = substr(Huisnr,1,maxPassend_8529368505635133627);
                      else passend_8529368505635133627 = Huisnr;
+                   passend_8529368505635133627 = tranwrd(passend_8529368505635133627,'9D'x,'D0'x);
                    put passend_8529368505635133627 ~ @;
               end;
        if missing(Huisnr_toevoeging)
@@ -13468,6 +13962,7 @@ data _null_;
                    if attrLengte_5583129363718394252 > max(maxPassend_5583129363718394252,1000)
                      then passend_5583129363718394252 = substr(Huisnr_toevoeging,1,maxPassend_5583129363718394252);
                      else passend_5583129363718394252 = Huisnr_toevoeging;
+                   passend_5583129363718394252 = tranwrd(passend_5583129363718394252,'9D'x,'D0'x);
                    put passend_5583129363718394252 ~ @;
               end;
        if missing(Lok_id)
@@ -13485,6 +13980,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Naam)
@@ -13496,6 +13992,7 @@ data _null_;
                    if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
+                   passend_3121428435771779831 = tranwrd(passend_3121428435771779831,'9D'x,'D0'x);
                    put passend_3121428435771779831 ~ @;
               end;
        if missing(Plaats)
@@ -13507,6 +14004,7 @@ data _null_;
                    if attrLengte_2948830150786152657 > max(maxPassend_2948830150786152657,1000)
                      then passend_2948830150786152657 = substr(Plaats,1,maxPassend_2948830150786152657);
                      else passend_2948830150786152657 = Plaats;
+                   passend_2948830150786152657 = tranwrd(passend_2948830150786152657,'9D'x,'D0'x);
                    put passend_2948830150786152657 ~ @;
               end;
        if missing(Postcode)
@@ -13518,6 +14016,7 @@ data _null_;
                    if attrLengte_747405639420864755 > max(maxPassend_747405639420864755,1000)
                      then passend_747405639420864755 = substr(Postcode,1,maxPassend_747405639420864755);
                      else passend_747405639420864755 = Postcode;
+                   passend_747405639420864755 = tranwrd(passend_747405639420864755,'9D'x,'D0'x);
                    put passend_747405639420864755 ~ @;
               end;
        if missing(Prg_id)
@@ -13532,6 +14031,7 @@ data _null_;
                    if attrLengte_4343629645042543530 > max(maxPassend_4343629645042543530,1000)
                      then passend_4343629645042543530 = substr(Provincie,1,maxPassend_4343629645042543530);
                      else passend_4343629645042543530 = Provincie;
+                   passend_4343629645042543530 = tranwrd(passend_4343629645042543530,'9D'x,'D0'x);
                    put passend_4343629645042543530 ~ @;
               end;
        if missing(Straat)
@@ -13543,6 +14043,7 @@ data _null_;
                    if attrLengte_367421360090322077 > max(maxPassend_367421360090322077,1000)
                      then passend_367421360090322077 = substr(Straat,1,maxPassend_367421360090322077);
                      else passend_367421360090322077 = Straat;
+                   passend_367421360090322077 = tranwrd(passend_367421360090322077,'9D'x,'D0'x);
                    put passend_367421360090322077 ~ @;
               end;
        put techId best12. ; 
@@ -13722,6 +14223,7 @@ data _null_;
                    if attrLengte_7250693880212314974 > max(maxPassend_7250693880212314974,1000)
                      then passend_7250693880212314974 = substr(Mutatie_srt,1,maxPassend_7250693880212314974);
                      else passend_7250693880212314974 = Mutatie_srt;
+                   passend_7250693880212314974 = tranwrd(passend_7250693880212314974,'9D'x,'D0'x);
                    put passend_7250693880212314974 ~ @;
               end;
        if missing(Mutatie_ind)
@@ -13733,6 +14235,7 @@ data _null_;
                    if attrLengte_9147425939904536828 > max(maxPassend_9147425939904536828,1000)
                      then passend_9147425939904536828 = substr(Mutatie_ind,1,maxPassend_9147425939904536828);
                      else passend_9147425939904536828 = Mutatie_ind;
+                   passend_9147425939904536828 = tranwrd(passend_9147425939904536828,'9D'x,'D0'x);
                    put passend_9147425939904536828 ~ @;
               end;
        if missing(Old_cijfer)
@@ -13744,6 +14247,7 @@ data _null_;
                    if attrLengte_3173001277403718267 > max(maxPassend_3173001277403718267,1000)
                      then passend_3173001277403718267 = substr(Old_cijfer,1,maxPassend_3173001277403718267);
                      else passend_3173001277403718267 = Old_cijfer;
+                   passend_3173001277403718267 = tranwrd(passend_3173001277403718267,'9D'x,'D0'x);
                    put passend_3173001277403718267 ~ @;
               end;
        if missing(Old_letter)
@@ -13755,6 +14259,7 @@ data _null_;
                    if attrLengte_530137093424999580 > max(maxPassend_530137093424999580,1000)
                      then passend_530137093424999580 = substr(Old_letter,1,maxPassend_530137093424999580);
                      else passend_530137093424999580 = Old_letter;
+                   passend_530137093424999580 = tranwrd(passend_530137093424999580,'9D'x,'D0'x);
                    put passend_530137093424999580 ~ @;
               end;
        if missing(Old_reeksindicatie)
@@ -13766,6 +14271,7 @@ data _null_;
                    if attrLengte_8129953195777226016 > max(maxPassend_8129953195777226016,1000)
                      then passend_8129953195777226016 = substr(Old_reeksindicatie,1,maxPassend_8129953195777226016);
                      else passend_8129953195777226016 = Old_reeksindicatie;
+                   passend_8129953195777226016 = tranwrd(passend_8129953195777226016,'9D'x,'D0'x);
                    put passend_8129953195777226016 ~ @;
               end;
        if missing(Old_codebreekpunt_van)
@@ -13777,6 +14283,7 @@ data _null_;
                    if attrLengte_5138969292331377232 > max(maxPassend_5138969292331377232,1000)
                      then passend_5138969292331377232 = substr(Old_codebreekpunt_van,1,maxPassend_5138969292331377232);
                      else passend_5138969292331377232 = Old_codebreekpunt_van;
+                   passend_5138969292331377232 = tranwrd(passend_5138969292331377232,'9D'x,'D0'x);
                    put passend_5138969292331377232 ~ @;
               end;
        if missing(Old_codebreekpunt_tm)
@@ -13788,6 +14295,7 @@ data _null_;
                    if attrLengte_7922483400467009369 > max(maxPassend_7922483400467009369,1000)
                      then passend_7922483400467009369 = substr(Old_codebreekpunt_tm,1,maxPassend_7922483400467009369);
                      else passend_7922483400467009369 = Old_codebreekpunt_tm;
+                   passend_7922483400467009369 = tranwrd(passend_7922483400467009369,'9D'x,'D0'x);
                    put passend_7922483400467009369 ~ @;
               end;
        if missing(Old_woonplaatsnaam_ptt)
@@ -13799,6 +14307,7 @@ data _null_;
                    if attrLengte_1540560090221989888 > max(maxPassend_1540560090221989888,1000)
                      then passend_1540560090221989888 = substr(Old_woonplaatsnaam_ptt,1,maxPassend_1540560090221989888);
                      else passend_1540560090221989888 = Old_woonplaatsnaam_ptt;
+                   passend_1540560090221989888 = tranwrd(passend_1540560090221989888,'9D'x,'D0'x);
                    put passend_1540560090221989888 ~ @;
               end;
        if missing(Old_woonplaatsnaam_nen)
@@ -13810,6 +14319,7 @@ data _null_;
                    if attrLengte_3523597521227454223 > max(maxPassend_3523597521227454223,1000)
                      then passend_3523597521227454223 = substr(Old_woonplaatsnaam_nen,1,maxPassend_3523597521227454223);
                      else passend_3523597521227454223 = Old_woonplaatsnaam_nen;
+                   passend_3523597521227454223 = tranwrd(passend_3523597521227454223,'9D'x,'D0'x);
                    put passend_3523597521227454223 ~ @;
               end;
        if missing(Old_straatnaam_ptt)
@@ -13821,6 +14331,7 @@ data _null_;
                    if attrLengte_5102415678729774973 > max(maxPassend_5102415678729774973,1000)
                      then passend_5102415678729774973 = substr(Old_straatnaam_ptt,1,maxPassend_5102415678729774973);
                      else passend_5102415678729774973 = Old_straatnaam_ptt;
+                   passend_5102415678729774973 = tranwrd(passend_5102415678729774973,'9D'x,'D0'x);
                    put passend_5102415678729774973 ~ @;
               end;
        if missing(Old_straatnaam_nen)
@@ -13832,6 +14343,7 @@ data _null_;
                    if attrLengte_1661300520083600510 > max(maxPassend_1661300520083600510,1000)
                      then passend_1661300520083600510 = substr(Old_straatnaam_nen,1,maxPassend_1661300520083600510);
                      else passend_1661300520083600510 = Old_straatnaam_nen;
+                   passend_1661300520083600510 = tranwrd(passend_1661300520083600510,'9D'x,'D0'x);
                    put passend_1661300520083600510 ~ @;
               end;
        if missing(Old_straatnaam_off)
@@ -13843,6 +14355,7 @@ data _null_;
                    if attrLengte_2054813268613832566 > max(maxPassend_2054813268613832566,1000)
                      then passend_2054813268613832566 = substr(Old_straatnaam_off,1,maxPassend_2054813268613832566);
                      else passend_2054813268613832566 = Old_straatnaam_off;
+                   passend_2054813268613832566 = tranwrd(passend_2054813268613832566,'9D'x,'D0'x);
                    put passend_2054813268613832566 ~ @;
               end;
        if missing(Old_extract_woonplaats)
@@ -13854,6 +14367,7 @@ data _null_;
                    if attrLengte_3247069511580703390 > max(maxPassend_3247069511580703390,1000)
                      then passend_3247069511580703390 = substr(Old_extract_woonplaats,1,maxPassend_3247069511580703390);
                      else passend_3247069511580703390 = Old_extract_woonplaats;
+                   passend_3247069511580703390 = tranwrd(passend_3247069511580703390,'9D'x,'D0'x);
                    put passend_3247069511580703390 ~ @;
               end;
        if missing(Old_extract_straatnaam)
@@ -13865,6 +14379,7 @@ data _null_;
                    if attrLengte_3278774028479216594 > max(maxPassend_3278774028479216594,1000)
                      then passend_3278774028479216594 = substr(Old_extract_straatnaam,1,maxPassend_3278774028479216594);
                      else passend_3278774028479216594 = Old_extract_straatnaam;
+                   passend_3278774028479216594 = tranwrd(passend_3278774028479216594,'9D'x,'D0'x);
                    put passend_3278774028479216594 ~ @;
               end;
        if missing(Old_gemeentecode)
@@ -13876,6 +14391,7 @@ data _null_;
                    if attrLengte_1917443286006337527 > max(maxPassend_1917443286006337527,1000)
                      then passend_1917443286006337527 = substr(Old_gemeentecode,1,maxPassend_1917443286006337527);
                      else passend_1917443286006337527 = Old_gemeentecode;
+                   passend_1917443286006337527 = tranwrd(passend_1917443286006337527,'9D'x,'D0'x);
                    put passend_1917443286006337527 ~ @;
               end;
        if missing(Old_gemeentenaam)
@@ -13887,6 +14403,7 @@ data _null_;
                    if attrLengte_3365776602087829517 > max(maxPassend_3365776602087829517,1000)
                      then passend_3365776602087829517 = substr(Old_gemeentenaam,1,maxPassend_3365776602087829517);
                      else passend_3365776602087829517 = Old_gemeentenaam;
+                   passend_3365776602087829517 = tranwrd(passend_3365776602087829517,'9D'x,'D0'x);
                    put passend_3365776602087829517 ~ @;
               end;
        if missing(Old_provinciecode)
@@ -13898,6 +14415,7 @@ data _null_;
                    if attrLengte_3669044964299775011 > max(maxPassend_3669044964299775011,1000)
                      then passend_3669044964299775011 = substr(Old_provinciecode,1,maxPassend_3669044964299775011);
                      else passend_3669044964299775011 = Old_provinciecode;
+                   passend_3669044964299775011 = tranwrd(passend_3669044964299775011,'9D'x,'D0'x);
                    put passend_3669044964299775011 ~ @;
               end;
        if missing(Old_cebuco_code)
@@ -13909,6 +14427,7 @@ data _null_;
                    if attrLengte_1372155496571826432 > max(maxPassend_1372155496571826432,1000)
                      then passend_1372155496571826432 = substr(Old_cebuco_code,1,maxPassend_1372155496571826432);
                      else passend_1372155496571826432 = Old_cebuco_code;
+                   passend_1372155496571826432 = tranwrd(passend_1372155496571826432,'9D'x,'D0'x);
                    put passend_1372155496571826432 ~ @;
               end;
        if missing(New_cijfer)
@@ -13920,6 +14439,7 @@ data _null_;
                    if attrLengte_8077792040508706534 > max(maxPassend_8077792040508706534,1000)
                      then passend_8077792040508706534 = substr(New_cijfer,1,maxPassend_8077792040508706534);
                      else passend_8077792040508706534 = New_cijfer;
+                   passend_8077792040508706534 = tranwrd(passend_8077792040508706534,'9D'x,'D0'x);
                    put passend_8077792040508706534 ~ @;
               end;
        if missing(New_letter)
@@ -13931,6 +14451,7 @@ data _null_;
                    if attrLengte_8213088235365646527 > max(maxPassend_8213088235365646527,1000)
                      then passend_8213088235365646527 = substr(New_letter,1,maxPassend_8213088235365646527);
                      else passend_8213088235365646527 = New_letter;
+                   passend_8213088235365646527 = tranwrd(passend_8213088235365646527,'9D'x,'D0'x);
                    put passend_8213088235365646527 ~ @;
               end;
        if missing(New_reeksindicatie)
@@ -13942,6 +14463,7 @@ data _null_;
                    if attrLengte_5223730194662017737 > max(maxPassend_5223730194662017737,1000)
                      then passend_5223730194662017737 = substr(New_reeksindicatie,1,maxPassend_5223730194662017737);
                      else passend_5223730194662017737 = New_reeksindicatie;
+                   passend_5223730194662017737 = tranwrd(passend_5223730194662017737,'9D'x,'D0'x);
                    put passend_5223730194662017737 ~ @;
               end;
        if missing(New_codebreekpunt_van)
@@ -13953,6 +14475,7 @@ data _null_;
                    if attrLengte_8051144216959963729 > max(maxPassend_8051144216959963729,1000)
                      then passend_8051144216959963729 = substr(New_codebreekpunt_van,1,maxPassend_8051144216959963729);
                      else passend_8051144216959963729 = New_codebreekpunt_van;
+                   passend_8051144216959963729 = tranwrd(passend_8051144216959963729,'9D'x,'D0'x);
                    put passend_8051144216959963729 ~ @;
               end;
        if missing(New_codebreekpunt_tm)
@@ -13964,6 +14487,7 @@ data _null_;
                    if attrLengte_3767999090745901446 > max(maxPassend_3767999090745901446,1000)
                      then passend_3767999090745901446 = substr(New_codebreekpunt_tm,1,maxPassend_3767999090745901446);
                      else passend_3767999090745901446 = New_codebreekpunt_tm;
+                   passend_3767999090745901446 = tranwrd(passend_3767999090745901446,'9D'x,'D0'x);
                    put passend_3767999090745901446 ~ @;
               end;
        if missing(New_woonplaatsnaam_ptt)
@@ -13975,6 +14499,7 @@ data _null_;
                    if attrLengte_2786646432340601707 > max(maxPassend_2786646432340601707,1000)
                      then passend_2786646432340601707 = substr(New_woonplaatsnaam_ptt,1,maxPassend_2786646432340601707);
                      else passend_2786646432340601707 = New_woonplaatsnaam_ptt;
+                   passend_2786646432340601707 = tranwrd(passend_2786646432340601707,'9D'x,'D0'x);
                    put passend_2786646432340601707 ~ @;
               end;
        if missing(New_woonplaatsnaam_nen)
@@ -13986,6 +14511,7 @@ data _null_;
                    if attrLengte_7388636093498186804 > max(maxPassend_7388636093498186804,1000)
                      then passend_7388636093498186804 = substr(New_woonplaatsnaam_nen,1,maxPassend_7388636093498186804);
                      else passend_7388636093498186804 = New_woonplaatsnaam_nen;
+                   passend_7388636093498186804 = tranwrd(passend_7388636093498186804,'9D'x,'D0'x);
                    put passend_7388636093498186804 ~ @;
               end;
        if missing(New_straatnaam_ptt)
@@ -13997,6 +14523,7 @@ data _null_;
                    if attrLengte_438267695295932282 > max(maxPassend_438267695295932282,1000)
                      then passend_438267695295932282 = substr(New_straatnaam_ptt,1,maxPassend_438267695295932282);
                      else passend_438267695295932282 = New_straatnaam_ptt;
+                   passend_438267695295932282 = tranwrd(passend_438267695295932282,'9D'x,'D0'x);
                    put passend_438267695295932282 ~ @;
               end;
        if missing(New_straatnaam_nen)
@@ -14008,6 +14535,7 @@ data _null_;
                    if attrLengte_219554580145408837 > max(maxPassend_219554580145408837,1000)
                      then passend_219554580145408837 = substr(New_straatnaam_nen,1,maxPassend_219554580145408837);
                      else passend_219554580145408837 = New_straatnaam_nen;
+                   passend_219554580145408837 = tranwrd(passend_219554580145408837,'9D'x,'D0'x);
                    put passend_219554580145408837 ~ @;
               end;
        if missing(New_straatnaam_off)
@@ -14019,6 +14547,7 @@ data _null_;
                    if attrLengte_118786421849122903 > max(maxPassend_118786421849122903,1000)
                      then passend_118786421849122903 = substr(New_straatnaam_off,1,maxPassend_118786421849122903);
                      else passend_118786421849122903 = New_straatnaam_off;
+                   passend_118786421849122903 = tranwrd(passend_118786421849122903,'9D'x,'D0'x);
                    put passend_118786421849122903 ~ @;
               end;
        if missing(New_extract_woonplaats)
@@ -14030,6 +14559,7 @@ data _null_;
                    if attrLengte_1763981602898539863 > max(maxPassend_1763981602898539863,1000)
                      then passend_1763981602898539863 = substr(New_extract_woonplaats,1,maxPassend_1763981602898539863);
                      else passend_1763981602898539863 = New_extract_woonplaats;
+                   passend_1763981602898539863 = tranwrd(passend_1763981602898539863,'9D'x,'D0'x);
                    put passend_1763981602898539863 ~ @;
               end;
        if missing(New_extract_straatnaam)
@@ -14041,6 +14571,7 @@ data _null_;
                    if attrLengte_2346456890105101627 > max(maxPassend_2346456890105101627,1000)
                      then passend_2346456890105101627 = substr(New_extract_straatnaam,1,maxPassend_2346456890105101627);
                      else passend_2346456890105101627 = New_extract_straatnaam;
+                   passend_2346456890105101627 = tranwrd(passend_2346456890105101627,'9D'x,'D0'x);
                    put passend_2346456890105101627 ~ @;
               end;
        if missing(New_gemeentecode)
@@ -14052,6 +14583,7 @@ data _null_;
                    if attrLengte_1281203927814949840 > max(maxPassend_1281203927814949840,1000)
                      then passend_1281203927814949840 = substr(New_gemeentecode,1,maxPassend_1281203927814949840);
                      else passend_1281203927814949840 = New_gemeentecode;
+                   passend_1281203927814949840 = tranwrd(passend_1281203927814949840,'9D'x,'D0'x);
                    put passend_1281203927814949840 ~ @;
               end;
        if missing(New_gemeentenaam)
@@ -14063,6 +14595,7 @@ data _null_;
                    if attrLengte_2566451087127917058 > max(maxPassend_2566451087127917058,1000)
                      then passend_2566451087127917058 = substr(New_gemeentenaam,1,maxPassend_2566451087127917058);
                      else passend_2566451087127917058 = New_gemeentenaam;
+                   passend_2566451087127917058 = tranwrd(passend_2566451087127917058,'9D'x,'D0'x);
                    put passend_2566451087127917058 ~ @;
               end;
        if missing(New_provinciecode)
@@ -14074,6 +14607,7 @@ data _null_;
                    if attrLengte_3954932300489292346 > max(maxPassend_3954932300489292346,1000)
                      then passend_3954932300489292346 = substr(New_provinciecode,1,maxPassend_3954932300489292346);
                      else passend_3954932300489292346 = New_provinciecode;
+                   passend_3954932300489292346 = tranwrd(passend_3954932300489292346,'9D'x,'D0'x);
                    put passend_3954932300489292346 ~ @;
               end;
        if missing(New_cebuco_code)
@@ -14085,6 +14619,7 @@ data _null_;
                    if attrLengte_8171271901830781513 > max(maxPassend_8171271901830781513,1000)
                      then passend_8171271901830781513 = substr(New_cebuco_code,1,maxPassend_8171271901830781513);
                      else passend_8171271901830781513 = New_cebuco_code;
+                   passend_8171271901830781513 = tranwrd(passend_8171271901830781513,'9D'x,'D0'x);
                    put passend_8171271901830781513 ~ @;
               end;
        put techId best12. ; 
@@ -14192,6 +14727,7 @@ data _null_;
                    if attrLengte_7658064378769085315 > max(maxPassend_7658064378769085315,1000)
                      then passend_7658064378769085315 = substr(Cijfer,1,maxPassend_7658064378769085315);
                      else passend_7658064378769085315 = Cijfer;
+                   passend_7658064378769085315 = tranwrd(passend_7658064378769085315,'9D'x,'D0'x);
                    put passend_7658064378769085315 ~ @;
               end;
        if missing(Letter)
@@ -14203,6 +14739,7 @@ data _null_;
                    if attrLengte_229837512413899150 > max(maxPassend_229837512413899150,1000)
                      then passend_229837512413899150 = substr(Letter,1,maxPassend_229837512413899150);
                      else passend_229837512413899150 = Letter;
+                   passend_229837512413899150 = tranwrd(passend_229837512413899150,'9D'x,'D0'x);
                    put passend_229837512413899150 ~ @;
               end;
        if missing(Reeksindicatie)
@@ -14214,6 +14751,7 @@ data _null_;
                    if attrLengte_3757180471494144886 > max(maxPassend_3757180471494144886,1000)
                      then passend_3757180471494144886 = substr(Reeksindicatie,1,maxPassend_3757180471494144886);
                      else passend_3757180471494144886 = Reeksindicatie;
+                   passend_3757180471494144886 = tranwrd(passend_3757180471494144886,'9D'x,'D0'x);
                    put passend_3757180471494144886 ~ @;
               end;
        if missing(Codebreekpunt_van)
@@ -14225,6 +14763,7 @@ data _null_;
                    if attrLengte_7194970507938686150 > max(maxPassend_7194970507938686150,1000)
                      then passend_7194970507938686150 = substr(Codebreekpunt_van,1,maxPassend_7194970507938686150);
                      else passend_7194970507938686150 = Codebreekpunt_van;
+                   passend_7194970507938686150 = tranwrd(passend_7194970507938686150,'9D'x,'D0'x);
                    put passend_7194970507938686150 ~ @;
               end;
        if missing(Codebreekpunt_tm)
@@ -14236,6 +14775,7 @@ data _null_;
                    if attrLengte_6591420947937743793 > max(maxPassend_6591420947937743793,1000)
                      then passend_6591420947937743793 = substr(Codebreekpunt_tm,1,maxPassend_6591420947937743793);
                      else passend_6591420947937743793 = Codebreekpunt_tm;
+                   passend_6591420947937743793 = tranwrd(passend_6591420947937743793,'9D'x,'D0'x);
                    put passend_6591420947937743793 ~ @;
               end;
        if missing(Woonplaatsnaam_ptt)
@@ -14247,6 +14787,7 @@ data _null_;
                    if attrLengte_5025548497113877842 > max(maxPassend_5025548497113877842,1000)
                      then passend_5025548497113877842 = substr(Woonplaatsnaam_ptt,1,maxPassend_5025548497113877842);
                      else passend_5025548497113877842 = Woonplaatsnaam_ptt;
+                   passend_5025548497113877842 = tranwrd(passend_5025548497113877842,'9D'x,'D0'x);
                    put passend_5025548497113877842 ~ @;
               end;
        if missing(Woonplaatsnaam_nen)
@@ -14258,6 +14799,7 @@ data _null_;
                    if attrLengte_4559868662858897319 > max(maxPassend_4559868662858897319,1000)
                      then passend_4559868662858897319 = substr(Woonplaatsnaam_nen,1,maxPassend_4559868662858897319);
                      else passend_4559868662858897319 = Woonplaatsnaam_nen;
+                   passend_4559868662858897319 = tranwrd(passend_4559868662858897319,'9D'x,'D0'x);
                    put passend_4559868662858897319 ~ @;
               end;
        if missing(Straatnaam_ptt)
@@ -14269,6 +14811,7 @@ data _null_;
                    if attrLengte_4555017436313506669 > max(maxPassend_4555017436313506669,1000)
                      then passend_4555017436313506669 = substr(Straatnaam_ptt,1,maxPassend_4555017436313506669);
                      else passend_4555017436313506669 = Straatnaam_ptt;
+                   passend_4555017436313506669 = tranwrd(passend_4555017436313506669,'9D'x,'D0'x);
                    put passend_4555017436313506669 ~ @;
               end;
        if missing(Straatnaam_nen)
@@ -14280,6 +14823,7 @@ data _null_;
                    if attrLengte_3644383055734111220 > max(maxPassend_3644383055734111220,1000)
                      then passend_3644383055734111220 = substr(Straatnaam_nen,1,maxPassend_3644383055734111220);
                      else passend_3644383055734111220 = Straatnaam_nen;
+                   passend_3644383055734111220 = tranwrd(passend_3644383055734111220,'9D'x,'D0'x);
                    put passend_3644383055734111220 ~ @;
               end;
        if missing(Straatnaam_off)
@@ -14291,6 +14835,7 @@ data _null_;
                    if attrLengte_3964708792430647144 > max(maxPassend_3964708792430647144,1000)
                      then passend_3964708792430647144 = substr(Straatnaam_off,1,maxPassend_3964708792430647144);
                      else passend_3964708792430647144 = Straatnaam_off;
+                   passend_3964708792430647144 = tranwrd(passend_3964708792430647144,'9D'x,'D0'x);
                    put passend_3964708792430647144 ~ @;
               end;
        if missing(Extract_woonplaats)
@@ -14302,6 +14847,7 @@ data _null_;
                    if attrLengte_3722357102910039792 > max(maxPassend_3722357102910039792,1000)
                      then passend_3722357102910039792 = substr(Extract_woonplaats,1,maxPassend_3722357102910039792);
                      else passend_3722357102910039792 = Extract_woonplaats;
+                   passend_3722357102910039792 = tranwrd(passend_3722357102910039792,'9D'x,'D0'x);
                    put passend_3722357102910039792 ~ @;
               end;
        if missing(Extract_straatnaam)
@@ -14313,6 +14859,7 @@ data _null_;
                    if attrLengte_3775085152733664256 > max(maxPassend_3775085152733664256,1000)
                      then passend_3775085152733664256 = substr(Extract_straatnaam,1,maxPassend_3775085152733664256);
                      else passend_3775085152733664256 = Extract_straatnaam;
+                   passend_3775085152733664256 = tranwrd(passend_3775085152733664256,'9D'x,'D0'x);
                    put passend_3775085152733664256 ~ @;
               end;
        if missing(Gemeentecode)
@@ -14324,6 +14871,7 @@ data _null_;
                    if attrLengte_4677372027206810257 > max(maxPassend_4677372027206810257,1000)
                      then passend_4677372027206810257 = substr(Gemeentecode,1,maxPassend_4677372027206810257);
                      else passend_4677372027206810257 = Gemeentecode;
+                   passend_4677372027206810257 = tranwrd(passend_4677372027206810257,'9D'x,'D0'x);
                    put passend_4677372027206810257 ~ @;
               end;
        if missing(Gemeentenaam)
@@ -14335,6 +14883,7 @@ data _null_;
                    if attrLengte_8271080290582904925 > max(maxPassend_8271080290582904925,1000)
                      then passend_8271080290582904925 = substr(Gemeentenaam,1,maxPassend_8271080290582904925);
                      else passend_8271080290582904925 = Gemeentenaam;
+                   passend_8271080290582904925 = tranwrd(passend_8271080290582904925,'9D'x,'D0'x);
                    put passend_8271080290582904925 ~ @;
               end;
        if missing(Provinciecode)
@@ -14346,6 +14895,7 @@ data _null_;
                    if attrLengte_7107771537890015459 > max(maxPassend_7107771537890015459,1000)
                      then passend_7107771537890015459 = substr(Provinciecode,1,maxPassend_7107771537890015459);
                      else passend_7107771537890015459 = Provinciecode;
+                   passend_7107771537890015459 = tranwrd(passend_7107771537890015459,'9D'x,'D0'x);
                    put passend_7107771537890015459 ~ @;
               end;
        if missing(Cebuco_code)
@@ -14357,6 +14907,7 @@ data _null_;
                    if attrLengte_2946163507944036098 > max(maxPassend_2946163507944036098,1000)
                      then passend_2946163507944036098 = substr(Cebuco_code,1,maxPassend_2946163507944036098);
                      else passend_2946163507944036098 = Cebuco_code;
+                   passend_2946163507944036098 = tranwrd(passend_2946163507944036098,'9D'x,'D0'x);
                    put passend_2946163507944036098 ~ @;
               end;
        put techId best12. ; 
@@ -14440,6 +14991,7 @@ data _null_;
                    if attrLengte_3177944828558768780 > max(maxPassend_3177944828558768780,1000)
                      then passend_3177944828558768780 = substr(Adressoort,1,maxPassend_3177944828558768780);
                      else passend_3177944828558768780 = Adressoort;
+                   passend_3177944828558768780 = tranwrd(passend_3177944828558768780,'9D'x,'D0'x);
                    put passend_3177944828558768780 ~ @;
               end;
        if missing(Creatie_dat)
@@ -14454,6 +15006,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Kkr_gevalideerd)
@@ -14465,6 +15018,7 @@ data _null_;
                    if attrLengte_4275823587113271514 > max(maxPassend_4275823587113271514,1000)
                      then passend_4275823587113271514 = substr(Kkr_gevalideerd,1,maxPassend_4275823587113271514);
                      else passend_4275823587113271514 = Kkr_gevalideerd;
+                   passend_4275823587113271514 = tranwrd(passend_4275823587113271514,'9D'x,'D0'x);
                    put passend_4275823587113271514 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -14479,6 +15033,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rae_id)
@@ -14598,6 +15153,7 @@ data _null_;
                    if attrLengte_8665016732119473417 > max(maxPassend_8665016732119473417,1000)
                      then passend_8665016732119473417 = substr(Barcode,1,maxPassend_8665016732119473417);
                      else passend_8665016732119473417 = Barcode;
+                   passend_8665016732119473417 = tranwrd(passend_8665016732119473417,'9D'x,'D0'x);
                    put passend_8665016732119473417 ~ @;
               end;
        if missing(Creatie_dat)
@@ -14612,6 +15168,7 @@ data _null_;
                    if attrLengte_5059886387476131123 > max(maxPassend_5059886387476131123,1000)
                      then passend_5059886387476131123 = substr(creatie_user,1,maxPassend_5059886387476131123);
                      else passend_5059886387476131123 = creatie_user;
+                   passend_5059886387476131123 = tranwrd(passend_5059886387476131123,'9D'x,'D0'x);
                    put passend_5059886387476131123 ~ @;
               end;
        if missing(Huisnr)
@@ -14626,6 +15183,7 @@ data _null_;
                    if attrLengte_4667993457372067362 > max(maxPassend_4667993457372067362,1000)
                      then passend_4667993457372067362 = substr(Huisnr_toe,1,maxPassend_4667993457372067362);
                      else passend_4667993457372067362 = Huisnr_toe;
+                   passend_4667993457372067362 = tranwrd(passend_4667993457372067362,'9D'x,'D0'x);
                    put passend_4667993457372067362 ~ @;
               end;
        if missing(Ias_id)
@@ -14640,6 +15198,7 @@ data _null_;
                    if attrLengte_83305570222129686 > max(maxPassend_83305570222129686,1000)
                      then passend_83305570222129686 = substr(Landnaam,1,maxPassend_83305570222129686);
                      else passend_83305570222129686 = Landnaam;
+                   passend_83305570222129686 = tranwrd(passend_83305570222129686,'9D'x,'D0'x);
                    put passend_83305570222129686 ~ @;
               end;
        if missing(Locatie_oms)
@@ -14651,6 +15210,7 @@ data _null_;
                    if attrLengte_1299746612561995600 > max(maxPassend_1299746612561995600,1000)
                      then passend_1299746612561995600 = substr(Locatie_oms,1,maxPassend_1299746612561995600);
                      else passend_1299746612561995600 = Locatie_oms;
+                   passend_1299746612561995600 = tranwrd(passend_1299746612561995600,'9D'x,'D0'x);
                    put passend_1299746612561995600 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -14665,6 +15225,7 @@ data _null_;
                    if attrLengte_5480117132585686229 > max(maxPassend_5480117132585686229,1000)
                      then passend_5480117132585686229 = substr(mutatie_user,1,maxPassend_5480117132585686229);
                      else passend_5480117132585686229 = mutatie_user;
+                   passend_5480117132585686229 = tranwrd(passend_5480117132585686229,'9D'x,'D0'x);
                    put passend_5480117132585686229 ~ @;
               end;
        if missing(Plaatsnaam)
@@ -14676,6 +15237,7 @@ data _null_;
                    if attrLengte_4214898722065367578 > max(maxPassend_4214898722065367578,1000)
                      then passend_4214898722065367578 = substr(Plaatsnaam,1,maxPassend_4214898722065367578);
                      else passend_4214898722065367578 = Plaatsnaam;
+                   passend_4214898722065367578 = tranwrd(passend_4214898722065367578,'9D'x,'D0'x);
                    put passend_4214898722065367578 ~ @;
               end;
        if missing(Postcd)
@@ -14687,6 +15249,7 @@ data _null_;
                    if attrLengte_88556948018763879 > max(maxPassend_88556948018763879,1000)
                      then passend_88556948018763879 = substr(Postcd,1,maxPassend_88556948018763879);
                      else passend_88556948018763879 = Postcd;
+                   passend_88556948018763879 = tranwrd(passend_88556948018763879,'9D'x,'D0'x);
                    put passend_88556948018763879 ~ @;
               end;
        if missing(Prov_cd)
@@ -14698,6 +15261,7 @@ data _null_;
                    if attrLengte_5951139656360336036 > max(maxPassend_5951139656360336036,1000)
                      then passend_5951139656360336036 = substr(Prov_cd,1,maxPassend_5951139656360336036);
                      else passend_5951139656360336036 = Prov_cd;
+                   passend_5951139656360336036 = tranwrd(passend_5951139656360336036,'9D'x,'D0'x);
                    put passend_5951139656360336036 ~ @;
               end;
        if missing(Ras_id)
@@ -14712,6 +15276,7 @@ data _null_;
                    if attrLengte_367421360090322077 > max(maxPassend_367421360090322077,1000)
                      then passend_367421360090322077 = substr(Straat,1,maxPassend_367421360090322077);
                      else passend_367421360090322077 = Straat;
+                   passend_367421360090322077 = tranwrd(passend_367421360090322077,'9D'x,'D0'x);
                    put passend_367421360090322077 ~ @;
               end;
        if missing(Validatie)
@@ -14723,6 +15288,7 @@ data _null_;
                    if attrLengte_1422979793511950032 > max(maxPassend_1422979793511950032,1000)
                      then passend_1422979793511950032 = substr(Validatie,1,maxPassend_1422979793511950032);
                      else passend_1422979793511950032 = Validatie;
+                   passend_1422979793511950032 = tranwrd(passend_1422979793511950032,'9D'x,'D0'x);
                    put passend_1422979793511950032 ~ @;
               end;
        put techId best12. ; 
@@ -14801,6 +15367,7 @@ data _null_;
                    if attrLengte_5059886387476131123 > max(maxPassend_5059886387476131123,1000)
                      then passend_5059886387476131123 = substr(creatie_user,1,maxPassend_5059886387476131123);
                      else passend_5059886387476131123 = creatie_user;
+                   passend_5059886387476131123 = tranwrd(passend_5059886387476131123,'9D'x,'D0'x);
                    put passend_5059886387476131123 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -14815,6 +15382,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Org_id)
@@ -14905,6 +15473,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -14919,6 +15488,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rae_id)
@@ -15006,6 +15576,7 @@ data _null_;
                    if attrLengte_386725703920968405 > max(maxPassend_386725703920968405,1000)
                      then passend_386725703920968405 = substr(Com_Cd,1,maxPassend_386725703920968405);
                      else passend_386725703920968405 = Com_Cd;
+                   passend_386725703920968405 = tranwrd(passend_386725703920968405,'9D'x,'D0'x);
                    put passend_386725703920968405 ~ @;
               end;
        if missing(Creatie_dat)
@@ -15020,6 +15591,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -15034,6 +15606,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rca_id)
@@ -15048,6 +15621,7 @@ data _null_;
                    if attrLengte_2003120024500827225 > max(maxPassend_2003120024500827225,1000)
                      then passend_2003120024500827225 = substr(Telnr_email,1,maxPassend_2003120024500827225);
                      else passend_2003120024500827225 = Telnr_email;
+                   passend_2003120024500827225 = tranwrd(passend_2003120024500827225,'9D'x,'D0'x);
                    put passend_2003120024500827225 ~ @;
               end;
        if missing(Referentie)
@@ -15059,6 +15633,7 @@ data _null_;
                    if attrLengte_6085349322089225769 > max(maxPassend_6085349322089225769,1000)
                      then passend_6085349322089225769 = substr(Referentie,1,maxPassend_6085349322089225769);
                      else passend_6085349322089225769 = Referentie;
+                   passend_6085349322089225769 = tranwrd(passend_6085349322089225769,'9D'x,'D0'x);
                    put passend_6085349322089225769 ~ @;
               end;
        put techId best12. ; 
@@ -15158,6 +15733,7 @@ data _null_;
                    if attrLengte_3124176695719313596 > max(maxPassend_3124176695719313596,1000)
                      then passend_3124176695719313596 = substr(Afdeling,1,maxPassend_3124176695719313596);
                      else passend_3124176695719313596 = Afdeling;
+                   passend_3124176695719313596 = tranwrd(passend_3124176695719313596,'9D'x,'D0'x);
                    put passend_3124176695719313596 ~ @;
               end;
        if missing(Certhoud_id)
@@ -15175,6 +15751,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Functie)
@@ -15186,6 +15763,7 @@ data _null_;
                    if attrLengte_6473647470119252579 > max(maxPassend_6473647470119252579,1000)
                      then passend_6473647470119252579 = substr(Functie,1,maxPassend_6473647470119252579);
                      else passend_6473647470119252579 = Functie;
+                   passend_6473647470119252579 = tranwrd(passend_6473647470119252579,'9D'x,'D0'x);
                    put passend_6473647470119252579 ~ @;
               end;
        if missing(Kkr_relatie_id)
@@ -15197,6 +15775,7 @@ data _null_;
                    if attrLengte_5909357663416120533 > max(maxPassend_5909357663416120533,1000)
                      then passend_5909357663416120533 = substr(Kkr_relatie_id,1,maxPassend_5909357663416120533);
                      else passend_5909357663416120533 = Kkr_relatie_id;
+                   passend_5909357663416120533 = tranwrd(passend_5909357663416120533,'9D'x,'D0'x);
                    put passend_5909357663416120533 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -15211,6 +15790,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Notitie)
@@ -15222,6 +15802,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Org_id)
@@ -15239,6 +15820,7 @@ data _null_;
                    if attrLengte_4695035597672197297 > max(maxPassend_4695035597672197297,1000)
                      then passend_4695035597672197297 = substr(Ref_kkr_relatie_id,1,maxPassend_4695035597672197297);
                      else passend_4695035597672197297 = Ref_kkr_relatie_id;
+                   passend_4695035597672197297 = tranwrd(passend_4695035597672197297,'9D'x,'D0'x);
                    put passend_4695035597672197297 ~ @;
               end;
        if missing(Status_contactpersoon)
@@ -15250,6 +15832,7 @@ data _null_;
                    if attrLengte_8411830533441906202 > max(maxPassend_8411830533441906202,1000)
                      then passend_8411830533441906202 = substr(Status_contactpersoon,1,maxPassend_8411830533441906202);
                      else passend_8411830533441906202 = Status_contactpersoon;
+                   passend_8411830533441906202 = tranwrd(passend_8411830533441906202,'9D'x,'D0'x);
                    put passend_8411830533441906202 ~ @;
               end;
        if missing(Validatie)
@@ -15261,6 +15844,7 @@ data _null_;
                    if attrLengte_1422979793511950032 > max(maxPassend_1422979793511950032,1000)
                      then passend_1422979793511950032 = substr(Validatie,1,maxPassend_1422979793511950032);
                      else passend_1422979793511950032 = Validatie;
+                   passend_1422979793511950032 = tranwrd(passend_1422979793511950032,'9D'x,'D0'x);
                    put passend_1422979793511950032 ~ @;
               end;
        put techId best12. ; 
@@ -15396,6 +15980,7 @@ data _null_;
                    if attrLengte_3451443017000934866 > max(maxPassend_3451443017000934866,1000)
                      then passend_3451443017000934866 = substr(Bsi_cd,1,maxPassend_3451443017000934866);
                      else passend_3451443017000934866 = Bsi_cd;
+                   passend_3451443017000934866 = tranwrd(passend_3451443017000934866,'9D'x,'D0'x);
                    put passend_3451443017000934866 ~ @;
               end;
        if missing(Volg_nr)
@@ -15416,6 +16001,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -15430,6 +16016,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -15540,6 +16127,7 @@ data _null_;
                    if attrLengte_2829235122869398783 > max(maxPassend_2829235122869398783,1000)
                      then passend_2829235122869398783 = substr(Kvk_nr,1,maxPassend_2829235122869398783);
                      else passend_2829235122869398783 = Kvk_nr;
+                   passend_2829235122869398783 = tranwrd(passend_2829235122869398783,'9D'x,'D0'x);
                    put passend_2829235122869398783 ~ @;
               end;
        if missing(Graydon_bedrijfsnr)
@@ -15563,6 +16151,7 @@ data _null_;
                    if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
+                   passend_3121428435771779831 = tranwrd(passend_3121428435771779831,'9D'x,'D0'x);
                    put passend_3121428435771779831 ~ @;
               end;
        if missing(Handelsnaam)
@@ -15574,6 +16163,7 @@ data _null_;
                    if attrLengte_2653416409674665897 > max(maxPassend_2653416409674665897,1000)
                      then passend_2653416409674665897 = substr(Handelsnaam,1,maxPassend_2653416409674665897);
                      else passend_2653416409674665897 = Handelsnaam;
+                   passend_2653416409674665897 = tranwrd(passend_2653416409674665897,'9D'x,'D0'x);
                    put passend_2653416409674665897 ~ @;
               end;
        if missing(Straatnaam_postbus)
@@ -15585,6 +16175,7 @@ data _null_;
                    if attrLengte_6041848927483652671 > max(maxPassend_6041848927483652671,1000)
                      then passend_6041848927483652671 = substr(Straatnaam_postbus,1,maxPassend_6041848927483652671);
                      else passend_6041848927483652671 = Straatnaam_postbus;
+                   passend_6041848927483652671 = tranwrd(passend_6041848927483652671,'9D'x,'D0'x);
                    put passend_6041848927483652671 ~ @;
               end;
        if missing(Huisnr_postbusnr)
@@ -15599,6 +16190,7 @@ data _null_;
                    if attrLengte_5583129363718394252 > max(maxPassend_5583129363718394252,1000)
                      then passend_5583129363718394252 = substr(Huisnr_toevoeging,1,maxPassend_5583129363718394252);
                      else passend_5583129363718394252 = Huisnr_toevoeging;
+                   passend_5583129363718394252 = tranwrd(passend_5583129363718394252,'9D'x,'D0'x);
                    put passend_5583129363718394252 ~ @;
               end;
        if missing(Postcode)
@@ -15610,6 +16202,7 @@ data _null_;
                    if attrLengte_747405639420864755 > max(maxPassend_747405639420864755,1000)
                      then passend_747405639420864755 = substr(Postcode,1,maxPassend_747405639420864755);
                      else passend_747405639420864755 = Postcode;
+                   passend_747405639420864755 = tranwrd(passend_747405639420864755,'9D'x,'D0'x);
                    put passend_747405639420864755 ~ @;
               end;
        if missing(Woonplaats)
@@ -15621,6 +16214,7 @@ data _null_;
                    if attrLengte_3253374325083369186 > max(maxPassend_3253374325083369186,1000)
                      then passend_3253374325083369186 = substr(Woonplaats,1,maxPassend_3253374325083369186);
                      else passend_3253374325083369186 = Woonplaats;
+                   passend_3253374325083369186 = tranwrd(passend_3253374325083369186,'9D'x,'D0'x);
                    put passend_3253374325083369186 ~ @;
               end;
        if missing(Land)
@@ -15632,6 +16226,7 @@ data _null_;
                    if attrLengte_7146313527747546915 > max(maxPassend_7146313527747546915,1000)
                      then passend_7146313527747546915 = substr(Land,1,maxPassend_7146313527747546915);
                      else passend_7146313527747546915 = Land;
+                   passend_7146313527747546915 = tranwrd(passend_7146313527747546915,'9D'x,'D0'x);
                    put passend_7146313527747546915 ~ @;
               end;
        if missing(Actuele_faillisement_cd)
@@ -15643,6 +16238,7 @@ data _null_;
                    if attrLengte_7805567768348124374 > max(maxPassend_7805567768348124374,1000)
                      then passend_7805567768348124374 = substr(Actuele_faillisement_cd,1,maxPassend_7805567768348124374);
                      else passend_7805567768348124374 = Actuele_faillisement_cd;
+                   passend_7805567768348124374 = tranwrd(passend_7805567768348124374,'9D'x,'D0'x);
                    put passend_7805567768348124374 ~ @;
               end;
        if missing(Actuele_status)
@@ -15654,6 +16250,7 @@ data _null_;
                    if attrLengte_2419729412943516166 > max(maxPassend_2419729412943516166,1000)
                      then passend_2419729412943516166 = substr(Actuele_status,1,maxPassend_2419729412943516166);
                      else passend_2419729412943516166 = Actuele_status;
+                   passend_2419729412943516166 = tranwrd(passend_2419729412943516166,'9D'x,'D0'x);
                    put passend_2419729412943516166 ~ @;
               end;
        if missing(Actuele_opheffings_cd)
@@ -15665,6 +16262,7 @@ data _null_;
                    if attrLengte_4421556128264339154 > max(maxPassend_4421556128264339154,1000)
                      then passend_4421556128264339154 = substr(Actuele_opheffings_cd,1,maxPassend_4421556128264339154);
                      else passend_4421556128264339154 = Actuele_opheffings_cd;
+                   passend_4421556128264339154 = tranwrd(passend_4421556128264339154,'9D'x,'D0'x);
                    put passend_4421556128264339154 ~ @;
               end;
        put techId best12. ; 
@@ -15789,6 +16387,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -15803,6 +16402,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -15835,6 +16435,7 @@ data _null_;
                    if attrLengte_431232146876537749 > max(maxPassend_431232146876537749,1000)
                      then passend_431232146876537749 = substr(Bron,1,maxPassend_431232146876537749);
                      else passend_431232146876537749 = Bron;
+                   passend_431232146876537749 = tranwrd(passend_431232146876537749,'9D'x,'D0'x);
                    put passend_431232146876537749 ~ @;
               end;
        if missing(Senterniveau_jn)
@@ -15846,6 +16447,7 @@ data _null_;
                    if attrLengte_7878041596262878077 > max(maxPassend_7878041596262878077,1000)
                      then passend_7878041596262878077 = substr(Senterniveau_jn,1,maxPassend_7878041596262878077);
                      else passend_7878041596262878077 = Senterniveau_jn;
+                   passend_7878041596262878077 = tranwrd(passend_7878041596262878077,'9D'x,'D0'x);
                    put passend_7878041596262878077 ~ @;
               end;
        if missing(Lb_verm_voorlopig)
@@ -15937,6 +16539,7 @@ data _null_;
                    if attrLengte_2338667727953163128 > max(maxPassend_2338667727953163128,1000)
                      then passend_2338667727953163128 = substr(Org_naam,1,maxPassend_2338667727953163128);
                      else passend_2338667727953163128 = Org_naam;
+                   passend_2338667727953163128 = tranwrd(passend_2338667727953163128,'9D'x,'D0'x);
                    put passend_2338667727953163128 ~ @;
               end;
        if missing(Org_naam_type)
@@ -15948,6 +16551,7 @@ data _null_;
                    if attrLengte_2453821822167783416 > max(maxPassend_2453821822167783416,1000)
                      then passend_2453821822167783416 = substr(Org_naam_type,1,maxPassend_2453821822167783416);
                      else passend_2453821822167783416 = Org_naam_type;
+                   passend_2453821822167783416 = tranwrd(passend_2453821822167783416,'9D'x,'D0'x);
                    put passend_2453821822167783416 ~ @;
               end;
        if missing(Sushi_foutmelding)
@@ -15959,6 +16563,7 @@ data _null_;
                    if attrLengte_8715378855826488452 > max(maxPassend_8715378855826488452,1000)
                      then passend_8715378855826488452 = substr(Sushi_foutmelding,1,maxPassend_8715378855826488452);
                      else passend_8715378855826488452 = Sushi_foutmelding;
+                   passend_8715378855826488452 = tranwrd(passend_8715378855826488452,'9D'x,'D0'x);
                    put passend_8715378855826488452 ~ @;
               end;
        if missing(Creatie_dat)
@@ -15973,6 +16578,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -15987,6 +16593,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Kkr_gevalideerd)
@@ -15998,6 +16605,7 @@ data _null_;
                    if attrLengte_4275823587113271514 > max(maxPassend_4275823587113271514,1000)
                      then passend_4275823587113271514 = substr(Kkr_gevalideerd,1,maxPassend_4275823587113271514);
                      else passend_4275823587113271514 = Kkr_gevalideerd;
+                   passend_4275823587113271514 = tranwrd(passend_4275823587113271514,'9D'x,'D0'x);
                    put passend_4275823587113271514 ~ @;
               end;
        put techId best12. ; 
@@ -16109,6 +16717,7 @@ data _null_;
                    if attrLengte_5808865197604050770 > max(maxPassend_5808865197604050770,1000)
                      then passend_5808865197604050770 = substr(Bik_Cd,1,maxPassend_5808865197604050770);
                      else passend_5808865197604050770 = Bik_Cd;
+                   passend_5808865197604050770 = tranwrd(passend_5808865197604050770,'9D'x,'D0'x);
                    put passend_5808865197604050770 ~ @;
               end;
        if missing(Bron_jr)
@@ -16120,6 +16729,7 @@ data _null_;
                    if attrLengte_3616680467157131089 > max(maxPassend_3616680467157131089,1000)
                      then passend_3616680467157131089 = substr(Bron_jr,1,maxPassend_3616680467157131089);
                      else passend_3616680467157131089 = Bron_jr;
+                   passend_3616680467157131089 = tranwrd(passend_3616680467157131089,'9D'x,'D0'x);
                    put passend_3616680467157131089 ~ @;
               end;
        if missing(BTW_nummer)
@@ -16131,6 +16741,7 @@ data _null_;
                    if attrLengte_1419653207553123678 > max(maxPassend_1419653207553123678,1000)
                      then passend_1419653207553123678 = substr(BTW_nummer,1,maxPassend_1419653207553123678);
                      else passend_1419653207553123678 = BTW_nummer;
+                   passend_1419653207553123678 = tranwrd(passend_1419653207553123678,'9D'x,'D0'x);
                    put passend_1419653207553123678 ~ @;
               end;
        if missing(BTW_plichtig)
@@ -16142,6 +16753,7 @@ data _null_;
                    if attrLengte_4656813487846060936 > max(maxPassend_4656813487846060936,1000)
                      then passend_4656813487846060936 = substr(BTW_plichtig,1,maxPassend_4656813487846060936);
                      else passend_4656813487846060936 = BTW_plichtig;
+                   passend_4656813487846060936 = tranwrd(passend_4656813487846060936,'9D'x,'D0'x);
                    put passend_4656813487846060936 ~ @;
               end;
        if missing(IB_plichtig_sinds)
@@ -16159,6 +16771,7 @@ data _null_;
                    if attrLengte_7273408646488677377 > max(maxPassend_7273408646488677377,1000)
                      then passend_7273408646488677377 = substr(Kkr_RSIN_afwijkend,1,maxPassend_7273408646488677377);
                      else passend_7273408646488677377 = Kkr_RSIN_afwijkend;
+                   passend_7273408646488677377 = tranwrd(passend_7273408646488677377,'9D'x,'D0'x);
                    put passend_7273408646488677377 ~ @;
               end;
        if missing(KVK_nr)
@@ -16170,6 +16783,7 @@ data _null_;
                    if attrLengte_7076068879927054975 > max(maxPassend_7076068879927054975,1000)
                      then passend_7076068879927054975 = substr(KVK_nr,1,maxPassend_7076068879927054975);
                      else passend_7076068879927054975 = KVK_nr;
+                   passend_7076068879927054975 = tranwrd(passend_7076068879927054975,'9D'x,'D0'x);
                    put passend_7076068879927054975 ~ @;
               end;
        if missing(Naam)
@@ -16181,6 +16795,7 @@ data _null_;
                    if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
+                   passend_3121428435771779831 = tranwrd(passend_3121428435771779831,'9D'x,'D0'x);
                    put passend_3121428435771779831 ~ @;
               end;
        if missing(Notitie)
@@ -16192,6 +16807,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Rel_id)
@@ -16206,6 +16822,7 @@ data _null_;
                    if attrLengte_7355574004673159091 > max(maxPassend_7355574004673159091,1000)
                      then passend_7355574004673159091 = substr(Rvm_cd,1,maxPassend_7355574004673159091);
                      else passend_7355574004673159091 = Rvm_cd;
+                   passend_7355574004673159091 = tranwrd(passend_7355574004673159091,'9D'x,'D0'x);
                    put passend_7355574004673159091 ~ @;
               end;
        if missing(Status_org)
@@ -16217,6 +16834,7 @@ data _null_;
                    if attrLengte_631149193839514637 > max(maxPassend_631149193839514637,1000)
                      then passend_631149193839514637 = substr(Status_org,1,maxPassend_631149193839514637);
                      else passend_631149193839514637 = Status_org;
+                   passend_631149193839514637 = tranwrd(passend_631149193839514637,'9D'x,'D0'x);
                    put passend_631149193839514637 ~ @;
               end;
        if missing(Volg_nr_LB)
@@ -16231,6 +16849,7 @@ data _null_;
                    if attrLengte_2740448696528104762 > max(maxPassend_2740448696528104762,1000)
                      then passend_2740448696528104762 = substr(Voortzetting_van_rel_id,1,maxPassend_2740448696528104762);
                      else passend_2740448696528104762 = Voortzetting_van_rel_id;
+                   passend_2740448696528104762 = tranwrd(passend_2740448696528104762,'9D'x,'D0'x);
                    put passend_2740448696528104762 ~ @;
               end;
        if missing(VPB_IB_nummer)
@@ -16242,6 +16861,7 @@ data _null_;
                    if attrLengte_8610416695830085742 > max(maxPassend_8610416695830085742,1000)
                      then passend_8610416695830085742 = substr(VPB_IB_nummer,1,maxPassend_8610416695830085742);
                      else passend_8610416695830085742 = VPB_IB_nummer;
+                   passend_8610416695830085742 = tranwrd(passend_8610416695830085742,'9D'x,'D0'x);
                    put passend_8610416695830085742 ~ @;
               end;
        if missing(IB_VPB_Plichtig)
@@ -16253,6 +16873,7 @@ data _null_;
                    if attrLengte_3636946875933051938 > max(maxPassend_3636946875933051938,1000)
                      then passend_3636946875933051938 = substr(IB_VPB_Plichtig,1,maxPassend_3636946875933051938);
                      else passend_3636946875933051938 = IB_VPB_Plichtig;
+                   passend_3636946875933051938 = tranwrd(passend_3636946875933051938,'9D'x,'D0'x);
                    put passend_3636946875933051938 ~ @;
               end;
        put techId best12. ; 
@@ -16384,6 +17005,7 @@ data _null_;
                    if attrLengte_6510866943421080183 > max(maxPassend_6510866943421080183,1000)
                      then passend_6510866943421080183 = substr(Aanhef,1,maxPassend_6510866943421080183);
                      else passend_6510866943421080183 = Aanhef;
+                   passend_6510866943421080183 = tranwrd(passend_6510866943421080183,'9D'x,'D0'x);
                    put passend_6510866943421080183 ~ @;
               end;
        if missing(Aanlevernaam)
@@ -16395,6 +17017,7 @@ data _null_;
                    if attrLengte_6196602520980259541 > max(maxPassend_6196602520980259541,1000)
                      then passend_6196602520980259541 = substr(Aanlevernaam,1,maxPassend_6196602520980259541);
                      else passend_6196602520980259541 = Aanlevernaam;
+                   passend_6196602520980259541 = tranwrd(passend_6196602520980259541,'9D'x,'D0'x);
                    put passend_6196602520980259541 ~ @;
               end;
        if missing(Aanspreeknaam)
@@ -16406,6 +17029,7 @@ data _null_;
                    if attrLengte_5000095886126416684 > max(maxPassend_5000095886126416684,1000)
                      then passend_5000095886126416684 = substr(Aanspreeknaam,1,maxPassend_5000095886126416684);
                      else passend_5000095886126416684 = Aanspreeknaam;
+                   passend_5000095886126416684 = tranwrd(passend_5000095886126416684,'9D'x,'D0'x);
                    put passend_5000095886126416684 ~ @;
               end;
        if missing(Achternaam)
@@ -16417,6 +17041,7 @@ data _null_;
                    if attrLengte_403642515580817570 > max(maxPassend_403642515580817570,1000)
                      then passend_403642515580817570 = substr(Achternaam,1,maxPassend_403642515580817570);
                      else passend_403642515580817570 = Achternaam;
+                   passend_403642515580817570 = tranwrd(passend_403642515580817570,'9D'x,'D0'x);
                    put passend_403642515580817570 ~ @;
               end;
        if missing(Foutmelding)
@@ -16428,6 +17053,7 @@ data _null_;
                    if attrLengte_5736683297058446811 > max(maxPassend_5736683297058446811,1000)
                      then passend_5736683297058446811 = substr(Foutmelding,1,maxPassend_5736683297058446811);
                      else passend_5736683297058446811 = Foutmelding;
+                   passend_5736683297058446811 = tranwrd(passend_5736683297058446811,'9D'x,'D0'x);
                    put passend_5736683297058446811 ~ @;
               end;
        if missing(Geboortedatum)
@@ -16442,6 +17068,7 @@ data _null_;
                    if attrLengte_731654219873503099 > max(maxPassend_731654219873503099,1000)
                      then passend_731654219873503099 = substr(Geslacht,1,maxPassend_731654219873503099);
                      else passend_731654219873503099 = Geslacht;
+                   passend_731654219873503099 = tranwrd(passend_731654219873503099,'9D'x,'D0'x);
                    put passend_731654219873503099 ~ @;
               end;
        if missing(Import_contactpersonen_id)
@@ -16456,6 +17083,7 @@ data _null_;
                    if attrLengte_1560041029703835131 > max(maxPassend_1560041029703835131,1000)
                      then passend_1560041029703835131 = substr(Notitie,1,maxPassend_1560041029703835131);
                      else passend_1560041029703835131 = Notitie;
+                   passend_1560041029703835131 = tranwrd(passend_1560041029703835131,'9D'x,'D0'x);
                    put passend_1560041029703835131 ~ @;
               end;
        if missing(Rbm_persoon_contact)
@@ -16467,6 +17095,7 @@ data _null_;
                    if attrLengte_8412905630617268252 > max(maxPassend_8412905630617268252,1000)
                      then passend_8412905630617268252 = substr(Rbm_persoon_contact,1,maxPassend_8412905630617268252);
                      else passend_8412905630617268252 = Rbm_persoon_contact;
+                   passend_8412905630617268252 = tranwrd(passend_8412905630617268252,'9D'x,'D0'x);
                    put passend_8412905630617268252 ~ @;
               end;
        if missing(Rbm_persoon_particulier)
@@ -16478,6 +17107,7 @@ data _null_;
                    if attrLengte_2139125467959230976 > max(maxPassend_2139125467959230976,1000)
                      then passend_2139125467959230976 = substr(Rbm_persoon_particulier,1,maxPassend_2139125467959230976);
                      else passend_2139125467959230976 = Rbm_persoon_particulier;
+                   passend_2139125467959230976 = tranwrd(passend_2139125467959230976,'9D'x,'D0'x);
                    put passend_2139125467959230976 ~ @;
               end;
        if missing(Rel_id)
@@ -16492,6 +17122,7 @@ data _null_;
                    if attrLengte_8431208606378813157 > max(maxPassend_8431208606378813157,1000)
                      then passend_8431208606378813157 = substr(Status_persoon,1,maxPassend_8431208606378813157);
                      else passend_8431208606378813157 = Status_persoon;
+                   passend_8431208606378813157 = tranwrd(passend_8431208606378813157,'9D'x,'D0'x);
                    put passend_8431208606378813157 ~ @;
               end;
        if missing(Sushi_foutmelding)
@@ -16503,6 +17134,7 @@ data _null_;
                    if attrLengte_8715378855826488452 > max(maxPassend_8715378855826488452,1000)
                      then passend_8715378855826488452 = substr(Sushi_foutmelding,1,maxPassend_8715378855826488452);
                      else passend_8715378855826488452 = Sushi_foutmelding;
+                   passend_8715378855826488452 = tranwrd(passend_8715378855826488452,'9D'x,'D0'x);
                    put passend_8715378855826488452 ~ @;
               end;
        if missing(Taal)
@@ -16514,6 +17146,7 @@ data _null_;
                    if attrLengte_2092764852980830674 > max(maxPassend_2092764852980830674,1000)
                      then passend_2092764852980830674 = substr(Taal,1,maxPassend_2092764852980830674);
                      else passend_2092764852980830674 = Taal;
+                   passend_2092764852980830674 = tranwrd(passend_2092764852980830674,'9D'x,'D0'x);
                    put passend_2092764852980830674 ~ @;
               end;
        if missing(Titels_na)
@@ -16525,6 +17158,7 @@ data _null_;
                    if attrLengte_2493966725399468662 > max(maxPassend_2493966725399468662,1000)
                      then passend_2493966725399468662 = substr(Titels_na,1,maxPassend_2493966725399468662);
                      else passend_2493966725399468662 = Titels_na;
+                   passend_2493966725399468662 = tranwrd(passend_2493966725399468662,'9D'x,'D0'x);
                    put passend_2493966725399468662 ~ @;
               end;
        if missing(Titels_voor)
@@ -16536,6 +17170,7 @@ data _null_;
                    if attrLengte_4195529622826795265 > max(maxPassend_4195529622826795265,1000)
                      then passend_4195529622826795265 = substr(Titels_voor,1,maxPassend_4195529622826795265);
                      else passend_4195529622826795265 = Titels_voor;
+                   passend_4195529622826795265 = tranwrd(passend_4195529622826795265,'9D'x,'D0'x);
                    put passend_4195529622826795265 ~ @;
               end;
        if missing(Tussenvoegsels)
@@ -16547,6 +17182,7 @@ data _null_;
                    if attrLengte_5106043141375307758 > max(maxPassend_5106043141375307758,1000)
                      then passend_5106043141375307758 = substr(Tussenvoegsels,1,maxPassend_5106043141375307758);
                      else passend_5106043141375307758 = Tussenvoegsels;
+                   passend_5106043141375307758 = tranwrd(passend_5106043141375307758,'9D'x,'D0'x);
                    put passend_5106043141375307758 ~ @;
               end;
        if missing(Validatie)
@@ -16558,6 +17194,7 @@ data _null_;
                    if attrLengte_1422979793511950032 > max(maxPassend_1422979793511950032,1000)
                      then passend_1422979793511950032 = substr(Validatie,1,maxPassend_1422979793511950032);
                      else passend_1422979793511950032 = Validatie;
+                   passend_1422979793511950032 = tranwrd(passend_1422979793511950032,'9D'x,'D0'x);
                    put passend_1422979793511950032 ~ @;
               end;
        if missing(Voorletters)
@@ -16569,6 +17206,7 @@ data _null_;
                    if attrLengte_933604317395829620 > max(maxPassend_933604317395829620,1000)
                      then passend_933604317395829620 = substr(Voorletters,1,maxPassend_933604317395829620);
                      else passend_933604317395829620 = Voorletters;
+                   passend_933604317395829620 = tranwrd(passend_933604317395829620,'9D'x,'D0'x);
                    put passend_933604317395829620 ~ @;
               end;
        if missing(Voornaam)
@@ -16580,6 +17218,7 @@ data _null_;
                    if attrLengte_7272765945587119437 > max(maxPassend_7272765945587119437,1000)
                      then passend_7272765945587119437 = substr(Voornaam,1,maxPassend_7272765945587119437);
                      else passend_7272765945587119437 = Voornaam;
+                   passend_7272765945587119437 = tranwrd(passend_7272765945587119437,'9D'x,'D0'x);
                    put passend_7272765945587119437 ~ @;
               end;
        if missing(XML_String)
@@ -16591,6 +17230,7 @@ data _null_;
                    if attrLengte_2872510320193282717 > max(maxPassend_2872510320193282717,1000)
                      then passend_2872510320193282717 = substr(XML_String,1,maxPassend_2872510320193282717);
                      else passend_2872510320193282717 = XML_String;
+                   passend_2872510320193282717 = tranwrd(passend_2872510320193282717,'9D'x,'D0'x);
                    put passend_2872510320193282717 ~ @;
               end;
        put techId best12. ; 
@@ -16678,6 +17318,7 @@ data _null_;
                    if attrLengte_9171161243242669933 > max(maxPassend_9171161243242669933,1000)
                      then passend_9171161243242669933 = substr(Banknaam,1,maxPassend_9171161243242669933);
                      else passend_9171161243242669933 = Banknaam;
+                   passend_9171161243242669933 = tranwrd(passend_9171161243242669933,'9D'x,'D0'x);
                    put passend_9171161243242669933 ~ @;
               end;
        if missing(Bic)
@@ -16689,6 +17330,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Creatie_dat)
@@ -16703,6 +17345,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Externe_bron_cd)
@@ -16714,6 +17357,7 @@ data _null_;
                    if attrLengte_2067704043811996344 > max(maxPassend_2067704043811996344,1000)
                      then passend_2067704043811996344 = substr(Externe_bron_cd,1,maxPassend_2067704043811996344);
                      else passend_2067704043811996344 = Externe_bron_cd;
+                   passend_2067704043811996344 = tranwrd(passend_2067704043811996344,'9D'x,'D0'x);
                    put passend_2067704043811996344 ~ @;
               end;
        if missing(Goedkeuring_sts)
@@ -16725,6 +17369,7 @@ data _null_;
                    if attrLengte_8202167600123421072 > max(maxPassend_8202167600123421072,1000)
                      then passend_8202167600123421072 = substr(Goedkeuring_sts,1,maxPassend_8202167600123421072);
                      else passend_8202167600123421072 = Goedkeuring_sts;
+                   passend_8202167600123421072 = tranwrd(passend_8202167600123421072,'9D'x,'D0'x);
                    put passend_8202167600123421072 ~ @;
               end;
        if missing(Iban)
@@ -16736,6 +17381,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -16750,6 +17396,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rel_id)
@@ -16764,6 +17411,7 @@ data _null_;
                    if attrLengte_2845735713589279779 > max(maxPassend_2845735713589279779,1000)
                      then passend_2845735713589279779 = substr(User_akkoord,1,maxPassend_2845735713589279779);
                      else passend_2845735713589279779 = User_akkoord;
+                   passend_2845735713589279779 = tranwrd(passend_2845735713589279779,'9D'x,'D0'x);
                    put passend_2845735713589279779 ~ @;
               end;
        put techId best12. ; 
@@ -16881,6 +17529,7 @@ data _null_;
                    if attrLengte_3514290540041762326 > max(maxPassend_3514290540041762326,1000)
                      then passend_3514290540041762326 = substr(Org_banknaam,1,maxPassend_3514290540041762326);
                      else passend_3514290540041762326 = Org_banknaam;
+                   passend_3514290540041762326 = tranwrd(passend_3514290540041762326,'9D'x,'D0'x);
                    put passend_3514290540041762326 ~ @;
               end;
        if missing(Org_bankgironr)
@@ -16892,6 +17541,7 @@ data _null_;
                    if attrLengte_1294984602765791056 > max(maxPassend_1294984602765791056,1000)
                      then passend_1294984602765791056 = substr(Org_bankgironr,1,maxPassend_1294984602765791056);
                      else passend_1294984602765791056 = Org_bankgironr;
+                   passend_1294984602765791056 = tranwrd(passend_1294984602765791056,'9D'x,'D0'x);
                    put passend_1294984602765791056 ~ @;
               end;
        if missing(New_banknaam)
@@ -16903,6 +17553,7 @@ data _null_;
                    if attrLengte_4845854068159114062 > max(maxPassend_4845854068159114062,1000)
                      then passend_4845854068159114062 = substr(New_banknaam,1,maxPassend_4845854068159114062);
                      else passend_4845854068159114062 = New_banknaam;
+                   passend_4845854068159114062 = tranwrd(passend_4845854068159114062,'9D'x,'D0'x);
                    put passend_4845854068159114062 ~ @;
               end;
        if missing(New_bankgironr)
@@ -16914,6 +17565,7 @@ data _null_;
                    if attrLengte_524207556529136008 > max(maxPassend_524207556529136008,1000)
                      then passend_524207556529136008 = substr(New_bankgironr,1,maxPassend_524207556529136008);
                      else passend_524207556529136008 = New_bankgironr;
+                   passend_524207556529136008 = tranwrd(passend_524207556529136008,'9D'x,'D0'x);
                    put passend_524207556529136008 ~ @;
               end;
        if missing(Gebruiker)
@@ -16925,6 +17577,7 @@ data _null_;
                    if attrLengte_91115205626301303 > max(maxPassend_91115205626301303,1000)
                      then passend_91115205626301303 = substr(Gebruiker,1,maxPassend_91115205626301303);
                      else passend_91115205626301303 = Gebruiker;
+                   passend_91115205626301303 = tranwrd(passend_91115205626301303,'9D'x,'D0'x);
                    put passend_91115205626301303 ~ @;
               end;
        if missing(Datum_mutatie)
@@ -16939,6 +17592,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(New_iban)
@@ -16950,6 +17604,7 @@ data _null_;
                    if attrLengte_7358645892020539425 > max(maxPassend_7358645892020539425,1000)
                      then passend_7358645892020539425 = substr(New_iban,1,maxPassend_7358645892020539425);
                      else passend_7358645892020539425 = New_iban;
+                   passend_7358645892020539425 = tranwrd(passend_7358645892020539425,'9D'x,'D0'x);
                    put passend_7358645892020539425 ~ @;
               end;
        if missing(Bic)
@@ -16961,6 +17616,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(New_bic)
@@ -16972,6 +17628,7 @@ data _null_;
                    if attrLengte_4715588582746621148 > max(maxPassend_4715588582746621148,1000)
                      then passend_4715588582746621148 = substr(New_bic,1,maxPassend_4715588582746621148);
                      else passend_4715588582746621148 = New_bic;
+                   passend_4715588582746621148 = tranwrd(passend_4715588582746621148,'9D'x,'D0'x);
                    put passend_4715588582746621148 ~ @;
               end;
        if missing(Org_user_akkoord)
@@ -16983,6 +17640,7 @@ data _null_;
                    if attrLengte_2879824750918571874 > max(maxPassend_2879824750918571874,1000)
                      then passend_2879824750918571874 = substr(Org_user_akkoord,1,maxPassend_2879824750918571874);
                      else passend_2879824750918571874 = Org_user_akkoord;
+                   passend_2879824750918571874 = tranwrd(passend_2879824750918571874,'9D'x,'D0'x);
                    put passend_2879824750918571874 ~ @;
               end;
        if missing(New_user_akkoord)
@@ -16994,6 +17652,7 @@ data _null_;
                    if attrLengte_4157760871581770618 > max(maxPassend_4157760871581770618,1000)
                      then passend_4157760871581770618 = substr(New_user_akkoord,1,maxPassend_4157760871581770618);
                      else passend_4157760871581770618 = New_user_akkoord;
+                   passend_4157760871581770618 = tranwrd(passend_4157760871581770618,'9D'x,'D0'x);
                    put passend_4157760871581770618 ~ @;
               end;
        if missing(Org_goedkeuring_sts)
@@ -17005,6 +17664,7 @@ data _null_;
                    if attrLengte_5613745345172824607 > max(maxPassend_5613745345172824607,1000)
                      then passend_5613745345172824607 = substr(Org_goedkeuring_sts,1,maxPassend_5613745345172824607);
                      else passend_5613745345172824607 = Org_goedkeuring_sts;
+                   passend_5613745345172824607 = tranwrd(passend_5613745345172824607,'9D'x,'D0'x);
                    put passend_5613745345172824607 ~ @;
               end;
        if missing(New_goedkeuring_sts)
@@ -17016,6 +17676,7 @@ data _null_;
                    if attrLengte_5350490799438944457 > max(maxPassend_5350490799438944457,1000)
                      then passend_5350490799438944457 = substr(New_goedkeuring_sts,1,maxPassend_5350490799438944457);
                      else passend_5350490799438944457 = New_goedkeuring_sts;
+                   passend_5350490799438944457 = tranwrd(passend_5350490799438944457,'9D'x,'D0'x);
                    put passend_5350490799438944457 ~ @;
               end;
        if missing(Externe_bron_cd)
@@ -17027,6 +17688,7 @@ data _null_;
                    if attrLengte_2067704043811996344 > max(maxPassend_2067704043811996344,1000)
                      then passend_2067704043811996344 = substr(Externe_bron_cd,1,maxPassend_2067704043811996344);
                      else passend_2067704043811996344 = Externe_bron_cd;
+                   passend_2067704043811996344 = tranwrd(passend_2067704043811996344,'9D'x,'D0'x);
                    put passend_2067704043811996344 ~ @;
               end;
        put techId best12. ; 
@@ -17138,6 +17800,7 @@ data _null_;
                    if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
+                   passend_9040032925271508250 = tranwrd(passend_9040032925271508250,'9D'x,'D0'x);
                    put passend_9040032925271508250 ~ @;
               end;
        if missing(Auth_id)
@@ -17158,6 +17821,7 @@ data _null_;
                    if attrLengte_5059886387476131123 > max(maxPassend_5059886387476131123,1000)
                      then passend_5059886387476131123 = substr(creatie_user,1,maxPassend_5059886387476131123);
                      else passend_5059886387476131123 = creatie_user;
+                   passend_5059886387476131123 = tranwrd(passend_5059886387476131123,'9D'x,'D0'x);
                    put passend_5059886387476131123 ~ @;
               end;
        if missing(Fiscaalnr)
@@ -17169,6 +17833,7 @@ data _null_;
                    if attrLengte_5810707595799730434 > max(maxPassend_5810707595799730434,1000)
                      then passend_5810707595799730434 = substr(Fiscaalnr,1,maxPassend_5810707595799730434);
                      else passend_5810707595799730434 = Fiscaalnr;
+                   passend_5810707595799730434 = tranwrd(passend_5810707595799730434,'9D'x,'D0'x);
                    put passend_5810707595799730434 ~ @;
               end;
        if missing(IdE_id)
@@ -17186,6 +17851,7 @@ data _null_;
                    if attrLengte_2024144945627468982 > max(maxPassend_2024144945627468982,1000)
                      then passend_2024144945627468982 = substr(KR_Gevalideerd,1,maxPassend_2024144945627468982);
                      else passend_2024144945627468982 = KR_Gevalideerd;
+                   passend_2024144945627468982 = tranwrd(passend_2024144945627468982,'9D'x,'D0'x);
                    put passend_2024144945627468982 ~ @;
               end;
        if missing(Kkr_Relatie_id)
@@ -17197,6 +17863,7 @@ data _null_;
                    if attrLengte_4018094934927046027 > max(maxPassend_4018094934927046027,1000)
                      then passend_4018094934927046027 = substr(Kkr_Relatie_id,1,maxPassend_4018094934927046027);
                      else passend_4018094934927046027 = Kkr_Relatie_id;
+                   passend_4018094934927046027 = tranwrd(passend_4018094934927046027,'9D'x,'D0'x);
                    put passend_4018094934927046027 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -17211,6 +17878,7 @@ data _null_;
                    if attrLengte_5480117132585686229 > max(maxPassend_5480117132585686229,1000)
                      then passend_5480117132585686229 = substr(mutatie_user,1,maxPassend_5480117132585686229);
                      else passend_5480117132585686229 = mutatie_user;
+                   passend_5480117132585686229 = tranwrd(passend_5480117132585686229,'9D'x,'D0'x);
                    put passend_5480117132585686229 ~ @;
               end;
        if missing(Rbm_org)
@@ -17222,6 +17890,7 @@ data _null_;
                    if attrLengte_6138613567655976457 > max(maxPassend_6138613567655976457,1000)
                      then passend_6138613567655976457 = substr(Rbm_org,1,maxPassend_6138613567655976457);
                      else passend_6138613567655976457 = Rbm_org;
+                   passend_6138613567655976457 = tranwrd(passend_6138613567655976457,'9D'x,'D0'x);
                    put passend_6138613567655976457 ~ @;
               end;
        if missing(Rbm_persoon)
@@ -17233,6 +17902,7 @@ data _null_;
                    if attrLengte_6424765951754053919 > max(maxPassend_6424765951754053919,1000)
                      then passend_6424765951754053919 = substr(Rbm_persoon,1,maxPassend_6424765951754053919);
                      else passend_6424765951754053919 = Rbm_persoon;
+                   passend_6424765951754053919 = tranwrd(passend_6424765951754053919,'9D'x,'D0'x);
                    put passend_6424765951754053919 ~ @;
               end;
        if missing(Ref_kkr_relatie_id)
@@ -17244,6 +17914,7 @@ data _null_;
                    if attrLengte_4695035597672197297 > max(maxPassend_4695035597672197297,1000)
                      then passend_4695035597672197297 = substr(Ref_kkr_relatie_id,1,maxPassend_4695035597672197297);
                      else passend_4695035597672197297 = Ref_kkr_relatie_id;
+                   passend_4695035597672197297 = tranwrd(passend_4695035597672197297,'9D'x,'D0'x);
                    put passend_4695035597672197297 ~ @;
               end;
        if missing(Rel_id)
@@ -17258,6 +17929,7 @@ data _null_;
                    if attrLengte_4792766152801411253 > max(maxPassend_4792766152801411253,1000)
                      then passend_4792766152801411253 = substr(Relatietype,1,maxPassend_4792766152801411253);
                      else passend_4792766152801411253 = Relatietype;
+                   passend_4792766152801411253 = tranwrd(passend_4792766152801411253,'9D'x,'D0'x);
                    put passend_4792766152801411253 ~ @;
               end;
        put techId best12. ; 
@@ -17332,6 +18004,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Hoofdactiviteit)
@@ -17343,6 +18016,7 @@ data _null_;
                    if attrLengte_4211185628616237269 > max(maxPassend_4211185628616237269,1000)
                      then passend_4211185628616237269 = substr(Hoofdactiviteit,1,maxPassend_4211185628616237269);
                      else passend_4211185628616237269 = Hoofdactiviteit;
+                   passend_4211185628616237269 = tranwrd(passend_4211185628616237269,'9D'x,'D0'x);
                    put passend_4211185628616237269 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -17357,6 +18031,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Rel_id)
@@ -17482,6 +18157,7 @@ data _null_;
                    if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
+                   passend_9040032925271508250 = tranwrd(passend_9040032925271508250,'9D'x,'D0'x);
                    put passend_9040032925271508250 ~ @;
               end;
        if missing(Auth_id)
@@ -17496,6 +18172,7 @@ data _null_;
                    if attrLengte_5799857564552390002 > max(maxPassend_5799857564552390002,1000)
                      then passend_5799857564552390002 = substr(Bik_cd,1,maxPassend_5799857564552390002);
                      else passend_5799857564552390002 = Bik_cd;
+                   passend_5799857564552390002 = tranwrd(passend_5799857564552390002,'9D'x,'D0'x);
                    put passend_5799857564552390002 ~ @;
               end;
        if missing(Creatie_dat)
@@ -17510,6 +18187,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Hoofd_neven)
@@ -17521,6 +18199,7 @@ data _null_;
                    if attrLengte_2098055832942848170 > max(maxPassend_2098055832942848170,1000)
                      then passend_2098055832942848170 = substr(Hoofd_neven,1,maxPassend_2098055832942848170);
                      else passend_2098055832942848170 = Hoofd_neven;
+                   passend_2098055832942848170 = tranwrd(passend_2098055832942848170,'9D'x,'D0'x);
                    put passend_2098055832942848170 ~ @;
               end;
        if missing(Kkr_conversie)
@@ -17532,6 +18211,7 @@ data _null_;
                    if attrLengte_4966042720380832294 > max(maxPassend_4966042720380832294,1000)
                      then passend_4966042720380832294 = substr(Kkr_conversie,1,maxPassend_4966042720380832294);
                      else passend_4966042720380832294 = Kkr_conversie;
+                   passend_4966042720380832294 = tranwrd(passend_4966042720380832294,'9D'x,'D0'x);
                    put passend_4966042720380832294 ~ @;
               end;
        if missing(Kkr_gevalideerd)
@@ -17543,6 +18223,7 @@ data _null_;
                    if attrLengte_4275823587113271514 > max(maxPassend_4275823587113271514,1000)
                      then passend_4275823587113271514 = substr(Kkr_gevalideerd,1,maxPassend_4275823587113271514);
                      else passend_4275823587113271514 = Kkr_gevalideerd;
+                   passend_4275823587113271514 = tranwrd(passend_4275823587113271514,'9D'x,'D0'x);
                    put passend_4275823587113271514 ~ @;
               end;
        if missing(Kkr_gevonden)
@@ -17554,6 +18235,7 @@ data _null_;
                    if attrLengte_4735801167311526277 > max(maxPassend_4735801167311526277,1000)
                      then passend_4735801167311526277 = substr(Kkr_gevonden,1,maxPassend_4735801167311526277);
                      else passend_4735801167311526277 = Kkr_gevonden;
+                   passend_4735801167311526277 = tranwrd(passend_4735801167311526277,'9D'x,'D0'x);
                    put passend_4735801167311526277 ~ @;
               end;
        if missing(Kkr_relatie_id)
@@ -17565,6 +18247,7 @@ data _null_;
                    if attrLengte_5909357663416120533 > max(maxPassend_5909357663416120533,1000)
                      then passend_5909357663416120533 = substr(Kkr_relatie_id,1,maxPassend_5909357663416120533);
                      else passend_5909357663416120533 = Kkr_relatie_id;
+                   passend_5909357663416120533 = tranwrd(passend_5909357663416120533,'9D'x,'D0'x);
                    put passend_5909357663416120533 ~ @;
               end;
        if missing(Kkr_verversingsdatum)
@@ -17579,6 +18262,7 @@ data _null_;
                    if attrLengte_6725546751009021785 > max(maxPassend_6725546751009021785,1000)
                      then passend_6725546751009021785 = substr(KvK_volgnr,1,maxPassend_6725546751009021785);
                      else passend_6725546751009021785 = KvK_volgnr;
+                   passend_6725546751009021785 = tranwrd(passend_6725546751009021785,'9D'x,'D0'x);
                    put passend_6725546751009021785 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -17593,6 +18277,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Ref_Kkr_relatie_id)
@@ -17604,6 +18289,7 @@ data _null_;
                    if attrLengte_5930909227385726767 > max(maxPassend_5930909227385726767,1000)
                      then passend_5930909227385726767 = substr(Ref_Kkr_relatie_id,1,maxPassend_5930909227385726767);
                      else passend_5930909227385726767 = Ref_Kkr_relatie_id;
+                   passend_5930909227385726767 = tranwrd(passend_5930909227385726767,'9D'x,'D0'x);
                    put passend_5930909227385726767 ~ @;
               end;
        if missing(Rel_id)
@@ -17618,6 +18304,7 @@ data _null_;
                    if attrLengte_153734467788040877 > max(maxPassend_153734467788040877,1000)
                      then passend_153734467788040877 = substr(Vest_naam,1,maxPassend_153734467788040877);
                      else passend_153734467788040877 = Vest_naam;
+                   passend_153734467788040877 = tranwrd(passend_153734467788040877,'9D'x,'D0'x);
                    put passend_153734467788040877 ~ @;
               end;
        if missing(Vestigings_nummer)
@@ -17629,6 +18316,7 @@ data _null_;
                    if attrLengte_8533057996254239991 > max(maxPassend_8533057996254239991,1000)
                      then passend_8533057996254239991 = substr(Vestigings_nummer,1,maxPassend_8533057996254239991);
                      else passend_8533057996254239991 = Vestigings_nummer;
+                   passend_8533057996254239991 = tranwrd(passend_8533057996254239991,'9D'x,'D0'x);
                    put passend_8533057996254239991 ~ @;
               end;
        if missing(Vst_volgnr)
@@ -17739,6 +18427,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Budget)
@@ -17762,6 +18451,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Jaar)
@@ -17776,6 +18466,7 @@ data _null_;
                    if attrLengte_8010221947609816734 > max(maxPassend_8010221947609816734,1000)
                      then passend_8010221947609816734 = substr(Koppelen_jn,1,maxPassend_8010221947609816734);
                      else passend_8010221947609816734 = Koppelen_jn;
+                   passend_8010221947609816734 = tranwrd(passend_8010221947609816734,'9D'x,'D0'x);
                    put passend_8010221947609816734 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -17790,6 +18481,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Ovk_nr)
@@ -17801,6 +18493,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Reg_id)
@@ -17890,6 +18583,7 @@ data _null_;
                    if attrLengte_3670722283148550818 > max(maxPassend_3670722283148550818,1000)
                      then passend_3670722283148550818 = substr(Class_cd,1,maxPassend_3670722283148550818);
                      else passend_3670722283148550818 = Class_cd;
+                   passend_3670722283148550818 = tranwrd(passend_3670722283148550818,'9D'x,'D0'x);
                    put passend_3670722283148550818 ~ @;
               end;
        if missing(Class_oms)
@@ -17901,6 +18595,7 @@ data _null_;
                    if attrLengte_8096349315438384613 > max(maxPassend_8096349315438384613,1000)
                      then passend_8096349315438384613 = substr(Class_oms,1,maxPassend_8096349315438384613);
                      else passend_8096349315438384613 = Class_oms;
+                   passend_8096349315438384613 = tranwrd(passend_8096349315438384613,'9D'x,'D0'x);
                    put passend_8096349315438384613 ~ @;
               end;
        if missing(Creatie_user)
@@ -17912,6 +18607,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -17926,6 +18622,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -18036,6 +18733,7 @@ data _null_;
                    if attrLengte_8640113711822652606 > max(maxPassend_8640113711822652606,1000)
                      then passend_8640113711822652606 = substr(Afgesloten,1,maxPassend_8640113711822652606);
                      else passend_8640113711822652606 = Afgesloten;
+                   passend_8640113711822652606 = tranwrd(passend_8640113711822652606,'9D'x,'D0'x);
                    put passend_8640113711822652606 ~ @;
               end;
        if missing(Bgt_cd)
@@ -18047,6 +18745,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Budget_uitputting)
@@ -18067,6 +18766,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Datum_van)
@@ -18087,6 +18787,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Ovk_nr)
@@ -18098,6 +18799,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Rpt_nr)
@@ -18118,6 +18820,7 @@ data _null_;
                    if attrLengte_5019175436802110303 > max(maxPassend_5019175436802110303,1000)
                      then passend_5019175436802110303 = substr(Verdeeld_jn,1,maxPassend_5019175436802110303);
                      else passend_5019175436802110303 = Verdeeld_jn;
+                   passend_5019175436802110303 = tranwrd(passend_5019175436802110303,'9D'x,'D0'x);
                    put passend_5019175436802110303 ~ @;
               end;
        if missing(Vrij_budget)
@@ -18219,6 +18922,7 @@ data _null_;
                    if attrLengte_8082276134056304352 > max(maxPassend_8082276134056304352,1000)
                      then passend_8082276134056304352 = substr(Middelen_type,1,maxPassend_8082276134056304352);
                      else passend_8082276134056304352 = Middelen_type;
+                   passend_8082276134056304352 = tranwrd(passend_8082276134056304352,'9D'x,'D0'x);
                    put passend_8082276134056304352 ~ @;
               end;
        if missing(Mandaat_srt)
@@ -18230,6 +18934,7 @@ data _null_;
                    if attrLengte_45581615089552039 > max(maxPassend_45581615089552039,1000)
                      then passend_45581615089552039 = substr(Mandaat_srt,1,maxPassend_45581615089552039);
                      else passend_45581615089552039 = Mandaat_srt;
+                   passend_45581615089552039 = tranwrd(passend_45581615089552039,'9D'x,'D0'x);
                    put passend_45581615089552039 ~ @;
               end;
        if missing(Max_bedrag)
@@ -18244,6 +18949,7 @@ data _null_;
                    if attrLengte_6267154196586753525 > max(maxPassend_6267154196586753525,1000)
                      then passend_6267154196586753525 = substr(Rdm_mandaat_rol,1,maxPassend_6267154196586753525);
                      else passend_6267154196586753525 = Rdm_mandaat_rol;
+                   passend_6267154196586753525 = tranwrd(passend_6267154196586753525,'9D'x,'D0'x);
                    put passend_6267154196586753525 ~ @;
               end;
        if missing(Rdm_mandaat_mdw)
@@ -18255,6 +18961,7 @@ data _null_;
                    if attrLengte_3884692758649452826 > max(maxPassend_3884692758649452826,1000)
                      then passend_3884692758649452826 = substr(Rdm_mandaat_mdw,1,maxPassend_3884692758649452826);
                      else passend_3884692758649452826 = Rdm_mandaat_mdw;
+                   passend_3884692758649452826 = tranwrd(passend_3884692758649452826,'9D'x,'D0'x);
                    put passend_3884692758649452826 ~ @;
               end;
        if missing(Creatie_user)
@@ -18266,6 +18973,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -18280,6 +18988,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -18300,6 +19009,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        put techId best12. ; 
@@ -18379,6 +19089,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Doc_naam)
@@ -18390,6 +19101,7 @@ data _null_;
                    if attrLengte_4570953002792249656 > max(maxPassend_4570953002792249656,1000)
                      then passend_4570953002792249656 = substr(Doc_naam,1,maxPassend_4570953002792249656);
                      else passend_4570953002792249656 = Doc_naam;
+                   passend_4570953002792249656 = tranwrd(passend_4570953002792249656,'9D'x,'D0'x);
                    put passend_4570953002792249656 ~ @;
               end;
        if missing(Creatie_user)
@@ -18401,6 +19113,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -18415,6 +19128,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -18429,6 +19143,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Rpt_nr)
@@ -18590,6 +19305,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Rpt_nr)
@@ -18604,6 +19320,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Datum_van)
@@ -18621,6 +19338,7 @@ data _null_;
                    if attrLengte_3124754035359486199 > max(maxPassend_3124754035359486199,1000)
                      then passend_3124754035359486199 = substr(Kopieer_periode,1,maxPassend_3124754035359486199);
                      else passend_3124754035359486199 = Kopieer_periode;
+                   passend_3124754035359486199 = tranwrd(passend_3124754035359486199,'9D'x,'D0'x);
                    put passend_3124754035359486199 ~ @;
               end;
        if missing(Auto_sap_jn)
@@ -18632,6 +19350,7 @@ data _null_;
                    if attrLengte_3802303003931793618 > max(maxPassend_3802303003931793618,1000)
                      then passend_3802303003931793618 = substr(Auto_sap_jn,1,maxPassend_3802303003931793618);
                      else passend_3802303003931793618 = Auto_sap_jn;
+                   passend_3802303003931793618 = tranwrd(passend_3802303003931793618,'9D'x,'D0'x);
                    put passend_3802303003931793618 ~ @;
               end;
        if missing(Comm_rente_pct)
@@ -18655,6 +19374,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Prg_cd)
@@ -18666,6 +19386,7 @@ data _null_;
                    if attrLengte_9026548999479988017 > max(maxPassend_9026548999479988017,1000)
                      then passend_9026548999479988017 = substr(Prg_cd,1,maxPassend_9026548999479988017);
                      else passend_9026548999479988017 = Prg_cd;
+                   passend_9026548999479988017 = tranwrd(passend_9026548999479988017,'9D'x,'D0'x);
                    put passend_9026548999479988017 ~ @;
               end;
        if missing(Creatie_user)
@@ -18677,6 +19398,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -18691,6 +19413,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -18705,6 +19428,7 @@ data _null_;
                    if attrLengte_3785071286235317929 > max(maxPassend_3785071286235317929,1000)
                      then passend_3785071286235317929 = substr(Bdg_verdelen_100_pct_dp,1,maxPassend_3785071286235317929);
                      else passend_3785071286235317929 = Bdg_verdelen_100_pct_dp;
+                   passend_3785071286235317929 = tranwrd(passend_3785071286235317929,'9D'x,'D0'x);
                    put passend_3785071286235317929 ~ @;
               end;
        if missing(Bdg_verdelen_100_pct_th)
@@ -18716,6 +19440,7 @@ data _null_;
                    if attrLengte_3780567471454359953 > max(maxPassend_3780567471454359953,1000)
                      then passend_3780567471454359953 = substr(Bdg_verdelen_100_pct_th,1,maxPassend_3780567471454359953);
                      else passend_3780567471454359953 = Bdg_verdelen_100_pct_th;
+                   passend_3780567471454359953 = tranwrd(passend_3780567471454359953,'9D'x,'D0'x);
                    put passend_3780567471454359953 ~ @;
               end;
        if missing(Iban)
@@ -18727,6 +19452,7 @@ data _null_;
                    if attrLengte_8433717562044549680 > max(maxPassend_8433717562044549680,1000)
                      then passend_8433717562044549680 = substr(Iban,1,maxPassend_8433717562044549680);
                      else passend_8433717562044549680 = Iban;
+                   passend_8433717562044549680 = tranwrd(passend_8433717562044549680,'9D'x,'D0'x);
                    put passend_8433717562044549680 ~ @;
               end;
        if missing(Bic)
@@ -18738,6 +19464,7 @@ data _null_;
                    if attrLengte_8393283933206478573 > max(maxPassend_8393283933206478573,1000)
                      then passend_8393283933206478573 = substr(Bic,1,maxPassend_8393283933206478573);
                      else passend_8393283933206478573 = Bic;
+                   passend_8393283933206478573 = tranwrd(passend_8393283933206478573,'9D'x,'D0'x);
                    put passend_8393283933206478573 ~ @;
               end;
        if missing(Imvb)
@@ -18752,6 +19479,7 @@ data _null_;
                    if attrLengte_8136469209690216678 > max(maxPassend_8136469209690216678,1000)
                      then passend_8136469209690216678 = substr(Correctie_code,1,maxPassend_8136469209690216678);
                      else passend_8136469209690216678 = Correctie_code;
+                   passend_8136469209690216678 = tranwrd(passend_8136469209690216678,'9D'x,'D0'x);
                    put passend_8136469209690216678 ~ @;
               end;
        if missing(Auto_oracle)
@@ -18763,6 +19491,7 @@ data _null_;
                    if attrLengte_2821618412975311163 > max(maxPassend_2821618412975311163,1000)
                      then passend_2821618412975311163 = substr(Auto_oracle,1,maxPassend_2821618412975311163);
                      else passend_2821618412975311163 = Auto_oracle;
+                   passend_2821618412975311163 = tranwrd(passend_2821618412975311163,'9D'x,'D0'x);
                    put passend_2821618412975311163 ~ @;
               end;
        if missing(Boeking)
@@ -18774,6 +19503,7 @@ data _null_;
                    if attrLengte_1952708952664785282 > max(maxPassend_1952708952664785282,1000)
                      then passend_1952708952664785282 = substr(Boeking,1,maxPassend_1952708952664785282);
                      else passend_1952708952664785282 = Boeking;
+                   passend_1952708952664785282 = tranwrd(passend_1952708952664785282,'9D'x,'D0'x);
                    put passend_1952708952664785282 ~ @;
               end;
        if missing(Fin_soort)
@@ -18785,6 +19515,7 @@ data _null_;
                    if attrLengte_4097127069211440246 > max(maxPassend_4097127069211440246,1000)
                      then passend_4097127069211440246 = substr(Fin_soort,1,maxPassend_4097127069211440246);
                      else passend_4097127069211440246 = Fin_soort;
+                   passend_4097127069211440246 = tranwrd(passend_4097127069211440246,'9D'x,'D0'x);
                    put passend_4097127069211440246 ~ @;
               end;
        if missing(Kenmerk_lijn)
@@ -18796,6 +19527,7 @@ data _null_;
                    if attrLengte_4927202612135555295 > max(maxPassend_4927202612135555295,1000)
                      then passend_4927202612135555295 = substr(Kenmerk_lijn,1,maxPassend_4927202612135555295);
                      else passend_4927202612135555295 = Kenmerk_lijn;
+                   passend_4927202612135555295 = tranwrd(passend_4927202612135555295,'9D'x,'D0'x);
                    put passend_4927202612135555295 ~ @;
               end;
        if missing(Aflossing)
@@ -18909,6 +19641,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Datum_van)
@@ -18926,6 +19659,7 @@ data _null_;
                    if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;
+                   passend_4250420340675441405 = tranwrd(passend_4250420340675441405,'9D'x,'D0'x);
                    put passend_4250420340675441405 ~ @;
               end;
        if missing(Status)
@@ -18937,6 +19671,7 @@ data _null_;
                    if attrLengte_5988018406811650736 > max(maxPassend_5988018406811650736,1000)
                      then passend_5988018406811650736 = substr(Status,1,maxPassend_5988018406811650736);
                      else passend_5988018406811650736 = Status;
+                   passend_5988018406811650736 = tranwrd(passend_5988018406811650736,'9D'x,'D0'x);
                    put passend_5988018406811650736 ~ @;
               end;
        if missing(Contractdatum)
@@ -18954,6 +19689,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -18968,6 +19704,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -18982,6 +19719,7 @@ data _null_;
                    if attrLengte_837135120333362348 > max(maxPassend_837135120333362348,1000)
                      then passend_837135120333362348 = substr(Mjp_jn,1,maxPassend_837135120333362348);
                      else passend_837135120333362348 = Mjp_jn;
+                   passend_837135120333362348 = tranwrd(passend_837135120333362348,'9D'x,'D0'x);
                    put passend_837135120333362348 ~ @;
               end;
        if missing(Ovk_budget_controle)
@@ -18993,6 +19731,7 @@ data _null_;
                    if attrLengte_3560946579088680324 > max(maxPassend_3560946579088680324,1000)
                      then passend_3560946579088680324 = substr(Ovk_budget_controle,1,maxPassend_3560946579088680324);
                      else passend_3560946579088680324 = Ovk_budget_controle;
+                   passend_3560946579088680324 = tranwrd(passend_3560946579088680324,'9D'x,'D0'x);
                    put passend_3560946579088680324 ~ @;
               end;
        if missing(Vrij_budget)
@@ -19116,6 +19855,7 @@ data _null_;
                    if attrLengte_5387589372927854328 > max(maxPassend_5387589372927854328,1000)
                      then passend_5387589372927854328 = substr(Auth_mdw_cd,1,maxPassend_5387589372927854328);
                      else passend_5387589372927854328 = Auth_mdw_cd;
+                   passend_5387589372927854328 = tranwrd(passend_5387589372927854328,'9D'x,'D0'x);
                    put passend_5387589372927854328 ~ @;
               end;
        if missing(Rol_cd)
@@ -19127,6 +19867,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Actief)
@@ -19138,6 +19879,7 @@ data _null_;
                    if attrLengte_9040032925271508250 > max(maxPassend_9040032925271508250,1000)
                      then passend_9040032925271508250 = substr(Actief,1,maxPassend_9040032925271508250);
                      else passend_9040032925271508250 = Actief;
+                   passend_9040032925271508250 = tranwrd(passend_9040032925271508250,'9D'x,'D0'x);
                    put passend_9040032925271508250 ~ @;
               end;
        if missing(Opmerking)
@@ -19149,6 +19891,7 @@ data _null_;
                    if attrLengte_1343037086106328577 > max(maxPassend_1343037086106328577,1000)
                      then passend_1343037086106328577 = substr(Opmerking,1,maxPassend_1343037086106328577);
                      else passend_1343037086106328577 = Opmerking;
+                   passend_1343037086106328577 = tranwrd(passend_1343037086106328577,'9D'x,'D0'x);
                    put passend_1343037086106328577 ~ @;
               end;
        if missing(Creatie_user)
@@ -19160,6 +19903,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -19174,6 +19918,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -19188,6 +19933,7 @@ data _null_;
                    if attrLengte_1708104729569954294 > max(maxPassend_1708104729569954294,1000)
                      then passend_1708104729569954294 = substr(Senioriteit,1,maxPassend_1708104729569954294);
                      else passend_1708104729569954294 = Senioriteit;
+                   passend_1708104729569954294 = tranwrd(passend_1708104729569954294,'9D'x,'D0'x);
                    put passend_1708104729569954294 ~ @;
               end;
        if missing(Mentor_id)
@@ -19205,6 +19951,7 @@ data _null_;
                    if attrLengte_229469790558856446 > max(maxPassend_229469790558856446,1000)
                      then passend_229469790558856446 = substr(Vervang_rol,1,maxPassend_229469790558856446);
                      else passend_229469790558856446 = Vervang_rol;
+                   passend_229469790558856446 = tranwrd(passend_229469790558856446,'9D'x,'D0'x);
                    put passend_229469790558856446 ~ @;
               end;
        if missing(Acc_id)
@@ -19222,6 +19969,7 @@ data _null_;
                    if attrLengte_1142361471725319962 > max(maxPassend_1142361471725319962,1000)
                      then passend_1142361471725319962 = substr(Mentor_rol_cd,1,maxPassend_1142361471725319962);
                      else passend_1142361471725319962 = Mentor_rol_cd;
+                   passend_1142361471725319962 = tranwrd(passend_1142361471725319962,'9D'x,'D0'x);
                    put passend_1142361471725319962 ~ @;
               end;
        put techId best12. ; 
@@ -19412,6 +20160,7 @@ data _null_;
                    if attrLengte_8089610682312470086 > max(maxPassend_8089610682312470086,1000)
                      then passend_8089610682312470086 = substr(Reg_cd,1,maxPassend_8089610682312470086);
                      else passend_8089610682312470086 = Reg_cd;
+                   passend_8089610682312470086 = tranwrd(passend_8089610682312470086,'9D'x,'D0'x);
                    put passend_8089610682312470086 ~ @;
               end;
        if missing(Reg_oms)
@@ -19423,6 +20172,7 @@ data _null_;
                    if attrLengte_8048633119966655007 > max(maxPassend_8048633119966655007,1000)
                      then passend_8048633119966655007 = substr(Reg_oms,1,maxPassend_8048633119966655007);
                      else passend_8048633119966655007 = Reg_oms;
+                   passend_8048633119966655007 = tranwrd(passend_8048633119966655007,'9D'x,'D0'x);
                    put passend_8048633119966655007 ~ @;
               end;
        if missing(Prg_id)
@@ -19437,6 +20187,7 @@ data _null_;
                    if attrLengte_4904519751506790512 > max(maxPassend_4904519751506790512,1000)
                      then passend_4904519751506790512 = substr(Thema,1,maxPassend_4904519751506790512);
                      else passend_4904519751506790512 = Thema;
+                   passend_4904519751506790512 = tranwrd(passend_4904519751506790512,'9D'x,'D0'x);
                    put passend_4904519751506790512 ~ @;
               end;
        if missing(Rap_freq)
@@ -19460,6 +20211,7 @@ data _null_;
                    if attrLengte_7383118781553457770 > max(maxPassend_7383118781553457770,1000)
                      then passend_7383118781553457770 = substr(Reg_document,1,maxPassend_7383118781553457770);
                      else passend_7383118781553457770 = Reg_document;
+                   passend_7383118781553457770 = tranwrd(passend_7383118781553457770,'9D'x,'D0'x);
                    put passend_7383118781553457770 ~ @;
               end;
        if missing(Betaalmodule)
@@ -19471,6 +20223,7 @@ data _null_;
                    if attrLengte_3526882150107883917 > max(maxPassend_3526882150107883917,1000)
                      then passend_3526882150107883917 = substr(Betaalmodule,1,maxPassend_3526882150107883917);
                      else passend_3526882150107883917 = Betaalmodule;
+                   passend_3526882150107883917 = tranwrd(passend_3526882150107883917,'9D'x,'D0'x);
                    put passend_3526882150107883917 ~ @;
               end;
        if missing(Regelingscontrole)
@@ -19482,6 +20235,7 @@ data _null_;
                    if attrLengte_4877794543932319083 > max(maxPassend_4877794543932319083,1000)
                      then passend_4877794543932319083 = substr(Regelingscontrole,1,maxPassend_4877794543932319083);
                      else passend_4877794543932319083 = Regelingscontrole;
+                   passend_4877794543932319083 = tranwrd(passend_4877794543932319083,'9D'x,'D0'x);
                    put passend_4877794543932319083 ~ @;
               end;
        if missing(Ic_helptekst)
@@ -19493,6 +20247,7 @@ data _null_;
                    if attrLengte_7347360163492415997 > max(maxPassend_7347360163492415997,1000)
                      then passend_7347360163492415997 = substr(Ic_helptekst,1,maxPassend_7347360163492415997);
                      else passend_7347360163492415997 = Ic_helptekst;
+                   passend_7347360163492415997 = tranwrd(passend_7347360163492415997,'9D'x,'D0'x);
                    put passend_7347360163492415997 ~ @;
               end;
        if missing(Geblokkeerd_jn)
@@ -19504,6 +20259,7 @@ data _null_;
                    if attrLengte_7719773628010563908 > max(maxPassend_7719773628010563908,1000)
                      then passend_7719773628010563908 = substr(Geblokkeerd_jn,1,maxPassend_7719773628010563908);
                      else passend_7719773628010563908 = Geblokkeerd_jn;
+                   passend_7719773628010563908 = tranwrd(passend_7719773628010563908,'9D'x,'D0'x);
                    put passend_7719773628010563908 ~ @;
               end;
        if missing(Min_id)
@@ -19518,6 +20274,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -19532,6 +20289,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -19546,6 +20304,7 @@ data _null_;
                    if attrLengte_4465592721297386989 > max(maxPassend_4465592721297386989,1000)
                      then passend_4465592721297386989 = substr(Reg_prefix,1,maxPassend_4465592721297386989);
                      else passend_4465592721297386989 = Reg_prefix;
+                   passend_4465592721297386989 = tranwrd(passend_4465592721297386989,'9D'x,'D0'x);
                    put passend_4465592721297386989 ~ @;
               end;
        if missing(Volg_nr)
@@ -19560,6 +20319,7 @@ data _null_;
                    if attrLengte_6263883538153590736 > max(maxPassend_6263883538153590736,1000)
                      then passend_6263883538153590736 = substr(Mail_bericht_parafering,1,maxPassend_6263883538153590736);
                      else passend_6263883538153590736 = Mail_bericht_parafering;
+                   passend_6263883538153590736 = tranwrd(passend_6263883538153590736,'9D'x,'D0'x);
                    put passend_6263883538153590736 ~ @;
               end;
        if missing(Reg_mail_adres)
@@ -19571,6 +20331,7 @@ data _null_;
                    if attrLengte_5971966142831170572 > max(maxPassend_5971966142831170572,1000)
                      then passend_5971966142831170572 = substr(Reg_mail_adres,1,maxPassend_5971966142831170572);
                      else passend_5971966142831170572 = Reg_mail_adres;
+                   passend_5971966142831170572 = tranwrd(passend_5971966142831170572,'9D'x,'D0'x);
                    put passend_5971966142831170572 ~ @;
               end;
        if missing(Reg_geen_dig_parafering)
@@ -19582,6 +20343,7 @@ data _null_;
                    if attrLengte_1292753338332248782 > max(maxPassend_1292753338332248782,1000)
                      then passend_1292753338332248782 = substr(Reg_geen_dig_parafering,1,maxPassend_1292753338332248782);
                      else passend_1292753338332248782 = Reg_geen_dig_parafering;
+                   passend_1292753338332248782 = tranwrd(passend_1292753338332248782,'9D'x,'D0'x);
                    put passend_1292753338332248782 ~ @;
               end;
        if missing(Fin_schermen)
@@ -19593,6 +20355,7 @@ data _null_;
                    if attrLengte_911904525501931183 > max(maxPassend_911904525501931183,1000)
                      then passend_911904525501931183 = substr(Fin_schermen,1,maxPassend_911904525501931183);
                      else passend_911904525501931183 = Fin_schermen;
+                   passend_911904525501931183 = tranwrd(passend_911904525501931183,'9D'x,'D0'x);
                    put passend_911904525501931183 ~ @;
               end;
        if missing(Budgetbewaking_pct)
@@ -19607,6 +20370,7 @@ data _null_;
                    if attrLengte_2651479358715290174 > max(maxPassend_2651479358715290174,1000)
                      then passend_2651479358715290174 = substr(Budgetbewaking_hard,1,maxPassend_2651479358715290174);
                      else passend_2651479358715290174 = Budgetbewaking_hard;
+                   passend_2651479358715290174 = tranwrd(passend_2651479358715290174,'9D'x,'D0'x);
                    put passend_2651479358715290174 ~ @;
               end;
        if missing(Dig_parf_mand)
@@ -19618,6 +20382,7 @@ data _null_;
                    if attrLengte_7869809262385558754 > max(maxPassend_7869809262385558754,1000)
                      then passend_7869809262385558754 = substr(Dig_parf_mand,1,maxPassend_7869809262385558754);
                      else passend_7869809262385558754 = Dig_parf_mand;
+                   passend_7869809262385558754 = tranwrd(passend_7869809262385558754,'9D'x,'D0'x);
                    put passend_7869809262385558754 ~ @;
               end;
        if missing(Cst_set_cd)
@@ -19629,6 +20394,7 @@ data _null_;
                    if attrLengte_8058619802847207325 > max(maxPassend_8058619802847207325,1000)
                      then passend_8058619802847207325 = substr(Cst_set_cd,1,maxPassend_8058619802847207325);
                      else passend_8058619802847207325 = Cst_set_cd;
+                   passend_8058619802847207325 = tranwrd(passend_8058619802847207325,'9D'x,'D0'x);
                    put passend_8058619802847207325 ~ @;
               end;
        if missing(Auto_samenvoeg_jn)
@@ -19640,6 +20406,7 @@ data _null_;
                    if attrLengte_2110398600305530271 > max(maxPassend_2110398600305530271,1000)
                      then passend_2110398600305530271 = substr(Auto_samenvoeg_jn,1,maxPassend_2110398600305530271);
                      else passend_2110398600305530271 = Auto_samenvoeg_jn;
+                   passend_2110398600305530271 = tranwrd(passend_2110398600305530271,'9D'x,'D0'x);
                    put passend_2110398600305530271 ~ @;
               end;
        if missing(Fpc_status)
@@ -19651,6 +20418,7 @@ data _null_;
                    if attrLengte_5842689462633185036 > max(maxPassend_5842689462633185036,1000)
                      then passend_5842689462633185036 = substr(Fpc_status,1,maxPassend_5842689462633185036);
                      else passend_5842689462633185036 = Fpc_status;
+                   passend_5842689462633185036 = tranwrd(passend_5842689462633185036,'9D'x,'D0'x);
                    put passend_5842689462633185036 ~ @;
               end;
        if missing(Dcp_automatisch_jn)
@@ -19662,6 +20430,7 @@ data _null_;
                    if attrLengte_5749236548403605141 > max(maxPassend_5749236548403605141,1000)
                      then passend_5749236548403605141 = substr(Dcp_automatisch_jn,1,maxPassend_5749236548403605141);
                      else passend_5749236548403605141 = Dcp_automatisch_jn;
+                   passend_5749236548403605141 = tranwrd(passend_5749236548403605141,'9D'x,'D0'x);
                    put passend_5749236548403605141 ~ @;
               end;
        if missing(Paraf_mandat_pr_rol_jn)
@@ -19673,6 +20442,7 @@ data _null_;
                    if attrLengte_2135051168692226800 > max(maxPassend_2135051168692226800,1000)
                      then passend_2135051168692226800 = substr(Paraf_mandat_pr_rol_jn,1,maxPassend_2135051168692226800);
                      else passend_2135051168692226800 = Paraf_mandat_pr_rol_jn;
+                   passend_2135051168692226800 = tranwrd(passend_2135051168692226800,'9D'x,'D0'x);
                    put passend_2135051168692226800 ~ @;
               end;
        if missing(Dos_referentie_jaar)
@@ -19684,6 +20454,7 @@ data _null_;
                    if attrLengte_7729616129515536002 > max(maxPassend_7729616129515536002,1000)
                      then passend_7729616129515536002 = substr(Dos_referentie_jaar,1,maxPassend_7729616129515536002);
                      else passend_7729616129515536002 = Dos_referentie_jaar;
+                   passend_7729616129515536002 = tranwrd(passend_7729616129515536002,'9D'x,'D0'x);
                    put passend_7729616129515536002 ~ @;
               end;
        if missing(Auto_insert_sde_jn)
@@ -19695,6 +20466,7 @@ data _null_;
                    if attrLengte_1121401602846738077 > max(maxPassend_1121401602846738077,1000)
                      then passend_1121401602846738077 = substr(Auto_insert_sde_jn,1,maxPassend_1121401602846738077);
                      else passend_1121401602846738077 = Auto_insert_sde_jn;
+                   passend_1121401602846738077 = tranwrd(passend_1121401602846738077,'9D'x,'D0'x);
                    put passend_1121401602846738077 ~ @;
               end;
        if missing(Ingangsdatum_zer)
@@ -19809,6 +20581,7 @@ data _null_;
                    if attrLengte_7575938694744162813 > max(maxPassend_7575938694744162813,1000)
                      then passend_7575938694744162813 = substr(Ovk_nr,1,maxPassend_7575938694744162813);
                      else passend_7575938694744162813 = Ovk_nr;
+                   passend_7575938694744162813 = tranwrd(passend_7575938694744162813,'9D'x,'D0'x);
                    put passend_7575938694744162813 ~ @;
               end;
        if missing(Rpt_nr)
@@ -19823,6 +20596,7 @@ data _null_;
                    if attrLengte_7370879967810917187 > max(maxPassend_7370879967810917187,1000)
                      then passend_7370879967810917187 = substr(Bgt_cd,1,maxPassend_7370879967810917187);
                      else passend_7370879967810917187 = Bgt_cd;
+                   passend_7370879967810917187 = tranwrd(passend_7370879967810917187,'9D'x,'D0'x);
                    put passend_7370879967810917187 ~ @;
               end;
        if missing(Rpe_datum_van)
@@ -19852,6 +20626,7 @@ data _null_;
                    if attrLengte_8010221947609816734 > max(maxPassend_8010221947609816734,1000)
                      then passend_8010221947609816734 = substr(Koppelen_jn,1,maxPassend_8010221947609816734);
                      else passend_8010221947609816734 = Koppelen_jn;
+                   passend_8010221947609816734 = tranwrd(passend_8010221947609816734,'9D'x,'D0'x);
                    put passend_8010221947609816734 ~ @;
               end;
        if missing(Creatie_dat)
@@ -19866,6 +20641,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -19880,6 +20656,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Correctie_budget)
@@ -19897,6 +20674,7 @@ data _null_;
                    if attrLengte_6398700462504815438 > max(maxPassend_6398700462504815438,1000)
                      then passend_6398700462504815438 = substr(Rpt_nr_oud,1,maxPassend_6398700462504815438);
                      else passend_6398700462504815438 = Rpt_nr_oud;
+                   passend_6398700462504815438 = tranwrd(passend_6398700462504815438,'9D'x,'D0'x);
                    put passend_6398700462504815438 ~ @;
               end;
        put techId best12. ; 
@@ -19983,6 +20761,7 @@ data _null_;
                    if attrLengte_9079540650060306462 > max(maxPassend_9079540650060306462,1000)
                      then passend_9079540650060306462 = substr(Status_van,1,maxPassend_9079540650060306462);
                      else passend_9079540650060306462 = Status_van;
+                   passend_9079540650060306462 = tranwrd(passend_9079540650060306462,'9D'x,'D0'x);
                    put passend_9079540650060306462 ~ @;
               end;
        if missing(Statusgroep)
@@ -19994,6 +20773,7 @@ data _null_;
                    if attrLengte_6104227251393262734 > max(maxPassend_6104227251393262734,1000)
                      then passend_6104227251393262734 = substr(Statusgroep,1,maxPassend_6104227251393262734);
                      else passend_6104227251393262734 = Statusgroep;
+                   passend_6104227251393262734 = tranwrd(passend_6104227251393262734,'9D'x,'D0'x);
                    put passend_6104227251393262734 ~ @;
               end;
        if missing(Status_naar)
@@ -20005,6 +20785,7 @@ data _null_;
                    if attrLengte_2859492518089918434 > max(maxPassend_2859492518089918434,1000)
                      then passend_2859492518089918434 = substr(Status_naar,1,maxPassend_2859492518089918434);
                      else passend_2859492518089918434 = Status_naar;
+                   passend_2859492518089918434 = tranwrd(passend_2859492518089918434,'9D'x,'D0'x);
                    put passend_2859492518089918434 ~ @;
               end;
        if missing(Cst_cd)
@@ -20016,6 +20797,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Creatie_user)
@@ -20027,6 +20809,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -20041,6 +20824,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20055,6 +20839,7 @@ data _null_;
                    if attrLengte_2736054697416343873 > max(maxPassend_2736054697416343873,1000)
                      then passend_2736054697416343873 = substr(Xps_cd,1,maxPassend_2736054697416343873);
                      else passend_2736054697416343873 = Xps_cd;
+                   passend_2736054697416343873 = tranwrd(passend_2736054697416343873,'9D'x,'D0'x);
                    put passend_2736054697416343873 ~ @;
               end;
        put techId best12. ; 
@@ -20141,6 +20926,7 @@ data _null_;
                    if attrLengte_7956994429245100397 > max(maxPassend_7956994429245100397,1000)
                      then passend_7956994429245100397 = substr(Code,1,maxPassend_7956994429245100397);
                      else passend_7956994429245100397 = Code;
+                   passend_7956994429245100397 = tranwrd(passend_7956994429245100397,'9D'x,'D0'x);
                    put passend_7956994429245100397 ~ @;
               end;
        if missing(Begindatum)
@@ -20155,6 +20941,7 @@ data _null_;
                    if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;
+                   passend_4250420340675441405 = tranwrd(passend_4250420340675441405,'9D'x,'D0'x);
                    put passend_4250420340675441405 ~ @;
               end;
        if missing(Toelichting)
@@ -20166,6 +20953,7 @@ data _null_;
                    if attrLengte_4385385912596099835 > max(maxPassend_4385385912596099835,1000)
                      then passend_4385385912596099835 = substr(Toelichting,1,maxPassend_4385385912596099835);
                      else passend_4385385912596099835 = Toelichting;
+                   passend_4385385912596099835 = tranwrd(passend_4385385912596099835,'9D'x,'D0'x);
                    put passend_4385385912596099835 ~ @;
               end;
        if missing(Einddatum)
@@ -20183,6 +20971,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20197,6 +20986,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -20278,6 +21068,7 @@ data _null_;
                    if attrLengte_3451443017000934866 > max(maxPassend_3451443017000934866,1000)
                      then passend_3451443017000934866 = substr(Bsi_cd,1,maxPassend_3451443017000934866);
                      else passend_3451443017000934866 = Bsi_cd;
+                   passend_3451443017000934866 = tranwrd(passend_3451443017000934866,'9D'x,'D0'x);
                    put passend_3451443017000934866 ~ @;
               end;
        if missing(Bsi_oms)
@@ -20289,6 +21080,7 @@ data _null_;
                    if attrLengte_8559432772166713383 > max(maxPassend_8559432772166713383,1000)
                      then passend_8559432772166713383 = substr(Bsi_oms,1,maxPassend_8559432772166713383);
                      else passend_8559432772166713383 = Bsi_oms;
+                   passend_8559432772166713383 = tranwrd(passend_8559432772166713383,'9D'x,'D0'x);
                    put passend_8559432772166713383 ~ @;
               end;
        if missing(Creatie_user)
@@ -20300,6 +21092,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -20314,6 +21107,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20384,6 +21178,7 @@ data _null_;
                    if attrLengte_4412363972584569639 > max(maxPassend_4412363972584569639,1000)
                      then passend_4412363972584569639 = substr(Reactie_cd,1,maxPassend_4412363972584569639);
                      else passend_4412363972584569639 = Reactie_cd;
+                   passend_4412363972584569639 = tranwrd(passend_4412363972584569639,'9D'x,'D0'x);
                    put passend_4412363972584569639 ~ @;
               end;
        if missing(Reactie_oms)
@@ -20395,6 +21190,7 @@ data _null_;
                    if attrLengte_392247235326241948 > max(maxPassend_392247235326241948,1000)
                      then passend_392247235326241948 = substr(Reactie_oms,1,maxPassend_392247235326241948);
                      else passend_392247235326241948 = Reactie_oms;
+                   passend_392247235326241948 = tranwrd(passend_392247235326241948,'9D'x,'D0'x);
                    put passend_392247235326241948 ~ @;
               end;
        if missing(Creatie_user)
@@ -20406,6 +21202,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -20420,6 +21217,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20518,6 +21316,7 @@ data _null_;
                    if attrLengte_3864349925788261245 > max(maxPassend_3864349925788261245,1000)
                      then passend_3864349925788261245 = substr(Rol_cd,1,maxPassend_3864349925788261245);
                      else passend_3864349925788261245 = Rol_cd;
+                   passend_3864349925788261245 = tranwrd(passend_3864349925788261245,'9D'x,'D0'x);
                    put passend_3864349925788261245 ~ @;
               end;
        if missing(Rol_oms)
@@ -20529,6 +21328,7 @@ data _null_;
                    if attrLengte_292343333598675216 > max(maxPassend_292343333598675216,1000)
                      then passend_292343333598675216 = substr(Rol_oms,1,maxPassend_292343333598675216);
                      else passend_292343333598675216 = Rol_oms;
+                   passend_292343333598675216 = tranwrd(passend_292343333598675216,'9D'x,'D0'x);
                    put passend_292343333598675216 ~ @;
               end;
        if missing(Interne_rol)
@@ -20540,6 +21340,7 @@ data _null_;
                    if attrLengte_8075008499931704538 > max(maxPassend_8075008499931704538,1000)
                      then passend_8075008499931704538 = substr(Interne_rol,1,maxPassend_8075008499931704538);
                      else passend_8075008499931704538 = Interne_rol;
+                   passend_8075008499931704538 = tranwrd(passend_8075008499931704538,'9D'x,'D0'x);
                    put passend_8075008499931704538 ~ @;
               end;
        if missing(Externe_rol)
@@ -20551,6 +21352,7 @@ data _null_;
                    if attrLengte_5855131029356933992 > max(maxPassend_5855131029356933992,1000)
                      then passend_5855131029356933992 = substr(Externe_rol,1,maxPassend_5855131029356933992);
                      else passend_5855131029356933992 = Externe_rol;
+                   passend_5855131029356933992 = tranwrd(passend_5855131029356933992,'9D'x,'D0'x);
                    put passend_5855131029356933992 ~ @;
               end;
        if missing(Organisatie_rol)
@@ -20562,6 +21364,7 @@ data _null_;
                    if attrLengte_752592000902709611 > max(maxPassend_752592000902709611,1000)
                      then passend_752592000902709611 = substr(Organisatie_rol,1,maxPassend_752592000902709611);
                      else passend_752592000902709611 = Organisatie_rol;
+                   passend_752592000902709611 = tranwrd(passend_752592000902709611,'9D'x,'D0'x);
                    put passend_752592000902709611 ~ @;
               end;
        if missing(Controller)
@@ -20573,6 +21376,7 @@ data _null_;
                    if attrLengte_1802135007604418486 > max(maxPassend_1802135007604418486,1000)
                      then passend_1802135007604418486 = substr(Controller,1,maxPassend_1802135007604418486);
                      else passend_1802135007604418486 = Controller;
+                   passend_1802135007604418486 = tranwrd(passend_1802135007604418486,'9D'x,'D0'x);
                    put passend_1802135007604418486 ~ @;
               end;
        if missing(Creatie_user)
@@ -20584,6 +21388,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -20598,6 +21403,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20612,6 +21418,7 @@ data _null_;
                    if attrLengte_6785800588360122194 > max(maxPassend_6785800588360122194,1000)
                      then passend_6785800588360122194 = substr(Type_rol,1,maxPassend_6785800588360122194);
                      else passend_6785800588360122194 = Type_rol;
+                   passend_6785800588360122194 = tranwrd(passend_6785800588360122194,'9D'x,'D0'x);
                    put passend_6785800588360122194 ~ @;
               end;
        if missing(Ed_rol_cd)
@@ -20626,6 +21433,7 @@ data _null_;
                    if attrLengte_1807973709382915987 > max(maxPassend_1807973709382915987,1000)
                      then passend_1807973709382915987 = substr(Ed_rol_oms,1,maxPassend_1807973709382915987);
                      else passend_1807973709382915987 = Ed_rol_oms;
+                   passend_1807973709382915987 = tranwrd(passend_1807973709382915987,'9D'x,'D0'x);
                    put passend_1807973709382915987 ~ @;
               end;
        put techId best12. ; 
@@ -20696,6 +21504,7 @@ data _null_;
                    if attrLengte_3943580785683993491 > max(maxPassend_3943580785683993491,1000)
                      then passend_3943580785683993491 = substr(Sbi_oms,1,maxPassend_3943580785683993491);
                      else passend_3943580785683993491 = Sbi_oms;
+                   passend_3943580785683993491 = tranwrd(passend_3943580785683993491,'9D'x,'D0'x);
                    put passend_3943580785683993491 ~ @;
               end;
        if missing(Creatie_dat)
@@ -20710,6 +21519,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20724,6 +21534,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        put techId best12. ; 
@@ -20807,6 +21618,7 @@ data _null_;
                    if attrLengte_1792820026946084444 > max(maxPassend_1792820026946084444,1000)
                      then passend_1792820026946084444 = substr(Sts_cd,1,maxPassend_1792820026946084444);
                      else passend_1792820026946084444 = Sts_cd;
+                   passend_1792820026946084444 = tranwrd(passend_1792820026946084444,'9D'x,'D0'x);
                    put passend_1792820026946084444 ~ @;
               end;
        if missing(Sts_oms)
@@ -20818,6 +21630,7 @@ data _null_;
                    if attrLengte_7514770531092261719 > max(maxPassend_7514770531092261719,1000)
                      then passend_7514770531092261719 = substr(Sts_oms,1,maxPassend_7514770531092261719);
                      else passend_7514770531092261719 = Sts_oms;
+                   passend_7514770531092261719 = tranwrd(passend_7514770531092261719,'9D'x,'D0'x);
                    put passend_7514770531092261719 ~ @;
               end;
        if missing(Ssg_cd)
@@ -20829,6 +21642,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Creatie_user)
@@ -20840,6 +21654,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -20854,6 +21669,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -20868,6 +21684,7 @@ data _null_;
                    if attrLengte_3738995019246665905 > max(maxPassend_3738995019246665905,1000)
                      then passend_3738995019246665905 = substr(Sts_e_indienen,1,maxPassend_3738995019246665905);
                      else passend_3738995019246665905 = Sts_e_indienen;
+                   passend_3738995019246665905 = tranwrd(passend_3738995019246665905,'9D'x,'D0'x);
                    put passend_3738995019246665905 ~ @;
               end;
        if missing(Eindstatus)
@@ -20879,6 +21696,7 @@ data _null_;
                    if attrLengte_6709342567121400716 > max(maxPassend_6709342567121400716,1000)
                      then passend_6709342567121400716 = substr(Eindstatus,1,maxPassend_6709342567121400716);
                      else passend_6709342567121400716 = Eindstatus;
+                   passend_6709342567121400716 = tranwrd(passend_6709342567121400716,'9D'x,'D0'x);
                    put passend_6709342567121400716 ~ @;
               end;
        if missing(Sts_e_loket)
@@ -20890,6 +21708,7 @@ data _null_;
                    if attrLengte_1680578028301391311 > max(maxPassend_1680578028301391311,1000)
                      then passend_1680578028301391311 = substr(Sts_e_loket,1,maxPassend_1680578028301391311);
                      else passend_1680578028301391311 = Sts_e_loket;
+                   passend_1680578028301391311 = tranwrd(passend_1680578028301391311,'9D'x,'D0'x);
                    put passend_1680578028301391311 ~ @;
               end;
        put techId best12. ; 
@@ -20965,6 +21784,7 @@ data _null_;
                    if attrLengte_6930841630683810202 > max(maxPassend_6930841630683810202,1000)
                      then passend_6930841630683810202 = substr(Van_status,1,maxPassend_6930841630683810202);
                      else passend_6930841630683810202 = Van_status;
+                   passend_6930841630683810202 = tranwrd(passend_6930841630683810202,'9D'x,'D0'x);
                    put passend_6930841630683810202 ~ @;
               end;
        if missing(Naar_status)
@@ -20976,6 +21796,7 @@ data _null_;
                    if attrLengte_5154444358389234818 > max(maxPassend_5154444358389234818,1000)
                      then passend_5154444358389234818 = substr(Naar_status,1,maxPassend_5154444358389234818);
                      else passend_5154444358389234818 = Naar_status;
+                   passend_5154444358389234818 = tranwrd(passend_5154444358389234818,'9D'x,'D0'x);
                    put passend_5154444358389234818 ~ @;
               end;
        if missing(Ssg_cd)
@@ -20987,6 +21808,7 @@ data _null_;
                    if attrLengte_1782260468804165719 > max(maxPassend_1782260468804165719,1000)
                      then passend_1782260468804165719 = substr(Ssg_cd,1,maxPassend_1782260468804165719);
                      else passend_1782260468804165719 = Ssg_cd;
+                   passend_1782260468804165719 = tranwrd(passend_1782260468804165719,'9D'x,'D0'x);
                    put passend_1782260468804165719 ~ @;
               end;
        if missing(Cst_cd)
@@ -20998,6 +21820,7 @@ data _null_;
                    if attrLengte_6311705118691231734 > max(maxPassend_6311705118691231734,1000)
                      then passend_6311705118691231734 = substr(Cst_cd,1,maxPassend_6311705118691231734);
                      else passend_6311705118691231734 = Cst_cd;
+                   passend_6311705118691231734 = tranwrd(passend_6311705118691231734,'9D'x,'D0'x);
                    put passend_6311705118691231734 ~ @;
               end;
        if missing(Creatie_user)
@@ -21009,6 +21832,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(Creatie_dat)
@@ -21023,6 +21847,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -21088,6 +21913,7 @@ data _null_;
                    if attrLengte_8215966990912033166 > max(maxPassend_8215966990912033166,1000)
                      then passend_8215966990912033166 = substr(Fysieke_naam,1,maxPassend_8215966990912033166);
                      else passend_8215966990912033166 = Fysieke_naam;
+                   passend_8215966990912033166 = tranwrd(passend_8215966990912033166,'9D'x,'D0'x);
                    put passend_8215966990912033166 ~ @;
               end;
        if missing(Waarde)
@@ -21099,6 +21925,7 @@ data _null_;
                    if attrLengte_1568641964639052694 > max(maxPassend_1568641964639052694,1000)
                      then passend_1568641964639052694 = substr(Waarde,1,maxPassend_1568641964639052694);
                      else passend_1568641964639052694 = Waarde;
+                   passend_1568641964639052694 = tranwrd(passend_1568641964639052694,'9D'x,'D0'x);
                    put passend_1568641964639052694 ~ @;
               end;
        if missing(Volgorde)
@@ -21192,6 +22019,7 @@ data _null_;
                    if attrLengte_8215966990912033166 > max(maxPassend_8215966990912033166,1000)
                      then passend_8215966990912033166 = substr(Fysieke_naam,1,maxPassend_8215966990912033166);
                      else passend_8215966990912033166 = Fysieke_naam;
+                   passend_8215966990912033166 = tranwrd(passend_8215966990912033166,'9D'x,'D0'x);
                    put passend_8215966990912033166 ~ @;
               end;
        if missing(Datum_start)
@@ -21212,6 +22040,7 @@ data _null_;
                    if attrLengte_1020401250997552318 > max(maxPassend_1020401250997552318,1000)
                      then passend_1020401250997552318 = substr(Verplicht_jn,1,maxPassend_1020401250997552318);
                      else passend_1020401250997552318 = Verplicht_jn;
+                   passend_1020401250997552318 = tranwrd(passend_1020401250997552318,'9D'x,'D0'x);
                    put passend_1020401250997552318 ~ @;
               end;
        if missing(Prompt)
@@ -21223,6 +22052,7 @@ data _null_;
                    if attrLengte_2040212189845707876 > max(maxPassend_2040212189845707876,1000)
                      then passend_2040212189845707876 = substr(Prompt,1,maxPassend_2040212189845707876);
                      else passend_2040212189845707876 = Prompt;
+                   passend_2040212189845707876 = tranwrd(passend_2040212189845707876,'9D'x,'D0'x);
                    put passend_2040212189845707876 ~ @;
               end;
        if missing(Min_waarde)
@@ -21240,6 +22070,7 @@ data _null_;
                    if attrLengte_8662422097031864624 > max(maxPassend_8662422097031864624,1000)
                      then passend_8662422097031864624 = substr(Default_waarde,1,maxPassend_8662422097031864624);
                      else passend_8662422097031864624 = Default_waarde;
+                   passend_8662422097031864624 = tranwrd(passend_8662422097031864624,'9D'x,'D0'x);
                    put passend_8662422097031864624 ~ @;
               end;
        if missing(Helptekst)
@@ -21251,6 +22082,7 @@ data _null_;
                    if attrLengte_5028727268169430923 > max(maxPassend_5028727268169430923,1000)
                      then passend_5028727268169430923 = substr(Helptekst,1,maxPassend_5028727268169430923);
                      else passend_5028727268169430923 = Helptekst;
+                   passend_5028727268169430923 = tranwrd(passend_5028727268169430923,'9D'x,'D0'x);
                    put passend_5028727268169430923 ~ @;
               end;
        put techId best12. ; 
@@ -22737,6 +23569,7 @@ data _null_;
                    if attrLengte_4354760923739228973 > max(maxPassend_4354760923739228973,1000)
                      then passend_4354760923739228973 = substr(Creatie_user,1,maxPassend_4354760923739228973);
                      else passend_4354760923739228973 = Creatie_user;
+                   passend_4354760923739228973 = tranwrd(passend_4354760923739228973,'9D'x,'D0'x);
                    put passend_4354760923739228973 ~ @;
               end;
        if missing(DATUM_01)
@@ -22811,6 +23644,7 @@ data _null_;
                    if attrLengte_2333448560148118178 > max(maxPassend_2333448560148118178,1000)
                      then passend_2333448560148118178 = substr(DROPDOWNLIST_01,1,maxPassend_2333448560148118178);
                      else passend_2333448560148118178 = DROPDOWNLIST_01;
+                   passend_2333448560148118178 = tranwrd(passend_2333448560148118178,'9D'x,'D0'x);
                    put passend_2333448560148118178 ~ @;
               end;
        if missing(DROPDOWNLIST_02)
@@ -22822,6 +23656,7 @@ data _null_;
                    if attrLengte_2333448560198451049 > max(maxPassend_2333448560198451049,1000)
                      then passend_2333448560198451049 = substr(DROPDOWNLIST_02,1,maxPassend_2333448560198451049);
                      else passend_2333448560198451049 = DROPDOWNLIST_02;
+                   passend_2333448560198451049 = tranwrd(passend_2333448560198451049,'9D'x,'D0'x);
                    put passend_2333448560198451049 ~ @;
               end;
        if missing(DROPDOWNLIST_03)
@@ -22833,6 +23668,7 @@ data _null_;
                    if attrLengte_2333448560181673436 > max(maxPassend_2333448560181673436,1000)
                      then passend_2333448560181673436 = substr(DROPDOWNLIST_03,1,maxPassend_2333448560181673436);
                      else passend_2333448560181673436 = DROPDOWNLIST_03;
+                   passend_2333448560181673436 = tranwrd(passend_2333448560181673436,'9D'x,'D0'x);
                    put passend_2333448560181673436 ~ @;
               end;
        if missing(DROPDOWNLIST_04)
@@ -22844,6 +23680,7 @@ data _null_;
                    if attrLengte_2333448560097785339 > max(maxPassend_2333448560097785339,1000)
                      then passend_2333448560097785339 = substr(DROPDOWNLIST_04,1,maxPassend_2333448560097785339);
                      else passend_2333448560097785339 = DROPDOWNLIST_04;
+                   passend_2333448560097785339 = tranwrd(passend_2333448560097785339,'9D'x,'D0'x);
                    put passend_2333448560097785339 ~ @;
               end;
        if missing(DROPDOWNLIST_05)
@@ -22855,6 +23692,7 @@ data _null_;
                    if attrLengte_2333448560081007726 > max(maxPassend_2333448560081007726,1000)
                      then passend_2333448560081007726 = substr(DROPDOWNLIST_05,1,maxPassend_2333448560081007726);
                      else passend_2333448560081007726 = DROPDOWNLIST_05;
+                   passend_2333448560081007726 = tranwrd(passend_2333448560081007726,'9D'x,'D0'x);
                    put passend_2333448560081007726 ~ @;
               end;
        if missing(DROPDOWNLIST_06)
@@ -22866,6 +23704,7 @@ data _null_;
                    if attrLengte_2333448560131340565 > max(maxPassend_2333448560131340565,1000)
                      then passend_2333448560131340565 = substr(DROPDOWNLIST_06,1,maxPassend_2333448560131340565);
                      else passend_2333448560131340565 = DROPDOWNLIST_06;
+                   passend_2333448560131340565 = tranwrd(passend_2333448560131340565,'9D'x,'D0'x);
                    put passend_2333448560131340565 ~ @;
               end;
        if missing(DROPDOWNLIST_07)
@@ -22877,6 +23716,7 @@ data _null_;
                    if attrLengte_2333448560114562952 > max(maxPassend_2333448560114562952,1000)
                      then passend_2333448560114562952 = substr(DROPDOWNLIST_07,1,maxPassend_2333448560114562952);
                      else passend_2333448560114562952 = DROPDOWNLIST_07;
+                   passend_2333448560114562952 = tranwrd(passend_2333448560114562952,'9D'x,'D0'x);
                    put passend_2333448560114562952 ~ @;
               end;
        if missing(DROPDOWNLIST_08)
@@ -22888,6 +23728,7 @@ data _null_;
                    if attrLengte_2333448560299116759 > max(maxPassend_2333448560299116759,1000)
                      then passend_2333448560299116759 = substr(DROPDOWNLIST_08,1,maxPassend_2333448560299116759);
                      else passend_2333448560299116759 = DROPDOWNLIST_08;
+                   passend_2333448560299116759 = tranwrd(passend_2333448560299116759,'9D'x,'D0'x);
                    put passend_2333448560299116759 ~ @;
               end;
        if missing(DROPDOWNLIST_09)
@@ -22899,6 +23740,7 @@ data _null_;
                    if attrLengte_2333448560282339146 > max(maxPassend_2333448560282339146,1000)
                      then passend_2333448560282339146 = substr(DROPDOWNLIST_09,1,maxPassend_2333448560282339146);
                      else passend_2333448560282339146 = DROPDOWNLIST_09;
+                   passend_2333448560282339146 = tranwrd(passend_2333448560282339146,'9D'x,'D0'x);
                    put passend_2333448560282339146 ~ @;
               end;
        if missing(DROPDOWNLIST_10)
@@ -22910,6 +23752,7 @@ data _null_;
                    if attrLengte_2333167070054935224 > max(maxPassend_2333167070054935224,1000)
                      then passend_2333167070054935224 = substr(DROPDOWNLIST_10,1,maxPassend_2333167070054935224);
                      else passend_2333167070054935224 = DROPDOWNLIST_10;
+                   passend_2333167070054935224 = tranwrd(passend_2333167070054935224,'9D'x,'D0'x);
                    put passend_2333167070054935224 ~ @;
               end;
        if missing(DROPDOWNLIST_11)
@@ -22921,6 +23764,7 @@ data _null_;
                    if attrLengte_2333167070071712837 > max(maxPassend_2333167070071712837,1000)
                      then passend_2333167070071712837 = substr(DROPDOWNLIST_11,1,maxPassend_2333167070071712837);
                      else passend_2333167070071712837 = DROPDOWNLIST_11;
+                   passend_2333167070071712837 = tranwrd(passend_2333167070071712837,'9D'x,'D0'x);
                    put passend_2333167070071712837 ~ @;
               end;
        if missing(DROPDOWNLIST_12)
@@ -22932,6 +23776,7 @@ data _null_;
                    if attrLengte_2333167070021379998 > max(maxPassend_2333167070021379998,1000)
                      then passend_2333167070021379998 = substr(DROPDOWNLIST_12,1,maxPassend_2333167070021379998);
                      else passend_2333167070021379998 = DROPDOWNLIST_12;
+                   passend_2333167070021379998 = tranwrd(passend_2333167070021379998,'9D'x,'D0'x);
                    put passend_2333167070021379998 ~ @;
               end;
        if missing(DROPDOWNLIST_13)
@@ -22943,6 +23788,7 @@ data _null_;
                    if attrLengte_2333167070038157611 > max(maxPassend_2333167070038157611,1000)
                      then passend_2333167070038157611 = substr(DROPDOWNLIST_13,1,maxPassend_2333167070038157611);
                      else passend_2333167070038157611 = DROPDOWNLIST_13;
+                   passend_2333167070038157611 = tranwrd(passend_2333167070038157611,'9D'x,'D0'x);
                    put passend_2333167070038157611 ~ @;
               end;
        if missing(DROPDOWNLIST_14)
@@ -22954,6 +23800,7 @@ data _null_;
                    if attrLengte_2333167070122045708 > max(maxPassend_2333167070122045708,1000)
                      then passend_2333167070122045708 = substr(DROPDOWNLIST_14,1,maxPassend_2333167070122045708);
                      else passend_2333167070122045708 = DROPDOWNLIST_14;
+                   passend_2333167070122045708 = tranwrd(passend_2333167070122045708,'9D'x,'D0'x);
                    put passend_2333167070122045708 ~ @;
               end;
        if missing(DROPDOWNLIST_15)
@@ -22965,6 +23812,7 @@ data _null_;
                    if attrLengte_2333167070138823321 > max(maxPassend_2333167070138823321,1000)
                      then passend_2333167070138823321 = substr(DROPDOWNLIST_15,1,maxPassend_2333167070138823321);
                      else passend_2333167070138823321 = DROPDOWNLIST_15;
+                   passend_2333167070138823321 = tranwrd(passend_2333167070138823321,'9D'x,'D0'x);
                    put passend_2333167070138823321 ~ @;
               end;
        if missing(DROPDOWNLIST_16)
@@ -22976,6 +23824,7 @@ data _null_;
                    if attrLengte_2333167070088490450 > max(maxPassend_2333167070088490450,1000)
                      then passend_2333167070088490450 = substr(DROPDOWNLIST_16,1,maxPassend_2333167070088490450);
                      else passend_2333167070088490450 = DROPDOWNLIST_16;
+                   passend_2333167070088490450 = tranwrd(passend_2333167070088490450,'9D'x,'D0'x);
                    put passend_2333167070088490450 ~ @;
               end;
        if missing(DROPDOWNLIST_17)
@@ -22987,6 +23836,7 @@ data _null_;
                    if attrLengte_2333167070105268095 > max(maxPassend_2333167070105268095,1000)
                      then passend_2333167070105268095 = substr(DROPDOWNLIST_17,1,maxPassend_2333167070105268095);
                      else passend_2333167070105268095 = DROPDOWNLIST_17;
+                   passend_2333167070105268095 = tranwrd(passend_2333167070105268095,'9D'x,'D0'x);
                    put passend_2333167070105268095 ~ @;
               end;
        if missing(DROPDOWNLIST_18)
@@ -22998,6 +23848,7 @@ data _null_;
                    if attrLengte_2333167070189156192 > max(maxPassend_2333167070189156192,1000)
                      then passend_2333167070189156192 = substr(DROPDOWNLIST_18,1,maxPassend_2333167070189156192);
                      else passend_2333167070189156192 = DROPDOWNLIST_18;
+                   passend_2333167070189156192 = tranwrd(passend_2333167070189156192,'9D'x,'D0'x);
                    put passend_2333167070189156192 ~ @;
               end;
        if missing(DROPDOWNLIST_19)
@@ -23009,6 +23860,7 @@ data _null_;
                    if attrLengte_2333167070205933805 > max(maxPassend_2333167070205933805,1000)
                      then passend_2333167070205933805 = substr(DROPDOWNLIST_19,1,maxPassend_2333167070205933805);
                      else passend_2333167070205933805 = DROPDOWNLIST_19;
+                   passend_2333167070205933805 = tranwrd(passend_2333167070205933805,'9D'x,'D0'x);
                    put passend_2333167070205933805 ~ @;
               end;
        if missing(DROPDOWNLIST_20)
@@ -23020,6 +23872,7 @@ data _null_;
                    if attrLengte_2334011536089746525 > max(maxPassend_2334011536089746525,1000)
                      then passend_2334011536089746525 = substr(DROPDOWNLIST_20,1,maxPassend_2334011536089746525);
                      else passend_2334011536089746525 = DROPDOWNLIST_20;
+                   passend_2334011536089746525 = tranwrd(passend_2334011536089746525,'9D'x,'D0'x);
                    put passend_2334011536089746525 ~ @;
               end;
        if missing(DROPDOWNLIST_21)
@@ -23031,6 +23884,7 @@ data _null_;
                    if attrLengte_2334011536072968912 > max(maxPassend_2334011536072968912,1000)
                      then passend_2334011536072968912 = substr(DROPDOWNLIST_21,1,maxPassend_2334011536072968912);
                      else passend_2334011536072968912 = DROPDOWNLIST_21;
+                   passend_2334011536072968912 = tranwrd(passend_2334011536072968912,'9D'x,'D0'x);
                    put passend_2334011536072968912 ~ @;
               end;
        if missing(DROPDOWNLIST_22)
@@ -23042,6 +23896,7 @@ data _null_;
                    if attrLengte_2334011536056191267 > max(maxPassend_2334011536056191267,1000)
                      then passend_2334011536056191267 = substr(DROPDOWNLIST_22,1,maxPassend_2334011536056191267);
                      else passend_2334011536056191267 = DROPDOWNLIST_22;
+                   passend_2334011536056191267 = tranwrd(passend_2334011536056191267,'9D'x,'D0'x);
                    put passend_2334011536056191267 ~ @;
               end;
        if missing(DROPDOWNLIST_23)
@@ -23053,6 +23908,7 @@ data _null_;
                    if attrLengte_2334011536039413654 > max(maxPassend_2334011536039413654,1000)
                      then passend_2334011536039413654 = substr(DROPDOWNLIST_23,1,maxPassend_2334011536039413654);
                      else passend_2334011536039413654 = DROPDOWNLIST_23;
+                   passend_2334011536039413654 = tranwrd(passend_2334011536039413654,'9D'x,'D0'x);
                    put passend_2334011536039413654 ~ @;
               end;
        if missing(DROPDOWNLIST_24)
@@ -23064,6 +23920,7 @@ data _null_;
                    if attrLengte_2334011536156856977 > max(maxPassend_2334011536156856977,1000)
                      then passend_2334011536156856977 = substr(DROPDOWNLIST_24,1,maxPassend_2334011536156856977);
                      else passend_2334011536156856977 = DROPDOWNLIST_24;
+                   passend_2334011536156856977 = tranwrd(passend_2334011536156856977,'9D'x,'D0'x);
                    put passend_2334011536156856977 ~ @;
               end;
        if missing(DROPDOWNLIST_25)
@@ -23075,6 +23932,7 @@ data _null_;
                    if attrLengte_2334011536140079364 > max(maxPassend_2334011536140079364,1000)
                      then passend_2334011536140079364 = substr(DROPDOWNLIST_25,1,maxPassend_2334011536140079364);
                      else passend_2334011536140079364 = DROPDOWNLIST_25;
+                   passend_2334011536140079364 = tranwrd(passend_2334011536140079364,'9D'x,'D0'x);
                    put passend_2334011536140079364 ~ @;
               end;
        if missing(DROPDOWNLIST_26)
@@ -23086,6 +23944,7 @@ data _null_;
                    if attrLengte_2334011536123301751 > max(maxPassend_2334011536123301751,1000)
                      then passend_2334011536123301751 = substr(DROPDOWNLIST_26,1,maxPassend_2334011536123301751);
                      else passend_2334011536123301751 = DROPDOWNLIST_26;
+                   passend_2334011536123301751 = tranwrd(passend_2334011536123301751,'9D'x,'D0'x);
                    put passend_2334011536123301751 ~ @;
               end;
        if missing(DROPDOWNLIST_27)
@@ -23097,6 +23956,7 @@ data _null_;
                    if attrLengte_2334011536106524138 > max(maxPassend_2334011536106524138,1000)
                      then passend_2334011536106524138 = substr(DROPDOWNLIST_27,1,maxPassend_2334011536106524138);
                      else passend_2334011536106524138 = DROPDOWNLIST_27;
+                   passend_2334011536106524138 = tranwrd(passend_2334011536106524138,'9D'x,'D0'x);
                    put passend_2334011536106524138 ~ @;
               end;
        if missing(DROPDOWNLIST_28)
@@ -23108,6 +23968,7 @@ data _null_;
                    if attrLengte_2334011535955525557 > max(maxPassend_2334011535955525557,1000)
                      then passend_2334011535955525557 = substr(DROPDOWNLIST_28,1,maxPassend_2334011535955525557);
                      else passend_2334011535955525557 = DROPDOWNLIST_28;
+                   passend_2334011535955525557 = tranwrd(passend_2334011535955525557,'9D'x,'D0'x);
                    put passend_2334011535955525557 ~ @;
               end;
        if missing(DROPDOWNLIST_29)
@@ -23119,6 +23980,7 @@ data _null_;
                    if attrLengte_2334011535938747944 > max(maxPassend_2334011535938747944,1000)
                      then passend_2334011535938747944 = substr(DROPDOWNLIST_29,1,maxPassend_2334011535938747944);
                      else passend_2334011535938747944 = DROPDOWNLIST_29;
+                   passend_2334011535938747944 = tranwrd(passend_2334011535938747944,'9D'x,'D0'x);
                    put passend_2334011535938747944 ~ @;
               end;
        if missing(DROPDOWNLIST_30)
@@ -23130,6 +23992,7 @@ data _null_;
                    if attrLengte_2333730048127321158 > max(maxPassend_2333730048127321158,1000)
                      then passend_2333730048127321158 = substr(DROPDOWNLIST_30,1,maxPassend_2333730048127321158);
                      else passend_2333730048127321158 = DROPDOWNLIST_30;
+                   passend_2333730048127321158 = tranwrd(passend_2333730048127321158,'9D'x,'D0'x);
                    put passend_2333730048127321158 ~ @;
               end;
        if missing(DROPDOWNLIST_31)
@@ -23141,6 +24004,7 @@ data _null_;
                    if attrLengte_2333730048144098771 > max(maxPassend_2333730048144098771,1000)
                      then passend_2333730048144098771 = substr(DROPDOWNLIST_31,1,maxPassend_2333730048144098771);
                      else passend_2333730048144098771 = DROPDOWNLIST_31;
+                   passend_2333730048144098771 = tranwrd(passend_2333730048144098771,'9D'x,'D0'x);
                    put passend_2333730048144098771 ~ @;
               end;
        if missing(DROPDOWNLIST_32)
@@ -23152,6 +24016,7 @@ data _null_;
                    if attrLengte_2333730048160876416 > max(maxPassend_2333730048160876416,1000)
                      then passend_2333730048160876416 = substr(DROPDOWNLIST_32,1,maxPassend_2333730048160876416);
                      else passend_2333730048160876416 = DROPDOWNLIST_32;
+                   passend_2333730048160876416 = tranwrd(passend_2333730048160876416,'9D'x,'D0'x);
                    put passend_2333730048160876416 ~ @;
               end;
        if missing(DROPDOWNLIST_33)
@@ -23163,6 +24028,7 @@ data _null_;
                    if attrLengte_2333730048177654029 > max(maxPassend_2333730048177654029,1000)
                      then passend_2333730048177654029 = substr(DROPDOWNLIST_33,1,maxPassend_2333730048177654029);
                      else passend_2333730048177654029 = DROPDOWNLIST_33;
+                   passend_2333730048177654029 = tranwrd(passend_2333730048177654029,'9D'x,'D0'x);
                    put passend_2333730048177654029 ~ @;
               end;
        if missing(DROPDOWNLIST_34)
@@ -23174,6 +24040,7 @@ data _null_;
                    if attrLengte_2333730048194431642 > max(maxPassend_2333730048194431642,1000)
                      then passend_2333730048194431642 = substr(DROPDOWNLIST_34,1,maxPassend_2333730048194431642);
                      else passend_2333730048194431642 = DROPDOWNLIST_34;
+                   passend_2333730048194431642 = tranwrd(passend_2333730048194431642,'9D'x,'D0'x);
                    put passend_2333730048194431642 ~ @;
               end;
        if missing(DROPDOWNLIST_35)
@@ -23185,6 +24052,7 @@ data _null_;
                    if attrLengte_2333730048211209255 > max(maxPassend_2333730048211209255,1000)
                      then passend_2333730048211209255 = substr(DROPDOWNLIST_35,1,maxPassend_2333730048211209255);
                      else passend_2333730048211209255 = DROPDOWNLIST_35;
+                   passend_2333730048211209255 = tranwrd(passend_2333730048211209255,'9D'x,'D0'x);
                    put passend_2333730048211209255 ~ @;
               end;
        if missing(DROPDOWNLIST_36)
@@ -23196,6 +24064,7 @@ data _null_;
                    if attrLengte_2333730048227986868 > max(maxPassend_2333730048227986868,1000)
                      then passend_2333730048227986868 = substr(DROPDOWNLIST_36,1,maxPassend_2333730048227986868);
                      else passend_2333730048227986868 = DROPDOWNLIST_36;
+                   passend_2333730048227986868 = tranwrd(passend_2333730048227986868,'9D'x,'D0'x);
                    put passend_2333730048227986868 ~ @;
               end;
        if missing(DROPDOWNLIST_37)
@@ -23207,6 +24076,7 @@ data _null_;
                    if attrLengte_2333730048244764481 > max(maxPassend_2333730048244764481,1000)
                      then passend_2333730048244764481 = substr(DROPDOWNLIST_37,1,maxPassend_2333730048244764481);
                      else passend_2333730048244764481 = DROPDOWNLIST_37;
+                   passend_2333730048244764481 = tranwrd(passend_2333730048244764481,'9D'x,'D0'x);
                    put passend_2333730048244764481 ~ @;
               end;
        if missing(DROPDOWNLIST_38)
@@ -23218,6 +24088,7 @@ data _null_;
                    if attrLengte_2333730047993100222 > max(maxPassend_2333730047993100222,1000)
                      then passend_2333730047993100222 = substr(DROPDOWNLIST_38,1,maxPassend_2333730047993100222);
                      else passend_2333730047993100222 = DROPDOWNLIST_38;
+                   passend_2333730047993100222 = tranwrd(passend_2333730047993100222,'9D'x,'D0'x);
                    put passend_2333730047993100222 ~ @;
               end;
        if missing(DROPDOWNLIST_39)
@@ -23229,6 +24100,7 @@ data _null_;
                    if attrLengte_2333730048009877835 > max(maxPassend_2333730048009877835,1000)
                      then passend_2333730048009877835 = substr(DROPDOWNLIST_39,1,maxPassend_2333730048009877835);
                      else passend_2333730048009877835 = DROPDOWNLIST_39;
+                   passend_2333730048009877835 = tranwrd(passend_2333730048009877835,'9D'x,'D0'x);
                    put passend_2333730048009877835 ~ @;
               end;
        if missing(DROPDOWNLIST_40)
@@ -23240,6 +24112,7 @@ data _null_;
                    if attrLengte_2334574513625248651 > max(maxPassend_2334574513625248651,1000)
                      then passend_2334574513625248651 = substr(DROPDOWNLIST_40,1,maxPassend_2334574513625248651);
                      else passend_2334574513625248651 = DROPDOWNLIST_40;
+                   passend_2334574513625248651 = tranwrd(passend_2334574513625248651,'9D'x,'D0'x);
                    put passend_2334574513625248651 ~ @;
               end;
        if missing(INT_01)
@@ -23371,6 +24244,7 @@ data _null_;
                    if attrLengte_4198460558916153339 > max(maxPassend_4198460558916153339,1000)
                      then passend_4198460558916153339 = substr(JA_NEE_01,1,maxPassend_4198460558916153339);
                      else passend_4198460558916153339 = JA_NEE_01;
+                   passend_4198460558916153339 = tranwrd(passend_4198460558916153339,'9D'x,'D0'x);
                    put passend_4198460558916153339 ~ @;
               end;
        if missing(JA_NEE_02)
@@ -23382,6 +24256,7 @@ data _null_;
                    if attrLengte_4198460558865820468 > max(maxPassend_4198460558865820468,1000)
                      then passend_4198460558865820468 = substr(JA_NEE_02,1,maxPassend_4198460558865820468);
                      else passend_4198460558865820468 = JA_NEE_02;
+                   passend_4198460558865820468 = tranwrd(passend_4198460558865820468,'9D'x,'D0'x);
                    put passend_4198460558865820468 ~ @;
               end;
        if missing(JA_NEE_03)
@@ -23393,6 +24268,7 @@ data _null_;
                    if attrLengte_4198460558882598085 > max(maxPassend_4198460558882598085,1000)
                      then passend_4198460558882598085 = substr(JA_NEE_03,1,maxPassend_4198460558882598085);
                      else passend_4198460558882598085 = JA_NEE_03;
+                   passend_4198460558882598085 = tranwrd(passend_4198460558882598085,'9D'x,'D0'x);
                    put passend_4198460558882598085 ~ @;
               end;
        if missing(JA_NEE_04)
@@ -23404,6 +24280,7 @@ data _null_;
                    if attrLengte_4198460558966486182 > max(maxPassend_4198460558966486182,1000)
                      then passend_4198460558966486182 = substr(JA_NEE_04,1,maxPassend_4198460558966486182);
                      else passend_4198460558966486182 = JA_NEE_04;
+                   passend_4198460558966486182 = tranwrd(passend_4198460558966486182,'9D'x,'D0'x);
                    put passend_4198460558966486182 ~ @;
               end;
        if missing(JA_NEE_05)
@@ -23415,6 +24292,7 @@ data _null_;
                    if attrLengte_4198460558983263799 > max(maxPassend_4198460558983263799,1000)
                      then passend_4198460558983263799 = substr(JA_NEE_05,1,maxPassend_4198460558983263799);
                      else passend_4198460558983263799 = JA_NEE_05;
+                   passend_4198460558983263799 = tranwrd(passend_4198460558983263799,'9D'x,'D0'x);
                    put passend_4198460558983263799 ~ @;
               end;
        if missing(JA_NEE_06)
@@ -23426,6 +24304,7 @@ data _null_;
                    if attrLengte_4198460558932930960 > max(maxPassend_4198460558932930960,1000)
                      then passend_4198460558932930960 = substr(JA_NEE_06,1,maxPassend_4198460558932930960);
                      else passend_4198460558932930960 = JA_NEE_06;
+                   passend_4198460558932930960 = tranwrd(passend_4198460558932930960,'9D'x,'D0'x);
                    put passend_4198460558932930960 ~ @;
               end;
        if missing(JA_NEE_07)
@@ -23437,6 +24316,7 @@ data _null_;
                    if attrLengte_4198460558949708561 > max(maxPassend_4198460558949708561,1000)
                      then passend_4198460558949708561 = substr(JA_NEE_07,1,maxPassend_4198460558949708561);
                      else passend_4198460558949708561 = JA_NEE_07;
+                   passend_4198460558949708561 = tranwrd(passend_4198460558949708561,'9D'x,'D0'x);
                    put passend_4198460558949708561 ~ @;
               end;
        if missing(JA_NEE_08)
@@ -23448,6 +24328,7 @@ data _null_;
                    if attrLengte_4198460558765154754 > max(maxPassend_4198460558765154754,1000)
                      then passend_4198460558765154754 = substr(JA_NEE_08,1,maxPassend_4198460558765154754);
                      else passend_4198460558765154754 = JA_NEE_08;
+                   passend_4198460558765154754 = tranwrd(passend_4198460558765154754,'9D'x,'D0'x);
                    put passend_4198460558765154754 ~ @;
               end;
        if missing(JA_NEE_09)
@@ -23459,6 +24340,7 @@ data _null_;
                    if attrLengte_4198460558781932371 > max(maxPassend_4198460558781932371,1000)
                      then passend_4198460558781932371 = substr(JA_NEE_09,1,maxPassend_4198460558781932371);
                      else passend_4198460558781932371 = JA_NEE_09;
+                   passend_4198460558781932371 = tranwrd(passend_4198460558781932371,'9D'x,'D0'x);
                    put passend_4198460558781932371 ~ @;
               end;
        if missing(JA_NEE_10)
@@ -23470,6 +24352,7 @@ data _null_;
                    if attrLengte_4198742046861801057 > max(maxPassend_4198742046861801057,1000)
                      then passend_4198742046861801057 = substr(JA_NEE_10,1,maxPassend_4198742046861801057);
                      else passend_4198742046861801057 = JA_NEE_10;
+                   passend_4198742046861801057 = tranwrd(passend_4198742046861801057,'9D'x,'D0'x);
                    put passend_4198742046861801057 ~ @;
               end;
        if missing(JA_NEE_11)
@@ -23481,6 +24364,7 @@ data _null_;
                    if attrLengte_4198742046845023456 > max(maxPassend_4198742046845023456,1000)
                      then passend_4198742046845023456 = substr(JA_NEE_11,1,maxPassend_4198742046845023456);
                      else passend_4198742046845023456 = JA_NEE_11;
+                   passend_4198742046845023456 = tranwrd(passend_4198742046845023456,'9D'x,'D0'x);
                    put passend_4198742046845023456 ~ @;
               end;
        if missing(JA_NEE_12)
@@ -23492,6 +24376,7 @@ data _null_;
                    if attrLengte_4198742046895356295 > max(maxPassend_4198742046895356295,1000)
                      then passend_4198742046895356295 = substr(JA_NEE_12,1,maxPassend_4198742046895356295);
                      else passend_4198742046895356295 = JA_NEE_12;
+                   passend_4198742046895356295 = tranwrd(passend_4198742046895356295,'9D'x,'D0'x);
                    put passend_4198742046895356295 ~ @;
               end;
        if missing(JA_NEE_13)
@@ -23503,6 +24388,7 @@ data _null_;
                    if attrLengte_4198742046878578678 > max(maxPassend_4198742046878578678,1000)
                      then passend_4198742046878578678 = substr(JA_NEE_13,1,maxPassend_4198742046878578678);
                      else passend_4198742046878578678 = JA_NEE_13;
+                   passend_4198742046878578678 = tranwrd(passend_4198742046878578678,'9D'x,'D0'x);
                    put passend_4198742046878578678 ~ @;
               end;
        if missing(JA_NEE_14)
@@ -23514,6 +24400,7 @@ data _null_;
                    if attrLengte_4198742046794690581 > max(maxPassend_4198742046794690581,1000)
                      then passend_4198742046794690581 = substr(JA_NEE_14,1,maxPassend_4198742046794690581);
                      else passend_4198742046794690581 = JA_NEE_14;
+                   passend_4198742046794690581 = tranwrd(passend_4198742046794690581,'9D'x,'D0'x);
                    put passend_4198742046794690581 ~ @;
               end;
        if missing(JA_NEE_15)
@@ -23525,6 +24412,7 @@ data _null_;
                    if attrLengte_4198742046777912964 > max(maxPassend_4198742046777912964,1000)
                      then passend_4198742046777912964 = substr(JA_NEE_15,1,maxPassend_4198742046777912964);
                      else passend_4198742046777912964 = JA_NEE_15;
+                   passend_4198742046777912964 = tranwrd(passend_4198742046777912964,'9D'x,'D0'x);
                    put passend_4198742046777912964 ~ @;
               end;
        if missing(JA_NEE_16)
@@ -23536,6 +24424,7 @@ data _null_;
                    if attrLengte_4198742046828245835 > max(maxPassend_4198742046828245835,1000)
                      then passend_4198742046828245835 = substr(JA_NEE_16,1,maxPassend_4198742046828245835);
                      else passend_4198742046828245835 = JA_NEE_16;
+                   passend_4198742046828245835 = tranwrd(passend_4198742046828245835,'9D'x,'D0'x);
                    put passend_4198742046828245835 ~ @;
               end;
        if missing(JA_NEE_17)
@@ -23547,6 +24436,7 @@ data _null_;
                    if attrLengte_4198742046811468218 > max(maxPassend_4198742046811468218,1000)
                      then passend_4198742046811468218 = substr(JA_NEE_17,1,maxPassend_4198742046811468218);
                      else passend_4198742046811468218 = JA_NEE_17;
+                   passend_4198742046811468218 = tranwrd(passend_4198742046811468218,'9D'x,'D0'x);
                    put passend_4198742046811468218 ~ @;
               end;
        if missing(JA_NEE_18)
@@ -23558,6 +24448,7 @@ data _null_;
                    if attrLengte_4198742046727580121 > max(maxPassend_4198742046727580121,1000)
                      then passend_4198742046727580121 = substr(JA_NEE_18,1,maxPassend_4198742046727580121);
                      else passend_4198742046727580121 = JA_NEE_18;
+                   passend_4198742046727580121 = tranwrd(passend_4198742046727580121,'9D'x,'D0'x);
                    put passend_4198742046727580121 ~ @;
               end;
        if missing(JA_NEE_19)
@@ -23569,6 +24460,7 @@ data _null_;
                    if attrLengte_4198742046710802488 > max(maxPassend_4198742046710802488,1000)
                      then passend_4198742046710802488 = substr(JA_NEE_19,1,maxPassend_4198742046710802488);
                      else passend_4198742046710802488 = JA_NEE_19;
+                   passend_4198742046710802488 = tranwrd(passend_4198742046710802488,'9D'x,'D0'x);
                    put passend_4198742046710802488 ~ @;
               end;
        if missing(JA_NEE_20)
@@ -23580,6 +24472,7 @@ data _null_;
                    if attrLengte_4199023534287342620 > max(maxPassend_4199023534287342620,1000)
                      then passend_4199023534287342620 = substr(JA_NEE_20,1,maxPassend_4199023534287342620);
                      else passend_4199023534287342620 = JA_NEE_20;
+                   passend_4199023534287342620 = tranwrd(passend_4199023534287342620,'9D'x,'D0'x);
                    put passend_4199023534287342620 ~ @;
               end;
        if missing(JA_NEE_21)
@@ -23591,6 +24484,7 @@ data _null_;
                    if attrLengte_4199023534304120237 > max(maxPassend_4199023534304120237,1000)
                      then passend_4199023534304120237 = substr(JA_NEE_21,1,maxPassend_4199023534304120237);
                      else passend_4199023534304120237 = JA_NEE_21;
+                   passend_4199023534304120237 = tranwrd(passend_4199023534304120237,'9D'x,'D0'x);
                    put passend_4199023534304120237 ~ @;
               end;
        if missing(JA_NEE_22)
@@ -23602,6 +24496,7 @@ data _null_;
                    if attrLengte_4199023534320897842 > max(maxPassend_4199023534320897842,1000)
                      then passend_4199023534320897842 = substr(JA_NEE_22,1,maxPassend_4199023534320897842);
                      else passend_4199023534320897842 = JA_NEE_22;
+                   passend_4199023534320897842 = tranwrd(passend_4199023534320897842,'9D'x,'D0'x);
                    put passend_4199023534320897842 ~ @;
               end;
        if missing(JA_NEE_23)
@@ -23613,6 +24508,7 @@ data _null_;
                    if attrLengte_4199023534337675459 > max(maxPassend_4199023534337675459,1000)
                      then passend_4199023534337675459 = substr(JA_NEE_23,1,maxPassend_4199023534337675459);
                      else passend_4199023534337675459 = JA_NEE_23;
+                   passend_4199023534337675459 = tranwrd(passend_4199023534337675459,'9D'x,'D0'x);
                    put passend_4199023534337675459 ~ @;
               end;
        if missing(JA_NEE_24)
@@ -23624,6 +24520,7 @@ data _null_;
                    if attrLengte_4199023534354453080 > max(maxPassend_4199023534354453080,1000)
                      then passend_4199023534354453080 = substr(JA_NEE_24,1,maxPassend_4199023534354453080);
                      else passend_4199023534354453080 = JA_NEE_24;
+                   passend_4199023534354453080 = tranwrd(passend_4199023534354453080,'9D'x,'D0'x);
                    put passend_4199023534354453080 ~ @;
               end;
        if missing(JA_NEE_25)
@@ -23635,6 +24532,7 @@ data _null_;
                    if attrLengte_4199023534371230713 > max(maxPassend_4199023534371230713,1000)
                      then passend_4199023534371230713 = substr(JA_NEE_25,1,maxPassend_4199023534371230713);
                      else passend_4199023534371230713 = JA_NEE_25;
+                   passend_4199023534371230713 = tranwrd(passend_4199023534371230713,'9D'x,'D0'x);
                    put passend_4199023534371230713 ~ @;
               end;
        if missing(JA_NEE_26)
@@ -23646,6 +24544,7 @@ data _null_;
                    if attrLengte_4199023534388008334 > max(maxPassend_4199023534388008334,1000)
                      then passend_4199023534388008334 = substr(JA_NEE_26,1,maxPassend_4199023534388008334);
                      else passend_4199023534388008334 = JA_NEE_26;
+                   passend_4199023534388008334 = tranwrd(passend_4199023534388008334,'9D'x,'D0'x);
                    put passend_4199023534388008334 ~ @;
               end;
        if missing(JA_NEE_27)
@@ -23657,6 +24556,7 @@ data _null_;
                    if attrLengte_4199023534404785951 > max(maxPassend_4199023534404785951,1000)
                      then passend_4199023534404785951 = substr(JA_NEE_27,1,maxPassend_4199023534404785951);
                      else passend_4199023534404785951 = JA_NEE_27;
+                   passend_4199023534404785951 = tranwrd(passend_4199023534404785951,'9D'x,'D0'x);
                    put passend_4199023534404785951 ~ @;
               end;
        if missing(JA_NEE_28)
@@ -23668,6 +24568,7 @@ data _null_;
                    if attrLengte_4199023534421563556 > max(maxPassend_4199023534421563556,1000)
                      then passend_4199023534421563556 = substr(JA_NEE_28,1,maxPassend_4199023534421563556);
                      else passend_4199023534421563556 = JA_NEE_28;
+                   passend_4199023534421563556 = tranwrd(passend_4199023534421563556,'9D'x,'D0'x);
                    put passend_4199023534421563556 ~ @;
               end;
        if missing(JA_NEE_29)
@@ -23679,6 +24580,7 @@ data _null_;
                    if attrLengte_4199023534438341173 > max(maxPassend_4199023534438341173,1000)
                      then passend_4199023534438341173 = substr(JA_NEE_29,1,maxPassend_4199023534438341173);
                      else passend_4199023534438341173 = JA_NEE_29;
+                   passend_4199023534438341173 = tranwrd(passend_4199023534438341173,'9D'x,'D0'x);
                    put passend_4199023534438341173 ~ @;
               end;
        if missing(JA_NEE_30)
@@ -23690,6 +24592,7 @@ data _null_;
                    if attrLengte_4199305024397303187 > max(maxPassend_4199305024397303187,1000)
                      then passend_4199305024397303187 = substr(JA_NEE_30,1,maxPassend_4199305024397303187);
                      else passend_4199305024397303187 = JA_NEE_30;
+                   passend_4199305024397303187 = tranwrd(passend_4199305024397303187,'9D'x,'D0'x);
                    put passend_4199305024397303187 ~ @;
               end;
        if missing(JA_NEE_NVT_01)
@@ -23701,6 +24604,7 @@ data _null_;
                    if attrLengte_7667791472180487256 > max(maxPassend_7667791472180487256,1000)
                      then passend_7667791472180487256 = substr(JA_NEE_NVT_01,1,maxPassend_7667791472180487256);
                      else passend_7667791472180487256 = JA_NEE_NVT_01;
+                   passend_7667791472180487256 = tranwrd(passend_7667791472180487256,'9D'x,'D0'x);
                    put passend_7667791472180487256 ~ @;
               end;
        if missing(JA_NEE_NVT_02)
@@ -23712,6 +24616,7 @@ data _null_;
                    if attrLengte_7667791472230820127 > max(maxPassend_7667791472230820127,1000)
                      then passend_7667791472230820127 = substr(JA_NEE_NVT_02,1,maxPassend_7667791472230820127);
                      else passend_7667791472230820127 = JA_NEE_NVT_02;
+                   passend_7667791472230820127 = tranwrd(passend_7667791472230820127,'9D'x,'D0'x);
                    put passend_7667791472230820127 ~ @;
               end;
        if missing(JA_NEE_NVT_03)
@@ -23723,6 +24628,7 @@ data _null_;
                    if attrLengte_7667791472214042510 > max(maxPassend_7667791472214042510,1000)
                      then passend_7667791472214042510 = substr(JA_NEE_NVT_03,1,maxPassend_7667791472214042510);
                      else passend_7667791472214042510 = JA_NEE_NVT_03;
+                   passend_7667791472214042510 = tranwrd(passend_7667791472214042510,'9D'x,'D0'x);
                    put passend_7667791472214042510 ~ @;
               end;
        if missing(JA_NEE_NVT_04)
@@ -23734,6 +24640,7 @@ data _null_;
                    if attrLengte_7667791472264375349 > max(maxPassend_7667791472264375349,1000)
                      then passend_7667791472264375349 = substr(JA_NEE_NVT_04,1,maxPassend_7667791472264375349);
                      else passend_7667791472264375349 = JA_NEE_NVT_04;
+                   passend_7667791472264375349 = tranwrd(passend_7667791472264375349,'9D'x,'D0'x);
                    put passend_7667791472264375349 ~ @;
               end;
        if missing(JA_NEE_NVT_05)
@@ -23745,6 +24652,7 @@ data _null_;
                    if attrLengte_7667791472247597740 > max(maxPassend_7667791472247597740,1000)
                      then passend_7667791472247597740 = substr(JA_NEE_NVT_05,1,maxPassend_7667791472247597740);
                      else passend_7667791472247597740 = JA_NEE_NVT_05;
+                   passend_7667791472247597740 = tranwrd(passend_7667791472247597740,'9D'x,'D0'x);
                    put passend_7667791472247597740 ~ @;
               end;
        if missing(JA_NEE_NVT_06)
@@ -23756,6 +24664,7 @@ data _null_;
                    if attrLengte_7667791472297930579 > max(maxPassend_7667791472297930579,1000)
                      then passend_7667791472297930579 = substr(JA_NEE_NVT_06,1,maxPassend_7667791472297930579);
                      else passend_7667791472297930579 = JA_NEE_NVT_06;
+                   passend_7667791472297930579 = tranwrd(passend_7667791472297930579,'9D'x,'D0'x);
                    put passend_7667791472297930579 ~ @;
               end;
        if missing(JA_NEE_NVT_07)
@@ -23767,6 +24676,7 @@ data _null_;
                    if attrLengte_7667791472281152962 > max(maxPassend_7667791472281152962,1000)
                      then passend_7667791472281152962 = substr(JA_NEE_NVT_07,1,maxPassend_7667791472281152962);
                      else passend_7667791472281152962 = JA_NEE_NVT_07;
+                   passend_7667791472281152962 = tranwrd(passend_7667791472281152962,'9D'x,'D0'x);
                    put passend_7667791472281152962 ~ @;
               end;
        if missing(JA_NEE_NVT_08)
@@ -23778,6 +24688,7 @@ data _null_;
                    if attrLengte_7667791472063043929 > max(maxPassend_7667791472063043929,1000)
                      then passend_7667791472063043929 = substr(JA_NEE_NVT_08,1,maxPassend_7667791472063043929);
                      else passend_7667791472063043929 = JA_NEE_NVT_08;
+                   passend_7667791472063043929 = tranwrd(passend_7667791472063043929,'9D'x,'D0'x);
                    put passend_7667791472063043929 ~ @;
               end;
        if missing(JA_NEE_NVT_09)
@@ -23789,6 +24700,7 @@ data _null_;
                    if attrLengte_7667791472046266320 > max(maxPassend_7667791472046266320,1000)
                      then passend_7667791472046266320 = substr(JA_NEE_NVT_09,1,maxPassend_7667791472046266320);
                      else passend_7667791472046266320 = JA_NEE_NVT_09;
+                   passend_7667791472046266320 = tranwrd(passend_7667791472046266320,'9D'x,'D0'x);
                    put passend_7667791472046266320 ~ @;
               end;
        if missing(JA_NEE_NVT_10)
@@ -23800,6 +24712,7 @@ data _null_;
                    if attrLengte_7667509984234839530 > max(maxPassend_7667509984234839530,1000)
                      then passend_7667509984234839530 = substr(JA_NEE_NVT_10,1,maxPassend_7667509984234839530);
                      else passend_7667509984234839530 = JA_NEE_NVT_10;
+                   passend_7667509984234839530 = tranwrd(passend_7667509984234839530,'9D'x,'D0'x);
                    put passend_7667509984234839530 ~ @;
               end;
        if missing(JA_NEE_NVT_11)
@@ -23811,6 +24724,7 @@ data _null_;
                    if attrLengte_7667509984251617147 > max(maxPassend_7667509984251617147,1000)
                      then passend_7667509984251617147 = substr(JA_NEE_NVT_11,1,maxPassend_7667509984251617147);
                      else passend_7667509984251617147 = JA_NEE_NVT_11;
+                   passend_7667509984251617147 = tranwrd(passend_7667509984251617147,'9D'x,'D0'x);
                    put passend_7667509984251617147 ~ @;
               end;
        if missing(JA_NEE_NVT_12)
@@ -23822,6 +24736,7 @@ data _null_;
                    if attrLengte_7667509984201284276 > max(maxPassend_7667509984201284276,1000)
                      then passend_7667509984201284276 = substr(JA_NEE_NVT_12,1,maxPassend_7667509984201284276);
                      else passend_7667509984201284276 = JA_NEE_NVT_12;
+                   passend_7667509984201284276 = tranwrd(passend_7667509984201284276,'9D'x,'D0'x);
                    put passend_7667509984201284276 ~ @;
               end;
        if missing(JA_NEE_NVT_13)
@@ -23833,6 +24748,7 @@ data _null_;
                    if attrLengte_7667509984218061917 > max(maxPassend_7667509984218061917,1000)
                      then passend_7667509984218061917 = substr(JA_NEE_NVT_13,1,maxPassend_7667509984218061917);
                      else passend_7667509984218061917 = JA_NEE_NVT_13;
+                   passend_7667509984218061917 = tranwrd(passend_7667509984218061917,'9D'x,'D0'x);
                    put passend_7667509984218061917 ~ @;
               end;
        if missing(JA_NEE_NVT_14)
@@ -23844,6 +24760,7 @@ data _null_;
                    if attrLengte_7667509984167729046 > max(maxPassend_7667509984167729046,1000)
                      then passend_7667509984167729046 = substr(JA_NEE_NVT_14,1,maxPassend_7667509984167729046);
                      else passend_7667509984167729046 = JA_NEE_NVT_14;
+                   passend_7667509984167729046 = tranwrd(passend_7667509984167729046,'9D'x,'D0'x);
                    put passend_7667509984167729046 ~ @;
               end;
        if missing(JA_NEE_NVT_15)
@@ -23855,6 +24772,7 @@ data _null_;
                    if attrLengte_7667509984184506663 > max(maxPassend_7667509984184506663,1000)
                      then passend_7667509984184506663 = substr(JA_NEE_NVT_15,1,maxPassend_7667509984184506663);
                      else passend_7667509984184506663 = JA_NEE_NVT_15;
+                   passend_7667509984184506663 = tranwrd(passend_7667509984184506663,'9D'x,'D0'x);
                    put passend_7667509984184506663 ~ @;
               end;
        if missing(JA_NEE_NVT_16)
@@ -23866,6 +24784,7 @@ data _null_;
                    if attrLengte_7667509984134173824 > max(maxPassend_7667509984134173824,1000)
                      then passend_7667509984134173824 = substr(JA_NEE_NVT_16,1,maxPassend_7667509984134173824);
                      else passend_7667509984134173824 = JA_NEE_NVT_16;
+                   passend_7667509984134173824 = tranwrd(passend_7667509984134173824,'9D'x,'D0'x);
                    put passend_7667509984134173824 ~ @;
               end;
        if missing(JA_NEE_NVT_17)
@@ -23877,6 +24796,7 @@ data _null_;
                    if attrLengte_7667509984150951433 > max(maxPassend_7667509984150951433,1000)
                      then passend_7667509984150951433 = substr(JA_NEE_NVT_17,1,maxPassend_7667509984150951433);
                      else passend_7667509984150951433 = JA_NEE_NVT_17;
+                   passend_7667509984150951433 = tranwrd(passend_7667509984150951433,'9D'x,'D0'x);
                    put passend_7667509984150951433 ~ @;
               end;
        if missing(JA_NEE_NVT_18)
@@ -23888,6 +24808,7 @@ data _null_;
                    if attrLengte_7667509984369060466 > max(maxPassend_7667509984369060466,1000)
                      then passend_7667509984369060466 = substr(JA_NEE_NVT_18,1,maxPassend_7667509984369060466);
                      else passend_7667509984369060466 = JA_NEE_NVT_18;
+                   passend_7667509984369060466 = tranwrd(passend_7667509984369060466,'9D'x,'D0'x);
                    put passend_7667509984369060466 ~ @;
               end;
        if missing(JA_NEE_NVT_19)
@@ -23899,6 +24820,7 @@ data _null_;
                    if attrLengte_7667509984385838083 > max(maxPassend_7667509984385838083,1000)
                      then passend_7667509984385838083 = substr(JA_NEE_NVT_19,1,maxPassend_7667509984385838083);
                      else passend_7667509984385838083 = JA_NEE_NVT_19;
+                   passend_7667509984385838083 = tranwrd(passend_7667509984385838083,'9D'x,'D0'x);
                    put passend_7667509984385838083 ~ @;
               end;
        if missing(JA_NEE_NVT_20)
@@ -23910,6 +24832,7 @@ data _null_;
                    if attrLengte_7668354450269650803 > max(maxPassend_7668354450269650803,1000)
                      then passend_7668354450269650803 = substr(JA_NEE_NVT_20,1,maxPassend_7668354450269650803);
                      else passend_7668354450269650803 = JA_NEE_NVT_20;
+                   passend_7668354450269650803 = tranwrd(passend_7668354450269650803,'9D'x,'D0'x);
                    put passend_7668354450269650803 ~ @;
               end;
        if missing(JA_NEE_ONB_01)
@@ -23921,6 +24844,7 @@ data _null_;
                    if attrLengte_320424162687033679 > max(maxPassend_320424162687033679,1000)
                      then passend_320424162687033679 = substr(JA_NEE_ONB_01,1,maxPassend_320424162687033679);
                      else passend_320424162687033679 = JA_NEE_ONB_01;
+                   passend_320424162687033679 = tranwrd(passend_320424162687033679,'9D'x,'D0'x);
                    put passend_320424162687033679 ~ @;
               end;
        if missing(JA_NEE_ONB_02)
@@ -23932,6 +24856,7 @@ data _null_;
                    if attrLengte_320424162670256034 > max(maxPassend_320424162670256034,1000)
                      then passend_320424162670256034 = substr(JA_NEE_ONB_02,1,maxPassend_320424162670256034);
                      else passend_320424162670256034 = JA_NEE_ONB_02;
+                   passend_320424162670256034 = tranwrd(passend_320424162670256034,'9D'x,'D0'x);
                    put passend_320424162670256034 ~ @;
               end;
        if missing(JA_NEE_ONB_03)
@@ -23943,6 +24868,7 @@ data _null_;
                    if attrLengte_320424162653478417 > max(maxPassend_320424162653478417,1000)
                      then passend_320424162653478417 = substr(JA_NEE_ONB_03,1,maxPassend_320424162653478417);
                      else passend_320424162653478417 = JA_NEE_ONB_03;
+                   passend_320424162653478417 = tranwrd(passend_320424162653478417,'9D'x,'D0'x);
                    put passend_320424162653478417 ~ @;
               end;
        if missing(JA_NEE_ONB_04)
@@ -23954,6 +24880,7 @@ data _null_;
                    if attrLengte_320424162636700804 > max(maxPassend_320424162636700804,1000)
                      then passend_320424162636700804 = substr(JA_NEE_ONB_04,1,maxPassend_320424162636700804);
                      else passend_320424162636700804 = JA_NEE_ONB_04;
+                   passend_320424162636700804 = tranwrd(passend_320424162636700804,'9D'x,'D0'x);
                    put passend_320424162636700804 ~ @;
               end;
        if missing(JA_NEE_ONB_05)
@@ -23965,6 +24892,7 @@ data _null_;
                    if attrLengte_320424162619923195 > max(maxPassend_320424162619923195,1000)
                      then passend_320424162619923195 = substr(JA_NEE_ONB_05,1,maxPassend_320424162619923195);
                      else passend_320424162619923195 = JA_NEE_ONB_05;
+                   passend_320424162619923195 = tranwrd(passend_320424162619923195,'9D'x,'D0'x);
                    put passend_320424162619923195 ~ @;
               end;
        if missing(JA_NEE_ONB_06)
@@ -23976,6 +24904,7 @@ data _null_;
                    if attrLengte_320424162603145582 > max(maxPassend_320424162603145582,1000)
                      then passend_320424162603145582 = substr(JA_NEE_ONB_06,1,maxPassend_320424162603145582);
                      else passend_320424162603145582 = JA_NEE_ONB_06;
+                   passend_320424162603145582 = tranwrd(passend_320424162603145582,'9D'x,'D0'x);
                    put passend_320424162603145582 ~ @;
               end;
        if missing(JA_NEE_ONB_07)
@@ -23987,6 +24916,7 @@ data _null_;
                    if attrLengte_320424162586367965 > max(maxPassend_320424162586367965,1000)
                      then passend_320424162586367965 = substr(JA_NEE_ONB_07,1,maxPassend_320424162586367965);
                      else passend_320424162586367965 = JA_NEE_ONB_07;
+                   passend_320424162586367965 = tranwrd(passend_320424162586367965,'9D'x,'D0'x);
                    put passend_320424162586367965 ~ @;
               end;
        if missing(JA_NEE_ONB_08)
@@ -23998,6 +24928,7 @@ data _null_;
                    if attrLengte_320424162838032224 > max(maxPassend_320424162838032224,1000)
                      then passend_320424162838032224 = substr(JA_NEE_ONB_08,1,maxPassend_320424162838032224);
                      else passend_320424162838032224 = JA_NEE_ONB_08;
+                   passend_320424162838032224 = tranwrd(passend_320424162838032224,'9D'x,'D0'x);
                    put passend_320424162838032224 ~ @;
               end;
        if missing(JA_NEE_ONB_09)
@@ -24009,6 +24940,7 @@ data _null_;
                    if attrLengte_320424162821254615 > max(maxPassend_320424162821254615,1000)
                      then passend_320424162821254615 = substr(JA_NEE_ONB_09,1,maxPassend_320424162821254615);
                      else passend_320424162821254615 = JA_NEE_ONB_09;
+                   passend_320424162821254615 = tranwrd(passend_320424162821254615,'9D'x,'D0'x);
                    put passend_320424162821254615 ~ @;
               end;
        if missing(JA_NEE_ONB_10)
@@ -24020,6 +24952,7 @@ data _null_;
                    if attrLengte_320142672593850689 > max(maxPassend_320142672593850689,1000)
                      then passend_320142672593850689 = substr(JA_NEE_ONB_10,1,maxPassend_320142672593850689);
                      else passend_320142672593850689 = JA_NEE_ONB_10;
+                   passend_320142672593850689 = tranwrd(passend_320142672593850689,'9D'x,'D0'x);
                    put passend_320142672593850689 ~ @;
               end;
        if missing(JA_NEE_ONB_11)
@@ -24031,6 +24964,7 @@ data _null_;
                    if attrLengte_320142672610628306 > max(maxPassend_320142672610628306,1000)
                      then passend_320142672610628306 = substr(JA_NEE_ONB_11,1,maxPassend_320142672610628306);
                      else passend_320142672610628306 = JA_NEE_ONB_11;
+                   passend_320142672610628306 = tranwrd(passend_320142672610628306,'9D'x,'D0'x);
                    put passend_320142672610628306 ~ @;
               end;
        if missing(JA_NEE_ONB_12)
@@ -24042,6 +24976,7 @@ data _null_;
                    if attrLengte_320142672627405951 > max(maxPassend_320142672627405951,1000)
                      then passend_320142672627405951 = substr(JA_NEE_ONB_12,1,maxPassend_320142672627405951);
                      else passend_320142672627405951 = JA_NEE_ONB_12;
+                   passend_320142672627405951 = tranwrd(passend_320142672627405951,'9D'x,'D0'x);
                    put passend_320142672627405951 ~ @;
               end;
        if missing(JA_NEE_ONB_13)
@@ -24053,6 +24988,7 @@ data _null_;
                    if attrLengte_320142672644183560 > max(maxPassend_320142672644183560,1000)
                      then passend_320142672644183560 = substr(JA_NEE_ONB_13,1,maxPassend_320142672644183560);
                      else passend_320142672644183560 = JA_NEE_ONB_13;
+                   passend_320142672644183560 = tranwrd(passend_320142672644183560,'9D'x,'D0'x);
                    put passend_320142672644183560 ~ @;
               end;
        if missing(JA_NEE_ONB_14)
@@ -24064,6 +25000,7 @@ data _null_;
                    if attrLengte_320142672526740237 > max(maxPassend_320142672526740237,1000)
                      then passend_320142672526740237 = substr(JA_NEE_ONB_14,1,maxPassend_320142672526740237);
                      else passend_320142672526740237 = JA_NEE_ONB_14;
+                   passend_320142672526740237 = tranwrd(passend_320142672526740237,'9D'x,'D0'x);
                    put passend_320142672526740237 ~ @;
               end;
        if missing(JA_NEE_ONB_15)
@@ -24075,6 +25012,7 @@ data _null_;
                    if attrLengte_320142672543517854 > max(maxPassend_320142672543517854,1000)
                      then passend_320142672543517854 = substr(JA_NEE_ONB_15,1,maxPassend_320142672543517854);
                      else passend_320142672543517854 = JA_NEE_ONB_15;
+                   passend_320142672543517854 = tranwrd(passend_320142672543517854,'9D'x,'D0'x);
                    put passend_320142672543517854 ~ @;
               end;
        if missing(JA_NEE_ONB_16)
@@ -24086,6 +25024,7 @@ data _null_;
                    if attrLengte_320142672560295467 > max(maxPassend_320142672560295467,1000)
                      then passend_320142672560295467 = substr(JA_NEE_ONB_16,1,maxPassend_320142672560295467);
                      else passend_320142672560295467 = JA_NEE_ONB_16;
+                   passend_320142672560295467 = tranwrd(passend_320142672560295467,'9D'x,'D0'x);
                    put passend_320142672560295467 ~ @;
               end;
        if missing(JA_NEE_ONB_17)
@@ -24097,6 +25036,7 @@ data _null_;
                    if attrLengte_320142672577073076 > max(maxPassend_320142672577073076,1000)
                      then passend_320142672577073076 = substr(JA_NEE_ONB_17,1,maxPassend_320142672577073076);
                      else passend_320142672577073076 = JA_NEE_ONB_17;
+                   passend_320142672577073076 = tranwrd(passend_320142672577073076,'9D'x,'D0'x);
                    put passend_320142672577073076 ~ @;
               end;
        if missing(JA_NEE_ONB_18)
@@ -24108,6 +25048,7 @@ data _null_;
                    if attrLengte_320142672728071657 > max(maxPassend_320142672728071657,1000)
                      then passend_320142672728071657 = substr(JA_NEE_ONB_18,1,maxPassend_320142672728071657);
                      else passend_320142672728071657 = JA_NEE_ONB_18;
+                   passend_320142672728071657 = tranwrd(passend_320142672728071657,'9D'x,'D0'x);
                    put passend_320142672728071657 ~ @;
               end;
        if missing(JA_NEE_ONB_19)
@@ -24119,6 +25060,7 @@ data _null_;
                    if attrLengte_320142672744849274 > max(maxPassend_320142672744849274,1000)
                      then passend_320142672744849274 = substr(JA_NEE_ONB_19,1,maxPassend_320142672744849274);
                      else passend_320142672744849274 = JA_NEE_ONB_19;
+                   passend_320142672744849274 = tranwrd(passend_320142672744849274,'9D'x,'D0'x);
                    put passend_320142672744849274 ~ @;
               end;
        if missing(JA_NEE_ONB_20)
@@ -24130,6 +25072,7 @@ data _null_;
                    if attrLengte_320987138628661994 > max(maxPassend_320987138628661994,1000)
                      then passend_320987138628661994 = substr(JA_NEE_ONB_20,1,maxPassend_320987138628661994);
                      else passend_320987138628661994 = JA_NEE_ONB_20;
+                   passend_320987138628661994 = tranwrd(passend_320987138628661994,'9D'x,'D0'x);
                    put passend_320987138628661994 ~ @;
               end;
        if missing(Mutatie_dat)
@@ -24144,6 +25087,7 @@ data _null_;
                    if attrLengte_7832584208908286581 > max(maxPassend_7832584208908286581,1000)
                      then passend_7832584208908286581 = substr(Mutatie_user,1,maxPassend_7832584208908286581);
                      else passend_7832584208908286581 = Mutatie_user;
+                   passend_7832584208908286581 = tranwrd(passend_7832584208908286581,'9D'x,'D0'x);
                    put passend_7832584208908286581 ~ @;
               end;
        if missing(NUMERIEK_01)
@@ -24275,6 +25219,7 @@ data _null_;
                    if attrLengte_2317130619227152338 > max(maxPassend_2317130619227152338,1000)
                      then passend_2317130619227152338 = substr(OPTIONBUTTON_01,1,maxPassend_2317130619227152338);
                      else passend_2317130619227152338 = OPTIONBUTTON_01;
+                   passend_2317130619227152338 = tranwrd(passend_2317130619227152338,'9D'x,'D0'x);
                    put passend_2317130619227152338 ~ @;
               end;
        if missing(OPTIONBUTTON_02)
@@ -24286,6 +25231,7 @@ data _null_;
                    if attrLengte_2317130619176819499 > max(maxPassend_2317130619176819499,1000)
                      then passend_2317130619176819499 = substr(OPTIONBUTTON_02,1,maxPassend_2317130619176819499);
                      else passend_2317130619176819499 = OPTIONBUTTON_02;
+                   passend_2317130619176819499 = tranwrd(passend_2317130619176819499,'9D'x,'D0'x);
                    put passend_2317130619176819499 ~ @;
               end;
        if missing(OPTIONBUTTON_03)
@@ -24297,6 +25243,7 @@ data _null_;
                    if attrLengte_2317130619193597112 > max(maxPassend_2317130619193597112,1000)
                      then passend_2317130619193597112 = substr(OPTIONBUTTON_03,1,maxPassend_2317130619193597112);
                      else passend_2317130619193597112 = OPTIONBUTTON_03;
+                   passend_2317130619193597112 = tranwrd(passend_2317130619193597112,'9D'x,'D0'x);
                    put passend_2317130619193597112 ~ @;
               end;
        if missing(OPTIONBUTTON_04)
@@ -24308,6 +25255,7 @@ data _null_;
                    if attrLengte_2317130619143264241 > max(maxPassend_2317130619143264241,1000)
                      then passend_2317130619143264241 = substr(OPTIONBUTTON_04,1,maxPassend_2317130619143264241);
                      else passend_2317130619143264241 = OPTIONBUTTON_04;
+                   passend_2317130619143264241 = tranwrd(passend_2317130619143264241,'9D'x,'D0'x);
                    put passend_2317130619143264241 ~ @;
               end;
        if missing(OPTIONBUTTON_05)
@@ -24319,6 +25267,7 @@ data _null_;
                    if attrLengte_2317130619160041886 > max(maxPassend_2317130619160041886,1000)
                      then passend_2317130619160041886 = substr(OPTIONBUTTON_05,1,maxPassend_2317130619160041886);
                      else passend_2317130619160041886 = OPTIONBUTTON_05;
+                   passend_2317130619160041886 = tranwrd(passend_2317130619160041886,'9D'x,'D0'x);
                    put passend_2317130619160041886 ~ @;
               end;
        if missing(OPTIONBUTTON_06)
@@ -24330,6 +25279,7 @@ data _null_;
                    if attrLengte_2317130619109709015 > max(maxPassend_2317130619109709015,1000)
                      then passend_2317130619109709015 = substr(OPTIONBUTTON_06,1,maxPassend_2317130619109709015);
                      else passend_2317130619109709015 = OPTIONBUTTON_06;
+                   passend_2317130619109709015 = tranwrd(passend_2317130619109709015,'9D'x,'D0'x);
                    put passend_2317130619109709015 ~ @;
               end;
        if missing(OPTIONBUTTON_07)
@@ -24341,6 +25291,7 @@ data _null_;
                    if attrLengte_2317130619126486628 > max(maxPassend_2317130619126486628,1000)
                      then passend_2317130619126486628 = substr(OPTIONBUTTON_07,1,maxPassend_2317130619126486628);
                      else passend_2317130619126486628 = OPTIONBUTTON_07;
+                   passend_2317130619126486628 = tranwrd(passend_2317130619126486628,'9D'x,'D0'x);
                    put passend_2317130619126486628 ~ @;
               end;
        if missing(OPTIONBUTTON_08)
@@ -24352,6 +25303,7 @@ data _null_;
                    if attrLengte_2317130619076153789 > max(maxPassend_2317130619076153789,1000)
                      then passend_2317130619076153789 = substr(OPTIONBUTTON_08,1,maxPassend_2317130619076153789);
                      else passend_2317130619076153789 = OPTIONBUTTON_08;
+                   passend_2317130619076153789 = tranwrd(passend_2317130619076153789,'9D'x,'D0'x);
                    put passend_2317130619076153789 ~ @;
               end;
        if missing(OPTIONBUTTON_09)
@@ -24363,6 +25315,7 @@ data _null_;
                    if attrLengte_2317130619092931402 > max(maxPassend_2317130619092931402,1000)
                      then passend_2317130619092931402 = substr(OPTIONBUTTON_09,1,maxPassend_2317130619092931402);
                      else passend_2317130619092931402 = OPTIONBUTTON_09;
+                   passend_2317130619092931402 = tranwrd(passend_2317130619092931402,'9D'x,'D0'x);
                    put passend_2317130619092931402 ~ @;
               end;
        if missing(OPTIONBUTTON_10)
@@ -24374,6 +25327,7 @@ data _null_;
                    if attrLengte_2317412108783451516 > max(maxPassend_2317412108783451516,1000)
                      then passend_2317412108783451516 = substr(OPTIONBUTTON_10,1,maxPassend_2317412108783451516);
                      else passend_2317412108783451516 = OPTIONBUTTON_10;
+                   passend_2317412108783451516 = tranwrd(passend_2317412108783451516,'9D'x,'D0'x);
                    put passend_2317412108783451516 ~ @;
               end;
        if missing(OPTIONBUTTON_11)
@@ -24385,6 +25339,7 @@ data _null_;
                    if attrLengte_2317412108766673903 > max(maxPassend_2317412108766673903,1000)
                      then passend_2317412108766673903 = substr(OPTIONBUTTON_11,1,maxPassend_2317412108766673903);
                      else passend_2317412108766673903 = OPTIONBUTTON_11;
+                   passend_2317412108766673903 = tranwrd(passend_2317412108766673903,'9D'x,'D0'x);
                    put passend_2317412108766673903 ~ @;
               end;
        if missing(OPTIONBUTTON_12)
@@ -24396,6 +25351,7 @@ data _null_;
                    if attrLengte_2317412108817006742 > max(maxPassend_2317412108817006742,1000)
                      then passend_2317412108817006742 = substr(OPTIONBUTTON_12,1,maxPassend_2317412108817006742);
                      else passend_2317412108817006742 = OPTIONBUTTON_12;
+                   passend_2317412108817006742 = tranwrd(passend_2317412108817006742,'9D'x,'D0'x);
                    put passend_2317412108817006742 ~ @;
               end;
        if missing(OPTIONBUTTON_13)
@@ -24407,6 +25363,7 @@ data _null_;
                    if attrLengte_2317412108800229129 > max(maxPassend_2317412108800229129,1000)
                      then passend_2317412108800229129 = substr(OPTIONBUTTON_13,1,maxPassend_2317412108800229129);
                      else passend_2317412108800229129 = OPTIONBUTTON_13;
+                   passend_2317412108800229129 = tranwrd(passend_2317412108800229129,'9D'x,'D0'x);
                    put passend_2317412108800229129 ~ @;
               end;
        if missing(OPTIONBUTTON_14)
@@ -24418,6 +25375,7 @@ data _null_;
                    if attrLengte_2317412108850561968 > max(maxPassend_2317412108850561968,1000)
                      then passend_2317412108850561968 = substr(OPTIONBUTTON_14,1,maxPassend_2317412108850561968);
                      else passend_2317412108850561968 = OPTIONBUTTON_14;
+                   passend_2317412108850561968 = tranwrd(passend_2317412108850561968,'9D'x,'D0'x);
                    put passend_2317412108850561968 ~ @;
               end;
        if missing(OPTIONBUTTON_15)
@@ -24429,6 +25387,7 @@ data _null_;
                    if attrLengte_2317412108833784355 > max(maxPassend_2317412108833784355,1000)
                      then passend_2317412108833784355 = substr(OPTIONBUTTON_15,1,maxPassend_2317412108833784355);
                      else passend_2317412108833784355 = OPTIONBUTTON_15;
+                   passend_2317412108833784355 = tranwrd(passend_2317412108833784355,'9D'x,'D0'x);
                    put passend_2317412108833784355 ~ @;
               end;
        if missing(OPTIONBUTTON_16)
@@ -24440,6 +25399,7 @@ data _null_;
                    if attrLengte_2317412108884117226 > max(maxPassend_2317412108884117226,1000)
                      then passend_2317412108884117226 = substr(OPTIONBUTTON_16,1,maxPassend_2317412108884117226);
                      else passend_2317412108884117226 = OPTIONBUTTON_16;
+                   passend_2317412108884117226 = tranwrd(passend_2317412108884117226,'9D'x,'D0'x);
                    put passend_2317412108884117226 ~ @;
               end;
        if missing(OPTIONBUTTON_17)
@@ -24451,6 +25411,7 @@ data _null_;
                    if attrLengte_2317412108867339613 > max(maxPassend_2317412108867339613,1000)
                      then passend_2317412108867339613 = substr(OPTIONBUTTON_17,1,maxPassend_2317412108867339613);
                      else passend_2317412108867339613 = OPTIONBUTTON_17;
+                   passend_2317412108867339613 = tranwrd(passend_2317412108867339613,'9D'x,'D0'x);
                    put passend_2317412108867339613 ~ @;
               end;
        if missing(OPTIONBUTTON_18)
@@ -24462,6 +25423,7 @@ data _null_;
                    if attrLengte_2317412108917672452 > max(maxPassend_2317412108917672452,1000)
                      then passend_2317412108917672452 = substr(OPTIONBUTTON_18,1,maxPassend_2317412108917672452);
                      else passend_2317412108917672452 = OPTIONBUTTON_18;
+                   passend_2317412108917672452 = tranwrd(passend_2317412108917672452,'9D'x,'D0'x);
                    put passend_2317412108917672452 ~ @;
               end;
        if missing(OPTIONBUTTON_19)
@@ -24473,6 +25435,7 @@ data _null_;
                    if attrLengte_2317412108900894839 > max(maxPassend_2317412108900894839,1000)
                      then passend_2317412108900894839 = substr(OPTIONBUTTON_19,1,maxPassend_2317412108900894839);
                      else passend_2317412108900894839 = OPTIONBUTTON_19;
+                   passend_2317412108900894839 = tranwrd(passend_2317412108900894839,'9D'x,'D0'x);
                    put passend_2317412108900894839 ~ @;
               end;
        if missing(OPTIONBUTTON_20)
@@ -24484,6 +25447,7 @@ data _null_;
                    if attrLengte_2316567643285524023 > max(maxPassend_2316567643285524023,1000)
                      then passend_2316567643285524023 = substr(OPTIONBUTTON_20,1,maxPassend_2316567643285524023);
                      else passend_2316567643285524023 = OPTIONBUTTON_20;
+                   passend_2316567643285524023 = tranwrd(passend_2316567643285524023,'9D'x,'D0'x);
                    put passend_2316567643285524023 ~ @;
               end;
        if missing(TEKSTBLOK_01)
@@ -24495,6 +25459,7 @@ data _null_;
                    if attrLengte_3028293016467408665 > max(maxPassend_3028293016467408665,1000)
                      then passend_3028293016467408665 = substr(TEKSTBLOK_01,1,maxPassend_3028293016467408665);
                      else passend_3028293016467408665 = TEKSTBLOK_01;
+                   passend_3028293016467408665 = tranwrd(passend_3028293016467408665,'9D'x,'D0'x);
                    put passend_3028293016467408665 ~ @;
               end;
        if missing(TEKSTBLOK_02)
@@ -24506,6 +25471,7 @@ data _null_;
                    if attrLengte_3028293016450631054 > max(maxPassend_3028293016450631054,1000)
                      then passend_3028293016450631054 = substr(TEKSTBLOK_02,1,maxPassend_3028293016450631054);
                      else passend_3028293016450631054 = TEKSTBLOK_02;
+                   passend_3028293016450631054 = tranwrd(passend_3028293016450631054,'9D'x,'D0'x);
                    put passend_3028293016450631054 ~ @;
               end;
        if missing(TEKSTBLOK_03)
@@ -24517,6 +25483,7 @@ data _null_;
                    if attrLengte_3028293016433853411 > max(maxPassend_3028293016433853411,1000)
                      then passend_3028293016433853411 = substr(TEKSTBLOK_03,1,maxPassend_3028293016433853411);
                      else passend_3028293016433853411 = TEKSTBLOK_03;
+                   passend_3028293016433853411 = tranwrd(passend_3028293016433853411,'9D'x,'D0'x);
                    put passend_3028293016433853411 ~ @;
               end;
        if missing(TEKSTBLOK_04)
@@ -24528,6 +25495,7 @@ data _null_;
                    if attrLengte_3028293016417075800 > max(maxPassend_3028293016417075800,1000)
                      then passend_3028293016417075800 = substr(TEKSTBLOK_04,1,maxPassend_3028293016417075800);
                      else passend_3028293016417075800 = TEKSTBLOK_04;
+                   passend_3028293016417075800 = tranwrd(passend_3028293016417075800,'9D'x,'D0'x);
                    put passend_3028293016417075800 ~ @;
               end;
        if missing(TEKSTBLOK_05)
@@ -24539,6 +25507,7 @@ data _null_;
                    if attrLengte_3028293016400298181 > max(maxPassend_3028293016400298181,1000)
                      then passend_3028293016400298181 = substr(TEKSTBLOK_05,1,maxPassend_3028293016400298181);
                      else passend_3028293016400298181 = TEKSTBLOK_05;
+                   passend_3028293016400298181 = tranwrd(passend_3028293016400298181,'9D'x,'D0'x);
                    put passend_3028293016400298181 ~ @;
               end;
        if missing(TEKSTBLOK_06)
@@ -24550,6 +25519,7 @@ data _null_;
                    if attrLengte_3028293016383520570 > max(maxPassend_3028293016383520570,1000)
                      then passend_3028293016383520570 = substr(TEKSTBLOK_06,1,maxPassend_3028293016383520570);
                      else passend_3028293016383520570 = TEKSTBLOK_06;
+                   passend_3028293016383520570 = tranwrd(passend_3028293016383520570,'9D'x,'D0'x);
                    put passend_3028293016383520570 ~ @;
               end;
        if missing(TEKSTBLOK_07)
@@ -24561,6 +25531,7 @@ data _null_;
                    if attrLengte_3028293016366742959 > max(maxPassend_3028293016366742959,1000)
                      then passend_3028293016366742959 = substr(TEKSTBLOK_07,1,maxPassend_3028293016366742959);
                      else passend_3028293016366742959 = TEKSTBLOK_07;
+                   passend_3028293016366742959 = tranwrd(passend_3028293016366742959,'9D'x,'D0'x);
                    put passend_3028293016366742959 ~ @;
               end;
        if missing(TEKSTBLOK_08)
@@ -24572,6 +25543,7 @@ data _null_;
                    if attrLengte_3028293016618407220 > max(maxPassend_3028293016618407220,1000)
                      then passend_3028293016618407220 = substr(TEKSTBLOK_08,1,maxPassend_3028293016618407220);
                      else passend_3028293016618407220 = TEKSTBLOK_08;
+                   passend_3028293016618407220 = tranwrd(passend_3028293016618407220,'9D'x,'D0'x);
                    put passend_3028293016618407220 ~ @;
               end;
        if missing(TEKSTBLOK_09)
@@ -24583,6 +25555,7 @@ data _null_;
                    if attrLengte_3028293016601629601 > max(maxPassend_3028293016601629601,1000)
                      then passend_3028293016601629601 = substr(TEKSTBLOK_09,1,maxPassend_3028293016601629601);
                      else passend_3028293016601629601 = TEKSTBLOK_09;
+                   passend_3028293016601629601 = tranwrd(passend_3028293016601629601,'9D'x,'D0'x);
                    put passend_3028293016601629601 ~ @;
               end;
        if missing(TEKSTBLOK_10)
@@ -24594,6 +25567,7 @@ data _null_;
                    if attrLengte_3028011526374225683 > max(maxPassend_3028011526374225683,1000)
                      then passend_3028011526374225683 = substr(TEKSTBLOK_10,1,maxPassend_3028011526374225683);
                      else passend_3028011526374225683 = TEKSTBLOK_10;
+                   passend_3028011526374225683 = tranwrd(passend_3028011526374225683,'9D'x,'D0'x);
                    put passend_3028011526374225683 ~ @;
               end;
        if missing(VARCHAR_60_01)
@@ -24605,6 +25579,7 @@ data _null_;
                    if attrLengte_2777269963343329415 > max(maxPassend_2777269963343329415,1000)
                      then passend_2777269963343329415 = substr(VARCHAR_60_01,1,maxPassend_2777269963343329415);
                      else passend_2777269963343329415 = VARCHAR_60_01;
+                   passend_2777269963343329415 = tranwrd(passend_2777269963343329415,'9D'x,'D0'x);
                    put passend_2777269963343329415 ~ @;
               end;
        if missing(VARCHAR_60_02)
@@ -24616,6 +25591,7 @@ data _null_;
                    if attrLengte_2777269963326551802 > max(maxPassend_2777269963326551802,1000)
                      then passend_2777269963326551802 = substr(VARCHAR_60_02,1,maxPassend_2777269963326551802);
                      else passend_2777269963326551802 = VARCHAR_60_02;
+                   passend_2777269963326551802 = tranwrd(passend_2777269963326551802,'9D'x,'D0'x);
                    put passend_2777269963326551802 ~ @;
               end;
        if missing(VARCHAR_60_03)
@@ -24627,6 +25603,7 @@ data _null_;
                    if attrLengte_2777269963309774185 > max(maxPassend_2777269963309774185,1000)
                      then passend_2777269963309774185 = substr(VARCHAR_60_03,1,maxPassend_2777269963309774185);
                      else passend_2777269963309774185 = VARCHAR_60_03;
+                   passend_2777269963309774185 = tranwrd(passend_2777269963309774185,'9D'x,'D0'x);
                    put passend_2777269963309774185 ~ @;
               end;
        if missing(VARCHAR_60_04)
@@ -24638,6 +25615,7 @@ data _null_;
                    if attrLengte_2777269963292996572 > max(maxPassend_2777269963292996572,1000)
                      then passend_2777269963292996572 = substr(VARCHAR_60_04,1,maxPassend_2777269963292996572);
                      else passend_2777269963292996572 = VARCHAR_60_04;
+                   passend_2777269963292996572 = tranwrd(passend_2777269963292996572,'9D'x,'D0'x);
                    put passend_2777269963292996572 ~ @;
               end;
        if missing(VARCHAR_60_05)
@@ -24649,6 +25627,7 @@ data _null_;
                    if attrLengte_2777269963276218931 > max(maxPassend_2777269963276218931,1000)
                      then passend_2777269963276218931 = substr(VARCHAR_60_05,1,maxPassend_2777269963276218931);
                      else passend_2777269963276218931 = VARCHAR_60_05;
+                   passend_2777269963276218931 = tranwrd(passend_2777269963276218931,'9D'x,'D0'x);
                    put passend_2777269963276218931 ~ @;
               end;
        if missing(VARCHAR_60_06)
@@ -24660,6 +25639,7 @@ data _null_;
                    if attrLengte_2777269963259441318 > max(maxPassend_2777269963259441318,1000)
                      then passend_2777269963259441318 = substr(VARCHAR_60_06,1,maxPassend_2777269963259441318);
                      else passend_2777269963259441318 = VARCHAR_60_06;
+                   passend_2777269963259441318 = tranwrd(passend_2777269963259441318,'9D'x,'D0'x);
                    put passend_2777269963259441318 ~ @;
               end;
        if missing(VARCHAR_60_07)
@@ -24671,6 +25651,7 @@ data _null_;
                    if attrLengte_2777269963242663701 > max(maxPassend_2777269963242663701,1000)
                      then passend_2777269963242663701 = substr(VARCHAR_60_07,1,maxPassend_2777269963242663701);
                      else passend_2777269963242663701 = VARCHAR_60_07;
+                   passend_2777269963242663701 = tranwrd(passend_2777269963242663701,'9D'x,'D0'x);
                    put passend_2777269963242663701 ~ @;
               end;
        if missing(VARCHAR_60_08)
@@ -24682,6 +25663,7 @@ data _null_;
                    if attrLengte_2777269963225886088 > max(maxPassend_2777269963225886088,1000)
                      then passend_2777269963225886088 = substr(VARCHAR_60_08,1,maxPassend_2777269963225886088);
                      else passend_2777269963225886088 = VARCHAR_60_08;
+                   passend_2777269963225886088 = tranwrd(passend_2777269963225886088,'9D'x,'D0'x);
                    put passend_2777269963225886088 ~ @;
               end;
        if missing(VARCHAR_60_09)
@@ -24693,6 +25675,7 @@ data _null_;
                    if attrLengte_2777269963209108479 > max(maxPassend_2777269963209108479,1000)
                      then passend_2777269963209108479 = substr(VARCHAR_60_09,1,maxPassend_2777269963209108479);
                      else passend_2777269963209108479 = VARCHAR_60_09;
+                   passend_2777269963209108479 = tranwrd(passend_2777269963209108479,'9D'x,'D0'x);
                    put passend_2777269963209108479 ~ @;
               end;
        if missing(VARCHAR_60_10)
@@ -24704,6 +25687,7 @@ data _null_;
                    if attrLengte_2776988475397681689 > max(maxPassend_2776988475397681689,1000)
                      then passend_2776988475397681689 = substr(VARCHAR_60_10,1,maxPassend_2776988475397681689);
                      else passend_2776988475397681689 = VARCHAR_60_10;
+                   passend_2776988475397681689 = tranwrd(passend_2776988475397681689,'9D'x,'D0'x);
                    put passend_2776988475397681689 ~ @;
               end;
        if missing(VARCHAR_60_11)
@@ -24715,6 +25699,7 @@ data _null_;
                    if attrLengte_2776988475414459306 > max(maxPassend_2776988475414459306,1000)
                      then passend_2776988475414459306 = substr(VARCHAR_60_11,1,maxPassend_2776988475414459306);
                      else passend_2776988475414459306 = VARCHAR_60_11;
+                   passend_2776988475414459306 = tranwrd(passend_2776988475414459306,'9D'x,'D0'x);
                    put passend_2776988475414459306 ~ @;
               end;
        if missing(VARCHAR_60_12)
@@ -24726,6 +25711,7 @@ data _null_;
                    if attrLengte_2776988475431236919 > max(maxPassend_2776988475431236919,1000)
                      then passend_2776988475431236919 = substr(VARCHAR_60_12,1,maxPassend_2776988475431236919);
                      else passend_2776988475431236919 = VARCHAR_60_12;
+                   passend_2776988475431236919 = tranwrd(passend_2776988475431236919,'9D'x,'D0'x);
                    put passend_2776988475431236919 ~ @;
               end;
        if missing(VARCHAR_60_13)
@@ -24737,6 +25723,7 @@ data _null_;
                    if attrLengte_2776988475448014528 > max(maxPassend_2776988475448014528,1000)
                      then passend_2776988475448014528 = substr(VARCHAR_60_13,1,maxPassend_2776988475448014528);
                      else passend_2776988475448014528 = VARCHAR_60_13;
+                   passend_2776988475448014528 = tranwrd(passend_2776988475448014528,'9D'x,'D0'x);
                    put passend_2776988475448014528 ~ @;
               end;
        if missing(VARCHAR_60_14)
@@ -24748,6 +25735,7 @@ data _null_;
                    if attrLengte_2776988475330571205 > max(maxPassend_2776988475330571205,1000)
                      then passend_2776988475330571205 = substr(VARCHAR_60_14,1,maxPassend_2776988475330571205);
                      else passend_2776988475330571205 = VARCHAR_60_14;
+                   passend_2776988475330571205 = tranwrd(passend_2776988475330571205,'9D'x,'D0'x);
                    put passend_2776988475330571205 ~ @;
               end;
        if missing(VARCHAR_60_15)
@@ -24759,6 +25747,7 @@ data _null_;
                    if attrLengte_2776988475347348822 > max(maxPassend_2776988475347348822,1000)
                      then passend_2776988475347348822 = substr(VARCHAR_60_15,1,maxPassend_2776988475347348822);
                      else passend_2776988475347348822 = VARCHAR_60_15;
+                   passend_2776988475347348822 = tranwrd(passend_2776988475347348822,'9D'x,'D0'x);
                    put passend_2776988475347348822 ~ @;
               end;
        if missing(VARCHAR_60_16)
@@ -24770,6 +25759,7 @@ data _null_;
                    if attrLengte_2776988475364126435 > max(maxPassend_2776988475364126435,1000)
                      then passend_2776988475364126435 = substr(VARCHAR_60_16,1,maxPassend_2776988475364126435);
                      else passend_2776988475364126435 = VARCHAR_60_16;
+                   passend_2776988475364126435 = tranwrd(passend_2776988475364126435,'9D'x,'D0'x);
                    put passend_2776988475364126435 ~ @;
               end;
        if missing(VARCHAR_60_17)
@@ -24781,6 +25771,7 @@ data _null_;
                    if attrLengte_2776988475380904076 > max(maxPassend_2776988475380904076,1000)
                      then passend_2776988475380904076 = substr(VARCHAR_60_17,1,maxPassend_2776988475380904076);
                      else passend_2776988475380904076 = VARCHAR_60_17;
+                   passend_2776988475380904076 = tranwrd(passend_2776988475380904076,'9D'x,'D0'x);
                    put passend_2776988475380904076 ~ @;
               end;
        if missing(VARCHAR_60_18)
@@ -24792,6 +25783,7 @@ data _null_;
                    if attrLengte_2776988475263460721 > max(maxPassend_2776988475263460721,1000)
                      then passend_2776988475263460721 = substr(VARCHAR_60_18,1,maxPassend_2776988475263460721);
                      else passend_2776988475263460721 = VARCHAR_60_18;
+                   passend_2776988475263460721 = tranwrd(passend_2776988475263460721,'9D'x,'D0'x);
                    put passend_2776988475263460721 ~ @;
               end;
        if missing(VARCHAR_60_19)
@@ -24803,6 +25795,7 @@ data _null_;
                    if attrLengte_2776988475280238338 > max(maxPassend_2776988475280238338,1000)
                      then passend_2776988475280238338 = substr(VARCHAR_60_19,1,maxPassend_2776988475280238338);
                      else passend_2776988475280238338 = VARCHAR_60_19;
+                   passend_2776988475280238338 = tranwrd(passend_2776988475280238338,'9D'x,'D0'x);
                    put passend_2776988475280238338 ~ @;
               end;
        if missing(VARCHAR_60_20)
@@ -24814,6 +25807,7 @@ data _null_;
                    if attrLengte_2777832940895609154 > max(maxPassend_2777832940895609154,1000)
                      then passend_2777832940895609154 = substr(VARCHAR_60_20,1,maxPassend_2777832940895609154);
                      else passend_2777832940895609154 = VARCHAR_60_20;
+                   passend_2777832940895609154 = tranwrd(passend_2777832940895609154,'9D'x,'D0'x);
                    put passend_2777832940895609154 ~ @;
               end;
        if missing(VARCHAR_60_21)
@@ -24825,6 +25819,7 @@ data _null_;
                    if attrLengte_2777832940878831537 > max(maxPassend_2777832940878831537,1000)
                      then passend_2777832940878831537 = substr(VARCHAR_60_21,1,maxPassend_2777832940878831537);
                      else passend_2777832940878831537 = VARCHAR_60_21;
+                   passend_2777832940878831537 = tranwrd(passend_2777832940878831537,'9D'x,'D0'x);
                    put passend_2777832940878831537 ~ @;
               end;
        if missing(VARCHAR_60_22)
@@ -24836,6 +25831,7 @@ data _null_;
                    if attrLengte_2777832940929164408 > max(maxPassend_2777832940929164408,1000)
                      then passend_2777832940929164408 = substr(VARCHAR_60_22,1,maxPassend_2777832940929164408);
                      else passend_2777832940929164408 = VARCHAR_60_22;
+                   passend_2777832940929164408 = tranwrd(passend_2777832940929164408,'9D'x,'D0'x);
                    put passend_2777832940929164408 ~ @;
               end;
        if missing(VARCHAR_60_23)
@@ -24847,6 +25843,7 @@ data _null_;
                    if attrLengte_2777832940912386799 > max(maxPassend_2777832940912386799,1000)
                      then passend_2777832940912386799 = substr(VARCHAR_60_23,1,maxPassend_2777832940912386799);
                      else passend_2777832940912386799 = VARCHAR_60_23;
+                   passend_2777832940912386799 = tranwrd(passend_2777832940912386799,'9D'x,'D0'x);
                    put passend_2777832940912386799 ~ @;
               end;
        if missing(VARCHAR_60_24)
@@ -24858,6 +25855,7 @@ data _null_;
                    if attrLengte_2777832940828498702 > max(maxPassend_2777832940828498702,1000)
                      then passend_2777832940828498702 = substr(VARCHAR_60_24,1,maxPassend_2777832940828498702);
                      else passend_2777832940828498702 = VARCHAR_60_24;
+                   passend_2777832940828498702 = tranwrd(passend_2777832940828498702,'9D'x,'D0'x);
                    put passend_2777832940828498702 ~ @;
               end;
        if missing(VARCHAR_60_25)
@@ -24869,6 +25867,7 @@ data _null_;
                    if attrLengte_2777832940811721085 > max(maxPassend_2777832940811721085,1000)
                      then passend_2777832940811721085 = substr(VARCHAR_60_25,1,maxPassend_2777832940811721085);
                      else passend_2777832940811721085 = VARCHAR_60_25;
+                   passend_2777832940811721085 = tranwrd(passend_2777832940811721085,'9D'x,'D0'x);
                    put passend_2777832940811721085 ~ @;
               end;
        if missing(VARCHAR_60_26)
@@ -24880,6 +25879,7 @@ data _null_;
                    if attrLengte_2777832940862053924 > max(maxPassend_2777832940862053924,1000)
                      then passend_2777832940862053924 = substr(VARCHAR_60_26,1,maxPassend_2777832940862053924);
                      else passend_2777832940862053924 = VARCHAR_60_26;
+                   passend_2777832940862053924 = tranwrd(passend_2777832940862053924,'9D'x,'D0'x);
                    put passend_2777832940862053924 ~ @;
               end;
        if missing(VARCHAR_60_27)
@@ -24891,6 +25891,7 @@ data _null_;
                    if attrLengte_2777832940845276315 > max(maxPassend_2777832940845276315,1000)
                      then passend_2777832940845276315 = substr(VARCHAR_60_27,1,maxPassend_2777832940845276315);
                      else passend_2777832940845276315 = VARCHAR_60_27;
+                   passend_2777832940845276315 = tranwrd(passend_2777832940845276315,'9D'x,'D0'x);
                    put passend_2777832940845276315 ~ @;
               end;
        if missing(VARCHAR_60_28)
@@ -24902,6 +25903,7 @@ data _null_;
                    if attrLengte_2777832941029830122 > max(maxPassend_2777832941029830122,1000)
                      then passend_2777832941029830122 = substr(VARCHAR_60_28,1,maxPassend_2777832941029830122);
                      else passend_2777832941029830122 = VARCHAR_60_28;
+                   passend_2777832941029830122 = tranwrd(passend_2777832941029830122,'9D'x,'D0'x);
                    put passend_2777832941029830122 ~ @;
               end;
        if missing(VARCHAR_60_29)
@@ -24913,6 +25915,7 @@ data _null_;
                    if attrLengte_2777832941013052505 > max(maxPassend_2777832941013052505,1000)
                      then passend_2777832941013052505 = substr(VARCHAR_60_29,1,maxPassend_2777832941013052505);
                      else passend_2777832941013052505 = VARCHAR_60_29;
+                   passend_2777832941013052505 = tranwrd(passend_2777832941013052505,'9D'x,'D0'x);
                    put passend_2777832941013052505 ~ @;
               end;
        if missing(VARCHAR_60_30)
@@ -24924,6 +25927,7 @@ data _null_;
                    if attrLengte_2777551452933183819 > max(maxPassend_2777551452933183819,1000)
                      then passend_2777551452933183819 = substr(VARCHAR_60_30,1,maxPassend_2777551452933183819);
                      else passend_2777551452933183819 = VARCHAR_60_30;
+                   passend_2777551452933183819 = tranwrd(passend_2777551452933183819,'9D'x,'D0'x);
                    put passend_2777551452933183819 ~ @;
               end;
        if missing(VARCHAR_60_31)
@@ -24935,6 +25939,7 @@ data _null_;
                    if attrLengte_2777551452949961428 > max(maxPassend_2777551452949961428,1000)
                      then passend_2777551452949961428 = substr(VARCHAR_60_31,1,maxPassend_2777551452949961428);
                      else passend_2777551452949961428 = VARCHAR_60_31;
+                   passend_2777551452949961428 = tranwrd(passend_2777551452949961428,'9D'x,'D0'x);
                    put passend_2777551452949961428 ~ @;
               end;
        if missing(VARCHAR_60_32)
@@ -24946,6 +25951,7 @@ data _null_;
                    if attrLengte_2777551452899628589 > max(maxPassend_2777551452899628589,1000)
                      then passend_2777551452899628589 = substr(VARCHAR_60_32,1,maxPassend_2777551452899628589);
                      else passend_2777551452899628589 = VARCHAR_60_32;
+                   passend_2777551452899628589 = tranwrd(passend_2777551452899628589,'9D'x,'D0'x);
                    put passend_2777551452899628589 ~ @;
               end;
        if missing(VARCHAR_60_33)
@@ -24957,6 +25963,7 @@ data _null_;
                    if attrLengte_2777551452916406206 > max(maxPassend_2777551452916406206,1000)
                      then passend_2777551452916406206 = substr(VARCHAR_60_33,1,maxPassend_2777551452916406206);
                      else passend_2777551452916406206 = VARCHAR_60_33;
+                   passend_2777551452916406206 = tranwrd(passend_2777551452916406206,'9D'x,'D0'x);
                    put passend_2777551452916406206 ~ @;
               end;
        if missing(VARCHAR_60_34)
@@ -24968,6 +25975,7 @@ data _null_;
                    if attrLengte_2777551453000294303 > max(maxPassend_2777551453000294303,1000)
                      then passend_2777551453000294303 = substr(VARCHAR_60_34,1,maxPassend_2777551453000294303);
                      else passend_2777551453000294303 = VARCHAR_60_34;
+                   passend_2777551453000294303 = tranwrd(passend_2777551453000294303,'9D'x,'D0'x);
                    put passend_2777551453000294303 ~ @;
               end;
        if missing(VARCHAR_60_35)
@@ -24979,6 +25987,7 @@ data _null_;
                    if attrLengte_2777551453017071912 > max(maxPassend_2777551453017071912,1000)
                      then passend_2777551453017071912 = substr(VARCHAR_60_35,1,maxPassend_2777551453017071912);
                      else passend_2777551453017071912 = VARCHAR_60_35;
+                   passend_2777551453017071912 = tranwrd(passend_2777551453017071912,'9D'x,'D0'x);
                    put passend_2777551453017071912 ~ @;
               end;
        if missing(VARCHAR_60_36)
@@ -24990,6 +25999,7 @@ data _null_;
                    if attrLengte_2777551452966739041 > max(maxPassend_2777551452966739041,1000)
                      then passend_2777551452966739041 = substr(VARCHAR_60_36,1,maxPassend_2777551452966739041);
                      else passend_2777551452966739041 = VARCHAR_60_36;
+                   passend_2777551452966739041 = tranwrd(passend_2777551452966739041,'9D'x,'D0'x);
                    put passend_2777551452966739041 ~ @;
               end;
        if missing(VARCHAR_60_37)
@@ -25001,6 +26011,7 @@ data _null_;
                    if attrLengte_2777551452983516658 > max(maxPassend_2777551452983516658,1000)
                      then passend_2777551452983516658 = substr(VARCHAR_60_37,1,maxPassend_2777551452983516658);
                      else passend_2777551452983516658 = VARCHAR_60_37;
+                   passend_2777551452983516658 = tranwrd(passend_2777551452983516658,'9D'x,'D0'x);
                    put passend_2777551452983516658 ~ @;
               end;
        if missing(VARCHAR_60_38)
@@ -25012,6 +26023,7 @@ data _null_;
                    if attrLengte_2777551453067404755 > max(maxPassend_2777551453067404755,1000)
                      then passend_2777551453067404755 = substr(VARCHAR_60_38,1,maxPassend_2777551453067404755);
                      else passend_2777551453067404755 = VARCHAR_60_38;
+                   passend_2777551453067404755 = tranwrd(passend_2777551453067404755,'9D'x,'D0'x);
                    put passend_2777551453067404755 ~ @;
               end;
        if missing(VARCHAR_60_39)
@@ -25023,6 +26035,7 @@ data _null_;
                    if attrLengte_2777551453084182396 > max(maxPassend_2777551453084182396,1000)
                      then passend_2777551453084182396 = substr(VARCHAR_60_39,1,maxPassend_2777551453084182396);
                      else passend_2777551453084182396 = VARCHAR_60_39;
+                   passend_2777551453084182396 = tranwrd(passend_2777551453084182396,'9D'x,'D0'x);
                    put passend_2777551453084182396 ~ @;
               end;
        if missing(VARCHAR_60_40)
@@ -25034,6 +26047,7 @@ data _null_;
                    if attrLengte_2776144009362870388 > max(maxPassend_2776144009362870388,1000)
                      then passend_2776144009362870388 = substr(VARCHAR_60_40,1,maxPassend_2776144009362870388);
                      else passend_2776144009362870388 = VARCHAR_60_40;
+                   passend_2776144009362870388 = tranwrd(passend_2776144009362870388,'9D'x,'D0'x);
                    put passend_2776144009362870388 ~ @;
               end;
        if missing(VGS_ID)
@@ -25048,6 +26062,7 @@ data _null_;
                    if attrLengte_4356781747989407008 > max(maxPassend_4356781747989407008,1000)
                      then passend_4356781747989407008 = substr(VVG_VKM_VAR_GEGEVENS_DOS,1,maxPassend_4356781747989407008);
                      else passend_4356781747989407008 = VVG_VKM_VAR_GEGEVENS_DOS;
+                   passend_4356781747989407008 = tranwrd(passend_4356781747989407008,'9D'x,'D0'x);
                    put passend_4356781747989407008 ~ @;
               end;
        if missing(VVG_VKM_VAR_GEGEVENS_PRG)
@@ -25059,6 +26074,7 @@ data _null_;
                    if attrLengte_8482460586457766179 > max(maxPassend_8482460586457766179,1000)
                      then passend_8482460586457766179 = substr(VVG_VKM_VAR_GEGEVENS_PRG,1,maxPassend_8482460586457766179);
                      else passend_8482460586457766179 = VVG_VKM_VAR_GEGEVENS_PRG;
+                   passend_8482460586457766179 = tranwrd(passend_8482460586457766179,'9D'x,'D0'x);
                    put passend_8482460586457766179 ~ @;
               end;
        if missing(VVG_VKT_ID)
@@ -25175,6 +26191,7 @@ data _null_;
                    if attrLengte_3164922725850686505 > max(maxPassend_3164922725850686505,1000)
                      then passend_3164922725850686505 = substr(Kaart_naam,1,maxPassend_3164922725850686505);
                      else passend_3164922725850686505 = Kaart_naam;
+                   passend_3164922725850686505 = tranwrd(passend_3164922725850686505,'9D'x,'D0'x);
                    put passend_3164922725850686505 ~ @;
               end;
        if missing(Datum_start)
@@ -25192,6 +26209,7 @@ data _null_;
                    if attrLengte_2792940614022500175 > max(maxPassend_2792940614022500175,1000)
                      then passend_2792940614022500175 = substr(Omschrijving,1,maxPassend_2792940614022500175);
                      else passend_2792940614022500175 = Omschrijving;
+                   passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
        if missing(Vkm_var_kaart_dos)
@@ -25203,6 +26221,7 @@ data _null_;
                    if attrLengte_381542781898920778 > max(maxPassend_381542781898920778,1000)
                      then passend_381542781898920778 = substr(Vkm_var_kaart_dos,1,maxPassend_381542781898920778);
                      else passend_381542781898920778 = Vkm_var_kaart_dos;
+                   passend_381542781898920778 = tranwrd(passend_381542781898920778,'9D'x,'D0'x);
                    put passend_381542781898920778 ~ @;
               end;
        if missing(Vkm_var_kaart_prg)
@@ -25214,6 +26233,7 @@ data _null_;
                    if attrLengte_7193119486904882669 > max(maxPassend_7193119486904882669,1000)
                      then passend_7193119486904882669 = substr(Vkm_var_kaart_prg,1,maxPassend_7193119486904882669);
                      else passend_7193119486904882669 = Vkm_var_kaart_prg;
+                   passend_7193119486904882669 = tranwrd(passend_7193119486904882669,'9D'x,'D0'x);
                    put passend_7193119486904882669 ~ @;
               end;
        if missing(Prg_id)
@@ -25237,6 +26257,7 @@ data _null_;
                    if attrLengte_3584536051482242786 > max(maxPassend_3584536051482242786,1000)
                      then passend_3584536051482242786 = substr(Vkm_var_kaart_dos_prg,1,maxPassend_3584536051482242786);
                      else passend_3584536051482242786 = Vkm_var_kaart_dos_prg;
+                   passend_3584536051482242786 = tranwrd(passend_3584536051482242786,'9D'x,'D0'x);
                    put passend_3584536051482242786 ~ @;
               end;
        if missing(Vkm_var_kaart_dos_reg)
@@ -25248,6 +26269,7 @@ data _null_;
                    if attrLengte_2927839731313237353 > max(maxPassend_2927839731313237353,1000)
                      then passend_2927839731313237353 = substr(Vkm_var_kaart_dos_reg,1,maxPassend_2927839731313237353);
                      else passend_2927839731313237353 = Vkm_var_kaart_dos_reg;
+                   passend_2927839731313237353 = tranwrd(passend_2927839731313237353,'9D'x,'D0'x);
                    put passend_2927839731313237353 ~ @;
               end;
        if missing(Vkm_var_kaart_dos_regpar)
@@ -25259,6 +26281,7 @@ data _null_;
                    if attrLengte_5423184669609009757 > max(maxPassend_5423184669609009757,1000)
                      then passend_5423184669609009757 = substr(Vkm_var_kaart_dos_regpar,1,maxPassend_5423184669609009757);
                      else passend_5423184669609009757 = Vkm_var_kaart_dos_regpar;
+                   passend_5423184669609009757 = tranwrd(passend_5423184669609009757,'9D'x,'D0'x);
                    put passend_5423184669609009757 ~ @;
               end;
        if missing(Geblokkeerd)
@@ -25270,6 +26293,7 @@ data _null_;
                    if attrLengte_5364441580193008346 > max(maxPassend_5364441580193008346,1000)
                      then passend_5364441580193008346 = substr(Geblokkeerd,1,maxPassend_5364441580193008346);
                      else passend_5364441580193008346 = Geblokkeerd;
+                   passend_5364441580193008346 = tranwrd(passend_5364441580193008346,'9D'x,'D0'x);
                    put passend_5364441580193008346 ~ @;
               end;
        if missing(Copy_jn)
@@ -25281,6 +26305,7 @@ data _null_;
                    if attrLengte_8530042717172599085 > max(maxPassend_8530042717172599085,1000)
                      then passend_8530042717172599085 = substr(Copy_jn,1,maxPassend_8530042717172599085);
                      else passend_8530042717172599085 = Copy_jn;
+                   passend_8530042717172599085 = tranwrd(passend_8530042717172599085,'9D'x,'D0'x);
                    put passend_8530042717172599085 ~ @;
               end;
        put techId best12. ; 
