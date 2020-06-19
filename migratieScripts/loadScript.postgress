@@ -13,7 +13,7 @@ TRUNCATE TABLE BAS_BTM_BETALING;
 \COPY BAS_BTM_BETALING(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, Naam_begunstigde, Betalingskenmerk, Plaats, Aanleverdatum, Status, Betaalrun_id, Bron, Invoerdatum, Mdw_id, Betaling_id, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer, Betaal_datum, On_hold_jn, Sepa_xsd_bevinding, techId) FROM 'PAD-NAAR_CSVsBAS_BTM_BETALING.csv' DELIMITER ',' CSV HEADER;
 
 TRUNCATE TABLE BAS_BTM_HIST_BETALING;
-\COPY BAS_BTM_HIST_BETALING(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, Naam_begunstigde, Plaats, Rekeningnummer, Senterrekening, Aanleverdatum, Betaalrun_id, Bron, Valutadatum, Invoerdatum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mdw_id, Betalingskenmerk, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer, techId) FROM 'PAD-NAAR_CSVsBAS_BTM_HIST_BETALING.csv' DELIMITER ',' CSV HEADER;
+\COPY BAS_BTM_HIST_BETALING(Rel_id, Tra_id, Reg_cd, Dos_cd, Bedrag, Bedrag_nlg, Omschrijving, naam_begunstigde, Plaats, Rekeningnummer, Senterrekening, Aanleverdatum, Betaalrun_id, Bron, Valutadatum, Invoerdatum, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Mdw_id, Betalingskenmerk, Iban, Bic, Beg_bic, Beg_iban, Sepa_betaling_indicatie, Parkeer_valutadatum, Betalingsverzoeknummer, techId) FROM 'PAD-NAAR_CSVsBAS_BTM_HIST_BETALING.csv' DELIMITER ',' CSV HEADER;
 
 TRUNCATE TABLE BAS_COR_BERICHT;
 \COPY BAS_COR_BERICHT(Cor_id, Ed_bericht_id, Afzender_id, Ontvanger_id, Inkomend, Handtekening_ok, Ondertekenaar_id, Onderwerp, Inhoud, Certserienummer, Batch_status, Status_overzetten_bericht, Ingezien, Plattetekst, Status_verzending, Archief_cor_id, Bron, Org_cor_id, techId) FROM 'PAD-NAAR_CSVsBAS_COR_BERICHT.csv' DELIMITER ',' CSV HEADER;
@@ -142,7 +142,7 @@ TRUNCATE TABLE BAS_JZM_FUNCTIE_VAN_BRIEF;
 \COPY BAS_JZM_FUNCTIE_VAN_BRIEF(Fnc_cd, Cst_cd, Creatie_dat, Creatie_user, Mutatie_dat, Mutatie_user, techId) FROM 'PAD-NAAR_CSVsBAS_JZM_FUNCTIE_VAN_BRIEF.csv' DELIMITER ',' CSV HEADER;
 
 TRUNCATE TABLE BAS_JZM_PROCEDURE;
-\COPY BAS_JZM_PROCEDURE(Jaar, Volgnr, Jz_nr, Jz_id, Sts_cd, Ssg_cd, Dos_id, Cor_id, Dos_sts_cd, Dos_ssg_cd, Indieningsdatum, Datum_dos_jz, Actiedatum, Afhandeldatum, Notities, Proc_type, Jzm_bezwaar, Jzm_beroep, Jzm_hoger_beroep, Jzm_verz_schadeverg, Actuele_beh_mdw_id, Actuele_beh_rol_cd, Problematiekcode, Bedrag_bob, Aard_bob, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Technisch_cor_id, Hoofdproces, techId) FROM 'PAD-NAAR_CSVsBAS_JZM_PROCEDURE.csv' DELIMITER ',' CSV HEADER;
+\COPY BAS_JZM_PROCEDURE(Jaar, Volgnr, Jz_nr, Jz_id, Sts_cd, Ssg_cd, Dos_id, Cor_id, Dos_sts_cd, Dos_ssg_cd, Indieningsdatum, Datum_dos_jz, Actiedatum, Afhandeldatum, notities, Proc_type, Jzm_bezwaar, Jzm_beroep, Jzm_hoger_beroep, Jzm_verz_schadeverg, Actuele_beh_mdw_id, Actuele_beh_rol_cd, Problematiekcode, Bedrag_bob, Aard_bob, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Technisch_cor_id, Hoofdproces, techId) FROM 'PAD-NAAR_CSVsBAS_JZM_PROCEDURE.csv' DELIMITER ',' CSV HEADER;
 
 TRUNCATE TABLE BAS_JZM_REACTIE_TERMIJN;
 \COPY BAS_JZM_REACTIE_TERMIJN(Rol_cd, Cst_cd, Reactie_cd, Termijn, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, techId) FROM 'PAD-NAAR_CSVsBAS_JZM_REACTIE_TERMIJN.csv' DELIMITER ',' CSV HEADER;
@@ -268,7 +268,7 @@ TRUNCATE TABLE BAS_STM_STATUS;
 \COPY BAS_STM_STATUS(Sts_cd, Sts_oms, Ssg_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, Sts_e_indienen, Eindstatus, Sts_e_loket, techId) FROM 'PAD-NAAR_CSVsBAS_STM_STATUS.csv' DELIMITER ',' CSV HEADER;
 
 TRUNCATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF;
-\COPY BAS_STM_STATUSOVERG_BIJ_BRIEF(Van_status, Naar_status, Ssg_cd, Cst_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, techId) FROM 'PAD-NAAR_CSVsBAS_STM_STATUSOVERG_BIJ_BRIEF.csv' DELIMITER ',' CSV HEADER;
+\COPY BAS_STM_STATUSOVERG_BIJ_BRIEF(Van_status, naar_status, Ssg_cd, Cst_cd, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, techId) FROM 'PAD-NAAR_CSVsBAS_STM_STATUSOVERG_BIJ_BRIEF.csv' DELIMITER ',' CSV HEADER;
 
 TRUNCATE TABLE BAS_VKM_TOEGEV_VAR_VELD_WAARDE;
 \COPY BAS_VKM_TOEGEV_VAR_VELD_WAARDE(Vkt_id, Fysieke_naam, Waarde, Volgorde, techId) FROM 'PAD-NAAR_CSVsBAS_VKM_TOEGEV_VAR_VELD_WAARDE.csv' DELIMITER ',' CSV HEADER;

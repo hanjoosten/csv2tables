@@ -828,7 +828,7 @@ PROC SQL;
           t1.Bedrag,
           t1.Bedrag_nlg,
           t1.Omschrijving,
-          t1.Naam_begunstigde,
+          t1.naam_begunstigde,
           t1.Plaats,
           t1.Rekeningnummer,
           t1.Senterrekening,
@@ -880,7 +880,7 @@ data _null_;
        ','
           "Omschrijving" 
        ','
-          "Naam_begunstigde" 
+          "naam_begunstigde" 
        ','
           "Plaats" 
        ','
@@ -935,7 +935,7 @@ data _null_;
        format Bedrag best12. ;
        format Bedrag_nlg best12. ;
        format Omschrijving  ;
-       format Naam_begunstigde  ;
+       format naam_begunstigde  ;
        format Plaats  ;
        format Rekeningnummer best12. ;
        format Senterrekening best12. ;
@@ -1008,17 +1008,17 @@ data _null_;
                    passend_2792940614022500175 = tranwrd(passend_2792940614022500175,'9D'x,'D0'x);
                    put passend_2792940614022500175 ~ @;
               end;
-       if missing(Naam_begunstigde)
+       if missing(naam_begunstigde)
          then put "," @;
          else do;
-                   attrLengte_2297573122993302389=length(Naam_begunstigde);
-                   aantalLF_2297573122993302389 = countc(Naam_begunstigde,'0A'x);
-                   maxPassend_2297573122993302389=60-1-aantalLF_2297573122993302389;
-                   if attrLengte_2297573122993302389 > max(maxPassend_2297573122993302389,1000)
-                     then passend_2297573122993302389 = substr(Naam_begunstigde,1,maxPassend_2297573122993302389);
-                     else passend_2297573122993302389 = Naam_begunstigde;
-                   passend_2297573122993302389 = tranwrd(passend_2297573122993302389,'9D'x,'D0'x);
-                   put passend_2297573122993302389 ~ @;
+                   attrLengte_4135915705631972821=length(naam_begunstigde);
+                   aantalLF_4135915705631972821 = countc(naam_begunstigde,'0A'x);
+                   maxPassend_4135915705631972821=60-1-aantalLF_4135915705631972821;
+                   if attrLengte_4135915705631972821 > max(maxPassend_4135915705631972821,1000)
+                     then passend_4135915705631972821 = substr(naam_begunstigde,1,maxPassend_4135915705631972821);
+                     else passend_4135915705631972821 = naam_begunstigde;
+                   passend_4135915705631972821 = tranwrd(passend_4135915705631972821,'9D'x,'D0'x);
+                   put passend_4135915705631972821 ~ @;
               end;
        if missing(Plaats)
          then put "," @;
@@ -10041,7 +10041,7 @@ data _null_;
          else do;
                    attrLengte_1098176494781784809=length(Reden);
                    aantalLF_1098176494781784809 = countc(Reden,'0A'x);
-                   maxPassend_1098176494781784809=256-1-aantalLF_1098176494781784809;
+                   maxPassend_1098176494781784809=8000-1-aantalLF_1098176494781784809;
                    if attrLengte_1098176494781784809 > max(maxPassend_1098176494781784809,1000)
                      then passend_1098176494781784809 = substr(Reden,1,maxPassend_1098176494781784809);
                      else passend_1098176494781784809 = Reden;
@@ -12999,7 +12999,7 @@ PROC SQL;
           t1.Datum_dos_jz FORMAT=B8601DT19. AS Datum_dos_jz,
           t1.Actiedatum FORMAT=B8601DT19. AS Actiedatum,
           t1.Afhandeldatum FORMAT=B8601DT19. AS Afhandeldatum,
-          t1.Notities,
+          t1.notities,
           t1.Proc_type,
           t1.Jzm_bezwaar,
           t1.Jzm_beroep,
@@ -13060,7 +13060,7 @@ data _null_;
        ','
           "Afhandeldatum" 
        ','
-          "Notities" 
+          "notities" 
        ','
           "Proc_type" 
        ','
@@ -13112,7 +13112,7 @@ data _null_;
        format Datum_dos_jz B8601DT19. ;
        format Actiedatum B8601DT19. ;
        format Afhandeldatum B8601DT19. ;
-       format Notities  ;
+       format notities  ;
        format Proc_type  ;
        format Jzm_bezwaar  ;
        format Jzm_beroep  ;
@@ -13219,17 +13219,17 @@ data _null_;
        if missing(Afhandeldatum)
          then put "," @;
          else put Afhandeldatum @;
-       if missing(Notities)
+       if missing(notities)
          then put "," @;
          else do;
-                   attrLengte_2449201397129185301=length(Notities);
-                   aantalLF_2449201397129185301 = countc(Notities,'0A'x);
-                   maxPassend_2449201397129185301=256-1-aantalLF_2449201397129185301;
-                   if attrLengte_2449201397129185301 > max(maxPassend_2449201397129185301,1000)
-                     then passend_2449201397129185301 = substr(Notities,1,maxPassend_2449201397129185301);
-                     else passend_2449201397129185301 = Notities;
-                   passend_2449201397129185301 = tranwrd(passend_2449201397129185301,'9D'x,'D0'x);
-                   put passend_2449201397129185301 ~ @;
+                   attrLengte_5741984805443955957=length(notities);
+                   aantalLF_5741984805443955957 = countc(notities,'0A'x);
+                   maxPassend_5741984805443955957=256-1-aantalLF_5741984805443955957;
+                   if attrLengte_5741984805443955957 > max(maxPassend_5741984805443955957,1000)
+                     then passend_5741984805443955957 = substr(notities,1,maxPassend_5741984805443955957);
+                     else passend_5741984805443955957 = notities;
+                   passend_5741984805443955957 = tranwrd(passend_5741984805443955957,'9D'x,'D0'x);
+                   put passend_5741984805443955957 ~ @;
               end;
        if missing(Proc_type)
          then put "," @;
@@ -21721,7 +21721,7 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_STM_STATUSOVERG_BIJ_BRIEF AS
    SELECT t1.Van_status,
-          t1.Naar_status,
+          t1.naar_status,
           t1.Ssg_cd,
           t1.Cst_cd,
           t1.Creatie_user,
@@ -21746,7 +21746,7 @@ data _null_;
        put 
           "Van_status" 
        ','
-          "Naar_status" 
+          "naar_status" 
        ','
           "Ssg_cd" 
        ','
@@ -21765,7 +21765,7 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_STM_STATUSOVERG_BIJ_BRIEF   end=EFIEOD; 
        format Van_status  ;
-       format Naar_status  ;
+       format naar_status  ;
        format Ssg_cd  ;
        format Cst_cd  ;
        format Creatie_user  ;
@@ -21787,17 +21787,17 @@ data _null_;
                    passend_6930841630683810202 = tranwrd(passend_6930841630683810202,'9D'x,'D0'x);
                    put passend_6930841630683810202 ~ @;
               end;
-       if missing(Naar_status)
+       if missing(naar_status)
          then put "," @;
          else do;
-                   attrLengte_5154444358389234818=length(Naar_status);
-                   aantalLF_5154444358389234818 = countc(Naar_status,'0A'x);
-                   maxPassend_5154444358389234818=3-1-aantalLF_5154444358389234818;
-                   if attrLengte_5154444358389234818 > max(maxPassend_5154444358389234818,1000)
-                     then passend_5154444358389234818 = substr(Naar_status,1,maxPassend_5154444358389234818);
-                     else passend_5154444358389234818 = Naar_status;
-                   passend_5154444358389234818 = tranwrd(passend_5154444358389234818,'9D'x,'D0'x);
-                   put passend_5154444358389234818 ~ @;
+                   attrLengte_2781314311842969374=length(naar_status);
+                   aantalLF_2781314311842969374 = countc(naar_status,'0A'x);
+                   maxPassend_2781314311842969374=3-1-aantalLF_2781314311842969374;
+                   if attrLengte_2781314311842969374 > max(maxPassend_2781314311842969374,1000)
+                     then passend_2781314311842969374 = substr(naar_status,1,maxPassend_2781314311842969374);
+                     else passend_2781314311842969374 = naar_status;
+                   passend_2781314311842969374 = tranwrd(passend_2781314311842969374,'9D'x,'D0'x);
+                   put passend_2781314311842969374 ~ @;
               end;
        if missing(Ssg_cd)
          then put "," @;

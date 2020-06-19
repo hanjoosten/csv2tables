@@ -140,7 +140,7 @@ CREATE TABLE BAS_BTM_HIST_BETALING (
     Bedrag numeric(26,6),
     Bedrag_nlg numeric(26,6),
     Omschrijving varchar (64),
-    Naam_begunstigde varchar (60),
+    naam_begunstigde varchar (60),
     Plaats varchar (30),
     Rekeningnummer bigint,
     Senterrekening bigint,
@@ -171,7 +171,7 @@ CREATE TABLE BAS_BTM_HIST_BETALING (
     comment on column BAS_BTM_HIST_BETALING.Bedrag is 'BEDRAG';
     comment on column BAS_BTM_HIST_BETALING.Bedrag_nlg is 'BEDRAG_NLG';
     comment on column BAS_BTM_HIST_BETALING.Omschrijving is 'OMSCHRIJVING';
-    comment on column BAS_BTM_HIST_BETALING.Naam_begunstigde is 'NAAM_BEGUNSTIGDE';
+    comment on column BAS_BTM_HIST_BETALING.naam_begunstigde is 'NAAM_BEGUNSTIGDE';
     comment on column BAS_BTM_HIST_BETALING.Plaats is 'PLAATS';
     comment on column BAS_BTM_HIST_BETALING.Rekeningnummer is 'REKENINGNUMMER';
     comment on column BAS_BTM_HIST_BETALING.Senterrekening is 'SENTERREKENING';
@@ -1805,7 +1805,7 @@ CREATE TABLE BAS_FAM_TRANSACTIE (
     Jaar integer,
     Dos_id bigint,
     Tra_cd varchar (3),
-    Reden varchar (256),
+    Reden varchar (8000),
     bedrag numeric(24,6),
     Bedrag_nlg numeric(24,6),
     Datum timestamp,
@@ -2397,7 +2397,7 @@ CREATE TABLE BAS_JZM_PROCEDURE (
     Datum_dos_jz timestamp,
     Actiedatum timestamp,
     Afhandeldatum timestamp,
-    Notities varchar (256),
+    notities varchar (256),
     Proc_type varchar (3),
     Jzm_bezwaar varchar (1),
     Jzm_beroep varchar (1),
@@ -2430,7 +2430,7 @@ CREATE TABLE BAS_JZM_PROCEDURE (
     comment on column BAS_JZM_PROCEDURE.Datum_dos_jz is 'DATUM_DOS_JZ';
     comment on column BAS_JZM_PROCEDURE.Actiedatum is 'ACTIEDATUM';
     comment on column BAS_JZM_PROCEDURE.Afhandeldatum is 'AFHANDELDATUM';
-    comment on column BAS_JZM_PROCEDURE.Notities is 'NOTITIES';
+    comment on column BAS_JZM_PROCEDURE.notities is 'NOTITIES';
     comment on column BAS_JZM_PROCEDURE.Proc_type is 'PROC_TYPE';
     comment on column BAS_JZM_PROCEDURE.Jzm_bezwaar is 'JZM_BEZWAAR';
     comment on column BAS_JZM_PROCEDURE.Jzm_beroep is 'JZM_BEROEP';
@@ -3822,7 +3822,7 @@ DROP TABLE IF EXISTS BAS_STM_STATUSOVERG_BIJ_BRIEF;
 CREATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF (
     techId INTEGER PRIMARY KEY,
     Van_status varchar (3),
-    Naar_status varchar (3),
+    naar_status varchar (3),
     Ssg_cd varchar (1),
     Cst_cd varchar (8),
     Creatie_user varchar (30),
@@ -3832,7 +3832,7 @@ CREATE TABLE BAS_STM_STATUSOVERG_BIJ_BRIEF (
 );
 
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Van_status is 'VAN_STATUS';
-    comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Naar_status is 'NAAR_STATUS';
+    comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.naar_status is 'NAAR_STATUS';
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Ssg_cd is 'SSG_CD';
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Cst_cd is 'CST_CD';
     comment on column BAS_STM_STATUSOVERG_BIJ_BRIEF.Creatie_user is 'CREATIE_USER';
