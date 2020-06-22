@@ -1,5 +1,9 @@
 
 
+drop index if exists BAS_AOM_TRANSACTIETYPE_idx01;
+create index BAS_AOM_TRANSACTIETYPE_idx01 on BAS_AOM_TRANSACTIETYPE
+   ( tra_cd asc );
+
 drop index if exists BAS_COR_CORRESPONDENTIE_idx01;
 create index BAS_COR_CORRESPONDENTIE_idx01 on BAS_COR_CORRESPONDENTIE
    ( DOS_ID asc );
@@ -54,11 +58,11 @@ create index BAS_DAM_MDW_INTERN_HIST_idx01 on BAS_DAM_MDW_INTERN_HIST
 
 drop index if exists BAS_DAM_MDW_INTERN_idx01;
 create index BAS_DAM_MDW_INTERN_idx01 on BAS_DAM_MDW_INTERN
-   ( DOS_ID asc );
+   ( DOS_ID asc, ROL_CD asc );
 
 drop index if exists BAS_DAM_STATUSHISTORIE_idx01;
 create index BAS_DAM_STATUSHISTORIE_idx01 on BAS_DAM_STATUSHISTORIE
-   ( DOS_ID asc );
+   ( DOS_ID asc, STS_CD asc );
 
 drop index if exists BAS_DAM_TERMIJN_PARAAF_NOTITIE_idx01;
 create index BAS_DAM_TERMIJN_PARAAF_NOTITIE_idx01 on BAS_DAM_TERMIJN_PARAAF_NOTITIE
@@ -80,9 +84,22 @@ drop index if exists BAS_JZM_PROCEDURE_idx01;
 create index BAS_JZM_PROCEDURE_idx01 on BAS_JZM_PROCEDURE
    ( DOS_ID asc );
 
+drop index if exists BAS_IOM_MEDEWERKER_idx01;
+create index BAS_IOM_MEDEWERKER_idx01 on BAS_IOM_MEDEWERKER
+   ( Mdw_id asc );
+
 drop index if exists BAS_OBJ_LOKATIE_idx01;
 create index BAS_OBJ_LOKATIE_idx01 on BAS_OBJ_LOKATIE
    ( DOS_ID asc );
+
+drop index if exists Bas_Fam_Transactie_idx01;
+create index Bas_Fam_Transactie_idx01 on Bas_Fam_Transactie 
+   ( TRA_ID asc );
+
+drop index if exists BAS_FAM_TRANSACTIE_REGEL_idx01;
+create index BAS_FAM_TRANSACTIE_REGEL_idx01 on BAS_FAM_TRANSACTIE_REGEL 
+   ( TRA_ID asc, Rpt_nr asc );
+
 
 drop index if exists BAS_VKM_VAR_GEGEVENS_idx01;
 create index BAS_VKM_VAR_GEGEVENS_idx01 on BAS_VKM_VAR_GEGEVENS
