@@ -110,12 +110,6 @@ createStatement t =
                   where 
                     foo :: Attrib -> Text
                     foo att = T.intercalate "\n" $
-                      if hasProblems att 
-                      then 
-                        [ "       /* OPGELET: "<>(T.pack $ attNameNew att)<>" WORDT TIJDELIJK NIET OVERGENOMEN IN DE MIGRATIE IN VERBAND MET CODERINGSPROBLEMEN */"
-                        , "       put '22'x "<>(tshow . T.take (sasFormatL att - 2) $ dummyTekst)<>" +(-1) '22'x \",\" @;"
-                        ]
-                      else 
                         [ "       if missing("<>(T.pack $ attNameNew att)<>")"
                         , "         then put \",\" @;"
                         ] <>
@@ -172,18 +166,3 @@ dataType att =
       x -> "TODO. sasType == "<>tshow x
 
 
--- | Dit is een opsomming van velden waar problemen met newline / UTF8 codering in voorkomen. 
---   Voor de korte termijn gaan we die vullen met dummy tekst
-hasProblems :: Attrib -> Bool
-hasProblems _ = False
-hasProblems att = or
-   [ attTableNew att == "BAS_COR_CORRESPONDENTIE" && attNameNew att == "Omschrijving"
-   , attTableNew att == "BAS_DAM_DECLARATIE"      && attNameNew att == "Notitie"
-   , attTableNew att == "BAS_DAM_DOSSIER_NOTITIE" && attNameNew att == "Notitie"
-   , attTableNew att == "BAS_DAM_TERMIJN_PARAAF_NOTITIE" && attNameNew att == "Toelichting"
-   , attTableNew att == "BAS_RDM_VARIABELE" && attNameNew att == "Toelichting"
-   , attTableNew att == "BAS_VKM_VAR_GEGEVENS" && take 10 (attNameNew att) == "TEKSTBLOK_"
-   , attTableNew att == "BAS_VKM_VAR_GEGEVENS" && take 13 (attNameNew att) == "VARCHAR_60_01"
-   ]
-dummyTekst :: Text
-dummyTekst = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
