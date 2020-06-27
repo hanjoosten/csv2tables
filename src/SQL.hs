@@ -1,6 +1,7 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-module SQL ( makeCreateStatements
+module SQL ( makeCreateTableStatements
+           , makeDropTableStatements
            , makeLoadScript
            ) where
 
@@ -26,13 +27,19 @@ loadStatement t =
                  <>") FROM 'PAD-NAAR_CSVs"<>T.pack (tableNameNew t)<>".csv' DELIMITER ',' CSV HEADER;"
       , ""]
 
-makeCreateStatements :: [Table] -> [Text]
-makeCreateStatements = concatMap createStatement
+makeCreateTableStatements :: [Table] -> [Text]
+makeCreateTableStatements = concatMap createTableStatement
 
-createStatement :: Table -> [Text]
-createStatement t = 
-      [ "DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>";"
-      , "CREATE TABLE "<>T.pack (tableNameNew t)<>" (" 
+makeDropTableStatements :: [Table] -> [Text]
+makeDropTableStatements = concatMap dropTableStatement
+
+dropTableStatement :: Table -> [Text]
+dropTableStatement t = ["DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>";"]
+
+createTableStatement :: Table -> [Text]
+createTableStatement t = 
+      dropTableStatement t
+   <> [ "CREATE TABLE "<>T.pack (tableNameNew t)<>" (" 
       , "    techId INTEGER PRIMARY KEY,"]
    <> T.lines cols
    <> [ ");"

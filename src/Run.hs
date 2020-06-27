@@ -20,7 +20,8 @@ run = do
       write :: FilePath -> ([Table] -> [Text]) -> RIO env ()
       write fileName fun = writeFileUtf8 (dir </> fileName) (T.unlines (fun tables)) 
   createDirectoryIfMissing True dir
-  write "makeBASTables.sql"     makeCreateStatements
+  write "makeBASTables.sql"     makeCreateTableStatements
+  write "dropBASTables.sql"     makeDropTableStatements
   write "tablesToCSV.sas"       tablesToCsv
   write "modifiedNames.txt"     modifiedNames
   write "loadScript.postgress"  makeLoadScript
