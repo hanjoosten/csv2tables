@@ -1706,6 +1706,62 @@ CREATE TABLE BAS_DAM_TERMIJN (
     comment on column BAS_DAM_TERMIJN.Voldaan_dat is 'VOLDAAN_DAT';
     comment on column BAS_DAM_TERMIJN.Volgorde_paraaf is 'VOLGORDE_PARAAF';
 
+DROP TABLE IF EXISTS BAS_DAR_COR_BERICHT_BIJLAGE;
+CREATE TABLE BAS_DAR_COR_BERICHT_BIJLAGE (
+    techId INTEGER PRIMARY KEY,
+    ARCHIEF_COR_BIJLAGE_ID TODO: sasformat = "BEST" (8),
+    BRON varchar (6),
+    ARCHIEF_COR_ID TODO: sasformat = "BEST" (8),
+    COR_BIJLAGE_OMSCHRIJVING varchar (19),
+    DATUMBIJLAGE timestamp,
+    BESTANDSNAAM varchar (77),
+    BESTANDSNAAM_COLL varchar (77)
+);
+
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.ARCHIEF_COR_BIJLAGE_ID is '';
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.BRON is '';
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.ARCHIEF_COR_ID is '';
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.COR_BIJLAGE_OMSCHRIJVING is '';
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.DATUMBIJLAGE is '';
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.BESTANDSNAAM is '';
+    comment on column BAS_DAR_COR_BERICHT_BIJLAGE.BESTANDSNAAM_COLL is '';
+
+DROP TABLE IF EXISTS BAS_FAM_DECLARATIE;
+CREATE TABLE BAS_FAM_DECLARATIE (
+    techId INTEGER PRIMARY KEY,
+    Tra_id bigint,
+    Begindatum timestamp,
+    Einddatum timestamp,
+    Totaal_ingediend numeric(24,6),
+    Totaal_geschoond numeric(24,6),
+    Vergoedings_pct numeric(7,2),
+    Betalingsverzoeknummer varchar (40),
+    Afgerekend_jn varchar (1),
+    Periodiek_jn varchar (1),
+    Betaalritme_tra_id bigint,
+    Betaaldata_volgnr bigint,
+    Creditering_op_tra_id bigint,
+    Netto_verstrekking numeric(24,6),
+    Bruto_vergoeding numeric(24,6),
+    Verrekenen_nj varchar (1)
+);
+
+    comment on column BAS_FAM_DECLARATIE.Tra_id is 'TRA_ID';
+    comment on column BAS_FAM_DECLARATIE.Begindatum is 'BEGINDATUM';
+    comment on column BAS_FAM_DECLARATIE.Einddatum is 'EINDDATUM';
+    comment on column BAS_FAM_DECLARATIE.Totaal_ingediend is 'TOTAAL_INGEDIEND';
+    comment on column BAS_FAM_DECLARATIE.Totaal_geschoond is 'TOTAAL_GESCHOOND';
+    comment on column BAS_FAM_DECLARATIE.Vergoedings_pct is 'VERGOEDINGS_PCT';
+    comment on column BAS_FAM_DECLARATIE.Betalingsverzoeknummer is 'BETALINGSVERZOEKNUMMER';
+    comment on column BAS_FAM_DECLARATIE.Afgerekend_jn is 'AFGEREKEND_JN';
+    comment on column BAS_FAM_DECLARATIE.Periodiek_jn is 'PERIODIEK_JN';
+    comment on column BAS_FAM_DECLARATIE.Betaalritme_tra_id is 'BETAALRITME_TRA_ID';
+    comment on column BAS_FAM_DECLARATIE.Betaaldata_volgnr is 'BETAALDATA_VOLGNR';
+    comment on column BAS_FAM_DECLARATIE.Creditering_op_tra_id is 'CREDITERING_OP_TRA_ID';
+    comment on column BAS_FAM_DECLARATIE.Netto_verstrekking is 'NETTO_VERSTREKKING';
+    comment on column BAS_FAM_DECLARATIE.Bruto_vergoeding is 'BRUTO_VERGOEDING';
+    comment on column BAS_FAM_DECLARATIE.Verrekenen_nj is 'VERREKENEN_NJ';
+
 DROP TABLE IF EXISTS BAS_FAM_STATUSHISTORIE;
 CREATE TABLE BAS_FAM_STATUSHISTORIE (
     techId INTEGER PRIMARY KEY,

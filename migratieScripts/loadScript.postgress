@@ -96,6 +96,12 @@ TRUNCATE TABLE BAS_DAM_TERMIJN_PARAAF_NOTITIE;
 TRUNCATE TABLE BAS_DAM_TERMIJN;
 \COPY BAS_DAM_TERMIJN(Aanvullende_voorwaarden, Actie, Actie_dat, Con_id, Cor_id, Creatie_dat, Creatie_user, Dos_id, Dossiergroep_ter_id, Mdw_id, Mdw_id_afgemeld, Mutatie_dat, Mutatie_user, Notitie, Opgevoerd_dat, Opschortend_jn, Prg_id, Reactie_cd, Rol_cd, Ter_id, Voldaan_dat, Volgorde_paraaf, techId) FROM 'PAD-NAAR_CSVsBAS_DAM_TERMIJN.csv' DELIMITER ',' CSV HEADER;
 
+TRUNCATE TABLE BAS_DAR_COR_BERICHT_BIJLAGE;
+\COPY BAS_DAR_COR_BERICHT_BIJLAGE(ARCHIEF_COR_BIJLAGE_ID, BRON, ARCHIEF_COR_ID, COR_BIJLAGE_OMSCHRIJVING, DATUMBIJLAGE, BESTANDSNAAM, BESTANDSNAAM_COLL, techId) FROM 'PAD-NAAR_CSVsBAS_DAR_COR_BERICHT_BIJLAGE.csv' DELIMITER ',' CSV HEADER;
+
+TRUNCATE TABLE BAS_FAM_DECLARATIE;
+\COPY BAS_FAM_DECLARATIE(Tra_id, Begindatum, Einddatum, Totaal_ingediend, Totaal_geschoond, Vergoedings_pct, Betalingsverzoeknummer, Afgerekend_jn, Periodiek_jn, Betaalritme_tra_id, Betaaldata_volgnr, Creditering_op_tra_id, Netto_verstrekking, Bruto_vergoeding, Verrekenen_nj, techId) FROM 'PAD-NAAR_CSVsBAS_FAM_DECLARATIE.csv' DELIMITER ',' CSV HEADER;
+
 TRUNCATE TABLE BAS_FAM_STATUSHISTORIE;
 \COPY BAS_FAM_STATUSHISTORIE(Commentaar, Datum_van, Datum_tot, Dos_id, Ssg_cd, Sts_cd, Tra_id, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, techId) FROM 'PAD-NAAR_CSVsBAS_FAM_STATUSHISTORIE.csv' DELIMITER ',' CSV HEADER;
 

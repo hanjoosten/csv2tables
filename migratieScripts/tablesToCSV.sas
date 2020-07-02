@@ -9272,6 +9272,296 @@ data _null_;
     run; 
 
 PROC SQL;
+   CREATE TABLE MIGRATIE.BAS_DAR_COR_BERICHT_BIJLAGE AS
+   SELECT t1.ARCHIEF_COR_BIJLAGE_IDTODO: sasformat = "BEST" (8),
+          t1.BRON,
+          t1.ARCHIEF_COR_IDTODO: sasformat = "BEST" (8),
+          t1.COR_BIJLAGE_OMSCHRIJVING,
+          t1.DATUMBIJLAGE FORMAT=B8601DT19. AS DATUMBIJLAGE,
+          t1.BESTANDSNAAM,
+          t1.BESTANDSNAAM_COLL
+     FROM DATAQASG.DAR_COR_BERICHT_BIJLAGE t1;
+QUIT;
+
+data MIGRATIE.BAS_DAR_COR_BERICHT_BIJLAGE;
+  set MIGRATIE.BAS_DAR_COR_BERICHT_BIJLAGE;
+  techId=_n_;
+run;
+
+
+data _null_; 
+    %let _EFIERR_ = 0; /* set the ERROR detection macro variable */ 
+    %let _EFIREC_ = 0; /* clear export record count macro variable */ 
+    file "\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_DAR_COR_BERICHT_BIJLAGE.csv" delimiter=',' DSD DROPOVER lrecl=32767; 
+    if _n_ = 1 then        /* write column names or labels */ 
+     do; 
+       put 
+          "ARCHIEF_COR_BIJLAGE_ID" 
+       ','
+          "BRON" 
+       ','
+          "ARCHIEF_COR_ID" 
+       ','
+          "COR_BIJLAGE_OMSCHRIJVING" 
+       ','
+          "DATUMBIJLAGE" 
+       ','
+          "BESTANDSNAAM" 
+       ','
+          "BESTANDSNAAM_COLL" 
+       ','
+          "techId" 
+       ; 
+     end; 
+   set  MIGRATIE.BAS_DAR_COR_BERICHT_BIJLAGE   end=EFIEOD; 
+       format ARCHIEF_COR_BIJLAGE_ID TODO: sasformat = "BEST" (8) ;
+       format BRON  ;
+       format ARCHIEF_COR_ID TODO: sasformat = "BEST" (8) ;
+       format COR_BIJLAGE_OMSCHRIJVING  ;
+       format DATUMBIJLAGE B8601DT19. ;
+       format BESTANDSNAAM  ;
+       format BESTANDSNAAM_COLL  ;
+       format techId best12. ; 
+     do; 
+       EFIOUT + 1; 
+       if missing(ARCHIEF_COR_BIJLAGE_ID)
+         then put "," @;
+         else put ARCHIEF_COR_BIJLAGE_ID @;
+       if missing(BRON)
+         then put "," @;
+         else do;
+                   attrLengte_7170584609253004235=length(BRON);
+                   aantalLF_7170584609253004235 = countc(BRON,'0A'x);
+                   maxPassend_7170584609253004235=6-1-aantalLF_7170584609253004235;
+                   if attrLengte_7170584609253004235 > max(maxPassend_7170584609253004235,1000)
+                     then passend_7170584609253004235 = substr(BRON,1,maxPassend_7170584609253004235);
+                     else passend_7170584609253004235 = BRON;
+                   passend_7170584609253004235 = tranwrd(passend_7170584609253004235,'9D'x,'D0'x);
+                   put passend_7170584609253004235 ~ @;
+              end;
+       if missing(ARCHIEF_COR_ID)
+         then put "," @;
+         else put ARCHIEF_COR_ID @;
+       if missing(COR_BIJLAGE_OMSCHRIJVING)
+         then put "," @;
+         else do;
+                   attrLengte_3565722721924551373=length(COR_BIJLAGE_OMSCHRIJVING);
+                   aantalLF_3565722721924551373 = countc(COR_BIJLAGE_OMSCHRIJVING,'0A'x);
+                   maxPassend_3565722721924551373=19-1-aantalLF_3565722721924551373;
+                   if attrLengte_3565722721924551373 > max(maxPassend_3565722721924551373,1000)
+                     then passend_3565722721924551373 = substr(COR_BIJLAGE_OMSCHRIJVING,1,maxPassend_3565722721924551373);
+                     else passend_3565722721924551373 = COR_BIJLAGE_OMSCHRIJVING;
+                   passend_3565722721924551373 = tranwrd(passend_3565722721924551373,'9D'x,'D0'x);
+                   put passend_3565722721924551373 ~ @;
+              end;
+       if missing(DATUMBIJLAGE)
+         then put "," @;
+         else put DATUMBIJLAGE @;
+       if missing(BESTANDSNAAM)
+         then put "," @;
+         else do;
+                   attrLengte_1700828528022851181=length(BESTANDSNAAM);
+                   aantalLF_1700828528022851181 = countc(BESTANDSNAAM,'0A'x);
+                   maxPassend_1700828528022851181=77-1-aantalLF_1700828528022851181;
+                   if attrLengte_1700828528022851181 > max(maxPassend_1700828528022851181,1000)
+                     then passend_1700828528022851181 = substr(BESTANDSNAAM,1,maxPassend_1700828528022851181);
+                     else passend_1700828528022851181 = BESTANDSNAAM;
+                   passend_1700828528022851181 = tranwrd(passend_1700828528022851181,'9D'x,'D0'x);
+                   put passend_1700828528022851181 ~ @;
+              end;
+       if missing(BESTANDSNAAM_COLL)
+         then put "," @;
+         else do;
+                   attrLengte_6655748735168518179=length(BESTANDSNAAM_COLL);
+                   aantalLF_6655748735168518179 = countc(BESTANDSNAAM_COLL,'0A'x);
+                   maxPassend_6655748735168518179=77-1-aantalLF_6655748735168518179;
+                   if attrLengte_6655748735168518179 > max(maxPassend_6655748735168518179,1000)
+                     then passend_6655748735168518179 = substr(BESTANDSNAAM_COLL,1,maxPassend_6655748735168518179);
+                     else passend_6655748735168518179 = BESTANDSNAAM_COLL;
+                   passend_6655748735168518179 = tranwrd(passend_6655748735168518179,'9D'x,'D0'x);
+                   put passend_6655748735168518179 ~ @;
+              end;
+       put techId best12. ; 
+       ; 
+     end; 
+    if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */ 
+    if EFIEOD then call symputx('_EFIREC_',EFIOUT); 
+    run; 
+
+PROC SQL;
+   CREATE TABLE MIGRATIE.BAS_FAM_DECLARATIE AS
+   SELECT t1.Tra_id,
+          t1.Begindatum FORMAT=B8601DT19. AS Begindatum,
+          t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
+          t1.Totaal_ingediend,
+          t1.Totaal_geschoond,
+          t1.Vergoedings_pct,
+          t1.Betalingsverzoeknummer,
+          t1.Afgerekend_jn,
+          t1.Periodiek_jn,
+          t1.Betaalritme_tra_id,
+          t1.Betaaldata_volgnr,
+          t1.Creditering_op_tra_id,
+          t1.Netto_verstrekking,
+          t1.Bruto_vergoeding,
+          t1.Verrekenen_nj
+     FROM DATAQASG.FAM_DECLARATIE_TCMG t1;
+QUIT;
+
+data MIGRATIE.BAS_FAM_DECLARATIE;
+  set MIGRATIE.BAS_FAM_DECLARATIE;
+  techId=_n_;
+run;
+
+
+data _null_; 
+    %let _EFIERR_ = 0; /* set the ERROR detection macro variable */ 
+    %let _EFIREC_ = 0; /* clear export record count macro variable */ 
+    file "\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_FAM_DECLARATIE.csv" delimiter=',' DSD DROPOVER lrecl=32767; 
+    if _n_ = 1 then        /* write column names or labels */ 
+     do; 
+       put 
+          "Tra_id" 
+       ','
+          "Begindatum" 
+       ','
+          "Einddatum" 
+       ','
+          "Totaal_ingediend" 
+       ','
+          "Totaal_geschoond" 
+       ','
+          "Vergoedings_pct" 
+       ','
+          "Betalingsverzoeknummer" 
+       ','
+          "Afgerekend_jn" 
+       ','
+          "Periodiek_jn" 
+       ','
+          "Betaalritme_tra_id" 
+       ','
+          "Betaaldata_volgnr" 
+       ','
+          "Creditering_op_tra_id" 
+       ','
+          "Netto_verstrekking" 
+       ','
+          "Bruto_vergoeding" 
+       ','
+          "Verrekenen_nj" 
+       ','
+          "techId" 
+       ; 
+     end; 
+   set  MIGRATIE.BAS_FAM_DECLARATIE   end=EFIEOD; 
+       format Tra_id best12. ;
+       format Begindatum B8601DT19. ;
+       format Einddatum B8601DT19. ;
+       format Totaal_ingediend best12. ;
+       format Totaal_geschoond best12. ;
+       format Vergoedings_pct best12. ;
+       format Betalingsverzoeknummer  ;
+       format Afgerekend_jn  ;
+       format Periodiek_jn  ;
+       format Betaalritme_tra_id best12. ;
+       format Betaaldata_volgnr best12. ;
+       format Creditering_op_tra_id best12. ;
+       format Netto_verstrekking best12. ;
+       format Bruto_vergoeding best12. ;
+       format Verrekenen_nj  ;
+       format techId best12. ; 
+     do; 
+       EFIOUT + 1; 
+       if missing(Tra_id)
+         then put "," @;
+         else put Tra_id @;
+       if missing(Begindatum)
+         then put "," @;
+         else put Begindatum @;
+       if missing(Einddatum)
+         then put "," @;
+         else put Einddatum @;
+       if missing(Totaal_ingediend)
+         then put "," @;
+         else put Totaal_ingediend @;
+       if missing(Totaal_geschoond)
+         then put "," @;
+         else put Totaal_geschoond @;
+       if missing(Vergoedings_pct)
+         then put "," @;
+         else put Vergoedings_pct @;
+       if missing(Betalingsverzoeknummer)
+         then put "," @;
+         else do;
+                   attrLengte_7008902060440754439=length(Betalingsverzoeknummer);
+                   aantalLF_7008902060440754439 = countc(Betalingsverzoeknummer,'0A'x);
+                   maxPassend_7008902060440754439=40-1-aantalLF_7008902060440754439;
+                   if attrLengte_7008902060440754439 > max(maxPassend_7008902060440754439,1000)
+                     then passend_7008902060440754439 = substr(Betalingsverzoeknummer,1,maxPassend_7008902060440754439);
+                     else passend_7008902060440754439 = Betalingsverzoeknummer;
+                   passend_7008902060440754439 = tranwrd(passend_7008902060440754439,'9D'x,'D0'x);
+                   put passend_7008902060440754439 ~ @;
+              end;
+       if missing(Afgerekend_jn)
+         then put "," @;
+         else do;
+                   attrLengte_2840709479069709876=length(Afgerekend_jn);
+                   aantalLF_2840709479069709876 = countc(Afgerekend_jn,'0A'x);
+                   maxPassend_2840709479069709876=1-1-aantalLF_2840709479069709876;
+                   if attrLengte_2840709479069709876 > max(maxPassend_2840709479069709876,1000)
+                     then passend_2840709479069709876 = substr(Afgerekend_jn,1,maxPassend_2840709479069709876);
+                     else passend_2840709479069709876 = Afgerekend_jn;
+                   passend_2840709479069709876 = tranwrd(passend_2840709479069709876,'9D'x,'D0'x);
+                   put passend_2840709479069709876 ~ @;
+              end;
+       if missing(Periodiek_jn)
+         then put "," @;
+         else do;
+                   attrLengte_8896703581310580981=length(Periodiek_jn);
+                   aantalLF_8896703581310580981 = countc(Periodiek_jn,'0A'x);
+                   maxPassend_8896703581310580981=1-1-aantalLF_8896703581310580981;
+                   if attrLengte_8896703581310580981 > max(maxPassend_8896703581310580981,1000)
+                     then passend_8896703581310580981 = substr(Periodiek_jn,1,maxPassend_8896703581310580981);
+                     else passend_8896703581310580981 = Periodiek_jn;
+                   passend_8896703581310580981 = tranwrd(passend_8896703581310580981,'9D'x,'D0'x);
+                   put passend_8896703581310580981 ~ @;
+              end;
+       if missing(Betaalritme_tra_id)
+         then put "," @;
+         else put Betaalritme_tra_id @;
+       if missing(Betaaldata_volgnr)
+         then put "," @;
+         else put Betaaldata_volgnr @;
+       if missing(Creditering_op_tra_id)
+         then put "," @;
+         else put Creditering_op_tra_id @;
+       if missing(Netto_verstrekking)
+         then put "," @;
+         else put Netto_verstrekking @;
+       if missing(Bruto_vergoeding)
+         then put "," @;
+         else put Bruto_vergoeding @;
+       if missing(Verrekenen_nj)
+         then put "," @;
+         else do;
+                   attrLengte_1950177874282827721=length(Verrekenen_nj);
+                   aantalLF_1950177874282827721 = countc(Verrekenen_nj,'0A'x);
+                   maxPassend_1950177874282827721=1-1-aantalLF_1950177874282827721;
+                   if attrLengte_1950177874282827721 > max(maxPassend_1950177874282827721,1000)
+                     then passend_1950177874282827721 = substr(Verrekenen_nj,1,maxPassend_1950177874282827721);
+                     else passend_1950177874282827721 = Verrekenen_nj;
+                   passend_1950177874282827721 = tranwrd(passend_1950177874282827721,'9D'x,'D0'x);
+                   put passend_1950177874282827721 ~ @;
+              end;
+       put techId best12. ; 
+       ; 
+     end; 
+    if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */ 
+    if EFIEOD then call symputx('_EFIREC_',EFIOUT); 
+    run; 
+
+PROC SQL;
    CREATE TABLE MIGRATIE.BAS_FAM_STATUSHISTORIE AS
    SELECT t1.Commentaar,
           t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
