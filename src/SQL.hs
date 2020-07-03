@@ -60,7 +60,17 @@ dataType :: Attrib -> Text
 dataType att =
     case sasType att of
       1 -> case T.pack (sasFormat att) of 
-             "" -> case sasLength att of
+             ""         -> plainNumeric
+             "BEST"     -> plainNumeric
+             "DATETIME" -> case sasLength att of
+                             8 -> "timestamp"
+                             x -> diagnose<>"DATETIME ("<>tshow x<>")"
+             x  ->  diagnose<>"sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
+      2 -> "varchar ("<>tshow (sasFormatL att)<>")"
+      x -> diagnose<>" sasType == "<>tshow x
+  where 
+     plainNumeric :: Text
+     plainNumeric = case sasLength att of
                      8 -> if sasFormatD att == 0 
                           then let intType 
                                     | sasFormatL att > 9 = "bigint"
@@ -68,10 +78,5 @@ dataType att =
                                     | otherwise = "smallint"
                                in intType
                           else "numeric("<>tshow (sasFormatL att)<>","<>tshow (sasFormatD att)<>")"
-                     x -> "TODO "<>tshow x
-             "DATETIME" -> case sasLength att of
-                             8 -> "timestamp"
-                             x -> "TODO: DATETIME ("<>tshow x<>")"
-             x  ->  "TODO: sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
-      2 -> "varchar ("<>tshow (sasFormatL att)<>")"
-      x -> "TODO. sasType == "<>tshow x
+                     x -> diagnose<>tshow x
+     diagnose = "TODO (aanpassing nodig in SQL.hs): "

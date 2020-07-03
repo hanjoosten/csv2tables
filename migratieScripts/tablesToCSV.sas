@@ -9273,9 +9273,9 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAR_COR_BERICHT_BIJLAGE AS
-   SELECT t1.ARCHIEF_COR_BIJLAGE_IDTODO: sasformat = "BEST" (8),
+   SELECT t1.ARCHIEF_COR_BIJLAGE_ID,
           t1.BRON,
-          t1.ARCHIEF_COR_IDTODO: sasformat = "BEST" (8),
+          t1.ARCHIEF_COR_ID,
           t1.COR_BIJLAGE_OMSCHRIJVING,
           t1.DATUMBIJLAGE FORMAT=B8601DT19. AS DATUMBIJLAGE,
           t1.BESTANDSNAAM,
@@ -9314,9 +9314,9 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_DAR_COR_BERICHT_BIJLAGE   end=EFIEOD; 
-       format ARCHIEF_COR_BIJLAGE_ID TODO: sasformat = "BEST" (8) ;
+       format ARCHIEF_COR_BIJLAGE_ID best12. ;
        format BRON  ;
-       format ARCHIEF_COR_ID TODO: sasformat = "BEST" (8) ;
+       format ARCHIEF_COR_ID best12. ;
        format COR_BIJLAGE_OMSCHRIJVING  ;
        format DATUMBIJLAGE B8601DT19. ;
        format BESTANDSNAAM  ;

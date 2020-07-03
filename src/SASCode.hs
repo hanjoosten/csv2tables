@@ -141,28 +141,35 @@ csvFormat :: Attrib -> Text
 csvFormat att =
     case sasType att of
       1 -> case T.pack (sasFormat att) of 
-             "" -> case sasLength att of
-                     8 -> "best12."
-                     x -> " TODO "<>tshow x
+             ""         -> plainNumeric
+             "BEST"     -> plainNumeric
              "DATETIME" -> case sasLength att of
                              8 -> "B8601DT19."
-                             x -> " TODO: DATETIME ("<>tshow x<>")"
-             x  ->  "TODO: sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
+                             x -> diagnose<>"DATETIME ("<>tshow x<>")"
+             x  ->  diagnose<>"sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
       2 -> ""
-      x -> "TODO. sasType == "<>tshow x
-
+      x -> diagnose<>"sasType == "<>tshow x
+  where
+    plainNumeric = case sasLength att of
+                     8 -> "best12."
+                     x -> diagnose <>tshow x
 dataType :: Attrib -> Text
 dataType att =
     case sasType att of
       1 -> case T.pack (sasFormat att) of 
-             "" -> case sasLength att of
-                     8 -> ""
-                     x -> " TODO "<>tshow x
+             ""         -> plainNumeric
+             "BEST"     -> plainNumeric
              "DATETIME" -> case sasLength att of
                              8 -> " FORMAT=B8601DT19. AS "<>T.pack (attNameNew att)
-                             x -> " TODO: DATETIME ("<>tshow x<>")"
-             x  ->  "TODO: sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
+                             x -> diagnose<>"DATETIME ("<>tshow x<>")"
+             x  ->  diagnose<>"sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
       2 -> ""
-      x -> "TODO. sasType == "<>tshow x
+      x -> diagnose<>"sasType == "<>tshow x
+  where
+    plainNumeric = case sasLength att of
+                     8 -> ""
+                     x -> diagnose <>tshow x
 
+diagnose :: Text
+diagnose = "TODO (aanpassing nodig in SQL.hs): "    
 
