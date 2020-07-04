@@ -171,5 +171,5 @@ dataType att =
                      x -> diagnose <>tshow x
 
 diagnose :: Text
-diagnose = "TODO (aanpassing nodig in SQL.hs): "    
+diagnose = "TODO (aanpassing nodig in SASCode.hs): "    
 
