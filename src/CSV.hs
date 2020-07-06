@@ -21,13 +21,13 @@ parseCsv = do
   case contents of 
       Left err -> fatal $ "Parse error!\n" <> tshow err
       Right x  -> return $ toTables x
-
+  
 
 
 toTables :: [Record] -> [Table]
 toTables x = case x of 
     [] -> fatal $ "No header row found!"
-    h:tl -> map mkTable $ groups atts
+    h:tl -> filter doMigrate . map mkTable $ groups atts
        where 
          atts = map mkAttrib . filter isEmptie . map keyVals $ tl
          keyVals :: Record -> KeyValues
@@ -37,6 +37,10 @@ toTables x = case x of
          groups (y:ys) = (y:same) : groups others 
            where (same,others) = L.partition (eql y) ys
                  eql a b = attTableNew a == attTableNew b
+         doMigrate :: Table -> Bool
+         doMigrate t = tableNameNew t `notElem` 
+            ["BAS_DAR_COR_BERICHT_BIJLAGE"]
+            
 type KeyValues = Map String String
 
 mkTable :: [Attrib] -> Table
