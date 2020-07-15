@@ -23,6 +23,7 @@ run = do
   write "makeBASTables.sql"     makeCreateTableStatements
   write "dropBASTables.sql"     makeDropTableStatements
   write "tablesToCSV.sas"       tablesToCsv
+  write "nonIntegerAttribs.txt"     nonIntegerAttribs
   write "modifiedNames.txt"     modifiedNames
   write "loadScript.postgress"  makeLoadScript
 showTab :: Table -> Text

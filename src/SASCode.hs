@@ -3,6 +3,7 @@
 module SASCode 
     ( tablesToCsv
     , modifiedNames
+    , nonIntegerAttribs
     ) where
 
 import Import
@@ -15,6 +16,19 @@ tablesToCsv = concatMap createStatement -- . filter _testFilter
   where
      _testFilter :: Table -> Bool
      _testFilter t = "BAS_DAM_DOSSIER_NOTITIE" == tableNameNew t
+
+nonIntegerAttribs :: [Table] -> [Text]
+nonIntegerAttribs = concatMap attNames
+  where 
+    attNames :: Table -> [Text]
+    attNames = map attShow . filter isNonInteger . L.sort . attribs
+    isNonInteger :: Attrib -> Bool
+    isNonInteger att = sasType att == 1
+                    && T.pack (sasFormat att) `elem` ["","BEST"] 
+                    && sasFormatD att /= 0
+    attShow :: Attrib ->  Text
+    attShow att = T.pack (attTableNew att <> "." <> attNameNew att)<>
+       " numeric("<>tshow (sasFormatL att)<>","<>tshow (sasFormatD att)<>")"
 
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames

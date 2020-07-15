@@ -11,7 +11,7 @@ import Options.Applicative.Simple
 main :: IO ()
 main = do
   (options, ()) <- simpleOptions
-    "0.1.0.0" -- $(simpleVersion Paths_csv2tables.version)
+    "0.1.0.0" --  $(simpleVersion Paths_csv2tables.version)
     "This is a custom utility to create sql create table statements from a specific .xlsx file."
     "Bla bla"
     (Options
