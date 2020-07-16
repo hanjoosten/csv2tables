@@ -137,8 +137,8 @@ CREATE TABLE BAS_BTM_HIST_BETALING (
     Tra_id bigint,
     Reg_cd varchar (20),
     Dos_cd varchar (20),
-    Bedrag numeric(26,6),
-    Bedrag_nlg numeric(26,6),
+    Bedrag double precision,
+    Bedrag_nlg double precision,
     Omschrijving varchar (64),
     naam_begunstigde varchar (60),
     Plaats varchar (30),
@@ -1705,6 +1705,8 @@ CREATE TABLE BAS_DAM_TERMIJN (
     comment on column BAS_DAM_TERMIJN.Ter_id is 'TER_ID';
     comment on column BAS_DAM_TERMIJN.Voldaan_dat is 'VOLDAAN_DAT';
     comment on column BAS_DAM_TERMIJN.Volgorde_paraaf is 'VOLGORDE_PARAAF';
+
+DROP TABLE IF EXISTS DAR_COR_BERICHT_BIJLAGE;
 
 DROP TABLE IF EXISTS BAS_FAM_DECLARATIE;
 CREATE TABLE BAS_FAM_DECLARATIE (
