@@ -77,6 +77,6 @@ dataType att =
                                     | sasFormatL att > 4 = "integer"
                                     | otherwise = "smallint"
                                in intType
-                          else "double precision" -- was: "numeric("<>tshow (sasFormatL att)<>","<>tshow (sasFormatD att)<>")"
+                          else "numeric("<>tshow (sasFormatL att)<>","<>tshow (sasFormatD att)<>")"
                      x -> diagnose<>tshow x
      diagnose = "TODO (aanpassing nodig in SQL.hs): "
