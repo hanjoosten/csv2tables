@@ -31,7 +31,9 @@ makeCreateTableStatements :: [Table] -> [Text]
 makeCreateTableStatements = concatMap createTableStatement
 
 makeDropTableStatements :: [Table] -> [Text]
-makeDropTableStatements = concatMap dropTableStatement
+makeDropTableStatements xs = 
+       concatMap dropTableStatement xs
+   <> ["DROP TABLE IF EXISTS BAS_DAR_COR_BERICHT_BIJLAGE;"] -- Deze tabel is ooit aangemaakt, maar niet meer in gebruik. 
 
 dropTableStatement :: Table -> [Text]
 dropTableStatement t = ["DROP TABLE IF EXISTS "<> T.pack (tableNameNew t)<>";"]
