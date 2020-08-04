@@ -70,7 +70,11 @@ create index BAS_DAM_TERMIJN_PARAAF_NOTITIE_idx01 on BAS_DAM_TERMIJN_PARAAF_NOTI
 
 drop index if exists BAS_DAM_TERMIJN_idx01;
 create index BAS_DAM_TERMIJN_idx01 on BAS_DAM_TERMIJN
-   ( DOS_ID asc );
+   ( DOS_ID asc, COR_ID asc );
+
+drop index if exists BAS_DAM_TERMIJN_idx02;
+create index BAS_DAM_TERMIJN_idx02 on BAS_DAM_TERMIJN
+   ( COR_ID asc );
 
 drop index if exists BAS_FAM_STATUSHISTORIE_idx01;
 create index BAS_FAM_STATUSHISTORIE_idx01 on BAS_FAM_STATUSHISTORIE
