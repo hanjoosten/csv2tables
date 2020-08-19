@@ -1,3 +1,75 @@
+DROP TABLE IF EXISTS BAS_AIC_VOORTGANG;
+CREATE TABLE BAS_AIC_VOORTGANG (
+    techId INTEGER PRIMARY KEY,
+    Tra_id bigint,
+    Dos_id bigint,
+    Prg_id bigint,
+    Datum_indiening timestamp,
+    Datum_onvolledig timestamp,
+    Datum_volledig timestamp,
+    Datum_acc_afd timestamp,
+    Datum_acc_ol timestamp,
+    Datum_in_aic timestamp,
+    Datum_steekproef timestamp,
+    Datum_in_afd timestamp,
+    Datum_acc_aic timestamp,
+    Datum_definitief timestamp,
+    Valutadatum timestamp,
+    User_indiening varchar (30),
+    User_onvolledig varchar (30),
+    User_volledig varchar (30),
+    User_acc_afd varchar (30),
+    User_acc_ol varchar (30),
+    User_in_aic varchar (30),
+    User_steekproef varchar (30),
+    User_in_afd varchar (30),
+    User_acc_aic varchar (30),
+    User_definitief varchar (30),
+    Acc_ol_verplicht_jn varchar (1),
+    Acc_aic_verplicht_jn varchar (1),
+    Bewerken_jn varchar (1),
+    Bedrag_te_verrekenen numeric(24,6),
+    Acm_id bigint,
+    Automatisch_afhandelen_jn varchar (1),
+    User_acc_ink varchar (30),
+    Datum_acc_ink timestamp,
+    Acc_ink_verplicht_jn varchar (1)
+);
+
+    comment on column BAS_AIC_VOORTGANG.Tra_id is 'TRA_ID';
+    comment on column BAS_AIC_VOORTGANG.Dos_id is 'DOS_ID';
+    comment on column BAS_AIC_VOORTGANG.Prg_id is 'PRG_ID';
+    comment on column BAS_AIC_VOORTGANG.Datum_indiening is 'DATUM_INDIENING';
+    comment on column BAS_AIC_VOORTGANG.Datum_onvolledig is 'DATUM_ONVOLLEDIG';
+    comment on column BAS_AIC_VOORTGANG.Datum_volledig is 'DATUM_VOLLEDIG';
+    comment on column BAS_AIC_VOORTGANG.Datum_acc_afd is 'DATUM_ACC_AFD';
+    comment on column BAS_AIC_VOORTGANG.Datum_acc_ol is 'DATUM_ACC_OL';
+    comment on column BAS_AIC_VOORTGANG.Datum_in_aic is 'DATUM_IN_AIC';
+    comment on column BAS_AIC_VOORTGANG.Datum_steekproef is 'DATUM_STEEKPROEF';
+    comment on column BAS_AIC_VOORTGANG.Datum_in_afd is 'DATUM_IN_AFD';
+    comment on column BAS_AIC_VOORTGANG.Datum_acc_aic is 'DATUM_ACC_AIC';
+    comment on column BAS_AIC_VOORTGANG.Datum_definitief is 'DATUM_DEFINITIEF';
+    comment on column BAS_AIC_VOORTGANG.Valutadatum is 'VALUTADATUM';
+    comment on column BAS_AIC_VOORTGANG.User_indiening is 'USER_INDIENING';
+    comment on column BAS_AIC_VOORTGANG.User_onvolledig is 'USER_ONVOLLEDIG';
+    comment on column BAS_AIC_VOORTGANG.User_volledig is 'USER_VOLLEDIG';
+    comment on column BAS_AIC_VOORTGANG.User_acc_afd is 'USER_ACC_AFD';
+    comment on column BAS_AIC_VOORTGANG.User_acc_ol is 'USER_ACC_OL';
+    comment on column BAS_AIC_VOORTGANG.User_in_aic is 'USER_IN_AIC';
+    comment on column BAS_AIC_VOORTGANG.User_steekproef is 'USER_STEEKPROEF';
+    comment on column BAS_AIC_VOORTGANG.User_in_afd is 'USER_IN_AFD';
+    comment on column BAS_AIC_VOORTGANG.User_acc_aic is 'USER_ACC_AIC';
+    comment on column BAS_AIC_VOORTGANG.User_definitief is 'USER_DEFINITIEF';
+    comment on column BAS_AIC_VOORTGANG.Acc_ol_verplicht_jn is 'ACC_OL_VERPLICHT_JN';
+    comment on column BAS_AIC_VOORTGANG.Acc_aic_verplicht_jn is 'ACC_AIC_VERPLICHT_JN';
+    comment on column BAS_AIC_VOORTGANG.Bewerken_jn is 'BEWERKEN_JN';
+    comment on column BAS_AIC_VOORTGANG.Bedrag_te_verrekenen is 'BEDRAG_TE_VERREKENEN';
+    comment on column BAS_AIC_VOORTGANG.Acm_id is 'ACM_ID';
+    comment on column BAS_AIC_VOORTGANG.Automatisch_afhandelen_jn is 'AUTOMATISCH_AFHANDELEN_JN';
+    comment on column BAS_AIC_VOORTGANG.User_acc_ink is 'USER_ACC_INK';
+    comment on column BAS_AIC_VOORTGANG.Datum_acc_ink is 'DATUM_ACC_INK';
+    comment on column BAS_AIC_VOORTGANG.Acc_ink_verplicht_jn is 'ACC_INK_VERPLICHT_JN';
+
 DROP TABLE IF EXISTS BAS_AOM_ACTIE;
 CREATE TABLE BAS_AOM_ACTIE (
     techId INTEGER PRIMARY KEY,

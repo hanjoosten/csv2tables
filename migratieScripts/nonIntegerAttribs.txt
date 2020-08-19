@@ -1,3 +1,4 @@
+BAS_AIC_VOORTGANG.Bedrag_te_verrekenen numeric(24,6)
 BAS_BTM_BETALING.Bedrag numeric(26,6)
 BAS_BTM_BETALING.Bedrag_nlg numeric(26,6)
 BAS_BTM_HIST_BETALING.Bedrag numeric(26,6)

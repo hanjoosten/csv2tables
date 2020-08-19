@@ -1,5 +1,8 @@
 SET client_encoding = 'WINDOWS-1252';
 
+TRUNCATE TABLE BAS_AIC_VOORTGANG;
+\COPY BAS_AIC_VOORTGANG(Tra_id, Dos_id, Prg_id, Datum_indiening, Datum_onvolledig, Datum_volledig, Datum_acc_afd, Datum_acc_ol, Datum_in_aic, Datum_steekproef, Datum_in_afd, Datum_acc_aic, Datum_definitief, Valutadatum, User_indiening, User_onvolledig, User_volledig, User_acc_afd, User_acc_ol, User_in_aic, User_steekproef, User_in_afd, User_acc_aic, User_definitief, Acc_ol_verplicht_jn, Acc_aic_verplicht_jn, Bewerken_jn, Bedrag_te_verrekenen, Acm_id, Automatisch_afhandelen_jn, User_acc_ink, Datum_acc_ink, Acc_ink_verplicht_jn, techId) FROM 'PAD-NAAR_CSVsBAS_AIC_VOORTGANG.csv' DELIMITER ',' CSV HEADER;
+
 TRUNCATE TABLE BAS_AOM_ACTIE;
 \COPY BAS_AOM_ACTIE(Actie_cd, Actie_oms, Creatie_user, Creatie_dat, Mutatie_user, Mutatie_dat, techId) FROM 'PAD-NAAR_CSVsBAS_AOM_ACTIE.csv' DELIMITER ',' CSV HEADER;
 

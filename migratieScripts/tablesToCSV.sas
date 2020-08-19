@@ -1,4 +1,411 @@
 PROC SQL;
+   CREATE TABLE MIGRATIE.BAS_AIC_VOORTGANG AS
+   SELECT t1.Tra_id,
+          t1.Dos_id,
+          t1.Prg_id,
+          t1.Datum_indiening FORMAT=B8601DT19. AS Datum_indiening,
+          t1.Datum_onvolledig FORMAT=B8601DT19. AS Datum_onvolledig,
+          t1.Datum_volledig FORMAT=B8601DT19. AS Datum_volledig,
+          t1.Datum_acc_afd FORMAT=B8601DT19. AS Datum_acc_afd,
+          t1.Datum_acc_ol FORMAT=B8601DT19. AS Datum_acc_ol,
+          t1.Datum_in_aic FORMAT=B8601DT19. AS Datum_in_aic,
+          t1.Datum_steekproef FORMAT=B8601DT19. AS Datum_steekproef,
+          t1.Datum_in_afd FORMAT=B8601DT19. AS Datum_in_afd,
+          t1.Datum_acc_aic FORMAT=B8601DT19. AS Datum_acc_aic,
+          t1.Datum_definitief FORMAT=B8601DT19. AS Datum_definitief,
+          t1.Valutadatum FORMAT=B8601DT19. AS Valutadatum,
+          t1.User_indiening,
+          t1.User_onvolledig,
+          t1.User_volledig,
+          t1.User_acc_afd,
+          t1.User_acc_ol,
+          t1.User_in_aic,
+          t1.User_steekproef,
+          t1.User_in_afd,
+          t1.User_acc_aic,
+          t1.User_definitief,
+          t1.Acc_ol_verplicht_jn,
+          t1.Acc_aic_verplicht_jn,
+          t1.Bewerken_jn,
+          t1.Bedrag_te_verrekenen,
+          t1.Acm_id,
+          t1.Automatisch_afhandelen_jn,
+          t1.User_acc_ink,
+          t1.Datum_acc_ink FORMAT=B8601DT19. AS Datum_acc_ink,
+          t1.Acc_ink_verplicht_jn
+     FROM DATAQASG.AIC_VOORTGANG_TCMG t1;
+QUIT;
+
+data MIGRATIE.BAS_AIC_VOORTGANG;
+  set MIGRATIE.BAS_AIC_VOORTGANG;
+  techId=_n_;
+run;
+
+
+data _null_; 
+    %let _EFIERR_ = 0; /* set the ERROR detection macro variable */ 
+    %let _EFIREC_ = 0; /* clear export record count macro variable */ 
+    file "\\LNV.INTERN\GRP\TCMG\002 Onderdelen\34-kluismap MIRA Migratie bestanden\SAS\Output\PRD\RuweData\BAS_AIC_VOORTGANG.csv" delimiter=',' DSD DROPOVER lrecl=32767; 
+    if _n_ = 1 then        /* write column names or labels */ 
+     do; 
+       put 
+          "Tra_id" 
+       ','
+          "Dos_id" 
+       ','
+          "Prg_id" 
+       ','
+          "Datum_indiening" 
+       ','
+          "Datum_onvolledig" 
+       ','
+          "Datum_volledig" 
+       ','
+          "Datum_acc_afd" 
+       ','
+          "Datum_acc_ol" 
+       ','
+          "Datum_in_aic" 
+       ','
+          "Datum_steekproef" 
+       ','
+          "Datum_in_afd" 
+       ','
+          "Datum_acc_aic" 
+       ','
+          "Datum_definitief" 
+       ','
+          "Valutadatum" 
+       ','
+          "User_indiening" 
+       ','
+          "User_onvolledig" 
+       ','
+          "User_volledig" 
+       ','
+          "User_acc_afd" 
+       ','
+          "User_acc_ol" 
+       ','
+          "User_in_aic" 
+       ','
+          "User_steekproef" 
+       ','
+          "User_in_afd" 
+       ','
+          "User_acc_aic" 
+       ','
+          "User_definitief" 
+       ','
+          "Acc_ol_verplicht_jn" 
+       ','
+          "Acc_aic_verplicht_jn" 
+       ','
+          "Bewerken_jn" 
+       ','
+          "Bedrag_te_verrekenen" 
+       ','
+          "Acm_id" 
+       ','
+          "Automatisch_afhandelen_jn" 
+       ','
+          "User_acc_ink" 
+       ','
+          "Datum_acc_ink" 
+       ','
+          "Acc_ink_verplicht_jn" 
+       ','
+          "techId" 
+       ; 
+     end; 
+   set  MIGRATIE.BAS_AIC_VOORTGANG   end=EFIEOD; 
+       format Tra_id best12. ;
+       format Dos_id best12. ;
+       format Prg_id best12. ;
+       format Datum_indiening B8601DT19. ;
+       format Datum_onvolledig B8601DT19. ;
+       format Datum_volledig B8601DT19. ;
+       format Datum_acc_afd B8601DT19. ;
+       format Datum_acc_ol B8601DT19. ;
+       format Datum_in_aic B8601DT19. ;
+       format Datum_steekproef B8601DT19. ;
+       format Datum_in_afd B8601DT19. ;
+       format Datum_acc_aic B8601DT19. ;
+       format Datum_definitief B8601DT19. ;
+       format Valutadatum B8601DT19. ;
+       format User_indiening  ;
+       format User_onvolledig  ;
+       format User_volledig  ;
+       format User_acc_afd  ;
+       format User_acc_ol  ;
+       format User_in_aic  ;
+       format User_steekproef  ;
+       format User_in_afd  ;
+       format User_acc_aic  ;
+       format User_definitief  ;
+       format Acc_ol_verplicht_jn  ;
+       format Acc_aic_verplicht_jn  ;
+       format Bewerken_jn  ;
+       format Bedrag_te_verrekenen best12. ;
+       format Acm_id best12. ;
+       format Automatisch_afhandelen_jn  ;
+       format User_acc_ink  ;
+       format Datum_acc_ink B8601DT19. ;
+       format Acc_ink_verplicht_jn  ;
+       format techId best12. ; 
+     do; 
+       EFIOUT + 1; 
+       if missing(Tra_id)
+         then put "," @;
+         else put Tra_id @;
+       if missing(Dos_id)
+         then put "," @;
+         else put Dos_id @;
+       if missing(Prg_id)
+         then put "," @;
+         else put Prg_id @;
+       if missing(Datum_indiening)
+         then put "," @;
+         else put Datum_indiening @;
+       if missing(Datum_onvolledig)
+         then put "," @;
+         else put Datum_onvolledig @;
+       if missing(Datum_volledig)
+         then put "," @;
+         else put Datum_volledig @;
+       if missing(Datum_acc_afd)
+         then put "," @;
+         else put Datum_acc_afd @;
+       if missing(Datum_acc_ol)
+         then put "," @;
+         else put Datum_acc_ol @;
+       if missing(Datum_in_aic)
+         then put "," @;
+         else put Datum_in_aic @;
+       if missing(Datum_steekproef)
+         then put "," @;
+         else put Datum_steekproef @;
+       if missing(Datum_in_afd)
+         then put "," @;
+         else put Datum_in_afd @;
+       if missing(Datum_acc_aic)
+         then put "," @;
+         else put Datum_acc_aic @;
+       if missing(Datum_definitief)
+         then put "," @;
+         else put Datum_definitief @;
+       if missing(Valutadatum)
+         then put "," @;
+         else put Valutadatum @;
+       if missing(User_indiening)
+         then put "," @;
+         else do;
+                   attrLengte_8932948179240050195=length(User_indiening);
+                   aantalLF_8932948179240050195 = countc(User_indiening,'0A'x);
+                   maxPassend_8932948179240050195=30-1-aantalLF_8932948179240050195;
+                   if attrLengte_8932948179240050195 > max(maxPassend_8932948179240050195,1000)
+                     then passend_8932948179240050195 = substr(User_indiening,1,maxPassend_8932948179240050195);
+                     else passend_8932948179240050195 = User_indiening;
+                   passend_8932948179240050195 = tranwrd(passend_8932948179240050195,'9D'x,'D0'x);
+                   put passend_8932948179240050195 ~ @;
+              end;
+       if missing(User_onvolledig)
+         then put "," @;
+         else do;
+                   attrLengte_1107236414529046248=length(User_onvolledig);
+                   aantalLF_1107236414529046248 = countc(User_onvolledig,'0A'x);
+                   maxPassend_1107236414529046248=30-1-aantalLF_1107236414529046248;
+                   if attrLengte_1107236414529046248 > max(maxPassend_1107236414529046248,1000)
+                     then passend_1107236414529046248 = substr(User_onvolledig,1,maxPassend_1107236414529046248);
+                     else passend_1107236414529046248 = User_onvolledig;
+                   passend_1107236414529046248 = tranwrd(passend_1107236414529046248,'9D'x,'D0'x);
+                   put passend_1107236414529046248 ~ @;
+              end;
+       if missing(User_volledig)
+         then put "," @;
+         else do;
+                   attrLengte_5032803394849495043=length(User_volledig);
+                   aantalLF_5032803394849495043 = countc(User_volledig,'0A'x);
+                   maxPassend_5032803394849495043=30-1-aantalLF_5032803394849495043;
+                   if attrLengte_5032803394849495043 > max(maxPassend_5032803394849495043,1000)
+                     then passend_5032803394849495043 = substr(User_volledig,1,maxPassend_5032803394849495043);
+                     else passend_5032803394849495043 = User_volledig;
+                   passend_5032803394849495043 = tranwrd(passend_5032803394849495043,'9D'x,'D0'x);
+                   put passend_5032803394849495043 ~ @;
+              end;
+       if missing(User_acc_afd)
+         then put "," @;
+         else do;
+                   attrLengte_9100170196596642313=length(User_acc_afd);
+                   aantalLF_9100170196596642313 = countc(User_acc_afd,'0A'x);
+                   maxPassend_9100170196596642313=30-1-aantalLF_9100170196596642313;
+                   if attrLengte_9100170196596642313 > max(maxPassend_9100170196596642313,1000)
+                     then passend_9100170196596642313 = substr(User_acc_afd,1,maxPassend_9100170196596642313);
+                     else passend_9100170196596642313 = User_acc_afd;
+                   passend_9100170196596642313 = tranwrd(passend_9100170196596642313,'9D'x,'D0'x);
+                   put passend_9100170196596642313 ~ @;
+              end;
+       if missing(User_acc_ol)
+         then put "," @;
+         else do;
+                   attrLengte_5920868292370862362=length(User_acc_ol);
+                   aantalLF_5920868292370862362 = countc(User_acc_ol,'0A'x);
+                   maxPassend_5920868292370862362=30-1-aantalLF_5920868292370862362;
+                   if attrLengte_5920868292370862362 > max(maxPassend_5920868292370862362,1000)
+                     then passend_5920868292370862362 = substr(User_acc_ol,1,maxPassend_5920868292370862362);
+                     else passend_5920868292370862362 = User_acc_ol;
+                   passend_5920868292370862362 = tranwrd(passend_5920868292370862362,'9D'x,'D0'x);
+                   put passend_5920868292370862362 ~ @;
+              end;
+       if missing(User_in_aic)
+         then put "," @;
+         else do;
+                   attrLengte_3831253343196299444=length(User_in_aic);
+                   aantalLF_3831253343196299444 = countc(User_in_aic,'0A'x);
+                   maxPassend_3831253343196299444=30-1-aantalLF_3831253343196299444;
+                   if attrLengte_3831253343196299444 > max(maxPassend_3831253343196299444,1000)
+                     then passend_3831253343196299444 = substr(User_in_aic,1,maxPassend_3831253343196299444);
+                     else passend_3831253343196299444 = User_in_aic;
+                   passend_3831253343196299444 = tranwrd(passend_3831253343196299444,'9D'x,'D0'x);
+                   put passend_3831253343196299444 ~ @;
+              end;
+       if missing(User_steekproef)
+         then put "," @;
+         else do;
+                   attrLengte_2391003241544114741=length(User_steekproef);
+                   aantalLF_2391003241544114741 = countc(User_steekproef,'0A'x);
+                   maxPassend_2391003241544114741=30-1-aantalLF_2391003241544114741;
+                   if attrLengte_2391003241544114741 > max(maxPassend_2391003241544114741,1000)
+                     then passend_2391003241544114741 = substr(User_steekproef,1,maxPassend_2391003241544114741);
+                     else passend_2391003241544114741 = User_steekproef;
+                   passend_2391003241544114741 = tranwrd(passend_2391003241544114741,'9D'x,'D0'x);
+                   put passend_2391003241544114741 ~ @;
+              end;
+       if missing(User_in_afd)
+         then put "," @;
+         else do;
+                   attrLengte_3832660786816945718=length(User_in_afd);
+                   aantalLF_3832660786816945718 = countc(User_in_afd,'0A'x);
+                   maxPassend_3832660786816945718=30-1-aantalLF_3832660786816945718;
+                   if attrLengte_3832660786816945718 > max(maxPassend_3832660786816945718,1000)
+                     then passend_3832660786816945718 = substr(User_in_afd,1,maxPassend_3832660786816945718);
+                     else passend_3832660786816945718 = User_in_afd;
+                   passend_3832660786816945718 = tranwrd(passend_3832660786816945718,'9D'x,'D0'x);
+                   put passend_3832660786816945718 ~ @;
+              end;
+       if missing(User_acc_aic)
+         then put "," @;
+         else do;
+                   attrLengte_9104392523968836395=length(User_acc_aic);
+                   aantalLF_9104392523968836395 = countc(User_acc_aic,'0A'x);
+                   maxPassend_9104392523968836395=30-1-aantalLF_9104392523968836395;
+                   if attrLengte_9104392523968836395 > max(maxPassend_9104392523968836395,1000)
+                     then passend_9104392523968836395 = substr(User_acc_aic,1,maxPassend_9104392523968836395);
+                     else passend_9104392523968836395 = User_acc_aic;
+                   passend_9104392523968836395 = tranwrd(passend_9104392523968836395,'9D'x,'D0'x);
+                   put passend_9104392523968836395 ~ @;
+              end;
+       if missing(User_definitief)
+         then put "," @;
+         else do;
+                   attrLengte_2873212846266840276=length(User_definitief);
+                   aantalLF_2873212846266840276 = countc(User_definitief,'0A'x);
+                   maxPassend_2873212846266840276=30-1-aantalLF_2873212846266840276;
+                   if attrLengte_2873212846266840276 > max(maxPassend_2873212846266840276,1000)
+                     then passend_2873212846266840276 = substr(User_definitief,1,maxPassend_2873212846266840276);
+                     else passend_2873212846266840276 = User_definitief;
+                   passend_2873212846266840276 = tranwrd(passend_2873212846266840276,'9D'x,'D0'x);
+                   put passend_2873212846266840276 ~ @;
+              end;
+       if missing(Acc_ol_verplicht_jn)
+         then put "," @;
+         else do;
+                   attrLengte_7169949660300105159=length(Acc_ol_verplicht_jn);
+                   aantalLF_7169949660300105159 = countc(Acc_ol_verplicht_jn,'0A'x);
+                   maxPassend_7169949660300105159=1-1-aantalLF_7169949660300105159;
+                   if attrLengte_7169949660300105159 > max(maxPassend_7169949660300105159,1000)
+                     then passend_7169949660300105159 = substr(Acc_ol_verplicht_jn,1,maxPassend_7169949660300105159);
+                     else passend_7169949660300105159 = Acc_ol_verplicht_jn;
+                   passend_7169949660300105159 = tranwrd(passend_7169949660300105159,'9D'x,'D0'x);
+                   put passend_7169949660300105159 ~ @;
+              end;
+       if missing(Acc_aic_verplicht_jn)
+         then put "," @;
+         else do;
+                   attrLengte_2682281141249504448=length(Acc_aic_verplicht_jn);
+                   aantalLF_2682281141249504448 = countc(Acc_aic_verplicht_jn,'0A'x);
+                   maxPassend_2682281141249504448=1-1-aantalLF_2682281141249504448;
+                   if attrLengte_2682281141249504448 > max(maxPassend_2682281141249504448,1000)
+                     then passend_2682281141249504448 = substr(Acc_aic_verplicht_jn,1,maxPassend_2682281141249504448);
+                     else passend_2682281141249504448 = Acc_aic_verplicht_jn;
+                   passend_2682281141249504448 = tranwrd(passend_2682281141249504448,'9D'x,'D0'x);
+                   put passend_2682281141249504448 ~ @;
+              end;
+       if missing(Bewerken_jn)
+         then put "," @;
+         else do;
+                   attrLengte_6905133348098210173=length(Bewerken_jn);
+                   aantalLF_6905133348098210173 = countc(Bewerken_jn,'0A'x);
+                   maxPassend_6905133348098210173=1-1-aantalLF_6905133348098210173;
+                   if attrLengte_6905133348098210173 > max(maxPassend_6905133348098210173,1000)
+                     then passend_6905133348098210173 = substr(Bewerken_jn,1,maxPassend_6905133348098210173);
+                     else passend_6905133348098210173 = Bewerken_jn;
+                   passend_6905133348098210173 = tranwrd(passend_6905133348098210173,'9D'x,'D0'x);
+                   put passend_6905133348098210173 ~ @;
+              end;
+       if missing(Bedrag_te_verrekenen)
+         then put "," @;
+         else put Bedrag_te_verrekenen @;
+       if missing(Acm_id)
+         then put "," @;
+         else put Acm_id @;
+       if missing(Automatisch_afhandelen_jn)
+         then put "," @;
+         else do;
+                   attrLengte_773279900419835309=length(Automatisch_afhandelen_jn);
+                   aantalLF_773279900419835309 = countc(Automatisch_afhandelen_jn,'0A'x);
+                   maxPassend_773279900419835309=1-1-aantalLF_773279900419835309;
+                   if attrLengte_773279900419835309 > max(maxPassend_773279900419835309,1000)
+                     then passend_773279900419835309 = substr(Automatisch_afhandelen_jn,1,maxPassend_773279900419835309);
+                     else passend_773279900419835309 = Automatisch_afhandelen_jn;
+                   passend_773279900419835309 = tranwrd(passend_773279900419835309,'9D'x,'D0'x);
+                   put passend_773279900419835309 ~ @;
+              end;
+       if missing(User_acc_ink)
+         then put "," @;
+         else do;
+                   attrLengte_6321381128088878866=length(User_acc_ink);
+                   aantalLF_6321381128088878866 = countc(User_acc_ink,'0A'x);
+                   maxPassend_6321381128088878866=30-1-aantalLF_6321381128088878866;
+                   if attrLengte_6321381128088878866 > max(maxPassend_6321381128088878866,1000)
+                     then passend_6321381128088878866 = substr(User_acc_ink,1,maxPassend_6321381128088878866);
+                     else passend_6321381128088878866 = User_acc_ink;
+                   passend_6321381128088878866 = tranwrd(passend_6321381128088878866,'9D'x,'D0'x);
+                   put passend_6321381128088878866 ~ @;
+              end;
+       if missing(Datum_acc_ink)
+         then put "," @;
+         else put Datum_acc_ink @;
+       if missing(Acc_ink_verplicht_jn)
+         then put "," @;
+         else do;
+                   attrLengte_3303612823967380071=length(Acc_ink_verplicht_jn);
+                   aantalLF_3303612823967380071 = countc(Acc_ink_verplicht_jn,'0A'x);
+                   maxPassend_3303612823967380071=1-1-aantalLF_3303612823967380071;
+                   if attrLengte_3303612823967380071 > max(maxPassend_3303612823967380071,1000)
+                     then passend_3303612823967380071 = substr(Acc_ink_verplicht_jn,1,maxPassend_3303612823967380071);
+                     else passend_3303612823967380071 = Acc_ink_verplicht_jn;
+                   passend_3303612823967380071 = tranwrd(passend_3303612823967380071,'9D'x,'D0'x);
+                   put passend_3303612823967380071 ~ @;
+              end;
+       put techId best12. ; 
+       ; 
+     end; 
+    if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */ 
+    if EFIEOD then call symputx('_EFIREC_',EFIOUT); 
+    run; 
+
+PROC SQL;
    CREATE TABLE MIGRATIE.BAS_AOM_ACTIE AS
    SELECT t1.Actie_cd,
           t1.Actie_oms,
