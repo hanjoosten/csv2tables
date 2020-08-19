@@ -1,5 +1,13 @@
 
 
+drop index if exists BAS_AIC_VOORTGANG_idx01;
+create index BAS_AIC_VOORTGANG_idx01 on BAS_AIC_VOORTGANG
+   ( DOS_ID asc, Tra_id asc );
+
+drop index if exists BAS_AIC_VOORTGANG_idx02;
+create index BAS_AIC_VOORTGANG_idx02 on BAS_AIC_VOORTGANG
+   ( Tra_id asc );
+
 drop index if exists BAS_AOM_TRANSACTIETYPE_idx01;
 create index BAS_AOM_TRANSACTIETYPE_idx01 on BAS_AOM_TRANSACTIETYPE
    ( tra_cd asc );
