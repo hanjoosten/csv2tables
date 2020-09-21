@@ -22501,7 +22501,7 @@ data _null_;
          else do;
                    attrLengte_1568641964639052694=length(Waarde);
                    aantalLF_1568641964639052694 = countc(Waarde,'0A'x);
-                   maxPassend_1568641964639052694=60-1-aantalLF_1568641964639052694;
+                   maxPassend_1568641964639052694=255-1-aantalLF_1568641964639052694;
                    if attrLengte_1568641964639052694 > max(maxPassend_1568641964639052694,1000)
                      then passend_1568641964639052694 = substr(Waarde,1,maxPassend_1568641964639052694);
                      else passend_1568641964639052694 = Waarde;
@@ -22646,7 +22646,7 @@ data _null_;
          else do;
                    attrLengte_8662422097031864624=length(Default_waarde);
                    aantalLF_8662422097031864624 = countc(Default_waarde,'0A'x);
-                   maxPassend_8662422097031864624=40-1-aantalLF_8662422097031864624;
+                   maxPassend_8662422097031864624=255-1-aantalLF_8662422097031864624;
                    if attrLengte_8662422097031864624 > max(maxPassend_8662422097031864624,1000)
                      then passend_8662422097031864624 = substr(Default_waarde,1,maxPassend_8662422097031864624);
                      else passend_8662422097031864624 = Default_waarde;
@@ -24220,7 +24220,7 @@ data _null_;
          else do;
                    attrLengte_2333448560148118178=length(DROPDOWNLIST_01);
                    aantalLF_2333448560148118178 = countc(DROPDOWNLIST_01,'0A'x);
-                   maxPassend_2333448560148118178=60-1-aantalLF_2333448560148118178;
+                   maxPassend_2333448560148118178=255-1-aantalLF_2333448560148118178;
                    if attrLengte_2333448560148118178 > max(maxPassend_2333448560148118178,1000)
                      then passend_2333448560148118178 = substr(DROPDOWNLIST_01,1,maxPassend_2333448560148118178);
                      else passend_2333448560148118178 = DROPDOWNLIST_01;
@@ -24232,7 +24232,7 @@ data _null_;
          else do;
                    attrLengte_2333448560198451049=length(DROPDOWNLIST_02);
                    aantalLF_2333448560198451049 = countc(DROPDOWNLIST_02,'0A'x);
-                   maxPassend_2333448560198451049=60-1-aantalLF_2333448560198451049;
+                   maxPassend_2333448560198451049=255-1-aantalLF_2333448560198451049;
                    if attrLengte_2333448560198451049 > max(maxPassend_2333448560198451049,1000)
                      then passend_2333448560198451049 = substr(DROPDOWNLIST_02,1,maxPassend_2333448560198451049);
                      else passend_2333448560198451049 = DROPDOWNLIST_02;
@@ -24244,7 +24244,7 @@ data _null_;
          else do;
                    attrLengte_2333448560181673436=length(DROPDOWNLIST_03);
                    aantalLF_2333448560181673436 = countc(DROPDOWNLIST_03,'0A'x);
-                   maxPassend_2333448560181673436=60-1-aantalLF_2333448560181673436;
+                   maxPassend_2333448560181673436=255-1-aantalLF_2333448560181673436;
                    if attrLengte_2333448560181673436 > max(maxPassend_2333448560181673436,1000)
                      then passend_2333448560181673436 = substr(DROPDOWNLIST_03,1,maxPassend_2333448560181673436);
                      else passend_2333448560181673436 = DROPDOWNLIST_03;
@@ -24256,7 +24256,7 @@ data _null_;
          else do;
                    attrLengte_2333448560097785339=length(DROPDOWNLIST_04);
                    aantalLF_2333448560097785339 = countc(DROPDOWNLIST_04,'0A'x);
-                   maxPassend_2333448560097785339=60-1-aantalLF_2333448560097785339;
+                   maxPassend_2333448560097785339=255-1-aantalLF_2333448560097785339;
                    if attrLengte_2333448560097785339 > max(maxPassend_2333448560097785339,1000)
                      then passend_2333448560097785339 = substr(DROPDOWNLIST_04,1,maxPassend_2333448560097785339);
                      else passend_2333448560097785339 = DROPDOWNLIST_04;
@@ -24268,7 +24268,7 @@ data _null_;
          else do;
                    attrLengte_2333448560081007726=length(DROPDOWNLIST_05);
                    aantalLF_2333448560081007726 = countc(DROPDOWNLIST_05,'0A'x);
-                   maxPassend_2333448560081007726=60-1-aantalLF_2333448560081007726;
+                   maxPassend_2333448560081007726=255-1-aantalLF_2333448560081007726;
                    if attrLengte_2333448560081007726 > max(maxPassend_2333448560081007726,1000)
                      then passend_2333448560081007726 = substr(DROPDOWNLIST_05,1,maxPassend_2333448560081007726);
                      else passend_2333448560081007726 = DROPDOWNLIST_05;
@@ -24280,7 +24280,7 @@ data _null_;
          else do;
                    attrLengte_2333448560131340565=length(DROPDOWNLIST_06);
                    aantalLF_2333448560131340565 = countc(DROPDOWNLIST_06,'0A'x);
-                   maxPassend_2333448560131340565=60-1-aantalLF_2333448560131340565;
+                   maxPassend_2333448560131340565=255-1-aantalLF_2333448560131340565;
                    if attrLengte_2333448560131340565 > max(maxPassend_2333448560131340565,1000)
                      then passend_2333448560131340565 = substr(DROPDOWNLIST_06,1,maxPassend_2333448560131340565);
                      else passend_2333448560131340565 = DROPDOWNLIST_06;
@@ -24292,7 +24292,7 @@ data _null_;
          else do;
                    attrLengte_2333448560114562952=length(DROPDOWNLIST_07);
                    aantalLF_2333448560114562952 = countc(DROPDOWNLIST_07,'0A'x);
-                   maxPassend_2333448560114562952=60-1-aantalLF_2333448560114562952;
+                   maxPassend_2333448560114562952=255-1-aantalLF_2333448560114562952;
                    if attrLengte_2333448560114562952 > max(maxPassend_2333448560114562952,1000)
                      then passend_2333448560114562952 = substr(DROPDOWNLIST_07,1,maxPassend_2333448560114562952);
                      else passend_2333448560114562952 = DROPDOWNLIST_07;
@@ -24304,7 +24304,7 @@ data _null_;
          else do;
                    attrLengte_2333448560299116759=length(DROPDOWNLIST_08);
                    aantalLF_2333448560299116759 = countc(DROPDOWNLIST_08,'0A'x);
-                   maxPassend_2333448560299116759=60-1-aantalLF_2333448560299116759;
+                   maxPassend_2333448560299116759=255-1-aantalLF_2333448560299116759;
                    if attrLengte_2333448560299116759 > max(maxPassend_2333448560299116759,1000)
                      then passend_2333448560299116759 = substr(DROPDOWNLIST_08,1,maxPassend_2333448560299116759);
                      else passend_2333448560299116759 = DROPDOWNLIST_08;
@@ -24316,7 +24316,7 @@ data _null_;
          else do;
                    attrLengte_2333448560282339146=length(DROPDOWNLIST_09);
                    aantalLF_2333448560282339146 = countc(DROPDOWNLIST_09,'0A'x);
-                   maxPassend_2333448560282339146=60-1-aantalLF_2333448560282339146;
+                   maxPassend_2333448560282339146=255-1-aantalLF_2333448560282339146;
                    if attrLengte_2333448560282339146 > max(maxPassend_2333448560282339146,1000)
                      then passend_2333448560282339146 = substr(DROPDOWNLIST_09,1,maxPassend_2333448560282339146);
                      else passend_2333448560282339146 = DROPDOWNLIST_09;
@@ -24328,7 +24328,7 @@ data _null_;
          else do;
                    attrLengte_2333167070054935224=length(DROPDOWNLIST_10);
                    aantalLF_2333167070054935224 = countc(DROPDOWNLIST_10,'0A'x);
-                   maxPassend_2333167070054935224=60-1-aantalLF_2333167070054935224;
+                   maxPassend_2333167070054935224=255-1-aantalLF_2333167070054935224;
                    if attrLengte_2333167070054935224 > max(maxPassend_2333167070054935224,1000)
                      then passend_2333167070054935224 = substr(DROPDOWNLIST_10,1,maxPassend_2333167070054935224);
                      else passend_2333167070054935224 = DROPDOWNLIST_10;
@@ -24340,7 +24340,7 @@ data _null_;
          else do;
                    attrLengte_2333167070071712837=length(DROPDOWNLIST_11);
                    aantalLF_2333167070071712837 = countc(DROPDOWNLIST_11,'0A'x);
-                   maxPassend_2333167070071712837=60-1-aantalLF_2333167070071712837;
+                   maxPassend_2333167070071712837=255-1-aantalLF_2333167070071712837;
                    if attrLengte_2333167070071712837 > max(maxPassend_2333167070071712837,1000)
                      then passend_2333167070071712837 = substr(DROPDOWNLIST_11,1,maxPassend_2333167070071712837);
                      else passend_2333167070071712837 = DROPDOWNLIST_11;
@@ -24352,7 +24352,7 @@ data _null_;
          else do;
                    attrLengte_2333167070021379998=length(DROPDOWNLIST_12);
                    aantalLF_2333167070021379998 = countc(DROPDOWNLIST_12,'0A'x);
-                   maxPassend_2333167070021379998=60-1-aantalLF_2333167070021379998;
+                   maxPassend_2333167070021379998=255-1-aantalLF_2333167070021379998;
                    if attrLengte_2333167070021379998 > max(maxPassend_2333167070021379998,1000)
                      then passend_2333167070021379998 = substr(DROPDOWNLIST_12,1,maxPassend_2333167070021379998);
                      else passend_2333167070021379998 = DROPDOWNLIST_12;
@@ -24364,7 +24364,7 @@ data _null_;
          else do;
                    attrLengte_2333167070038157611=length(DROPDOWNLIST_13);
                    aantalLF_2333167070038157611 = countc(DROPDOWNLIST_13,'0A'x);
-                   maxPassend_2333167070038157611=60-1-aantalLF_2333167070038157611;
+                   maxPassend_2333167070038157611=255-1-aantalLF_2333167070038157611;
                    if attrLengte_2333167070038157611 > max(maxPassend_2333167070038157611,1000)
                      then passend_2333167070038157611 = substr(DROPDOWNLIST_13,1,maxPassend_2333167070038157611);
                      else passend_2333167070038157611 = DROPDOWNLIST_13;
@@ -24376,7 +24376,7 @@ data _null_;
          else do;
                    attrLengte_2333167070122045708=length(DROPDOWNLIST_14);
                    aantalLF_2333167070122045708 = countc(DROPDOWNLIST_14,'0A'x);
-                   maxPassend_2333167070122045708=60-1-aantalLF_2333167070122045708;
+                   maxPassend_2333167070122045708=255-1-aantalLF_2333167070122045708;
                    if attrLengte_2333167070122045708 > max(maxPassend_2333167070122045708,1000)
                      then passend_2333167070122045708 = substr(DROPDOWNLIST_14,1,maxPassend_2333167070122045708);
                      else passend_2333167070122045708 = DROPDOWNLIST_14;
@@ -24388,7 +24388,7 @@ data _null_;
          else do;
                    attrLengte_2333167070138823321=length(DROPDOWNLIST_15);
                    aantalLF_2333167070138823321 = countc(DROPDOWNLIST_15,'0A'x);
-                   maxPassend_2333167070138823321=60-1-aantalLF_2333167070138823321;
+                   maxPassend_2333167070138823321=255-1-aantalLF_2333167070138823321;
                    if attrLengte_2333167070138823321 > max(maxPassend_2333167070138823321,1000)
                      then passend_2333167070138823321 = substr(DROPDOWNLIST_15,1,maxPassend_2333167070138823321);
                      else passend_2333167070138823321 = DROPDOWNLIST_15;
@@ -24400,7 +24400,7 @@ data _null_;
          else do;
                    attrLengte_2333167070088490450=length(DROPDOWNLIST_16);
                    aantalLF_2333167070088490450 = countc(DROPDOWNLIST_16,'0A'x);
-                   maxPassend_2333167070088490450=60-1-aantalLF_2333167070088490450;
+                   maxPassend_2333167070088490450=255-1-aantalLF_2333167070088490450;
                    if attrLengte_2333167070088490450 > max(maxPassend_2333167070088490450,1000)
                      then passend_2333167070088490450 = substr(DROPDOWNLIST_16,1,maxPassend_2333167070088490450);
                      else passend_2333167070088490450 = DROPDOWNLIST_16;
@@ -24412,7 +24412,7 @@ data _null_;
          else do;
                    attrLengte_2333167070105268095=length(DROPDOWNLIST_17);
                    aantalLF_2333167070105268095 = countc(DROPDOWNLIST_17,'0A'x);
-                   maxPassend_2333167070105268095=60-1-aantalLF_2333167070105268095;
+                   maxPassend_2333167070105268095=255-1-aantalLF_2333167070105268095;
                    if attrLengte_2333167070105268095 > max(maxPassend_2333167070105268095,1000)
                      then passend_2333167070105268095 = substr(DROPDOWNLIST_17,1,maxPassend_2333167070105268095);
                      else passend_2333167070105268095 = DROPDOWNLIST_17;
@@ -24424,7 +24424,7 @@ data _null_;
          else do;
                    attrLengte_2333167070189156192=length(DROPDOWNLIST_18);
                    aantalLF_2333167070189156192 = countc(DROPDOWNLIST_18,'0A'x);
-                   maxPassend_2333167070189156192=60-1-aantalLF_2333167070189156192;
+                   maxPassend_2333167070189156192=255-1-aantalLF_2333167070189156192;
                    if attrLengte_2333167070189156192 > max(maxPassend_2333167070189156192,1000)
                      then passend_2333167070189156192 = substr(DROPDOWNLIST_18,1,maxPassend_2333167070189156192);
                      else passend_2333167070189156192 = DROPDOWNLIST_18;
@@ -24436,7 +24436,7 @@ data _null_;
          else do;
                    attrLengte_2333167070205933805=length(DROPDOWNLIST_19);
                    aantalLF_2333167070205933805 = countc(DROPDOWNLIST_19,'0A'x);
-                   maxPassend_2333167070205933805=60-1-aantalLF_2333167070205933805;
+                   maxPassend_2333167070205933805=255-1-aantalLF_2333167070205933805;
                    if attrLengte_2333167070205933805 > max(maxPassend_2333167070205933805,1000)
                      then passend_2333167070205933805 = substr(DROPDOWNLIST_19,1,maxPassend_2333167070205933805);
                      else passend_2333167070205933805 = DROPDOWNLIST_19;
@@ -24448,7 +24448,7 @@ data _null_;
          else do;
                    attrLengte_2334011536089746525=length(DROPDOWNLIST_20);
                    aantalLF_2334011536089746525 = countc(DROPDOWNLIST_20,'0A'x);
-                   maxPassend_2334011536089746525=60-1-aantalLF_2334011536089746525;
+                   maxPassend_2334011536089746525=255-1-aantalLF_2334011536089746525;
                    if attrLengte_2334011536089746525 > max(maxPassend_2334011536089746525,1000)
                      then passend_2334011536089746525 = substr(DROPDOWNLIST_20,1,maxPassend_2334011536089746525);
                      else passend_2334011536089746525 = DROPDOWNLIST_20;
@@ -24460,7 +24460,7 @@ data _null_;
          else do;
                    attrLengte_2334011536072968912=length(DROPDOWNLIST_21);
                    aantalLF_2334011536072968912 = countc(DROPDOWNLIST_21,'0A'x);
-                   maxPassend_2334011536072968912=60-1-aantalLF_2334011536072968912;
+                   maxPassend_2334011536072968912=255-1-aantalLF_2334011536072968912;
                    if attrLengte_2334011536072968912 > max(maxPassend_2334011536072968912,1000)
                      then passend_2334011536072968912 = substr(DROPDOWNLIST_21,1,maxPassend_2334011536072968912);
                      else passend_2334011536072968912 = DROPDOWNLIST_21;
@@ -24472,7 +24472,7 @@ data _null_;
          else do;
                    attrLengte_2334011536056191267=length(DROPDOWNLIST_22);
                    aantalLF_2334011536056191267 = countc(DROPDOWNLIST_22,'0A'x);
-                   maxPassend_2334011536056191267=60-1-aantalLF_2334011536056191267;
+                   maxPassend_2334011536056191267=255-1-aantalLF_2334011536056191267;
                    if attrLengte_2334011536056191267 > max(maxPassend_2334011536056191267,1000)
                      then passend_2334011536056191267 = substr(DROPDOWNLIST_22,1,maxPassend_2334011536056191267);
                      else passend_2334011536056191267 = DROPDOWNLIST_22;
@@ -24484,7 +24484,7 @@ data _null_;
          else do;
                    attrLengte_2334011536039413654=length(DROPDOWNLIST_23);
                    aantalLF_2334011536039413654 = countc(DROPDOWNLIST_23,'0A'x);
-                   maxPassend_2334011536039413654=60-1-aantalLF_2334011536039413654;
+                   maxPassend_2334011536039413654=255-1-aantalLF_2334011536039413654;
                    if attrLengte_2334011536039413654 > max(maxPassend_2334011536039413654,1000)
                      then passend_2334011536039413654 = substr(DROPDOWNLIST_23,1,maxPassend_2334011536039413654);
                      else passend_2334011536039413654 = DROPDOWNLIST_23;
@@ -24496,7 +24496,7 @@ data _null_;
          else do;
                    attrLengte_2334011536156856977=length(DROPDOWNLIST_24);
                    aantalLF_2334011536156856977 = countc(DROPDOWNLIST_24,'0A'x);
-                   maxPassend_2334011536156856977=60-1-aantalLF_2334011536156856977;
+                   maxPassend_2334011536156856977=255-1-aantalLF_2334011536156856977;
                    if attrLengte_2334011536156856977 > max(maxPassend_2334011536156856977,1000)
                      then passend_2334011536156856977 = substr(DROPDOWNLIST_24,1,maxPassend_2334011536156856977);
                      else passend_2334011536156856977 = DROPDOWNLIST_24;
@@ -24508,7 +24508,7 @@ data _null_;
          else do;
                    attrLengte_2334011536140079364=length(DROPDOWNLIST_25);
                    aantalLF_2334011536140079364 = countc(DROPDOWNLIST_25,'0A'x);
-                   maxPassend_2334011536140079364=60-1-aantalLF_2334011536140079364;
+                   maxPassend_2334011536140079364=255-1-aantalLF_2334011536140079364;
                    if attrLengte_2334011536140079364 > max(maxPassend_2334011536140079364,1000)
                      then passend_2334011536140079364 = substr(DROPDOWNLIST_25,1,maxPassend_2334011536140079364);
                      else passend_2334011536140079364 = DROPDOWNLIST_25;
@@ -24520,7 +24520,7 @@ data _null_;
          else do;
                    attrLengte_2334011536123301751=length(DROPDOWNLIST_26);
                    aantalLF_2334011536123301751 = countc(DROPDOWNLIST_26,'0A'x);
-                   maxPassend_2334011536123301751=60-1-aantalLF_2334011536123301751;
+                   maxPassend_2334011536123301751=255-1-aantalLF_2334011536123301751;
                    if attrLengte_2334011536123301751 > max(maxPassend_2334011536123301751,1000)
                      then passend_2334011536123301751 = substr(DROPDOWNLIST_26,1,maxPassend_2334011536123301751);
                      else passend_2334011536123301751 = DROPDOWNLIST_26;
@@ -24532,7 +24532,7 @@ data _null_;
          else do;
                    attrLengte_2334011536106524138=length(DROPDOWNLIST_27);
                    aantalLF_2334011536106524138 = countc(DROPDOWNLIST_27,'0A'x);
-                   maxPassend_2334011536106524138=60-1-aantalLF_2334011536106524138;
+                   maxPassend_2334011536106524138=255-1-aantalLF_2334011536106524138;
                    if attrLengte_2334011536106524138 > max(maxPassend_2334011536106524138,1000)
                      then passend_2334011536106524138 = substr(DROPDOWNLIST_27,1,maxPassend_2334011536106524138);
                      else passend_2334011536106524138 = DROPDOWNLIST_27;
@@ -24544,7 +24544,7 @@ data _null_;
          else do;
                    attrLengte_2334011535955525557=length(DROPDOWNLIST_28);
                    aantalLF_2334011535955525557 = countc(DROPDOWNLIST_28,'0A'x);
-                   maxPassend_2334011535955525557=60-1-aantalLF_2334011535955525557;
+                   maxPassend_2334011535955525557=255-1-aantalLF_2334011535955525557;
                    if attrLengte_2334011535955525557 > max(maxPassend_2334011535955525557,1000)
                      then passend_2334011535955525557 = substr(DROPDOWNLIST_28,1,maxPassend_2334011535955525557);
                      else passend_2334011535955525557 = DROPDOWNLIST_28;
@@ -24556,7 +24556,7 @@ data _null_;
          else do;
                    attrLengte_2334011535938747944=length(DROPDOWNLIST_29);
                    aantalLF_2334011535938747944 = countc(DROPDOWNLIST_29,'0A'x);
-                   maxPassend_2334011535938747944=60-1-aantalLF_2334011535938747944;
+                   maxPassend_2334011535938747944=255-1-aantalLF_2334011535938747944;
                    if attrLengte_2334011535938747944 > max(maxPassend_2334011535938747944,1000)
                      then passend_2334011535938747944 = substr(DROPDOWNLIST_29,1,maxPassend_2334011535938747944);
                      else passend_2334011535938747944 = DROPDOWNLIST_29;
@@ -24568,7 +24568,7 @@ data _null_;
          else do;
                    attrLengte_2333730048127321158=length(DROPDOWNLIST_30);
                    aantalLF_2333730048127321158 = countc(DROPDOWNLIST_30,'0A'x);
-                   maxPassend_2333730048127321158=60-1-aantalLF_2333730048127321158;
+                   maxPassend_2333730048127321158=255-1-aantalLF_2333730048127321158;
                    if attrLengte_2333730048127321158 > max(maxPassend_2333730048127321158,1000)
                      then passend_2333730048127321158 = substr(DROPDOWNLIST_30,1,maxPassend_2333730048127321158);
                      else passend_2333730048127321158 = DROPDOWNLIST_30;
@@ -24580,7 +24580,7 @@ data _null_;
          else do;
                    attrLengte_2333730048144098771=length(DROPDOWNLIST_31);
                    aantalLF_2333730048144098771 = countc(DROPDOWNLIST_31,'0A'x);
-                   maxPassend_2333730048144098771=60-1-aantalLF_2333730048144098771;
+                   maxPassend_2333730048144098771=255-1-aantalLF_2333730048144098771;
                    if attrLengte_2333730048144098771 > max(maxPassend_2333730048144098771,1000)
                      then passend_2333730048144098771 = substr(DROPDOWNLIST_31,1,maxPassend_2333730048144098771);
                      else passend_2333730048144098771 = DROPDOWNLIST_31;
@@ -24592,7 +24592,7 @@ data _null_;
          else do;
                    attrLengte_2333730048160876416=length(DROPDOWNLIST_32);
                    aantalLF_2333730048160876416 = countc(DROPDOWNLIST_32,'0A'x);
-                   maxPassend_2333730048160876416=60-1-aantalLF_2333730048160876416;
+                   maxPassend_2333730048160876416=255-1-aantalLF_2333730048160876416;
                    if attrLengte_2333730048160876416 > max(maxPassend_2333730048160876416,1000)
                      then passend_2333730048160876416 = substr(DROPDOWNLIST_32,1,maxPassend_2333730048160876416);
                      else passend_2333730048160876416 = DROPDOWNLIST_32;
@@ -24604,7 +24604,7 @@ data _null_;
          else do;
                    attrLengte_2333730048177654029=length(DROPDOWNLIST_33);
                    aantalLF_2333730048177654029 = countc(DROPDOWNLIST_33,'0A'x);
-                   maxPassend_2333730048177654029=60-1-aantalLF_2333730048177654029;
+                   maxPassend_2333730048177654029=255-1-aantalLF_2333730048177654029;
                    if attrLengte_2333730048177654029 > max(maxPassend_2333730048177654029,1000)
                      then passend_2333730048177654029 = substr(DROPDOWNLIST_33,1,maxPassend_2333730048177654029);
                      else passend_2333730048177654029 = DROPDOWNLIST_33;
@@ -24616,7 +24616,7 @@ data _null_;
          else do;
                    attrLengte_2333730048194431642=length(DROPDOWNLIST_34);
                    aantalLF_2333730048194431642 = countc(DROPDOWNLIST_34,'0A'x);
-                   maxPassend_2333730048194431642=60-1-aantalLF_2333730048194431642;
+                   maxPassend_2333730048194431642=255-1-aantalLF_2333730048194431642;
                    if attrLengte_2333730048194431642 > max(maxPassend_2333730048194431642,1000)
                      then passend_2333730048194431642 = substr(DROPDOWNLIST_34,1,maxPassend_2333730048194431642);
                      else passend_2333730048194431642 = DROPDOWNLIST_34;
@@ -24628,7 +24628,7 @@ data _null_;
          else do;
                    attrLengte_2333730048211209255=length(DROPDOWNLIST_35);
                    aantalLF_2333730048211209255 = countc(DROPDOWNLIST_35,'0A'x);
-                   maxPassend_2333730048211209255=60-1-aantalLF_2333730048211209255;
+                   maxPassend_2333730048211209255=255-1-aantalLF_2333730048211209255;
                    if attrLengte_2333730048211209255 > max(maxPassend_2333730048211209255,1000)
                      then passend_2333730048211209255 = substr(DROPDOWNLIST_35,1,maxPassend_2333730048211209255);
                      else passend_2333730048211209255 = DROPDOWNLIST_35;
@@ -24640,7 +24640,7 @@ data _null_;
          else do;
                    attrLengte_2333730048227986868=length(DROPDOWNLIST_36);
                    aantalLF_2333730048227986868 = countc(DROPDOWNLIST_36,'0A'x);
-                   maxPassend_2333730048227986868=60-1-aantalLF_2333730048227986868;
+                   maxPassend_2333730048227986868=255-1-aantalLF_2333730048227986868;
                    if attrLengte_2333730048227986868 > max(maxPassend_2333730048227986868,1000)
                      then passend_2333730048227986868 = substr(DROPDOWNLIST_36,1,maxPassend_2333730048227986868);
                      else passend_2333730048227986868 = DROPDOWNLIST_36;
@@ -24652,7 +24652,7 @@ data _null_;
          else do;
                    attrLengte_2333730048244764481=length(DROPDOWNLIST_37);
                    aantalLF_2333730048244764481 = countc(DROPDOWNLIST_37,'0A'x);
-                   maxPassend_2333730048244764481=60-1-aantalLF_2333730048244764481;
+                   maxPassend_2333730048244764481=255-1-aantalLF_2333730048244764481;
                    if attrLengte_2333730048244764481 > max(maxPassend_2333730048244764481,1000)
                      then passend_2333730048244764481 = substr(DROPDOWNLIST_37,1,maxPassend_2333730048244764481);
                      else passend_2333730048244764481 = DROPDOWNLIST_37;
@@ -24664,7 +24664,7 @@ data _null_;
          else do;
                    attrLengte_2333730047993100222=length(DROPDOWNLIST_38);
                    aantalLF_2333730047993100222 = countc(DROPDOWNLIST_38,'0A'x);
-                   maxPassend_2333730047993100222=60-1-aantalLF_2333730047993100222;
+                   maxPassend_2333730047993100222=255-1-aantalLF_2333730047993100222;
                    if attrLengte_2333730047993100222 > max(maxPassend_2333730047993100222,1000)
                      then passend_2333730047993100222 = substr(DROPDOWNLIST_38,1,maxPassend_2333730047993100222);
                      else passend_2333730047993100222 = DROPDOWNLIST_38;
@@ -24676,7 +24676,7 @@ data _null_;
          else do;
                    attrLengte_2333730048009877835=length(DROPDOWNLIST_39);
                    aantalLF_2333730048009877835 = countc(DROPDOWNLIST_39,'0A'x);
-                   maxPassend_2333730048009877835=60-1-aantalLF_2333730048009877835;
+                   maxPassend_2333730048009877835=255-1-aantalLF_2333730048009877835;
                    if attrLengte_2333730048009877835 > max(maxPassend_2333730048009877835,1000)
                      then passend_2333730048009877835 = substr(DROPDOWNLIST_39,1,maxPassend_2333730048009877835);
                      else passend_2333730048009877835 = DROPDOWNLIST_39;
@@ -24688,7 +24688,7 @@ data _null_;
          else do;
                    attrLengte_2334574513625248651=length(DROPDOWNLIST_40);
                    aantalLF_2334574513625248651 = countc(DROPDOWNLIST_40,'0A'x);
-                   maxPassend_2334574513625248651=60-1-aantalLF_2334574513625248651;
+                   maxPassend_2334574513625248651=255-1-aantalLF_2334574513625248651;
                    if attrLengte_2334574513625248651 > max(maxPassend_2334574513625248651,1000)
                      then passend_2334574513625248651 = substr(DROPDOWNLIST_40,1,maxPassend_2334574513625248651);
                      else passend_2334574513625248651 = DROPDOWNLIST_40;
@@ -25795,7 +25795,7 @@ data _null_;
          else do;
                    attrLengte_2317130619227152338=length(OPTIONBUTTON_01);
                    aantalLF_2317130619227152338 = countc(OPTIONBUTTON_01,'0A'x);
-                   maxPassend_2317130619227152338=60-1-aantalLF_2317130619227152338;
+                   maxPassend_2317130619227152338=255-1-aantalLF_2317130619227152338;
                    if attrLengte_2317130619227152338 > max(maxPassend_2317130619227152338,1000)
                      then passend_2317130619227152338 = substr(OPTIONBUTTON_01,1,maxPassend_2317130619227152338);
                      else passend_2317130619227152338 = OPTIONBUTTON_01;
@@ -25807,7 +25807,7 @@ data _null_;
          else do;
                    attrLengte_2317130619176819499=length(OPTIONBUTTON_02);
                    aantalLF_2317130619176819499 = countc(OPTIONBUTTON_02,'0A'x);
-                   maxPassend_2317130619176819499=60-1-aantalLF_2317130619176819499;
+                   maxPassend_2317130619176819499=255-1-aantalLF_2317130619176819499;
                    if attrLengte_2317130619176819499 > max(maxPassend_2317130619176819499,1000)
                      then passend_2317130619176819499 = substr(OPTIONBUTTON_02,1,maxPassend_2317130619176819499);
                      else passend_2317130619176819499 = OPTIONBUTTON_02;
@@ -25819,7 +25819,7 @@ data _null_;
          else do;
                    attrLengte_2317130619193597112=length(OPTIONBUTTON_03);
                    aantalLF_2317130619193597112 = countc(OPTIONBUTTON_03,'0A'x);
-                   maxPassend_2317130619193597112=60-1-aantalLF_2317130619193597112;
+                   maxPassend_2317130619193597112=255-1-aantalLF_2317130619193597112;
                    if attrLengte_2317130619193597112 > max(maxPassend_2317130619193597112,1000)
                      then passend_2317130619193597112 = substr(OPTIONBUTTON_03,1,maxPassend_2317130619193597112);
                      else passend_2317130619193597112 = OPTIONBUTTON_03;
@@ -25831,7 +25831,7 @@ data _null_;
          else do;
                    attrLengte_2317130619143264241=length(OPTIONBUTTON_04);
                    aantalLF_2317130619143264241 = countc(OPTIONBUTTON_04,'0A'x);
-                   maxPassend_2317130619143264241=60-1-aantalLF_2317130619143264241;
+                   maxPassend_2317130619143264241=255-1-aantalLF_2317130619143264241;
                    if attrLengte_2317130619143264241 > max(maxPassend_2317130619143264241,1000)
                      then passend_2317130619143264241 = substr(OPTIONBUTTON_04,1,maxPassend_2317130619143264241);
                      else passend_2317130619143264241 = OPTIONBUTTON_04;
@@ -25843,7 +25843,7 @@ data _null_;
          else do;
                    attrLengte_2317130619160041886=length(OPTIONBUTTON_05);
                    aantalLF_2317130619160041886 = countc(OPTIONBUTTON_05,'0A'x);
-                   maxPassend_2317130619160041886=60-1-aantalLF_2317130619160041886;
+                   maxPassend_2317130619160041886=255-1-aantalLF_2317130619160041886;
                    if attrLengte_2317130619160041886 > max(maxPassend_2317130619160041886,1000)
                      then passend_2317130619160041886 = substr(OPTIONBUTTON_05,1,maxPassend_2317130619160041886);
                      else passend_2317130619160041886 = OPTIONBUTTON_05;
@@ -25855,7 +25855,7 @@ data _null_;
          else do;
                    attrLengte_2317130619109709015=length(OPTIONBUTTON_06);
                    aantalLF_2317130619109709015 = countc(OPTIONBUTTON_06,'0A'x);
-                   maxPassend_2317130619109709015=60-1-aantalLF_2317130619109709015;
+                   maxPassend_2317130619109709015=255-1-aantalLF_2317130619109709015;
                    if attrLengte_2317130619109709015 > max(maxPassend_2317130619109709015,1000)
                      then passend_2317130619109709015 = substr(OPTIONBUTTON_06,1,maxPassend_2317130619109709015);
                      else passend_2317130619109709015 = OPTIONBUTTON_06;
@@ -25867,7 +25867,7 @@ data _null_;
          else do;
                    attrLengte_2317130619126486628=length(OPTIONBUTTON_07);
                    aantalLF_2317130619126486628 = countc(OPTIONBUTTON_07,'0A'x);
-                   maxPassend_2317130619126486628=60-1-aantalLF_2317130619126486628;
+                   maxPassend_2317130619126486628=255-1-aantalLF_2317130619126486628;
                    if attrLengte_2317130619126486628 > max(maxPassend_2317130619126486628,1000)
                      then passend_2317130619126486628 = substr(OPTIONBUTTON_07,1,maxPassend_2317130619126486628);
                      else passend_2317130619126486628 = OPTIONBUTTON_07;
@@ -25879,7 +25879,7 @@ data _null_;
          else do;
                    attrLengte_2317130619076153789=length(OPTIONBUTTON_08);
                    aantalLF_2317130619076153789 = countc(OPTIONBUTTON_08,'0A'x);
-                   maxPassend_2317130619076153789=60-1-aantalLF_2317130619076153789;
+                   maxPassend_2317130619076153789=255-1-aantalLF_2317130619076153789;
                    if attrLengte_2317130619076153789 > max(maxPassend_2317130619076153789,1000)
                      then passend_2317130619076153789 = substr(OPTIONBUTTON_08,1,maxPassend_2317130619076153789);
                      else passend_2317130619076153789 = OPTIONBUTTON_08;
@@ -25891,7 +25891,7 @@ data _null_;
          else do;
                    attrLengte_2317130619092931402=length(OPTIONBUTTON_09);
                    aantalLF_2317130619092931402 = countc(OPTIONBUTTON_09,'0A'x);
-                   maxPassend_2317130619092931402=60-1-aantalLF_2317130619092931402;
+                   maxPassend_2317130619092931402=255-1-aantalLF_2317130619092931402;
                    if attrLengte_2317130619092931402 > max(maxPassend_2317130619092931402,1000)
                      then passend_2317130619092931402 = substr(OPTIONBUTTON_09,1,maxPassend_2317130619092931402);
                      else passend_2317130619092931402 = OPTIONBUTTON_09;
@@ -25903,7 +25903,7 @@ data _null_;
          else do;
                    attrLengte_2317412108783451516=length(OPTIONBUTTON_10);
                    aantalLF_2317412108783451516 = countc(OPTIONBUTTON_10,'0A'x);
-                   maxPassend_2317412108783451516=60-1-aantalLF_2317412108783451516;
+                   maxPassend_2317412108783451516=255-1-aantalLF_2317412108783451516;
                    if attrLengte_2317412108783451516 > max(maxPassend_2317412108783451516,1000)
                      then passend_2317412108783451516 = substr(OPTIONBUTTON_10,1,maxPassend_2317412108783451516);
                      else passend_2317412108783451516 = OPTIONBUTTON_10;
@@ -25915,7 +25915,7 @@ data _null_;
          else do;
                    attrLengte_2317412108766673903=length(OPTIONBUTTON_11);
                    aantalLF_2317412108766673903 = countc(OPTIONBUTTON_11,'0A'x);
-                   maxPassend_2317412108766673903=60-1-aantalLF_2317412108766673903;
+                   maxPassend_2317412108766673903=255-1-aantalLF_2317412108766673903;
                    if attrLengte_2317412108766673903 > max(maxPassend_2317412108766673903,1000)
                      then passend_2317412108766673903 = substr(OPTIONBUTTON_11,1,maxPassend_2317412108766673903);
                      else passend_2317412108766673903 = OPTIONBUTTON_11;
@@ -25927,7 +25927,7 @@ data _null_;
          else do;
                    attrLengte_2317412108817006742=length(OPTIONBUTTON_12);
                    aantalLF_2317412108817006742 = countc(OPTIONBUTTON_12,'0A'x);
-                   maxPassend_2317412108817006742=60-1-aantalLF_2317412108817006742;
+                   maxPassend_2317412108817006742=255-1-aantalLF_2317412108817006742;
                    if attrLengte_2317412108817006742 > max(maxPassend_2317412108817006742,1000)
                      then passend_2317412108817006742 = substr(OPTIONBUTTON_12,1,maxPassend_2317412108817006742);
                      else passend_2317412108817006742 = OPTIONBUTTON_12;
@@ -25939,7 +25939,7 @@ data _null_;
          else do;
                    attrLengte_2317412108800229129=length(OPTIONBUTTON_13);
                    aantalLF_2317412108800229129 = countc(OPTIONBUTTON_13,'0A'x);
-                   maxPassend_2317412108800229129=60-1-aantalLF_2317412108800229129;
+                   maxPassend_2317412108800229129=255-1-aantalLF_2317412108800229129;
                    if attrLengte_2317412108800229129 > max(maxPassend_2317412108800229129,1000)
                      then passend_2317412108800229129 = substr(OPTIONBUTTON_13,1,maxPassend_2317412108800229129);
                      else passend_2317412108800229129 = OPTIONBUTTON_13;
@@ -25951,7 +25951,7 @@ data _null_;
          else do;
                    attrLengte_2317412108850561968=length(OPTIONBUTTON_14);
                    aantalLF_2317412108850561968 = countc(OPTIONBUTTON_14,'0A'x);
-                   maxPassend_2317412108850561968=60-1-aantalLF_2317412108850561968;
+                   maxPassend_2317412108850561968=255-1-aantalLF_2317412108850561968;
                    if attrLengte_2317412108850561968 > max(maxPassend_2317412108850561968,1000)
                      then passend_2317412108850561968 = substr(OPTIONBUTTON_14,1,maxPassend_2317412108850561968);
                      else passend_2317412108850561968 = OPTIONBUTTON_14;
@@ -25963,7 +25963,7 @@ data _null_;
          else do;
                    attrLengte_2317412108833784355=length(OPTIONBUTTON_15);
                    aantalLF_2317412108833784355 = countc(OPTIONBUTTON_15,'0A'x);
-                   maxPassend_2317412108833784355=60-1-aantalLF_2317412108833784355;
+                   maxPassend_2317412108833784355=255-1-aantalLF_2317412108833784355;
                    if attrLengte_2317412108833784355 > max(maxPassend_2317412108833784355,1000)
                      then passend_2317412108833784355 = substr(OPTIONBUTTON_15,1,maxPassend_2317412108833784355);
                      else passend_2317412108833784355 = OPTIONBUTTON_15;
@@ -25975,7 +25975,7 @@ data _null_;
          else do;
                    attrLengte_2317412108884117226=length(OPTIONBUTTON_16);
                    aantalLF_2317412108884117226 = countc(OPTIONBUTTON_16,'0A'x);
-                   maxPassend_2317412108884117226=60-1-aantalLF_2317412108884117226;
+                   maxPassend_2317412108884117226=255-1-aantalLF_2317412108884117226;
                    if attrLengte_2317412108884117226 > max(maxPassend_2317412108884117226,1000)
                      then passend_2317412108884117226 = substr(OPTIONBUTTON_16,1,maxPassend_2317412108884117226);
                      else passend_2317412108884117226 = OPTIONBUTTON_16;
@@ -25987,7 +25987,7 @@ data _null_;
          else do;
                    attrLengte_2317412108867339613=length(OPTIONBUTTON_17);
                    aantalLF_2317412108867339613 = countc(OPTIONBUTTON_17,'0A'x);
-                   maxPassend_2317412108867339613=60-1-aantalLF_2317412108867339613;
+                   maxPassend_2317412108867339613=255-1-aantalLF_2317412108867339613;
                    if attrLengte_2317412108867339613 > max(maxPassend_2317412108867339613,1000)
                      then passend_2317412108867339613 = substr(OPTIONBUTTON_17,1,maxPassend_2317412108867339613);
                      else passend_2317412108867339613 = OPTIONBUTTON_17;
@@ -25999,7 +25999,7 @@ data _null_;
          else do;
                    attrLengte_2317412108917672452=length(OPTIONBUTTON_18);
                    aantalLF_2317412108917672452 = countc(OPTIONBUTTON_18,'0A'x);
-                   maxPassend_2317412108917672452=60-1-aantalLF_2317412108917672452;
+                   maxPassend_2317412108917672452=255-1-aantalLF_2317412108917672452;
                    if attrLengte_2317412108917672452 > max(maxPassend_2317412108917672452,1000)
                      then passend_2317412108917672452 = substr(OPTIONBUTTON_18,1,maxPassend_2317412108917672452);
                      else passend_2317412108917672452 = OPTIONBUTTON_18;
@@ -26011,7 +26011,7 @@ data _null_;
          else do;
                    attrLengte_2317412108900894839=length(OPTIONBUTTON_19);
                    aantalLF_2317412108900894839 = countc(OPTIONBUTTON_19,'0A'x);
-                   maxPassend_2317412108900894839=60-1-aantalLF_2317412108900894839;
+                   maxPassend_2317412108900894839=255-1-aantalLF_2317412108900894839;
                    if attrLengte_2317412108900894839 > max(maxPassend_2317412108900894839,1000)
                      then passend_2317412108900894839 = substr(OPTIONBUTTON_19,1,maxPassend_2317412108900894839);
                      else passend_2317412108900894839 = OPTIONBUTTON_19;
@@ -26023,7 +26023,7 @@ data _null_;
          else do;
                    attrLengte_2316567643285524023=length(OPTIONBUTTON_20);
                    aantalLF_2316567643285524023 = countc(OPTIONBUTTON_20,'0A'x);
-                   maxPassend_2316567643285524023=60-1-aantalLF_2316567643285524023;
+                   maxPassend_2316567643285524023=255-1-aantalLF_2316567643285524023;
                    if attrLengte_2316567643285524023 > max(maxPassend_2316567643285524023,1000)
                      then passend_2316567643285524023 = substr(OPTIONBUTTON_20,1,maxPassend_2316567643285524023);
                      else passend_2316567643285524023 = OPTIONBUTTON_20;
@@ -26155,7 +26155,7 @@ data _null_;
          else do;
                    attrLengte_2777269963343329415=length(VARCHAR_60_01);
                    aantalLF_2777269963343329415 = countc(VARCHAR_60_01,'0A'x);
-                   maxPassend_2777269963343329415=60-1-aantalLF_2777269963343329415;
+                   maxPassend_2777269963343329415=255-1-aantalLF_2777269963343329415;
                    if attrLengte_2777269963343329415 > max(maxPassend_2777269963343329415,1000)
                      then passend_2777269963343329415 = substr(VARCHAR_60_01,1,maxPassend_2777269963343329415);
                      else passend_2777269963343329415 = VARCHAR_60_01;
@@ -26167,7 +26167,7 @@ data _null_;
          else do;
                    attrLengte_2777269963326551802=length(VARCHAR_60_02);
                    aantalLF_2777269963326551802 = countc(VARCHAR_60_02,'0A'x);
-                   maxPassend_2777269963326551802=60-1-aantalLF_2777269963326551802;
+                   maxPassend_2777269963326551802=255-1-aantalLF_2777269963326551802;
                    if attrLengte_2777269963326551802 > max(maxPassend_2777269963326551802,1000)
                      then passend_2777269963326551802 = substr(VARCHAR_60_02,1,maxPassend_2777269963326551802);
                      else passend_2777269963326551802 = VARCHAR_60_02;
@@ -26179,7 +26179,7 @@ data _null_;
          else do;
                    attrLengte_2777269963309774185=length(VARCHAR_60_03);
                    aantalLF_2777269963309774185 = countc(VARCHAR_60_03,'0A'x);
-                   maxPassend_2777269963309774185=60-1-aantalLF_2777269963309774185;
+                   maxPassend_2777269963309774185=255-1-aantalLF_2777269963309774185;
                    if attrLengte_2777269963309774185 > max(maxPassend_2777269963309774185,1000)
                      then passend_2777269963309774185 = substr(VARCHAR_60_03,1,maxPassend_2777269963309774185);
                      else passend_2777269963309774185 = VARCHAR_60_03;
@@ -26191,7 +26191,7 @@ data _null_;
          else do;
                    attrLengte_2777269963292996572=length(VARCHAR_60_04);
                    aantalLF_2777269963292996572 = countc(VARCHAR_60_04,'0A'x);
-                   maxPassend_2777269963292996572=60-1-aantalLF_2777269963292996572;
+                   maxPassend_2777269963292996572=255-1-aantalLF_2777269963292996572;
                    if attrLengte_2777269963292996572 > max(maxPassend_2777269963292996572,1000)
                      then passend_2777269963292996572 = substr(VARCHAR_60_04,1,maxPassend_2777269963292996572);
                      else passend_2777269963292996572 = VARCHAR_60_04;
@@ -26203,7 +26203,7 @@ data _null_;
          else do;
                    attrLengte_2777269963276218931=length(VARCHAR_60_05);
                    aantalLF_2777269963276218931 = countc(VARCHAR_60_05,'0A'x);
-                   maxPassend_2777269963276218931=60-1-aantalLF_2777269963276218931;
+                   maxPassend_2777269963276218931=255-1-aantalLF_2777269963276218931;
                    if attrLengte_2777269963276218931 > max(maxPassend_2777269963276218931,1000)
                      then passend_2777269963276218931 = substr(VARCHAR_60_05,1,maxPassend_2777269963276218931);
                      else passend_2777269963276218931 = VARCHAR_60_05;
@@ -26215,7 +26215,7 @@ data _null_;
          else do;
                    attrLengte_2777269963259441318=length(VARCHAR_60_06);
                    aantalLF_2777269963259441318 = countc(VARCHAR_60_06,'0A'x);
-                   maxPassend_2777269963259441318=60-1-aantalLF_2777269963259441318;
+                   maxPassend_2777269963259441318=255-1-aantalLF_2777269963259441318;
                    if attrLengte_2777269963259441318 > max(maxPassend_2777269963259441318,1000)
                      then passend_2777269963259441318 = substr(VARCHAR_60_06,1,maxPassend_2777269963259441318);
                      else passend_2777269963259441318 = VARCHAR_60_06;
@@ -26227,7 +26227,7 @@ data _null_;
          else do;
                    attrLengte_2777269963242663701=length(VARCHAR_60_07);
                    aantalLF_2777269963242663701 = countc(VARCHAR_60_07,'0A'x);
-                   maxPassend_2777269963242663701=60-1-aantalLF_2777269963242663701;
+                   maxPassend_2777269963242663701=255-1-aantalLF_2777269963242663701;
                    if attrLengte_2777269963242663701 > max(maxPassend_2777269963242663701,1000)
                      then passend_2777269963242663701 = substr(VARCHAR_60_07,1,maxPassend_2777269963242663701);
                      else passend_2777269963242663701 = VARCHAR_60_07;
@@ -26239,7 +26239,7 @@ data _null_;
          else do;
                    attrLengte_2777269963225886088=length(VARCHAR_60_08);
                    aantalLF_2777269963225886088 = countc(VARCHAR_60_08,'0A'x);
-                   maxPassend_2777269963225886088=60-1-aantalLF_2777269963225886088;
+                   maxPassend_2777269963225886088=255-1-aantalLF_2777269963225886088;
                    if attrLengte_2777269963225886088 > max(maxPassend_2777269963225886088,1000)
                      then passend_2777269963225886088 = substr(VARCHAR_60_08,1,maxPassend_2777269963225886088);
                      else passend_2777269963225886088 = VARCHAR_60_08;
@@ -26251,7 +26251,7 @@ data _null_;
          else do;
                    attrLengte_2777269963209108479=length(VARCHAR_60_09);
                    aantalLF_2777269963209108479 = countc(VARCHAR_60_09,'0A'x);
-                   maxPassend_2777269963209108479=60-1-aantalLF_2777269963209108479;
+                   maxPassend_2777269963209108479=255-1-aantalLF_2777269963209108479;
                    if attrLengte_2777269963209108479 > max(maxPassend_2777269963209108479,1000)
                      then passend_2777269963209108479 = substr(VARCHAR_60_09,1,maxPassend_2777269963209108479);
                      else passend_2777269963209108479 = VARCHAR_60_09;
@@ -26263,7 +26263,7 @@ data _null_;
          else do;
                    attrLengte_2776988475397681689=length(VARCHAR_60_10);
                    aantalLF_2776988475397681689 = countc(VARCHAR_60_10,'0A'x);
-                   maxPassend_2776988475397681689=60-1-aantalLF_2776988475397681689;
+                   maxPassend_2776988475397681689=255-1-aantalLF_2776988475397681689;
                    if attrLengte_2776988475397681689 > max(maxPassend_2776988475397681689,1000)
                      then passend_2776988475397681689 = substr(VARCHAR_60_10,1,maxPassend_2776988475397681689);
                      else passend_2776988475397681689 = VARCHAR_60_10;
@@ -26275,7 +26275,7 @@ data _null_;
          else do;
                    attrLengte_2776988475414459306=length(VARCHAR_60_11);
                    aantalLF_2776988475414459306 = countc(VARCHAR_60_11,'0A'x);
-                   maxPassend_2776988475414459306=60-1-aantalLF_2776988475414459306;
+                   maxPassend_2776988475414459306=255-1-aantalLF_2776988475414459306;
                    if attrLengte_2776988475414459306 > max(maxPassend_2776988475414459306,1000)
                      then passend_2776988475414459306 = substr(VARCHAR_60_11,1,maxPassend_2776988475414459306);
                      else passend_2776988475414459306 = VARCHAR_60_11;
@@ -26287,7 +26287,7 @@ data _null_;
          else do;
                    attrLengte_2776988475431236919=length(VARCHAR_60_12);
                    aantalLF_2776988475431236919 = countc(VARCHAR_60_12,'0A'x);
-                   maxPassend_2776988475431236919=60-1-aantalLF_2776988475431236919;
+                   maxPassend_2776988475431236919=255-1-aantalLF_2776988475431236919;
                    if attrLengte_2776988475431236919 > max(maxPassend_2776988475431236919,1000)
                      then passend_2776988475431236919 = substr(VARCHAR_60_12,1,maxPassend_2776988475431236919);
                      else passend_2776988475431236919 = VARCHAR_60_12;
@@ -26299,7 +26299,7 @@ data _null_;
          else do;
                    attrLengte_2776988475448014528=length(VARCHAR_60_13);
                    aantalLF_2776988475448014528 = countc(VARCHAR_60_13,'0A'x);
-                   maxPassend_2776988475448014528=60-1-aantalLF_2776988475448014528;
+                   maxPassend_2776988475448014528=255-1-aantalLF_2776988475448014528;
                    if attrLengte_2776988475448014528 > max(maxPassend_2776988475448014528,1000)
                      then passend_2776988475448014528 = substr(VARCHAR_60_13,1,maxPassend_2776988475448014528);
                      else passend_2776988475448014528 = VARCHAR_60_13;
@@ -26311,7 +26311,7 @@ data _null_;
          else do;
                    attrLengte_2776988475330571205=length(VARCHAR_60_14);
                    aantalLF_2776988475330571205 = countc(VARCHAR_60_14,'0A'x);
-                   maxPassend_2776988475330571205=60-1-aantalLF_2776988475330571205;
+                   maxPassend_2776988475330571205=255-1-aantalLF_2776988475330571205;
                    if attrLengte_2776988475330571205 > max(maxPassend_2776988475330571205,1000)
                      then passend_2776988475330571205 = substr(VARCHAR_60_14,1,maxPassend_2776988475330571205);
                      else passend_2776988475330571205 = VARCHAR_60_14;
@@ -26323,7 +26323,7 @@ data _null_;
          else do;
                    attrLengte_2776988475347348822=length(VARCHAR_60_15);
                    aantalLF_2776988475347348822 = countc(VARCHAR_60_15,'0A'x);
-                   maxPassend_2776988475347348822=60-1-aantalLF_2776988475347348822;
+                   maxPassend_2776988475347348822=255-1-aantalLF_2776988475347348822;
                    if attrLengte_2776988475347348822 > max(maxPassend_2776988475347348822,1000)
                      then passend_2776988475347348822 = substr(VARCHAR_60_15,1,maxPassend_2776988475347348822);
                      else passend_2776988475347348822 = VARCHAR_60_15;
@@ -26335,7 +26335,7 @@ data _null_;
          else do;
                    attrLengte_2776988475364126435=length(VARCHAR_60_16);
                    aantalLF_2776988475364126435 = countc(VARCHAR_60_16,'0A'x);
-                   maxPassend_2776988475364126435=60-1-aantalLF_2776988475364126435;
+                   maxPassend_2776988475364126435=255-1-aantalLF_2776988475364126435;
                    if attrLengte_2776988475364126435 > max(maxPassend_2776988475364126435,1000)
                      then passend_2776988475364126435 = substr(VARCHAR_60_16,1,maxPassend_2776988475364126435);
                      else passend_2776988475364126435 = VARCHAR_60_16;
@@ -26347,7 +26347,7 @@ data _null_;
          else do;
                    attrLengte_2776988475380904076=length(VARCHAR_60_17);
                    aantalLF_2776988475380904076 = countc(VARCHAR_60_17,'0A'x);
-                   maxPassend_2776988475380904076=60-1-aantalLF_2776988475380904076;
+                   maxPassend_2776988475380904076=255-1-aantalLF_2776988475380904076;
                    if attrLengte_2776988475380904076 > max(maxPassend_2776988475380904076,1000)
                      then passend_2776988475380904076 = substr(VARCHAR_60_17,1,maxPassend_2776988475380904076);
                      else passend_2776988475380904076 = VARCHAR_60_17;
@@ -26359,7 +26359,7 @@ data _null_;
          else do;
                    attrLengte_2776988475263460721=length(VARCHAR_60_18);
                    aantalLF_2776988475263460721 = countc(VARCHAR_60_18,'0A'x);
-                   maxPassend_2776988475263460721=60-1-aantalLF_2776988475263460721;
+                   maxPassend_2776988475263460721=255-1-aantalLF_2776988475263460721;
                    if attrLengte_2776988475263460721 > max(maxPassend_2776988475263460721,1000)
                      then passend_2776988475263460721 = substr(VARCHAR_60_18,1,maxPassend_2776988475263460721);
                      else passend_2776988475263460721 = VARCHAR_60_18;
@@ -26371,7 +26371,7 @@ data _null_;
          else do;
                    attrLengte_2776988475280238338=length(VARCHAR_60_19);
                    aantalLF_2776988475280238338 = countc(VARCHAR_60_19,'0A'x);
-                   maxPassend_2776988475280238338=60-1-aantalLF_2776988475280238338;
+                   maxPassend_2776988475280238338=255-1-aantalLF_2776988475280238338;
                    if attrLengte_2776988475280238338 > max(maxPassend_2776988475280238338,1000)
                      then passend_2776988475280238338 = substr(VARCHAR_60_19,1,maxPassend_2776988475280238338);
                      else passend_2776988475280238338 = VARCHAR_60_19;
@@ -26383,7 +26383,7 @@ data _null_;
          else do;
                    attrLengte_2777832940895609154=length(VARCHAR_60_20);
                    aantalLF_2777832940895609154 = countc(VARCHAR_60_20,'0A'x);
-                   maxPassend_2777832940895609154=60-1-aantalLF_2777832940895609154;
+                   maxPassend_2777832940895609154=255-1-aantalLF_2777832940895609154;
                    if attrLengte_2777832940895609154 > max(maxPassend_2777832940895609154,1000)
                      then passend_2777832940895609154 = substr(VARCHAR_60_20,1,maxPassend_2777832940895609154);
                      else passend_2777832940895609154 = VARCHAR_60_20;
@@ -26395,7 +26395,7 @@ data _null_;
          else do;
                    attrLengte_2777832940878831537=length(VARCHAR_60_21);
                    aantalLF_2777832940878831537 = countc(VARCHAR_60_21,'0A'x);
-                   maxPassend_2777832940878831537=60-1-aantalLF_2777832940878831537;
+                   maxPassend_2777832940878831537=255-1-aantalLF_2777832940878831537;
                    if attrLengte_2777832940878831537 > max(maxPassend_2777832940878831537,1000)
                      then passend_2777832940878831537 = substr(VARCHAR_60_21,1,maxPassend_2777832940878831537);
                      else passend_2777832940878831537 = VARCHAR_60_21;
@@ -26407,7 +26407,7 @@ data _null_;
          else do;
                    attrLengte_2777832940929164408=length(VARCHAR_60_22);
                    aantalLF_2777832940929164408 = countc(VARCHAR_60_22,'0A'x);
-                   maxPassend_2777832940929164408=60-1-aantalLF_2777832940929164408;
+                   maxPassend_2777832940929164408=255-1-aantalLF_2777832940929164408;
                    if attrLengte_2777832940929164408 > max(maxPassend_2777832940929164408,1000)
                      then passend_2777832940929164408 = substr(VARCHAR_60_22,1,maxPassend_2777832940929164408);
                      else passend_2777832940929164408 = VARCHAR_60_22;
@@ -26419,7 +26419,7 @@ data _null_;
          else do;
                    attrLengte_2777832940912386799=length(VARCHAR_60_23);
                    aantalLF_2777832940912386799 = countc(VARCHAR_60_23,'0A'x);
-                   maxPassend_2777832940912386799=60-1-aantalLF_2777832940912386799;
+                   maxPassend_2777832940912386799=255-1-aantalLF_2777832940912386799;
                    if attrLengte_2777832940912386799 > max(maxPassend_2777832940912386799,1000)
                      then passend_2777832940912386799 = substr(VARCHAR_60_23,1,maxPassend_2777832940912386799);
                      else passend_2777832940912386799 = VARCHAR_60_23;
@@ -26431,7 +26431,7 @@ data _null_;
          else do;
                    attrLengte_2777832940828498702=length(VARCHAR_60_24);
                    aantalLF_2777832940828498702 = countc(VARCHAR_60_24,'0A'x);
-                   maxPassend_2777832940828498702=60-1-aantalLF_2777832940828498702;
+                   maxPassend_2777832940828498702=255-1-aantalLF_2777832940828498702;
                    if attrLengte_2777832940828498702 > max(maxPassend_2777832940828498702,1000)
                      then passend_2777832940828498702 = substr(VARCHAR_60_24,1,maxPassend_2777832940828498702);
                      else passend_2777832940828498702 = VARCHAR_60_24;
@@ -26443,7 +26443,7 @@ data _null_;
          else do;
                    attrLengte_2777832940811721085=length(VARCHAR_60_25);
                    aantalLF_2777832940811721085 = countc(VARCHAR_60_25,'0A'x);
-                   maxPassend_2777832940811721085=60-1-aantalLF_2777832940811721085;
+                   maxPassend_2777832940811721085=255-1-aantalLF_2777832940811721085;
                    if attrLengte_2777832940811721085 > max(maxPassend_2777832940811721085,1000)
                      then passend_2777832940811721085 = substr(VARCHAR_60_25,1,maxPassend_2777832940811721085);
                      else passend_2777832940811721085 = VARCHAR_60_25;
@@ -26455,7 +26455,7 @@ data _null_;
          else do;
                    attrLengte_2777832940862053924=length(VARCHAR_60_26);
                    aantalLF_2777832940862053924 = countc(VARCHAR_60_26,'0A'x);
-                   maxPassend_2777832940862053924=60-1-aantalLF_2777832940862053924;
+                   maxPassend_2777832940862053924=255-1-aantalLF_2777832940862053924;
                    if attrLengte_2777832940862053924 > max(maxPassend_2777832940862053924,1000)
                      then passend_2777832940862053924 = substr(VARCHAR_60_26,1,maxPassend_2777832940862053924);
                      else passend_2777832940862053924 = VARCHAR_60_26;
@@ -26467,7 +26467,7 @@ data _null_;
          else do;
                    attrLengte_2777832940845276315=length(VARCHAR_60_27);
                    aantalLF_2777832940845276315 = countc(VARCHAR_60_27,'0A'x);
-                   maxPassend_2777832940845276315=60-1-aantalLF_2777832940845276315;
+                   maxPassend_2777832940845276315=255-1-aantalLF_2777832940845276315;
                    if attrLengte_2777832940845276315 > max(maxPassend_2777832940845276315,1000)
                      then passend_2777832940845276315 = substr(VARCHAR_60_27,1,maxPassend_2777832940845276315);
                      else passend_2777832940845276315 = VARCHAR_60_27;
@@ -26479,7 +26479,7 @@ data _null_;
          else do;
                    attrLengte_2777832941029830122=length(VARCHAR_60_28);
                    aantalLF_2777832941029830122 = countc(VARCHAR_60_28,'0A'x);
-                   maxPassend_2777832941029830122=60-1-aantalLF_2777832941029830122;
+                   maxPassend_2777832941029830122=255-1-aantalLF_2777832941029830122;
                    if attrLengte_2777832941029830122 > max(maxPassend_2777832941029830122,1000)
                      then passend_2777832941029830122 = substr(VARCHAR_60_28,1,maxPassend_2777832941029830122);
                      else passend_2777832941029830122 = VARCHAR_60_28;
@@ -26491,7 +26491,7 @@ data _null_;
          else do;
                    attrLengte_2777832941013052505=length(VARCHAR_60_29);
                    aantalLF_2777832941013052505 = countc(VARCHAR_60_29,'0A'x);
-                   maxPassend_2777832941013052505=60-1-aantalLF_2777832941013052505;
+                   maxPassend_2777832941013052505=255-1-aantalLF_2777832941013052505;
                    if attrLengte_2777832941013052505 > max(maxPassend_2777832941013052505,1000)
                      then passend_2777832941013052505 = substr(VARCHAR_60_29,1,maxPassend_2777832941013052505);
                      else passend_2777832941013052505 = VARCHAR_60_29;
@@ -26503,7 +26503,7 @@ data _null_;
          else do;
                    attrLengte_2777551452933183819=length(VARCHAR_60_30);
                    aantalLF_2777551452933183819 = countc(VARCHAR_60_30,'0A'x);
-                   maxPassend_2777551452933183819=60-1-aantalLF_2777551452933183819;
+                   maxPassend_2777551452933183819=255-1-aantalLF_2777551452933183819;
                    if attrLengte_2777551452933183819 > max(maxPassend_2777551452933183819,1000)
                      then passend_2777551452933183819 = substr(VARCHAR_60_30,1,maxPassend_2777551452933183819);
                      else passend_2777551452933183819 = VARCHAR_60_30;
@@ -26515,7 +26515,7 @@ data _null_;
          else do;
                    attrLengte_2777551452949961428=length(VARCHAR_60_31);
                    aantalLF_2777551452949961428 = countc(VARCHAR_60_31,'0A'x);
-                   maxPassend_2777551452949961428=60-1-aantalLF_2777551452949961428;
+                   maxPassend_2777551452949961428=255-1-aantalLF_2777551452949961428;
                    if attrLengte_2777551452949961428 > max(maxPassend_2777551452949961428,1000)
                      then passend_2777551452949961428 = substr(VARCHAR_60_31,1,maxPassend_2777551452949961428);
                      else passend_2777551452949961428 = VARCHAR_60_31;
@@ -26527,7 +26527,7 @@ data _null_;
          else do;
                    attrLengte_2777551452899628589=length(VARCHAR_60_32);
                    aantalLF_2777551452899628589 = countc(VARCHAR_60_32,'0A'x);
-                   maxPassend_2777551452899628589=60-1-aantalLF_2777551452899628589;
+                   maxPassend_2777551452899628589=255-1-aantalLF_2777551452899628589;
                    if attrLengte_2777551452899628589 > max(maxPassend_2777551452899628589,1000)
                      then passend_2777551452899628589 = substr(VARCHAR_60_32,1,maxPassend_2777551452899628589);
                      else passend_2777551452899628589 = VARCHAR_60_32;
@@ -26539,7 +26539,7 @@ data _null_;
          else do;
                    attrLengte_2777551452916406206=length(VARCHAR_60_33);
                    aantalLF_2777551452916406206 = countc(VARCHAR_60_33,'0A'x);
-                   maxPassend_2777551452916406206=60-1-aantalLF_2777551452916406206;
+                   maxPassend_2777551452916406206=255-1-aantalLF_2777551452916406206;
                    if attrLengte_2777551452916406206 > max(maxPassend_2777551452916406206,1000)
                      then passend_2777551452916406206 = substr(VARCHAR_60_33,1,maxPassend_2777551452916406206);
                      else passend_2777551452916406206 = VARCHAR_60_33;
@@ -26551,7 +26551,7 @@ data _null_;
          else do;
                    attrLengte_2777551453000294303=length(VARCHAR_60_34);
                    aantalLF_2777551453000294303 = countc(VARCHAR_60_34,'0A'x);
-                   maxPassend_2777551453000294303=60-1-aantalLF_2777551453000294303;
+                   maxPassend_2777551453000294303=255-1-aantalLF_2777551453000294303;
                    if attrLengte_2777551453000294303 > max(maxPassend_2777551453000294303,1000)
                      then passend_2777551453000294303 = substr(VARCHAR_60_34,1,maxPassend_2777551453000294303);
                      else passend_2777551453000294303 = VARCHAR_60_34;
@@ -26563,7 +26563,7 @@ data _null_;
          else do;
                    attrLengte_2777551453017071912=length(VARCHAR_60_35);
                    aantalLF_2777551453017071912 = countc(VARCHAR_60_35,'0A'x);
-                   maxPassend_2777551453017071912=60-1-aantalLF_2777551453017071912;
+                   maxPassend_2777551453017071912=255-1-aantalLF_2777551453017071912;
                    if attrLengte_2777551453017071912 > max(maxPassend_2777551453017071912,1000)
                      then passend_2777551453017071912 = substr(VARCHAR_60_35,1,maxPassend_2777551453017071912);
                      else passend_2777551453017071912 = VARCHAR_60_35;
@@ -26575,7 +26575,7 @@ data _null_;
          else do;
                    attrLengte_2777551452966739041=length(VARCHAR_60_36);
                    aantalLF_2777551452966739041 = countc(VARCHAR_60_36,'0A'x);
-                   maxPassend_2777551452966739041=60-1-aantalLF_2777551452966739041;
+                   maxPassend_2777551452966739041=255-1-aantalLF_2777551452966739041;
                    if attrLengte_2777551452966739041 > max(maxPassend_2777551452966739041,1000)
                      then passend_2777551452966739041 = substr(VARCHAR_60_36,1,maxPassend_2777551452966739041);
                      else passend_2777551452966739041 = VARCHAR_60_36;
@@ -26587,7 +26587,7 @@ data _null_;
          else do;
                    attrLengte_2777551452983516658=length(VARCHAR_60_37);
                    aantalLF_2777551452983516658 = countc(VARCHAR_60_37,'0A'x);
-                   maxPassend_2777551452983516658=60-1-aantalLF_2777551452983516658;
+                   maxPassend_2777551452983516658=255-1-aantalLF_2777551452983516658;
                    if attrLengte_2777551452983516658 > max(maxPassend_2777551452983516658,1000)
                      then passend_2777551452983516658 = substr(VARCHAR_60_37,1,maxPassend_2777551452983516658);
                      else passend_2777551452983516658 = VARCHAR_60_37;
@@ -26599,7 +26599,7 @@ data _null_;
          else do;
                    attrLengte_2777551453067404755=length(VARCHAR_60_38);
                    aantalLF_2777551453067404755 = countc(VARCHAR_60_38,'0A'x);
-                   maxPassend_2777551453067404755=60-1-aantalLF_2777551453067404755;
+                   maxPassend_2777551453067404755=255-1-aantalLF_2777551453067404755;
                    if attrLengte_2777551453067404755 > max(maxPassend_2777551453067404755,1000)
                      then passend_2777551453067404755 = substr(VARCHAR_60_38,1,maxPassend_2777551453067404755);
                      else passend_2777551453067404755 = VARCHAR_60_38;
@@ -26611,7 +26611,7 @@ data _null_;
          else do;
                    attrLengte_2777551453084182396=length(VARCHAR_60_39);
                    aantalLF_2777551453084182396 = countc(VARCHAR_60_39,'0A'x);
-                   maxPassend_2777551453084182396=60-1-aantalLF_2777551453084182396;
+                   maxPassend_2777551453084182396=255-1-aantalLF_2777551453084182396;
                    if attrLengte_2777551453084182396 > max(maxPassend_2777551453084182396,1000)
                      then passend_2777551453084182396 = substr(VARCHAR_60_39,1,maxPassend_2777551453084182396);
                      else passend_2777551453084182396 = VARCHAR_60_39;
@@ -26623,7 +26623,7 @@ data _null_;
          else do;
                    attrLengte_2776144009362870388=length(VARCHAR_60_40);
                    aantalLF_2776144009362870388 = countc(VARCHAR_60_40,'0A'x);
-                   maxPassend_2776144009362870388=60-1-aantalLF_2776144009362870388;
+                   maxPassend_2776144009362870388=255-1-aantalLF_2776144009362870388;
                    if attrLengte_2776144009362870388 > max(maxPassend_2776144009362870388,1000)
                      then passend_2776144009362870388 = substr(VARCHAR_60_40,1,maxPassend_2776144009362870388);
                      else passend_2776144009362870388 = VARCHAR_60_40;
