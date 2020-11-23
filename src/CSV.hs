@@ -26,7 +26,7 @@ parseCsv = do
 
 toTables :: [Record] -> [Table]
 toTables x = case x of 
-    [] -> fatal $ "No header row found!"
+    [] -> fatal "No header row found!"
     h:tl -> filter doMigrate . map mkTable $ groups atts
        where 
          atts = map mkAttrib . filter isEmptie . map keyVals $ tl
@@ -38,20 +38,19 @@ toTables x = case x of
            where (same,others) = L.partition (eql y) ys
                  eql a b = attTableNew a == attTableNew b
          doMigrate :: Table -> Bool
-         doMigrate t = tableNameNew t `notElem` 
-            ["BAS_DAR_COR_BERICHT_BIJLAGE"]
+         doMigrate t = tableNameNew t /= "BAS_DAR_COR_BERICHT_BIJLAGE"
             
 type KeyValues = Map String String
 
 mkTable :: [Attrib] -> Table
 mkTable atts = case NE.groupWith attTableNew atts of
-   [] -> fatal $ "No attributes"
+   [] -> fatal "No attributes"
    [x] ->  Table
       {tableNameOrg = attTableOrg (NE.head x)
       ,tableNameNew = attTableNew (NE.head x)
       ,attribsAll   = atts
       }
-   _ -> fatal $ "Multiple tables. Only attributes of a single table expected"
+   _ -> fatal "Multiple tables. Only attributes of a single table expected"
 
 isEmptie :: KeyValues -> Bool
 isEmptie = isJust . Map.lookup "MEMNAME"  
@@ -95,7 +94,7 @@ mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
             where err =fatal $ "String is missing. (key = "<>T.pack key<>")." 
          lkpInt :: String -> Int
          lkpInt key = fromMaybe err $ readMaybe $ lkpStr key
-            where err =fatal $ "Value is not an integer."
+            where err =fatal "Value is not an integer."
 
 -- | Replace each occurrence of one sublist in a list with another.
 substitute :: (Eq a) => [a] -> [a] -> [a] -> [a]
