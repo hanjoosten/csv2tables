@@ -12775,7 +12775,7 @@ data _null_;
          else do;
                    attrLengte_6111452580688960292=length(Jz_nr);
                    aantalLF_6111452580688960292 = countc(Jz_nr,'0A'x);
-                   maxPassend_6111452580688960292=6-1-aantalLF_6111452580688960292;
+                   maxPassend_6111452580688960292=7-1-aantalLF_6111452580688960292;
                    if attrLengte_6111452580688960292 > max(maxPassend_6111452580688960292,1000)
                      then passend_6111452580688960292 = substr(Jz_nr,1,maxPassend_6111452580688960292);
                      else passend_6111452580688960292 = Jz_nr;
@@ -13723,7 +13723,7 @@ data _null_;
          else do;
                    attrLengte_6111452580688960292=length(Jz_nr);
                    aantalLF_6111452580688960292 = countc(Jz_nr,'0A'x);
-                   maxPassend_6111452580688960292=6-1-aantalLF_6111452580688960292;
+                   maxPassend_6111452580688960292=7-1-aantalLF_6111452580688960292;
                    if attrLengte_6111452580688960292 > max(maxPassend_6111452580688960292,1000)
                      then passend_6111452580688960292 = substr(Jz_nr,1,maxPassend_6111452580688960292);
                      else passend_6111452580688960292 = Jz_nr;
