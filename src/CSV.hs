@@ -85,10 +85,13 @@ mkAttrib kvs = -- trace (T.take 80 $ tshow kvs) $
               where pFix = "BAS_"
          rawAttName = lkpStr "NAME"
          makeSafe :: String -> String
-         makeSafe = substitute "," ""
+         makeSafe attstr 
+          | rawTableName == "VKM_VAR_GEGEVENS_TCMG" && rawAttName `elem` ["VKM_VAR_GEGEVENS_DOS", "VKM_VAR_GEGEVENS_PRG", "VKT_ID", "DOS_ID"] = "VVG_"<>attstr
+          | otherwise =
+                    substitute "," ""
                   . substitute "." ""
                   . substitute "-" "_"
-                  . substitute "VVG." "VVG_"
+                  . substitute "VVG." "VVG_" $ attstr
          lkpStr :: String -> String
          lkpStr key = fromMaybe err $ Map.lookup key kvs
             where err =fatal $ "String is missing. (key = "<>T.pack key<>")." 
