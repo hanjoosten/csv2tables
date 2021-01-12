@@ -14568,7 +14568,7 @@ data _null_;
          else do;
                    attrLengte_3121428435771779831=length(Naam);
                    aantalLF_3121428435771779831 = countc(Naam,'0A'x);
-                   maxPassend_3121428435771779831=100-1-aantalLF_3121428435771779831;
+                   maxPassend_3121428435771779831=255-1-aantalLF_3121428435771779831;
                    if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
@@ -14592,7 +14592,7 @@ data _null_;
          else do;
                    attrLengte_747405639420864755=length(Postcode);
                    aantalLF_747405639420864755 = countc(Postcode,'0A'x);
-                   maxPassend_747405639420864755=6-1-aantalLF_747405639420864755;
+                   maxPassend_747405639420864755=12-1-aantalLF_747405639420864755;
                    if attrLengte_747405639420864755 > max(maxPassend_747405639420864755,1000)
                      then passend_747405639420864755 = substr(Postcode,1,maxPassend_747405639420864755);
                      else passend_747405639420864755 = Postcode;

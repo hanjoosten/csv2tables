@@ -2642,9 +2642,9 @@ CREATE TABLE BAS_OBJ_LOKATIE (
     Lok_id bigint,
     Mutatie_dat timestamp,
     Mutatie_user varchar (30),
-    Naam varchar (100),
+    Naam varchar (255),
     Plaats varchar (30),
-    Postcode varchar (6),
+    Postcode varchar (12),
     Prg_id bigint,
     Provincie varchar (30),
     Straat varchar (60)
