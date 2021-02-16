@@ -1,0 +1,89 @@
+digraph {
+  node [ fontname="Handlee" ];
+  splines=true;
+  
+  subgraph cluster_IMG {
+    label="*IMG*";
+    "Extract documenten";
+    "Klaarzetten\nDAR_COR_BERICHT_BIJLAGE";
+    "Klaarzetten\nBAS-data";
+    "Documenten transport\nnaar T-schijf";
+    "Extract documenten" -> "Klaarzetten\nDAR_COR_BERICHT_BIJLAGE";
+    "Extract documenten" -> "Documenten transport\nnaar T-schijf";
+  }
+
+  "Klaarzetten\nBAS-data" -> "`migratie`";
+
+  subgraph cluster_SAS1 {
+    label="*SAS*";
+    "Overdragen database scripts";
+    "XML's genereren";
+    "Relaties + selectie";
+    "`migratie`";
+
+    "`migratie`" -> "Relaties + selectie";
+    "Relaties + selectie" -> "XML's genereren";
+    "`migratie`" -> "Overdragen database scripts";
+  }
+  
+  subgraph cluster_Infra {
+    label="*Infra*";
+    "Verversen\ndatabase";
+
+   "Overdragen database scripts" -> "Verversen\ndatabase";
+   }
+   "Klaarzetten\nDAR_COR_BERICHT_BIJLAGE" -> "Verschillen detectie";
+  subgraph cluster_SAS2 {
+    label="*SAS*";
+    "Verschillen detectie";
+    "csv's nieuwe zaken";
+    "csv's eerdere zaken";
+    "Genereren\nDanielMaster" -> "Verschillen detectie";
+    "Verschillen detectie" -> "csv's nieuwe zaken";
+    "Verschillen detectie" -> "csv's eerdere zaken";
+  }
+  subgraph cluster_PDFs {
+     label= "*SAS*"
+      "PDFs genereren"
+      ".csv's PDF-koppelingen"
+      "PDFs genereren" -> ".csv's PDF-koppelingen"
+      "Relaties + selectie" -> "PDFs genereren"
+  }
+  subgraph cluster_docTransport {
+      label = "*Transport*"
+      "Transport documenten\nnaar Alfresco"
+      "PDF's naar Alfresco"
+      "Genereren\nDanielMaster"
+    "PDFs genereren" -> "PDF's naar Alfresco"
+    "Documenten transport\nnaar T-schijf" -> "Transport documenten\nnaar Alfresco"; 
+    "Documenten transport\nnaar T-schijf" -> "Genereren\nDanielMaster";
+  }
+  subgraph cluster_Alfresco {
+      label = "*Alfresco*"
+      "Documenten analyse"
+      "Documenten import"
+      "Aanmaken zaakfolders"
+      "Attachment links genereren"
+      "Transport documenten\nnaar Alfresco" -> "Documenten analyse";
+      "PDF's naar Alfresco" ->  "Documenten analyse";
+      "XML's genereren" -> "Aanmaken zaakfolders"
+      "Aanmaken zaakfolders" -> "Documenten analyse"
+      "Documenten analyse" -> "Documenten import"
+      "csv's nieuwe zaken" -> "Documenten analyse" ;
+      "csv's eerdere zaken" -> "Documenten analyse" ;
+      ".csv's PDF-koppelingen" -> "Documenten analyse" ;
+      "Documenten import" -> "Attachment links genereren";
+  }
+  subgraph cluster_Mira {
+      label = "*Mira*"
+      "Importeren relaties";
+      "Aanmaken zaken";
+      "Attachment links verwerken";
+      "Verversen\ndatabase" -> "Importeren relaties";
+      "XML's genereren" -> "Importeren relaties";
+      "Aanmaken zaakfolders" -> "Aanmaken zaken";
+      "Importeren relaties" -> "Aanmaken zaken"; 
+      "Attachment links genereren" -> "Attachment links verwerken";
+      "Aanmaken zaken" -> "Attachment links verwerken"
+  }
+}
