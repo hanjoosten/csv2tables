@@ -7,6 +7,7 @@ digraph {
     "Extract documenten";
     "Klaarzetten\nDAR_COR_BERICHT_BIJLAGE";
     "Klaarzetten\nBAS-data";
+    "Gemigreerde dossiers\nnaar FIX"
     "Documenten transport\nnaar T-schijf";
     "Extract documenten" -> "Klaarzetten\nDAR_COR_BERICHT_BIJLAGE";
     "Extract documenten" -> "Documenten transport\nnaar T-schijf";
@@ -38,9 +39,10 @@ digraph {
     "Verschillen detectie";
     "csv's nieuwe zaken";
     "csv's eerdere zaken";
-    "Genereren\nDanielMaster" -> "Verschillen detectie";
     "Verschillen detectie" -> "csv's nieuwe zaken";
     "Verschillen detectie" -> "csv's eerdere zaken";
+    "Relaties + selectie" -> "csv's nieuwe zaken";
+    "Relaties + selectie" -> "csv's eerdere zaken";
   }
   subgraph cluster_PDFs {
      label= "*SAS*"
@@ -49,11 +51,15 @@ digraph {
       "PDFs genereren" -> ".csv's PDF-koppelingen"
       "Relaties + selectie" -> "PDFs genereren"
   }
+  subgraph cluster_powershell {
+      label = "*powershell*"
+      "Genereren\nDanielMaster"
+  }
   subgraph cluster_docTransport {
       label = "*Transport*"
       "Transport documenten\nnaar Alfresco"
       "PDF's naar Alfresco"
-      "Genereren\nDanielMaster"
+    "Genereren\nDanielMaster" -> "Verschillen detectie";
     "PDFs genereren" -> "PDF's naar Alfresco"
     "Documenten transport\nnaar T-schijf" -> "Transport documenten\nnaar Alfresco"; 
     "Documenten transport\nnaar T-schijf" -> "Genereren\nDanielMaster";
@@ -85,5 +91,6 @@ digraph {
       "Importeren relaties" -> "Aanmaken zaken"; 
       "Attachment links genereren" -> "Attachment links verwerken";
       "Aanmaken zaken" -> "Attachment links verwerken"
+      "Aanmaken zaken" -> "Gemigreerde dossiers\nnaar FIX"
   }
 }
