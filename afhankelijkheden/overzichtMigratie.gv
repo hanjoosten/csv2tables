@@ -22,35 +22,35 @@ digraph {
     "Relaties + selectie";
     "`migratie`";
 
+  }
     "`migratie`" -> "Relaties + selectie";
     "Relaties + selectie" -> "XML's genereren";
     "`migratie`" -> "Overdragen database scripts";
-  }
   
   subgraph cluster_Infra {
     label="*Infra*";
     "Verversen\ndatabase";
+   }
 
    "Overdragen database scripts" -> "Verversen\ndatabase";
-   }
    "Klaarzetten\nDAR_COR_BERICHT_BIJLAGE" -> "Verschillen detectie";
   subgraph cluster_SAS2 {
     label="*SAS*";
     "Verschillen detectie";
     "csv's nieuwe zaken";
     "csv's eerdere zaken";
+  }
     "Verschillen detectie" -> "csv's nieuwe zaken";
     "Verschillen detectie" -> "csv's eerdere zaken";
     "Relaties + selectie" -> "csv's nieuwe zaken";
     "Relaties + selectie" -> "csv's eerdere zaken";
-  }
   subgraph cluster_PDFs {
      label= "*SAS*"
       "PDFs genereren"
       ".csv's PDF-koppelingen"
+  }
       "PDFs genereren" -> ".csv's PDF-koppelingen"
       "Relaties + selectie" -> "PDFs genereren"
-  }
   subgraph cluster_powershell {
       label = "*powershell*"
       "Genereren\nDanielMaster"
