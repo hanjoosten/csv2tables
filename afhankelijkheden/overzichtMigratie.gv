@@ -63,7 +63,7 @@ digraph {
     "Genereren\nDanielMaster" -> "Verschillen detectie";
     "PDFs genereren" -> "PDF's naar Alfresco"
     "Documenten transport\nnaar T-schijf" -> "Transport documenten\nnaar Alfresco"; 
-    "Documenten transport\nnaar T-schijf" -> "Genereren\nDanielMaster";
+    "Transport documenten\nnaar Alfresco" -> "Genereren\nDanielMaster";
   }
   subgraph cluster_Alfresco {
       label = "*Alfresco*"
