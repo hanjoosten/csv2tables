@@ -2130,7 +2130,7 @@ CREATE TABLE BAS_IOM_MEDEWERKER (
     Mdw_cd varchar (30),
     Mdw_emailadres varchar (60),
     Mdw_handtekening varchar (500),
-    Mdw_handtekening_image varchar (4096),
+    Mdw_handtekening_image varchar (1),
     Mdw_id bigint,
     Mobiel varchar (10),
     Mutatie_dat timestamp,
@@ -2172,7 +2172,7 @@ CREATE TABLE BAS_IOM_MEDEWERKER (
     comment on column BAS_IOM_MEDEWERKER.Mdw_cd is 'MDW_CD';
     comment on column BAS_IOM_MEDEWERKER.Mdw_emailadres is 'MDW_EMAILADRES';
     comment on column BAS_IOM_MEDEWERKER.Mdw_handtekening is 'MDW_HANDTEKENING';
-    comment on column BAS_IOM_MEDEWERKER.Mdw_handtekening_image is 'MDW_HANDTEKENING_IMAGE';
+    comment on column BAS_IOM_MEDEWERKER.Mdw_handtekening_image is '';
     comment on column BAS_IOM_MEDEWERKER.Mdw_id is 'MDW_ID';
     comment on column BAS_IOM_MEDEWERKER.Mobiel is 'MOBIEL';
     comment on column BAS_IOM_MEDEWERKER.Mutatie_dat is 'MUTATIE_DAT';

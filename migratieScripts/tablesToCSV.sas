@@ -11875,7 +11875,7 @@ data _null_;
          else do;
                    attrLengte_4406024425837339997=length(Mdw_handtekening_image);
                    aantalLF_4406024425837339997 = countc(Mdw_handtekening_image,'0A'x);
-                   maxPassend_4406024425837339997=4096-1-aantalLF_4406024425837339997;
+                   maxPassend_4406024425837339997=1-1-aantalLF_4406024425837339997;
                    if attrLengte_4406024425837339997 > max(maxPassend_4406024425837339997,1000)
                      then passend_4406024425837339997 = substr(Mdw_handtekening_image,1,maxPassend_4406024425837339997);
                      else passend_4406024425837339997 = Mdw_handtekening_image;
