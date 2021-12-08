@@ -3,17 +3,17 @@ PROC SQL;
    SELECT t1.Tra_id,
           t1.Dos_id,
           t1.Prg_id,
-          t1.Datum_indiening FORMAT=B8601DT19. AS Datum_indiening,
-          t1.Datum_onvolledig FORMAT=B8601DT19. AS Datum_onvolledig,
-          t1.Datum_volledig FORMAT=B8601DT19. AS Datum_volledig,
-          t1.Datum_acc_afd FORMAT=B8601DT19. AS Datum_acc_afd,
-          t1.Datum_acc_ol FORMAT=B8601DT19. AS Datum_acc_ol,
-          t1.Datum_in_aic FORMAT=B8601DT19. AS Datum_in_aic,
-          t1.Datum_steekproef FORMAT=B8601DT19. AS Datum_steekproef,
-          t1.Datum_in_afd FORMAT=B8601DT19. AS Datum_in_afd,
-          t1.Datum_acc_aic FORMAT=B8601DT19. AS Datum_acc_aic,
-          t1.Datum_definitief FORMAT=B8601DT19. AS Datum_definitief,
-          t1.Valutadatum FORMAT=B8601DT19. AS Valutadatum,
+          t1.Datum_indiening FORMAT=B8601DX19. AS Datum_indiening,
+          t1.Datum_onvolledig FORMAT=B8601DX19. AS Datum_onvolledig,
+          t1.Datum_volledig FORMAT=B8601DX19. AS Datum_volledig,
+          t1.Datum_acc_afd FORMAT=B8601DX19. AS Datum_acc_afd,
+          t1.Datum_acc_ol FORMAT=B8601DX19. AS Datum_acc_ol,
+          t1.Datum_in_aic FORMAT=B8601DX19. AS Datum_in_aic,
+          t1.Datum_steekproef FORMAT=B8601DX19. AS Datum_steekproef,
+          t1.Datum_in_afd FORMAT=B8601DX19. AS Datum_in_afd,
+          t1.Datum_acc_aic FORMAT=B8601DX19. AS Datum_acc_aic,
+          t1.Datum_definitief FORMAT=B8601DX19. AS Datum_definitief,
+          t1.Valutadatum FORMAT=B8601DX19. AS Valutadatum,
           t1.User_indiening,
           t1.User_onvolledig,
           t1.User_volledig,
@@ -31,7 +31,7 @@ PROC SQL;
           t1.Acm_id,
           t1.Automatisch_afhandelen_jn,
           t1.User_acc_ink,
-          t1.Datum_acc_ink FORMAT=B8601DT19. AS Datum_acc_ink,
+          t1.Datum_acc_ink FORMAT=B8601DX19. AS Datum_acc_ink,
           t1.Acc_ink_verplicht_jn
      FROM DATAQASG.AIC_VOORTGANG_TCMG t1;
 QUIT;
@@ -122,17 +122,17 @@ data _null_;
        format Tra_id best12. ;
        format Dos_id best12. ;
        format Prg_id best12. ;
-       format Datum_indiening B8601DT19. ;
-       format Datum_onvolledig B8601DT19. ;
-       format Datum_volledig B8601DT19. ;
-       format Datum_acc_afd B8601DT19. ;
-       format Datum_acc_ol B8601DT19. ;
-       format Datum_in_aic B8601DT19. ;
-       format Datum_steekproef B8601DT19. ;
-       format Datum_in_afd B8601DT19. ;
-       format Datum_acc_aic B8601DT19. ;
-       format Datum_definitief B8601DT19. ;
-       format Valutadatum B8601DT19. ;
+       format Datum_indiening B8601DX19. ;
+       format Datum_onvolledig B8601DX19. ;
+       format Datum_volledig B8601DX19. ;
+       format Datum_acc_afd B8601DX19. ;
+       format Datum_acc_ol B8601DX19. ;
+       format Datum_in_aic B8601DX19. ;
+       format Datum_steekproef B8601DX19. ;
+       format Datum_in_afd B8601DX19. ;
+       format Datum_acc_aic B8601DX19. ;
+       format Datum_definitief B8601DX19. ;
+       format Valutadatum B8601DX19. ;
        format User_indiening  ;
        format User_onvolledig  ;
        format User_volledig  ;
@@ -150,7 +150,7 @@ data _null_;
        format Acm_id best12. ;
        format Automatisch_afhandelen_jn  ;
        format User_acc_ink  ;
-       format Datum_acc_ink B8601DT19. ;
+       format Datum_acc_ink B8601DX19. ;
        format Acc_ink_verplicht_jn  ;
        format techId best12. ; 
      do; 
@@ -410,9 +410,9 @@ PROC SQL;
    SELECT t1.Actie_cd,
           t1.Actie_oms,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.AOM_ACTIE_TCMG t1;
 QUIT;
 
@@ -448,9 +448,9 @@ data _null_;
        format Actie_cd  ;
        format Actie_oms  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -519,9 +519,9 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_AOM_TRA_ACTIE AS
    SELECT t1.Actie_cd,
           t1.Bgt_cd,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Tra_cd
      FROM DATAQASG.AOM_TRA_ACTIE_TCMG t1;
@@ -560,9 +560,9 @@ data _null_;
    set  MIGRATIE.BAS_AOM_TRA_ACTIE   end=EFIEOD; 
        format Actie_cd  ;
        format Bgt_cd  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Tra_cd  ;
        format techId best12. ; 
@@ -644,11 +644,11 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_AOM_TRANSACTIETYPE AS
    SELECT t1.Beleidsadministratie_jn,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Geldstroom_jn,
           t1.Mdw_mandaat_jn,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Tra_cd,
           t1.Tra_oms,
@@ -694,11 +694,11 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_AOM_TRANSACTIETYPE   end=EFIEOD; 
        format Beleidsadministratie_jn  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Geldstroom_jn  ;
        format Mdw_mandaat_jn  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Tra_cd  ;
        format Tra_oms  ;
@@ -827,25 +827,25 @@ PROC SQL;
           t1.Naam_begunstigde,
           t1.Betalingskenmerk,
           t1.Plaats,
-          t1.Aanleverdatum FORMAT=B8601DT19. AS Aanleverdatum,
+          t1.Aanleverdatum FORMAT=B8601DX19. AS Aanleverdatum,
           t1.Status,
           t1.Betaalrun_id,
           t1.Bron,
-          t1.Invoerdatum FORMAT=B8601DT19. AS Invoerdatum,
+          t1.Invoerdatum FORMAT=B8601DX19. AS Invoerdatum,
           t1.Mdw_id,
           t1.Betaling_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Iban,
           t1.Bic,
           t1.Beg_bic,
           t1.Beg_iban,
           t1.Sepa_betaling_indicatie,
-          t1.Parkeer_valutadatum FORMAT=B8601DT19. AS Parkeer_valutadatum,
+          t1.Parkeer_valutadatum FORMAT=B8601DX19. AS Parkeer_valutadatum,
           t1.Betalingsverzoeknummer,
-          t1.Betaal_datum FORMAT=B8601DT19. AS Betaal_datum,
+          t1.Betaal_datum FORMAT=B8601DX19. AS Betaal_datum,
           t1.On_hold_jn,
           t1.Sepa_xsd_bevinding
      FROM DATAQASG.BTM_BETALING_TCMG t1;
@@ -940,25 +940,25 @@ data _null_;
        format Naam_begunstigde  ;
        format Betalingskenmerk  ;
        format Plaats  ;
-       format Aanleverdatum B8601DT19. ;
+       format Aanleverdatum B8601DX19. ;
        format Status  ;
        format Betaalrun_id best12. ;
        format Bron  ;
-       format Invoerdatum B8601DT19. ;
+       format Invoerdatum B8601DX19. ;
        format Mdw_id best12. ;
        format Betaling_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Iban  ;
        format Bic  ;
        format Beg_bic  ;
        format Beg_iban  ;
        format Sepa_betaling_indicatie  ;
-       format Parkeer_valutadatum B8601DT19. ;
+       format Parkeer_valutadatum B8601DX19. ;
        format Betalingsverzoeknummer  ;
-       format Betaal_datum B8601DT19. ;
+       format Betaal_datum B8601DX19. ;
        format On_hold_jn  ;
        format Sepa_xsd_bevinding  ;
        format techId best12. ; 
@@ -1239,15 +1239,15 @@ PROC SQL;
           t1.Plaats,
           t1.Rekeningnummer,
           t1.Senterrekening,
-          t1.Aanleverdatum FORMAT=B8601DT19. AS Aanleverdatum,
+          t1.Aanleverdatum FORMAT=B8601DX19. AS Aanleverdatum,
           t1.Betaalrun_id,
           t1.Bron,
-          t1.Valutadatum FORMAT=B8601DT19. AS Valutadatum,
-          t1.Invoerdatum FORMAT=B8601DT19. AS Invoerdatum,
+          t1.Valutadatum FORMAT=B8601DX19. AS Valutadatum,
+          t1.Invoerdatum FORMAT=B8601DX19. AS Invoerdatum,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mdw_id,
           t1.Betalingskenmerk,
           t1.Iban,
@@ -1255,7 +1255,7 @@ PROC SQL;
           t1.Beg_bic,
           t1.Beg_iban,
           t1.Sepa_betaling_indicatie,
-          t1.Parkeer_valutadatum FORMAT=B8601DT19. AS Parkeer_valutadatum,
+          t1.Parkeer_valutadatum FORMAT=B8601DX19. AS Parkeer_valutadatum,
           t1.Betalingsverzoeknummer
      FROM DATAQASG.BTM_HIST_BETALING_TCMG t1;
 QUIT;
@@ -1346,15 +1346,15 @@ data _null_;
        format Plaats  ;
        format Rekeningnummer best12. ;
        format Senterrekening best12. ;
-       format Aanleverdatum B8601DT19. ;
+       format Aanleverdatum B8601DX19. ;
        format Betaalrun_id best12. ;
        format Bron  ;
-       format Valutadatum B8601DT19. ;
-       format Invoerdatum B8601DT19. ;
+       format Valutadatum B8601DX19. ;
+       format Invoerdatum B8601DX19. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mdw_id best12. ;
        format Betalingskenmerk  ;
        format Iban  ;
@@ -1362,7 +1362,7 @@ data _null_;
        format Beg_bic  ;
        format Beg_iban  ;
        format Sepa_betaling_indicatie  ;
-       format Parkeer_valutadatum B8601DT19. ;
+       format Parkeer_valutadatum B8601DX19. ;
        format Betalingsverzoeknummer  ;
        format techId best12. ; 
      do; 
@@ -1844,10 +1844,10 @@ PROC SQL;
           t1.Akkoord,
           t1.Cor_bedrag,
           t1.Cor_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_ok_JN,
           t1.Creatie_user,
-          t1.Datum_Akkoord FORMAT=B8601DT19. AS Datum_Akkoord,
+          t1.Datum_Akkoord FORMAT=B8601DX19. AS Datum_Akkoord,
           t1.Email_JN,
           t1.Mandaat_ok_JN,
           t1.Max_bedrag,
@@ -1855,7 +1855,7 @@ PROC SQL;
           t1.Mdw_id_doorvoerder,
           t1.Mdw_id_oorspronkelijk,
           t1.Mdw_mandaat_JN,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rol_cd,
           t1.Rol_ok_JN,
@@ -1945,10 +1945,10 @@ data _null_;
        format Akkoord  ;
        format Cor_bedrag best12. ;
        format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_ok_JN  ;
        format Creatie_user  ;
-       format Datum_Akkoord B8601DT19. ;
+       format Datum_Akkoord B8601DX19. ;
        format Email_JN  ;
        format Mandaat_ok_JN  ;
        format Max_bedrag best12. ;
@@ -1956,7 +1956,7 @@ data _null_;
        format Mdw_id_doorvoerder best12. ;
        format Mdw_id_oorspronkelijk best12. ;
        format Mdw_mandaat_JN  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rol_cd  ;
        format Rol_ok_JN  ;
@@ -2216,9 +2216,9 @@ PROC SQL;
           t1.Juridisch,
           t1.Stempel_sj,
           t1.Bob_brief,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Vorderingbeheer,
           t1.Externe_naam,
@@ -2302,9 +2302,9 @@ data _null_;
        format Juridisch  ;
        format Stempel_sj  ;
        format Bob_brief  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Vorderingbeheer  ;
        format Externe_naam  ;
@@ -2571,10 +2571,10 @@ PROC SQL;
    SELECT t1.Cor_id,
           t1.Volg_nr,
           t1.Correctie_code,
-          t1.Oude_verzenddatum FORMAT=B8601DT19. AS Oude_verzenddatum,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Oude_verzenddatum FORMAT=B8601DX19. AS Oude_verzenddatum,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.COR_CORRESPONDENTIE_HIST_TCMG t1;
 QUIT;
@@ -2615,10 +2615,10 @@ data _null_;
        format Cor_id best12. ;
        format Volg_nr best12. ;
        format Correctie_code  ;
-       format Oude_verzenddatum B8601DT19. ;
-       format Creatie_dat B8601DT19. ;
+       format Oude_verzenddatum B8601DX19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -2683,7 +2683,7 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_COR_CORRESPONDENTIE AS
-   SELECT t1.Actie_datum FORMAT=B8601DT19. AS Actie_datum,
+   SELECT t1.Actie_datum FORMAT=B8601DX19. AS Actie_datum,
           t1.Afgedrukt_JN,
           t1.Afgehandeld,
           t1.Archiveren,
@@ -2698,12 +2698,12 @@ PROC SQL;
           t1.Cor_id_van,
           t1.Cor_volgnr_ids,
           t1.Crd_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Cst_cd,
-          t1.Datum FORMAT=B8601DT19. AS Datum,
+          t1.Datum FORMAT=B8601DX19. AS Datum,
           t1.Datum_ok,
-          t1.Datum_stempel_sj FORMAT=B8601DT19. AS Datum_stempel_sj,
+          t1.Datum_stempel_sj FORMAT=B8601DX19. AS Datum_stempel_sj,
           t1.Digitaal_archiveren,
           t1.Doc_directory,
           t1.Doc_naam,
@@ -2713,7 +2713,7 @@ PROC SQL;
           t1.Genereer_JN,
           t1.Html,
           t1.Ids_id,
-          t1.Indieningsdatum FORMAT=B8601DT19. AS Indieningsdatum,
+          t1.Indieningsdatum FORMAT=B8601DX19. AS Indieningsdatum,
           t1.Ingetrokken,
           t1.Jz_id,
           t1.Kenmerk,
@@ -2721,7 +2721,7 @@ PROC SQL;
           t1.Mandaat_rol_cd,
           t1.Mdw_cd_email,
           t1.Mdw_id_contpers_intern,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.'n,aam_organisatie'n AS naam_organisatie,
           t1.Ok_JN,
@@ -2729,7 +2729,7 @@ PROC SQL;
           t1.Open_brief,
           t1.Org_id,
           t1.Pcs_id,
-          t1.Plandatum FORMAT=B8601DT19. AS Plandatum,
+          t1.Plandatum FORMAT=B8601DX19. AS Plandatum,
           t1.Prioriteit,
           t1.Reg_id,
           t1.Rel_id,
@@ -2739,7 +2739,7 @@ PROC SQL;
           t1.Senterkenmerk,
           t1.Text_inhoud,
           t1.Vernieuw_paraaf,
-          t1.Verzenddatum FORMAT=B8601DT19. AS Verzenddatum,
+          t1.Verzenddatum FORMAT=B8601DX19. AS Verzenddatum,
           t1.Verzonden_elektronisch_JN,
           t1.Verzonden_per_post_JN,
           t1.Vst_volgnr,
@@ -2892,7 +2892,7 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_COR_CORRESPONDENTIE   end=EFIEOD; 
-       format Actie_datum B8601DT19. ;
+       format Actie_datum B8601DX19. ;
        format Afgedrukt_JN  ;
        format Afgehandeld  ;
        format Archiveren  ;
@@ -2907,12 +2907,12 @@ data _null_;
        format Cor_id_van best12. ;
        format Cor_volgnr_ids best12. ;
        format Crd_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Cst_cd  ;
-       format Datum B8601DT19. ;
+       format Datum B8601DX19. ;
        format Datum_ok  ;
-       format Datum_stempel_sj B8601DT19. ;
+       format Datum_stempel_sj B8601DX19. ;
        format Digitaal_archiveren  ;
        format Doc_directory  ;
        format Doc_naam  ;
@@ -2922,7 +2922,7 @@ data _null_;
        format Genereer_JN  ;
        format Html  ;
        format Ids_id best12. ;
-       format Indieningsdatum B8601DT19. ;
+       format Indieningsdatum B8601DX19. ;
        format Ingetrokken  ;
        format Jz_id best12. ;
        format Kenmerk  ;
@@ -2930,7 +2930,7 @@ data _null_;
        format Mandaat_rol_cd  ;
        format Mdw_cd_email  ;
        format Mdw_id_contpers_intern best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format naam_organisatie  ;
        format Ok_JN  ;
@@ -2938,7 +2938,7 @@ data _null_;
        format Open_brief  ;
        format Org_id best12. ;
        format Pcs_id best12. ;
-       format Plandatum B8601DT19. ;
+       format Plandatum B8601DX19. ;
        format Prioriteit best12. ;
        format Reg_id best12. ;
        format Rel_id best12. ;
@@ -2948,7 +2948,7 @@ data _null_;
        format Senterkenmerk  ;
        format Text_inhoud  ;
        format Vernieuw_paraaf  ;
-       format Verzenddatum B8601DT19. ;
+       format Verzenddatum B8601DX19. ;
        format Verzonden_elektronisch_JN  ;
        format Verzonden_per_post_JN  ;
        format Vst_volgnr best12. ;
@@ -3476,9 +3476,9 @@ PROC SQL;
           t1.Cst_cd_2,
           t1.Verzenddatum_jn,
           t1.Afgehandeld_jn,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Genereer_jn
      FROM DATAQASG.COR_CST_SET_CST_TCMG t1;
@@ -3526,9 +3526,9 @@ data _null_;
        format Cst_cd_2  ;
        format Verzenddatum_jn  ;
        format Afgehandeld_jn  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Genereer_jn  ;
        format techId best12. ; 
@@ -3779,11 +3779,11 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_COR_REACTIE_BIJ_COR_SRT AS
    SELECT t1.Cluster_nr,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Cst_cd,
           t1.Mdw_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Per_cluster,
           t1.Prg_id,
@@ -3847,11 +3847,11 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_COR_REACTIE_BIJ_COR_SRT   end=EFIEOD; 
        format Cluster_nr best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Cst_cd  ;
        format Mdw_id  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Per_cluster  ;
        format Prg_id best12. ;
@@ -3998,7 +3998,7 @@ PROC SQL;
           t1.Crea_back,
           t1.Create_merge_jn,
           t1.Create_merge_single,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Cst_cd,
           t1.Doc_template,
@@ -4007,7 +4007,7 @@ PROC SQL;
           t1.Ic_controle,
           t1.Job,
           t1.Lijst_cd,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Prf_cd,
           t1.Print_jn,
@@ -4078,7 +4078,7 @@ data _null_;
        format Crea_back  ;
        format Create_merge_jn  ;
        format Create_merge_single  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Cst_cd  ;
        format Doc_template  ;
@@ -4087,7 +4087,7 @@ data _null_;
        format Ic_controle  ;
        format Job  ;
        format Lijst_cd  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Prf_cd  ;
        format Print_jn  ;
@@ -4314,9 +4314,9 @@ PROC SQL;
           t1.Tra_id,
           t1.Dos_id,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.COR_TRANSACTIEGROEP_BIJ_BRF_TCMG t1;
 QUIT;
 
@@ -4355,9 +4355,9 @@ data _null_;
        format Tra_id best12. ;
        format Dos_id best12. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -4409,11 +4409,11 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_CONT_BIJ_DLN_COM_ADR AS
-   SELECT t1.creatie_dat FORMAT=B8601DT19. AS creatie_dat,
+   SELECT t1.creatie_dat FORMAT=B8601DX19. AS creatie_dat,
           t1.Creatie_user,
           t1.Dcs_id,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Per_id,
           t1.Rav_id,
@@ -4468,11 +4468,11 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_DAM_CONT_BIJ_DLN_COM_ADR   end=EFIEOD; 
-       format creatie_dat B8601DT19. ;
+       format creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dcs_id best12. ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Per_id best12. ;
        format Rav_id best12. ;
@@ -4570,10 +4570,10 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_CONTACT_BIJ_DEELNAME AS
    SELECT t1.Certhoud_id,
           t1.Correspondent,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Per_id,
           t1.Rechten_id,
@@ -4629,10 +4629,10 @@ data _null_;
    set  MIGRATIE.BAS_DAM_CONTACT_BIJ_DEELNAME   end=EFIEOD; 
        format Certhoud_id best12. ;
        format Correspondent  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Per_id best12. ;
        format Rechten_id  ;
@@ -4749,33 +4749,33 @@ PROC SQL;
           t1.Adviesaantaluren,
           t1.Advieshandtoegekend,
           t1.Adviesrente,
-          t1.Adviesrentedatum FORMAT=B8601DT19. AS Adviesrentedatum,
+          t1.Adviesrentedatum FORMAT=B8601DX19. AS Adviesrentedatum,
           t1.Adviestoegekend,
           t1.Besluit_cor_id,
           t1.Cor_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Datumberekening FORMAT=B8601DT19. AS Datumberekening,
+          t1.Datumberekening FORMAT=B8601DX19. AS Datumberekening,
           t1.Dos_id,
           t1.Herstel,
           t1.Inboedeltuinaangevraagd,
           t1.Inboedeltuinhandtoegekend,
           t1.Inboedeltuinrente,
-          t1.inboedeltuinrentedatum FORMAT=B8601DT19. AS inboedeltuinrentedatum,
+          t1.inboedeltuinrentedatum FORMAT=B8601DX19. AS inboedeltuinrentedatum,
           t1.Inboedeltuintoegekend,
           t1.Inkomstendervingaangevraagd,
           t1.Inkomstendervinghandtoegekend,
           t1.Inkomstendervingrente,
-          t1.Inkomstendervingrentedatum FORMAT=B8601DT19. AS Inkomstendervingrentedatum,
+          t1.Inkomstendervingrentedatum FORMAT=B8601DX19. AS Inkomstendervingrentedatum,
           t1.Inkomstendervingtoegekend,
           t1.Juridischaangevraagd,
           t1.Juridischaantaluren,
           t1.Juridischhandtoegekend,
           t1.Juridischrente,
-          t1.Juridischrentedatum FORMAT=B8601DT19. AS Juridischrentedatum,
+          t1.Juridischrentedatum FORMAT=B8601DX19. AS Juridischrentedatum,
           t1.Juridischtarief,
           t1.Juridischtoegekend,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Notitie,
           t1.Oorzaak,
@@ -4783,7 +4783,7 @@ PROC SQL;
           t1.Opslagaantalweken,
           t1.Opslaghandtoegekend,
           t1.opslagrente,
-          t1.Opslagrentedatum FORMAT=B8601DT19. AS Opslagrentedatum,
+          t1.Opslagrentedatum FORMAT=B8601DX19. AS Opslagrentedatum,
           t1.Opslagtoegekend,
           t1.Overlastaangevraagd,
           t1.Overlasthandtoegekend,
@@ -4795,14 +4795,14 @@ PROC SQL;
           t1.Overnachtenaantalpersonen,
           t1.Overnachtenhandtoegekend,
           t1.Overnachtenrente,
-          t1.Overnachtenrentedatum FORMAT=B8601DT19. AS Overnachtenrentedatum,
+          t1.Overnachtenrentedatum FORMAT=B8601DX19. AS Overnachtenrentedatum,
           t1.Overnachtentoegekend,
           t1.Reisaangevraagd,
           t1.Reisaantalkm,
           t1.Reishandtoegekend,
           t1.Reisov,
           t1.Reisrente,
-          t1.Reisrentedatum FORMAT=B8601DT19. AS Reisrentedatum,
+          t1.Reisrentedatum FORMAT=B8601DX19. AS Reisrentedatum,
           t1.Reistoegekend,
           t1.Schoonmaakaangevraagd,
           t1.Schoonmaakhandtoegekend,
@@ -4825,12 +4825,12 @@ PROC SQL;
           t1.Verhuisaangevraagd,
           t1.Verhuishandtoegekend,
           t1.Verhuisrente,
-          t1.Verhuisrentedatum FORMAT=B8601DT19. AS Verhuisrentedatum,
+          t1.Verhuisrentedatum FORMAT=B8601DX19. AS Verhuisrentedatum,
           t1.Verhuistoegekend,
           t1.Zorgaangevraagd,
           t1.Zorghandtoegekend,
           t1.Zorgrente,
-          t1.Zorgrentedatum FORMAT=B8601DT19. AS Zorgrentedatum,
+          t1.Zorgrentedatum FORMAT=B8601DX19. AS Zorgrentedatum,
           t1.Zorgtoegekend
      FROM DATAQASG.DAM_DECLARATIE_TCMG t1;
 QUIT;
@@ -5030,33 +5030,33 @@ data _null_;
        format Adviesaantaluren best12. ;
        format Advieshandtoegekend best12. ;
        format Adviesrente best12. ;
-       format Adviesrentedatum B8601DT19. ;
+       format Adviesrentedatum B8601DX19. ;
        format Adviestoegekend best12. ;
        format Besluit_cor_id best12. ;
        format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Datumberekening B8601DT19. ;
+       format Datumberekening B8601DX19. ;
        format Dos_id best12. ;
        format Herstel  ;
        format Inboedeltuinaangevraagd best12. ;
        format Inboedeltuinhandtoegekend best12. ;
        format Inboedeltuinrente best12. ;
-       format inboedeltuinrentedatum B8601DT19. ;
+       format inboedeltuinrentedatum B8601DX19. ;
        format Inboedeltuintoegekend best12. ;
        format Inkomstendervingaangevraagd best12. ;
        format Inkomstendervinghandtoegekend best12. ;
        format Inkomstendervingrente best12. ;
-       format Inkomstendervingrentedatum B8601DT19. ;
+       format Inkomstendervingrentedatum B8601DX19. ;
        format Inkomstendervingtoegekend best12. ;
        format Juridischaangevraagd best12. ;
        format Juridischaantaluren best12. ;
        format Juridischhandtoegekend best12. ;
        format Juridischrente best12. ;
-       format Juridischrentedatum B8601DT19. ;
+       format Juridischrentedatum B8601DX19. ;
        format Juridischtarief best12. ;
        format Juridischtoegekend best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Notitie  ;
        format Oorzaak  ;
@@ -5064,7 +5064,7 @@ data _null_;
        format Opslagaantalweken best12. ;
        format Opslaghandtoegekend best12. ;
        format opslagrente best12. ;
-       format Opslagrentedatum B8601DT19. ;
+       format Opslagrentedatum B8601DX19. ;
        format Opslagtoegekend best12. ;
        format Overlastaangevraagd best12. ;
        format Overlasthandtoegekend best12. ;
@@ -5076,14 +5076,14 @@ data _null_;
        format Overnachtenaantalpersonen  ;
        format Overnachtenhandtoegekend best12. ;
        format Overnachtenrente best12. ;
-       format Overnachtenrentedatum B8601DT19. ;
+       format Overnachtenrentedatum B8601DX19. ;
        format Overnachtentoegekend best12. ;
        format Reisaangevraagd best12. ;
        format Reisaantalkm best12. ;
        format Reishandtoegekend best12. ;
        format Reisov best12. ;
        format Reisrente best12. ;
-       format Reisrentedatum B8601DT19. ;
+       format Reisrentedatum B8601DX19. ;
        format Reistoegekend best12. ;
        format Schoonmaakaangevraagd best12. ;
        format Schoonmaakhandtoegekend best12. ;
@@ -5106,12 +5106,12 @@ data _null_;
        format Verhuisaangevraagd best12. ;
        format Verhuishandtoegekend best12. ;
        format Verhuisrente best12. ;
-       format Verhuisrentedatum B8601DT19. ;
+       format Verhuisrentedatum B8601DX19. ;
        format Verhuistoegekend best12. ;
        format Zorgaangevraagd best12. ;
        format Zorghandtoegekend best12. ;
        format Zorgrente best12. ;
-       format Zorgrentedatum B8601DT19. ;
+       format Zorgrentedatum B8601DX19. ;
        format Zorgtoegekend best12. ;
        format techId best12. ; 
      do; 
@@ -5477,12 +5477,12 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_DEELNAME_ADRES AS
    SELECT t1.Adressoort,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dda_id,
           t1.Dos_id,
           t1.Kkr_afwijkend,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rae_id,
           t1.Ras_id,
@@ -5536,12 +5536,12 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_DAM_DEELNAME_ADRES   end=EFIEOD; 
        format Adressoort  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dda_id best12. ;
        format Dos_id best12. ;
        format Kkr_afwijkend  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rae_id best12. ;
        format Ras_id best12. ;
@@ -5644,11 +5644,11 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_DEELNAME_COM_ADRES AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dda_id,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rae_id,
           t1.Rca_id,
@@ -5697,11 +5697,11 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_DAM_DEELNAME_COM_ADRES   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dda_id best12. ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rae_id best12. ;
        format Rca_id best12. ;
@@ -5784,14 +5784,14 @@ PROC SQL;
           t1.Bic,
           t1.Bic_cd,
           t1.Contract_cd,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dam_project_deelname,
           t1.Deelnamenaam,
           t1.Dos_id,
           t1.Ed_deelnemer_id,
           t1.Edeelnemer_id,
-          t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
+          t1.Einddatum FORMAT=B8601DX19. AS Einddatum,
           t1.Elektronisch_corresponderen_JN,
           t1.Fisc_eenheid,
           t1.Geclaimd,
@@ -5806,7 +5806,7 @@ PROC SQL;
           t1.Ingediend,
           t1.Ingediend_NLG,
           t1.Kkr_statutair,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Niet_sepa_betalen,
           t1.Org_id,
@@ -5815,7 +5815,7 @@ PROC SQL;
           t1.Rel_id,
           t1.Rel_id_rekening,
           t1.Rol_cd,
-          t1.Startdatum FORMAT=B8601DT19. AS Startdatum,
+          t1.Startdatum FORMAT=B8601DX19. AS Startdatum,
           t1.Totaal_decl_deelname,
           t1.Totaal_uitb_deelname,
           t1.Verklaring_gewenst_JN,
@@ -5924,14 +5924,14 @@ data _null_;
        format Bic  ;
        format Bic_cd  ;
        format Contract_cd  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dam_project_deelname  ;
        format Deelnamenaam  ;
        format Dos_id best12. ;
        format Ed_deelnemer_id best12. ;
        format Edeelnemer_id best12. ;
-       format Einddatum B8601DT19. ;
+       format Einddatum B8601DX19. ;
        format Elektronisch_corresponderen_JN  ;
        format Fisc_eenheid  ;
        format Geclaimd best12. ;
@@ -5946,7 +5946,7 @@ data _null_;
        format Ingediend best12. ;
        format Ingediend_NLG best12. ;
        format Kkr_statutair  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Niet_sepa_betalen  ;
        format Org_id best12. ;
@@ -5955,7 +5955,7 @@ data _null_;
        format Rel_id best12. ;
        format Rel_id_rekening best12. ;
        format Rol_cd  ;
-       format Startdatum B8601DT19. ;
+       format Startdatum B8601DX19. ;
        format Totaal_decl_deelname best12. ;
        format Totaal_uitb_deelname best12. ;
        format Verklaring_gewenst_JN  ;
@@ -6262,11 +6262,11 @@ PROC SQL;
           t1.Def_ingetrokken,
           t1.Def_gedeclareerd,
           t1.Def_openstaand,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
-          t1.Rpe_datum_van FORMAT=B8601DT19. AS Rpe_datum_van,
+          t1.Rpe_datum_van FORMAT=B8601DX19. AS Rpe_datum_van,
           t1.Neg_einddeclaratie,
           t1.Prg_id,
           t1.Reg_id,
@@ -6378,11 +6378,11 @@ data _null_;
        format Def_ingetrokken best12. ;
        format Def_gedeclareerd best12. ;
        format Def_openstaand best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Rpe_datum_van B8601DT19. ;
+       format Rpe_datum_van B8601DX19. ;
        format Neg_einddeclaratie best12. ;
        format Prg_id best12. ;
        format Reg_id best12. ;
@@ -6555,12 +6555,12 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_DOSSIER_IN_GROEP AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Ddg_id,
           t1.Dds_id,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.DAM_DOSSIER_IN_GROEP_TCMG t1;
 QUIT;
@@ -6596,12 +6596,12 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_DAM_DOSSIER_IN_GROEP   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Ddg_id best12. ;
        format Dds_id best12. ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -6657,10 +6657,10 @@ PROC SQL;
    SELECT t1.Afgehandeld,
           t1.Bezoeknr,
           t1.Cor_id_no,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Notitie,
           t1.Notitietype_naam,
@@ -6710,10 +6710,10 @@ data _null_;
        format Afgehandeld  ;
        format Bezoeknr best12. ;
        format Cor_id_no best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Notitie  ;
        format Notitietype_naam  ;
@@ -6814,12 +6814,12 @@ PROC SQL;
           t1.Aantal_SO_projecten,
           t1.Aantal_SO_werknemers,
           t1.Aantal_SO_zlf,
-          t1.Aanvang_dat FORMAT=B8601DT19. AS Aanvang_dat,
+          t1.Aanvang_dat FORMAT=B8601DX19. AS Aanvang_dat,
           t1.Aanvraag_volgnr,
           t1.Aanvraagsoort,
           t1.Acceptatie_sts,
           t1.Afdrachtsvermindering,
-          t1.Afhandeldatum FORMAT=B8601DT19. AS Afhandeldatum,
+          t1.Afhandeldatum FORMAT=B8601DX19. AS Afhandeldatum,
           t1.Afhandelwijze,
           t1.Afl_neg_einddeclaratie,
           t1.Akkoord_verlenen,
@@ -6843,12 +6843,12 @@ PROC SQL;
           t1.Contractjaar,
           t1.Conversiedossier,
           t1.Correspondentie_via_email,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Jaardossier_WBSO,
-          t1.Datum_in FORMAT=B8601DT19. AS Datum_in,
-          t1.Datum_renteberekening FORMAT=B8601DT19. AS Datum_renteberekening,
-          t1.Datum_status FORMAT=B8601DT19. AS Datum_status,
+          t1.Datum_in FORMAT=B8601DX19. AS Datum_in,
+          t1.Datum_renteberekening FORMAT=B8601DX19. AS Datum_renteberekening,
+          t1.Datum_status FORMAT=B8601DX19. AS Datum_status,
           t1.Volgnr_diskette,
           t1.Volgnr_diskette_na_import,
           t1.Dos_cd,
@@ -6857,7 +6857,7 @@ PROC SQL;
           t1.Dosprio,
           t1.ED_Aanvraag_id,
           t1.Eerste_jr_aflossing,
-          t1.Eind_dat FORMAT=B8601DT19. AS Eind_dat,
+          t1.Eind_dat FORMAT=B8601DX19. AS Eind_dat,
           t1.Eindmaand,
           t1.Extern_aanvraag_id,
           t1.Extern_dossier_id,
@@ -6870,8 +6870,8 @@ PROC SQL;
           t1.Id_van_de_doos,
           t1.Id_van_de_doos_na_de_import,
           t1.Importlijst,
-          t1.Indienings_dat FORMAT=B8601DT19. AS Indienings_dat,
-          t1.Indienings_tijd FORMAT=B8601DT19. AS Indienings_tijd,
+          t1.Indienings_dat FORMAT=B8601DX19. AS Indienings_dat,
+          t1.Indienings_tijd FORMAT=B8601DX19. AS Indienings_tijd,
           t1.Indienkanaal,
           t1.Ingezien,
           t1.Inkoopcat_cd,
@@ -6889,8 +6889,8 @@ PROC SQL;
           t1.Machtiging_JN,
           t1.Mdw_cd,
           t1.Mentorterugkoppeling,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
-          t1.Mutatie_dat_vst FORMAT=B8601DT19. AS Mutatie_dat_vst,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
+          t1.Mutatie_dat_vst FORMAT=B8601DX19. AS Mutatie_dat_vst,
           t1.Mutatie_user,
           t1.Mutatie_user_vst,
           t1.Naar_batchrun,
@@ -6899,14 +6899,14 @@ PROC SQL;
           t1.Octrooien,
           t1.Offertebedrag,
           t1.Cerhoud_id_Ondertekenaar,
-          t1.Ontvangstdatum FORMAT=B8601DT19. AS Ontvangstdatum,
-          t1.Oorspr_einddatum FORMAT=B8601DT19. AS Oorspr_einddatum,
+          t1.Ontvangstdatum FORMAT=B8601DX19. AS Ontvangstdatum,
+          t1.Oorspr_einddatum FORMAT=B8601DX19. AS Oorspr_einddatum,
           t1.Overige_subsidie,
           t1.Opdrachtvorm_cd,
           t1.Perc_verrekenen,
           t1.Periode_nr,
           t1.Prioriteit,
-          t1.Prioriteitsdatum FORMAT=B8601DT19. AS Prioriteitsdatum,
+          t1.Prioriteitsdatum FORMAT=B8601DX19. AS Prioriteitsdatum,
           t1.Projectomschrijving,
           t1.Ranking,
           t1.RDA_Afhandeling_forfaitair,
@@ -6928,7 +6928,7 @@ PROC SQL;
           t1.status_SO_uurloon,
           t1.Status_TT,
           t1.Statusgroep,
-          t1.Statustermijn FORMAT=B8601DT19. AS Statustermijn,
+          t1.Statustermijn FORMAT=B8601DX19. AS Statustermijn,
           t1.'Status_E-Diensten'n AS Status_E_Diensten,
           t1.'Status_E-Loket'n AS Status_E_Loket,
           t1.Technisch_succes,
@@ -7332,12 +7332,12 @@ data _null_;
        format Aantal_SO_projecten best12. ;
        format Aantal_SO_werknemers best12. ;
        format Aantal_SO_zlf best12. ;
-       format Aanvang_dat B8601DT19. ;
+       format Aanvang_dat B8601DX19. ;
        format Aanvraag_volgnr best12. ;
        format Aanvraagsoort  ;
        format Acceptatie_sts  ;
        format Afdrachtsvermindering  ;
-       format Afhandeldatum B8601DT19. ;
+       format Afhandeldatum B8601DX19. ;
        format Afhandelwijze  ;
        format Afl_neg_einddeclaratie best12. ;
        format Akkoord_verlenen  ;
@@ -7361,12 +7361,12 @@ data _null_;
        format Contractjaar best12. ;
        format Conversiedossier  ;
        format Correspondentie_via_email  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Jaardossier_WBSO  ;
-       format Datum_in B8601DT19. ;
-       format Datum_renteberekening B8601DT19. ;
-       format Datum_status B8601DT19. ;
+       format Datum_in B8601DX19. ;
+       format Datum_renteberekening B8601DX19. ;
+       format Datum_status B8601DX19. ;
        format Volgnr_diskette best12. ;
        format Volgnr_diskette_na_import best12. ;
        format Dos_cd  ;
@@ -7375,7 +7375,7 @@ data _null_;
        format Dosprio best12. ;
        format ED_Aanvraag_id best12. ;
        format Eerste_jr_aflossing best12. ;
-       format Eind_dat B8601DT19. ;
+       format Eind_dat B8601DX19. ;
        format Eindmaand best12. ;
        format Extern_aanvraag_id best12. ;
        format Extern_dossier_id best12. ;
@@ -7388,8 +7388,8 @@ data _null_;
        format Id_van_de_doos best12. ;
        format Id_van_de_doos_na_de_import best12. ;
        format Importlijst  ;
-       format Indienings_dat B8601DT19. ;
-       format Indienings_tijd B8601DT19. ;
+       format Indienings_dat B8601DX19. ;
+       format Indienings_tijd B8601DX19. ;
        format Indienkanaal  ;
        format Ingezien  ;
        format Inkoopcat_cd  ;
@@ -7407,8 +7407,8 @@ data _null_;
        format Machtiging_JN  ;
        format Mdw_cd  ;
        format Mentorterugkoppeling  ;
-       format Mutatie_dat B8601DT19. ;
-       format Mutatie_dat_vst B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
+       format Mutatie_dat_vst B8601DX19. ;
        format Mutatie_user  ;
        format Mutatie_user_vst  ;
        format Naar_batchrun best12. ;
@@ -7417,14 +7417,14 @@ data _null_;
        format Octrooien best12. ;
        format Offertebedrag best12. ;
        format Cerhoud_id_Ondertekenaar best12. ;
-       format Ontvangstdatum B8601DT19. ;
-       format Oorspr_einddatum B8601DT19. ;
+       format Ontvangstdatum B8601DX19. ;
+       format Oorspr_einddatum B8601DX19. ;
        format Overige_subsidie  ;
        format Opdrachtvorm_cd  ;
        format Perc_verrekenen best12. ;
        format Periode_nr best12. ;
        format Prioriteit best12. ;
-       format Prioriteitsdatum B8601DT19. ;
+       format Prioriteitsdatum B8601DX19. ;
        format Projectomschrijving  ;
        format Ranking best12. ;
        format RDA_Afhandeling_forfaitair  ;
@@ -7446,7 +7446,7 @@ data _null_;
        format status_SO_uurloon  ;
        format Status_TT  ;
        format Statusgroep  ;
-       format Statustermijn B8601DT19. ;
+       format Statustermijn B8601DX19. ;
        format Status_E_Diensten  ;
        format Status_E_Loket  ;
        format Technisch_succes best12. ;
@@ -8583,9 +8583,9 @@ PROC SQL;
           t1.Naam,
           t1.Toelichting,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.DAM_DOSSIERGROEP_TCMG t1;
 QUIT;
 
@@ -8627,9 +8627,9 @@ data _null_;
        format Naam  ;
        format Toelichting  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -8702,11 +8702,11 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_LOKATIEADRES AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.DLS_id,
           t1.Lok_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.RAE_id,
           t1.RAS_id
@@ -8746,11 +8746,11 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_DAM_LOKATIEADRES   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format DLS_id best12. ;
        format Lok_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format RAE_id best12. ;
        format RAS_id best12. ;
@@ -8812,14 +8812,14 @@ PROC SQL;
           t1.Prg_id,
           t1.Mdw_id,
           t1.Rol_cd,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
-          t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
+          t1.Datum_tot FORMAT=B8601DX19. AS Datum_tot,
           t1.Behandelend,
           t1.Notitie,
           t1.Mdw_id_voorheen,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.DAM_MDW_INTERN_HIST_TCMG t1;
 QUIT;
@@ -8871,14 +8871,14 @@ data _null_;
        format Prg_id best12. ;
        format Mdw_id best12. ;
        format Rol_cd  ;
-       format Datum_van B8601DT19. ;
-       format Datum_tot B8601DT19. ;
+       format Datum_van B8601DX19. ;
+       format Datum_tot B8601DX19. ;
        format Behandelend  ;
        format Notitie  ;
        format Mdw_id_voorheen best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -8977,12 +8977,12 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_MDW_INTERN AS
    SELECT t1.Behandelend,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dos_id,
           t1.Mdw_id,
           t1.Mdw_id_voorheen,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Notitie,
           t1.Prg_id,
@@ -9030,12 +9030,12 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_DAM_MDW_INTERN   end=EFIEOD; 
        format Behandelend  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dos_id best12. ;
        format Mdw_id best12. ;
        format Mdw_id_voorheen best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Notitie  ;
        format Prg_id best12. ;
@@ -9133,12 +9133,12 @@ PROC SQL;
    SELECT t1.Commentaar,
           t1.Cor_id_tot,
           t1.Cor_id_van,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
+          t1.Datum_tot FORMAT=B8601DX19. AS Datum_tot,
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Ssg_cd,
           t1.Sts_cd,
@@ -9192,12 +9192,12 @@ data _null_;
        format Commentaar  ;
        format Cor_id_tot best12. ;
        format Cor_id_van best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Datum_tot B8601DT19. ;
-       format Datum_van B8601DT19. ;
+       format Datum_tot B8601DX19. ;
+       format Datum_van B8601DX19. ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Ssg_cd  ;
        format Sts_cd  ;
@@ -9299,10 +9299,10 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_TERMIJN_PARAAF_NOTITIE AS
    SELECT t1.Cor_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dos_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Ter_id,
           t1.Toelichting
@@ -9343,10 +9343,10 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_DAM_TERMIJN_PARAAF_NOTITIE   end=EFIEOD; 
        format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dos_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Ter_id best12. ;
        format Toelichting  ;
@@ -9415,25 +9415,25 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_DAM_TERMIJN AS
    SELECT t1.Aanvullende_voorwaarden,
           t1.Actie,
-          t1.Actie_dat FORMAT=B8601DT19. AS Actie_dat,
+          t1.Actie_dat FORMAT=B8601DX19. AS Actie_dat,
           t1.Con_id,
           t1.Cor_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dos_id,
           t1.Dossiergroep_ter_id,
           t1.Mdw_id,
           t1.Mdw_id_afgemeld,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Notitie,
-          t1.Opgevoerd_dat FORMAT=B8601DT19. AS Opgevoerd_dat,
+          t1.Opgevoerd_dat FORMAT=B8601DX19. AS Opgevoerd_dat,
           t1.Opschortend_jn,
           t1.Prg_id,
           t1.Reactie_cd,
           t1.Rol_cd,
           t1.Ter_id,
-          t1.Voldaan_dat FORMAT=B8601DT19. AS Voldaan_dat,
+          t1.Voldaan_dat FORMAT=B8601DX19. AS Voldaan_dat,
           t1.Volgorde_paraaf
      FROM DATAQASG.DAM_TERMIJN_TCMG t1;
 QUIT;
@@ -9501,25 +9501,25 @@ data _null_;
    set  MIGRATIE.BAS_DAM_TERMIJN   end=EFIEOD; 
        format Aanvullende_voorwaarden  ;
        format Actie  ;
-       format Actie_dat B8601DT19. ;
+       format Actie_dat B8601DX19. ;
        format Con_id best12. ;
        format Cor_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dos_id best12. ;
        format Dossiergroep_ter_id best12. ;
        format Mdw_id  ;
        format Mdw_id_afgemeld best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Notitie  ;
-       format Opgevoerd_dat B8601DT19. ;
+       format Opgevoerd_dat B8601DX19. ;
        format Opschortend_jn  ;
        format Prg_id best12. ;
        format Reactie_cd  ;
        format Rol_cd  ;
        format Ter_id best12. ;
-       format Voldaan_dat B8601DT19. ;
+       format Voldaan_dat B8601DX19. ;
        format Volgorde_paraaf best12. ;
        format techId best12. ; 
      do; 
@@ -9681,8 +9681,8 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_FAM_DECLARATIE AS
    SELECT t1.Tra_id,
-          t1.Begindatum FORMAT=B8601DT19. AS Begindatum,
-          t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
+          t1.Begindatum FORMAT=B8601DX19. AS Begindatum,
+          t1.Einddatum FORMAT=B8601DX19. AS Einddatum,
           t1.Totaal_ingediend,
           t1.Totaal_geschoond,
           t1.Vergoedings_pct,
@@ -9746,8 +9746,8 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_FAM_DECLARATIE   end=EFIEOD; 
        format Tra_id best12. ;
-       format Begindatum B8601DT19. ;
-       format Einddatum B8601DT19. ;
+       format Begindatum B8601DX19. ;
+       format Einddatum B8601DX19. ;
        format Totaal_ingediend best12. ;
        format Totaal_geschoond best12. ;
        format Vergoedings_pct best12. ;
@@ -9854,16 +9854,16 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_FAM_STATUSHISTORIE AS
    SELECT t1.Commentaar,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
-          t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
+          t1.Datum_tot FORMAT=B8601DX19. AS Datum_tot,
           t1.Dos_id,
           t1.Ssg_cd,
           t1.Sts_cd,
           t1.Tra_id,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.FAM_STATUSHISTORIE_TCMG t1;
 QUIT;
 
@@ -9907,16 +9907,16 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_FAM_STATUSHISTORIE   end=EFIEOD; 
        format Commentaar  ;
-       format Datum_van B8601DT19. ;
-       format Datum_tot B8601DT19. ;
+       format Datum_van B8601DX19. ;
+       format Datum_tot B8601DX19. ;
        format Dos_id best12. ;
        format Ssg_cd  ;
        format Sts_cd  ;
        format Tra_id best12. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -10011,7 +10011,7 @@ PROC SQL;
           t1.Rpt_nr,
           t1.Ovk_nr,
           t1.Bgt_cd,
-          t1.Rpe_datum_van FORMAT=B8601DT19. AS Rpe_datum_van,
+          t1.Rpe_datum_van FORMAT=B8601DX19. AS Rpe_datum_van,
           t1.Vpl_tra_id,
           t1.Prg_id,
           t1.Vpl_volgnummer,
@@ -10019,13 +10019,13 @@ PROC SQL;
           t1.Reg_id,
           t1.Reg_nr,
           t1.Bedrag,
-          t1.Valutadatum FORMAT=B8601DT19. AS Valutadatum,
+          t1.Valutadatum FORMAT=B8601DX19. AS Valutadatum,
           t1.Iban,
           t1.Bic,
           t1.Omhang_jaar,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Cvk_id_geselecteerd,
           t1.Cvk_id_verwerkt,
@@ -10115,7 +10115,7 @@ data _null_;
        format Rpt_nr best12. ;
        format Ovk_nr  ;
        format Bgt_cd  ;
-       format Rpe_datum_van B8601DT19. ;
+       format Rpe_datum_van B8601DX19. ;
        format Vpl_tra_id best12. ;
        format Prg_id best12. ;
        format Vpl_volgnummer best12. ;
@@ -10123,13 +10123,13 @@ data _null_;
        format Reg_id best12. ;
        format Reg_nr best12. ;
        format Bedrag best12. ;
-       format Valutadatum B8601DT19. ;
+       format Valutadatum B8601DX19. ;
        format Iban  ;
        format Bic  ;
        format Omhang_jaar best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Cvk_id_geselecteerd best12. ;
        format Cvk_id_verwerkt best12. ;
@@ -10343,8 +10343,8 @@ PROC SQL;
           t1.Reden,
           t1.bedrag,
           t1.Bedrag_nlg,
-          t1.Datum FORMAT=B8601DT19. AS Datum,
-          t1.Valutadatum FORMAT=B8601DT19. AS Valutadatum,
+          t1.Datum FORMAT=B8601DX19. AS Datum,
+          t1.Valutadatum FORMAT=B8601DX19. AS Valutadatum,
           t1.Fam_verplichting,
           t1.Fam_declaratie,
           t1.Fam_bij_rente,
@@ -10363,11 +10363,11 @@ PROC SQL;
           t1.Vst_id,
           t1.Rel_id,
           t1.Rol_cd,
-          t1.Datum_acc_afd FORMAT=B8601DT19. AS Datum_acc_afd,
+          t1.Datum_acc_afd FORMAT=B8601DX19. AS Datum_acc_afd,
           t1.Referentie,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Bedrag_ex_btw,
           t1.Vst_volgnr,
@@ -10390,7 +10390,7 @@ PROC SQL;
           t1.Correctie_bedrag_bob,
           t1.Vordering_status,
           t1.On_hold,
-          t1.Termijn_uitstel FORMAT=B8601DT19. AS Termijn_uitstel,
+          t1.Termijn_uitstel FORMAT=B8601DX19. AS Termijn_uitstel,
           t1.Tra_id_ean_eap
      FROM DATAQASG.FAM_TRANSACTIE_TCMG t1;
 QUIT;
@@ -10537,8 +10537,8 @@ data _null_;
        format Reden  ;
        format bedrag best12. ;
        format Bedrag_nlg best12. ;
-       format Datum B8601DT19. ;
-       format Valutadatum B8601DT19. ;
+       format Datum B8601DX19. ;
+       format Valutadatum B8601DX19. ;
        format Fam_verplichting  ;
        format Fam_declaratie  ;
        format Fam_bij_rente  ;
@@ -10557,11 +10557,11 @@ data _null_;
        format Vst_id best12. ;
        format Rel_id best12. ;
        format Rol_cd  ;
-       format Datum_acc_afd B8601DT19. ;
+       format Datum_acc_afd B8601DX19. ;
        format Referentie  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Bedrag_ex_btw best12. ;
        format Vst_volgnr best12. ;
@@ -10584,7 +10584,7 @@ data _null_;
        format Correctie_bedrag_bob best12. ;
        format Vordering_status  ;
        format On_hold  ;
-       format Termijn_uitstel B8601DT19. ;
+       format Termijn_uitstel B8601DX19. ;
        format Tra_id_ean_eap best12. ;
        format techId best12. ; 
      do; 
@@ -11015,9 +11015,9 @@ PROC SQL;
           t1.Gevraagd,
           t1.Totaal_geschoond,
           t1.Vergoedings_pct,
-          t1.Intake_datum FORMAT=B8601DT19. AS Intake_datum,
-          t1.Nota_datum FORMAT=B8601DT19. AS Nota_datum,
-          t1.Panel_datum FORMAT=B8601DT19. AS Panel_datum,
+          t1.Intake_datum FORMAT=B8601DX19. AS Intake_datum,
+          t1.Nota_datum FORMAT=B8601DX19. AS Nota_datum,
+          t1.Panel_datum FORMAT=B8601DX19. AS Panel_datum,
           t1.Overige_subsidie,
           t1.Ikb_naam,
           t1.Inkoopbevinding,
@@ -11086,9 +11086,9 @@ data _null_;
        format Gevraagd best12. ;
        format Totaal_geschoond best12. ;
        format Vergoedings_pct best12. ;
-       format Intake_datum B8601DT19. ;
-       format Nota_datum B8601DT19. ;
-       format Panel_datum B8601DT19. ;
+       format Intake_datum B8601DX19. ;
+       format Nota_datum B8601DX19. ;
+       format Panel_datum B8601DX19. ;
        format Overige_subsidie best12. ;
        format Ikb_naam  ;
        format Inkoopbevinding  ;
@@ -11211,11 +11211,11 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_IOM_FUNCTIE AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Fun_cd,
           t1.Fun_oms,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.IOM_FUNCTIE_TCMG t1;
 QUIT;
@@ -11249,11 +11249,11 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_IOM_FUNCTIE   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Fun_cd  ;
        format Fun_oms  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -11324,9 +11324,9 @@ PROC SQL;
    SELECT t1.Loc_cd,
           t1.Omschrijving,
           t1.Actief,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.IOM_LOCATIE_TCMG t1;
 QUIT;
@@ -11365,9 +11365,9 @@ data _null_;
        format Loc_cd  ;
        format Omschrijving  ;
        format Actief  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -11456,10 +11456,10 @@ PROC SQL;
           t1.Bic,
           t1.Certhoud_id,
           t1.Certserienummer,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Datum_inlog FORMAT=B8601DT19. AS Datum_inlog,
-          t1.Datum_uit_dienst FORMAT=B8601DT19. AS Datum_uit_dienst,
+          t1.Datum_inlog FORMAT=B8601DX19. AS Datum_inlog,
+          t1.Datum_uit_dienst FORMAT=B8601DX19. AS Datum_uit_dienst,
           t1.Dienstverband,
           t1.Eigen_vervoer_jn,
           t1.Fun_cd,
@@ -11473,7 +11473,7 @@ PROC SQL;
           t1.Mdw_handtekening_image,
           t1.Mdw_id,
           t1.Mobiel,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Parkeerkaart,
           t1.Plaatsnaam,
@@ -11596,10 +11596,10 @@ data _null_;
        format Bic  ;
        format Certhoud_id best12. ;
        format Certserienummer  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Datum_inlog B8601DT19. ;
-       format Datum_uit_dienst B8601DT19. ;
+       format Datum_inlog B8601DX19. ;
+       format Datum_uit_dienst B8601DX19. ;
        format Dienstverband  ;
        format Eigen_vervoer_jn  ;
        format Fun_cd  ;
@@ -11613,7 +11613,7 @@ data _null_;
        format Mdw_handtekening_image  ;
        format Mdw_id best12. ;
        format Mobiel  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Parkeerkaart  ;
        format Plaatsnaam  ;
@@ -12067,10 +12067,10 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_IOM_MEDEWERKERROL AS
    SELECT t1.Mdw_id,
           t1.Rol_cd,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Actief
      FROM DATAQASG.IOM_MEDEWERKERROL_TCMG t1;
 QUIT;
@@ -12108,10 +12108,10 @@ data _null_;
    set  MIGRATIE.BAS_IOM_MEDEWERKERROL   end=EFIEOD; 
        format Mdw_id best12. ;
        format Rol_cd  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Actief  ;
        format techId best12. ; 
      do; 
@@ -12187,9 +12187,9 @@ PROC SQL;
           t1.Rol_cd,
           t1.Eigenaar,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.JZM_BEHANDELAAR_TCMG t1;
 QUIT;
 
@@ -12231,9 +12231,9 @@ data _null_;
        format Rol_cd  ;
        format Eigenaar  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -12309,12 +12309,12 @@ PROC SQL;
    SELECT t1.Jz_id,
           t1.Bzr_id,
           t1.Zaaknummer,
-          t1.Datum_zitting FORMAT=B8601DT19. AS Datum_zitting,
+          t1.Datum_zitting FORMAT=B8601DX19. AS Datum_zitting,
           t1.Uitspraak,
-          t1.Datum_uitspr FORMAT=B8601DT19. AS Datum_uitspr,
+          t1.Datum_uitspr FORMAT=B8601DX19. AS Datum_uitspr,
           t1.Bedrag_schade,
           t1.Bedrag_schade_nlg,
-          t1.Datum_schade FORMAT=B8601DT19. AS Datum_schade
+          t1.Datum_schade FORMAT=B8601DX19. AS Datum_schade
      FROM DATAQASG.JZM_BEROEP_TCMG t1;
 QUIT;
 
@@ -12356,12 +12356,12 @@ data _null_;
        format Jz_id best12. ;
        format Bzr_id best12. ;
        format Zaaknummer  ;
-       format Datum_zitting B8601DT19. ;
+       format Datum_zitting B8601DX19. ;
        format Uitspraak  ;
-       format Datum_uitspr B8601DT19. ;
+       format Datum_uitspr B8601DX19. ;
        format Bedrag_schade best12. ;
        format Bedrag_schade_nlg best12. ;
-       format Datum_schade B8601DT19. ;
+       format Datum_schade B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -12421,32 +12421,32 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_JZM_BEZWAAR AS
    SELECT t1.Jz_id,
           t1.Belasting_cd,
-          t1.Datum_compleet FORMAT=B8601DT19. AS Datum_compleet,
+          t1.Datum_compleet FORMAT=B8601DX19. AS Datum_compleet,
           t1.Wachttijd,
-          t1.Datum_hoorzitting_org FORMAT=B8601DT19. AS Datum_hoorzitting_org,
-          t1.Tijd_hoorzitting_org FORMAT=B8601DT19. AS Tijd_hoorzitting_org,
-          t1.Datum_hoorzitting FORMAT=B8601DT19. AS Datum_hoorzitting,
-          t1.Tijd_hoorzitting FORMAT=B8601DT19. AS Tijd_hoorzitting,
+          t1.Datum_hoorzitting_org FORMAT=B8601DX19. AS Datum_hoorzitting_org,
+          t1.Tijd_hoorzitting_org FORMAT=B8601DX19. AS Tijd_hoorzitting_org,
+          t1.Datum_hoorzitting FORMAT=B8601DX19. AS Datum_hoorzitting,
+          t1.Tijd_hoorzitting FORMAT=B8601DX19. AS Tijd_hoorzitting,
           t1.App_verschenen,
-          t1.Datum_ontvangst FORMAT=B8601DT19. AS Datum_ontvangst,
-          t1.Datum_vragenbrief FORMAT=B8601DT19. AS Datum_vragenbrief,
-          t1.Wett_termijn_7_1 FORMAT=B8601DT19. AS Wett_termijn_7_1,
-          t1.Wett_termijn_7_3 FORMAT=B8601DT19. AS Wett_termijn_7_3,
-          t1.Wett_termijn_datum FORMAT=B8601DT19. AS Wett_termijn_datum,
-          t1.Uitstel_datum FORMAT=B8601DT19. AS Uitstel_datum,
-          t1.Overschrijding_datum FORMAT=B8601DT19. AS Overschrijding_datum,
-          t1.Primair_lid_3 FORMAT=B8601DT19. AS Primair_lid_3,
+          t1.Datum_ontvangst FORMAT=B8601DX19. AS Datum_ontvangst,
+          t1.Datum_vragenbrief FORMAT=B8601DX19. AS Datum_vragenbrief,
+          t1.Wett_termijn_7_1 FORMAT=B8601DX19. AS Wett_termijn_7_1,
+          t1.Wett_termijn_7_3 FORMAT=B8601DX19. AS Wett_termijn_7_3,
+          t1.Wett_termijn_datum FORMAT=B8601DX19. AS Wett_termijn_datum,
+          t1.Uitstel_datum FORMAT=B8601DX19. AS Uitstel_datum,
+          t1.Overschrijding_datum FORMAT=B8601DX19. AS Overschrijding_datum,
+          t1.Primair_lid_3 FORMAT=B8601DX19. AS Primair_lid_3,
           t1.Reken_cor_id,
-          t1.Reken_wett_termijn_7_1 FORMAT=B8601DT19. AS Reken_wett_termijn_7_1,
+          t1.Reken_wett_termijn_7_1 FORMAT=B8601DX19. AS Reken_wett_termijn_7_1,
           t1.Adviescommissie,
-          t1.Datum_1e_heropname_schade FORMAT=B8601DT19. AS Datum_1e_heropname_schade,
-          t1.Tijd_1e_heropname_schade FORMAT=B8601DT19. AS Tijd_1e_heropname_schade,
-          t1.Datum_2e_heropname_schade FORMAT=B8601DT19. AS Datum_2e_heropname_schade,
-          t1.Tijd_2e_heropname_schade FORMAT=B8601DT19. AS Tijd_2e_heropname_schade,
-          t1.Datum_orig_schouw FORMAT=B8601DT19. AS Datum_orig_schouw,
-          t1.Tijd_orig_schouw FORMAT=B8601DT19. AS Tijd_orig_schouw,
-          t1.Datum_def_schouw FORMAT=B8601DT19. AS Datum_def_schouw,
-          t1.Tijd_def_schouw FORMAT=B8601DT19. AS Tijd_def_schouw
+          t1.Datum_1e_heropname_schade FORMAT=B8601DX19. AS Datum_1e_heropname_schade,
+          t1.Tijd_1e_heropname_schade FORMAT=B8601DX19. AS Tijd_1e_heropname_schade,
+          t1.Datum_2e_heropname_schade FORMAT=B8601DX19. AS Datum_2e_heropname_schade,
+          t1.Tijd_2e_heropname_schade FORMAT=B8601DX19. AS Tijd_2e_heropname_schade,
+          t1.Datum_orig_schouw FORMAT=B8601DX19. AS Datum_orig_schouw,
+          t1.Tijd_orig_schouw FORMAT=B8601DX19. AS Tijd_orig_schouw,
+          t1.Datum_def_schouw FORMAT=B8601DX19. AS Datum_def_schouw,
+          t1.Tijd_def_schouw FORMAT=B8601DX19. AS Tijd_def_schouw
      FROM DATAQASG.JZM_BEZWAAR_TCMG t1;
 QUIT;
 
@@ -12525,32 +12525,32 @@ data _null_;
    set  MIGRATIE.BAS_JZM_BEZWAAR   end=EFIEOD; 
        format Jz_id best12. ;
        format Belasting_cd  ;
-       format Datum_compleet B8601DT19. ;
+       format Datum_compleet B8601DX19. ;
        format Wachttijd best12. ;
-       format Datum_hoorzitting_org B8601DT19. ;
-       format Tijd_hoorzitting_org B8601DT19. ;
-       format Datum_hoorzitting B8601DT19. ;
-       format Tijd_hoorzitting B8601DT19. ;
+       format Datum_hoorzitting_org B8601DX19. ;
+       format Tijd_hoorzitting_org B8601DX19. ;
+       format Datum_hoorzitting B8601DX19. ;
+       format Tijd_hoorzitting B8601DX19. ;
        format App_verschenen  ;
-       format Datum_ontvangst B8601DT19. ;
-       format Datum_vragenbrief B8601DT19. ;
-       format Wett_termijn_7_1 B8601DT19. ;
-       format Wett_termijn_7_3 B8601DT19. ;
-       format Wett_termijn_datum B8601DT19. ;
-       format Uitstel_datum B8601DT19. ;
-       format Overschrijding_datum B8601DT19. ;
-       format Primair_lid_3 B8601DT19. ;
+       format Datum_ontvangst B8601DX19. ;
+       format Datum_vragenbrief B8601DX19. ;
+       format Wett_termijn_7_1 B8601DX19. ;
+       format Wett_termijn_7_3 B8601DX19. ;
+       format Wett_termijn_datum B8601DX19. ;
+       format Uitstel_datum B8601DX19. ;
+       format Overschrijding_datum B8601DX19. ;
+       format Primair_lid_3 B8601DX19. ;
        format Reken_cor_id best12. ;
-       format Reken_wett_termijn_7_1 B8601DT19. ;
+       format Reken_wett_termijn_7_1 B8601DX19. ;
        format Adviescommissie  ;
-       format Datum_1e_heropname_schade B8601DT19. ;
-       format Tijd_1e_heropname_schade B8601DT19. ;
-       format Datum_2e_heropname_schade B8601DT19. ;
-       format Tijd_2e_heropname_schade B8601DT19. ;
-       format Datum_orig_schouw B8601DT19. ;
-       format Tijd_orig_schouw B8601DT19. ;
-       format Datum_def_schouw B8601DT19. ;
-       format Tijd_def_schouw B8601DT19. ;
+       format Datum_1e_heropname_schade B8601DX19. ;
+       format Tijd_1e_heropname_schade B8601DX19. ;
+       format Datum_2e_heropname_schade B8601DX19. ;
+       format Tijd_2e_heropname_schade B8601DX19. ;
+       format Datum_orig_schouw B8601DX19. ;
+       format Tijd_orig_schouw B8601DX19. ;
+       format Datum_def_schouw B8601DX19. ;
+       format Tijd_def_schouw B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -12675,20 +12675,20 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_JZM_BEZWAAR_TERMIJN_HIST AS
    SELECT t1.Jz_id,
-          t1.Vanaf_datum FORMAT=B8601DT19. AS Vanaf_datum,
+          t1.Vanaf_datum FORMAT=B8601DX19. AS Vanaf_datum,
           t1.Volg_nr,
           t1.Jz_nr,
           t1.Cor_id,
           t1.Wijziging_in,
           t1.Sts_cd,
-          t1.Wett_termijn_7_1 FORMAT=B8601DT19. AS Wett_termijn_7_1,
-          t1.Wett_termijn_7_3 FORMAT=B8601DT19. AS Wett_termijn_7_3,
-          t1.Uitstel_datum FORMAT=B8601DT19. AS Uitstel_datum,
-          t1.Overschrijding_datum FORMAT=B8601DT19. AS Overschrijding_datum,
+          t1.Wett_termijn_7_1 FORMAT=B8601DX19. AS Wett_termijn_7_1,
+          t1.Wett_termijn_7_3 FORMAT=B8601DX19. AS Wett_termijn_7_3,
+          t1.Uitstel_datum FORMAT=B8601DX19. AS Uitstel_datum,
+          t1.Overschrijding_datum FORMAT=B8601DX19. AS Overschrijding_datum,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Adviescommissie
      FROM DATAQASG.JZM_BEZWAAR_TERMIJN_HIST_TCMG t1;
 QUIT;
@@ -12743,20 +12743,20 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_JZM_BEZWAAR_TERMIJN_HIST   end=EFIEOD; 
        format Jz_id best12. ;
-       format Vanaf_datum B8601DT19. ;
+       format Vanaf_datum B8601DX19. ;
        format Volg_nr best12. ;
        format Jz_nr  ;
        format Cor_id best12. ;
        format Wijziging_in  ;
        format Sts_cd  ;
-       format Wett_termijn_7_1 B8601DT19. ;
-       format Wett_termijn_7_3 B8601DT19. ;
-       format Uitstel_datum B8601DT19. ;
-       format Overschrijding_datum B8601DT19. ;
+       format Wett_termijn_7_1 B8601DX19. ;
+       format Wett_termijn_7_3 B8601DX19. ;
+       format Uitstel_datum B8601DX19. ;
+       format Overschrijding_datum B8601DX19. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Adviescommissie  ;
        format techId best12. ; 
      do; 
@@ -12909,13 +12909,13 @@ PROC SQL;
           t1.Tra_bedrag_beschikking_2,
           t1.Tra_id_afd,
           t1.Bedrag_afspraak_afd,
-          t1.Datum_afspraak_afd FORMAT=B8601DT19. AS Datum_afspraak_afd,
-          t1.Datum_afd FORMAT=B8601DT19. AS Datum_afd,
+          t1.Datum_afspraak_afd FORMAT=B8601DX19. AS Datum_afspraak_afd,
+          t1.Datum_afd FORMAT=B8601DX19. AS Datum_afd,
           t1.Tra_cd_afd,
           t1.Vordering_tra_id_afd,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user
      FROM DATAQASG.JZM_BOB_WIZARD_TCMG t1;
 QUIT;
@@ -13064,13 +13064,13 @@ data _null_;
        format Tra_bedrag_beschikking_2 best12. ;
        format Tra_id_afd best12. ;
        format Bedrag_afspraak_afd best12. ;
-       format Datum_afspraak_afd B8601DT19. ;
-       format Datum_afd B8601DT19. ;
+       format Datum_afspraak_afd B8601DX19. ;
+       format Datum_afd B8601DX19. ;
        format Tra_cd_afd  ;
        format Vordering_tra_id_afd best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format techId best12. ; 
      do; 
@@ -13347,9 +13347,9 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_JZM_BRIEF_FUNCTIE AS
    SELECT t1.Fnc_cd,
           t1.Oms,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.JZM_BRIEF_FUNCTIE_TCMG t1;
 QUIT;
@@ -13385,9 +13385,9 @@ data _null_;
    set  MIGRATIE.BAS_JZM_BRIEF_FUNCTIE   end=EFIEOD; 
        format Fnc_cd  ;
        format Oms  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -13457,9 +13457,9 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_JZM_FUNCTIE_VAN_BRIEF AS
    SELECT t1.Fnc_cd,
           t1.Cst_cd,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.JZM_FUNCTIE_VAN_BRIEF_TCMG t1;
 QUIT;
@@ -13495,9 +13495,9 @@ data _null_;
    set  MIGRATIE.BAS_JZM_FUNCTIE_VAN_BRIEF   end=EFIEOD; 
        format Fnc_cd  ;
        format Cst_cd  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -13575,10 +13575,10 @@ PROC SQL;
           t1.Cor_id,
           t1.Dos_sts_cd,
           t1.Dos_ssg_cd,
-          t1.Indieningsdatum FORMAT=B8601DT19. AS Indieningsdatum,
-          t1.Datum_dos_jz FORMAT=B8601DT19. AS Datum_dos_jz,
-          t1.Actiedatum FORMAT=B8601DT19. AS Actiedatum,
-          t1.Afhandeldatum FORMAT=B8601DT19. AS Afhandeldatum,
+          t1.Indieningsdatum FORMAT=B8601DX19. AS Indieningsdatum,
+          t1.Datum_dos_jz FORMAT=B8601DX19. AS Datum_dos_jz,
+          t1.Actiedatum FORMAT=B8601DX19. AS Actiedatum,
+          t1.Afhandeldatum FORMAT=B8601DX19. AS Afhandeldatum,
           t1.notities,
           t1.Proc_type,
           t1.Jzm_bezwaar,
@@ -13591,9 +13591,9 @@ PROC SQL;
           t1.Bedrag_bob,
           t1.Aard_bob,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Technisch_cor_id,
           t1.Hoofdproces
      FROM DATAQASG.JZM_PROCEDURE_TCMG t1;
@@ -13688,10 +13688,10 @@ data _null_;
        format Cor_id best12. ;
        format Dos_sts_cd  ;
        format Dos_ssg_cd  ;
-       format Indieningsdatum B8601DT19. ;
-       format Datum_dos_jz B8601DT19. ;
-       format Actiedatum B8601DT19. ;
-       format Afhandeldatum B8601DT19. ;
+       format Indieningsdatum B8601DX19. ;
+       format Datum_dos_jz B8601DX19. ;
+       format Actiedatum B8601DX19. ;
+       format Afhandeldatum B8601DX19. ;
        format notities  ;
        format Proc_type  ;
        format Jzm_bezwaar  ;
@@ -13704,9 +13704,9 @@ data _null_;
        format Bedrag_bob best12. ;
        format Aard_bob  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Technisch_cor_id best12. ;
        format Hoofdproces  ;
        format techId best12. ; 
@@ -13963,9 +13963,9 @@ PROC SQL;
           t1.Reactie_cd,
           t1.Termijn,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.JZM_REACTIE_TERMIJN_TCMG t1;
 QUIT;
 
@@ -14007,9 +14007,9 @@ data _null_;
        format Reactie_cd  ;
        format Termijn best12. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -14091,16 +14091,16 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_JZM_STATUSREGEL AS
-   SELECT t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
-          t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
+   SELECT t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
+          t1.Datum_tot FORMAT=B8601DX19. AS Datum_tot,
           t1.Jz_id,
           t1.Sts_cd,
           t1.Ssg_cd,
           t1.Commentaar,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Cor_id_van,
           t1.Cor_id_tot,
           t1.Volg_nr
@@ -14150,16 +14150,16 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_JZM_STATUSREGEL   end=EFIEOD; 
-       format Datum_van B8601DT19. ;
-       format Datum_tot B8601DT19. ;
+       format Datum_van B8601DX19. ;
+       format Datum_tot B8601DX19. ;
        format Jz_id best12. ;
        format Sts_cd  ;
        format Ssg_cd  ;
        format Commentaar  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Cor_id_van best12. ;
        format Cor_id_tot best12. ;
        format Volg_nr best12. ;
@@ -14261,9 +14261,9 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_JZM_UITSPRAAK AS
    SELECT t1.Uitspraak,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.JZM_UITSPRAAK_TCMG t1;
 QUIT;
 
@@ -14296,9 +14296,9 @@ data _null_;
    set  MIGRATIE.BAS_JZM_UITSPRAAK   end=EFIEOD; 
        format Uitspraak  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -14356,7 +14356,7 @@ PROC SQL;
    SELECT t1.Bik_cd,
           t1.Bik_oms,
           t1.Bouwtype,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Dos_id,
           t1.EobjectLocatie_id,
@@ -14364,7 +14364,7 @@ PROC SQL;
           t1.Huisnr,
           t1.Huisnr_toevoeging,
           t1.Lok_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Naam,
           t1.Plaats,
@@ -14433,7 +14433,7 @@ data _null_;
        format Bik_cd  ;
        format Bik_oms  ;
        format Bouwtype  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Dos_id best12. ;
        format EobjectLocatie_id best12. ;
@@ -14441,7 +14441,7 @@ data _null_;
        format Huisnr  ;
        format Huisnr_toevoeging  ;
        format Lok_id best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Naam  ;
        format Plaats  ;
@@ -15500,10 +15500,10 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_ADRES_RELATIE AS
    SELECT t1.Adressoort,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Kkr_gevalideerd,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rae_id,
           t1.Ras_id,
@@ -15550,10 +15550,10 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_RBM_ADRES_RELATIE   end=EFIEOD; 
        format Adressoort  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Kkr_gevalideerd  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rae_id best12. ;
        format Ras_id best12. ;
@@ -15638,14 +15638,14 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_ADRES AS
    SELECT t1.Barcode,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.creatie_user,
           t1.Huisnr,
           t1.Huisnr_toe,
           t1.Ias_id,
           t1.Landnaam,
           t1.Locatie_oms,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.mutatie_user,
           t1.Plaatsnaam,
           t1.Postcd,
@@ -15706,14 +15706,14 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_RBM_ADRES   end=EFIEOD; 
        format Barcode  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format creatie_user  ;
        format Huisnr best12. ;
        format Huisnr_toe  ;
        format Ias_id best12. ;
        format Landnaam  ;
        format Locatie_oms  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format mutatie_user  ;
        format Plaatsnaam  ;
        format Postcd  ;
@@ -15880,9 +15880,9 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_COM_ADRES_CP AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Org_id,
           t1.Per_id,
@@ -15924,9 +15924,9 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_RBM_COM_ADRES_CP   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Org_id best12. ;
        format Per_id best12. ;
@@ -15986,9 +15986,9 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_COM_ADRES_RELATIE AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rae_id,
           t1.Rca_id,
@@ -16030,9 +16030,9 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_RBM_COM_ADRES_RELATIE   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rae_id best12. ;
        format Rca_id best12. ;
@@ -16093,9 +16093,9 @@ data _null_;
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_COM_ADRES AS
    SELECT t1.Com_Cd,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rca_id,
           t1.Telnr_email,
@@ -16137,9 +16137,9 @@ data _null_;
      end; 
    set  MIGRATIE.BAS_RBM_COM_ADRES   end=EFIEOD; 
        format Com_Cd  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rca_id best12. ;
        format Telnr_email  ;
@@ -16227,11 +16227,11 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_CONTACTPERSOON AS
    SELECT t1.Afdeling,
           t1.Certhoud_id,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Functie,
           t1.Kkr_relatie_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Notitie,
           t1.Org_id,
@@ -16289,11 +16289,11 @@ data _null_;
    set  MIGRATIE.BAS_RBM_CONTACTPERSOON   end=EFIEOD; 
        format Afdeling  ;
        format Certhoud_id best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Functie  ;
        format Kkr_relatie_id  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Notitie  ;
        format Org_id best12. ;
@@ -16492,12 +16492,12 @@ PROC SQL;
    SELECT t1.Rel_id,
           t1.Bsi_cd,
           t1.Volg_nr,
-          t1.Begindatum FORMAT=B8601DT19. AS Begindatum,
-          t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
+          t1.Begindatum FORMAT=B8601DX19. AS Begindatum,
+          t1.Einddatum FORMAT=B8601DX19. AS Einddatum,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.RBM_ORG_BSI_TCMG t1;
 QUIT;
 
@@ -16539,12 +16539,12 @@ data _null_;
        format Rel_id best12. ;
        format Bsi_cd  ;
        format Volg_nr best12. ;
-       format Begindatum B8601DT19. ;
-       format Einddatum B8601DT19. ;
+       format Begindatum B8601DX19. ;
+       format Einddatum B8601DX19. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -16858,14 +16858,14 @@ PROC SQL;
           t1.Jaar,
           t1.Aantal_werknemers,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Omzet,
           t1.Loonsom,
           t1.So_loonsom,
           t1.Max_so_vermindering,
-          t1.Peildatum FORMAT=B8601DT19. AS Peildatum,
+          t1.Peildatum FORMAT=B8601DX19. AS Peildatum,
           t1.Aantal_so_werknemers,
           t1.Bron,
           t1.Senterniveau_jn,
@@ -16932,14 +16932,14 @@ data _null_;
        format Jaar best12. ;
        format Aantal_werknemers best12. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Omzet best12. ;
        format Loonsom best12. ;
        format So_loonsom best12. ;
        format Max_so_vermindering best12. ;
-       format Peildatum B8601DT19. ;
+       format Peildatum B8601DX19. ;
        format Aantal_so_werknemers best12. ;
        format Bron  ;
        format Senterniveau_jn  ;
@@ -17052,9 +17052,9 @@ PROC SQL;
           t1.Org_naam,
           t1.Org_naam_type,
           t1.Sushi_foutmelding,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.'Mutatie_user,'n AS Mutatie_user,
           t1.Kkr_gevalideerd
      FROM DATAQASG.RBM_ORG_NAAM_TCMG t1;
@@ -17099,9 +17099,9 @@ data _null_;
        format Org_naam  ;
        format Org_naam_type  ;
        format Sushi_foutmelding  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Kkr_gevalideerd  ;
        format techId best12. ; 
@@ -17201,7 +17201,7 @@ PROC SQL;
           t1.Bron_jr,
           t1.BTW_nummer,
           t1.BTW_plichtig,
-          t1.IB_plichtig_sinds FORMAT=B8601DT19. AS IB_plichtig_sinds,
+          t1.IB_plichtig_sinds FORMAT=B8601DX19. AS IB_plichtig_sinds,
           t1.Jaar_oprichting,
           t1.Kkr_RSIN_afwijkend,
           t1.KVK_nr,
@@ -17272,7 +17272,7 @@ data _null_;
        format Bron_jr  ;
        format BTW_nummer  ;
        format BTW_plichtig  ;
-       format IB_plichtig_sinds B8601DT19. ;
+       format IB_plichtig_sinds B8601DX19. ;
        format Jaar_oprichting best12. ;
        format Kkr_RSIN_afwijkend  ;
        format KVK_nr  ;
@@ -17470,7 +17470,7 @@ PROC SQL;
           t1.Aanspreeknaam,
           t1.Achternaam,
           t1.Foutmelding,
-          t1.Geboortedatum FORMAT=B8601DT19. AS Geboortedatum,
+          t1.Geboortedatum FORMAT=B8601DX19. AS Geboortedatum,
           t1.Geslacht,
           t1.Import_contactpersonen_id,
           t1.Notitie,
@@ -17556,7 +17556,7 @@ data _null_;
        format Aanspreeknaam  ;
        format Achternaam  ;
        format Foutmelding  ;
-       format Geboortedatum B8601DT19. ;
+       format Geboortedatum B8601DX19. ;
        format Geslacht  ;
        format Import_contactpersonen_id best12. ;
        format Notitie  ;
@@ -17824,12 +17824,12 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_REKENINGNRS AS
    SELECT t1.Banknaam,
           t1.Bic,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Externe_bron_cd,
           t1.Goedkeuring_sts,
           t1.Iban,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rel_id,
           t1.User_akkoord
@@ -17877,12 +17877,12 @@ data _null_;
    set  MIGRATIE.BAS_RBM_REKENINGNRS   end=EFIEOD; 
        format Banknaam  ;
        format Bic  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Externe_bron_cd  ;
        format Goedkeuring_sts  ;
        format Iban  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rel_id best12. ;
        format User_akkoord  ;
@@ -18010,7 +18010,7 @@ PROC SQL;
           t1.New_banknaam,
           t1.New_bankgironr,
           t1.Gebruiker,
-          t1.Datum_mutatie FORMAT=B8601DT19. AS Datum_mutatie,
+          t1.Datum_mutatie FORMAT=B8601DX19. AS Datum_mutatie,
           t1.Iban,
           t1.New_iban,
           t1.Bic,
@@ -18081,7 +18081,7 @@ data _null_;
        format New_banknaam  ;
        format New_bankgironr  ;
        format Gebruiker  ;
-       format Datum_mutatie B8601DT19. ;
+       format Datum_mutatie B8601DX19. ;
        format Iban  ;
        format New_iban  ;
        format Bic  ;
@@ -18283,14 +18283,14 @@ PROC SQL;
    SELECT t1.Actief,
           t1.Auth_id,
           t1.Belastingeenheid,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.creatie_user,
           t1.Fiscaalnr,
           t1.IdE_id,
           t1.Invoer_id,
           t1.KR_Gevalideerd,
           t1.Kkr_Relatie_id,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.mutatie_user,
           t1.Rbm_org,
           t1.Rbm_persoon,
@@ -18354,14 +18354,14 @@ data _null_;
        format Actief  ;
        format Auth_id best12. ;
        format Belastingeenheid best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format creatie_user  ;
        format Fiscaalnr  ;
        format IdE_id best12. ;
        format Invoer_id best12. ;
        format KR_Gevalideerd  ;
        format Kkr_Relatie_id  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format mutatie_user  ;
        format Rbm_org  ;
        format Rbm_persoon  ;
@@ -18521,10 +18521,10 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RBM_SBI_ORG AS
-   SELECT t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+   SELECT t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Hoofdactiviteit,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Rel_id,
           t1.Sbi_cd
@@ -18562,10 +18562,10 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_RBM_SBI_ORG   end=EFIEOD; 
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Hoofdactiviteit  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Rel_id best12. ;
        format Sbi_cd best12. ;
@@ -18632,16 +18632,16 @@ PROC SQL;
    SELECT t1.Actief,
           t1.Auth_id,
           t1.Bik_cd,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Hoofd_neven,
           t1.Kkr_conversie,
           t1.Kkr_gevalideerd,
           t1.Kkr_gevonden,
           t1.Kkr_relatie_id,
-          t1.Kkr_verversingsdatum FORMAT=B8601DT19. AS Kkr_verversingsdatum,
+          t1.Kkr_verversingsdatum FORMAT=B8601DX19. AS Kkr_verversingsdatum,
           t1.KvK_volgnr,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Ref_Kkr_relatie_id,
           t1.Rel_id,
@@ -18709,16 +18709,16 @@ data _null_;
        format Actief  ;
        format Auth_id best12. ;
        format Bik_cd  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Hoofd_neven  ;
        format Kkr_conversie  ;
        format Kkr_gevalideerd  ;
        format Kkr_gevonden  ;
        format Kkr_relatie_id  ;
-       format Kkr_verversingsdatum B8601DT19. ;
+       format Kkr_verversingsdatum B8601DX19. ;
        format KvK_volgnr  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Ref_Kkr_relatie_id  ;
        format Rel_id best12. ;
@@ -18915,15 +18915,15 @@ PROC SQL;
           t1.Budget,
           t1.Budget_uitputting,
           t1.Correctie_budget,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
           t1.Jaar,
           t1.Koppelen_jn,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Ovk_nr,
           t1.Reg_id,
-          t1.Rpe_datum_van FORMAT=B8601DT19. AS Rpe_datum_van,
+          t1.Rpe_datum_van FORMAT=B8601DX19. AS Rpe_datum_van,
           t1.Rpt_nr,
           t1.Verdeeld_budget,
           t1.Vrij_budget
@@ -18983,15 +18983,15 @@ data _null_;
        format Budget best12. ;
        format Budget_uitputting best12. ;
        format Correctie_budget best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
        format Jaar best12. ;
        format Koppelen_jn  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Ovk_nr  ;
        format Reg_id best12. ;
-       format Rpe_datum_van B8601DT19. ;
+       format Rpe_datum_van B8601DX19. ;
        format Rpt_nr best12. ;
        format Verdeeld_budget best12. ;
        format Vrij_budget best12. ;
@@ -19104,9 +19104,9 @@ PROC SQL;
           t1.Class_cd,
           t1.Class_oms,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.RDM_CLASSIFICATIE_TCMG t1;
 QUIT;
 
@@ -19145,9 +19145,9 @@ data _null_;
        format Class_cd  ;
        format Class_oms  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -19221,11 +19221,11 @@ PROC SQL;
           t1.Bgt_cd,
           t1.Budget_uitputting,
           t1.Correctie_budget,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
           t1.Jaar,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Ovk_nr,
           t1.Rpt_nr,
@@ -19289,11 +19289,11 @@ data _null_;
        format Bgt_cd  ;
        format Budget_uitputting best12. ;
        format Correctie_budget best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Datum_van B8601DT19. ;
+       format Datum_van B8601DX19. ;
        format Jaar best12. ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Ovk_nr  ;
        format Rpt_nr best12. ;
@@ -19422,9 +19422,9 @@ PROC SQL;
           t1.Rdm_mandaat_rol,
           t1.Rdm_mandaat_mdw,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mdw_id,
           t1.Reg_id,
           t1.Rol_cd
@@ -19481,9 +19481,9 @@ data _null_;
        format Rdm_mandaat_rol  ;
        format Rdm_mandaat_mdw  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mdw_id best12. ;
        format Reg_id best12. ;
        format Rol_cd  ;
@@ -19604,12 +19604,12 @@ PROC SQL;
    SELECT t1.Ovk_nr,
           t1.Doc_naam,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Bgt_cd,
           t1.Rpt_nr,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van
      FROM DATAQASG.RDM_OVEREENKOMST_DOCUMENT_TCMG t1;
 QUIT;
 
@@ -19651,12 +19651,12 @@ data _null_;
        format Ovk_nr  ;
        format Doc_naam  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Bgt_cd  ;
        format Rpt_nr best12. ;
-       format Datum_van B8601DT19. ;
+       format Datum_van B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -19744,20 +19744,20 @@ PROC SQL;
    SELECT t1.Ovk_nr,
           t1.Rpt_nr,
           t1.Bgt_cd,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
-          t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
+          t1.Datum_tot FORMAT=B8601DX19. AS Datum_tot,
           t1.Kopieer_periode,
           t1.Auto_sap_jn,
           t1.Comm_rente_pct,
-          t1.Beschik_datum FORMAT=B8601DT19. AS Beschik_datum,
+          t1.Beschik_datum FORMAT=B8601DX19. AS Beschik_datum,
           t1.Tot_budget,
           t1.Verdeeld_budget,
           t1.Omschrijving,
           t1.Prg_cd,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Bdg_verdelen_100_pct_dp,
           t1.Bdg_verdelen_100_pct_th,
           t1.Iban,
@@ -19848,20 +19848,20 @@ data _null_;
        format Ovk_nr  ;
        format Rpt_nr best12. ;
        format Bgt_cd  ;
-       format Datum_van B8601DT19. ;
-       format Datum_tot B8601DT19. ;
+       format Datum_van B8601DX19. ;
+       format Datum_tot B8601DX19. ;
        format Kopieer_periode  ;
        format Auto_sap_jn  ;
        format Comm_rente_pct best12. ;
-       format Beschik_datum B8601DT19. ;
+       format Beschik_datum B8601DX19. ;
        format Tot_budget best12. ;
        format Verdeeld_budget best12. ;
        format Omschrijving  ;
        format Prg_cd  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Bdg_verdelen_100_pct_dp  ;
        format Bdg_verdelen_100_pct_th  ;
        format Iban  ;
@@ -20124,16 +20124,16 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RDM_PRG_OVEREENKOMST AS
    SELECT t1.Prg_id,
           t1.Ovk_nr,
-          t1.Datum_van FORMAT=B8601DT19. AS Datum_van,
-          t1.Datum_tot FORMAT=B8601DT19. AS Datum_tot,
+          t1.Datum_van FORMAT=B8601DX19. AS Datum_van,
+          t1.Datum_tot FORMAT=B8601DX19. AS Datum_tot,
           t1.Inhoud,
           t1.Status,
-          t1.Contractdatum FORMAT=B8601DT19. AS Contractdatum,
+          t1.Contractdatum FORMAT=B8601DX19. AS Contractdatum,
           t1.Totaal_budget,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mjp_jn,
           t1.Ovk_budget_controle,
           t1.Vrij_budget,
@@ -20192,16 +20192,16 @@ data _null_;
    set  MIGRATIE.BAS_RDM_PRG_OVEREENKOMST   end=EFIEOD; 
        format Prg_id best12. ;
        format Ovk_nr  ;
-       format Datum_van B8601DT19. ;
-       format Datum_tot B8601DT19. ;
+       format Datum_van B8601DX19. ;
+       format Datum_tot B8601DX19. ;
        format Inhoud  ;
        format Status  ;
-       format Contractdatum B8601DT19. ;
+       format Contractdatum B8601DX19. ;
        format Totaal_budget best12. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mjp_jn  ;
        format Ovk_budget_controle  ;
        format Vrij_budget best12. ;
@@ -20336,9 +20336,9 @@ PROC SQL;
           t1.Actief,
           t1.Opmerking,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Senioriteit,
           t1.Mentor_id,
           t1.Vervang_id,
@@ -20407,9 +20407,9 @@ data _null_;
        format Actief  ;
        format Opmerking  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Senioriteit  ;
        format Mentor_id best12. ;
        format Vervang_id best12. ;
@@ -20567,9 +20567,9 @@ PROC SQL;
           t1.Prg_id,
           t1.Thema,
           t1.Rap_freq,
-          t1.Ingangs_datum FORMAT=B8601DT19. AS Ingangs_datum,
-          t1.Pub_datum FORMAT=B8601DT19. AS Pub_datum,
-          t1.Eind_datum FORMAT=B8601DT19. AS Eind_datum,
+          t1.Ingangs_datum FORMAT=B8601DX19. AS Ingangs_datum,
+          t1.Pub_datum FORMAT=B8601DX19. AS Pub_datum,
+          t1.Eind_datum FORMAT=B8601DX19. AS Eind_datum,
           t1.Reg_document,
           t1.Betaalmodule,
           t1.Regelingscontrole,
@@ -20577,9 +20577,9 @@ PROC SQL;
           t1.Geblokkeerd_jn,
           t1.Min_id,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Reg_prefix,
           t1.Volg_nr,
           t1.Mail_bericht_parafering,
@@ -20596,7 +20596,7 @@ PROC SQL;
           t1.Paraf_mandat_pr_rol_jn,
           t1.Dos_referentie_jaar,
           t1.Auto_insert_sde_jn,
-          t1.Ingangsdatum_zer FORMAT=B8601DT19. AS Ingangsdatum_zer
+          t1.Ingangsdatum_zer FORMAT=B8601DX19. AS Ingangsdatum_zer
      FROM DATAQASG.RDM_REGELING_TCMG t1;
 QUIT;
 
@@ -20695,9 +20695,9 @@ data _null_;
        format Prg_id best12. ;
        format Thema  ;
        format Rap_freq best12. ;
-       format Ingangs_datum B8601DT19. ;
-       format Pub_datum B8601DT19. ;
-       format Eind_datum B8601DT19. ;
+       format Ingangs_datum B8601DX19. ;
+       format Pub_datum B8601DX19. ;
+       format Eind_datum B8601DX19. ;
        format Reg_document  ;
        format Betaalmodule  ;
        format Regelingscontrole  ;
@@ -20705,9 +20705,9 @@ data _null_;
        format Geblokkeerd_jn  ;
        format Min_id best12. ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Reg_prefix  ;
        format Volg_nr best12. ;
        format Mail_bericht_parafering  ;
@@ -20724,7 +20724,7 @@ data _null_;
        format Paraf_mandat_pr_rol_jn  ;
        format Dos_referentie_jaar  ;
        format Auto_insert_sde_jn  ;
-       format Ingangsdatum_zer B8601DT19. ;
+       format Ingangsdatum_zer B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -21064,16 +21064,16 @@ PROC SQL;
    SELECT t1.Ovk_nr,
           t1.Rpt_nr,
           t1.Bgt_cd,
-          t1.Rpe_datum_van FORMAT=B8601DT19. AS Rpe_datum_van,
+          t1.Rpe_datum_van FORMAT=B8601DX19. AS Rpe_datum_van,
           t1.Jaar,
           t1.Reg_id,
           t1.Reg_nr,
           t1.Budget,
           t1.Budget_uitputting,
           t1.Koppelen_jn,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.Correctie_budget,
           t1.Vrij_budget,
@@ -21135,16 +21135,16 @@ data _null_;
        format Ovk_nr  ;
        format Rpt_nr best12. ;
        format Bgt_cd  ;
-       format Rpe_datum_van B8601DT19. ;
+       format Rpe_datum_van B8601DX19. ;
        format Jaar best12. ;
        format Reg_id best12. ;
        format Reg_nr best12. ;
        format Budget best12. ;
        format Budget_uitputting best12. ;
        format Koppelen_jn  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format Correctie_budget best12. ;
        format Vrij_budget best12. ;
@@ -21272,9 +21272,9 @@ PROC SQL;
           t1.Status_naar,
           t1.Cst_cd,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Xps_cd
      FROM DATAQASG.RDM_STATUSOVERG_BIJ_BRIEF_TCMG t1;
 QUIT;
@@ -21322,9 +21322,9 @@ data _null_;
        format Status_naar  ;
        format Cst_cd  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Xps_cd  ;
        format techId best12. ; 
      do; 
@@ -21433,13 +21433,13 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_RDM_VARIABELE AS
    SELECT t1.Reg_id,
           t1.Code,
-          t1.Begindatum FORMAT=B8601DT19. AS Begindatum,
+          t1.Begindatum FORMAT=B8601DX19. AS Begindatum,
           t1.Inhoud,
           t1.Toelichting,
-          t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Einddatum FORMAT=B8601DX19. AS Einddatum,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.RDM_VARIABELE_TCMG t1;
 QUIT;
@@ -21483,13 +21483,13 @@ data _null_;
    set  MIGRATIE.BAS_RDM_VARIABELE   end=EFIEOD; 
        format Reg_id best12. ;
        format Code  ;
-       format Begindatum B8601DT19. ;
+       format Begindatum B8601DX19. ;
        format Inhoud  ;
        format Toelichting  ;
-       format Einddatum B8601DT19. ;
-       format Creatie_dat B8601DT19. ;
+       format Einddatum B8601DX19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -21578,14 +21578,14 @@ data _null_;
 
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_STM_BSI AS
-   SELECT t1.Startdatum FORMAT=B8601DT19. AS Startdatum,
-          t1.Einddatum FORMAT=B8601DT19. AS Einddatum,
+   SELECT t1.Startdatum FORMAT=B8601DX19. AS Startdatum,
+          t1.Einddatum FORMAT=B8601DX19. AS Einddatum,
           t1.Bsi_cd,
           t1.Bsi_oms,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.STM_BSI_TCMG t1;
 QUIT;
 
@@ -21622,14 +21622,14 @@ data _null_;
        ; 
      end; 
    set  MIGRATIE.BAS_STM_BSI   end=EFIEOD; 
-       format Startdatum B8601DT19. ;
-       format Einddatum B8601DT19. ;
+       format Startdatum B8601DX19. ;
+       format Einddatum B8601DX19. ;
        format Bsi_cd  ;
        format Bsi_oms  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -21705,9 +21705,9 @@ PROC SQL;
    SELECT t1.Reactie_cd,
           t1.Reactie_oms,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.STM_REACTIE_TCMG t1;
 QUIT;
 
@@ -21743,9 +21743,9 @@ data _null_;
        format Reactie_cd  ;
        format Reactie_oms  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -21819,9 +21819,9 @@ PROC SQL;
           t1.Organisatie_rol,
           t1.Controller,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Type_rol,
           t1.Ed_rol_cd,
           t1.Ed_rol_oms
@@ -21878,9 +21878,9 @@ data _null_;
        format Organisatie_rol  ;
        format Controller  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Type_rol  ;
        format Ed_rol_cd best12. ;
        format Ed_rol_oms  ;
@@ -22027,9 +22027,9 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_STM_SBI AS
    SELECT t1.Sbi_cd,
           t1.Sbi_oms,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user
      FROM DATAQASG.STM_SBI_TCMG t1;
 QUIT;
@@ -22065,9 +22065,9 @@ data _null_;
    set  MIGRATIE.BAS_STM_SBI   end=EFIEOD; 
        format Sbi_cd best12. ;
        format Sbi_oms  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format techId best12. ; 
      do; 
@@ -22130,9 +22130,9 @@ PROC SQL;
           t1.Sts_oms,
           t1.Ssg_cd,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Sts_e_indienen,
           t1.Eindstatus,
           t1.Sts_e_loket
@@ -22180,9 +22180,9 @@ data _null_;
        format Sts_oms  ;
        format Ssg_cd  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Sts_e_indienen  ;
        format Eindstatus  ;
        format Sts_e_loket  ;
@@ -22305,9 +22305,9 @@ PROC SQL;
           t1.Ssg_cd,
           t1.Cst_cd,
           t1.Creatie_user,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Mutatie_user,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat
      FROM DATAQASG.STM_STATUSOVERG_BIJ_BRIEF_TCMG t1;
 QUIT;
 
@@ -22349,9 +22349,9 @@ data _null_;
        format Ssg_cd  ;
        format Cst_cd  ;
        format Creatie_user  ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Mutatie_user  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format techId best12. ; 
      do; 
        EFIOUT + 1; 
@@ -22522,8 +22522,8 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_VKM_TOEGEVOEGD_VAR_VELD AS
    SELECT t1.Vkt_id,
           t1.Fysieke_naam,
-          t1.Datum_start FORMAT=B8601DT19. AS Datum_start,
-          t1.Datum_einde FORMAT=B8601DT19. AS Datum_einde,
+          t1.Datum_start FORMAT=B8601DX19. AS Datum_start,
+          t1.Datum_einde FORMAT=B8601DX19. AS Datum_einde,
           t1.Volgorde,
           t1.Verplicht_jn,
           t1.Prompt,
@@ -22575,8 +22575,8 @@ data _null_;
    set  MIGRATIE.BAS_VKM_TOEGEVOEGD_VAR_VELD   end=EFIEOD; 
        format Vkt_id best12. ;
        format Fysieke_naam  ;
-       format Datum_start B8601DT19. ;
-       format Datum_einde B8601DT19. ;
+       format Datum_start B8601DX19. ;
+       format Datum_einde B8601DX19. ;
        format Volgorde best12. ;
        format Verplicht_jn  ;
        format Prompt  ;
@@ -22714,29 +22714,29 @@ PROC SQL;
           t1.BEDRAG_38,
           t1.BEDRAG_39,
           t1.BEDRAG_40,
-          t1.Creatie_dat FORMAT=B8601DT19. AS Creatie_dat,
+          t1.Creatie_dat FORMAT=B8601DX19. AS Creatie_dat,
           t1.Creatie_user,
-          t1.DATUM_01 FORMAT=B8601DT19. AS DATUM_01,
-          t1.DATUM_02 FORMAT=B8601DT19. AS DATUM_02,
-          t1.DATUM_03 FORMAT=B8601DT19. AS DATUM_03,
-          t1.DATUM_04 FORMAT=B8601DT19. AS DATUM_04,
-          t1.DATUM_05 FORMAT=B8601DT19. AS DATUM_05,
-          t1.DATUM_06 FORMAT=B8601DT19. AS DATUM_06,
-          t1.DATUM_07 FORMAT=B8601DT19. AS DATUM_07,
-          t1.DATUM_08 FORMAT=B8601DT19. AS DATUM_08,
-          t1.DATUM_09 FORMAT=B8601DT19. AS DATUM_09,
-          t1.DATUM_10 FORMAT=B8601DT19. AS DATUM_10,
-          t1.DATUM_11 FORMAT=B8601DT19. AS DATUM_11,
-          t1.DATUM_12 FORMAT=B8601DT19. AS DATUM_12,
-          t1.DATUM_13 FORMAT=B8601DT19. AS DATUM_13,
-          t1.DATUM_14 FORMAT=B8601DT19. AS DATUM_14,
-          t1.DATUM_15 FORMAT=B8601DT19. AS DATUM_15,
-          t1.DATUM_16 FORMAT=B8601DT19. AS DATUM_16,
-          t1.DATUM_17 FORMAT=B8601DT19. AS DATUM_17,
-          t1.DATUM_18 FORMAT=B8601DT19. AS DATUM_18,
-          t1.DATUM_19 FORMAT=B8601DT19. AS DATUM_19,
-          t1.DATUM_20 FORMAT=B8601DT19. AS DATUM_20,
-          t1.DATUM_AANMAAK FORMAT=B8601DT19. AS DATUM_AANMAAK,
+          t1.DATUM_01 FORMAT=B8601DX19. AS DATUM_01,
+          t1.DATUM_02 FORMAT=B8601DX19. AS DATUM_02,
+          t1.DATUM_03 FORMAT=B8601DX19. AS DATUM_03,
+          t1.DATUM_04 FORMAT=B8601DX19. AS DATUM_04,
+          t1.DATUM_05 FORMAT=B8601DX19. AS DATUM_05,
+          t1.DATUM_06 FORMAT=B8601DX19. AS DATUM_06,
+          t1.DATUM_07 FORMAT=B8601DX19. AS DATUM_07,
+          t1.DATUM_08 FORMAT=B8601DX19. AS DATUM_08,
+          t1.DATUM_09 FORMAT=B8601DX19. AS DATUM_09,
+          t1.DATUM_10 FORMAT=B8601DX19. AS DATUM_10,
+          t1.DATUM_11 FORMAT=B8601DX19. AS DATUM_11,
+          t1.DATUM_12 FORMAT=B8601DX19. AS DATUM_12,
+          t1.DATUM_13 FORMAT=B8601DX19. AS DATUM_13,
+          t1.DATUM_14 FORMAT=B8601DX19. AS DATUM_14,
+          t1.DATUM_15 FORMAT=B8601DX19. AS DATUM_15,
+          t1.DATUM_16 FORMAT=B8601DX19. AS DATUM_16,
+          t1.DATUM_17 FORMAT=B8601DX19. AS DATUM_17,
+          t1.DATUM_18 FORMAT=B8601DX19. AS DATUM_18,
+          t1.DATUM_19 FORMAT=B8601DX19. AS DATUM_19,
+          t1.DATUM_20 FORMAT=B8601DX19. AS DATUM_20,
+          t1.DATUM_AANMAAK FORMAT=B8601DX19. AS DATUM_AANMAAK,
           t1.DROPDOWNLIST_01,
           t1.DROPDOWNLIST_02,
           t1.DROPDOWNLIST_03,
@@ -22887,7 +22887,7 @@ PROC SQL;
           t1.JA_NEE_ONB_18,
           t1.JA_NEE_ONB_19,
           t1.JA_NEE_ONB_20,
-          t1.Mutatie_dat FORMAT=B8601DT19. AS Mutatie_dat,
+          t1.Mutatie_dat FORMAT=B8601DX19. AS Mutatie_dat,
           t1.Mutatie_user,
           t1.NUMERIEK_01,
           t1.NUMERIEK_02,
@@ -23724,29 +23724,29 @@ data _null_;
        format BEDRAG_38 best12. ;
        format BEDRAG_39 best12. ;
        format BEDRAG_40 best12. ;
-       format Creatie_dat B8601DT19. ;
+       format Creatie_dat B8601DX19. ;
        format Creatie_user  ;
-       format DATUM_01 B8601DT19. ;
-       format DATUM_02 B8601DT19. ;
-       format DATUM_03 B8601DT19. ;
-       format DATUM_04 B8601DT19. ;
-       format DATUM_05 B8601DT19. ;
-       format DATUM_06 B8601DT19. ;
-       format DATUM_07 B8601DT19. ;
-       format DATUM_08 B8601DT19. ;
-       format DATUM_09 B8601DT19. ;
-       format DATUM_10 B8601DT19. ;
-       format DATUM_11 B8601DT19. ;
-       format DATUM_12 B8601DT19. ;
-       format DATUM_13 B8601DT19. ;
-       format DATUM_14 B8601DT19. ;
-       format DATUM_15 B8601DT19. ;
-       format DATUM_16 B8601DT19. ;
-       format DATUM_17 B8601DT19. ;
-       format DATUM_18 B8601DT19. ;
-       format DATUM_19 B8601DT19. ;
-       format DATUM_20 B8601DT19. ;
-       format DATUM_AANMAAK B8601DT19. ;
+       format DATUM_01 B8601DX19. ;
+       format DATUM_02 B8601DX19. ;
+       format DATUM_03 B8601DX19. ;
+       format DATUM_04 B8601DX19. ;
+       format DATUM_05 B8601DX19. ;
+       format DATUM_06 B8601DX19. ;
+       format DATUM_07 B8601DX19. ;
+       format DATUM_08 B8601DX19. ;
+       format DATUM_09 B8601DX19. ;
+       format DATUM_10 B8601DX19. ;
+       format DATUM_11 B8601DX19. ;
+       format DATUM_12 B8601DX19. ;
+       format DATUM_13 B8601DX19. ;
+       format DATUM_14 B8601DX19. ;
+       format DATUM_15 B8601DX19. ;
+       format DATUM_16 B8601DX19. ;
+       format DATUM_17 B8601DX19. ;
+       format DATUM_18 B8601DX19. ;
+       format DATUM_19 B8601DX19. ;
+       format DATUM_20 B8601DX19. ;
+       format DATUM_AANMAAK B8601DX19. ;
        format DROPDOWNLIST_01  ;
        format DROPDOWNLIST_02  ;
        format DROPDOWNLIST_03  ;
@@ -23897,7 +23897,7 @@ data _null_;
        format JA_NEE_ONB_18  ;
        format JA_NEE_ONB_19  ;
        format JA_NEE_ONB_20  ;
-       format Mutatie_dat B8601DT19. ;
+       format Mutatie_dat B8601DX19. ;
        format Mutatie_user  ;
        format NUMERIEK_01 best12. ;
        format NUMERIEK_02 best12. ;
@@ -26674,8 +26674,8 @@ PROC SQL;
    CREATE TABLE MIGRATIE.BAS_VKM_VAR_KAART AS
    SELECT t1.Vkt_id,
           t1.Kaart_naam,
-          t1.Datum_start FORMAT=B8601DT19. AS Datum_start,
-          t1.Datum_einde FORMAT=B8601DT19. AS Datum_einde,
+          t1.Datum_start FORMAT=B8601DX19. AS Datum_start,
+          t1.Datum_einde FORMAT=B8601DX19. AS Datum_einde,
           t1.Omschrijving,
           t1.Vkm_var_kaart_dos,
           t1.Vkm_var_kaart_prg,
@@ -26742,8 +26742,8 @@ data _null_;
    set  MIGRATIE.BAS_VKM_VAR_KAART   end=EFIEOD; 
        format Vkt_id best12. ;
        format Kaart_naam  ;
-       format Datum_start B8601DT19. ;
-       format Datum_einde B8601DT19. ;
+       format Datum_start B8601DX19. ;
+       format Datum_einde B8601DX19. ;
        format Omschrijving  ;
        format Vkm_var_kaart_dos  ;
        format Vkm_var_kaart_prg  ;

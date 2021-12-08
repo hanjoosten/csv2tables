@@ -158,7 +158,7 @@ csvFormat att =
              ""         -> plainNumeric
              "BEST"     -> plainNumeric
              "DATETIME" -> case sasLength att of
-                             8 -> "B8601DT19."
+                             8 -> "B8601DX19."
                              x -> diagnose<>"DATETIME ("<>tshow x<>")"
              x  ->  diagnose<>"sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
       2 -> ""
@@ -174,7 +174,7 @@ dataType att =
              ""         -> plainNumeric
              "BEST"     -> plainNumeric
              "DATETIME" -> case sasLength att of
-                             8 -> " FORMAT=B8601DT19. AS "<>T.pack (attNameNew att)
+                             8 -> " FORMAT=B8601DX19. AS "<>T.pack (attNameNew att)
                              x -> diagnose<>"DATETIME ("<>tshow x<>")"
              x  ->  diagnose<>"sasformat = "<>tshow x<>" ("<>tshow (sasLength att)<>")"
       2 -> ""
