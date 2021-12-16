@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4c2fb1444bd295311df96515f44a25205cb0031ccfd7719adeac42682efaeeb2
+-- hash: 1449b09fdf19da032cd89a8d1702a306b65b698ad100cb4dc68858f9dfc5b968
 
 name:           csv2tables
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
       Basics.Fatal
       Basics.Prelude
       CSV
+      Diacrieten
       Import
       Run
       SASCode
