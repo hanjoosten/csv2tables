@@ -1,6 +1,6 @@
 ﻿{-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-module SASCode 
+module SASCode
     ( tablesToCsv
     , modifiedNames
     , nonIntegerAttribs
@@ -19,12 +19,12 @@ tablesToCsv = concatMap createStatement -- . filter _testFilter
 
 nonIntegerAttribs :: [Table] -> [Text]
 nonIntegerAttribs = concatMap attNames
-  where 
+  where
     attNames :: Table -> [Text]
     attNames = map attShow . filter isNonInteger . L.sort . attribs
     isNonInteger :: Attrib -> Bool
     isNonInteger att = sasType att == 1
-                    && T.pack (sasFormat att) `elem` ["","BEST"] 
+                    && T.pack (sasFormat att) `elem` ["","BEST"]
                     && sasFormatD att /= 0
     attShow :: Attrib ->  Text
     attShow att = T.pack (attTableNew att <> "." <> attNameNew att)<>
@@ -32,22 +32,22 @@ nonIntegerAttribs = concatMap attNames
 
 modifiedNames :: [Table] -> [Text]
 modifiedNames = concatMap modNames
-  where 
+  where
     modNames :: Table -> [Text]
     modNames = map attShow . filter isModified . L.sort . attribs
     isModified :: Attrib -> Bool
     isModified att = attNameOrg att /= attNameNew att
     attShow :: Attrib ->  Text
-    attShow att = T.pack $ 
+    attShow att = T.pack $
        attTableOrg att <> "." <> attNameOrg att <> "  -->  " <>
        attTableNew att <> "." <> attNameNew att
-       
+
 createStatement :: Table -> [Text]
-createStatement t = 
+createStatement t =
       [ "PROC SQL;"
       , "   CREATE TABLE MIGRATIE."<>tempTableName<>" AS"
       ]
-   <> T.lines cols 
+   <> T.lines cols
    <> [ "     FROM DATAQASG."<> T.pack (tableNameOrg t)<>" t1;"
       , "QUIT;"
       , ""
@@ -67,11 +67,11 @@ createStatement t =
                <> T.pack (tableNameNew t)<>".csv"
      cols = "   SELECT "<> (T.intercalate ",\n          " . map mkCol . L.sort . attribs) t
      mkCol :: Attrib -> Text
-     mkCol att = 
+     mkCol att =
           "t1."<>(if attNameNew att == attNameOrg att
                   then T.pack (attNameNew att)<>dataType att
                   else "'"<>T.pack (attNameOrg att)<>"'n"<>dataType att<>" AS "<>T.pack (attNameNew att)
-                 ) 
+                 )
      exportStatement :: Text -- String containing the complete path of the file to write
                      -> [Text]
      exportStatement outfile =
@@ -89,7 +89,7 @@ createStatement t =
                   , "     end; "
                   , "   set  MIGRATIE."<>tempTableName<>"   end=EFIEOD; "
                   ]
-                <> formatSegments   
+                <> formatSegments
                 <>[ "     do; "
                   , "       EFIOUT + 1; "
                   ]
@@ -103,58 +103,58 @@ createStatement t =
                   ]
               where
                 colNames :: [Text]
-                colNames = (map (T.pack . attNameNew) (L.sort $ attribs t) ++ ["techId"])
+                colNames = map (T.pack . attNameNew) (L.sort $ attribs t) ++ ["techId"]
                 headerRow :: [Text]
                 headerRow = L.intersperse  "       ','"
                             (map foo colNames)
                   where foo :: Text -> Text
                         foo name = "          \""<>name<>"\" "
-                        
+
                 formatSegments :: [Text]
                 formatSegments = map foo (L.sort $ attribs t) ++
                   [ "       format techId best12. ; "
                   ]
-                  where 
+                  where
                     foo :: Attrib -> Text
-                    foo att = "       format "<>(T.pack $ attNameNew att)<>" "<>csvFormat att<>" ;"
+                    foo att = "       format "<> T.pack (attNameNew att)<>" "<>csvFormat att<>" ;"
                 putSegments :: [Text]
                 putSegments = map foo (L.sort $ attribs t) ++
                   [ "       put techId best12. ; "
                   ]
-                  where 
+                  where
                     foo :: Attrib -> Text
                     foo att = T.intercalate "\n" $
-                        [ "       if missing("<>(T.pack $ attNameNew att)<>")"
+                        [ "       if missing("<>T.pack (attNameNew att)<>")"
                         , "         then put \",\" @;"
                         ] <>
-                        (if sasType att == 2 
+                        (if sasType att == 2
                          then -- We hebben te maken met een tekst. Die kan mogelijk te lang zijn. Bovendien moet die worden voorzien van quotes.
                         [ "         else do;"
-                        , "                   "<>attrLengte<>"=length("<>(T.pack $ attNameNew att)<>");"
-                        , "                   "<>aantalLF<>" = countc("<>(T.pack $ attNameNew att)<>",'0A'x);"
-                        , "                   "<>maxPassend<>"="<>(tshow $ sasFormatL att)<>"-1-"<>aantalLF<>";"
+                        , "                   "<>attrLengte<>"=length("<>T.pack (attNameNew att)<>");"
+                        , "                   "<>aantalLF<>" = countc("<>T.pack (attNameNew att)<>",'0A'x);"
+                        , "                   "<>maxPassend<>"="<>tshow (sasFormatL att)<>"-1-"<>aantalLF<>";"
                         , "                   if "<>attrLengte<>" > max("<>maxPassend<>",1000)"
-                        , "                     then "<>passend<>" = substr("<>(T.pack $ attNameNew att)<>",1,"<>maxPassend<>");"
-                        , "                     else "<>passend<>" = "<>(T.pack $ attNameNew att)<>";"
+                        , "                     then "<>passend<>" = substr("<>T.pack (attNameNew att)<>",1,"<>maxPassend<>");"
+                        , "                     else "<>passend<>" = "<>T.pack (attNameNew att)<>";"
                         , "                   "<>passend<>" = tranwrd("<>passend<>",'9D'x,'D0'x);"
                         , "                   put "<>passend<>" ~ @;" -- Het ~ forceert het gebruik van dubbele quotes. 
                         , "              end;"
                         ]
                          else -- een eenvoudige numerieke waarde.
-                        [ "         else put "<>(T.pack $ attNameNew att)<>" @;"
+                        [ "         else put "<>T.pack (attNameNew att)<>" @;"
                         ])
                      where maxPassend,attrLengte,passend,aantalLF :: Text
                            maxPassend = mkAttrName "maxPassend"
                            attrLengte = mkAttrName "attrLengte"
                            passend    = mkAttrName "passend"
                            aantalLF   = mkAttrName "aantalLF"
-                           mkAttrName :: Text -> Text 
+                           mkAttrName :: Text -> Text
                            mkAttrName pref = T.take 32 $ pref <> "_"<>(tshow . abs . hash . attNameNew $ att)
 
 csvFormat :: Attrib -> Text
 csvFormat att =
     case sasType att of
-      1 -> case T.pack (sasFormat att) of 
+      1 -> case T.pack (sasFormat att) of
              ""         -> plainNumeric
              "BEST"     -> plainNumeric
              "DATETIME" -> case sasLength att of
@@ -170,7 +170,7 @@ csvFormat att =
 dataType :: Attrib -> Text
 dataType att =
     case sasType att of
-      1 -> case T.pack (sasFormat att) of 
+      1 -> case T.pack (sasFormat att) of
              ""         -> plainNumeric
              "BEST"     -> plainNumeric
              "DATETIME" -> case sasLength att of
@@ -185,5 +185,5 @@ dataType att =
                      x -> diagnose <>tshow x
 
 diagnose :: Text
-diagnose = "TODO (aanpassing nodig in SASCode.hs): "    
+diagnose = "TODO (aanpassing nodig in SASCode.hs): "
 
