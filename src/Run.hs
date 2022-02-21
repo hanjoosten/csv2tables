@@ -1,6 +1,6 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 {-# LANGUAGE OverloadedStrings #-}
-module Run (run) where
+module Run (runSASStuff, mkFileList) where
 
 import Import
 import CSV
@@ -11,8 +11,8 @@ import SASCode
 import RIO.FilePath
 import RIO.Directory
 
-run :: RIO App ()
-run = do
+runSASStuff :: RIO App ()
+runSASStuff = do
   app <- ask
   tables <- parseCsv
   logInfo $ "Number of tables: "<>displayShow (length tables)
@@ -31,3 +31,9 @@ run = do
 showTab :: Table -> Text
 showTab t = T.pack (tableNameNew t) <>" has "<>(tshow . length . attribs) t<>" attributes."
 
+mkFileList :: RIO App ()
+mkFileList = do
+  logDebug "Start creating list of files involved in migration."
+  logDebug "End creating list of files involved in migration."
+
+ 

@@ -40,5 +40,5 @@ main = do
           , appProcessContext = pc
           , appOptions = options
           }
-     in runRIO app run
+     in runRIO app runSASStuff
 
