@@ -29,12 +29,19 @@ main = do
                  <> help "Path to write output files"
                  <> value  "logbestanden documenttransport"
                   )
-           
     )
     empty
-  lo <- logOptionsHandle stderr (optionsVerbose options)
+  logOptions' <- logOptionsHandle stderr (optionsVerbose options)
+  let logOptions = setLogUseTime True logOptions'
+  let logOptions =
+        setLogUseColor False
+          . setLogUseTime True
+       --   . setLogMinLevel (globalLogLevel go)
+          . setLogVerboseFormat True
+       --   . setLogTerminal (globalTerminal go)
+          $ logOptions'
   pc <- mkDefaultProcessContext
-  withLogFunc lo $ \lf ->
+  withLogFunc logOptions $ \lf ->
     let app = App
           { appLogFunc = lf
           , appProcessContext = pc

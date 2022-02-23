@@ -10,6 +10,7 @@ import SQL
 import SASCode
 import RIO.FilePath
 import RIO.Directory
+import MkFileListDocumentTransport (mkFileListDocumentTransport)
 
 runSASStuff :: RIO App ()
 runSASStuff = do
@@ -33,7 +34,8 @@ showTab t = T.pack (tableNameNew t) <>" has "<>(tshow . length . attribs) t<>" a
 
 mkFileList :: RIO App ()
 mkFileList = do
-  logDebug "Start creating list of files involved in migration."
-  logDebug "End creating list of files involved in migration."
+  logInfo "Start creating list of files involved in migration."
+  mkFileListDocumentTransport
+  logInfo "End creating list of files involved in migration."
 
  
