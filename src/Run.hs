@@ -33,9 +33,6 @@ showTab :: Table -> Text
 showTab t = T.pack (tableNameNew t) <>" has "<>(tshow . length . attribs) t<>" attributes."
 
 mkFileList :: RIO App ()
-mkFileList = do
-  logInfo "Start creating list of files involved in migration."
-  mkFileListDocumentTransport
-  logInfo "End creating list of files involved in migration."
+mkFileList = mkFileListDocumentTransport
 
  

@@ -34,16 +34,18 @@ sourceDirectory = inputFile . appOptions <$> ask
 
 mkFileListDocumentTransport :: RIO App ()
 mkFileListDocumentTransport = do
+    logInfo "Start creating list of files involved in migration."
     target <- targetDirectory
     source <- sourceDirectory
     logInfo . display $ "Creating list of files that are in "<> T.pack (source </> optRootFilter<>"*" ) 
     logInfo . display $ "Results are written into "<> T.pack target
     payloadDirs <- getPayloadDirs
-    logInfo . display . T.pack $ "Target directory: " <> target
-    results <- mapM doSinglePayloadDir payloadDirs
+    results <- mapM doSinglePayloadDir (L.sort payloadDirs)
     now <- getCurrentTime 
     let totalContentFile = target </> "FilesOpTschijf_"<> (showGregorian . utctDay $ now )<>"_"<>(takeWhile C.isDigit . show . utctDayTime $ now )
+    logInfo . display $ "Done reading info. Now writing file to disk: " <> T.pack totalContentFile
     writeFileUtf8 totalContentFile (T.unlines . L.sort . concatMap snd $ results)
+    logInfo "End creating list of files involved in migration."
 
 doSinglePayloadDir :: FilePath -> RIO App (Int,[Text])
 doSinglePayloadDir fp = do
