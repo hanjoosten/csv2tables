@@ -19,69 +19,93 @@ import RIO.Time
 optRootFilter :: String
 optRootFilter = "PRODUCTIEDOC"
 
-logTest :: (HasLogFunc env) => Utf8Builder -> RIO env ()
-logTest x = do
-     logDebug x
+
+-- | Directory where the results of the file-list is being stored
+targetDirectory :: RIO App FilePath 
+targetDirectory = do
+    homeDir <- getHomeDirectory 
+    let resultsDir = homeDir </> "MigratieDocTransportInfo"
+    createDirectoryIfMissing False resultsDir
+    return resultsDir
+-- | Root directory where the payload directories reside
+sourceDirectory :: RIO App FilePath
+sourceDirectory = inputFile . appOptions <$> ask
+
 
 mkFileListDocumentTransport :: RIO App ()
 mkFileListDocumentTransport = do
-    tempDir <- getTemporaryDirectory
-    now <- getCurrentTime
-    let workDir = tempDir </> "DT_"<> (showGregorian . utctDay $ now )<>"_"<>(takeWhile C.isDigit . show . utctDayTime $ now )
-    logInfo . display $ "creating "<> T.pack workDir
-    createDirectoryIfMissing True workDir
+    target <- targetDirectory
+    source <- sourceDirectory
+    logInfo . display $ "Creating list of files that are in "<> T.pack (source </> optRootFilter<>"*" ) 
+    logInfo . display $ "Results are written into "<> T.pack target
     payloadDirs <- getPayloadDirs
-    logTest .display $ "payloadDirs: "<>tshow payloadDirs
-    logInfo . display . T.pack $ "WorkDir: " <> workDir
-    mapM_ (writeContents workDir) payloadDirs
+    logInfo . display . T.pack $ "Target directory: " <> target
+    results <- mapM doSinglePayloadDir payloadDirs
+    now <- getCurrentTime 
+    let totalContentFile = target </> "FilesOpTschijf_"<> (showGregorian . utctDay $ now )<>"_"<>(takeWhile C.isDigit . show . utctDayTime $ now )
+    writeFileUtf8 totalContentFile (T.unlines . L.sort . concatMap snd $ results)
 
-writeContents :: FilePath -> FilePath -> RIO App ()
-writeContents workDir fp = do
-    logTest "writeContents"
-    contents <- doPayloadDir fp
-    logInfo . display . T.pack $ "We found " <> show (length contents) <> " files in "<>fp<>"."
-    createDirectoryIfMissing True (workDir </>fp)
-    let file = workDir </> fp </> "hcontent.txt"
-    writeFileUtf8 file (T.unlines contents)
-
-getRootDir :: RIO App FilePath
-getRootDir = inputFile . appOptions <$> ask
+doSinglePayloadDir :: FilePath -> RIO App (Int,[Text])
+doSinglePayloadDir fp = do
+    target <- targetDirectory
+    let specificTarget = target </> fp
+        proofOfWork = specificTarget </> "harvestedOK.proof"
+        contentOfDirFile = specificTarget </> ("contentsOf_"<>fp) <.> "txt"
+    createDirectoryIfMissing False specificTarget
+    fullyDoneBefore <- doesFileExist proofOfWork
+    if fullyDoneBefore
+        then do 
+            contents <- readFileUtf8 contentOfDirFile -- This must exist. just crash if it doesn't
+            let fileCount = length . T.lines $ contents
+            logInfo . display $ T.pack fp <>" contains "<>tshow fileCount<> " files."
+            return (fileCount,T.lines contents)
+        else do 
+            failedBefore <- doesFileExist contentOfDirFile
+            when failedBefore $ removeFile contentOfDirFile
+            contents <- harvestPayloadDir fp
+            let numberOfFiles = length contents
+            logInfo . display $ T.pack fp <>" contains "<> tshow numberOfFiles <> " files."
+            writeFileUtf8 contentOfDirFile (T.unlines contents)
+            now <- getCurrentTime
+            source <- sourceDirectory
+            writeFileUtf8 proofOfWork . T.unlines $ 
+               ["Directory inhoud van: "<> T.pack (source </> fp)
+               ,"Aantal aangetroffen bestanden: "<> tshow numberOfFiles
+               ,"Tijdstip: "<> formatW3 now
+               ]
+            return (numberOfFiles,contents)
 
 getPayloadDirs :: RIO App [FilePath]
 getPayloadDirs = do
-    rootDir <- getRootDir
+    rootDir <- sourceDirectory
     allItemsInRoot <- listDirectory rootDir
     filterM isPayloadDir allItemsInRoot
     where isPayloadDir :: FilePath -> RIO App Bool
           isPayloadDir fp = do
-            rootDir <- getRootDir
+            rootDir <- sourceDirectory
             if optRootFilter == "" || (optRootFilter `L.isPrefixOf` fp)
               then doesDirectoryExist (rootDir </> fp)
               else return False
 
-doPayloadDir :: FilePath -> RIO App [Text]
-doPayloadDir fp = do
-    rootDir <- getRootDir
+harvestPayloadDir :: FilePath -> RIO App [Text]
+harvestPayloadDir fp = do
+    rootDir <- sourceDirectory
     let ffp = rootDir </> fp
         diepte = 2
-    logTest . display $ "Start"<>tshow diepte<>" "<> T.pack ffp
     allItems <- listDirectory ffp
     logDebug .display $ "allItems: "<>tshow allItems
     dirs <- filterM doesDirectoryExist (map (ffp </>) allItems)
-    logTest .display $ "dirs: "<>tshow dirs
     results <- concatMapM (doDir (diepte - 1)) dirs
     logDebug .display $ "results: "<>tshow results
     return results
 
 doDir :: Int -> FilePath -> RIO App [Text]
 doDir diepte ffp = do
-    logTest . display $ "doDir"<>tshow diepte<>" "<> T.pack ffp
     allItems' <- listDirectory ffp
     let allItems = (ffp </>) <$> allItems'
     if diepte == 0
         then do
             files <- filterM doesFileExist allItems
-            logTest . display $ "doDir"<>tshow diepte<>" "<> "Aantal files: "<>tshow (length files)
             return $ map T.pack files
         else do
             dirs <- filterM doesDirectoryExist allItems
@@ -93,3 +117,7 @@ concatMapM :: Monad m => (a -> m [b]) -> [a] -> m [b]
 {-# INLINE concatMapM #-}
 concatMapM op = foldr f (pure [])
     where f x xs = do x' <- op x; if null x' then xs else do xs' <- xs; pure $ x'++xs'
+
+-- | Format a 'UTCTime' in W3 format.
+formatW3 :: UTCTime -> T.Text
+formatW3 = T.pack . formatTime defaultTimeLocale "%FT%X-00:00"
