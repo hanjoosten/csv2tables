@@ -21,9 +21,9 @@ optRootFilter = "PRODUCTIEDOC"
 
 
 -- | Directory where the results of the file-list is being stored
-targetDirectory :: RIO App FilePath 
+targetDirectory :: RIO App FilePath
 targetDirectory = do
-    homeDir <- getHomeDirectory 
+    homeDir <- getHomeDirectory
     let resultsDir = homeDir </> "MigratieDocTransportInfo"
     createDirectoryIfMissing False resultsDir
     return resultsDir
@@ -37,14 +37,21 @@ mkFileListDocumentTransport = do
     logInfo "Start creating list of files involved in migration."
     target <- targetDirectory
     source <- sourceDirectory
-    logInfo . display $ "Creating list of files that are in "<> T.pack (source </> optRootFilter<>"*" ) 
+    logInfo . display $ "Creating list of files that are in "<> T.pack (source </> optRootFilter<>"*" )
     logInfo . display $ "Results are written into "<> T.pack target
     payloadDirs <- getPayloadDirs
     results <- mapM doSinglePayloadDir (L.sort payloadDirs)
-    now <- getCurrentTime 
+    now <- getCurrentTime
     let totalContentFile = target </> "FilesOpTschijf_"<> (showGregorian . utctDay $ now )<>"_"<>(takeWhile C.isDigit . show . utctDayTime $ now )
+    let filesOpTSchijf = target </> "FilesOpTschijf" <.> "txt"
     logInfo . display $ "Done reading info. Now writing file to disk: " <> T.pack totalContentFile
-    writeFileUtf8 totalContentFile (T.unlines . L.sort . concatMap snd $ results)
+    let sortedContent = T.unlines . L.sort . concatMap snd $ results
+    writeFileUtf8 totalContentFile sortedContent -- file for this specific run
+
+    exists <- doesFileExist filesOpTSchijf
+    when exists (removeFile filesOpTSchijf)
+    writeFileUtf8 filesOpTSchijf sortedContent -- overwrite existing file for each run 
+
     logInfo "End creating list of files involved in migration."
 
 doSinglePayloadDir :: FilePath -> RIO App (Int,[Text])
@@ -56,12 +63,12 @@ doSinglePayloadDir fp = do
     createDirectoryIfMissing False specificTarget
     fullyDoneBefore <- doesFileExist proofOfWork
     if fullyDoneBefore
-        then do 
+        then do
             contents <- readFileUtf8 contentOfDirFile -- This must exist. just crash if it doesn't
             let fileCount = length . T.lines $ contents
             logInfo . display $ T.pack fp <>" contains "<>tshow fileCount<> " files."
             return (fileCount,T.lines contents)
-        else do 
+        else do
             failedBefore <- doesFileExist contentOfDirFile
             when failedBefore $ removeFile contentOfDirFile
             contents <- harvestPayloadDir fp
@@ -70,7 +77,7 @@ doSinglePayloadDir fp = do
             writeFileUtf8 contentOfDirFile (T.unlines contents)
             now <- getCurrentTime
             source <- sourceDirectory
-            writeFileUtf8 proofOfWork . T.unlines $ 
+            writeFileUtf8 proofOfWork . T.unlines $
                ["Directory inhoud van: "<> T.pack (source </> fp)
                ,"Aantal aangetroffen bestanden: "<> tshow numberOfFiles
                ,"Tijdstip: "<> formatW3 now
