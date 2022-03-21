@@ -16683,11 +16683,11 @@ data _null_;
        format Graydon_bedrijfsnr best12. ;
        format Kvk_dossiernr best12. ;
        format Kvk_kamernr best12. ;
-       format Kvk_subdossiernr best12. ;
+       format Kvk_subdossiernr  ;
        format Naam  ;
        format Handelsnaam  ;
        format Straatnaam_postbus  ;
-       format Huisnr_postbusnr best12. ;
+       format Huisnr_postbusnr  ;
        format Huisnr_toevoeging  ;
        format Postcode  ;
        format Woonplaats  ;
@@ -16721,13 +16721,22 @@ data _null_;
          else put Kvk_kamernr @;
        if missing(Kvk_subdossiernr)
          then put "," @;
-         else put Kvk_subdossiernr @;
+         else do;
+                   attrLengte_1875525267583002792=length(Kvk_subdossiernr);
+                   aantalLF_1875525267583002792 = countc(Kvk_subdossiernr,'0A'x);
+                   maxPassend_1875525267583002792=4-1-aantalLF_1875525267583002792;
+                   if attrLengte_1875525267583002792 > max(maxPassend_1875525267583002792,1000)
+                     then passend_1875525267583002792 = substr(Kvk_subdossiernr,1,maxPassend_1875525267583002792);
+                     else passend_1875525267583002792 = Kvk_subdossiernr;
+                   passend_1875525267583002792 = tranwrd(passend_1875525267583002792,'9D'x,'D0'x);
+                   put passend_1875525267583002792 ~ @;
+              end;
        if missing(Naam)
          then put "," @;
          else do;
                    attrLengte_3121428435771779831=length(Naam);
                    aantalLF_3121428435771779831 = countc(Naam,'0A'x);
-                   maxPassend_3121428435771779831=132-1-aantalLF_3121428435771779831;
+                   maxPassend_3121428435771779831=500-1-aantalLF_3121428435771779831;
                    if attrLengte_3121428435771779831 > max(maxPassend_3121428435771779831,1000)
                      then passend_3121428435771779831 = substr(Naam,1,maxPassend_3121428435771779831);
                      else passend_3121428435771779831 = Naam;
@@ -16739,7 +16748,7 @@ data _null_;
          else do;
                    attrLengte_2653416409674665897=length(Handelsnaam);
                    aantalLF_2653416409674665897 = countc(Handelsnaam,'0A'x);
-                   maxPassend_2653416409674665897=132-1-aantalLF_2653416409674665897;
+                   maxPassend_2653416409674665897=500-1-aantalLF_2653416409674665897;
                    if attrLengte_2653416409674665897 > max(maxPassend_2653416409674665897,1000)
                      then passend_2653416409674665897 = substr(Handelsnaam,1,maxPassend_2653416409674665897);
                      else passend_2653416409674665897 = Handelsnaam;
@@ -16751,7 +16760,7 @@ data _null_;
          else do;
                    attrLengte_6041848927483652671=length(Straatnaam_postbus);
                    aantalLF_6041848927483652671 = countc(Straatnaam_postbus,'0A'x);
-                   maxPassend_6041848927483652671=50-1-aantalLF_6041848927483652671;
+                   maxPassend_6041848927483652671=255-1-aantalLF_6041848927483652671;
                    if attrLengte_6041848927483652671 > max(maxPassend_6041848927483652671,1000)
                      then passend_6041848927483652671 = substr(Straatnaam_postbus,1,maxPassend_6041848927483652671);
                      else passend_6041848927483652671 = Straatnaam_postbus;
@@ -16760,13 +16769,22 @@ data _null_;
               end;
        if missing(Huisnr_postbusnr)
          then put "," @;
-         else put Huisnr_postbusnr @;
+         else do;
+                   attrLengte_877761068553043096=length(Huisnr_postbusnr);
+                   aantalLF_877761068553043096 = countc(Huisnr_postbusnr,'0A'x);
+                   maxPassend_877761068553043096=255-1-aantalLF_877761068553043096;
+                   if attrLengte_877761068553043096 > max(maxPassend_877761068553043096,1000)
+                     then passend_877761068553043096 = substr(Huisnr_postbusnr,1,maxPassend_877761068553043096);
+                     else passend_877761068553043096 = Huisnr_postbusnr;
+                   passend_877761068553043096 = tranwrd(passend_877761068553043096,'9D'x,'D0'x);
+                   put passend_877761068553043096 ~ @;
+              end;
        if missing(Huisnr_toevoeging)
          then put "," @;
          else do;
                    attrLengte_5583129363718394252=length(Huisnr_toevoeging);
                    aantalLF_5583129363718394252 = countc(Huisnr_toevoeging,'0A'x);
-                   maxPassend_5583129363718394252=12-1-aantalLF_5583129363718394252;
+                   maxPassend_5583129363718394252=50-1-aantalLF_5583129363718394252;
                    if attrLengte_5583129363718394252 > max(maxPassend_5583129363718394252,1000)
                      then passend_5583129363718394252 = substr(Huisnr_toevoeging,1,maxPassend_5583129363718394252);
                      else passend_5583129363718394252 = Huisnr_toevoeging;
@@ -16778,7 +16796,7 @@ data _null_;
          else do;
                    attrLengte_747405639420864755=length(Postcode);
                    aantalLF_747405639420864755 = countc(Postcode,'0A'x);
-                   maxPassend_747405639420864755=12-1-aantalLF_747405639420864755;
+                   maxPassend_747405639420864755=50-1-aantalLF_747405639420864755;
                    if attrLengte_747405639420864755 > max(maxPassend_747405639420864755,1000)
                      then passend_747405639420864755 = substr(Postcode,1,maxPassend_747405639420864755);
                      else passend_747405639420864755 = Postcode;
@@ -16790,7 +16808,7 @@ data _null_;
          else do;
                    attrLengte_3253374325083369186=length(Woonplaats);
                    aantalLF_3253374325083369186 = countc(Woonplaats,'0A'x);
-                   maxPassend_3253374325083369186=30-1-aantalLF_3253374325083369186;
+                   maxPassend_3253374325083369186=255-1-aantalLF_3253374325083369186;
                    if attrLengte_3253374325083369186 > max(maxPassend_3253374325083369186,1000)
                      then passend_3253374325083369186 = substr(Woonplaats,1,maxPassend_3253374325083369186);
                      else passend_3253374325083369186 = Woonplaats;
