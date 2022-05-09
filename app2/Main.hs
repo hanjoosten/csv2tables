@@ -32,7 +32,6 @@ main = do
     )
     empty
   logOptions' <- logOptionsHandle stderr (optionsVerbose options)
-  let logOptions = setLogUseTime True logOptions'
   let logOptions =
         setLogUseColor False
           . setLogUseTime True
