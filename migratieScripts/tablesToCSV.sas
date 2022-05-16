@@ -1,3 +1,12 @@
+/*
+   **********************************************************
+   * This script has been generated using Haskell.          *
+   * The source code for this generator can be found at     *
+   * https://github.com/hanjoosten/csv2tables               *
+   * For modifications, don't hesitate to contact           *
+   * han.joosten.han@gmail.com                              *
+   **********************************************************
+*/
 PROC SQL;
    CREATE TABLE MIGRATIE.BAS_AIC_VOORTGANG AS
    SELECT t1.Tra_id,
