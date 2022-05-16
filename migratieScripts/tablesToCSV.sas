@@ -21535,7 +21535,7 @@ data _null_;
          else do;
                    attrLengte_4250420340675441405=length(Inhoud);
                    aantalLF_4250420340675441405 = countc(Inhoud,'0A'x);
-                   maxPassend_4250420340675441405=255-1-aantalLF_4250420340675441405;
+                   maxPassend_4250420340675441405=2000-1-aantalLF_4250420340675441405;
                    if attrLengte_4250420340675441405 > max(maxPassend_4250420340675441405,1000)
                      then passend_4250420340675441405 = substr(Inhoud,1,maxPassend_4250420340675441405);
                      else passend_4250420340675441405 = Inhoud;

@@ -3790,7 +3790,7 @@ CREATE TABLE BAS_RDM_VARIABELE (
     Reg_id bigint,
     Code varchar (50),
     Begindatum timestamp,
-    Inhoud varchar (255),
+    Inhoud varchar (2000),
     Toelichting varchar (2048),
     Einddatum timestamp,
     Creatie_dat timestamp,
