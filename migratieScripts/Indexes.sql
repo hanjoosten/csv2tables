@@ -116,8 +116,15 @@ drop index if exists BAS_FAM_TRANSACTIE_REGEL_idx01;
 create index BAS_FAM_TRANSACTIE_REGEL_idx01 on BAS_FAM_TRANSACTIE_REGEL 
    ( TRA_ID asc, Rpt_nr asc );
 
-
 drop index if exists BAS_VKM_VAR_GEGEVENS_idx01;
 create index BAS_VKM_VAR_GEGEVENS_idx01 on BAS_VKM_VAR_GEGEVENS
    ( VVG_DOS_ID asc, VVG_VKT_ID asc );
+
+drop index if exists BAS_VKM_VAR_GEGEVENS_idx02;
+create index BAS_VKM_VAR_GEGEVENS_idx02 on BAS_VKM_VAR_GEGEVENS
+   ( varchar_60_06 asc );
+
+drop index if exists BAS_VKM_VAR_GEGEVENS_idx03;
+create index BAS_VKM_VAR_GEGEVENS_idx03 on BAS_VKM_VAR_GEGEVENS
+   ( varchar_60_01 asc );
 
